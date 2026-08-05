@@ -1,0 +1,423 @@
+[
+    {
+        "problem": "BOO001-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003907,
+        "base_time_sys": 0.088863,
+        "base_time": 0.09276999999999999
+    },
+    {
+        "problem": "BOO002-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011611,
+        "base_time_sys": 0.093832,
+        "base_time": 0.105443
+    },
+    {
+        "problem": "BOO002-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010709,
+        "base_time_sys": 0.09243499999999999,
+        "base_time": 0.10314399999999999
+    },
+    {
+        "problem": "BOO003-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010905999999999999,
+        "base_time_sys": 0.087203,
+        "base_time": 0.098109
+    },
+    {
+        "problem": "BOO003-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003941,
+        "base_time_sys": 0.091608,
+        "base_time": 0.095549
+    },
+    {
+        "problem": "BOO004-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008820999999999999,
+        "base_time_sys": 0.090168,
+        "base_time": 0.098989
+    },
+    {
+        "problem": "BOO004-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00677,
+        "base_time_sys": 0.090802,
+        "base_time": 0.09757199999999999
+    },
+    {
+        "problem": "BOO005-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0058839999999999995,
+        "base_time_sys": 0.10105399999999999,
+        "base_time": 0.10693799999999999
+    },
+    {
+        "problem": "BOO005-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004069,
+        "base_time_sys": 0.09253,
+        "base_time": 0.096599
+    },
+    {
+        "problem": "BOO006-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007725999999999999,
+        "base_time_sys": 0.090072,
+        "base_time": 0.097798
+    },
+    {
+        "problem": "BOO006-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002979,
+        "base_time_sys": 0.102504,
+        "base_time": 0.105483
+    },
+    {
+        "problem": "BOO007-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.055236,
+        "base_time_sys": 0.08631599999999999,
+        "base_time": 0.14155199999999998
+    },
+    {
+        "problem": "BOO007-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03772,
+        "base_time_sys": 0.10027599999999999,
+        "base_time": 0.13799599999999998
+    },
+    {
+        "problem": "BOO008-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.051179999999999996,
+        "base_time_sys": 0.10432,
+        "base_time": 0.1555
+    },
+    {
+        "problem": "BOO008-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.034539,
+        "base_time_sys": 0.102767,
+        "base_time": 0.13730599999999998
+    },
+    {
+        "problem": "BOO009-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010983999999999999,
+        "base_time_sys": 0.09706,
+        "base_time": 0.10804399999999999
+    },
+    {
+        "problem": "BOO009-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009734999999999999,
+        "base_time_sys": 0.09740299999999999,
+        "base_time": 0.10713799999999998
+    },
+    {
+        "problem": "BOO010-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007899999999999999,
+        "base_time_sys": 0.10275,
+        "base_time": 0.11065
+    },
+    {
+        "problem": "BOO010-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007777999999999999,
+        "base_time_sys": 0.099521,
+        "base_time": 0.10729899999999999
+    },
+    {
+        "problem": "BOO011-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003836,
+        "base_time_sys": 0.09881799999999999,
+        "base_time": 0.102654
+    },
+    {
+        "problem": "BOO011-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003939,
+        "base_time_sys": 0.09061,
+        "base_time": 0.094549
+    },
+    {
+        "problem": "BOO012-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014039,
+        "base_time_sys": 0.09833299999999999,
+        "base_time": 0.11237199999999999
+    },
+    {
+        "problem": "BOO012-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007665,
+        "base_time_sys": 0.10367399999999999,
+        "base_time": 0.111339
+    },
+    {
+        "problem": "BOO013-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001958,
+        "base_time_sys": 0.104777,
+        "base_time": 0.106735
+    },
+    {
+        "problem": "BOO013-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005830999999999999,
+        "base_time_sys": 0.10207,
+        "base_time": 0.107901
+    },
+    {
+        "problem": "BOO014-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "BOO014-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.053653,
+        "base_time_sys": 0.10832299999999999,
+        "base_time": 0.16197599999999998
+    },
+    {
+        "problem": "BOO014-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.083077,
+        "base_time_sys": 0.11441,
+        "base_time": 0.197487
+    },
+    {
+        "problem": "BOO015-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.058969999999999995,
+        "base_time_sys": 0.10515999999999999,
+        "base_time": 0.16413
+    },
+    {
+        "problem": "BOO015-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08895499999999999,
+        "base_time_sys": 0.111817,
+        "base_time": 0.200772
+    },
+    {
+        "problem": "BOO016-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008982,
+        "base_time_sys": 0.101935,
+        "base_time": 0.110917
+    },
+    {
+        "problem": "BOO017-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010948,
+        "base_time_sys": 0.098526,
+        "base_time": 0.109474
+    },
+    {
+        "problem": "BOO018-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0019679999999999997,
+        "base_time_sys": 0.09440599999999999,
+        "base_time": 0.09637399999999999
+    },
+    {
+        "problem": "BOO021-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0038859999999999997,
+        "base_time_sys": 0.09311,
+        "base_time": 0.096996
+    },
+    {
+        "problem": "BOO022-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.065175,
+        "base_time_sys": 0.108585,
+        "base_time": 0.17376
+    },
+    {
+        "problem": "BOO023-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.9005569999999999,
+        "base_time_sys": 0.126804,
+        "base_time": 1.027361
+    },
+    {
+        "problem": "BOO024-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.046236,
+        "base_time_sys": 0.102297,
+        "base_time": 0.148533
+    },
+    {
+        "problem": "BOO025-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.058627,
+        "base_time_sys": 0.103404,
+        "base_time": 0.16203099999999998
+    },
+    {
+        "problem": "BOO026-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08803,
+        "base_time_sys": 0.10484199999999999,
+        "base_time": 0.192872
+    },
+    {
+        "problem": "BOO028-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.373293,
+        "base_time_sys": 0.13299,
+        "base_time": 0.506283
+    },
+    {
+        "problem": "BOO029-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03268,
+        "base_time_sys": 0.10077,
+        "base_time": 0.13345
+    },
+    {
+        "problem": "BOO031-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.604453,
+        "base_time_sys": 0.221318,
+        "base_time": 1.8257709999999998
+    },
+    {
+        "problem": "BOO034-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15640199999999999,
+        "base_time_sys": 0.107192,
+        "base_time": 0.263594
+    },
+    {
+        "problem": "BOO067-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.393266,
+        "base_time_sys": 0.166737,
+        "base_time": 3.560003
+    },
+    {
+        "problem": "BOO068-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.5050359999999999,
+        "base_time_sys": 0.10363499999999999,
+        "base_time": 0.608671
+    },
+    {
+        "problem": "BOO069-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.221027,
+        "base_time_sys": 0.102028,
+        "base_time": 0.323055
+    },
+    {
+        "problem": "BOO070-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.547323,
+        "base_time_sys": 0.105998,
+        "base_time": 0.653321
+    },
+    {
+        "problem": "BOO071-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.215558,
+        "base_time_sys": 0.10435499999999999,
+        "base_time": 0.319913
+    },
+    {
+        "problem": "BOO072-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.137377,
+        "base_time_sys": 0.102726,
+        "base_time": 0.240103
+    },
+    {
+        "problem": "BOO073-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.1506509999999999,
+        "base_time_sys": 0.159972,
+        "base_time": 1.3106229999999999
+    },
+    {
+        "problem": "BOO074-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.173922,
+        "base_time_sys": 0.106652,
+        "base_time": 0.280574
+    },
+    {
+        "problem": "BOO075-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.13444599999999998,
+        "base_time_sys": 0.099566,
+        "base_time": 0.234012
+    },
+    {
+        "problem": "BOO076-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.615702,
+        "base_time_sys": 0.177564,
+        "base_time": 1.793266
+    }
+]

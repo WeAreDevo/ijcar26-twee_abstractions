@@ -1,0 +1,24 @@
+theory: ALG
+timeslice: 50
+twee:
+  flags:
+  - --all-lemmas
+  - --show-peaks
+  - --proof-on-saturation
+  - --max-time 50
+  - --flatten-goal
+  timeout: 1000
+abstractions:
+  use_domain_abstractions: false
+  use_partial_proof_lemmas: true
+  lemma_abstraction:
+    topk: 50
+    stitch_iterations: 20
+    max_arity: 5
+hints_twee:
+  flags:
+  - --all-lemmas
+  - --show-peaks
+  - --hint-skel-factor 0
+  - --hint-skel-cost 0
+  - --flatten-goal

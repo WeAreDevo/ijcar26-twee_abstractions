@@ -1,0 +1,380 @@
+[
+    {
+        "problem": "ALG005-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.067301
+    },
+    {
+        "problem": "ALG006-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.038411
+    },
+    {
+        "problem": "ALG007-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018694
+    },
+    {
+        "problem": "ALG030-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11048799999999999
+    },
+    {
+        "problem": "ALG069-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008029
+    },
+    {
+        "problem": "ALG212-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D) = f(D, C, f(D, B, A))",
+            "fn_1(A, B, C, D) = f(C, f(C, B, A), D)",
+            "fn_6(A, B, C, D) = f(D, C, f(B, D, A))",
+            "fn_10(A, B, C, D, E) = f(f(C, B, A), D, E)",
+            "fn_14(A, B, C) = f(C, B, f(C, B, A))",
+            "fn_19(A, B, C, D) = f(A, f(C, B, A), D)"
+        ],
+        "final_hints": [
+            "f(A, B, f(A, B, C))",
+            "f(A, f(B, C, A), D)",
+            "f(A, B, f(C, A, D))",
+            "f(A, B, f(A, C, D))",
+            "f(A, f(A, B, C), D)",
+            "f(f(A, B, C), D, E)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG213-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D) = f(D, C, f(D, B, A))",
+            "fn_2(A, B, C, D) = f(C, f(C, B, A), D)",
+            "fn_13(A, B, C) = f(C, B, f(C, B, A))",
+            "fn_15(A, B, C, D) = f(A, f(C, B, A), D)"
+        ],
+        "final_hints": [
+            "f(A, f(B, C, A), D)",
+            "f(A, B, f(A, C, D))",
+            "f(A, f(A, B, C), D)",
+            "f(A, B, f(A, B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG235-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0020399999999999997
+    },
+    {
+        "problem": "ALG236-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.040344
+    },
+    {
+        "problem": "ALG237-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B, C) = mult(mult(B, A), mult(C, A))",
+            "fn_4(A, B, C) = mult(mult(B, A), C)",
+            "fn_5(A, B) = mult(A, mult(A, B))",
+            "fn_8(A, B, C) = mult(mult(B, A), mult(C, B))",
+            "fn_11(A, B) = mult(mult(B, mult(A, mult(B, A))), mult(A, mult(A, mult(B, A))))",
+            "fn_12(A, B) = mult(mult(A, B), mult(A, B))",
+            "fn_15(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_19(A, B, C) = mult(mult(B, mult(A, B)), C)"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, mult(B, mult(A, B))), mult(B, mult(B, mult(A, B))))",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, B), mult(C, A))",
+            "mult(mult(A, mult(B, A)), C)",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG238-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B, C) = mult(mult(B, A), mult(C, A))",
+            "fn_4(A, B, C) = mult(mult(B, A), C)",
+            "fn_5(A, B) = mult(A, mult(A, B))",
+            "fn_8(A, B, C) = mult(mult(B, A), mult(C, B))",
+            "fn_11(A, B) = mult(mult(B, mult(A, mult(B, A))), mult(A, mult(A, mult(B, A))))",
+            "fn_12(A, B) = mult(mult(A, B), mult(A, B))",
+            "fn_15(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_19(A, B, C) = mult(mult(B, mult(A, B)), C)"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, mult(B, mult(A, B))), mult(B, mult(B, mult(A, B))))",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, B), mult(C, A))",
+            "mult(mult(A, mult(B, A)), C)",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG239-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B, C) = mult(mult(B, A), C)",
+            "fn_4(A, B, C) = mult(mult(B, A), mult(C, A))",
+            "fn_5(A, B) = mult(A, mult(A, B))",
+            "fn_7(A, B, C) = mult(mult(B, A), mult(C, B))",
+            "fn_9(A, B) = mult(mult(B, A), A)",
+            "fn_16(A, B, C) = mult(mult(B, A), mult(mult(mult(A, C), B), C))",
+            "fn_19(A, B, C) = mult(mult(B, C), mult(A, mult(B, C)))"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, B), mult(C, A))",
+            "mult(mult(A, B), mult(mult(mult(B, C), A), C))",
+            "mult(mult(A, B), mult(C, mult(A, B)))",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG240-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(mult(B, A), C)",
+            "fn_2(A, B, C) = mult(C, mult(B, A))",
+            "fn_3(A, B) = mult(mult(B, A), A)",
+            "fn_5(A, B, C) = mult(mult(C, A), mult(B, A))",
+            "fn_6(A, B) = mult(A, mult(B, A))",
+            "fn_9(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_16(A, B, C) = mult(mult(B, C), mult(A, mult(B, C)))"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, B), mult(C, mult(A, B)))",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG241-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_1(A, B, C) = mult(mult(B, A), C)",
+            "fn_2(A, B, C) = mult(C, mult(B, A))",
+            "fn_4(A, B) = mult(mult(B, A), A)",
+            "fn_7(A, B, C) = mult(mult(B, mult(A, B)), C)",
+            "fn_8(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_17(A, B) = mult(mult(A, B), A)",
+            "fn_19(A, B, C) = mult(C, mult(mult(B, A), C))"
+        ],
+        "final_hints": [
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, mult(B, A)), C)",
+            "mult(mult(A, B), A)",
+            "mult(A, mult(B, C))",
+            "mult(A, mult(mult(B, C), A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG242-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_1(A, B, C) = mult(mult(B, A), C)",
+            "fn_2(A, B, C) = mult(C, mult(B, A))",
+            "fn_4(A, B) = mult(mult(B, A), A)",
+            "fn_6(A, B, C) = mult(mult(C, A), mult(B, A))",
+            "fn_8(A, B) = mult(A, mult(A, B))",
+            "fn_9(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_10(A, B, C) = mult(C, mult(mult(B, A), C))",
+            "fn_18(A, B, C) = mult(mult(B, mult(A, B)), C)"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, mult(B, A)), C)",
+            "mult(A, mult(B, C))",
+            "mult(A, mult(mult(B, C), A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG243-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_1(A, B, C) = mult(mult(B, A), C)",
+            "fn_2(A, B, C) = mult(C, mult(B, A))",
+            "fn_5(A, B) = mult(mult(B, A), A)",
+            "fn_6(A, B, C) = mult(mult(B, mult(A, B)), C)",
+            "fn_7(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_8(A, B) = mult(A, mult(A, B))"
+        ],
+        "final_hints": [
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, mult(B, A)), C)",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG244-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B, C) = mult(mult(B, A), C)",
+            "fn_4(A, B) = mult(A, mult(A, B))",
+            "fn_5(A, B, C) = mult(mult(B, A), mult(C, A))",
+            "fn_10(A, B) = mult(mult(B, A), A)",
+            "fn_11(A, B, C) = mult(mult(B, A), mult(C, B))",
+            "fn_12(A, B, C) = mult(mult(B, mult(A, B)), C)",
+            "fn_17(A, B, C, D) = mult(mult(mult(B, C), A), D)"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(mult(A, B), mult(C, A))",
+            "mult(mult(A, mult(B, A)), C)",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG245-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_2(A, B) = mult(A, mult(B, A))",
+            "fn_3(A, B, C) = mult(mult(B, A), C)",
+            "fn_4(A, B) = mult(A, mult(A, B))",
+            "fn_6(A, B, C) = mult(mult(B, A), mult(C, A))",
+            "fn_12(A, B) = mult(mult(B, A), A)",
+            "fn_14(A, B, C, D) = mult(mult(mult(B, C), A), D)",
+            "fn_15(A, B) = mult(mult(B, mult(B, A)), A)"
+        ],
+        "final_hints": [
+            "mult(mult(A, mult(A, B)), B)",
+            "mult(mult(A, B), mult(C, B))",
+            "mult(mult(mult(A, B), C), D)",
+            "mult(mult(A, B), B)",
+            "mult(A, mult(B, A))",
+            "mult(A, mult(A, B))",
+            "mult(mult(A, B), C)",
+            "mult(A, mult(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ALG246-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 24.319386
+    },
+    {
+        "problem": "ALG441-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = u(A, u(b, a))",
+            "fn_1(A) = u(A, u(u(b, u(b, a)), u(a, u(b, a))))",
+            "fn_2 = u(u(a, u(a, u(b, a))), u(u(b, a), u(a, u(b, a))))",
+            "fn_3 = u(b, a)",
+            "fn_4(A, B, C) = ifeq(C, true, ifeq(B, true, A, true), true)",
+            "fn_5(A) = u(u(A, u(b, a)), u(a, u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "fn_6 = u(a, u(b, a))",
+            "fn_7(A, B, C) = ifeq(r(C, B, A), true, true, true)",
+            "fn_9 = u(a, u(a, u(b, a)))",
+            "fn_10 = u(b, u(b, a))",
+            "fn_11(A) = u(u(b, a), A)",
+            "fn_12 = u(a, u(u(b, u(b, a)), u(a, u(b, a))))",
+            "fn_13 = u(u(b, a), u(u(b, a), u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "fn_14 = u(u(a, u(b, u(b, a))), u(a, u(a, u(b, a))))",
+            "fn_15 = u(u(b, u(b, a)), u(a, u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "fn_17 = u(u(b, u(b, a)), u(a, u(b, a)))",
+            "fn_18 = u(u(a, u(b, a)), u(a, u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "fn_19 = u(u(b, a), u(u(a, u(a, u(b, a))), u(u(b, a), u(a, u(b, a)))))"
+        ],
+        "final_hints": [
+            "u(u(b, u(b, a)), u(a, u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "ifeq(A, true, ifeq(B, true, C, true), true)",
+            "u(a, u(u(b, u(b, a)), u(a, u(b, a))))",
+            "ifeq(r(A, B, C), true, true, true)",
+            "u(a, u(b, a))",
+            "u(u(b, a), A)",
+            "u(A, u(b, a))",
+            "u(u(a, u(b, u(b, a))), u(a, u(a, u(b, a))))",
+            "u(b, u(b, a))",
+            "u(u(a, u(a, u(b, a))), u(u(b, a), u(a, u(b, a))))",
+            "u(a, u(a, u(b, a)))",
+            "u(u(b, a), u(u(a, u(a, u(b, a))), u(u(b, a), u(a, u(b, a)))))",
+            "u(A, u(u(b, u(b, a)), u(a, u(b, a))))",
+            "u(u(A, u(b, a)), u(a, u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "u(u(b, a), u(u(b, a), u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "u(b, a)",
+            "u(u(a, u(b, a)), u(a, u(u(b, u(b, a)), u(a, u(b, a)))))",
+            "u(u(b, u(b, a)), u(a, u(b, a)))"
+        ],
+        "status": "timeout"
+    }
+]

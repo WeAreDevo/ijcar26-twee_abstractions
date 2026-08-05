@@ -1,0 +1,115 @@
+[
+    {
+        "problem": "LAT005-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.37564,
+        "base_time_sys": 0.065411,
+        "base_time": 0.44105099999999997
+    },
+    {
+        "problem": "LAT065-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LAT190-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LAT206-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LAT223-10",
+        "base_status": "success",
+        "error": "\n[Timeout after 1500 seconds]",
+        "base_time_user": 52.920027,
+        "base_time_sys": 2.743956,
+        "base_time": 55.663982999999995
+    },
+    {
+        "problem": "LAT229-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 54.435438,
+        "base_time_sys": 2.734919,
+        "base_time": 57.170356999999996
+    },
+    {
+        "problem": "LAT241-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.385079,
+        "base_time_sys": 0.070279,
+        "base_time": 0.455358
+    },
+    {
+        "problem": "LAT268-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0072959999999999995,
+        "base_time_sys": 0.04078,
+        "base_time": 0.048075999999999994
+    },
+    {
+        "problem": "LAT399-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 464.966454,
+        "base_time_sys": 17.872529,
+        "base_time": 482.838983
+    },
+    {
+        "problem": "LAT399-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.226471,
+        "base_time_sys": 1.909093,
+        "base_time": 45.135563999999995
+    },
+    {
+        "problem": "LAT400-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LAT400-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 150.832135,
+        "base_time_sys": 4.965228,
+        "base_time": 155.797363
+    },
+    {
+        "problem": "LAT400-3",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LAT400-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 771.975598,
+        "base_time_sys": 21.770114,
+        "base_time": 793.745712
+    },
+    {
+        "problem": "LAT401-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 190.714133,
+        "base_time_sys": 6.504063,
+        "base_time": 197.218196
+    },
+    {
+        "problem": "LAT401-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 74.268054,
+        "base_time_sys": 2.597385,
+        "base_time": 76.86543900000001
+    }
+]

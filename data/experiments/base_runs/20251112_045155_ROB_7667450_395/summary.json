@@ -1,0 +1,153 @@
+[
+    {
+        "problem": "ROB001-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB002-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004778999999999999,
+        "base_time_sys": 0.034364,
+        "base_time": 0.039143
+    },
+    {
+        "problem": "ROB003-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.035875,
+        "base_time_sys": 0.033909999999999996,
+        "base_time": 0.06978499999999999
+    },
+    {
+        "problem": "ROB004-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.049613,
+        "base_time_sys": 0.04149,
+        "base_time": 0.09110299999999999
+    },
+    {
+        "problem": "ROB005-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 7.886125,
+        "base_time_sys": 0.24379399999999998,
+        "base_time": 8.129919
+    },
+    {
+        "problem": "ROB006-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB006-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 81.621334,
+        "base_time_sys": 0.45301199999999997,
+        "base_time": 82.074346
+    },
+    {
+        "problem": "ROB008-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03224,
+        "base_time_sys": 0.030282,
+        "base_time": 0.062522
+    },
+    {
+        "problem": "ROB009-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014185,
+        "base_time_sys": 0.03342,
+        "base_time": 0.047604999999999995
+    },
+    {
+        "problem": "ROB010-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005020999999999999,
+        "base_time_sys": 0.034142,
+        "base_time": 0.039162999999999996
+    },
+    {
+        "problem": "ROB013-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006709,
+        "base_time_sys": 0.031838,
+        "base_time": 0.038547
+    },
+    {
+        "problem": "ROB022-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.422764,
+        "base_time_sys": 0.053510999999999996,
+        "base_time": 0.47627499999999995
+    },
+    {
+        "problem": "ROB023-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.7702009999999999,
+        "base_time_sys": 0.062567,
+        "base_time": 0.832768
+    },
+    {
+        "problem": "ROB025-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB026-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB030-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002953,
+        "base_time_sys": 0.027523,
+        "base_time": 0.030476
+    },
+    {
+        "problem": "ROB031-1",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 1500 seconds]"
+    },
+    {
+        "problem": "ROB031-2",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB032-1",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 1500 seconds]"
+    },
+    {
+        "problem": "ROB032-2",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB033-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB034-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB035-1",
+        "base_status": "timeout",
+        "error": ""
+    }
+]

@@ -1,0 +1,1957 @@
+{
+    "LCL225-10.p": [
+        {
+            "time": 11.554589,
+            "hints": [
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, D)), true)",
+                "ifeq(A, true, theorem(or(B, C)), true)",
+                "ifeq(theorem(or(A, or(or7, B))), true, theorem(or(or7, or(A, B))), true)",
+                "theorem(or(A, or(B, or(not3, r))))",
+                "or(or3, r)",
+                "theorem(or(or7, A))",
+                "ifeq(theorem(or(not5, or(A, or6))), true, theorem(or(A, or7)), true)",
+                "theorem(or(A, B))",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "or(or7, A)",
+                "not(or(A, or(not(q), r)))",
+                "ifeq(true, true, theorem(or(A, or7)), true)",
+                "ifeq(A, true, B, true)",
+                "theorem(or(A, or(not(or(B, q)), or(B, r))))",
+                "or(A, or7)"
+            ],
+            "experiment": "20260210_015230_LCL_7942647_61",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 19.77142999999998,
+            "hints": [
+                "or(A, or7)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, or(A, C))), true)",
+                "theorem(or(or7, A))",
+                "or(or7, A)",
+                "ifeq(true, true, theorem(or(A, or7)), true)",
+                "theorem(or(A, B))",
+                "not(or(or6, A))",
+                "ifeq(A, true, theorem(or(B, C)), true)",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "ifeq(theorem(or(not5, or(A, or6))), true, theorem(or(A, or7)), true)",
+                "or(A, or(B, r))",
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, D)), true)",
+                "or(not(or(A, q)), or(A, r))",
+                "not(or(not(p), or(not(q), r)))"
+            ],
+            "experiment": "20260210_020803_LCL_7942673_68",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 73.22630599999997,
+            "hints": [
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, or(A, C))), true)",
+                "theorem(or(or7, A))",
+                "not(or(A, B))",
+                "or(or7, A)",
+                "ifeq(true, true, theorem(or(A, or7)), true)",
+                "theorem(or(A, or(not(or(B, q)), or(B, r))))",
+                "theorem(or(A, B))",
+                "not(not3)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(A, true, theorem(or(B, C)), true)",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "ifeq(theorem(or(not5, or(A, or6))), true, theorem(or(A, or7)), true)"
+            ],
+            "experiment": "20260210_015400_LCL_7942651_63",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 73.77596100000002,
+            "hints": [
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(theorem(or(or7, or(A, B))), true, theorem(or(A, or(or7, B))), true)",
+                "ifeq(theorem(or(not5, or(A, or6))), true, theorem(or(A, or7)), true)",
+                "theorem(or(A, B))",
+                "or(A, or7)",
+                "theorem(or(or7, A))",
+                "not(not3)",
+                "or(or7, A)",
+                "not(or(or3, not3))",
+                "theorem(or(A, or(not(or(B, q)), or(B, r))))",
+                "not(or(A, B))",
+                "ifeq(A, true, theorem(or(B, C)), true)",
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, D)), true)"
+            ],
+            "experiment": "20260210_015230_LCL_7942648_62",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 77.32584500000002,
+            "hints": [
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, D)), true)",
+                "not(or(A, B))",
+                "ifeq(A, true, B, true)",
+                "ifeq(true, true, theorem(or(A, or7)), true)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "or(not(or(A, q)), or(A, r))",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "ifeq(A, true, theorem(or(B, C)), true)",
+                "or(or7, A)",
+                "ifeq(theorem(or(not5, or(A, or6))), true, theorem(or(A, or7)), true)",
+                "theorem(or(or7, A))",
+                "or(A, or7)",
+                "theorem(or(A, B))",
+                "not(or(not(p), or(not(q), r)))"
+            ],
+            "experiment": "20260210_020934_LCL_7942678_69",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 82.425421,
+            "hints": [
+                "ifeq(A, true, B, true)",
+                "or(A, or7)",
+                "not(or(A, B))",
+                "ifeq(axiom(or(A, B)), true, theorem(or(not(or5), or6)), true)",
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, D)), true)",
+                "or(or7, A)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(theorem(or(A, or(B, C))), true, theorem(or(B, or(A, C))), true)",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "ifeq(A, true, theorem(or(B, C)), true)",
+                "not(not2)",
+                "theorem(or(or7, A))",
+                "or(A, p)",
+                "or(not(or(A, q)), or(A, r))",
+                "not(or(not(p), or(not(q), r)))",
+                "theorem(or(A, B))"
+            ],
+            "experiment": "20260210_020503_LCL_7942669_67",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LCL245-10.p": [
+        {
+            "time": 114.43802400000004,
+            "hints": [
+                "implies(not(implies3), implies4)",
+                "ifeq(A, true, theorem(B), true)",
+                "not(not(A))",
+                "ifeq(true, true, theorem(A), true)",
+                "not(and(A, B))",
+                "ifeq(theorem(implies(not(A), B)), true, theorem(not(not(implies(not(A), B)))), true)",
+                "not(implies5)",
+                "not(not(implies(not(A), B)))",
+                "theorem(or(A, B))",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "implies(or(r, A), implies5)",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "implies(not(implies4), implies3)",
+                "not(not(implies5))",
+                "ifeq(theorem(implies(A, and(or(B, C), A))), true, theorem(and(or(B, C), A)), true)",
+                "theorem(implies(not(A), B))"
+            ],
+            "experiment": "20260210_015400_LCL_7942651_63",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 192.583028,
+            "hints": [
+                "not(and(not(A), B))",
+                "or(implies5, A)",
+                "implies(not(A), B)",
+                "or(implies4, implies3)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "implies(not(implies4), implies3)",
+                "ifeq(A, true, theorem(B), true)",
+                "ifeq(true, true, theorem(A), true)",
+                "implies(not(implies5), p)",
+                "implies(not(implies3), implies4)",
+                "not(not(implies(not(A), not(B))))",
+                "or(implies3, implies4)",
+                "and(p, A)",
+                "ifeq(theorem(implies(A, B)), true, theorem(not(not(implies(A, B)))), true)",
+                "ifeq(theorem(implies(A, and(or(B, C), A))), true, theorem(and(or(B, C), A)), true)",
+                "theorem(or(A, B))",
+                "or(p, implies5)",
+                "not(not(A))"
+            ],
+            "experiment": "20260210_020934_LCL_7942678_69",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 321.93913999999995,
+            "hints": [
+                "not(implies5)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(true, true, theorem(or(A, B)), true)",
+                "implies(not(implies4), implies3)",
+                "theorem(or(A, B))",
+                "not(not(implies(A, not(B))))",
+                "implies(or(r, A), implies5)",
+                "or(implies3, implies4)",
+                "or(A, A)",
+                "ifeq(theorem(implies(A, B)), true, theorem(not(not(implies(A, B)))), true)",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(theorem(implies(A, and(or(B, C), A))), true, theorem(and(or(B, C), A)), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "implies(not(implies4), A)",
+                "not(not(A))",
+                "and(p, A)",
+                "not(and(A, B))"
+            ],
+            "experiment": "20260210_015230_LCL_7942648_62",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LCL289-10.p": [
+        {
+            "time": 130.547692,
+            "hints": [
+                "ifeq(theorem(A), true, theorem(not(not(A))), true)",
+                "implies(A, A)",
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "not(not(A))",
+                "ifeq(true, true, theorem(and(A, B)), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "not(and(A, B))",
+                "equivalent(A, A)",
+                "theorem(not(not(implies(A, not(B)))))",
+                "theorem(and(equivalent(A, A), or(B, C)))",
+                "or(or2, p)",
+                "equivalent(A, or(A, A))",
+                "ifeq(theorem(implies(equivalent(A, A), and(B, equivalent(A, A)))), true, theorem(and(B, equivalent(A, A))), true)",
+                "ifeq(true, true, theorem(and(A, equivalent(B, B))), true)",
+                "theorem(and(A, equivalent(B, B)))",
+                "ifeq(theorem(implies(A, B)), true, theorem(B), true)"
+            ],
+            "experiment": "20260210_015230_LCL_7942647_61",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 179.19378099999997,
+            "hints": [
+                "equivalent(A, or(A, A))",
+                "ifeq(theorem(implies(implies(A, B), equivalent(B, A))), true, theorem(equivalent(B, A)), true)",
+                "ifeq(theorem(implies(equivalent(A, A), and(B, equivalent(A, A)))), true, theorem(and(B, equivalent(A, A))), true)",
+                "equivalent(A, A)",
+                "implies(A, A)",
+                "equivalent(or(A, A), A)",
+                "theorem(and(A, equivalent(B, B)))",
+                "ifeq(true, true, theorem(and(A, equivalent(B, B))), true)",
+                "ifeq(theorem(A), true, theorem(B), true)",
+                "or(A, A)",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "not(and(A, B))",
+                "not(not(A))",
+                "ifeq(true, true, theorem(and(A, B)), true)",
+                "ifeq(theorem(implies(A, B)), true, theorem(B), true)"
+            ],
+            "experiment": "20260210_015230_LCL_7942648_62",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 324.187452,
+            "hints": [
+                "implies(A, A)",
+                "not(not(A))",
+                "ifeq(theorem(A), true, theorem(not(not(A))), true)",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "ifeq(theorem(implies(equivalent(A, A), and(B, equivalent(A, A)))), true, theorem(and(B, equivalent(A, A))), true)",
+                "not(and(A, B))",
+                "ifeq(theorem(implies(implies(A, B), equivalent(B, A))), true, theorem(equivalent(B, A)), true)",
+                "and(A, equivalent(B, B))",
+                "or(A, A)",
+                "equivalent(A, A)",
+                "theorem(not(not(implies(A, B))))",
+                "ifeq(theorem(implies(A, B)), true, theorem(B), true)",
+                "implies(not2, and2)",
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "ifeq(theorem(implies(equivalent(A, A), and(equivalent(A, A), B))), true, theorem(and(equivalent(A, A), B)), true)",
+                "or(or2, A)"
+            ],
+            "experiment": "20260210_020803_LCL_7942673_68",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 775.860713,
+            "hints": [
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "equivalent(A, A)",
+                "ifeq(true, true, theorem(and(A, B)), true)",
+                "theorem(not(not(implies(A, B))))",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(theorem(A), true, theorem(not(not(A))), true)",
+                "ifeq(theorem(implies(implies(A, B), equivalent(B, A))), true, theorem(equivalent(B, A)), true)",
+                "not(not(A))",
+                "ifeq(A, true, theorem(B), true)",
+                "ifeq(theorem(implies(equivalent(A, A), and(B, equivalent(A, A)))), true, theorem(and(B, equivalent(A, A))), true)",
+                "or(p, or2)",
+                "not(and(A, B))",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "theorem(and(A, B))",
+                "implies(A, A)",
+                "or(or2, p)"
+            ],
+            "experiment": "20260210_020503_LCL_7942669_67",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LCL348-10.p": [
+        {
+            "time": 11.563231000000002,
+            "hints": [
+                "implies(A, A)",
+                "or(or2, q)",
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "ifeq(theorem(or(implies(A, not2), B)), true, theorem(or(implies(A, not2), C)), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "or(A, or3)",
+                "implies(A, or3)",
+                "equivalent(A, A)",
+                "or(p, or2)",
+                "equivalent(or(A, A), A)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(theorem(implies(equivalent(A, A), and(B, equivalent(A, A)))), true, theorem(and(B, equivalent(A, A))), true)",
+                "or(implies(A, not2), B)",
+                "ifeq(theorem(or(implies(A, B), B)), true, theorem(implies(A, B)), true)",
+                "ifeq(true, true, theorem(A), true)",
+                "or(or3, q)"
+            ],
+            "experiment": "20260210_015230_LCL_7942647_61",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 19.982958000000053,
+            "hints": [
+                "not(not2)",
+                "implies(not(A), B)",
+                "theorem(implies(A, B))",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "equivalent(q, not(not2))",
+                "not(implies(A, not(B)))",
+                "ifeq(theorem(implies(A, B)), true, theorem(C), true)",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "equivalent(not(not2), q)",
+                "or(or2, and2)",
+                "or(or3, p)",
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "theorem(or(A, B))",
+                "equivalent(A, A)",
+                "not(not(A))"
+            ],
+            "experiment": "20260210_020934_LCL_7942678_69",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 20.012887000000006,
+            "hints": [
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "ifeq(theorem(implies(implies(A, B), equivalent(B, A))), true, theorem(equivalent(B, A)), true)",
+                "equivalent(A, A)",
+                "implies(A, A)",
+                "or(or2, q)",
+                "ifeq(theorem(implies(equivalent(A, A), and(B, equivalent(A, A)))), true, theorem(and(B, equivalent(A, A))), true)",
+                "or(A, q)",
+                "ifeq(theorem(implies(A, or(A, A))), true, theorem(equivalent(or(A, A), A)), true)",
+                "or(A, A)",
+                "ifeq(true, true, theorem(A), true)",
+                "or(A, or2)",
+                "ifeq(A, true, theorem(B), true)",
+                "implies(or(p, or2), A)",
+                "or(or3, q)",
+                "implies(or(and2, A), B)",
+                "or(A, or3)",
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)"
+            ],
+            "experiment": "20260210_015230_LCL_7942648_62",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 84.96467200000001,
+            "hints": [
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "ifeq(true, true, theorem(and(A, B)), true)",
+                "equivalent(A, A)",
+                "or(A, q)",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(theorem(A), true, theorem(not(not(A))), true)",
+                "or(q, or2)",
+                "ifeq(A, true, theorem(B), true)",
+                "implies(A, or3)",
+                "or(implies(A, not2), B)",
+                "theorem(and(A, B))",
+                "or(or2, q)",
+                "or(or3, q)",
+                "implies(A, A)",
+                "or(q, or3)",
+                "or(q, A)"
+            ],
+            "experiment": "20260210_020503_LCL_7942669_67",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 95.74875399999996,
+            "hints": [
+                "ifeq(A, true, theorem(B), true)",
+                "not(not(A))",
+                "equivalent(not(not2), q)",
+                "ifeq(true, true, theorem(A), true)",
+                "or(not(A), not(B))",
+                "ifeq(theorem(implies(A, B)), true, theorem(B), true)",
+                "implies(A, not(B))",
+                "equivalent(q, not(not2))",
+                "ifeq(A, true, ifeq(theorem(implies(q, not(not2))), true, theorem(B), true), true)",
+                "or(or3, p)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "implies(not(A), A)",
+                "theorem(implies(A, B))",
+                "or(or2, and2)"
+            ],
+            "experiment": "20260210_015400_LCL_7942651_63",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 99.79016899999999,
+            "hints": [
+                "implies(A, A)",
+                "ifeq(theorem(or(A, B)), true, theorem(or(B, A)), true)",
+                "or(A, q)",
+                "or(implies(A, not2), not2)",
+                "theorem(and(A, B))",
+                "or(q, A)",
+                "ifeq(true, true, theorem(A), true)",
+                "ifeq(A, true, theorem(B), true)",
+                "implies(or(p, or2), A)",
+                "ifeq(theorem(implies(implies(A, B), equivalent(B, A))), true, theorem(equivalent(B, A)), true)",
+                "or(A, A)",
+                "equivalent(A, A)",
+                "or(or3, q)",
+                "ifeq(theorem(implies(A, and(B, A))), true, theorem(and(B, A)), true)",
+                "or(or2, q)",
+                "implies(or(and2, A), B)",
+                "ifeq(true, true, theorem(and(A, B)), true)",
+                "implies(A, or3)"
+            ],
+            "experiment": "20260210_020803_LCL_7942673_68",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LCL375-10.p": [
+        {
+            "time": 399.9539659999999,
+            "hints": [
+                "ifeq(true, true, is_a_theorem(implies(A, implies(B, C))), true)",
+                "ifeq(is_a_theorem(implies(A, implies(not(implies(implies4, implies8)), implies(implies4, implies8)))), true, is_a_theorem(implies(implies(implies(implies4, implies8), B), C)), true)",
+                "ifeq(is_a_theorem(implies(A, implies(B, implies(C, implies8)))), true, is_a_theorem(implies(D, implies(B, implies(C, implies8)))), true)",
+                "implies(A, implies8)",
+                "ifeq(true, true, is_a_theorem(implies(A, implies8)), true)",
+                "ifeq(true, true, is_a_theorem(implies(A, B)), true)",
+                "implies(implies8, z)",
+                "is_a_theorem(implies(A, implies(B, C)))",
+                "is_a_theorem(implies(A, B))",
+                "not(implies3)",
+                "implies(implies4, implies8)",
+                "ifeq(is_a_theorem(implies(implies(implies8, implies8), A)), true, is_a_theorem(implies(B, A)), true)",
+                "ifeq(is_a_theorem(implies(A, B)), true, is_a_theorem(implies(C, B)), true)",
+                "ifeq(is_a_theorem(implies(implies(A, B), implies(C, B))), true, is_a_theorem(implies(C, B)), true)",
+                "implies(A, z)",
+                "ifeq(is_a_theorem(implies(implies(A, implies8), implies(B, implies8))), true, is_a_theorem(implies(B, implies8)), true)",
+                "ifeq(is_a_theorem(A), true, B, true)",
+                "ifeq(A, true, is_a_theorem(implies(B, C)), true)"
+            ],
+            "experiment": "20260210_015230_LCL_7942648_62",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 526.630315,
+            "hints": [
+                "implies(A, implies8)",
+                "ifeq(is_a_theorem(implies(A, implies(B, C))), true, is_a_theorem(implies(D, implies(B, C))), true)",
+                "ifeq(is_a_theorem(implies(A, implies(B, implies8))), true, is_a_theorem(implies(implies(implies(B, implies8), C), D)), true)",
+                "ifeq(is_a_theorem(implies(implies(A, implies8), implies(B, implies8))), true, is_a_theorem(implies(B, implies8)), true)",
+                "implies(implies(A, implies8), B)",
+                "is_a_theorem(implies(A, B))",
+                "ifeq(is_a_theorem(implies(implies6, implies(A, B))), true, is_a_theorem(implies(implies5, implies(A, B))), true)",
+                "ifeq(is_a_theorem(implies(implies(A, B), implies(z, B))), true, is_a_theorem(implies(z, B)), true)",
+                "is_a_theorem(implies(A, implies8))",
+                "implies(A, z)",
+                "ifeq(A, true, is_a_theorem(implies(B, C)), true)",
+                "ifeq(true, true, is_a_theorem(implies(A, B)), true)",
+                "ifeq(is_a_theorem(A), true, B, true)",
+                "ifeq(true, true, is_a_theorem(implies(A, implies(B, C))), true)",
+                "implies(implies8, A)"
+            ],
+            "experiment": "20260210_015230_LCL_7942647_61",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "ROB031-2.p": [
+        {
+            "time": 12.783174000000031,
+            "hints": [
+                "equals(A, negate(B))",
+                "add(h(A), add(g(A), B))",
+                "negate(add(A, negate(add(A, add(g(A), negate(negate(add(h(A), g(A)))))))))",
+                "add(g(A), B)",
+                "add(A, h(B))",
+                "negate(add(A, B))",
+                "negate(h(A))",
+                "add(h(A), add(h(B), add(C, g(add(A, B)))))",
+                "negate(add(g(A), negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+                "add(h(A), B)",
+                "equals(g(A), B)"
+            ],
+            "experiment": "20260210_031115_ROB_7942232_108",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 23.41758199999998,
+            "hints": [
+                "negate(add(g(A), negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+                "add(h(A), add(g(A), B))",
+                "negate(h(A))",
+                "equals(A, negate(B))",
+                "negate(add(A, B))",
+                "add(h(A), B)",
+                "equals(g(A), B)",
+                "negate(add(A, negate(add(A, add(g(A), negate(negate(add(h(A), g(A)))))))))",
+                "add(g(A), B)"
+            ],
+            "experiment": "20260210_030543_ROB_7942781_105",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 96.12385699999999,
+            "hints": [
+                "add(h(A), B)",
+                "add(negate(negate(A)), add(h(A), g(A)))",
+                "add(A, add(A, B))",
+                "h(add(A, add(A, add(A, g(A)))))",
+                "add(h(A), add(h(B), add(negate(add(C, D)), g(add(A, B)))))",
+                "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+                "equals(negate(A), g(add(B, C)))",
+                "negate(add(g(A), negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+                "h(h(h(A)))",
+                "equals(g(A), B)",
+                "equals(A, negate(B))",
+                "negate(add(A, negate(add(A, add(g(A), add(g(A), negate(negate(h(A)))))))))",
+                "negate(h(A))",
+                "h(h(h(add(A, add(A, add(A, add(B, add(B, add(B, g(add(A, B)))))))))))",
+                "add(negate(A), B)",
+                "add(h(A), add(g(add(B, C)), add(negate(add(B, C)), h(D))))",
+                "add(g(A), B)",
+                "equals(g(add(A, add(g(B), C))), negate(add(g(B), negate(A))))"
+            ],
+            "experiment": "20260210_025511_ROB_7942765_99",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 96.23873800000001,
+            "hints": [
+                "add(A, add(A, B))",
+                "add(h(A), B)",
+                "add(h(A), add(h(B), add(negate(add(C, D)), g(add(A, B)))))",
+                "equals(negate(A), g(add(B, C)))",
+                "add(negate(negate(A)), add(h(A), g(A)))",
+                "h(h(h(A)))",
+                "negate(add(g(A), negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+                "h(add(A, add(A, add(A, g(A)))))",
+                "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+                "negate(h(A))",
+                "equals(A, negate(B))",
+                "h(h(h(add(A, add(A, add(A, add(B, add(B, add(B, g(add(A, B)))))))))))",
+                "equals(g(A), B)",
+                "add(g(A), B)",
+                "negate(add(A, negate(add(A, add(g(A), add(g(A), negate(negate(h(A)))))))))",
+                "add(negate(A), B)",
+                "add(h(A), add(g(add(B, C)), add(negate(add(B, C)), h(D))))",
+                "equals(g(add(A, add(g(B), C))), negate(add(g(B), negate(A))))"
+            ],
+            "experiment": "20260210_025912_ROB_7942772_102",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 195.952991,
+            "hints": [
+                "add(h(A), add(g(A), B))",
+                "equals(A, negate(B))",
+                "add(g(A), B)",
+                "add(h(A), B)",
+                "negate(add(g(A), negate(B)))",
+                "g(h(A))",
+                "add(A, add(A, add(add(A, add(h(A), add(g(A), g(A)))), B)))",
+                "equals(g(A), B)",
+                "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+                "add(h(A), add(g(A), add(g(A), B)))",
+                "negate(h(A))"
+            ],
+            "experiment": "20260210_025641_ROB_7942768_100",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 214.66729899999999,
+            "hints": [
+                "add(g(A), B)",
+                "equals(A, negate(B))",
+                "add(h(A), B)",
+                "add(h(A), add(g(A), add(g(A), B)))",
+                "negate(h(A))",
+                "negate(add(g(A), negate(B)))",
+                "add(h(A), add(g(A), B))",
+                "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+                "add(A, add(A, add(add(A, add(h(A), add(g(A), g(A)))), B)))",
+                "g(h(A))",
+                "equals(g(A), B)"
+            ],
+            "experiment": "20260210_024811_ROB_7942750_97",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "ROB035-1.p": [
+        {
+            "time": 12.299543000000028,
+            "hints": [
+                "equals(A, negate(B))",
+                "add(h(A), add(g(A), B))",
+                "negate(add(A, negate(add(A, add(g(A), negate(negate(add(h(A), g(A)))))))))",
+                "add(g(A), B)",
+                "add(A, h(B))",
+                "negate(add(A, B))",
+                "add(h(h(A)), h(negate(h(A))))",
+                "negate(h(A))",
+                "negate(add(g(A), negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+                "add(h(A), B)",
+                "equals(g(A), B)"
+            ],
+            "experiment": "20260210_031115_ROB_7942232_108",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 41.044236999999995,
+            "hints": [
+                "add(A, add(add(A, add(h(A), add(g(A), g(A)))), B))",
+                "add(h(A), add(g(A), B))",
+                "equals(A, negate(B))",
+                "add(g(A), B)",
+                "negate(add(A, B))",
+                "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+                "equals(g(h(A)), negate(B))",
+                "equals(g(add(A, B)), C)",
+                "negate(h(A))"
+            ],
+            "experiment": "20260210_025641_ROB_7942768_100",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 41.58830199999999,
+            "hints": [
+                "add(g(A), B)",
+                "equals(A, negate(B))",
+                "equals(g(add(A, B)), C)",
+                "equals(g(h(A)), negate(B))",
+                "negate(add(A, B))",
+                "add(A, add(add(A, add(h(A), add(g(A), g(A)))), B))",
+                "negate(h(A))",
+                "add(h(A), add(g(A), B))",
+                "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))"
+            ],
+            "experiment": "20260210_024811_ROB_7942750_97",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "ROB",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LAT075-1.p": [
+        {
+            "time": 141.10902,
+            "hints": [
+                "f(f(A, B), f(A, B))",
+                "f(f(A, f(A, A)), f(B, C))",
+                "f(A, f(B, A))",
+                "f(f(A, B), f(A, C))",
+                "f(f(A, B), f(C, B))",
+                "f(f(A, f(B, C)), f(f(f(B, C), f(B, C)), f(f(f(B, C), f(B, C)), f(f(f(B, C), f(B, C)), f(f(B, f(B, B)), f(A, f(B, C)))))))",
+                "f(f(A, f(A, A)), f(f(B, f(A, f(A, A))), f(f(A, f(A, A)), f(C, f(D, f(A, f(A, A)))))))",
+                "f(A, f(A, B))",
+                "f(A, f(B, C))"
+            ],
+            "experiment": "20260210_014630_LAT_7942643_60",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "LAT",
+                "timeslice": 500,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 500",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 154.34222699999998,
+            "hints": [
+                "f(f(A, B), f(f(A, B), C))",
+                "f(A, f(f(B, C), f(D, E)))",
+                "f(f(A, f(A, A)), f(B, f(C, C)))",
+                "f(A, A)",
+                "f(f(A, B), f(A, B))",
+                "f(A, f(B, A))",
+                "f(A, f(B, C))",
+                "f(A, f(A, A))",
+                "f(A, f(A, B))",
+                "f(f(A, B), f(A, C))",
+                "f(A, f(B, B))",
+                "f(f(A, B), f(C, D))"
+            ],
+            "experiment": "20260210_014458_LAT_7942640_59",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "LAT",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 178.10146300000002,
+            "hints": [
+                "f(f(A, B), f(C, D))",
+                "f(A, f(B, C))",
+                "f(A, f(B, B))",
+                "f(A, A)",
+                "f(f(A, B), f(A, C))",
+                "f(A, f(B, A))",
+                "f(A, f(A, B))",
+                "f(f(A, B), f(A, B))",
+                "f(A, f(A, A))",
+                "f(A, f(f(B, C), f(D, E)))",
+                "f(f(A, B), f(f(C, D), f(f(A, B), f(C, D))))"
+            ],
+            "experiment": "20260210_013526_LAT_7942622_53",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "LAT",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        },
+        {
+            "time": 597.26304,
+            "hints": [
+                "f(A, f(f(f(f(B, C), f(B, C)), D), f(f(E, f(B, C)), C)))",
+                "f(A, f(A, B))",
+                "f(A, f(f(f(B, C), D), E))",
+                "f(f(f(f(A, B), f(A, B)), C), f(f(A, f(A, B)), f(f(f(f(A, B), f(A, B)), C), f(f(A, f(A, B)), A))))",
+                "f(f(f(f(A, B), f(A, B)), C), f(D, B))",
+                "f(A, f(f(f(f(A, B), C), D), f(E, B)))",
+                "f(f(A, B), C)",
+                "f(f4, A)",
+                "f(A, f(A, f(A, f(A, f(A, f(A, B))))))",
+                "f(f(f(f(f(A, B), f(f(f(f(C, A), f(C, A)), A), f(C, A))), B), D), f(f(f(E, D), B), f(f(f(f(C, A), f(C, A)), A), f(C, A))))",
+                "f(f(A, f(B, C)), f(f(f(f(B, C), f(B, C)), D), f(f(E, f(B, C)), C)))",
+                "f(f2, A)",
+                "f(c, f2)",
+                "f(f(f(A, f(A, f(B, C))), A), D)",
+                "f(b, f4)"
+            ],
+            "experiment": "20260210_012154_LAT_7942586_50",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LAT",
+                "timeslice": 150,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 150",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LAT400-1.p": [
+        {
+            "time": 698.879612,
+            "hints": [
+                "join(y2, A)",
+                "lome(z2, y2, A)",
+                "meet(A, a)",
+                "upme(meet(A, a), B, C)",
+                "lome(a, A, lome(B, C, D))",
+                "lome(lome(a, A, B), C, D)",
+                "lome(a, A, meet(B, C))",
+                "join(z2, A)",
+                "upme(upme(a, A, B), A, C)",
+                "lome(meet(A, a), B, C)",
+                "meet(a, A)",
+                "meet(z2, a)",
+                "lome(A, z2, B)",
+                "join(x2, A)",
+                "meet(A, meet(B, a))",
+                "lome(a, A, B)"
+            ],
+            "experiment": "20260210_014228_LAT_7942635_58",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--no-flatten-goal"
+                    ]
+                },
+                "theory": "LAT",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--no-flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "LCL395-10.p": [
+        {
+            "time": 376.365281,
+            "hints": [
+                "implies(A, implies5)",
+                "ifeq(is_a_theorem(implies(A, implies(B, C))), true, is_a_theorem(implies(D, implies(B, C))), true)",
+                "ifeq(is_a_theorem(implies(implies(A, implies6), implies(B, implies6))), true, is_a_theorem(implies(B, implies6)), true)",
+                "implies(implies6, A)",
+                "implies(implies7, implies6)",
+                "implies(z, implies6)",
+                "ifeq(A, true, B, true)",
+                "ifeq(is_a_theorem(A), true, is_a_theorem(implies6), true)",
+                "implies(not(A), B)",
+                "ifeq(A, true, is_a_theorem(implies(B, C)), true)",
+                "ifeq(is_a_theorem(implies(implies(implies2, implies(A, y)), implies6)), true, is_a_theorem(implies(implies(A, z), implies6)), true)",
+                "is_a_theorem(implies(implies(A, B), implies6))",
+                "ifeq(true, true, is_a_theorem(implies(implies(A, B), C)), true)",
+                "implies(A, implies6)",
+                "is_a_theorem(implies(A, B))",
+                "ifeq(is_a_theorem(implies(A, implies(B, implies6))), true, is_a_theorem(implies(implies(implies(B, implies6), C), D)), true)",
+                "ifeq(true, true, is_a_theorem(implies(A, implies(B, C))), true)"
+            ],
+            "experiment": "20260210_020503_LCL_7942669_67",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 100
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "LCL",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ],
+    "GRP723-1.p": [
+        {
+            "time": 418.47073,
+            "hints": [
+                "mult(A, mult(B, C))",
+                "mult(A, mult(f(B, ld(C, D)), ld(ld(f(B, ld(C, D)), mult(D, mult(C, D))), mult(C, D))))",
+                "f(A, ld(B, C))",
+                "f(A, mult(B, C))",
+                "f(c, ld(f5, f3))",
+                "ld(mult(A, B), C)",
+                "ld(ld(A, B), C)"
+            ],
+            "experiment": "20260210_005019_GRP_7942537_37",
+            "config": {
+                "abstractions": {
+                    "lemma_abstraction": {
+                        "max_arity": 5,
+                        "stitch_iterations": 20,
+                        "topk": 50
+                    },
+                    "use_domain_abstractions": false,
+                    "use_partial_proof_lemmas": true
+                },
+                "hints_twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--hint-skel-factor 0.2",
+                        "--hint-skel-cost 0",
+                        "--flatten-goal"
+                    ]
+                },
+                "theory": "GRP",
+                "timeslice": 50,
+                "twee": {
+                    "flags": [
+                        "--all-lemmas",
+                        "--show-peaks",
+                        "--proof-on-saturation",
+                        "--max-time 50",
+                        "--flatten-goal"
+                    ],
+                    "timeout": 1000
+                }
+            }
+        }
+    ]
+}

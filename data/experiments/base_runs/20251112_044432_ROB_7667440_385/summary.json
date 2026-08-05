@@ -1,0 +1,154 @@
+[
+    {
+        "problem": "ROB001-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB002-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0069949999999999995,
+        "base_time_sys": 0.045014,
+        "base_time": 0.052009
+    },
+    {
+        "problem": "ROB003-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.037395,
+        "base_time_sys": 0.044506,
+        "base_time": 0.081901
+    },
+    {
+        "problem": "ROB004-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04963,
+        "base_time_sys": 0.050621,
+        "base_time": 0.100251
+    },
+    {
+        "problem": "ROB005-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 7.954228,
+        "base_time_sys": 0.188863,
+        "base_time": 8.143091
+    },
+    {
+        "problem": "ROB006-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB006-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 81.647642,
+        "base_time_sys": 0.440003,
+        "base_time": 82.08764500000001
+    },
+    {
+        "problem": "ROB008-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.032427,
+        "base_time_sys": 0.043306,
+        "base_time": 0.075733
+    },
+    {
+        "problem": "ROB009-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013059,
+        "base_time_sys": 0.045237,
+        "base_time": 0.058296
+    },
+    {
+        "problem": "ROB010-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001989,
+        "base_time_sys": 0.046675,
+        "base_time": 0.048664
+    },
+    {
+        "problem": "ROB013-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003022,
+        "base_time_sys": 0.046377999999999996,
+        "base_time": 0.04939999999999999
+    },
+    {
+        "problem": "ROB022-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.42566299999999996,
+        "base_time_sys": 0.055763,
+        "base_time": 0.48142599999999997
+    },
+    {
+        "problem": "ROB023-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.7840469999999999,
+        "base_time_sys": 0.066403,
+        "base_time": 0.8504499999999999
+    },
+    {
+        "problem": "ROB025-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB026-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB030-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.0,
+        "base_time_sys": 0.04097,
+        "base_time": 0.04097,
+        "staus": "error"
+    },
+    {
+        "problem": "ROB031-1",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 1500 seconds]"
+    },
+    {
+        "problem": "ROB031-2",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB032-1",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 1500 seconds]"
+    },
+    {
+        "problem": "ROB032-2",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB033-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB034-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ROB035-1",
+        "base_status": "timeout",
+        "error": ""
+    }
+]

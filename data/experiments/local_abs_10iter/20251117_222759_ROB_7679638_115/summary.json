@@ -1,0 +1,384 @@
+[
+    {
+        "problem": "ROB001-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB002-1",
+        "mean_base_user_time": 0.0071495,
+        "min_base_user_time": 0.0032549999999999996,
+        "min_base_dir": "20250627_201123_ROB_7178658_527",
+        "abstractions": [
+            "fn_0(A, B) = add(negate(add(B, A)), negate(add(negate(B), A)))",
+            "fn_1(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, negate(A)))))",
+            "fn_2(A, E) = negate(A(E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = add(negate(add(B, A)), negate(add(negate(B), A)))",
+            "fn_1(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, negate(A)))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002928,
+        "hints_time_sys": 0.009779999999999999,
+        "hints_time": 0.012707999999999999
+    },
+    {
+        "problem": "ROB003-1",
+        "mean_base_user_time": 0.03787768749999999,
+        "min_base_user_time": 0.033659,
+        "min_base_dir": "20250627_201116_ROB_7178656_525",
+        "abstractions": [
+            "fn_0(A, B, C) = negate(add(negate(C), negate(add(B, A))))",
+            "fn_1 = negate(c)",
+            "fn_2(A, B) = add(negate(add(B, A)), negate(add(negate(B), A)))",
+            "fn_3(A) = add(A, fn_1)",
+            "fn_4(A, B) = negate(add(B, A))",
+            "fn_5(A, B) = fn_0(B, A, c)",
+            "fn_6(A, D) = fn_0(negate(D), A, add(A, D))",
+            "fn_7(A, B) = fn_0(A, negate(B), add(B, A))",
+            "fn_8 = fn_3(fn_1)",
+            "fn_9(D) = fn_5(D, fn_1)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = negate(add(negate(C), negate(add(B, A))))",
+            "fn_1 = negate(c)",
+            "fn_2(A, B) = add(negate(add(B, A)), negate(add(negate(B), A)))",
+            "fn_3(A) = add(A, negate(c))",
+            "fn_4(A, B) = negate(add(B, A))",
+            "fn_5(A, B) = negate(add(negate(c), negate(add(A, B))))",
+            "fn_6(A, D) = negate(add(negate(add(A, D)), negate(add(A, negate(D)))))",
+            "fn_7(A, B) = negate(add(negate(add(B, A)), negate(add(negate(B), A))))",
+            "fn_8 = add(negate(c), negate(c))",
+            "fn_9(D) = negate(add(negate(c), negate(add(D, negate(c)))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00895,
+        "hints_time_sys": 0.006979,
+        "hints_time": 0.015929
+    },
+    {
+        "problem": "ROB004-1",
+        "mean_base_user_time": 0.044329406249999995,
+        "min_base_user_time": 0.040547,
+        "min_base_dir": "20250627_200931_ROB_7178652_521",
+        "abstractions": [
+            "fn_0(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, A))))",
+            "fn_1(A, B) = negate(add(B, negate(A)))",
+            "fn_2(A, B) = fn_0(negate(B), A, B, A)",
+            "fn_3(A, E) = fn_0(A, E, d, E)",
+            "fn_4(A, B) = fn_0(B, A, A)",
+            "fn_5(A, B) = fn_0(B, A, negate(B), A)",
+            "fn_6(A) = negate(negate(A))",
+            "fn_7(A) = add(A, c)",
+            "fn_8(A, B) = add(B(A), B(negate(A)))",
+            "fn_9(A) = fn_1(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, A))))",
+            "fn_1(A, B) = negate(add(B, negate(A)))",
+            "fn_2(A, B) = negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "fn_3(A, E) = negate(add(negate(add(E, d)), negate(add(E, A))))",
+            "fn_5(A, B) = negate(add(negate(add(A, negate(B))), negate(add(A, B))))",
+            "fn_6(A) = negate(negate(A))",
+            "fn_7(A) = add(A, c)",
+            "fn_9(A) = negate(add(A, negate(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.025833,
+        "hints_time_sys": 0.008938,
+        "hints_time": 0.034770999999999996
+    },
+    {
+        "problem": "ROB005-1",
+        "mean_base_user_time": 1.2920237499999998,
+        "min_base_user_time": 1.269505,
+        "min_base_dir": "20250627_202518_ROB_7178707_573",
+        "abstractions": [
+            "fn_0(A, B) = negate(add(B, negate(A)))",
+            "fn_1(A) = add(negate(c), A)",
+            "fn_2(A) = add(c, A)",
+            "fn_3(A) = fn_0(A, A)",
+            "fn_4 = negate(c)",
+            "fn_5(A, B) = negate(add(B, A))",
+            "fn_6 = fn_3(c)",
+            "fn_7 = fn_2(fn_1(fn_4))",
+            "fn_8(A, B, C) = C(fn_0(B, A), fn_5(B, A))",
+            "fn_9(A) = fn_0(A, c)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = negate(add(B, negate(A)))",
+            "fn_1(A) = add(negate(c), A)",
+            "fn_2(A) = add(c, A)",
+            "fn_3(A) = negate(add(A, negate(A)))",
+            "fn_4 = negate(c)",
+            "fn_5(A, B) = negate(add(B, A))",
+            "fn_6 = negate(add(c, negate(c)))",
+            "fn_7 = add(c, add(negate(c), negate(c)))",
+            "fn_9(A) = negate(add(c, negate(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.149892,
+        "hints_time_sys": 0.011972,
+        "hints_time": 0.161864
+    },
+    {
+        "problem": "ROB006-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB006-2",
+        "mean_base_user_time": 84.78248246874999,
+        "min_base_user_time": 83.673392,
+        "min_base_dir": "20250627_202018_ROB_7178682_551",
+        "abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1 = negate(d)",
+            "fn_2(A, B) = fn_0(add(B, A))",
+            "fn_3(A) = fn_0(A, d)",
+            "fn_4(A) = fn_2(add(fn_1, A(fn_1)), fn_1, c)",
+            "fn_5(A) = fn_0(A, c)",
+            "fn_6(A, B, C) = C(fn_0(negate(B), A), fn_0(B, A))",
+            "fn_7 = fn_0(d)",
+            "fn_8(A) = add(c, A)",
+            "fn_9(A) = fn_2(A, c)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1 = negate(d)",
+            "fn_3(A) = negate(add(d, A))",
+            "fn_5(A) = negate(add(c, A))",
+            "fn_8(A) = add(c, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 8.582283,
+        "hints_time_sys": 0.112565,
+        "hints_time": 8.694848
+    },
+    {
+        "problem": "ROB008-1",
+        "mean_base_user_time": 0.033442593750000006,
+        "min_base_user_time": 0.029841,
+        "min_base_dir": "20250627_200931_ROB_7178652_521",
+        "abstractions": [
+            "fn_0(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, A))))",
+            "fn_1(A, B) = fn_0(add(b, negate(c)), a, B, A)",
+            "fn_2 = add(a, b)",
+            "fn_3(A, B, E) = add(E, add(B, A))",
+            "fn_4(A, B) = fn_0(negate(A), B, B, A)",
+            "fn_5(A, B) = fn_0(A, negate(B), B, A)",
+            "fn_6(A, B) = fn_0(negate(B), A, B, A)",
+            "fn_7(A, E, F) = A(E, F)",
+            "fn_8(E, F) = fn_3(F, E)",
+            "fn_9(E, F, G) = add(add(E, G), F)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, A))))",
+            "fn_1(A, B) = negate(add(negate(add(A, B)), negate(add(a, add(b, negate(c))))))",
+            "fn_2 = add(a, b)",
+            "fn_3(A, B, E) = add(E, add(B, A))",
+            "fn_4(A, B) = negate(add(negate(add(A, B)), negate(add(B, negate(A)))))",
+            "fn_5(A, B) = negate(add(negate(add(A, B)), negate(add(negate(B), A))))",
+            "fn_6(A, B) = negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "fn_9(E, F, G) = add(add(E, G), F)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.007605,
+        "hints_time_sys": 0.006652,
+        "hints_time": 0.014256999999999999
+    },
+    {
+        "problem": "ROB009-1",
+        "mean_base_user_time": 0.01509271875,
+        "min_base_user_time": 0.01107,
+        "min_base_dir": "20250627_202518_ROB_7178709_575",
+        "abstractions": [
+            "fn_0(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, negate(A)))))",
+            "fn_1(A, B, C, D, E) = fn_0(add(A, E), D, add(C, B), A)",
+            "fn_2(A, B, C) = negate(add(C, negate(add(B, A))))",
+            "fn_3(A, B, C) = C(B, A, B, A)",
+            "fn_4(A, B, C) = C(A, B, B, A)",
+            "fn_5(A, B, C) = add(C, add(B, A))",
+            "fn_6 = fn_2(c)",
+            "fn_7 = fn_1(c)",
+            "fn_8(A, F) = A(fn_1(F))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = negate(add(negate(add(D, C)), negate(add(B, negate(A)))))",
+            "fn_1(A, B, C, D, E) = negate(add(negate(add(A, add(C, B))), negate(add(D, negate(add(A, E))))))",
+            "fn_2(A, B, C) = negate(add(C, negate(add(B, A))))",
+            "fn_5(A, B, C) = add(C, add(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0038169999999999996,
+        "hints_time_sys": 0.009569,
+        "hints_time": 0.013385999999999999
+    },
+    {
+        "problem": "ROB010-1",
+        "mean_base_user_time": 0.005740156249999999,
+        "min_base_user_time": 0.002901,
+        "min_base_dir": "20250627_201123_ROB_7178658_527",
+        "abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1 = fn_0(fn_0(a, b), c)",
+            "fn_2 = fn_0(b, a)",
+            "fn_3(A) = fn_0(A, fn_2)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1 = negate(add(c, negate(add(b, a))))",
+            "fn_2 = negate(add(a, b))",
+            "fn_3(A) = negate(add(negate(add(a, b)), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0037709999999999996,
+        "hints_time_sys": 0.006599,
+        "hints_time": 0.010369999999999999
+    },
+    {
+        "problem": "ROB013-1",
+        "mean_base_user_time": 0.005704343749999999,
+        "min_base_user_time": 0.00312,
+        "min_base_dir": "20250627_201116_ROB_7178656_525",
+        "abstractions": [
+            "fn_0(A, B, C) = negate(add(C, negate(add(B, A))))",
+            "fn_1 = fn_0(a, negate(b), c)",
+            "fn_2 = fn_0(negate(b), a)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = negate(add(C, negate(add(B, A))))",
+            "fn_1 = negate(add(c, negate(add(negate(b), a))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.001761,
+        "hints_time_sys": 0.007917,
+        "hints_time": 0.009678
+    },
+    {
+        "problem": "ROB022-1",
+        "mean_base_user_time": 0.41760434375,
+        "min_base_user_time": 0.408225,
+        "min_base_dir": "20250627_202118_ROB_7178686_555",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(negate(add(D, C)), negate(add(B, A)))",
+            "fn_1(A, B) = fn_0(B, negate(A), B, A)",
+            "fn_2 = negate(c)",
+            "fn_3(A, B, C) = negate(fn_0(C, A, B, A))",
+            "fn_4(A, B) = negate(add(B, A))",
+            "fn_5 = add(fn_2, fn_2)",
+            "fn_6(A, B) = B(negate(A), A)",
+            "fn_7(A, B, C) = negate(fn_0(C, B, B, A))",
+            "fn_8(A, B) = fn_3(B, A, negate(A))",
+            "fn_9(A) = fn_4(A, fn_2)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = add(negate(add(D, C)), negate(add(B, A)))",
+            "fn_1(A, B) = add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "fn_2 = negate(c)",
+            "fn_3(A, B, C) = negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "fn_4(A, B) = negate(add(B, A))",
+            "fn_5 = add(negate(c), negate(c))",
+            "fn_7(A, B, C) = negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "fn_8(A, B) = negate(add(negate(add(B, A)), negate(add(B, negate(A)))))",
+            "fn_9(A) = negate(add(negate(c), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.032996,
+        "hints_time_sys": 0.009,
+        "hints_time": 0.041996
+    },
+    {
+        "problem": "ROB023-1",
+        "mean_base_user_time": 0.75743275,
+        "min_base_user_time": 0.744211,
+        "min_base_dir": "20250627_202518_ROB_7178707_573",
+        "abstractions": [
+            "fn_0(A, B) = add(negate(add(B, A)), negate(add(negate(B), A)))",
+            "fn_1(A, B) = negate(add(B, A))",
+            "fn_2(A, B) = fn_1(add(negate(A), B), fn_0(B, A))",
+            "fn_3(A, B, C, D) = C(C(D, A), C(B, A))",
+            "fn_4(A, B) = add(negate(A), B)",
+            "fn_5(A, B) = fn_1(B, negate(A))",
+            "fn_6(A, B, C, D) = D(D(C, B), fn_1(B, A))",
+            "fn_7(A, B) = fn_1(B(A), A)",
+            "fn_8(A, B, C) = add(C, add(B, A))",
+            "fn_9(A, B) = fn_1(add(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = add(negate(add(B, A)), negate(add(negate(B), A)))",
+            "fn_1(A, B) = negate(add(B, A))",
+            "fn_2(A, B) = negate(add(add(negate(add(A, B)), negate(add(negate(A), B))), add(negate(A), B)))",
+            "fn_4(A, B) = add(negate(A), B)",
+            "fn_5(A, B) = negate(add(negate(A), B))",
+            "fn_8(A, B, C) = add(C, add(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.288285,
+        "hints_time_sys": 0.020874999999999998,
+        "hints_time": 0.30916
+    },
+    {
+        "problem": "ROB025-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB026-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB030-1",
+        "mean_base_user_time": 0.00342559375,
+        "min_base_user_time": 0.001003,
+        "min_base_dir": "20250627_202331_ROB_7178699_565",
+        "abstractions": [
+            "fn_0(A) = equals(negate(A), negate(d))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(negate(A), negate(d))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004343,
+        "hints_time_sys": 0.004324,
+        "hints_time": 0.008667
+    },
+    {
+        "problem": "ROB031-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB031-2",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB032-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB032-2",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB033-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB034-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ROB035-1",
+        "status": "base timeout"
+    }
+]

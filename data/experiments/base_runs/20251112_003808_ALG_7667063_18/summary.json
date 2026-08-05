@@ -1,0 +1,117 @@
+[
+    {
+        "problem": "ALG005-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.067593,
+        "base_time_sys": 0.055761,
+        "base_time": 0.12335399999999999
+    },
+    {
+        "problem": "ALG006-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03923,
+        "base_time_sys": 0.047342999999999996,
+        "base_time": 0.086573
+    },
+    {
+        "problem": "ALG007-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.020176,
+        "base_time_sys": 0.045508,
+        "base_time": 0.06568399999999999
+    },
+    {
+        "problem": "ALG030-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11384899999999999,
+        "base_time_sys": 0.046026,
+        "base_time": 0.159875
+    },
+    {
+        "problem": "ALG069-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00513,
+        "base_time_sys": 0.046016999999999995,
+        "base_time": 0.051147
+    },
+    {
+        "problem": "ALG235-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.002104,
+        "base_time_sys": 0.04432,
+        "base_time": 0.046424,
+        "staus": "error"
+    },
+    {
+        "problem": "ALG236-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.040038,
+        "base_time_sys": 0.047088,
+        "base_time": 0.087126
+    },
+    {
+        "problem": "ALG237-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG238-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG239-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG240-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG241-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG242-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG243-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG244-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG245-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "ALG246-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 20.076992,
+        "base_time_sys": 0.658987,
+        "base_time": 20.735979
+    },
+    {
+        "problem": "ALG441-10",
+        "base_status": "timeout",
+        "error": ""
+    }
+]

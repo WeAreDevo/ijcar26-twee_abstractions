@@ -1,0 +1,175 @@
+[
+    {
+        "problem": "LCL024-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.390569,
+        "base_time_sys": 0.091252,
+        "base_time": 1.481821
+    },
+    {
+        "problem": "LCL038-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 30.421679,
+        "base_time_sys": 0.253669,
+        "base_time": 30.675348
+    },
+    {
+        "problem": "LCL042-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 345.157574,
+        "base_time_sys": 0.782806,
+        "base_time": 345.94038
+    },
+    {
+        "problem": "LCL084-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 80.257721,
+        "base_time_sys": 0.329963,
+        "base_time": 80.58768400000001
+    },
+    {
+        "problem": "LCL109-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.18520899999999998,
+        "base_time_sys": 0.073325,
+        "base_time": 0.258534
+    },
+    {
+        "problem": "LCL127-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 11.250829,
+        "base_time_sys": 0.182966,
+        "base_time": 11.433795
+    },
+    {
+        "problem": "LCL186-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.046256,
+        "base_time_sys": 0.070369,
+        "base_time": 0.116625
+    },
+    {
+        "problem": "LCL211-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 28.472763,
+        "base_time_sys": 0.272344,
+        "base_time": 28.745107
+    },
+    {
+        "problem": "LCL224-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL231-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL239-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.048287,
+        "base_time_sys": 0.06952599999999999,
+        "base_time": 0.11781299999999999
+    },
+    {
+        "problem": "LCL245-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL263-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL278-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL289-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL304-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL315-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL331-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL341-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL351-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL384-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.761375,
+        "base_time_sys": 0.08659,
+        "base_time": 1.8479649999999999
+    },
+    {
+        "problem": "LCL385-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 7.361383,
+        "base_time_sys": 0.43905099999999997,
+        "base_time": 7.800434
+    },
+    {
+        "problem": "LCL390-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 105.691932,
+        "base_time_sys": 0.44843,
+        "base_time": 106.140362
+    },
+    {
+        "problem": "LCL400-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.459847,
+        "base_time_sys": 0.093428,
+        "base_time": 1.553275
+    },
+    {
+        "problem": "LCL419-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "LCL897-10",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.020449,
+        "base_time_sys": 0.07130299999999999,
+        "base_time": 0.09175199999999999,
+        "staus": "error"
+    }
+]

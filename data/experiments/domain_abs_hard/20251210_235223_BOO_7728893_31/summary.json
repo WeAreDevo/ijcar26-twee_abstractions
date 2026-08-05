@@ -1,0 +1,41 @@
+[
+    {
+        "problem": "BOO004-10.p",
+        "domain_hints": [
+            "multiply(A, multiplicative_identity)",
+            "ifeq(product(A, B, C), true, D, true)",
+            "ifeq(sum(A, B, C), true, product(C, D, E), true)",
+            "ifeq2(product(A, B, C), true, C, D)",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, n1)",
+            "ifeq(A, true, B, true)",
+            "multiply(A, inverse(B))",
+            "add(A, inverse(B))",
+            "ifeq2(true, true, A, B)",
+            "ifeq(product(A, B, C), true, ifeq(sum(D, E, F), true, G, true), true)",
+            "add(multiply(A, B), multiply(C, B))",
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, additive_identity)",
+            "add(A, A)",
+            "multiply(A, inverse(A))",
+            "ifeq(true, true, product(A, B, C), true)",
+            "ifeq2(product(A, B, C), true, D, C)",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(additive_identity, additive_identity)",
+            "multiply(A, add(B, C))",
+            "ifeq(product(A, additive_identity, B), true, C, true)",
+            "add(A, multiply(B, C))"
+        ],
+        "final_hints": [
+            "add(C, multiply(B, A))",
+            "add(B, inverse(A))",
+            "ifeq(B, true, A, true)",
+            "ifeq(product(C, D, E), true, A, true)",
+            "multiply(additive_identity, A)",
+            "ifeq2(product(D, E, C), true, B, A)"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(Z, multiply(Y, X))\nhint 1.0: add(Y, inverse(X))\nhint 1.5: ifeq(Y, true, X, true)\nhint 2.0: ifeq(product(Z, Y4, Z4), true, X, true)\nhint 1.0: multiply(additive_identity, X)\nhint 1.5: ifeq2(product(Y4, Z4, Z), true, Y, X)\n\n[Timeout after 1000 seconds]"
+    }
+]

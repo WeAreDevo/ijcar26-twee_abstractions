@@ -1,0 +1,1027 @@
+[
+    {
+        "problem": "REL001-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.022661999999999998
+    },
+    {
+        "problem": "REL002-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007885
+    },
+    {
+        "problem": "REL004-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.109355
+    },
+    {
+        "problem": "REL004-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08133499999999999
+    },
+    {
+        "problem": "REL004-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.086519
+    },
+    {
+        "problem": "REL005-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.22178599999999998
+    },
+    {
+        "problem": "REL005-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.201619
+    },
+    {
+        "problem": "REL006-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08466399999999999
+    },
+    {
+        "problem": "REL007-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08320799999999999
+    },
+    {
+        "problem": "REL008-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.122123
+    },
+    {
+        "problem": "REL008-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.5875859999999999
+    },
+    {
+        "problem": "REL010-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D, E) = meet(one, join(D, complement(composition(top, join(E, join(complement(one), complement(composition(meet(C, B), A))))))))",
+            "fn_1 = complement(composition(top, complement(one)))",
+            "fn_2 = complement(one)",
+            "fn_3(A, B) = complement(composition(B, A))",
+            "fn_4(A, B, C, D) = meet(one, join(D, complement(composition(top, join(C, join(B, A))))))",
+            "fn_5(A, B, C) = complement(composition(meet(B, A), composition(C, B)))",
+            "fn_6(A, B, C) = composition(join(B, A), C)",
+            "fn_7(A) = meet(one, A)",
+            "fn_8(A, B, C) = join(C, composition(B, A))",
+            "fn_9(A) = complement(composition(top, A))",
+            "fn_10(A) = meet(A, one)",
+            "fn_13(A, B) = complement(composition(join(B, A), top))",
+            "fn_14(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_15(A, B, C) = complement(composition(meet(complement(composition(top, complement(one))), composition(B, complement(A))), composition(join(A, C), composition(B, complement(A)))))",
+            "fn_16(A) = meet(one, meet(complement(composition(top, complement(one))), complement(A)))",
+            "fn_17(A) = join(A, complement(one))",
+            "fn_18(A, B, C, D) = meet(one, join(D, composition(top, composition(join(B, C), A))))",
+            "fn_19(A) = composition(top, A)"
+        ],
+        "final_hints": [
+            "meet(one, join(A, complement(composition(top, join(B, join(complement(one), complement(composition(meet(C, D), E))))))))",
+            "complement(one)",
+            "complement(composition(top, complement(one)))",
+            "meet(A, complement(composition(top, complement(one))))",
+            "join(A, composition(B, C))",
+            "meet(one, A)",
+            "complement(composition(A, B))",
+            "meet(A, one)",
+            "complement(composition(meet(complement(composition(top, complement(one))), composition(A, complement(B))), composition(join(B, C), composition(A, complement(B)))))",
+            "complement(composition(top, A))",
+            "meet(one, meet(complement(composition(top, complement(one))), complement(A)))",
+            "join(A, complement(one))",
+            "complement(composition(join(A, B), top))",
+            "meet(one, join(A, complement(composition(top, join(B, join(C, D))))))",
+            "composition(top, A)",
+            "composition(join(A, B), C)",
+            "meet(one, join(A, composition(top, composition(join(B, C), D))))",
+            "complement(composition(meet(A, B), composition(C, A)))"
+        ],
+        "status": "success",
+        "hint_time_user": 5.621752000000001
+    },
+    {
+        "problem": "REL010-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.322252
+    },
+    {
+        "problem": "REL011-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 23.587175
+    },
+    {
+        "problem": "REL011-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.19850299999999999
+    },
+    {
+        "problem": "REL012-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.370036
+    },
+    {
+        "problem": "REL012-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.427108
+    },
+    {
+        "problem": "REL015-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.027001999999999998
+    },
+    {
+        "problem": "REL016-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = complement(composition(top, complement(one)))",
+            "fn_1(A, B, C) = composition(meet(B, A), C)",
+            "fn_2 = complement(one)",
+            "fn_3(A) = composition(top, A)",
+            "fn_5(A) = composition(A, top)",
+            "fn_6(A) = meet(one, A)",
+            "fn_8(A, B) = composition(converse(A), B)",
+            "fn_9(A) = composition(complement(A), converse(A))",
+            "fn_10(A) = join(complement(one), A)",
+            "fn_11(A) = meet(A, one)",
+            "fn_13(A) = composition(complement(A), join(A, complement(one)))",
+            "fn_14(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_15(A) = meet(one, complement(A))",
+            "fn_16(A) = composition(converse(complement(A)), A)",
+            "fn_17(A, B) = meet(B, converse(A))",
+            "fn_18(A, B) = join(B, composition(top, A))",
+            "fn_19(A) = converse(complement(A))"
+        ],
+        "final_hints": [
+            "composition(meet(A, B), C)",
+            "complement(one)",
+            "complement(composition(top, complement(one)))",
+            "composition(A, top)",
+            "join(complement(one), A)",
+            "meet(one, A)",
+            "meet(A, one)",
+            "composition(complement(A), converse(A))",
+            "meet(A, complement(composition(top, complement(one))))",
+            "meet(one, complement(A))",
+            "composition(converse(complement(A)), A)",
+            "meet(A, converse(B))",
+            "join(A, composition(top, B))",
+            "composition(top, A)",
+            "composition(complement(A), join(A, complement(one)))",
+            "composition(converse(A), B)",
+            "converse(complement(A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL016-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = composition(top, complement(one))",
+            "fn_1(A, B, C) = composition(meet(B, A), C)",
+            "fn_2 = complement(one)",
+            "fn_4(A) = meet(one, A)",
+            "fn_5(A) = composition(top, A)",
+            "fn_7(A) = meet(A, one)",
+            "fn_8(A) = join(complement(one), A)",
+            "fn_9(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_10(A, B) = composition(converse(A), B)",
+            "fn_11(A, B) = composition(complement(A), B)",
+            "fn_12(A, B) = join(complement(A), B)",
+            "fn_13(A) = composition(A, top)",
+            "fn_14(A, B) = join(complement(one), meet(B, A))",
+            "fn_15(A) = join(A, complement(one))",
+            "fn_16(A, B) = composition(B, converse(A))",
+            "fn_17(A, B) = meet(B, converse(A))",
+            "fn_18(A) = composition(converse(complement(A)), A)",
+            "fn_19(A) = meet(one, complement(A))"
+        ],
+        "final_hints": [
+            "composition(meet(A, B), C)",
+            "complement(one)",
+            "meet(A, complement(composition(top, complement(one))))",
+            "composition(A, top)",
+            "meet(A, one)",
+            "meet(one, A)",
+            "join(complement(one), A)",
+            "composition(complement(A), B)",
+            "join(complement(A), B)",
+            "join(complement(one), meet(A, B))",
+            "join(A, complement(one))",
+            "meet(A, converse(B))",
+            "composition(converse(complement(A)), A)",
+            "meet(one, complement(A))",
+            "composition(top, complement(one))",
+            "composition(top, A)",
+            "composition(converse(A), B)",
+            "composition(A, converse(B))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL016-3.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(composition(top, composition(C, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(A, top))))))",
+            "fn_1 = complement(one)",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A) = composition(top, A)",
+            "fn_4(A) = composition(A, top)",
+            "fn_5(A) = join(one, A)",
+            "fn_6(A, B) = complement(composition(B, A))",
+            "fn_8(A) = complement(join(one, composition(converse(A), one)))",
+            "fn_9(A) = meet(one, A)",
+            "fn_10(A, B, C) = composition(join(complement(one), join(C, composition(B, top))), A)",
+            "fn_11(A, B) = join(complement(one), composition(A, B))",
+            "fn_12(A) = complement(join(one, converse(A)))",
+            "fn_13(A) = join(A, one)",
+            "fn_14(A, B, C) = join(composition(B, A), C)",
+            "fn_15(A, B) = composition(join(complement(one), composition(top, converse(A))), B)",
+            "fn_19(A) = meet(A, one)"
+        ],
+        "final_hints": [
+            "composition(join(complement(one), join(A, composition(B, top))), C)",
+            "complement(one)",
+            "composition(A, top)",
+            "complement(join(one, converse(A)))",
+            "join(A, composition(B, C))",
+            "meet(one, A)",
+            "complement(composition(A, B))",
+            "meet(A, one)",
+            "join(complement(one), composition(A, B))",
+            "composition(join(complement(one), composition(top, converse(A))), B)",
+            "join(composition(A, B), C)",
+            "composition(top, A)",
+            "join(one, A)",
+            "join(composition(top, composition(A, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(C, top))))))",
+            "complement(join(one, composition(converse(A), one)))",
+            "join(A, one)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL017-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = composition(top, complement(one))",
+            "fn_1(A) = composition(top, A)",
+            "fn_2 = complement(one)",
+            "fn_3(A) = composition(A, top)",
+            "fn_4(A) = meet(one, A)",
+            "fn_5(A) = meet(A, one)",
+            "fn_6 = complement(composition(top, complement(one)))",
+            "fn_7(A, B, C) = meet(complement(composition(top, A)), join(C, composition(top, composition(join(A, B), complement(composition(top, A))))))",
+            "fn_8(A, B) = composition(converse(A), B)",
+            "fn_9(A) = join(A, complement(one))",
+            "fn_10(A) = complement(composition(top, A))",
+            "fn_11(A) = complement(composition(A, top))",
+            "fn_12(A) = composition(complement(one), A)",
+            "fn_13(A, B) = composition(meet(one, A), B)",
+            "fn_14(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_15(A, B) = composition(meet(A, one), B)",
+            "fn_16(A, B, C) = composition(top, composition(join(C, composition(B, composition(top, complement(one)))), A))",
+            "fn_17(A) = join(complement(one), A)",
+            "fn_18(A, B) = composition(B, converse(A))"
+        ],
+        "final_hints": [
+            "complement(one)",
+            "composition(meet(one, A), B)",
+            "meet(A, one)",
+            "join(A, complement(one))",
+            "composition(top, A)",
+            "meet(complement(composition(top, A)), join(B, composition(top, composition(join(A, C), complement(composition(top, A))))))",
+            "composition(converse(A), B)",
+            "composition(meet(A, one), B)",
+            "composition(A, converse(B))",
+            "composition(A, top)",
+            "complement(composition(top, complement(one)))",
+            "join(complement(one), A)",
+            "meet(one, A)",
+            "composition(complement(one), A)",
+            "complement(composition(A, top))",
+            "composition(top, complement(one))",
+            "complement(composition(top, A))",
+            "meet(A, complement(composition(top, complement(one))))",
+            "composition(top, composition(join(A, composition(B, composition(top, complement(one)))), C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL017-3.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(composition(top, composition(C, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(A, top))))))",
+            "fn_1 = complement(one)",
+            "fn_2(A) = composition(top, A)",
+            "fn_3(A, B, C) = join(C, composition(B, A))",
+            "fn_4(A) = composition(A, top)",
+            "fn_5(A) = join(one, A)",
+            "fn_6(A, B) = complement(composition(B, A))",
+            "fn_8(A) = complement(join(one, composition(converse(A), one)))",
+            "fn_9(A, B, C) = composition(join(complement(one), join(C, composition(B, top))), A)",
+            "fn_10(A) = meet(one, A)",
+            "fn_11(A, B) = composition(top, composition(B, A))",
+            "fn_13(A) = complement(join(one, converse(A)))",
+            "fn_14(A) = join(complement(one), composition(top, converse(A)))",
+            "fn_16(A, B) = meet(B, composition(A, top))",
+            "fn_17(A) = join(A, one)",
+            "fn_19 = composition(top, complement(one))"
+        ],
+        "final_hints": [
+            "composition(join(complement(one), join(A, composition(B, top))), C)",
+            "complement(one)",
+            "composition(A, top)",
+            "complement(join(one, converse(A)))",
+            "join(A, composition(B, C))",
+            "meet(one, A)",
+            "complement(composition(A, B))",
+            "composition(top, composition(A, B))",
+            "join(complement(one), composition(top, converse(A)))",
+            "composition(top, complement(one))",
+            "composition(top, A)",
+            "join(one, A)",
+            "join(composition(top, composition(A, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(C, top))))))",
+            "meet(A, composition(B, top))",
+            "complement(join(one, composition(converse(A), one)))",
+            "join(A, one)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL018-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.083197
+    },
+    {
+        "problem": "REL019-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.058896
+    },
+    {
+        "problem": "REL019-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.182262
+    },
+    {
+        "problem": "REL020-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.772368
+    },
+    {
+        "problem": "REL020-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 16.895447
+    },
+    {
+        "problem": "REL021-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.762426
+    },
+    {
+        "problem": "REL021-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 16.956454
+    },
+    {
+        "problem": "REL022-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.782463
+    },
+    {
+        "problem": "REL022-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 16.671459
+    },
+    {
+        "problem": "REL023-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.031598999999999995
+    },
+    {
+        "problem": "REL023-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029235999999999998
+    },
+    {
+        "problem": "REL024-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.116715
+    },
+    {
+        "problem": "REL024-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.5780109999999999
+    },
+    {
+        "problem": "REL025-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.632336
+    },
+    {
+        "problem": "REL026-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.628157
+    },
+    {
+        "problem": "REL026-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.105207
+    },
+    {
+        "problem": "REL027-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.038901
+    },
+    {
+        "problem": "REL027-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.391045
+    },
+    {
+        "problem": "REL028-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.442173
+    },
+    {
+        "problem": "REL028-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.29442
+    },
+    {
+        "problem": "REL029-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.184464
+    },
+    {
+        "problem": "REL029-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.658669
+    },
+    {
+        "problem": "REL029-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.609757
+    },
+    {
+        "problem": "REL030-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.805333
+    },
+    {
+        "problem": "REL030-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.487213
+    },
+    {
+        "problem": "REL031-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.814787
+    },
+    {
+        "problem": "REL031-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 9.24876
+    },
+    {
+        "problem": "REL032-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = complement(composition(top, complement(one)))",
+            "fn_1(A, B, C) = composition(meet(B, A), C)",
+            "fn_2 = complement(one)",
+            "fn_3(A) = composition(top, A)",
+            "fn_4(A) = meet(one, A)",
+            "fn_6(A) = composition(A, top)",
+            "fn_8(A, B) = composition(converse(A), B)",
+            "fn_9(A) = composition(complement(A), converse(A))",
+            "fn_10(A) = join(complement(one), A)",
+            "fn_11(A) = meet(A, one)",
+            "fn_13(A) = composition(complement(A), join(A, complement(one)))",
+            "fn_14(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_15(A) = meet(one, complement(A))",
+            "fn_16(A) = composition(converse(complement(A)), A)",
+            "fn_17(A, B) = meet(B, converse(A))",
+            "fn_18(A, B) = join(B, composition(top, A))",
+            "fn_19(A) = converse(complement(A))"
+        ],
+        "final_hints": [
+            "composition(meet(A, B), C)",
+            "complement(one)",
+            "complement(composition(top, complement(one)))",
+            "composition(A, top)",
+            "join(complement(one), A)",
+            "meet(one, A)",
+            "meet(A, one)",
+            "composition(complement(A), converse(A))",
+            "meet(A, complement(composition(top, complement(one))))",
+            "meet(one, complement(A))",
+            "composition(converse(complement(A)), A)",
+            "meet(A, converse(B))",
+            "join(A, composition(top, B))",
+            "composition(top, A)",
+            "composition(complement(A), join(A, complement(one)))",
+            "composition(converse(A), B)",
+            "converse(complement(A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL032-2.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(composition(top, composition(C, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(A, top))))))",
+            "fn_1 = complement(one)",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A) = composition(top, A)",
+            "fn_4(A) = composition(A, top)",
+            "fn_5(A) = join(one, A)",
+            "fn_6(A, B) = complement(composition(B, A))",
+            "fn_8(A) = complement(join(one, composition(converse(A), one)))",
+            "fn_9(A) = meet(one, A)",
+            "fn_10(A, B, C) = composition(join(complement(one), join(C, composition(B, top))), A)",
+            "fn_11(A, B) = join(complement(one), composition(A, B))",
+            "fn_12(A) = complement(join(one, converse(A)))",
+            "fn_13(A) = join(A, one)",
+            "fn_14(A, B, C) = join(composition(B, A), C)",
+            "fn_15(A, B) = composition(join(complement(one), composition(top, converse(A))), B)",
+            "fn_19(A) = meet(A, one)"
+        ],
+        "final_hints": [
+            "composition(join(complement(one), join(A, composition(B, top))), C)",
+            "complement(one)",
+            "composition(A, top)",
+            "complement(join(one, converse(A)))",
+            "join(A, composition(B, C))",
+            "meet(one, A)",
+            "complement(composition(A, B))",
+            "meet(A, one)",
+            "join(complement(one), composition(A, B))",
+            "composition(join(complement(one), composition(top, converse(A))), B)",
+            "join(composition(A, B), C)",
+            "composition(top, A)",
+            "join(one, A)",
+            "join(composition(top, composition(A, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(C, top))))))",
+            "complement(join(one, composition(converse(A), one)))",
+            "join(A, one)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL033-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.786004
+    },
+    {
+        "problem": "REL033-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 16.664777
+    },
+    {
+        "problem": "REL034-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.823865
+    },
+    {
+        "problem": "REL034-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.264424
+    },
+    {
+        "problem": "REL035-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.797469
+    },
+    {
+        "problem": "REL035-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 42.737795
+    },
+    {
+        "problem": "REL036-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.83629
+    },
+    {
+        "problem": "REL036-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.461251
+    },
+    {
+        "problem": "REL037-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.8274369999999998
+    },
+    {
+        "problem": "REL037-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 42.521073
+    },
+    {
+        "problem": "REL038-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = complement(composition(top, complement(one)))",
+            "fn_1(A, B, C) = composition(meet(B, A), C)",
+            "fn_2 = complement(one)",
+            "fn_3(A) = composition(top, A)",
+            "fn_5(A) = composition(A, top)",
+            "fn_6(A) = meet(one, A)",
+            "fn_8(A, B) = composition(converse(A), B)",
+            "fn_9(A) = join(complement(one), A)",
+            "fn_10(A) = composition(complement(A), converse(A))",
+            "fn_11(A) = meet(A, one)",
+            "fn_12(A) = join(A, complement(one))",
+            "fn_14(A, B) = meet(B, converse(A))",
+            "fn_15(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_16(A) = meet(one, complement(A))",
+            "fn_17(A) = composition(converse(complement(A)), A)",
+            "fn_19(A) = composition(complement(A), join(A, complement(one)))"
+        ],
+        "final_hints": [
+            "composition(meet(A, B), C)",
+            "complement(one)",
+            "complement(composition(top, complement(one)))",
+            "composition(A, top)",
+            "join(complement(one), A)",
+            "meet(one, A)",
+            "meet(A, one)",
+            "composition(complement(A), converse(A))",
+            "meet(A, complement(composition(top, complement(one))))",
+            "meet(one, complement(A))",
+            "join(A, complement(one))",
+            "meet(A, converse(B))",
+            "composition(converse(complement(A)), A)",
+            "composition(top, A)",
+            "composition(complement(A), join(A, complement(one)))",
+            "composition(converse(A), B)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL039-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = meet(one, A)",
+            "fn_1 = complement(one)",
+            "fn_2(A) = composition(top, A)",
+            "fn_3(A, B) = composition(B, complement(A))",
+            "fn_4(A) = composition(A, top)",
+            "fn_5(A) = meet(A, one)",
+            "fn_6(A) = join(complement(one), A)",
+            "fn_7(A) = composition(complement(A), A)",
+            "fn_8(A) = meet(one, complement(A))",
+            "fn_9(A) = composition(top, converse(A))",
+            "fn_10(A) = meet(one, composition(A, complement(A)))",
+            "fn_11(A, B) = composition(converse(A), B)",
+            "fn_12 = complement(composition(top, complement(one)))",
+            "fn_13(A) = join(one, complement(composition(top, A)))",
+            "fn_14(A, B) = meet(one, composition(B, A))",
+            "fn_15(A) = composition(complement(one), meet(A, one))",
+            "fn_17(A) = composition(A, A)",
+            "fn_18(A) = complement(converse(A))",
+            "fn_19(A, B) = composition(converse(A), complement(B))"
+        ],
+        "final_hints": [
+            "complement(one)",
+            "meet(A, one)",
+            "meet(one, composition(A, complement(A)))",
+            "composition(converse(A), complement(B))",
+            "composition(converse(A), B)",
+            "composition(A, top)",
+            "complement(composition(top, complement(one)))",
+            "join(complement(one), A)",
+            "meet(one, A)",
+            "meet(one, composition(A, B))",
+            "complement(converse(A))",
+            "composition(A, complement(B))",
+            "composition(complement(A), A)",
+            "meet(one, complement(A))",
+            "composition(complement(one), meet(A, one))",
+            "composition(A, A)",
+            "composition(top, converse(A))",
+            "join(one, complement(composition(top, A)))",
+            "composition(top, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL040-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = complement(composition(top, complement(one)))",
+            "fn_1 = composition(complement(sk1), top)",
+            "fn_2(A, B) = complement(composition(B, A))",
+            "fn_3(A, B) = meet(one, join(B, A))",
+            "fn_4(A, B, C) = complement(composition(top, join(C, join(complement(one), complement(composition(meet(A, complement(composition(top, complement(one)))), composition(B, A)))))))",
+            "fn_5(A) = join(A, complement(sk1))",
+            "fn_6(A) = composition(top, A)",
+            "fn_8(A, B, C) = composition(join(B, A), C)",
+            "fn_9(A, B) = complement(composition(join(B, A), top))",
+            "fn_10(A, B, C, D, E) = meet(C, join(D, composition(join(E, A), composition(converse(composition(complement(sk1), top)), composition(top, complement(composition(join(E, A), converse(B))))))))",
+            "fn_12(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_13 = complement(composition(complement(sk1), top))",
+            "fn_14(A) = composition(complement(sk1), composition(top, A))",
+            "fn_16(A) = composition(A, top)",
+            "fn_17 = complement(one)",
+            "fn_18(A, B) = join(B, converse(A))"
+        ],
+        "final_hints": [
+            "meet(A, complement(composition(top, complement(one))))",
+            "complement(composition(top, complement(one)))",
+            "composition(complement(sk1), composition(top, A))",
+            "composition(A, top)",
+            "complement(one)",
+            "complement(composition(A, B))",
+            "meet(A, join(B, composition(join(C, D), composition(converse(composition(complement(sk1), top)), composition(top, complement(composition(join(C, D), converse(E))))))))",
+            "complement(composition(complement(sk1), top))",
+            "meet(one, join(A, B))",
+            "join(A, converse(B))",
+            "complement(composition(join(A, B), top))",
+            "complement(composition(top, join(A, join(complement(one), complement(composition(meet(B, complement(composition(top, complement(one)))), composition(C, B)))))))",
+            "composition(top, A)",
+            "composition(complement(sk1), top)",
+            "composition(join(A, B), C)",
+            "join(A, complement(sk1))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL040-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(composition(top, composition(C, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(A, top))))))",
+            "fn_1 = complement(one)",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A, B) = complement(composition(B, A))",
+            "fn_4(A) = composition(top, A)",
+            "fn_5 = join(one, composition(complement(one), complement(composition(complement(one), complement(one)))))",
+            "fn_6(A) = composition(A, top)",
+            "fn_7(A) = meet(one, A)",
+            "fn_8(A, B, C) = join(composition(top, composition(meet(B, A), top)), composition(complement(composition(C, complement(join(one, composition(converse(C), one))))), composition(one, complement(composition(top, composition(meet(B, A), top))))))",
+            "fn_9(A) = join(one, converse(A))",
+            "fn_10(A) = complement(join(one, composition(converse(A), one)))",
+            "fn_11(A) = join(A, one)",
+            "fn_12(A, B, C) = composition(join(complement(one), join(C, composition(B, top))), A)",
+            "fn_13(A) = composition(complement(one), A)",
+            "fn_14(A) = join(complement(one), composition(top, converse(A)))",
+            "fn_16(A, B) = composition(B, composition(top, A))",
+            "fn_17(A, B) = meet(B, composition(A, top))",
+            "fn_18(A) = join(one, A)"
+        ],
+        "final_hints": [
+            "composition(join(complement(one), join(A, composition(B, top))), C)",
+            "complement(one)",
+            "composition(A, top)",
+            "join(A, composition(B, C))",
+            "meet(one, A)",
+            "complement(composition(A, B))",
+            "composition(A, composition(top, B))",
+            "join(one, composition(complement(one), complement(composition(complement(one), complement(one)))))",
+            "composition(complement(one), A)",
+            "join(complement(one), composition(top, converse(A)))",
+            "join(composition(top, composition(meet(A, B), top)), composition(complement(composition(C, complement(join(one, composition(converse(C), one))))), composition(one, complement(composition(top, composition(meet(A, B), top))))))",
+            "composition(top, A)",
+            "join(one, A)",
+            "meet(A, composition(B, top))",
+            "join(composition(top, composition(A, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(C, top))))))",
+            "join(one, converse(A))",
+            "complement(join(one, composition(converse(A), one)))",
+            "join(A, one)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL040-3.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(composition(top, composition(C, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(A, top))))))",
+            "fn_1 = composition(complement(one), complement(composition(complement(one), complement(one))))",
+            "fn_2 = complement(one)",
+            "fn_3(A) = composition(top, A)",
+            "fn_4(A) = join(one, A)",
+            "fn_5(A) = composition(A, top)",
+            "fn_6(A, B) = complement(composition(B, A))",
+            "fn_7(A, B, C) = join(composition(top, composition(meet(B, A), top)), composition(complement(composition(C, complement(join(one, composition(converse(C), one))))), composition(one, complement(composition(top, composition(meet(B, A), top))))))",
+            "fn_8(A, B, C) = join(C, composition(B, A))",
+            "fn_9(A) = complement(join(one, composition(converse(A), one)))",
+            "fn_10(A, B, C) = composition(join(complement(one), join(C, composition(B, top))), A)",
+            "fn_11(A) = meet(one, composition(A, composition(complement(one), join(one, composition(complement(one), complement(composition(complement(one), complement(one))))))))",
+            "fn_12(A) = complement(join(one, converse(A)))",
+            "fn_13(A) = join(complement(one), composition(top, converse(A)))",
+            "fn_14(A, B) = complement(meet(B, A))",
+            "fn_15(A, B) = composition(top, composition(B, A))",
+            "fn_18(A) = complement(composition(converse(join(A, one)), complement(one)))",
+            "fn_19(A, B) = meet(B, complement(A))"
+        ],
+        "final_hints": [
+            "composition(join(complement(one), join(A, composition(B, top))), C)",
+            "meet(one, composition(A, composition(complement(one), join(one, composition(complement(one), complement(composition(complement(one), complement(one))))))))",
+            "complement(one)",
+            "composition(complement(one), complement(composition(complement(one), complement(one))))",
+            "composition(A, top)",
+            "join(A, composition(B, C))",
+            "complement(join(one, converse(A)))",
+            "complement(composition(A, B))",
+            "composition(top, composition(A, B))",
+            "join(complement(one), composition(top, converse(A)))",
+            "complement(composition(converse(join(A, one)), complement(one)))",
+            "complement(meet(A, B))",
+            "join(composition(top, composition(meet(A, B), top)), composition(complement(composition(C, complement(join(one, composition(converse(C), one))))), composition(one, complement(composition(top, composition(meet(A, B), top))))))",
+            "composition(top, A)",
+            "join(one, A)",
+            "meet(A, complement(B))",
+            "join(composition(top, composition(A, top)), composition(complement(composition(B, complement(join(one, composition(converse(B), one))))), composition(one, complement(composition(top, composition(C, top))))))",
+            "complement(join(one, composition(converse(A), one)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL041-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.656789
+    },
+    {
+        "problem": "REL041-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.681228
+    },
+    {
+        "problem": "REL042-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.477007
+    },
+    {
+        "problem": "REL042-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.323733
+    },
+    {
+        "problem": "REL043-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 24.153396
+    },
+    {
+        "problem": "REL043-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.744991
+    },
+    {
+        "problem": "REL044-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 23.393283
+    },
+    {
+        "problem": "REL044-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.8839699999999999
+    },
+    {
+        "problem": "REL045-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = composition(top, complement(one))",
+            "fn_1(A, B) = complement(composition(B, A))",
+            "fn_2(A) = composition(top, A)",
+            "fn_3 = complement(one)",
+            "fn_4(A) = composition(A, top)",
+            "fn_5(A) = meet(one, A)",
+            "fn_6 = complement(composition(top, complement(one)))",
+            "fn_7(A) = complement(composition(top, A))",
+            "fn_9(A, B, C) = meet(complement(composition(top, A)), join(C, composition(top, composition(join(A, B), complement(composition(top, A))))))",
+            "fn_10(A) = meet(A, one)",
+            "fn_12(A) = join(A, complement(one))",
+            "fn_13(A) = meet(A, complement(composition(top, complement(one))))",
+            "fn_14(A, B) = composition(B, composition(top, A))",
+            "fn_15(A) = meet(one, complement(A))",
+            "fn_16 = complement(composition(top, composition(complement(one), top)))",
+            "fn_17(A) = composition(complement(one), join(A, complement(one)))",
+            "fn_19(A, B) = composition(converse(A), B)"
+        ],
+        "final_hints": [
+            "complement(one)",
+            "composition(A, top)",
+            "complement(composition(top, complement(one)))",
+            "meet(A, one)",
+            "meet(one, A)",
+            "complement(composition(A, B))",
+            "meet(A, complement(composition(top, complement(one))))",
+            "composition(A, composition(top, B))",
+            "meet(one, complement(A))",
+            "join(A, complement(one))",
+            "composition(converse(A), B)",
+            "complement(composition(top, composition(complement(one), top)))",
+            "meet(complement(composition(top, A)), join(B, composition(top, composition(join(A, C), complement(composition(top, A))))))",
+            "composition(top, complement(one))",
+            "composition(top, A)",
+            "composition(complement(one), join(A, complement(one)))",
+            "complement(composition(top, A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "REL045-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.76355
+    },
+    {
+        "problem": "REL047-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.959266
+    },
+    {
+        "problem": "REL049-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0062450000000000006
+    },
+    {
+        "problem": "REL050-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.9312969999999999
+    },
+    {
+        "problem": "REL050-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.42055999999999993
+    }
+]

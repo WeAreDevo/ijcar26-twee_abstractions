@@ -1,0 +1,913 @@
+[
+    {
+        "problem": "COL001-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.70141,
+        "base_time_sys": 0.141324,
+        "base_time": 1.842734
+    },
+    {
+        "problem": "COL001-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008986,
+        "base_time_sys": 0.09387799999999999,
+        "base_time": 0.10286399999999998
+    },
+    {
+        "problem": "COL002-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007911999999999999,
+        "base_time_sys": 0.096966,
+        "base_time": 0.104878
+    },
+    {
+        "problem": "COL002-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0009599999999999999,
+        "base_time_sys": 0.088574,
+        "base_time": 0.089534
+    },
+    {
+        "problem": "COL002-5",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL003-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL003-12",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15115499999999998,
+        "base_time_sys": 0.102784,
+        "base_time": 0.25393899999999997
+    },
+    {
+        "problem": "COL003-13",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.156252,
+        "base_time_sys": 0.09093599999999999,
+        "base_time": 0.247188
+    },
+    {
+        "problem": "COL003-14",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.142267,
+        "base_time_sys": 0.10997699999999999,
+        "base_time": 0.252244
+    },
+    {
+        "problem": "COL003-15",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.14817,
+        "base_time_sys": 0.10113799999999999,
+        "base_time": 0.24930799999999997
+    },
+    {
+        "problem": "COL003-16",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.14446599999999998,
+        "base_time_sys": 0.11573499999999999,
+        "base_time": 0.26020099999999996
+    },
+    {
+        "problem": "COL003-17",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.14806,
+        "base_time_sys": 0.10792,
+        "base_time": 0.25598
+    },
+    {
+        "problem": "COL003-18",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15737199999999998,
+        "base_time_sys": 0.100992,
+        "base_time": 0.258364
+    },
+    {
+        "problem": "COL003-19",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15082199999999998,
+        "base_time_sys": 0.11386299999999999,
+        "base_time": 0.26468499999999995
+    },
+    {
+        "problem": "COL003-20",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.155738,
+        "base_time_sys": 0.103573,
+        "base_time": 0.25931099999999996
+    },
+    {
+        "problem": "COL004-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL004-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0059299999999999995,
+        "base_time_sys": 0.106585,
+        "base_time": 0.112515
+    },
+    {
+        "problem": "COL006-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.761404,
+        "base_time_sys": 0.143016,
+        "base_time": 1.90442
+    },
+    {
+        "problem": "COL006-5",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL006-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 558.039129,
+        "base_time_sys": 2.107208,
+        "base_time": 560.146337
+    },
+    {
+        "problem": "COL006-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 616.609098,
+        "base_time_sys": 2.722482,
+        "base_time": 619.33158
+    },
+    {
+        "problem": "COL007-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.001966,
+        "base_time_sys": 0.08709399999999999,
+        "base_time": 0.08905999999999999,
+        "staus": "error"
+    },
+    {
+        "problem": "COL008-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002946,
+        "base_time_sys": 0.089253,
+        "base_time": 0.092199
+    },
+    {
+        "problem": "COL009-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.799833,
+        "base_time_sys": 0.18926099999999998,
+        "base_time": 3.989094
+    },
+    {
+        "problem": "COL010-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001937,
+        "base_time_sys": 0.094819,
+        "base_time": 0.096756
+    },
+    {
+        "problem": "COL011-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL012-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.001004,
+        "base_time_sys": 0.093357,
+        "base_time": 0.094361,
+        "staus": "error"
+    },
+    {
+        "problem": "COL013-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.001961,
+        "base_time_sys": 0.094097,
+        "base_time": 0.096058,
+        "staus": "error"
+    },
+    {
+        "problem": "COL014-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.0019549999999999997,
+        "base_time_sys": 0.090971,
+        "base_time": 0.092926,
+        "staus": "error"
+    },
+    {
+        "problem": "COL015-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0049099999999999994,
+        "base_time_sys": 0.093342,
+        "base_time": 0.09825199999999999
+    },
+    {
+        "problem": "COL016-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.004847,
+        "base_time_sys": 0.093009,
+        "base_time": 0.097856,
+        "staus": "error"
+    },
+    {
+        "problem": "COL017-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003008,
+        "base_time_sys": 0.105319,
+        "base_time": 0.10832699999999999
+    },
+    {
+        "problem": "COL018-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.000982,
+        "base_time_sys": 0.098133,
+        "base_time": 0.099115,
+        "staus": "error"
+    },
+    {
+        "problem": "COL019-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005907,
+        "base_time_sys": 0.098411,
+        "base_time": 0.104318
+    },
+    {
+        "problem": "COL020-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009965,
+        "base_time_sys": 0.10442399999999999,
+        "base_time": 0.11438899999999999
+    },
+    {
+        "problem": "COL021-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007897,
+        "base_time_sys": 0.104464,
+        "base_time": 0.112361
+    },
+    {
+        "problem": "COL022-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008992,
+        "base_time_sys": 0.098936,
+        "base_time": 0.107928
+    },
+    {
+        "problem": "COL023-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010636999999999999,
+        "base_time_sys": 0.106323,
+        "base_time": 0.11696
+    },
+    {
+        "problem": "COL024-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0029519999999999998,
+        "base_time_sys": 0.104279,
+        "base_time": 0.10723099999999999
+    },
+    {
+        "problem": "COL025-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004835,
+        "base_time_sys": 0.09307499999999999,
+        "base_time": 0.09791
+    },
+    {
+        "problem": "COL026-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.038782,
+        "base_time_sys": 0.101434,
+        "base_time": 0.140216
+    },
+    {
+        "problem": "COL027-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01513,
+        "base_time_sys": 0.100894,
+        "base_time": 0.116024
+    },
+    {
+        "problem": "COL029-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.004089,
+        "base_time_sys": 0.089832,
+        "base_time": 0.09392099999999999,
+        "staus": "error"
+    },
+    {
+        "problem": "COL030-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.220778,
+        "base_time_sys": 0.134658,
+        "base_time": 2.355436
+    },
+    {
+        "problem": "COL031-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006924,
+        "base_time_sys": 0.097993,
+        "base_time": 0.104917
+    },
+    {
+        "problem": "COL032-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011026,
+        "base_time_sys": 0.094215,
+        "base_time": 0.10524099999999999
+    },
+    {
+        "problem": "COL033-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014837,
+        "base_time_sys": 0.104886,
+        "base_time": 0.119723
+    },
+    {
+        "problem": "COL034-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL035-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.175678,
+        "base_time_sys": 0.10402199999999999,
+        "base_time": 0.2797
+    },
+    {
+        "problem": "COL036-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.039495,
+        "base_time_sys": 0.12698399999999999,
+        "base_time": 1.166479
+    },
+    {
+        "problem": "COL037-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.092625,
+        "base_time_sys": 0.110428,
+        "base_time": 0.20305299999999998
+    },
+    {
+        "problem": "COL038-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL039-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01112,
+        "base_time_sys": 0.09995599999999999,
+        "base_time": 0.111076
+    },
+    {
+        "problem": "COL041-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 353.277779,
+        "base_time_sys": 1.28762,
+        "base_time": 354.565399
+    },
+    {
+        "problem": "COL042-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL042-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 8.987301,
+        "base_time_sys": 0.26708,
+        "base_time": 9.254381
+    },
+    {
+        "problem": "COL042-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.096744,
+        "base_time_sys": 0.10170699999999999,
+        "base_time": 0.198451
+    },
+    {
+        "problem": "COL042-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.752991,
+        "base_time_sys": 0.125347,
+        "base_time": 0.878338
+    },
+    {
+        "problem": "COL042-8",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09770899999999999,
+        "base_time_sys": 0.10095799999999999,
+        "base_time": 0.19866699999999998
+    },
+    {
+        "problem": "COL042-9",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.898165,
+        "base_time_sys": 0.134152,
+        "base_time": 1.032317
+    },
+    {
+        "problem": "COL043-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL043-3",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL044-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010689,
+        "base_time_sys": 0.03604400000000001,
+        "base_time": 0.04673300000000001
+    },
+    {
+        "problem": "COL044-6",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL044-7",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL044-8",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL044-9",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL045-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0035119999999999995,
+        "base_time_sys": 0.007924,
+        "base_time": 0.011436
+    },
+    {
+        "problem": "COL046-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "COL048-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005006,
+        "base_time_sys": 0.008992000000000014,
+        "base_time": 0.013998000000000014
+    },
+    {
+        "problem": "COL049-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 635.471155,
+        "base_time_sys": 1.9569870000000003,
+        "base_time": 637.428142
+    },
+    {
+        "problem": "COL050-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002994,
+        "base_time_sys": 0.008984999999999993,
+        "base_time": 0.011978999999999993
+    },
+    {
+        "problem": "COL051-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0034070000000000003,
+        "base_time_sys": 0.009068999999999994,
+        "base_time": 0.012475999999999994
+    },
+    {
+        "problem": "COL052-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0009820000000000002,
+        "base_time_sys": 0.016709,
+        "base_time": 0.017691000000000002
+    },
+    {
+        "problem": "COL053-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.003939,
+        "base_time_sys": 0.009840999999999989,
+        "base_time": 0.013779999999999988,
+        "staus": "error"
+    },
+    {
+        "problem": "COL056-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.004906999999999998,
+        "base_time_sys": 0.005878999999999995,
+        "base_time": 0.010785999999999994,
+        "staus": "error"
+    },
+    {
+        "problem": "COL057-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.06953699999999999,
+        "base_time_sys": 0.013277000000000011,
+        "base_time": 0.082814
+    },
+    {
+        "problem": "COL058-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005516999999999999,
+        "base_time_sys": 0.007676999999999989,
+        "base_time": 0.013193999999999989
+    },
+    {
+        "problem": "COL058-2",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.005148,
+        "base_time_sys": 0.00923800000000001,
+        "base_time": 0.01438600000000001,
+        "staus": "error"
+    },
+    {
+        "problem": "COL058-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011137,
+        "base_time_sys": 0.017594,
+        "base_time": 0.028731
+    },
+    {
+        "problem": "COL059-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0040999999999999995,
+        "base_time_sys": 0.01636,
+        "base_time": 0.02046
+    },
+    {
+        "problem": "COL060-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.045580999999999997,
+        "base_time_sys": 0.013572,
+        "base_time": 0.059153,
+        "staus": "error"
+    },
+    {
+        "problem": "COL060-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002852999999999998,
+        "base_time_sys": 0.017115999999999992,
+        "base_time": 0.01996899999999999
+    },
+    {
+        "problem": "COL060-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005716999999999996,
+        "base_time_sys": 0.017143000000000005,
+        "base_time": 0.022860000000000002
+    },
+    {
+        "problem": "COL061-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.041417999999999996,
+        "base_time_sys": 0.017331000000000013,
+        "base_time": 0.05874900000000001,
+        "staus": "error"
+    },
+    {
+        "problem": "COL061-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0018340000000000023,
+        "base_time_sys": 0.021354000000000012,
+        "base_time": 0.023188000000000014
+    },
+    {
+        "problem": "COL061-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011957,
+        "base_time_sys": 0.011914999999999995,
+        "base_time": 0.023871999999999997
+    },
+    {
+        "problem": "COL062-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.27660199999999996,
+        "base_time_sys": 0.031875,
+        "base_time": 0.30847699999999995,
+        "staus": "error"
+    },
+    {
+        "problem": "COL062-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009818,
+        "base_time_sys": 0.0048860000000000015,
+        "base_time": 0.014704000000000002
+    },
+    {
+        "problem": "COL062-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006877000000000001,
+        "base_time_sys": 0.007857000000000003,
+        "base_time": 0.014734000000000004
+    },
+    {
+        "problem": "COL063-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.654751,
+        "base_time_sys": 0.050024999999999986,
+        "base_time": 0.704776,
+        "staus": "error"
+    },
+    {
+        "problem": "COL063-2",
+        "base_status": "success",
+        "error": "\n[Timeout after 1500 seconds]",
+        "base_time_user": 0.017324,
+        "base_time_sys": 0.008081000000000005,
+        "base_time": 0.025405000000000004
+    },
+    {
+        "problem": "COL063-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.025224,
+        "base_time_sys": 0.014142999999999989,
+        "base_time": 0.039366999999999985
+    },
+    {
+        "problem": "COL063-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029670000000000002,
+        "base_time_sys": 0.014364999999999989,
+        "base_time": 0.04403499999999999
+    },
+    {
+        "problem": "COL063-5",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018690999999999985,
+        "base_time_sys": 0.018617999999999996,
+        "base_time": 0.03730899999999998
+    },
+    {
+        "problem": "COL063-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018780999999999992,
+        "base_time_sys": 0.016667,
+        "base_time": 0.03544799999999999
+    },
+    {
+        "problem": "COL064-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 3.6080360000000002,
+        "base_time_sys": 0.080006,
+        "base_time": 3.6880420000000003,
+        "staus": "error"
+    },
+    {
+        "problem": "COL064-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013615000000000002,
+        "base_time_sys": 0.01851899999999998,
+        "base_time": 0.03213399999999998
+    },
+    {
+        "problem": "COL064-11",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.017002999999999997,
+        "base_time_sys": 0.018143999999999993,
+        "base_time": 0.03514699999999999
+    },
+    {
+        "problem": "COL064-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014919999999999989,
+        "base_time_sys": 0.020328999999999986,
+        "base_time": 0.035248999999999975
+    },
+    {
+        "problem": "COL064-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018815,
+        "base_time_sys": 0.014850000000000002,
+        "base_time": 0.033665
+    },
+    {
+        "problem": "COL064-4",
+        "base_status": "success",
+        "error": "\n[Timeout after 1500 seconds]",
+        "base_time_user": 0.021315,
+        "base_time_sys": 0.020295999999999995,
+        "base_time": 0.041610999999999995
+    },
+    {
+        "problem": "COL064-5",
+        "base_status": "success",
+        "error": "\n[Timeout after 1500 seconds]",
+        "base_time_user": 0.025648000000000004,
+        "base_time_sys": 0.010830000000000006,
+        "base_time": 0.03647800000000001
+    },
+    {
+        "problem": "COL064-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.022556999999999994,
+        "base_time_sys": 0.008792999999999995,
+        "base_time": 0.03134999999999999
+    },
+    {
+        "problem": "COL064-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018961999999999993,
+        "base_time_sys": 0.010524000000000006,
+        "base_time": 0.029486
+    },
+    {
+        "problem": "COL064-8",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018489000000000005,
+        "base_time_sys": 0.010716000000000003,
+        "base_time": 0.02920500000000001
+    },
+    {
+        "problem": "COL064-9",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010611000000000002,
+        "base_time_sys": 0.008637000000000006,
+        "base_time": 0.019248000000000008
+    },
+    {
+        "problem": "COL065-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 3.6773730000000002,
+        "base_time_sys": 0.046668000000000015,
+        "base_time": 3.724041,
+        "staus": "error"
+    },
+    {
+        "problem": "COL066-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 229.680401,
+        "base_time_sys": 0.823754,
+        "base_time": 230.504155
+    },
+    {
+        "problem": "COL066-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04148900000000001,
+        "base_time_sys": 0.008951000000000015,
+        "base_time": 0.050440000000000026
+    },
+    {
+        "problem": "COL066-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.045402,
+        "base_time_sys": 0.012092999999999993,
+        "base_time": 0.05749499999999999
+    },
+    {
+        "problem": "COL070-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009693000000000007,
+        "base_time_sys": 0.007790000000000019,
+        "base_time": 0.017483000000000026
+    },
+    {
+        "problem": "COL075-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01577299999999998,
+        "base_time_sys": 0.010912000000000005,
+        "base_time": 0.026684999999999987
+    },
+    {
+        "problem": "COL083-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.0010630000000000361,
+        "base_time_sys": 0.0063529999999999975,
+        "base_time": 0.007416000000000034,
+        "staus": "error"
+    },
+    {
+        "problem": "COL084-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.0020540000000000003,
+        "base_time_sys": 0.005135000000000001,
+        "base_time": 0.007189000000000001,
+        "staus": "error"
+    },
+    {
+        "problem": "COL085-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.0008319999999999994,
+        "base_time_sys": 0.0074830000000000035,
+        "base_time": 0.008315000000000003,
+        "staus": "error"
+    },
+    {
+        "problem": "COL086-1",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.0028730000000000144,
+        "base_time_sys": 0.004795999999999995,
+        "base_time": 0.007669000000000009,
+        "staus": "error"
+    }
+]

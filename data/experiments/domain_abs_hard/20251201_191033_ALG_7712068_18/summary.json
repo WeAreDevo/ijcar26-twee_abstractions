@@ -1,0 +1,122 @@
+[
+    {
+        "problem": "ALG237-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(Y2, mult(Z2, Y2)))))\nhint 1.5: mult(X, mult(Y, mult(Z, Y2)))\nhint 1.5: mult(mult(X, Y), mult(Z, Y2))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2))), mult(mult(X, Z2), mult(V2, Y2)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG238-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(Y2, mult(Z2, Y2)))))\nhint 1.5: mult(X, mult(Y, mult(Z, Y2)))\nhint 1.5: mult(mult(X, Y), mult(Z, Y2))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2))), mult(mult(X, Z2), mult(V2, Y2)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG239-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(U, mult(Z2, U)))))\nhint 1.5: mult(X, mult(Y, mult(Z, U)))\nhint 1.5: mult(mult(X, Y), mult(Z, U))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, U)), mult(mult(X, Z), mult(Y, U))), mult(mult(X, Z2), mult(V2, U)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, U)), mult(mult(X, Z), mult(Y, U)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG241-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(Y2, mult(Z2, Y2)))))\nhint 1.5: mult(X, mult(Y, mult(Z, Y2)))\nhint 1.5: mult(mult(X, Y), mult(Z, Y2))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2))), mult(mult(X, Z2), mult(V2, Y2)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG242-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(Y2, mult(Z2, Y2)))))\nhint 1.5: mult(X, mult(Y, mult(Z, Y2)))\nhint 1.5: mult(mult(X, Y), mult(Z, Y2))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2))), mult(mult(X, Z2), mult(V2, Y2)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG243-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(Y2, mult(Z2, Y2)))))\nhint 1.5: mult(X, mult(Y, mult(Z, Y2)))\nhint 1.5: mult(mult(X, Y), mult(Z, Y2))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2))), mult(mult(X, Z2), mult(V2, Y2)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, Y2)), mult(mult(X, Z), mult(Y, Y2)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG244-1.p",
+        "domain_hints": [
+            "mult(A, mult(B, C))",
+            "mult(A, mult(b, mult(B, mult(c, mult(C, c)))))",
+            "mult(A, mult(B, mult(C, D)))",
+            "mult(mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D))), mult(mult(A, E), mult(F, D)))",
+            "mult(mult(mult(A, B), mult(C, D)), mult(mult(A, C), mult(B, D)))",
+            "mult(mult(A, B), mult(C, D))",
+            "mult(A, mult(c, mult(B, e)))",
+            "mult(A, mult(b, mult(B, c)))",
+            "mult(A, mult(B, mult(C, mult(D, mult(E, D)))))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: mult(X, mult(Y, Z))\nhint 4.0: mult(X, mult(b, mult(Y, mult(c, mult(Z, c)))))\nhint 3.5: mult(X, mult(Y, mult(Z, mult(U, mult(Z2, U)))))\nhint 1.5: mult(X, mult(Y, mult(Z, U)))\nhint 1.5: mult(mult(X, Y), mult(Z, U))\nhint 2.5: mult(X, mult(c, mult(Y, e)))\nhint 11.5: mult(mult(mult(mult(X, Y), mult(Z, U)), mult(mult(X, Z), mult(Y, U))), mult(mult(X, Z2), mult(V2, U)))\nhint 7.5: mult(mult(mult(X, Y), mult(Z, U)), mult(mult(X, Z), mult(Y, U)))\nhint 2.5: mult(X, mult(b, mult(Y, c)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG441-10.p",
+        "domain_hints": [
+            "ifeq(A, true, B, true)"
+        ],
+        "status": "timeout",
+        "error": "hint 1.5: ifeq(X, true, Y, true)\n\n[Timeout after 1000 seconds]"
+    }
+]

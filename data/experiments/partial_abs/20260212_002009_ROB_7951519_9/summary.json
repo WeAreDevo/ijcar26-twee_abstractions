@@ -1,0 +1,415 @@
+[
+    {
+        "problem": "ROB001-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_2(A, B) = add(negate(add(A, B)), negate(add(A, B)))",
+            "fn_6(A, B, C) = add(C, add(B, A))"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "add(negate(add(A, B)), negate(add(A, B)))",
+            "add(A, add(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ROB002-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009025
+    },
+    {
+        "problem": "ROB003-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.06286699999999999
+    },
+    {
+        "problem": "ROB004-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.048257999999999995
+    },
+    {
+        "problem": "ROB005-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.042483
+    },
+    {
+        "problem": "ROB006-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1 = negate(d)",
+            "fn_4 = negate(add(c, negate(d)))",
+            "fn_5(A) = negate(negate(add(d, A)))",
+            "fn_9(A) = add(negate(d), A)",
+            "fn_10(A) = add(d, A)",
+            "fn_16 = negate(negate(add(d, negate(d))))",
+            "fn_17(A) = negate(add(d, A))",
+            "fn_18(A) = add(A, negate(d))",
+            "fn_19(A) = negate(add(negate(d), A))"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "negate(add(c, negate(d)))",
+            "negate(add(d, A))",
+            "negate(negate(add(d, negate(d))))",
+            "add(negate(d), A)",
+            "add(A, negate(d))",
+            "negate(add(negate(d), A))",
+            "add(d, A)",
+            "negate(d)",
+            "negate(negate(add(d, A)))"
+        ],
+        "status": "success",
+        "hint_time_user": 24.903653999999996
+    },
+    {
+        "problem": "ROB006-2.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1 = negate(d)",
+            "fn_3(A) = add(negate(d), A)",
+            "fn_4 = negate(add(c, negate(d)))",
+            "fn_5(A) = add(d, A)",
+            "fn_6(A) = negate(negate(add(d, A)))",
+            "fn_8 = negate(add(c, negate(negate(d))))",
+            "fn_9(A) = negate(add(c, add(negate(negate(d)), A)))",
+            "fn_12(A) = negate(add(d, A))",
+            "fn_18(A) = add(A, d)",
+            "fn_19(A) = add(d, add(negate(d), A))"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "negate(add(c, negate(d)))",
+            "negate(add(d, A))",
+            "add(d, add(negate(d), A))",
+            "negate(add(c, negate(negate(d))))",
+            "negate(add(c, add(negate(negate(d)), A)))",
+            "add(A, d)",
+            "add(negate(d), A)",
+            "add(d, A)",
+            "negate(d)",
+            "negate(negate(add(d, A)))"
+        ],
+        "status": "success",
+        "hint_time_user": 4.193768999999996
+    },
+    {
+        "problem": "ROB008-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016506
+    },
+    {
+        "problem": "ROB009-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015691
+    },
+    {
+        "problem": "ROB010-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00202
+    },
+    {
+        "problem": "ROB013-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0039369999999999995
+    },
+    {
+        "problem": "ROB015-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 32.466566
+    },
+    {
+        "problem": "ROB018-10.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = negate(add(C, negate(add(B, A))))",
+            "fn_1(A, B, C) = add(multiply(C, A), multiply(successor(successor(B)), A))",
+            "fn_2 = negate(d)",
+            "fn_3 = negate(e)",
+            "fn_5 = successor(one)",
+            "fn_6(A, B) = negate(add(B, A))",
+            "fn_7(A, B) = multiply(successor(successor(successor(A))), B)",
+            "fn_8 = negate(negate(e))",
+            "fn_9 = negate(add(negate(d), negate(e)))",
+            "fn_11(A, B) = add(multiply(A, one), B)",
+            "fn_14(A) = successor(successor(A))",
+            "fn_16(A) = add(one, A)",
+            "fn_18 = negate(negate(add(d, add(e, negate(d)))))",
+            "fn_19 = successor(successor(one))"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "negate(add(A, negate(add(B, C))))",
+            "add(multiply(A, one), B)",
+            "successor(successor(A))",
+            "multiply(successor(successor(successor(A))), B)",
+            "negate(negate(add(d, add(e, negate(d)))))",
+            "successor(one)",
+            "negate(add(negate(d), negate(e)))",
+            "negate(e)",
+            "negate(d)",
+            "add(one, A)",
+            "add(multiply(A, B), multiply(successor(successor(C)), B))",
+            "successor(successor(one))",
+            "negate(negate(e))"
+        ],
+        "status": "success",
+        "hint_time_user": 165.383763
+    },
+    {
+        "problem": "ROB022-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.155765
+    },
+    {
+        "problem": "ROB023-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.059519999999999997
+    },
+    {
+        "problem": "ROB025-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = intersect(negate(B), negate(A))",
+            "fn_1(A, B, C) = ifeq(equalish(B, C), true, equalish(B, A), true)",
+            "fn_2(A, B) = negate(add(B, A))",
+            "fn_3(A, B, C) = ifeq(C, true, equalish(B, A), true)",
+            "fn_4(A, B, C) = add(add(B, A), C)",
+            "fn_5(A, B, C) = ifeq(equalish(B, A), true, equalish(C, A), true)",
+            "fn_6(A, B) = ifeq(equalish(B, A), true, equalish(A, B), true)",
+            "fn_8(A, B, C) = add(C, add(B, A))",
+            "fn_9(A, B) = ifeq(true, true, equalish(A, B), true)",
+            "fn_12(A, B, C) = negate(add(negate(add(A, B)), intersect(negate(C), negate(B))))",
+            "fn_13(A, B, C) = negate(add(intersect(negate(A), negate(B)), negate(add(C, B))))",
+            "fn_16(A, B, C) = ifeq(equalish(C, negate(add(negate(add(A, B)), negate(add(B, negate(A)))))), true, equalish(C, B), true)",
+            "fn_17(A, B, C, D) = add(add(add(B, C), A), D)"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "ifeq(true, true, equalish(A, B), true)",
+            "ifeq(equalish(A, B), true, equalish(B, A), true)",
+            "add(A, add(B, C))",
+            "add(add(add(A, B), C), D)",
+            "add(add(A, B), C)",
+            "ifeq(equalish(A, B), true, equalish(C, B), true)",
+            "ifeq(A, true, equalish(B, C), true)",
+            "negate(add(negate(add(A, B)), intersect(negate(C), negate(B))))",
+            "ifeq(equalish(A, negate(add(negate(add(B, C)), negate(add(C, negate(B)))))), true, equalish(A, C), true)",
+            "negate(add(intersect(negate(A), negate(B)), negate(add(C, B))))",
+            "intersect(negate(A), negate(B))",
+            "ifeq(equalish(A, B), true, equalish(A, C), true)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ROB026-1.p",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 70 seconds]"
+    },
+    {
+        "problem": "ROB030-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001969
+    },
+    {
+        "problem": "ROB031-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = negate(add(C, add(B, A)))",
+            "fn_1(A, B) = negate(add(B, A))",
+            "fn_3(A, B) = add(negate(add(A, B)), negate(add(A, B)))",
+            "fn_5(A, B, C, D) = equals(negate(add(A, add(B, C))), D)",
+            "fn_8(A, B, C) = add(C, add(B, A))"
+        ],
+        "final_hints": [
+            "negate(add(A, add(B, C)))",
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "equals(negate(add(A, add(B, C))), D)",
+            "add(negate(add(A, B)), negate(add(A, B)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ROB031-2.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_1(A) = negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+            "fn_3(A, B) = add(h(B), add(g(B), A))",
+            "fn_5(A, B) = equals(B, negate(A))",
+            "fn_8(A) = negate(h(A))",
+            "fn_9(A, B) = add(B, add(B, add(add(B, add(h(B), add(g(B), g(B)))), A)))",
+            "fn_10(A, B) = add(g(A), B)",
+            "fn_11(A, B) = equals(g(A), negate(B))",
+            "fn_13(A, B) = add(h(A), B)",
+            "fn_14(A, B) = equals(g(A), B)",
+            "fn_15(A, B) = add(h(A), add(g(A), add(g(A), B)))",
+            "fn_17(A, B) = negate(add(g(B), negate(A)))",
+            "fn_18(A) = add(A, g(A))",
+            "fn_19(A) = h(h(A))"
+        ],
+        "final_hints": [
+            "equals(A, negate(B))",
+            "h(h(A))",
+            "negate(add(g(A), negate(B)))",
+            "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+            "add(A, add(A, add(add(A, add(h(A), add(g(A), g(A)))), B)))",
+            "add(h(A), add(g(A), add(g(A), B)))",
+            "add(A, g(A))",
+            "add(h(A), add(g(A), B))",
+            "add(g(A), B)",
+            "negate(h(A))",
+            "equals(g(A), B)",
+            "equals(g(A), negate(B))",
+            "add(h(A), B)"
+        ],
+        "status": "success",
+        "hint_time_user": 559.3437210000001
+    },
+    {
+        "problem": "ROB032-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = negate(add(B, A))",
+            "fn_1(A, B, C, D, E) = equals(add(D, add(E, add(C, B))), A)",
+            "fn_2(A, B, C) = add(C, add(B, A))",
+            "fn_10(A, B, C, D, E, F, G) = equals(add(add(D, E), add(F, add(G, add(B, C)))), A)",
+            "fn_13(A, B, C, D, E, F) = equals(add(add(D, E), add(F, add(B, C))), A)",
+            "fn_16(A, B, C, D) = equals(add(D, add(B, add(C, A))), add(B, A))",
+            "fn_17(A, B, C, D) = equals(add(C, add(D, B)), add(D, A))"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "equals(add(A, add(B, C)), add(B, D))",
+            "add(A, add(B, C))",
+            "equals(add(add(A, B), add(C, add(D, add(E, F)))), G)",
+            "equals(add(A, add(B, add(C, D))), add(B, D))",
+            "equals(add(A, add(B, add(C, D))), E)",
+            "equals(add(add(A, B), add(C, add(D, E))), F)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ROB032-2.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_4(A, B) = equals(h(h(A)), B)"
+        ],
+        "final_hints": [
+            "equals(h(h(A)), B)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ROB033-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = negate(add(C, negate(add(B, A))))",
+            "fn_1(A, B) = add(B, add(B, A))",
+            "fn_2(A) = add(A, A)",
+            "fn_4(A, B) = add(g(A), B)",
+            "fn_5(A) = negate(h(A))",
+            "fn_6(A) = negate(add(A, h(A)))",
+            "fn_8(A) = negate(add(A, negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+            "fn_9(A, B) = negate(add(A, negate(add(A, B))))",
+            "fn_11(A) = negate(add(h(A), add(h(A), g(A))))",
+            "fn_13(A, B) = negate(add(B, A))",
+            "fn_14(A, B) = add(h(A), B)",
+            "fn_15(A, B, C) = negate(add(g(A), negate(add(B, C))))",
+            "fn_17(A) = add(g(A), negate(negate(h(A))))"
+        ],
+        "final_hints": [
+            "negate(add(A, B))",
+            "negate(add(A, negate(add(B, C))))",
+            "add(g(A), negate(negate(h(A))))",
+            "negate(add(A, negate(add(A, B))))",
+            "add(A, add(A, B))",
+            "negate(add(A, h(A)))",
+            "negate(add(A, negate(add(h(A), add(h(A), add(g(A), g(A)))))))",
+            "add(A, A)",
+            "negate(add(g(A), negate(add(B, C))))",
+            "add(g(A), B)",
+            "negate(h(A))",
+            "add(h(A), B)",
+            "negate(add(h(A), add(h(A), g(A))))"
+        ],
+        "status": "success",
+        "hint_time_user": 36.24930700000001
+    },
+    {
+        "problem": "ROB034-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_4(A, B) = equals(h(h(A)), B)",
+            "fn_6(A) = add(h(A), add(g(A), add(g(A), g(add(A, g(A))))))",
+            "fn_8(A, B) = add(B, g(A))",
+            "fn_10(A) = h(h(h(A)))",
+            "fn_19(A) = add(A, A)"
+        ],
+        "final_hints": [
+            "add(A, g(B))",
+            "add(A, A)",
+            "equals(h(h(A)), B)",
+            "add(h(A), add(g(A), add(g(A), g(add(A, g(A))))))",
+            "h(h(h(A)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "ROB035-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+            "fn_2(A, B) = add(h(B), add(g(B), A))",
+            "fn_5(A, B) = equals(B, negate(A))",
+            "fn_7(A) = negate(h(A))",
+            "fn_8(A, B, C) = equals(g(add(B, A)), C)",
+            "fn_9(A, B) = add(g(A), B)",
+            "fn_12(A, B) = equals(g(h(A)), negate(B))",
+            "fn_13(A, B) = add(B, add(add(B, add(h(B), add(g(B), g(B)))), A))",
+            "fn_16(A, B) = add(h(A), add(g(A), add(g(A), B)))",
+            "fn_19(A, B) = negate(add(g(B), negate(A)))"
+        ],
+        "final_hints": [
+            "equals(A, negate(B))",
+            "add(A, add(add(A, add(h(A), add(g(A), g(A)))), B))",
+            "negate(add(g(A), negate(B)))",
+            "negate(add(A, negate(add(A, add(h(A), add(g(A), g(A)))))))",
+            "add(h(A), add(g(A), add(g(A), B)))",
+            "add(h(A), add(g(A), B))",
+            "equals(g(add(A, B)), C)",
+            "equals(g(h(A)), negate(B))",
+            "add(g(A), B)",
+            "negate(h(A))"
+        ],
+        "status": "success",
+        "hint_time_user": 104.631259
+    }
+]

@@ -1,0 +1,772 @@
+[
+    {
+        "problem": "RNG001-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG006-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG007-4",
+        "mean_base_user_time": 0.005505437499999998,
+        "min_base_user_time": 0.00107,
+        "min_base_dir": "20250627_195731_RNG_7178615_486",
+        "abstractions": [
+            "fn_0(A) = add(A, additive_inverse(A))",
+            "fn_1(A) = multiply(A, A)",
+            "fn_2(A) = add(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = add(A, additive_inverse(A))",
+            "fn_1(A) = multiply(A, A)",
+            "fn_2(A) = add(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0046689999999999995,
+        "hints_time_sys": 0.008407999999999999,
+        "hints_time": 0.013076999999999998
+    },
+    {
+        "problem": "RNG008-3",
+        "mean_base_user_time": 0.011404531250000006,
+        "min_base_user_time": 0.007095,
+        "min_base_dir": "20250627_200430_RNG_7178641_510",
+        "abstractions": [
+            "fn_0(A, B, C) = add(C, multiply(B, A))",
+            "fn_1(A, D, E) = A(D, add(D, E))",
+            "fn_2(A, B, C) = add(C, add(B, A))",
+            "fn_3(A, B) = fn_0(A, B, A)",
+            "fn_4(A, B) = fn_0(B, A, A)",
+            "fn_5(A, D, E) = A(D, E)",
+            "fn_6(A, B, D, E) = B(E, A(E, D))",
+            "fn_7(A) = multiply(A, A)",
+            "fn_8(D, E) = fn_2(D, E, D)",
+            "fn_9(A, D, E) = A(add(D, E), E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A, B, C) = add(C, add(B, A))",
+            "fn_3(A, B) = add(A, multiply(B, A))",
+            "fn_4(A, B) = add(A, multiply(A, B))",
+            "fn_7(A) = multiply(A, A)",
+            "fn_8(D, E) = add(D, add(E, D))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.009047999999999999,
+        "hints_time_sys": 0.009068999999999999,
+        "hints_time": 0.018116999999999998
+    },
+    {
+        "problem": "RNG008-4",
+        "mean_base_user_time": 0.011151968749999996,
+        "min_base_user_time": 0.006136,
+        "min_base_dir": "20250627_200430_RNG_7178641_510",
+        "abstractions": [
+            "fn_0(A, B, C) = add(C, multiply(B, A))",
+            "fn_1(A, D, E) = A(D, add(D, E))",
+            "fn_2(A, B, C) = add(C, add(B, A))",
+            "fn_3(A, B) = fn_0(A, B, A)",
+            "fn_4(A, B) = fn_0(B, A, A)",
+            "fn_5(A, D, E) = A(D, E)",
+            "fn_6(A, B, D, E) = B(E, A(E, D))",
+            "fn_7(A) = multiply(A, A)",
+            "fn_8(D, E) = fn_2(D, E, D)",
+            "fn_9(A, D, E) = A(add(D, E), E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A, B, C) = add(C, add(B, A))",
+            "fn_3(A, B) = add(A, multiply(B, A))",
+            "fn_4(A, B) = add(A, multiply(A, B))",
+            "fn_7(A) = multiply(A, A)",
+            "fn_8(D, E) = add(D, add(E, D))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010496,
+        "hints_time_sys": 0.008572,
+        "hints_time": 0.019068
+    },
+    {
+        "problem": "RNG008-7",
+        "mean_base_user_time": 0.057261156249999993,
+        "min_base_user_time": 0.047972999999999995,
+        "min_base_dir": "20250627_195615_RNG_7178609_480",
+        "abstractions": [
+            "fn_0(A) = multiply(c, A)",
+            "fn_1(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A, B, C) = multiply(add(B, A), C)",
+            "fn_3(A) = add(A, A)",
+            "fn_4(A) = multiply(a, A)",
+            "fn_5(A, B) = fn_2(B, A, A)",
+            "fn_6(A) = multiply(b, A)",
+            "fn_7(A, B) = fn_0(add(B, A))",
+            "fn_8(A, B) = fn_1(A, B, A)",
+            "fn_9(A, B, C) = multiply(B, C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = multiply(c, A)",
+            "fn_1(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A, B, C) = multiply(add(B, A), C)",
+            "fn_3(A) = add(A, A)",
+            "fn_4(A) = multiply(a, A)",
+            "fn_5(A, B) = multiply(add(A, B), A)",
+            "fn_6(A) = multiply(b, A)",
+            "fn_7(A, B) = multiply(c, add(B, A))",
+            "fn_8(A, B) = add(A, multiply(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.990737,
+        "hints_time_sys": 0.045737,
+        "hints_time": 1.036474
+    },
+    {
+        "problem": "RNG009-5",
+        "mean_base_user_time": 292.70039687499997,
+        "min_base_user_time": 171.335249,
+        "min_base_dir": "20250627_200116_RNG_7178629_500",
+        "abstractions": [
+            "fn_0(A) = add(A, A)",
+            "fn_1(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A) = add(A, fn_0(A))",
+            "fn_3(A, B) = fn_1(A, B, A)",
+            "fn_4(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_5(A, B) = add(B, add(B, A))",
+            "fn_6(A, B) = fn_1(B, A, A)",
+            "fn_7(A) = fn_3(A, A)",
+            "fn_8(A) = multiply(A, A)",
+            "fn_9(A, B) = multiply(fn_0(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = add(A, A)",
+            "fn_1(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A) = add(A, add(A, A))",
+            "fn_3(A, B) = add(A, multiply(B, A))",
+            "fn_4(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_5(A, B) = add(B, add(B, A))",
+            "fn_6(A, B) = add(A, multiply(A, B))",
+            "fn_7(A) = add(A, multiply(A, A))",
+            "fn_8(A) = multiply(A, A)",
+            "fn_9(A, B) = multiply(add(A, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 218.887042,
+        "hints_time_sys": 0.8410599999999999,
+        "hints_time": 219.728102
+    },
+    {
+        "problem": "RNG009-7",
+        "mean_base_user_time": 40.994357625000006,
+        "min_base_user_time": 34.53403,
+        "min_base_dir": "20250627_195314_RNG_7178591_462",
+        "abstractions": [
+            "fn_0(A, B, C) = add(C, multiply(B, A))",
+            "fn_1(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_2 = fn_0(additive_inverse(c), b, a)",
+            "fn_3(A, B) = multiply(B, additive_inverse(A))",
+            "fn_4 = fn_0(additive_inverse(a), b, c)",
+            "fn_5(A) = multiply(b, A)",
+            "fn_6(A) = multiply(c, A)",
+            "fn_7(A, B) = fn_1(B, A, c)",
+            "fn_8(A, B) = fn_1(B, A, b)",
+            "fn_9(A, B) = add(B, additive_inverse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(C, multiply(B, A))",
+            "fn_1(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_2 = add(a, multiply(b, additive_inverse(c)))",
+            "fn_3(A, B) = multiply(B, additive_inverse(A))",
+            "fn_4 = add(c, multiply(b, additive_inverse(a)))",
+            "fn_5(A) = multiply(b, A)",
+            "fn_6(A) = multiply(c, A)",
+            "fn_7(A, B) = multiply(c, multiply(A, B))",
+            "fn_8(A, B) = multiply(b, multiply(A, B))",
+            "fn_9(A, B) = add(B, additive_inverse(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 9.760509,
+        "hints_time_sys": 0.0996,
+        "hints_time": 9.860109000000001
+    },
+    {
+        "problem": "RNG011-5",
+        "mean_base_user_time": 0.006429875000000001,
+        "min_base_user_time": 0.0038199999999999996,
+        "min_base_dir": "20250627_195831_RNG_7178619_490",
+        "status": "no valid abstractions produced by Stitch"
+    },
+    {
+        "problem": "RNG012-6",
+        "mean_base_user_time": 0.05581328125,
+        "min_base_user_time": 0.050995,
+        "min_base_dir": "20250627_195815_RNG_7178617_488",
+        "abstractions": [
+            "fn_0(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_4(A, B, C) = fn_1(B, A, additive_inverse(C(B, A)))",
+            "fn_5(A, B) = fn_1(B, A, multiply(B, additive_inverse(A)))",
+            "fn_6(A, B) = commutator(B, additive_inverse(A))",
+            "fn_7(A, B, C, D, E) = C(B(E, D), A(D, E))",
+            "fn_8(A, B) = fn_0(A, B, A)",
+            "fn_9(A, D, E) = A(E, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_5(A, B) = add(multiply(A, B), multiply(B, additive_inverse(A)))",
+            "fn_6(A, B) = commutator(B, additive_inverse(A))",
+            "fn_8(A, B) = add(commutator(B, A), multiply(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.034499,
+        "hints_time_sys": 0.008372,
+        "hints_time": 0.042871
+    },
+    {
+        "problem": "RNG013-6",
+        "mean_base_user_time": 0.056436749999999994,
+        "min_base_user_time": 0.051439,
+        "min_base_dir": "20250627_195344_RNG_7178595_466",
+        "abstractions": [
+            "fn_0(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_4(A, B, C) = fn_1(B, A, additive_inverse(C(B, A)))",
+            "fn_5(A, B) = fn_1(B, A, multiply(B, additive_inverse(A)))",
+            "fn_6(A, B) = commutator(B, additive_inverse(A))",
+            "fn_7(A, B, C, D, E) = C(B(E, D), A(D, E))",
+            "fn_8(A, B) = fn_0(A, B, A)",
+            "fn_9(A, D, E) = A(E, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_5(A, B) = add(multiply(A, B), multiply(B, additive_inverse(A)))",
+            "fn_6(A, B) = commutator(B, additive_inverse(A))",
+            "fn_8(A, B) = add(commutator(B, A), multiply(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.033446,
+        "hints_time_sys": 0.010832999999999999,
+        "hints_time": 0.044279
+    },
+    {
+        "problem": "RNG014-6",
+        "mean_base_user_time": 0.051385125,
+        "min_base_user_time": 0.045812,
+        "min_base_dir": "20250627_195130_RNG_7178580_452",
+        "abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_2(A, B, C) = fn_0(B, A, additive_inverse(C(B, A)))",
+            "fn_3(A, B) = add(B, additive_inverse(A))",
+            "fn_4(A, B, C, D) = fn_0(D, B, C(B, A))",
+            "fn_5(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_6(A, B) = add(B, fn_3(B, A))",
+            "fn_7(A, B) = fn_0(B, A, multiply(B, additive_inverse(A)))",
+            "fn_8(A, E, F) = A(F, E)",
+            "fn_9(A, E, F) = A(E, F)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_3(A, B) = add(B, additive_inverse(A))",
+            "fn_5(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_6(A, B) = add(B, add(A, additive_inverse(B)))",
+            "fn_7(A, B) = add(multiply(A, B), multiply(B, additive_inverse(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.018098,
+        "hints_time_sys": 0.010464,
+        "hints_time": 0.028561999999999997
+    },
+    {
+        "problem": "RNG015-6",
+        "mean_base_user_time": 0.05234590624999999,
+        "min_base_user_time": 0.048093,
+        "min_base_dir": "20250627_195314_RNG_7178591_462",
+        "abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_2(A, B, C) = fn_0(B, A, additive_inverse(C(B, A)))",
+            "fn_3(A, B) = add(B, additive_inverse(A))",
+            "fn_4(A, B, C, D) = fn_0(D, B, C(B, A))",
+            "fn_5(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_6(A, B) = add(B, fn_3(B, A))",
+            "fn_7(A, B) = fn_0(B, A, multiply(B, additive_inverse(A)))",
+            "fn_8(A, E, F) = A(F, E)",
+            "fn_9(A, E, F) = A(E, F)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_3(A, B) = add(B, additive_inverse(A))",
+            "fn_5(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_6(A, B) = add(B, add(A, additive_inverse(B)))",
+            "fn_7(A, B) = add(multiply(A, B), multiply(B, additive_inverse(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.021248,
+        "hints_time_sys": 0.007743,
+        "hints_time": 0.028991
+    },
+    {
+        "problem": "RNG016-6",
+        "mean_base_user_time": 0.09327599999999996,
+        "min_base_user_time": 0.086689,
+        "min_base_dir": "20250627_195144_RNG_7178582_454",
+        "abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B, C, D) = fn_0(D, C, multiply(B, A))",
+            "fn_4(A, B, C) = fn_0(B, A, additive_inverse(C(B, A)))",
+            "fn_5(A, B) = add(B, fn_2(B, A))",
+            "fn_6(A, B, C) = fn_3(A, C, B, additive_inverse(A))",
+            "fn_7(A, B) = add(additive_inverse(A), B)",
+            "fn_8(A, B, C, D) = fn_0(D, B, C(B, A))",
+            "fn_9(A, E, F) = A(F, E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B, C, D) = add(multiply(C, D), multiply(B, A))",
+            "fn_5(A, B) = add(B, add(A, additive_inverse(B)))",
+            "fn_6(A, B, C) = add(multiply(B, additive_inverse(A)), multiply(C, A))",
+            "fn_7(A, B) = add(additive_inverse(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.038873,
+        "hints_time_sys": 0.008754999999999999,
+        "hints_time": 0.047628
+    },
+    {
+        "problem": "RNG017-6",
+        "mean_base_user_time": 0.05721149999999999,
+        "min_base_user_time": 0.050316,
+        "min_base_dir": "20250627_200118_RNG_7178633_502",
+        "abstractions": [
+            "fn_0(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_4(A, B, C) = fn_1(B, A, additive_inverse(C(B, A)))",
+            "fn_5(A, B) = fn_1(B, A, multiply(B, additive_inverse(A)))",
+            "fn_6(A, D, E) = additive_inverse(A(D, E))",
+            "fn_7(A, B, C, D) = fn_1(D, B, C(B, A))",
+            "fn_8(A, B) = commutator(B, additive_inverse(A))",
+            "fn_9(A, B, C, E, F) = C(B(F, E), A(E, F))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_5(A, B) = add(multiply(A, B), multiply(B, additive_inverse(A)))",
+            "fn_8(A, B) = commutator(B, additive_inverse(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.038169999999999996,
+        "hints_time_sys": 0.005023,
+        "hints_time": 0.043192999999999995
+    },
+    {
+        "problem": "RNG018-6",
+        "mean_base_user_time": 0.05203128124999999,
+        "min_base_user_time": 0.04639,
+        "min_base_dir": "20250627_195344_RNG_7178595_466",
+        "abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_2(A, B, C) = fn_0(B, A, additive_inverse(C(B, A)))",
+            "fn_3(A, B) = add(B, additive_inverse(A))",
+            "fn_4(A, B, C, D) = fn_0(D, B, C(B, A))",
+            "fn_5(A, B) = multiply(B, additive_inverse(A))",
+            "fn_6(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_7(A, B) = add(B, fn_3(B, A))",
+            "fn_8(A, E, F) = A(F, E)",
+            "fn_9(A, B) = fn_0(A, B, fn_5(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(multiply(B, A), C)",
+            "fn_1(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_3(A, B) = add(B, additive_inverse(A))",
+            "fn_5(A, B) = multiply(B, additive_inverse(A))",
+            "fn_6(A, B) = add(additive_inverse(A), add(B, A))",
+            "fn_7(A, B) = add(B, add(A, additive_inverse(B)))",
+            "fn_9(A, B) = add(multiply(B, A), multiply(A, additive_inverse(B)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.018324999999999998,
+        "hints_time_sys": 0.009164,
+        "hints_time": 0.027489
+    },
+    {
+        "problem": "RNG019-6",
+        "mean_base_user_time": 362.28564806249994,
+        "min_base_user_time": 357.189052,
+        "min_base_dir": "20250627_195645_RNG_7178613_484",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(C, multiply(B, D)), multiply(multiply(C, B), A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_4(A, B, C, D, E) = E(D(B), D(C(B, A)))",
+            "fn_5(A, B, C, D, E) = fn_1(multiply(B, additive_inverse(E)), C, D(multiply(multiply(C, B), A)))",
+            "fn_6(A, B) = add(B, fn_2(B, A))",
+            "fn_7(A, B, C) = fn_0(A, C, B, additive_inverse(A))",
+            "fn_8(A, B) = additive_inverse(multiply(B, A))",
+            "fn_9(A, B, C, D) = fn_1(D, B, C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(C, multiply(B, D)), multiply(multiply(C, B), A))",
+            "fn_1(A, B, C) = add(multiply(B, A), C)",
+            "fn_2(A, B) = add(B, additive_inverse(A))",
+            "fn_3(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_6(A, B) = add(B, add(A, additive_inverse(B)))",
+            "fn_7(A, B, C) = add(multiply(B, multiply(C, additive_inverse(A))), multiply(multiply(B, C), A))",
+            "fn_8(A, B) = additive_inverse(multiply(B, A))"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 2.0: add(multiply(T2, multiply(S2, X3)), multiply(multiply(T2, S2), Y3))\nhint 0.0: add(multiply(S2, Y3), T2)\nhint 0.0: add(S2, additive_inverse(Y3))\nhint 1.0: add(commutator(S2, T2), multiply(S2, Y3))\nhint 1.0: add(S2, add(Y3, additive_inverse(S2)))\nhint 3.0: add(multiply(S2, multiply(T2, additive_inverse(Y3))), multiply(multiply(S2, T2), Y3))\nhint 0.0: additive_inverse(multiply(S2, Y3))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "RNG019-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG020-6",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG020-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG021-6",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG021-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG023-6",
+        "mean_base_user_time": 0.006189343749999999,
+        "min_base_user_time": 0.003705,
+        "min_base_dir": "20250627_195130_RNG_7178580_452",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), additive_inverse(B(B(A))))",
+            "fn_1(A, B) = associator(A, A, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B) = associator(A, A, B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0062829999999999995,
+        "hints_time_sys": 0.007317,
+        "hints_time": 0.0136
+    },
+    {
+        "problem": "RNG023-7",
+        "mean_base_user_time": 0.015598937499999996,
+        "min_base_user_time": 0.012155,
+        "min_base_dir": "20250627_195531_RNG_7178607_478",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(C, multiply(B, D)), multiply(multiply(C, B), A))",
+            "fn_1(A, B, C, E) = add(multiply(E, C), additive_inverse(multiply(multiply(E, B), A)))",
+            "fn_2(A, B) = add(additive_inverse(A), B)",
+            "fn_3(A, B) = multiply(B, multiply(B, A))",
+            "fn_4(A, B, C, D, E) = add(multiply(multiply(E, D), A), multiply(E, C(B(A))))",
+            "fn_5(A, B) = add(B, additive_inverse(A))",
+            "fn_6(A, B) = fn_2(A, B(A))",
+            "fn_7(A, B) = associator(A, A, B)",
+            "fn_8(A, E, F) = add(E, A(E, F))",
+            "fn_9(A, E, F) = A(add(E, F), E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(C, multiply(B, D)), multiply(multiply(C, B), A))",
+            "fn_1(A, B, C, E) = add(multiply(E, C), additive_inverse(multiply(multiply(E, B), A)))",
+            "fn_2(A, B) = add(additive_inverse(A), B)",
+            "fn_3(A, B) = multiply(B, multiply(B, A))",
+            "fn_5(A, B) = add(B, additive_inverse(A))",
+            "fn_7(A, B) = associator(A, A, B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004830999999999999,
+        "hints_time_sys": 0.00967,
+        "hints_time": 0.014501
+    },
+    {
+        "problem": "RNG024-6",
+        "mean_base_user_time": 0.005947,
+        "min_base_user_time": 0.0019749999999999998,
+        "min_base_dir": "20250627_200416_RNG_7178639_508",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), additive_inverse(multiply(B, multiply(A, A))))",
+            "fn_1(A, B) = associator(B, A, A)",
+            "fn_2(A, B, C, D) = D(B, C, multiply(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), additive_inverse(multiply(B, multiply(A, A))))",
+            "fn_1(A, B) = associator(B, A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.001929,
+        "hints_time_sys": 0.011582,
+        "hints_time": 0.013511
+    },
+    {
+        "problem": "RNG024-7",
+        "mean_base_user_time": 0.011633843750000001,
+        "min_base_user_time": 0.008740999999999999,
+        "min_base_dir": "20250627_200316_RNG_7178637_506",
+        "abstractions": [
+            "fn_0(A, B, C) = add(multiply(C, multiply(B, additive_inverse(A))), multiply(multiply(C, B), A))",
+            "fn_1(A, B) = multiply(B, additive_inverse(A))",
+            "fn_2(A, B, C) = multiply(C, fn_1(B, A))",
+            "fn_3(A, B, C) = add(C(additive_inverse(B), A), C(B, A))",
+            "fn_4(A, B, D) = multiply(D, multiply(A, add(B, additive_inverse(A))))",
+            "fn_5(A, B, C, D, E) = add(fn_2(additive_inverse(B), E, D), multiply(multiply(C, B), A))",
+            "fn_6(A, B, C, D, E) = add(E(E(A, D), C), B(A))",
+            "fn_7(A, B) = B(A, additive_inverse(A))",
+            "fn_8(A, F) = fn_2(A, A, F)",
+            "fn_9(F, G, H) = fn_0(H, G, F)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = add(multiply(C, multiply(B, additive_inverse(A))), multiply(multiply(C, B), A))",
+            "fn_1(A, B) = multiply(B, additive_inverse(A))",
+            "fn_2(A, B, C) = multiply(C, multiply(A, additive_inverse(B)))",
+            "fn_4(A, B, D) = multiply(D, multiply(A, add(B, additive_inverse(A))))",
+            "fn_5(A, B, C, D, E) = add(multiply(D, multiply(additive_inverse(B), additive_inverse(E))), multiply(multiply(C, B), A))",
+            "fn_8(A, F) = multiply(F, multiply(A, additive_inverse(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.018087,
+        "hints_time_sys": 0.004269,
+        "hints_time": 0.022356
+    },
+    {
+        "problem": "RNG025-4",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG025-5",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG025-6",
+        "mean_base_user_time": 1.2607096250000003,
+        "min_base_user_time": 1.248151,
+        "min_base_dir": "20250627_200430_RNG_7178641_510",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), multiply(B, A))",
+            "fn_1(A, B) = add(B, additive_inverse(A))",
+            "fn_2(A, B, C) = multiply(C, multiply(add(C, B), A))",
+            "fn_3(A, B, C, D) = fn_0(D, multiply(A, C), multiply(C, B), A)",
+            "fn_4(A, B, C) = multiply(multiply(B, add(B, A)), C)",
+            "fn_5(A, B) = add(B, fn_1(B, A))",
+            "fn_6(A, B, C, D) = fn_0(multiply(add(A, C), D), A, multiply(add(A, C), B), A)",
+            "fn_7(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_8(A, B, C) = fn_0(C, A, B, A)",
+            "fn_9(A, B, C) = multiply(C, multiply(fn_1(B, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), multiply(B, A))",
+            "fn_1(A, B) = add(B, additive_inverse(A))",
+            "fn_2(A, B, C) = multiply(C, multiply(add(C, B), A))",
+            "fn_3(A, B, C, D) = add(multiply(A, multiply(C, B)), multiply(multiply(A, C), D))",
+            "fn_4(A, B, C) = multiply(multiply(B, add(B, A)), C)",
+            "fn_5(A, B) = add(B, add(A, additive_inverse(B)))",
+            "fn_6(A, B, C, D) = add(multiply(A, multiply(add(A, C), B)), multiply(A, multiply(add(A, C), D)))",
+            "fn_7(A, B, C) = add(commutator(B, C), multiply(B, A))",
+            "fn_8(A, B, C) = add(multiply(A, B), multiply(A, C))",
+            "fn_9(A, B, C) = multiply(C, multiply(add(B, additive_inverse(B)), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.44529199999999997,
+        "hints_time_sys": 0.014889999999999999,
+        "hints_time": 0.460182
+    },
+    {
+        "problem": "RNG025-7",
+        "mean_base_user_time": 2.86780834375,
+        "min_base_user_time": 2.828621,
+        "min_base_dir": "20250627_195845_RNG_7178621_492",
+        "abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), multiply(B, A))",
+            "fn_1(A, B, C) = multiply(add(B, A), C)",
+            "fn_2(A, B, C) = multiply(multiply(B, add(B, A)), C)",
+            "fn_3(A, B, C) = multiply(B, fn_1(C, B, A))",
+            "fn_4(A, B, C) = add(C, add(B, A))",
+            "fn_5(A, B, C) = fn_0(C, A, B, A)",
+            "fn_6(A, B) = B(additive_inverse(A), A)",
+            "fn_7(A, B, C, D, E) = E(D(B, add(B, C)), fn_1(C, B, A))",
+            "fn_8(A, B) = fn_4(additive_inverse(A), B, A)",
+            "fn_9(A, B) = add(B, additive_inverse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = add(multiply(D, C), multiply(B, A))",
+            "fn_1(A, B, C) = multiply(add(B, A), C)",
+            "fn_2(A, B, C) = multiply(multiply(B, add(B, A)), C)",
+            "fn_3(A, B, C) = multiply(B, multiply(add(B, C), A))",
+            "fn_4(A, B, C) = add(C, add(B, A))",
+            "fn_5(A, B, C) = add(multiply(A, B), multiply(A, C))",
+            "fn_8(A, B) = add(A, add(B, additive_inverse(A)))",
+            "fn_9(A, B) = add(B, additive_inverse(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 5.972328,
+        "hints_time_sys": 0.083648,
+        "hints_time": 6.055976
+    },
+    {
+        "problem": "RNG026-6",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG026-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG027-5",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG027-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG027-8",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG027-9",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG028-5",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG028-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG028-8",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG028-9",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG029-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG029-5",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG029-6",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG029-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "RNG035-7",
+        "mean_base_user_time": 38.55054728125001,
+        "min_base_user_time": 35.043627,
+        "min_base_dir": "20250627_200416_RNG_7178639_508",
+        "abstractions": [
+            "fn_0(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_1(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A, B) = fn_0(B, A, A)",
+            "fn_3(A) = fn_0(A, A)",
+            "fn_4(A) = fn_1(A, A, A)",
+            "fn_5(A) = A(b, c)",
+            "fn_6(A) = fn_0(A, c, a)",
+            "fn_7(A) = fn_2(A, A)",
+            "fn_8(A, B, C) = multiply(C, add(B, A))",
+            "fn_9(A, B, C, D) = fn_1(D, C, multiply(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_1(A, B, C) = add(C, multiply(B, A))",
+            "fn_2(A, B) = multiply(A, multiply(A, B))",
+            "fn_4(A) = add(A, multiply(A, A))",
+            "fn_6(A) = multiply(a, multiply(c, A))",
+            "fn_7(A) = multiply(A, multiply(A, A))",
+            "fn_8(A, B, C) = multiply(C, add(B, A))",
+            "fn_9(A, B, C, D) = add(multiply(B, A), multiply(C, D))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 35.897377,
+        "hints_time_sys": 0.192221,
+        "hints_time": 36.089598
+    },
+    {
+        "problem": "RNG128-1",
+        "mean_base_user_time": 0.016916062499999995,
+        "min_base_user_time": 0.012245999999999993,
+        "min_base_dir": "20250627_195214_RNG_7178584_456",
+        "abstractions": [
+            "fn_0(A) = add(unit, A)",
+            "fn_1(A, B) = add(B, mult(B, A))",
+            "fn_2(A, C) = mult(C, add(C, A))",
+            "fn_3 = fn_0(unit)",
+            "fn_4(A, C) = mult(C, A)",
+            "fn_5(A) = mult(A, A)",
+            "fn_6(A) = add(A, A)",
+            "fn_7(A) = fn_0(fn_1(A, A))",
+            "fn_8(A, B) = mult(A, add(B, A))",
+            "fn_9(C, D) = fn_1(D, C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = add(unit, A)",
+            "fn_1(A, B) = add(B, mult(B, A))",
+            "fn_2(A, C) = mult(C, add(C, A))",
+            "fn_3 = add(unit, unit)",
+            "fn_5(A) = mult(A, A)",
+            "fn_6(A) = add(A, A)",
+            "fn_7(A) = add(unit, add(A, mult(A, A)))",
+            "fn_8(A, B) = mult(A, add(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011746999999999999,
+        "hints_time_sys": 0.006849999999999999,
+        "hints_time": 0.018597
+    }
+]

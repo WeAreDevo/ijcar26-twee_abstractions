@@ -1,0 +1,21 @@
+abstractions:
+  compress_domain_abstractions: true
+  domain_abstractions_source: theory
+  goodness_threshold: 0.7
+  lemma_abstraction:
+    max_arity: 5
+    stitch_iterations: 5
+    topk: 20
+  use_domain_abstractions: true
+  use_partial_proof_lemmas: false
+stitch:
+  iterations: 10
+  max_arity: 5
+twee:
+  flags:
+  - --all-lemmas
+  - --show-peaks
+  - --hint-skel-factor 0
+  - --hint-skel-cost 0
+  - --no-flatten-goal
+  timeout: 1000

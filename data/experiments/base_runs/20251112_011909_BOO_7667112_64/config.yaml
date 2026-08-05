@@ -1,0 +1,14 @@
+extraction:
+  onlyProofTerms: true
+  onlyTopLemmas: false
+stitch:
+  iterations: 2
+  max_arity: 2
+twee:
+  flags:
+  - --no-flatten-goal
+  - --all-lemmas
+  - --show-peaks
+  - --proof-on-saturation
+  - --max-time 1000
+  timeout: 1500

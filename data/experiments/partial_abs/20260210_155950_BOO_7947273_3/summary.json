@@ -1,0 +1,444 @@
+[
+    {
+        "problem": "BOO001-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006012
+    },
+    {
+        "problem": "BOO002-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014088999999999999
+    },
+    {
+        "problem": "BOO002-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016276
+    },
+    {
+        "problem": "BOO003-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0089
+    },
+    {
+        "problem": "BOO003-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005948999999999999
+    },
+    {
+        "problem": "BOO004-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = add(A, A)",
+            "fn_1(A) = add(A, add(A, A))",
+            "fn_2(A) = inverse(inverse(A))",
+            "fn_3(A, B, C, D) = product(add(D, C), add(inverse(B), inverse(B)), multiply(inverse(B), A))",
+            "fn_4(A) = add(add(A, A), add(A, add(A, A)))",
+            "fn_5(A, B, C, D) = product(add(B, B), add(D, C), multiply(B, A))",
+            "fn_6(A) = add(A, add(A, add(A, A)))",
+            "fn_7(A, B) = add(B, add(B, A))",
+            "fn_8(A) = add(inverse(A), inverse(A))",
+            "fn_10(A) = add(inverse(inverse(A)), inverse(inverse(A)))"
+        ],
+        "final_hints": [
+            "product(add(A, B), add(inverse(C), inverse(C)), multiply(inverse(C), D))",
+            "add(inverse(inverse(A)), inverse(inverse(A)))",
+            "add(A, add(A, add(A, A)))",
+            "add(A, add(A, B))",
+            "add(add(A, A), add(A, add(A, A)))",
+            "add(inverse(A), inverse(A))",
+            "add(A, add(A, A))",
+            "inverse(inverse(A))",
+            "add(A, A)",
+            "product(add(A, A), add(B, C), multiply(A, D))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "BOO004-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006816
+    },
+    {
+        "problem": "BOO004-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005918
+    },
+    {
+        "problem": "BOO005-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007012
+    },
+    {
+        "problem": "BOO005-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011746
+    },
+    {
+        "problem": "BOO006-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007801
+    },
+    {
+        "problem": "BOO006-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003968
+    },
+    {
+        "problem": "BOO007-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.053345
+    },
+    {
+        "problem": "BOO007-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.038482999999999996
+    },
+    {
+        "problem": "BOO008-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.052211
+    },
+    {
+        "problem": "BOO008-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03761
+    },
+    {
+        "problem": "BOO009-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010999
+    },
+    {
+        "problem": "BOO009-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008057
+    },
+    {
+        "problem": "BOO010-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014783999999999999
+    },
+    {
+        "problem": "BOO010-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008936999999999999
+    },
+    {
+        "problem": "BOO011-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0070079999999999995
+    },
+    {
+        "problem": "BOO011-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002953
+    },
+    {
+        "problem": "BOO012-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010012
+    },
+    {
+        "problem": "BOO012-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011861
+    },
+    {
+        "problem": "BOO013-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002937
+    },
+    {
+        "problem": "BOO013-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008874
+    },
+    {
+        "problem": "BOO014-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D) = ifeq(sum(D, multiply(additive_identity, C), B), true, A, true)",
+            "fn_1(A) = multiply(additive_identity, A)",
+            "fn_2 = multiply(additive_identity, additive_identity)",
+            "fn_3(A) = multiply(A, additive_identity)",
+            "fn_5(A) = inverse(multiply(A, A))",
+            "fn_6(A) = multiply(additive_identity, inverse(A))",
+            "fn_9(A, B, C) = ifeq(sum(additive_identity, multiply(additive_identity, inverse(multiply(A, A))), add(C, B)), true, true, true)",
+            "fn_10(A) = multiply(additive_identity, multiply(A, multiply(A, additive_identity)))",
+            "fn_11(A) = add(A, multiplicative_identity)",
+            "fn_12(A) = multiply(additive_identity, inverse(multiply(A, A)))",
+            "fn_13(A) = multiply(multiply(additive_identity, additive_identity), A)",
+            "fn_14(A) = product(multiply(additive_identity, additive_identity), A, A)",
+            "fn_16(A) = multiply(A, multiply(additive_identity, additive_identity))",
+            "fn_18(A) = product(A, multiply(additive_identity, additive_identity), A)"
+        ],
+        "final_hints": [
+            "product(A, multiply(additive_identity, additive_identity), A)",
+            "multiply(additive_identity, additive_identity)",
+            "add(A, multiplicative_identity)",
+            "multiply(A, multiply(additive_identity, additive_identity))",
+            "ifeq(sum(additive_identity, multiply(additive_identity, inverse(multiply(A, A))), add(B, C)), true, true, true)",
+            "ifeq(sum(A, multiply(additive_identity, B), C), true, D, true)",
+            "multiply(additive_identity, A)",
+            "multiply(additive_identity, multiply(A, multiply(A, additive_identity)))",
+            "multiply(additive_identity, inverse(multiply(A, A)))",
+            "multiply(A, additive_identity)",
+            "multiply(multiply(additive_identity, additive_identity), A)",
+            "product(multiply(additive_identity, additive_identity), A, A)",
+            "multiply(additive_identity, inverse(A))",
+            "inverse(multiply(A, A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "BOO014-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05235
+    },
+    {
+        "problem": "BOO014-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.091302
+    },
+    {
+        "problem": "BOO015-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D) = ifeq(sum(D, multiply(additive_identity, C), B), true, A, true)",
+            "fn_1(A) = multiply(additive_identity, A)",
+            "fn_2 = multiply(additive_identity, additive_identity)",
+            "fn_3(A) = multiply(A, additive_identity)",
+            "fn_5(A) = inverse(multiply(A, A))",
+            "fn_6(A) = multiply(additive_identity, inverse(A))",
+            "fn_9(A, B, C) = ifeq(sum(additive_identity, multiply(additive_identity, inverse(multiply(A, A))), add(C, B)), true, true, true)",
+            "fn_10(A) = multiply(additive_identity, multiply(A, multiply(A, additive_identity)))",
+            "fn_11(A) = add(A, multiplicative_identity)",
+            "fn_12(A) = multiply(additive_identity, inverse(multiply(A, A)))",
+            "fn_13(A) = multiply(multiply(additive_identity, additive_identity), A)",
+            "fn_14(A) = product(multiply(additive_identity, additive_identity), A, A)",
+            "fn_16(A) = multiply(A, multiply(additive_identity, additive_identity))",
+            "fn_18(A) = product(A, multiply(additive_identity, additive_identity), A)"
+        ],
+        "final_hints": [
+            "product(A, multiply(additive_identity, additive_identity), A)",
+            "multiply(additive_identity, additive_identity)",
+            "add(A, multiplicative_identity)",
+            "multiply(A, multiply(additive_identity, additive_identity))",
+            "ifeq(sum(additive_identity, multiply(additive_identity, inverse(multiply(A, A))), add(B, C)), true, true, true)",
+            "ifeq(sum(A, multiply(additive_identity, B), C), true, D, true)",
+            "multiply(additive_identity, A)",
+            "multiply(additive_identity, multiply(A, multiply(A, additive_identity)))",
+            "multiply(additive_identity, inverse(multiply(A, A)))",
+            "multiply(A, additive_identity)",
+            "multiply(multiply(additive_identity, additive_identity), A)",
+            "product(multiply(additive_identity, additive_identity), A, A)",
+            "multiply(additive_identity, inverse(A))",
+            "inverse(multiply(A, A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "BOO015-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.058511999999999995
+    },
+    {
+        "problem": "BOO015-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09237899999999999
+    },
+    {
+        "problem": "BOO016-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011097
+    },
+    {
+        "problem": "BOO017-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = ifeq(sum(C, B, A), true, true, true)",
+            "fn_1(A) = multiply(A, additive_identity)",
+            "fn_2(A, B, C, D, E) = ifeq(sum(E, B, D), true, ifeq(sum(A, B, C), true, true, true), true)",
+            "fn_3(A) = multiply(additive_identity, inverse(A))",
+            "fn_5 = multiply(additive_identity, additive_identity)",
+            "fn_6(A) = multiply(additive_identity, A)",
+            "fn_11(A) = multiply(additive_identity, inverse(inverse(A)))"
+        ],
+        "final_hints": [
+            "multiply(additive_identity, additive_identity)",
+            "multiply(additive_identity, A)",
+            "multiply(A, additive_identity)",
+            "ifeq(sum(A, B, C), true, ifeq(sum(D, B, E), true, true, true), true)",
+            "ifeq(sum(A, B, C), true, true, true)",
+            "multiply(additive_identity, inverse(A))",
+            "multiply(additive_identity, inverse(inverse(A)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "BOO017-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009738
+    },
+    {
+        "problem": "BOO018-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0058969999999999995
+    },
+    {
+        "problem": "BOO021-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002911
+    },
+    {
+        "problem": "BOO022-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.067646
+    },
+    {
+        "problem": "BOO023-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.8769629999999999
+    },
+    {
+        "problem": "BOO024-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.044451
+    },
+    {
+        "problem": "BOO025-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.058397
+    },
+    {
+        "problem": "BOO026-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.088348
+    },
+    {
+        "problem": "BOO028-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.378052
+    },
+    {
+        "problem": "BOO029-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029987
+    },
+    {
+        "problem": "BOO031-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.5835080000000001
+    },
+    {
+        "problem": "BOO034-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.162994
+    },
+    {
+        "problem": "BOO067-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.366064
+    },
+    {
+        "problem": "BOO068-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.505031
+    },
+    {
+        "problem": "BOO069-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.225489
+    },
+    {
+        "problem": "BOO070-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.535906
+    },
+    {
+        "problem": "BOO071-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.215062
+    },
+    {
+        "problem": "BOO072-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.133371
+    },
+    {
+        "problem": "BOO073-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.152582
+    },
+    {
+        "problem": "BOO074-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.180121
+    },
+    {
+        "problem": "BOO075-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.131711
+    },
+    {
+        "problem": "BOO076-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.586827
+    }
+]

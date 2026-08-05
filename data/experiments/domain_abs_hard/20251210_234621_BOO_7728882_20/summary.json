@@ -1,0 +1,43 @@
+[
+    {
+        "problem": "BOO004-10.p",
+        "domain_hints": [
+            "multiply(additive_identity, additive_identity)",
+            "ifeq(product(A, additive_identity, B), true, C, true)",
+            "add(A, multiply(B, C))",
+            "ifeq(product(A, B, C), true, ifeq(sum(D, E, F), true, G, true), true)",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(B))",
+            "multiply(A, add(B, inverse(A)))",
+            "ifeq(true, true, product(A, B, C), true)",
+            "multiply(A, additive_identity)",
+            "ifeq2(product(A, B, C), true, C, D)",
+            "multiply(A, add(B, C))",
+            "multiply(A, n1)",
+            "ifeq(sum(A, B, C), true, product(C, D, E), true)",
+            "multiply(A, inverse(A))",
+            "add(A, A)",
+            "ifeq2(product(A, B, C), true, D, C)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(A, inverse(B))",
+            "multiply(A, add(B, multiplicative_identity))",
+            "ifeq(product(A, B, C), true, D, true)",
+            "ifeq(A, true, B, true)",
+            "ifeq2(true, true, A, B)",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(additive_identity, A)"
+        ],
+        "final_hints": [
+            "ifeq(product(C, D, E), true, A, true)",
+            "ifeq(B, true, A, true)",
+            "ifeq2(product(D, E, C), true, B, A)",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)",
+            "add(B, inverse(A))"
+        ],
+        "status": "success",
+        "hint_time_user": 5.335832,
+        "hint_time_sys": 0.08664,
+        "hint_time": 5.422472
+    }
+]

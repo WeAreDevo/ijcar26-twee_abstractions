@@ -1,0 +1,2970 @@
+[
+    {
+        "problem": "LAT005-10",
+        "mean_base_user_time": 1.055282,
+        "min_base_user_time": 1.055282,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(B, fn_0(C, B, A))",
+            "fn_2(A, B, C) = fn_0(C, B, join(B, A))",
+            "fn_3(A) = meet(A, meet(a, b))",
+            "fn_4(A) = fn_0(A, b, r1)",
+            "fn_5(A, B, C, D) = A(C, B, D)",
+            "fn_6 = fn_0(b, a)",
+            "fn_7(A) = meet(A, a)",
+            "fn_8(A, B, C) = join(C, meet(B, A))",
+            "fn_9(A, B, C) = join(C, fn_0(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.051854,
+        "hints_time_sys": 0.139199,
+        "hints_time": 1.1910530000000001
+    },
+    {
+        "problem": "LAT006-1",
+        "mean_base_user_time": 0.17064462500000002,
+        "min_base_user_time": 0.16089399999999998,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = D(meet(C, A), meet(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_3(A, B) = meet(A, B)",
+            "fn_4(A, B) = fn_0(A, B, join(B, A))",
+            "fn_5(A, B) = fn_0(B, A, A)",
+            "fn_6(A, B, C, D) = A(D, C, B)",
+            "fn_7(A, B, C) = C(A, meet(B, A))",
+            "fn_8(A, B, C) = meet(C, fn_0(C, B, A))",
+            "fn_9(A, B, C, D) = A(C, D, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.12467099999999999,
+        "hints_time_sys": 0.093398,
+        "hints_time": 0.21806899999999999
+    },
+    {
+        "problem": "LAT007-1",
+        "mean_base_user_time": 0.015463999999999997,
+        "min_base_user_time": 0.011592,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(C, B, join(B, A))",
+            "fn_2(A, B, C) = join(B(C), B(A))",
+            "fn_3(A, B) = fn_0(B, A, A)",
+            "fn_4(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_5(A, B, C) = join(C, B(C, A))",
+            "fn_6(A, B, C) = join(C, join(B, A))",
+            "fn_7(A, B, C) = A(B, C)",
+            "fn_8(A, B) = A(B, B)",
+            "fn_9(A, B, C, D) = A(D, C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.040281,
+        "hints_time_sys": 0.087077,
+        "hints_time": 0.127358
+    },
+    {
+        "problem": "LAT008-1",
+        "mean_base_user_time": 0.0069169999999999995,
+        "min_base_user_time": 0.004158,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B) = join(B, fn_1(A, B, join(B, A)))",
+            "fn_3(A, B) = fn_1(B, A, A)",
+            "fn_4(A, B) = join(A, meet(B, A))",
+            "fn_5(A, B, C) = A(B, C)",
+            "fn_6(A, B) = A(B, B)",
+            "fn_7(A, B, C) = A(B, C, B)",
+            "fn_8(A, B, C) = A(C, B)",
+            "fn_9(A, B, C) = fn_0(A, B, C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(C, A), meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008006,
+        "hints_time_sys": 0.086264,
+        "hints_time": 0.09426999999999999
+    },
+    {
+        "problem": "LAT009-1",
+        "mean_base_user_time": 0.41176856250000005,
+        "min_base_user_time": 0.406391,
+        "min_base_dir": "20251112_030536_LAT_7667270_218",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = fn_0(C, B, meet(B, A))",
+            "fn_3(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_4(A, B) = fn_0(join(B, A))",
+            "fn_5(A, B, C, D) = fn_1(D, C, join(B, A))",
+            "fn_6(A, B) = fn_0(A, B, A)",
+            "fn_7(A, B, C, D) = A(D, B, C, B)",
+            "fn_8(A, B, C, D, E) = fn_3(D, join(E, D), C, join(B, A))",
+            "fn_9(A, B, C) = A(B, C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.21936499999999998,
+        "hints_time_sys": 0.06942899999999999,
+        "hints_time": 0.288794
+    },
+    {
+        "problem": "LAT010-1",
+        "mean_base_user_time": 0.148845,
+        "min_base_user_time": 0.143037,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A) = meet(a, meet(join(c, b), A))",
+            "fn_2(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_3 = join(d, b)",
+            "fn_4 = fn_0(d, c, b)",
+            "fn_5(A, B, C) = meet(C, join(B, A))",
+            "fn_6(A, B) = fn_2(B, A, A)",
+            "fn_7(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_8(A, B) = fn_2(A, B, A)",
+            "fn_9(A) = fn_5(fn_6(a, c, d), meet(a, fn_4), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.209177,
+        "hints_time_sys": 0.074627,
+        "hints_time": 0.283804
+    },
+    {
+        "problem": "LAT011-1",
+        "mean_base_user_time": 0.1022759375,
+        "min_base_user_time": 0.09893099999999999,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B, C, D) = join(meet(D, B), meet(D, C(B, A)))",
+            "fn_1(A, B, C) = C(A, join(B, A))",
+            "fn_2(A, B) = meet(A, B)",
+            "fn_3(A, B, C, D) = B(C, A(C, D))",
+            "fn_4(A, B, C) = meet2(C, meet(B, A))",
+            "fn_5(A, B) = join(meet(B, A), meet2(B, A))",
+            "fn_6(A, B, C) = A(B, C)",
+            "fn_7(A, B, C, D, E) = C(B(D, E), D, A)",
+            "fn_8(A, B, C) = meet2(C, fn_4(B, C, A))",
+            "fn_9(A) = A(meet, meet2)"
+        ],
+        "expanded_abstractions": [
+            "fn_4(A, B, C) = meet2(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.052213999999999997,
+        "hints_time_sys": 0.09119999999999999,
+        "hints_time": 0.14341399999999999
+    },
+    {
+        "problem": "LAT012-1",
+        "mean_base_user_time": 0.021814062499999995,
+        "min_base_user_time": 0.017586,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(meet(D, join(meet(B, A), C)), meet(B, A))",
+            "fn_1(A, B) = meet(meet(A, B), meet(B, A))",
+            "fn_2(A, B, C, D, E, F) = A(D, B(E, B(D, A(F, A(D, C)))))",
+            "fn_3(A, B, C) = C(A, join(B, A))",
+            "fn_4(A, B, C, D) = fn_0(A, B, D, join(C, meet(B, A)))",
+            "fn_5(A, B, C) = A(C, B)",
+            "fn_6(A, B) = join(A, meet(A, B))",
+            "fn_7(A, B, C) = fn_3(meet(B, C), B, A)",
+            "fn_8(A, B, C) = A(B, C)",
+            "fn_9(A, B, C) = A(meet(B, C), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(meet(D, join(meet(B, A), C)), meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.021152,
+        "hints_time_sys": 0.085602,
+        "hints_time": 0.106754
+    },
+    {
+        "problem": "LAT013-1",
+        "mean_base_user_time": 0.23603849999999998,
+        "min_base_user_time": 0.22464399999999998,
+        "min_base_dir": "20251112_031405_LAT_7667286_234",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(meet(D, C), meet(B, A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B, C) = fn_0(B, C, join(meet(C, B), A))",
+            "fn_3(A, B, C) = fn_0(fn_1(B, A, C), A, B, A)",
+            "fn_4(A, B, C) = meet(C, meet(B, A))",
+            "fn_5(A, B) = meet(A, B)",
+            "fn_6(A, B) = fn_0(A, B, B, A)",
+            "fn_7(A, B, C, D) = D(C, B, fn_1(C, B, A))",
+            "fn_8(A, B, C, D) = D(meet(A, C), B, meet(B, A))",
+            "fn_9(A, B, C) = A(C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(meet(D, C), meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.153386,
+        "hints_time_sys": 0.096095,
+        "hints_time": 0.249481
+    },
+    {
+        "problem": "LAT014-1",
+        "mean_base_user_time": 0.0033149374999999997,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20251112_030721_LAT_7667274_222",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B) = fn_0(B, A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003941,
+        "hints_time_sys": 0.081754,
+        "hints_time": 0.085695
+    },
+    {
+        "problem": "LAT017-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT018-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT019-1",
+        "mean_base_user_time": 0.126233125,
+        "min_base_user_time": 0.12172799999999999,
+        "min_base_dir": "20251112_031300_LAT_7667282_230",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(C, B, join(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = join(C, B(C, A))",
+            "fn_4(A, B, C) = fn_0(C, A, join(B, A))",
+            "fn_5(A, B, C, D) = A(D, C, B)",
+            "fn_6(A, B, C, D) = A(D, B, C)",
+            "fn_7(A, B) = fn_0(B, A, A)",
+            "fn_8(A, B, C) = C(B, meet(B, A))",
+            "fn_9(A, B, C) = fn_0(B, C, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.096674,
+        "hints_time_sys": 0.09068899999999999,
+        "hints_time": 0.187363
+    },
+    {
+        "problem": "LAT020-1",
+        "mean_base_user_time": 1.0652768124999998,
+        "min_base_user_time": 1.050749,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B, C, D) = fn_0(D, C, join(B, A))",
+            "fn_3(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_4(A, B, C, D) = fn_1(D, C, meet(B, A))",
+            "fn_5(A, B) = fn_0(meet(B, A))",
+            "fn_6(A, B, C, D) = A(D, C, B)",
+            "fn_7(A, B) = fn_1(B, A, A)",
+            "fn_8(A, B, C) = C(B, meet(B, A))",
+            "fn_9(A, B, C, D) = D(B, C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.243277,
+        "hints_time_sys": 0.077738,
+        "hints_time": 2.321015
+    },
+    {
+        "problem": "LAT021-1",
+        "mean_base_user_time": 0.05417249999999999,
+        "min_base_user_time": 0.051171999999999995,
+        "min_base_dir": "20251112_031300_LAT_7667282_230",
+        "abstractions": [
+            "fn_0(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = fn_0(join(B, C), A, B, A)",
+            "fn_3(A, B, C) = fn_0(A, join(C, B), A)",
+            "fn_4(A, B, C) = fn_1(meet(A, C), B, A)",
+            "fn_5(A, B, C) = fn_0(C, A, B, A)",
+            "fn_6(A, B, C, D) = A(B, C, D)",
+            "fn_7(A, B, C) = fn_1(C, A, B)",
+            "fn_8(A, B, C) = fn_0(join(A, C), B, B, A)",
+            "fn_9(A, B, C) = fn_1(meet(A, B), C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = join(meet(D, C), meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.040992999999999995,
+        "hints_time_sys": 0.09484999999999999,
+        "hints_time": 0.135843
+    },
+    {
+        "problem": "LAT022-1",
+        "mean_base_user_time": 0.3868128124999999,
+        "min_base_user_time": 0.380075,
+        "min_base_dir": "20251112_024528_LAT_7667246_194",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B) = fn_0(B, A, A)",
+            "fn_3(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_4(A, B, C) = meet(B, fn_1(C, B, A))",
+            "fn_5(A, B, C, D) = fn_3(C, B, B, A(C, D))",
+            "fn_6(A, B, C, D) = A(D, C, B)",
+            "fn_7(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_8(A, B, C, D) = D(B, C, join(B, A))",
+            "fn_9(A, B, C, D) = join(C, fn_3(D, C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.190572,
+        "hints_time_sys": 0.031167999999999998,
+        "hints_time": 0.22174
+    },
+    {
+        "problem": "LAT023-1",
+        "mean_base_user_time": 0.09150562499999997,
+        "min_base_user_time": 0.08705099999999999,
+        "min_base_dir": "20251112_030536_LAT_7667270_218",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_2(A, B, C) = fn_0(C, join(B, A), A)",
+            "fn_3(A, B, C) = meet(C, join(B, A))",
+            "fn_4(A, B) = fn_1(B, A, A)",
+            "fn_5(A, B, C) = meet(B, fn_0(C, B, A))",
+            "fn_6(A, B, C) = fn_0(join(A, C), B, A)",
+            "fn_7(A, B, C, D) = A(B, C, D)",
+            "fn_8(A, B, C) = fn_0(join(C, A), B, A)",
+            "fn_9(A, B, C, D) = A(D, C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.069882,
+        "hints_time_sys": 0.092179,
+        "hints_time": 0.162061
+    },
+    {
+        "problem": "LAT026-1",
+        "mean_base_user_time": 0.24217824999999996,
+        "min_base_user_time": 0.234196,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, meet(B, A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B, C, D, E) = E(fn_1(A, B, D), C, meet(B, A))",
+            "fn_3(A, B, C) = fn_0(C, B, meet(B, A))",
+            "fn_4(A, B, C) = A(B, C)",
+            "fn_5(A, B, C) = meet(meet(B, A), C)",
+            "fn_6(A, B, C) = join(A, fn_1(A, C, meet(B, A)))",
+            "fn_7(A, B, C) = A(B, C, B)",
+            "fn_8(A, B, C) = A(C, B, B)",
+            "fn_9(A, B, C, D) = A(D, B, join(B, C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.26711799999999997,
+        "hints_time_sys": 0.112498,
+        "hints_time": 0.37961599999999995
+    },
+    {
+        "problem": "LAT027-1",
+        "mean_base_user_time": 0.07913018749999999,
+        "min_base_user_time": 0.073695,
+        "min_base_dir": "20251112_024911_LAT_7667252_200",
+        "abstractions": [
+            "fn_0(A, B, C) = join(join(B, C), join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = fn_1(meet(C, A), meet(B, A), A)",
+            "fn_3(A, B, C) = join(join(B, A), C)",
+            "fn_4(A, B, C, D) = meet(join(B, C), A(D, C, B))",
+            "fn_5(A, B, C) = A(B, C)",
+            "fn_6(A, B, C) = fn_0(join(A, C), B, A)",
+            "fn_7(A, B, C, D) = A(C, B, D)",
+            "fn_8(A, B, C) = A(C, B, B)",
+            "fn_9(A, B) = join(A, meet(A, B))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(join(B, C), join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.08323,
+        "hints_time_sys": 0.089138,
+        "hints_time": 0.172368
+    },
+    {
+        "problem": "LAT028-1",
+        "mean_base_user_time": 0.018599625,
+        "min_base_user_time": 0.015028,
+        "min_base_dir": "20251112_031305_LAT_7667284_232",
+        "abstractions": [
+            "fn_0(A, B, C) = C(meet(B, A), meet2(B, A))",
+            "fn_1(A, B, C, D, E) = B(C, B(A(D, C), A(E, C)))",
+            "fn_2(A, B, C, D, E) = B(B(A(D, C), A(E, C)), C)",
+            "fn_3(A, B, C) = meet(A, meet(C, join(B, A)))",
+            "fn_4(A, B, C) = meet2(A, meet2(C, join(B, A)))",
+            "fn_5(A, B, C) = A(meet(B, C), meet2(C, B))",
+            "fn_6(A, B, C) = join(B, A(C, B))",
+            "fn_7(A, B, C) = join(B, A(B, C))",
+            "fn_8(A, B) = join(A, join(B(A), B(A)))",
+            "fn_9(A, B, C, D, E) = B(A(C, D), E, join(C, A(C, D)))"
+        ],
+        "expanded_abstractions": [
+            "fn_3(A, B, C) = meet(A, meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.020939,
+        "hints_time_sys": 0.08853699999999999,
+        "hints_time": 0.10947599999999999
+    },
+    {
+        "problem": "LAT031-1",
+        "mean_base_user_time": 0.027225249999999996,
+        "min_base_user_time": 0.020553,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B, C, D) = fn_0(D, C, join(B, A))",
+            "fn_3(A, B, C, D) = A(D, B, C)",
+            "fn_4(A, B, C) = fn_2(B, A, B, C)",
+            "fn_5(A, B, C) = fn_2(B, A, C, B)",
+            "fn_6(A, B, C, D) = B(C, A(C, D))",
+            "fn_7(A, B, C, D) = fn_1(D, C, meet(B, A))",
+            "fn_8(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_9(A, B, C, D) = A(D, C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.01856,
+        "hints_time_sys": 0.089084,
+        "hints_time": 0.10764399999999999
+    },
+    {
+        "problem": "LAT032-1",
+        "mean_base_user_time": 0.0263595,
+        "min_base_user_time": 0.023438,
+        "min_base_dir": "20251112_030805_LAT_7667276_224",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_3(A, B, C, D) = A(D, B, C)",
+            "fn_4(A, B, C) = fn_2(B, A, B, C)",
+            "fn_5(A, B, C) = fn_2(B, A, C, B)",
+            "fn_6(A, B, C, D) = B(C, A(C, D))",
+            "fn_7(A, B, C, D) = fn_1(D, C, join(B, A))",
+            "fn_8(A, B, C) = meet(C, fn_0(C, B, A))",
+            "fn_9(A, B, C, D) = A(D, C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.017144,
+        "hints_time_sys": 0.079708,
+        "hints_time": 0.096852
+    },
+    {
+        "problem": "LAT033-1",
+        "mean_base_user_time": 0.0028916875,
+        "min_base_user_time": 0.0009609999999999999,
+        "min_base_dir": "20251112_024658_LAT_7667248_196",
+        "abstractions": [
+            "fn_0(A) = join(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = join(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0039499999999999995,
+        "hints_time_sys": 0.071277,
+        "hints_time": 0.07522699999999999
+    },
+    {
+        "problem": "LAT034-1",
+        "mean_base_user_time": 0.00259325,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20251112_030053_LAT_7667262_210",
+        "abstractions": [
+            "fn_0(A) = meet(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = meet(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0019529999999999999,
+        "hints_time_sys": 0.08312499999999999,
+        "hints_time": 0.08507799999999999
+    },
+    {
+        "problem": "LAT038-1",
+        "mean_base_user_time": 2.5607565624999995,
+        "min_base_user_time": 2.535106,
+        "min_base_dir": "20251112_024827_LAT_7667250_198",
+        "abstractions": [
+            "fn_0(A) = f(A, dd)",
+            "fn_1(A, B, C, D) = meet(join(D, C), join(B, A))",
+            "fn_2(A) = meet(fn_0(cc), A)",
+            "fn_3 = fn_0(aa)",
+            "fn_4(A) = meet(A, fn_0(bb))",
+            "fn_5(A, B, C, D) = fn_1(meet(B, A), D, C, B)",
+            "fn_6(A, B, C, D, E) = fn_1(meet(C, B), E, D, A)",
+            "fn_7 = fn_0(cc)",
+            "fn_8(A, B) = meet(fn_0(join(A, bb)), join(fn_2(B), fn_3))",
+            "fn_9(A, B, C) = meet(join(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = f(A, dd)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.16918,
+        "hints_time_sys": 0.093876,
+        "hints_time": 0.263056
+    },
+    {
+        "problem": "LAT039-1",
+        "mean_base_user_time": 0.0072145625000000005,
+        "min_base_user_time": 0.003029,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A) = join(xx, A)",
+            "fn_1(A) = meet(yy, A)",
+            "fn_2(A) = fn_0(meet(A, yy))",
+            "fn_3(A) = fn_1(join(A, xx))",
+            "fn_4(A, B) = A(fn_0(B))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = join(xx, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005809,
+        "hints_time_sys": 0.07617299999999999,
+        "hints_time": 0.08198199999999999
+    },
+    {
+        "problem": "LAT039-2",
+        "mean_base_user_time": 0.00817675,
+        "min_base_user_time": 0.004967,
+        "min_base_dir": "20251112_030721_LAT_7667274_222",
+        "abstractions": [
+            "fn_0(A) = join(xx, A)",
+            "fn_1(A) = meet(yy, A)",
+            "fn_2 = join(zz, xx)",
+            "fn_3(A, B) = meet(fn_0(B), fn_0(A))",
+            "fn_4(A) = meet(A, yy)",
+            "fn_5(A, B) = fn_0(A(B))",
+            "fn_6(A) = fn_0(A(zz))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = join(xx, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006049,
+        "hints_time_sys": 0.086825,
+        "hints_time": 0.092874
+    },
+    {
+        "problem": "LAT040-1",
+        "mean_base_user_time": 0.021209625,
+        "min_base_user_time": 0.016977,
+        "min_base_dir": "20251112_024827_LAT_7667250_198",
+        "abstractions": [
+            "fn_0(A, B) = join(B, meet(A, xx))",
+            "fn_1(A, B, C) = meet(join(C, xx), join(B, A))",
+            "fn_2(A) = meet(xx, A)",
+            "fn_3(A) = fn_0(A, zz)",
+            "fn_4(A, B) = fn_1(B, zz, A)",
+            "fn_5(A) = fn_1(zz, A, yy)",
+            "fn_6 = fn_3(yy)",
+            "fn_7 = fn_2(zz)",
+            "fn_8(A) = join(zz, A)",
+            "fn_9(A) = join(xx, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, meet(A, xx))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011684,
+        "hints_time_sys": 0.08541499999999999,
+        "hints_time": 0.09709899999999999
+    },
+    {
+        "problem": "LAT042-1",
+        "mean_base_user_time": 0.04098875,
+        "min_base_user_time": 0.033415,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B, C, D) = join(B, A(D, B, C))",
+            "fn_3(A, B, C, D) = fn_0(D, C, join(B, A))",
+            "fn_4(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_5(A, B, C, D) = A(D, C, B)",
+            "fn_6(A, B, C, D) = A(D, B, C)",
+            "fn_7(A, B, C) = fn_3(B, A, B, C)",
+            "fn_8(A, B, C) = fn_3(B, A, C, B)",
+            "fn_9(A, B, C, D) = fn_1(D, C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.029952999999999997,
+        "hints_time_sys": 0.091082,
+        "hints_time": 0.12103499999999999
+    },
+    {
+        "problem": "LAT043-1",
+        "mean_base_user_time": 0.129763125,
+        "min_base_user_time": 0.125634,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C, D) = B(C, A(C, D))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B, C, D) = D(B, fn_0(C(B, A), A))",
+            "fn_5(A, B) = meet(B, A)",
+            "fn_6(A, B, C, D) = A(C, A(B, D))",
+            "fn_7(A, B) = complement(fn_0(B, A))",
+            "fn_8(A, B) = join(B, A)",
+            "fn_9(A, B, C) = fn_3(A(B, C), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.057546999999999994,
+        "hints_time_sys": 0.090336,
+        "hints_time": 0.147883
+    },
+    {
+        "problem": "LAT044-1",
+        "mean_base_user_time": 30.558204062500003,
+        "min_base_user_time": 29.00986,
+        "min_base_dir": "20251112_024658_LAT_7667248_196",
+        "abstractions": [
+            "fn_0(A, B, C, D) = join(D, meet(complement(C), join(B, A)))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = join(meet(B, A), C)",
+            "fn_3(A, B) = fn_1(B, A(meet(a, b)))",
+            "fn_4(A, B) = fn_2(A, B, meet(B, fn_1(B, complement(A))))",
+            "fn_5(A, B) = fn_0(A, B, A, A)",
+            "fn_6(A, B) = join(B, A)",
+            "fn_7(A, B, C) = join(C, meet(B, A))",
+            "fn_8 = fn_2(join(a, b), complement(a))",
+            "fn_9(A, B) = fn_1(B, complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = join(D, meet(complement(C), join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.645333,
+        "hints_time_sys": 0.19658199999999998,
+        "hints_time": 3.8419149999999997
+    },
+    {
+        "problem": "LAT045-1",
+        "mean_base_user_time": 0.0161933125,
+        "min_base_user_time": 0.011706999999999999,
+        "min_base_dir": "20251112_031305_LAT_7667284_232",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1 = fn_0(b, a)",
+            "fn_2(A) = join(a, A)",
+            "fn_3(A) = meet(A, n1)",
+            "fn_4 = complement(a)",
+            "fn_5(A, B, C, D) = B(C, A(C, D))",
+            "fn_6(A, B) = B(complement(A), A)",
+            "fn_7(A) = fn_2(A(fn_4))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010954,
+        "hints_time_sys": 0.088587,
+        "hints_time": 0.099541
+    },
+    {
+        "problem": "LAT065-10",
+        "mean_base_user_time": 45.746902,
+        "min_base_user_time": 45.746902,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(A, C(meet(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C, D) = ifeq(D, n1, ifeq(meet(C, A), n0, B, A), A)",
+            "fn_3(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_4(A, B) = fn_1(complement(A), B, A)",
+            "fn_5(A, B) = complement(join(B, A))",
+            "fn_6(A, B) = fn_0(join(B, complement(A)), A, complement)",
+            "fn_7(A, B, C, D) = join(D, fn_1(C, B, A))",
+            "fn_8(A, B) = meet(B, complement(A))",
+            "fn_9(A, B) = fn_0(B, A, complement)"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 7.039144,
+        "hints_time_sys": 0.21503999999999998,
+        "hints_time": 7.254184
+    },
+    {
+        "problem": "LAT070-1",
+        "mean_base_user_time": 1.42706525,
+        "min_base_user_time": 1.418038,
+        "min_base_dir": "20251112_024658_LAT_7667248_196",
+        "abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_1(A, B) = fn_0(B, A, B, A)",
+            "fn_2(A, B, C) = fn_0(f(f(A, f(f(C, C), C)), B), A)",
+            "fn_3(A, B, C) = f(C, f(B, A))",
+            "fn_4(A, B) = fn_0(B, A, A)",
+            "fn_5(A, B, C) = fn_0(f(fn_1(C, f(A, B)), fn_3(B, A, C)), A, B, A)",
+            "fn_6(A, B) = fn_2(A, A, A, B, A)",
+            "fn_7(A, B, C, D, E) = fn_0(E, fn_0(f(D, C), fn_1(D, C), B, A), B, A)",
+            "fn_8(A) = f(A, A)",
+            "fn_9(A, B, C, D) = fn_2(C, B, A, D, fn_4(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 5.011687,
+        "hints_time_sys": 0.133956,
+        "hints_time": 5.145643000000001
+    },
+    {
+        "problem": "LAT072-1",
+        "mean_base_user_time": 13.069016437500002,
+        "min_base_user_time": 12.477965,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B) = f(f(A, f(f(B, B), A)), A)",
+            "fn_1(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_2(A, B) = fn_1(B, A, B, A)",
+            "fn_3(A) = f(A, A)",
+            "fn_4(A, B) = fn_1(B, A, A)",
+            "fn_5(A, B, C) = f(C, f(B, A))",
+            "fn_6(A, B, C) = fn_1(fn_0(fn_0(C, A), A), A, B, A)",
+            "fn_7(A, B, C, D) = fn_1(fn_0(B, C), C, D, fn_4(C, B, A))",
+            "fn_8(A, B, C) = fn_1(C, A, B, A)",
+            "fn_9(A, B) = f(A, B(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = f(f(A, f(f(B, B), A)), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.495239,
+        "hints_time_sys": 0.126934,
+        "hints_time": 4.622173
+    },
+    {
+        "problem": "LAT074-1",
+        "mean_base_user_time": 30.401122062499994,
+        "min_base_user_time": 23.821314,
+        "min_base_dir": "20251112_031405_LAT_7667286_234",
+        "abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_1(A, B) = fn_0(B, A, B, A)",
+            "fn_2(A) = f(A, A)",
+            "fn_3(A, B, C, D, E) = fn_0(E(f(f(f(D, C), A), A)), f(fn_2(B), A))",
+            "fn_4(A, B) = fn_0(B, A, A)",
+            "fn_5(A, B, C) = f(f(B, A), C)",
+            "fn_6(A, B) = fn_0(A, B, A)",
+            "fn_7(A, B, C) = fn_0(C, A, B, A)",
+            "fn_8(A, B, C, D) = fn_0(fn_7(B, f(C, fn_5(A, B, C)), D), f(fn_2(B), C), B, A)",
+            "fn_9(A, B, C, D, E) = E(C(D, A), C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 18.8332,
+        "hints_time_sys": 0.301616,
+        "hints_time": 19.134816
+    },
+    {
+        "problem": "LAT075-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT076-1",
+        "mean_base_user_time": 1.9613653125,
+        "min_base_user_time": 1.940305,
+        "min_base_dir": "20251112_030536_LAT_7667270_218",
+        "abstractions": [
+            "fn_0(A, B, C) = f(f(C, A), f(B, A))",
+            "fn_1(A) = f(A, A)",
+            "fn_2(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_3(A, B) = fn_0(B, A, A)",
+            "fn_4(A, B, C) = f(f(f(f(f(fn_1(A), B), C), C), B), A)",
+            "fn_5(A, B, C) = f(C, f(B, A))",
+            "fn_6(A, B, C, D) = fn_2(fn_4(A, C, B), C, D, fn_0(C, B, A))",
+            "fn_7(A, B, C, D) = fn_2(f(D, B), fn_2(B, A, C, f(fn_5(B, A, fn_3(D, B)), C)), B, A)",
+            "fn_8(A) = fn_3(A, A)",
+            "fn_9(A, B) = fn_0(A, B, f(fn_0(A, B, A), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = f(f(C, A), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.70662,
+        "hints_time_sys": 0.102308,
+        "hints_time": 3.808928
+    },
+    {
+        "problem": "LAT077-1",
+        "mean_base_user_time": 154.48171937499998,
+        "min_base_user_time": 144.040378,
+        "min_base_dir": "20251112_030536_LAT_7667270_218",
+        "abstractions": [
+            "fn_0(A) = f(A, A)",
+            "fn_1(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_2(A, B, C) = f(C, f(B, A))",
+            "fn_3(A, B) = f(B, fn_0(A))",
+            "fn_4(A, B) = fn_1(A, B, A)",
+            "fn_5(A, B, C) = fn_1(C, B, fn_0(A), A)",
+            "fn_6(A, B, C) = fn_1(C, A, B, A)",
+            "fn_7(A, B, C, D) = D(f(f(f(f(f(fn_0(B), A), C), C), A), B), A)",
+            "fn_8(A, B) = fn_0(f(B, A))",
+            "fn_9(A, B, C, D, E) = f(E, fn_1(D, C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = f(A, A)"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 1.5: f(Y, Y)\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "LAT078-1",
+        "mean_base_user_time": 3.12261725,
+        "min_base_user_time": 3.083011,
+        "min_base_dir": "20251112_024528_LAT_7667246_194",
+        "abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_1(A, B) = fn_0(B, A, A)",
+            "fn_2(A, B, C) = f(f(f(C, f(C, f(f(A, A), B))), B), A)",
+            "fn_3(A, B, C, D, E) = fn_0(E, f(fn_0(fn_0(B, A, E, E), f(C, D), D, C), f(A, B)), B, A)",
+            "fn_4(A, B, C, D, E) = f(f(f(f(C, f(E, D)), fn_0(B, f(A, A), f(E, D), C)), B), A)",
+            "fn_5(A, B, C) = f(C, f(B, A))",
+            "fn_6(A, B) = fn_0(A, B, A)",
+            "fn_7(A, B, C, D, E) = fn_0(fn_1(E, E, D), fn_5(B, C, A), f(C, B), A)",
+            "fn_8(A) = f(A, A)",
+            "fn_9(A, B, C) = f(B, C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 17.069858,
+        "hints_time_sys": 0.303502,
+        "hints_time": 17.37336
+    },
+    {
+        "problem": "LAT079-1",
+        "mean_base_user_time": 193.80364118749998,
+        "min_base_user_time": 173.561412,
+        "min_base_dir": "20251112_024528_LAT_7667246_194",
+        "abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_1(A, B) = fn_0(B, A, A)",
+            "fn_2(A) = f(A, A)",
+            "fn_3(A, B) = fn_0(A, B, A)",
+            "fn_4(A, B, C) = f(C, f(B, A))",
+            "fn_5(A, B, C, D, E) = fn_0(f(f(f(fn_4(B, A, E), fn_0(C, fn_2(D), f(A, B), E)), C), D), C, B, A)",
+            "fn_6(A, B, C, D, E) = fn_0(E, fn_4(B, A, fn_0(fn_0(B, A, E, E), f(C, D), D, C)), B, A)",
+            "fn_7(A, B, C) = f(f(f(C, fn_4(B, fn_2(A), C)), B), A)",
+            "fn_8(A, B) = fn_3(B, A, A)",
+            "fn_9(A, B, C) = fn_0(C, A, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 43.350602,
+        "hints_time_sys": 0.610429,
+        "hints_time": 43.961031000000006
+    },
+    {
+        "problem": "LAT080-1",
+        "mean_base_user_time": 2.2403211874999998,
+        "min_base_user_time": 2.206957,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(E, C), meet(C, D)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(E, C), meet(C, D)), C), B, A))",
+            "fn_2(A, B, C, D, E) = join(meet(join(meet(join(meet(D, E), meet(C, join(D, C))), C), meet(C, join(fn_0(C, D, C), C))), A), meet(C, join(B, A)))",
+            "fn_3(A, B, C, D) = D(join(meet(C, A), meet(A, B)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(E, join(B, D)), join(C, B)), B), B, A))",
+            "fn_6(A, B, C, D, E) = join(meet(join(meet(C, D), meet(B, join(C, B))), A), E)",
+            "fn_7(A, B, C, D, E) = join(meet(fn_6(E, E, B, C, meet(E, D)), A), meet(C, join(fn_4(C, fn_4(C, B)), A)))",
+            "fn_8(A, B, C, D) = meet(meet(join(D, join(A, C)), join(B, A)), A)",
+            "fn_9(A, B) = fn_4(B, fn_4(B, fn_4(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.068272,
+        "hints_time_sys": 0.032838,
+        "hints_time": 2.10111
+    },
+    {
+        "problem": "LAT081-1",
+        "mean_base_user_time": 2.6262671875,
+        "min_base_user_time": 2.57111,
+        "min_base_dir": "20251112_030805_LAT_7667276_224",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(E, C), meet(C, D)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(E, C), meet(C, D)), C), B, A))",
+            "fn_2(A, B, C, D, E) = join(meet(join(meet(join(meet(D, E), meet(C, join(D, C))), C), meet(C, join(fn_0(C, D, C), C))), A), meet(C, join(B, A)))",
+            "fn_3(A, B, C, D) = D(join(meet(C, A), meet(A, B)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(E, join(B, D)), join(C, B)), B), B, A))",
+            "fn_6(A, B, C, D, E) = join(meet(join(meet(C, D), meet(B, join(C, B))), A), E)",
+            "fn_7(A, B, C, D) = meet(meet(join(D, join(A, C)), join(B, A)), A)",
+            "fn_8(A, B, C, D, E) = join(meet(fn_6(E, E, B, C, meet(E, D)), A), meet(C, join(fn_4(C, fn_4(C, B)), A)))",
+            "fn_9(A, B) = fn_4(B, fn_4(B, fn_4(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.553232,
+        "hints_time_sys": 0.024856,
+        "hints_time": 2.578088
+    },
+    {
+        "problem": "LAT082-1",
+        "mean_base_user_time": 3.3284255000000007,
+        "min_base_user_time": 3.289288,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(E, C), meet(C, D)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(E, C), meet(C, D)), C), B, A))",
+            "fn_2(A, B, C, D, E) = join(meet(join(meet(join(meet(D, E), meet(C, join(D, C))), C), meet(C, join(fn_0(C, D, C), C))), A), meet(C, join(B, A)))",
+            "fn_3(A, B, C, D) = D(join(meet(C, A), meet(A, B)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(E, join(B, D)), join(C, B)), B), B, A))",
+            "fn_6(A, B, C, D) = join(meet(D, C), meet(A, join(B, A)))",
+            "fn_7(A, B, C, D) = D(meet(C, B), meet(B, A))",
+            "fn_8(A, B, C) = meet(meet(C, join(B, A)), A)",
+            "fn_9(A, B, C, D, E) = meet(fn_0(E(join), B, D), join(fn_4(C, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.415164,
+        "hints_time_sys": 0.079534,
+        "hints_time": 3.4946979999999996
+    },
+    {
+        "problem": "LAT083-1",
+        "mean_base_user_time": 2.2460073124999997,
+        "min_base_user_time": 2.213063,
+        "min_base_dir": "20251112_030721_LAT_7667274_222",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = fn_0(join(join(meet(C, A), meet(A, B)), A))",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_5(A, B, C) = join(meet(B, C), meet(A, join(B, A)))",
+            "fn_6(A, B, C) = fn_0(meet(meet(C, join(B, A)), A), A)",
+            "fn_7(A, B, C) = C(B, fn_1(B, A))",
+            "fn_8(A, B) = fn_1(A, fn_7(B, A, fn_1))",
+            "fn_9(A, B, C) = fn_1(C, fn_1(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.120897,
+        "hints_time_sys": 0.035712,
+        "hints_time": 2.156609
+    },
+    {
+        "problem": "LAT084-1",
+        "mean_base_user_time": 2.8149764375,
+        "min_base_user_time": 2.785878,
+        "min_base_dir": "20251112_030053_LAT_7667262_210",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = join(join(meet(C, A), meet(A, B)), A)",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_5(A, B, C) = meet(C, join(B, A))",
+            "fn_6(A, B, C) = join(meet(B, C), fn_5(A, B, A))",
+            "fn_7(A, B, C) = fn_0(fn_2(C, B, A))",
+            "fn_8(A, B, C) = meet(fn_5(A, C, B), A)",
+            "fn_9(A, B, C) = fn_8(B, join(C, join(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.7148120000000002,
+        "hints_time_sys": 0.033711,
+        "hints_time": 2.748523
+    },
+    {
+        "problem": "LAT085-1",
+        "mean_base_user_time": 3.64732775,
+        "min_base_user_time": 3.599762,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = join(join(meet(C, A), meet(A, B)), A)",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B, C) = meet(C, join(B, A))",
+            "fn_5(A, B, C) = join(meet(B, C), fn_4(A, B, A))",
+            "fn_6(A, B, C) = join(meet(C, A), B(A))",
+            "fn_7(A, B, C) = meet(fn_4(A, C, B), A)",
+            "fn_8(A, B, C) = fn_0(fn_2(C, B, A))",
+            "fn_9(A, B, C) = fn_7(B, join(C, join(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.518121,
+        "hints_time_sys": 0.060537,
+        "hints_time": 3.578658
+    },
+    {
+        "problem": "LAT086-1",
+        "mean_base_user_time": 2.3285849374999996,
+        "min_base_user_time": 2.17141,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(E, C), meet(C, D)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(E, C), meet(C, D)), C), B, A))",
+            "fn_2(A, B, C, D, E) = join(meet(join(meet(join(meet(D, E), meet(C, join(D, C))), C), meet(C, join(fn_0(C, D, C), C))), A), meet(C, join(B, A)))",
+            "fn_3(A, B, C, D) = D(join(meet(C, A), meet(A, B)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(E, join(B, D)), join(C, B)), B), B, A))",
+            "fn_6(A, B, C, D, E) = join(meet(join(meet(C, D), meet(B, join(C, B))), A), E)",
+            "fn_7(A, B, C, D) = meet(meet(join(D, join(A, C)), join(B, A)), A)",
+            "fn_8(A, B, C, D, E) = join(meet(fn_6(E, E, B, C, meet(E, D)), A), meet(C, join(fn_4(C, fn_4(C, B)), A)))",
+            "fn_9(A, B) = fn_4(B, fn_4(B, fn_4(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.129183,
+        "hints_time_sys": 0.029831,
+        "hints_time": 2.159014
+    },
+    {
+        "problem": "LAT087-1",
+        "mean_base_user_time": 2.3083866250000007,
+        "min_base_user_time": 2.262878,
+        "min_base_dir": "20251112_030053_LAT_7667262_210",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(E, C), meet(C, D)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(E, C), meet(C, D)), C), B, A))",
+            "fn_2(A, B, C, D, E) = join(meet(join(meet(join(meet(D, E), meet(C, join(D, C))), C), meet(C, join(fn_0(C, D, C), C))), A), meet(C, join(B, A)))",
+            "fn_3(A, B, C, D) = D(join(meet(C, A), meet(A, B)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(E, join(B, D)), join(C, B)), B), B, A))",
+            "fn_6(A, B, C, D, E) = join(meet(join(meet(C, D), meet(B, join(C, B))), A), E)",
+            "fn_7(A, B, C, D) = meet(meet(join(D, join(A, C)), join(B, A)), A)",
+            "fn_8(A, B, C, D, E) = join(meet(fn_6(E, E, B, C, meet(E, D)), A), meet(C, join(fn_4(C, fn_4(C, B)), A)))",
+            "fn_9(A, B) = fn_4(B, fn_4(B, fn_4(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.136,
+        "hints_time_sys": 0.026872999999999998,
+        "hints_time": 2.1628730000000003
+    },
+    {
+        "problem": "LAT088-1",
+        "mean_base_user_time": 0.004190812499999999,
+        "min_base_user_time": 0.001969,
+        "min_base_dir": "20251112_031305_LAT_7667284_232",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(meet(join(A, C), join(B, A)), A)",
+            "fn_1(A, B) = meet(meet(B, A), A)",
+            "fn_2(A) = meet(A, A)",
+            "fn_3(A, B) = fn_1(B, join(B, A))",
+            "fn_4(A, B, C, D, E) = E(C(A, D), C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(meet(join(A, C), join(B, A)), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00611,
+        "hints_time_sys": 0.085655,
+        "hints_time": 0.091765
+    },
+    {
+        "problem": "LAT089-1",
+        "mean_base_user_time": 0.014783125000000001,
+        "min_base_user_time": 0.010863,
+        "min_base_dir": "20251112_030721_LAT_7667274_222",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C) = C(C(B, A), A)",
+            "fn_2(A, B, C) = meet(meet(C, join(B, A)), A)",
+            "fn_3(A, B) = join(meet(A, B), A)",
+            "fn_4(A) = join(A, A)",
+            "fn_5(A, B) = meet(meet(A, B), meet(B, A))",
+            "fn_6(A) = meet(A, A)",
+            "fn_7(A, B) = fn_0(B, A, A)",
+            "fn_8(A, B, C, D) = B(A(C, D), C)",
+            "fn_9(A, B) = fn_1(B, A, meet)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011996999999999999,
+        "hints_time_sys": 0.08315499999999999,
+        "hints_time": 0.09515199999999999
+    },
+    {
+        "problem": "LAT090-1",
+        "mean_base_user_time": 0.004757124999999999,
+        "min_base_user_time": 0.001992,
+        "min_base_dir": "20251112_024911_LAT_7667252_200",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(meet(join(A, C), join(B, A)), A)",
+            "fn_1(A, B, C) = C(C(B, A), A)",
+            "fn_2(A, B) = join(meet(join(B, B), B), meet(B, A))",
+            "fn_3(A) = meet(A, A)",
+            "fn_4(A, B) = fn_1(B, join(B, A), meet)",
+            "fn_5(A) = join(A, A)",
+            "fn_6(A, B) = fn_1(B, A, join)",
+            "fn_7(A, B, C, D, E) = E(C(A, D), C(B, A))",
+            "fn_8(A) = fn_6(A, A)",
+            "fn_9(A, B, C) = B(A(C), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(meet(join(A, C), join(B, A)), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.007809,
+        "hints_time_sys": 0.081079,
+        "hints_time": 0.088888
+    },
+    {
+        "problem": "LAT091-1",
+        "mean_base_user_time": 0.027762624999999996,
+        "min_base_user_time": 0.022657999999999998,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D) = meet(C(A, D), C(B, A))",
+            "fn_2(A, B, C) = join(meet(B, A), C)",
+            "fn_3(A, B) = meet(meet(B, A), A)",
+            "fn_4(A, B, C, D) = fn_2(D, C(A, B), meet(C(A, B), A))",
+            "fn_5(A, B) = B(A, A)",
+            "fn_6(A, B) = fn_2(B, A, A)",
+            "fn_7(A, B, C) = C(A, meet(B, A))",
+            "fn_8(A, B) = fn_1(B, A, join)",
+            "fn_9(A, B, C, D) = B(A(C, D), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.029894999999999998,
+        "hints_time_sys": 0.06369999999999999,
+        "hints_time": 0.09359499999999998
+    },
+    {
+        "problem": "LAT092-1",
+        "mean_base_user_time": 2.8797883749999995,
+        "min_base_user_time": 2.823236,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(C, E), meet(D, C)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(C, E), meet(D, C)), C), B, A))",
+            "fn_2(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(C, A), join(B, C)), C), C, E), D, C, B, A)",
+            "fn_3(A, B, C) = join(join(meet(A, C), meet(B, A)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B, C, D) = join(meet(D, C), meet(A, join(B, A)))",
+            "fn_6(A, B, C, D, E) = join(meet(fn_5(C, fn_4(C, D), C, fn_5(C, D, E, D)), A), meet(C, join(B, A)))",
+            "fn_7(A, B, C, D, E) = join(meet(E, D), meet(C, join(B, A)))",
+            "fn_8(A, B, C) = meet(meet(join(A, C), join(B, A)), A)",
+            "fn_9(A, B) = fn_4(B, fn_4(B, fn_4(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.00565,
+        "hints_time_sys": 0.033815,
+        "hints_time": 2.0394650000000003
+    },
+    {
+        "problem": "LAT093-1",
+        "mean_base_user_time": 3.0772775,
+        "min_base_user_time": 3.021079,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B, C, D, E) = fn_0(fn_0(join(join(meet(C, E), meet(D, C)), C), B, A), fn_0(C, B, C), fn_0(join(join(meet(C, E), meet(D, C)), C), B, A))",
+            "fn_2(A, B, C, D, E) = fn_1(fn_0(meet(meet(join(C, A), join(B, C)), C), C, E), D, C, B, A)",
+            "fn_3(A, B, C) = join(join(meet(A, C), meet(B, A)), A)",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B) = meet(A, join(B, A))",
+            "fn_6(A, B, C, D, E) = E(meet(D, B), C(B, A))",
+            "fn_7(A, B, C, D, E) = join(meet(fn_6(fn_4(C, D), C, fn_5, join(meet(D, E), fn_5(C, D)), join), A), meet(C, join(B, A)))",
+            "fn_8(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_9(A, B, C) = meet(meet(join(A, C), join(B, A)), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.405006,
+        "hints_time_sys": 0.026858999999999997,
+        "hints_time": 2.431865
+    },
+    {
+        "problem": "LAT094-1",
+        "mean_base_user_time": 2.9380413125,
+        "min_base_user_time": 2.911075,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = join(join(meet(A, C), meet(B, A)), A)",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B, C) = fn_0(meet(meet(join(A, C), join(B, A)), A), A)",
+            "fn_5(A, B) = meet(A, join(B, A))",
+            "fn_6(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_7(A, B, C) = meet(C, join(B, A))",
+            "fn_8(A, B, C) = C(B, fn_1(B, A))",
+            "fn_9(A, B, C) = fn_0(fn_2(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.225737,
+        "hints_time_sys": 0.029671999999999997,
+        "hints_time": 2.255409
+    },
+    {
+        "problem": "LAT095-1",
+        "mean_base_user_time": 3.1147536249999996,
+        "min_base_user_time": 3.035338,
+        "min_base_dir": "20251112_031300_LAT_7667282_230",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = join(join(meet(A, C), meet(B, A)), A)",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B) = meet(A, join(B, A))",
+            "fn_5(A, B, C) = fn_0(meet(meet(join(A, C), join(B, A)), A), A)",
+            "fn_6(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_7(A, B, C) = meet(C, join(B, A))",
+            "fn_8(A, B, C) = C(B, fn_1(B, A))",
+            "fn_9(A, B, C) = join(meet(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.4759029999999997,
+        "hints_time_sys": 0.036704,
+        "hints_time": 2.5126069999999996
+    },
+    {
+        "problem": "LAT096-1",
+        "mean_base_user_time": 3.111499625,
+        "min_base_user_time": 3.073852,
+        "min_base_dir": "20251112_031305_LAT_7667284_232",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = join(join(meet(A, C), meet(B, A)), A)",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B) = meet(A, join(B, A))",
+            "fn_5(A, B, C) = fn_0(meet(meet(join(A, C), join(B, A)), A), A)",
+            "fn_6(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_7(A, B, C) = meet(C, join(B, A))",
+            "fn_8(A, B, C) = meet(meet(A, C), B(A))",
+            "fn_9(A, B, C) = C(B, fn_1(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.416009,
+        "hints_time_sys": 0.034693999999999996,
+        "hints_time": 2.450703
+    },
+    {
+        "problem": "LAT097-1",
+        "mean_base_user_time": 3.0350985,
+        "min_base_user_time": 2.997326,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = join(join(meet(A, C), meet(B, A)), A)",
+            "fn_3(A, B, C) = join(meet(join(meet(B, C), meet(A, join(B, A))), A), meet(A, join(fn_1(A, B), A)))",
+            "fn_4(A, B) = meet(A, join(B, A))",
+            "fn_5(A, B, C) = fn_0(meet(meet(join(A, C), join(B, A)), A), A)",
+            "fn_6(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_7(A, B, C) = meet(C, join(B, A))",
+            "fn_8(A, B, C) = C(B, fn_1(B, A))",
+            "fn_9(A, B, C) = fn_0(fn_2(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(B, A), meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.384922,
+        "hints_time_sys": 0.036782999999999996,
+        "hints_time": 2.4217049999999998
+    },
+    {
+        "problem": "LAT138-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT139-1",
+        "mean_base_user_time": 862.2744260666665,
+        "min_base_user_time": 825.247118,
+        "min_base_dir": "20251112_031405_LAT_7667286_234",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_2(A, B, C) = join(meet(B, A), C)",
+            "fn_3(A, B) = join(A, B)",
+            "fn_4(A, B, C, D, E) = C(fn_1(meet(A, E), D, C(A), B, A))",
+            "fn_5(A, B, C, D) = fn_0(fn_1(D, B, A, A, C), B, meet(B, A))",
+            "fn_6(A, B, C) = C(fn_0(C(A), B, A))",
+            "fn_7(A, B, C, D, E) = B(C, A(E, C, D))",
+            "fn_8(A, B, C) = meet(C, meet(B, A))",
+            "fn_9(A, B, C) = join(C, join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 39.149727,
+        "hints_time_sys": 0.865605,
+        "hints_time": 40.015332
+    },
+    {
+        "problem": "LAT140-1",
+        "mean_base_user_time": 161.102833875,
+        "min_base_user_time": 159.843424,
+        "min_base_dir": "20251112_030536_LAT_7667270_218",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(fn_0(meet(C, B), A, C), fn_0(C, A, B), A)",
+            "fn_2(A, B, C) = join(meet(B, C), meet(B, A))",
+            "fn_3(A, B, C) = fn_0(fn_0(A, B, C), meet(B, A))",
+            "fn_4(A) = fn_0(A, b, a)",
+            "fn_5(A, B, C) = join(meet(B, A), fn_0(C, B, A))",
+            "fn_6(A, B, C) = fn_2(B, A, C)",
+            "fn_7(A, B, C) = join(C, meet(B, A))",
+            "fn_8(A, B, C) = fn_0(C, meet(A, B), A)",
+            "fn_9(A, B, C) = C(A, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 251.358869,
+        "hints_time_sys": 4.120225,
+        "hints_time": 255.479094
+    },
+    {
+        "problem": "LAT141-1",
+        "mean_base_user_time": 162.0388575625,
+        "min_base_user_time": 157.576351,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_2(A, B, C) = fn_0(fn_0(C, A, B), A)",
+            "fn_3(A, B, C) = join(meet(B, A), C)",
+            "fn_4(A, B) = join(A, meet(B, A))",
+            "fn_5(A, B, C, D) = fn_0(fn_0(C, A, D), B(A), A)",
+            "fn_6(A, B, C) = join(B, C(B, A))",
+            "fn_7(A, B, C) = fn_0(fn_1(C, A, B), fn_0(C, A, B), A)",
+            "fn_8(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_9(A, B, C) = fn_0(meet(C, A), B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 255.41041,
+        "hints_time_sys": 4.239645,
+        "hints_time": 259.650055
+    },
+    {
+        "problem": "LAT142-1",
+        "mean_base_user_time": 18.4935036875,
+        "min_base_user_time": 17.724855,
+        "min_base_dir": "20251112_031305_LAT_7667284_232",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(meet(C, A), B, A)",
+            "fn_2(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B, C) = fn_0(fn_1(C, B, A), meet(join(A, C), B), A)",
+            "fn_5(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_6(A, B, C, D, E) = B(C, A(D, C, E))",
+            "fn_7(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_8(A, B, C, D) = B(C, A(C, D))",
+            "fn_9(A, B, C) = fn_0(fn_1(C, B, A), fn_0(C, A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 5.009776,
+        "hints_time_sys": 0.220218,
+        "hints_time": 5.229994
+    },
+    {
+        "problem": "LAT143-1",
+        "mean_base_user_time": 1.03399775,
+        "min_base_user_time": 1.018802,
+        "min_base_dir": "20251112_030805_LAT_7667276_224",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_2(A, B, C, D) = fn_1(A, B, D, C(B, A))",
+            "fn_3(A, B, C, D) = fn_1(C, B, D, fn_0(C, B, A))",
+            "fn_4(A, B, C) = meet(C, join(B, A))",
+            "fn_5(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_6(A, B, C, D) = A(D, B, C, C)",
+            "fn_7(A, B, C) = fn_1(B, C, B, fn_0(C, B, A))",
+            "fn_8(A, B, C) = fn_1(C, B, C, join(B, A))",
+            "fn_9(A, B, C, D) = A(D, C, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.525697,
+        "hints_time_sys": 0.107984,
+        "hints_time": 0.6336809999999999
+    },
+    {
+        "problem": "LAT144-1",
+        "mean_base_user_time": 348.26976156250004,
+        "min_base_user_time": 342.495901,
+        "min_base_dir": "20251112_024827_LAT_7667250_198",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C, D, E) = join(C, fn_0(E, D, meet(C, B), A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = fn_0(C, A, B, A)",
+            "fn_4(A, B, C) = meet(C, join(B, A))",
+            "fn_5(A, B, C) = fn_0(A, C, B, A)",
+            "fn_6(A, B, C, D) = fn_1(B, D, A, C, join(B, A))",
+            "fn_7(A, B, C, D) = fn_4(fn_0(join(A, D), B, A, C), B, A)",
+            "fn_8(A, B, C) = join(B, C(B, A))",
+            "fn_9(A, B, C, D, E) = meet(B, fn_1(D, C, A, join(B, A), E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 76.718941,
+        "hints_time_sys": 1.403983,
+        "hints_time": 78.122924
+    },
+    {
+        "problem": "LAT145-1",
+        "mean_base_user_time": 810.8223380000001,
+        "min_base_user_time": 796.399317,
+        "min_base_dir": "20251112_030805_LAT_7667276_224",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_2(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_3(A, B, C) = fn_0(fn_1(A, C, B), fn_0(C, A, B), A)",
+            "fn_4(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_5(A, B, C, D) = fn_2(D, B, A, C, join(B, A))",
+            "fn_6(A, B, C, D) = fn_0(fn_2(B, A, D, A, C), B, A)",
+            "fn_7(A, B, C) = join(B, C(B, A))",
+            "fn_8(A, B, C) = fn_2(C, A, B, B, A)",
+            "fn_9(A, B, C, D) = A(B, C, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 142.465461,
+        "hints_time_sys": 2.190873,
+        "hints_time": 144.65633400000002
+    },
+    {
+        "problem": "LAT146-1",
+        "mean_base_user_time": 83.47994125000001,
+        "min_base_user_time": 81.647818,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C, D) = fn_1(D(C(B, A)), B, D(C(B, A)))",
+            "fn_3(A, B, C) = fn_0(join(A, C), B, A)",
+            "fn_4(A, B, C) = meet(join(B, A), C)",
+            "fn_5(A, B, C) = join(C, join(B, A))",
+            "fn_6(A, B, C, D, E, F) = fn_0(meet(D, fn_0(E, B, A, F)), C, B, A)",
+            "fn_7(A, B, C, D) = A(B, meet(C, D))",
+            "fn_8(A, B, C) = fn_0(join(A, B), C, B, A)",
+            "fn_9(A, B, C, D) = fn_4(C, B, fn_0(D, C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.79581,
+        "hints_time_sys": 0.11495499999999999,
+        "hints_time": 3.910765
+    },
+    {
+        "problem": "LAT147-1",
+        "mean_base_user_time": 6.742969,
+        "min_base_user_time": 6.669023,
+        "min_base_dir": "20251112_024658_LAT_7667248_196",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B) = fn_0(meet(B, A))",
+            "fn_2(A, B, C, D) = fn_0(D(C(B, A)), B, D(C(B, A)))",
+            "fn_3(A, B, C) = fn_1(C, A, B, A)",
+            "fn_4(A, B, C) = fn_0(fn_0(C, A, B), A)",
+            "fn_5(A, B, C) = join(C, join(B, A))",
+            "fn_6(A, B, C, D) = A(fn_0(C, B, D), C, B)",
+            "fn_7(A, B, C, D) = fn_0(fn_1(A, C, B, D), C, B)",
+            "fn_8(A, B) = meet(B, fn_0(fn_1(c, b, a, d), c, A))",
+            "fn_9(A, B, C) = meet(join(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.134943000000001,
+        "hints_time_sys": 0.13269399999999998,
+        "hints_time": 4.267637000000001
+    },
+    {
+        "problem": "LAT148-1",
+        "mean_base_user_time": 688.1248658749998,
+        "min_base_user_time": 667.7299820000001,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_2(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_3(A, B, C) = fn_1(C, A, B, A)",
+            "fn_4(A, B, C) = fn_1(C, B, A, A)",
+            "fn_5(A, B, C) = C(A, join(B, A))",
+            "fn_6(A, B, C, D) = fn_3(a, fn_2(D, C, c, join(B, A)), b)",
+            "fn_7(A, B, C, D, E) = fn_0(fn_2(E, A, D, C), B, A)",
+            "fn_8(A, B, C, D) = fn_2(C, B, D, fn_0(C, B, A))",
+            "fn_9(A, B, C) = meet(B, C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 393.10209,
+        "hints_time_sys": 5.925234,
+        "hints_time": 399.02732399999996
+    },
+    {
+        "problem": "LAT149-1",
+        "mean_base_user_time": 305.4014349375,
+        "min_base_user_time": 295.701386,
+        "min_base_dir": "20251112_024827_LAT_7667250_198",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_2(A, B, C) = fn_0(fn_0(C, A, B), A)",
+            "fn_3(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_4(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_5(A, B, C) = fn_1(C, A, B, A)",
+            "fn_6(A, B, C) = fn_1(C, B, A, A)",
+            "fn_7(A, B, C) = join(C, meet(B, A))",
+            "fn_8(A, B, C) = fn_0(fn_0(A, C, B), A)",
+            "fn_9(A, B, C, D) = fn_4(D, C, meet(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 32.46235,
+        "hints_time_sys": 0.6500039999999999,
+        "hints_time": 33.112354
+    },
+    {
+        "problem": "LAT150-1",
+        "mean_base_user_time": 17.38422425,
+        "min_base_user_time": 16.812563,
+        "min_base_dir": "20251112_031300_LAT_7667282_230",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C, D) = fn_0(join(A, D), C, B, A)",
+            "fn_2(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C) = fn_0(A, C, B, A)",
+            "fn_4(A, B, C) = fn_0(C, A, B, A)",
+            "fn_5(A, B, C, D, E) = B(C, A(D, C, E))",
+            "fn_6(A, B, C) = join(C, meet(B, A))",
+            "fn_7(A, B, C, D, E, F) = fn_2(A(F, C, join(D, B)), E, D)",
+            "fn_8(A, B, C, D) = fn_1(B, C, D, join(C, A))",
+            "fn_9(A, B, C, D) = fn_1(B, C, D, join(A, C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.177577,
+        "hints_time_sys": 0.13690999999999998,
+        "hints_time": 4.314487000000001
+    },
+    {
+        "problem": "LAT151-1",
+        "mean_base_user_time": 7.0352981875000005,
+        "min_base_user_time": 6.926588,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C, D) = fn_0(join(A, D), C, B, A)",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = fn_0(C, A, B, A)",
+            "fn_4(A, B, C) = fn_0(A, C, B, A)",
+            "fn_5(A, B, C, D) = join(B, A(C, B, D))",
+            "fn_6(A, B, C) = meet(C, meet(B, A))",
+            "fn_7(A, B, C, D) = join(meet(C, B), A(B, D, C))",
+            "fn_8(A, B, C) = join(meet(C, A), fn_3(C, B, A))",
+            "fn_9(A, B, C, D, E) = fn_0(join(E, fn_2(C, A, D)), C, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.042737,
+        "hints_time_sys": 0.035676,
+        "hints_time": 1.078413
+    },
+    {
+        "problem": "LAT152-1",
+        "mean_base_user_time": 729.0420759374998,
+        "min_base_user_time": 705.969572,
+        "min_base_dir": "20251112_030805_LAT_7667276_224",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = fn_0(fn_0(D(A, B), C, A), fn_0(C, A, B), A)",
+            "fn_2(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_3(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_4(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_5(A, B, C, D) = fn_2(D, B, A, C, join(B, A))",
+            "fn_6(A, B, C) = join(B, C(B, A))",
+            "fn_7(A, B, C, D) = A(D, C, B)",
+            "fn_8(A, B, C, D, E) = C(B(E, D), A(E, D))",
+            "fn_9(A, B) = join(A, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 89.27530900000001,
+        "hints_time_sys": 1.429349,
+        "hints_time": 90.70465800000001
+    },
+    {
+        "problem": "LAT153-1",
+        "mean_base_user_time": 77.042939375,
+        "min_base_user_time": 76.362873,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_2(A, B, C) = join(meet(B, A), C)",
+            "fn_3(A, B, C) = join(C, join(B, A))",
+            "fn_4(A, B, C, D) = D(B, fn_0(C, B, A))",
+            "fn_5(A, B, C, D, E) = fn_2(E, B, join(A, fn_1(D, B, B, fn_1(E, B, D, C(B, A)))))",
+            "fn_6(A, B, C, D, E) = fn_3(E(join(A, B), D, C), B, A)",
+            "fn_7(A, B, C, D, E, F, G) = fn_3(fn_0(G, fn_2(E, F, D), C), B, A)",
+            "fn_8(A, B, C, D, E, F, G, H) = fn_3(fn_0(E(join(D, C), F, H), G, B), A, H)",
+            "fn_9(A, B, C, D) = fn_1(C(B, A), D, B, meet(D, C(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 47.81848,
+        "hints_time_sys": 0.856626,
+        "hints_time": 48.675106
+    },
+    {
+        "problem": "LAT154-1",
+        "mean_base_user_time": 403.5124248750001,
+        "min_base_user_time": 394.786103,
+        "min_base_dir": "20251112_030536_LAT_7667270_218",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C, D) = meet(C, join(meet(D, join(C, B)), fn_0(D, C, B, A)))",
+            "fn_2(A, B, C) = fn_0(C, A, B, A)",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B, C, D) = fn_0(join(D, join(meet(A, C), B)), C, B, A)",
+            "fn_5(A, B, C, D) = D(join(A, C), B, A)",
+            "fn_6(A, B, C, D) = join(meet(C, A), D(C, B, A))",
+            "fn_7(A, B, C, D, E) = meet(C, join(fn_0(A, C, B, E), D(C, B, A)))",
+            "fn_8(A, B, C, D, E) = E(D(C, B, A), C, fn_0(A, C, B, A))",
+            "fn_9(A, B, C, D) = fn_0(join(A, D), C, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 316.482366,
+        "hints_time_sys": 4.437092,
+        "hints_time": 320.919458
+    },
+    {
+        "problem": "LAT155-1",
+        "mean_base_user_time": 31.1732605,
+        "min_base_user_time": 30.751452,
+        "min_base_dir": "20251112_024528_LAT_7667246_194",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_2(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C, D) = fn_1(B, D, D, C(B, A))",
+            "fn_4(A, B, C, D) = join(D, fn_0(C(A), B, A))",
+            "fn_5(A, B, C, D) = fn_2(fn_1(D, A, D, C), B, A)",
+            "fn_6(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_7(A, B) = join(A, B)",
+            "fn_8(A, B, C, D) = fn_2(fn_1(D, C, C, B), meet(A, B), A)",
+            "fn_9(A, B, C, D, E) = D(E, D(C(E, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 18.466348999999997,
+        "hints_time_sys": 0.4043169999999999,
+        "hints_time": 18.870665999999996
+    },
+    {
+        "problem": "LAT156-1",
+        "mean_base_user_time": 449.62257968750004,
+        "min_base_user_time": 439.00532,
+        "min_base_dir": "20251112_024658_LAT_7667248_196",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(C, meet(A, B), A)",
+            "fn_2(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_3(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_4(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_5(A, B, C, D, E) = fn_0(fn_3(C, E, D, meet(A, C)), B, A)",
+            "fn_6(A, B, C) = join(C, meet(B, A))",
+            "fn_7(A, B, C, D) = fn_4(D, B, A, C, join(B, A))",
+            "fn_8(A, B, C) = fn_0(fn_2(A, C, B), fn_0(C, A, B), A)",
+            "fn_9(A, B, C, D) = fn_1(B, C, fn_6(C, A, meet(D, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 25.073943,
+        "hints_time_sys": 0.49612100000000003,
+        "hints_time": 25.570064
+    },
+    {
+        "problem": "LAT157-1",
+        "mean_base_user_time": 31.98015375,
+        "min_base_user_time": 31.255875,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = fn_0(fn_0(D, A, C), B, A)",
+            "fn_2(A, B) = fn_0(meet(B, A))",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_5(A, B, C) = C(A, B, A)",
+            "fn_6(A, B, C) = fn_2(C, A, B, A)",
+            "fn_7(A, B, C, D) = D(A, C, meet(B, A))",
+            "fn_8(A, B, C) = join(meet(B, A), C)",
+            "fn_9(A, B, C) = fn_0(C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 7.905003,
+        "hints_time_sys": 0.18963999999999998,
+        "hints_time": 8.094643
+    },
+    {
+        "problem": "LAT158-1",
+        "mean_base_user_time": 7.0270570625,
+        "min_base_user_time": 6.826669000000001,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_2(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_3(A, B, C) = fn_0(meet(C, A), B, A)",
+            "fn_4(A, B, C, D, E) = fn_0(join(C, B(E, D)), A, E)",
+            "fn_5(A, B, C) = join(B, C(B, A))",
+            "fn_6(A, B, C) = fn_1(A, B, C)",
+            "fn_7(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_8(A, B, C) = join(meet(B, A), C)",
+            "fn_9(A, B, C) = C(meet(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.949757,
+        "hints_time_sys": 0.064268,
+        "hints_time": 2.014025
+    },
+    {
+        "problem": "LAT159-1",
+        "mean_base_user_time": 19.6013749375,
+        "min_base_user_time": 18.208223,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = fn_0(fn_0(D, A, C), B, A)",
+            "fn_2(A, B, C) = fn_0(meet(A, C), B, A)",
+            "fn_3(A, B, C) = join(meet(B, A), C)",
+            "fn_4(A, B, C) = fn_0(C, meet(A, B), A)",
+            "fn_5(A, B, C) = fn_1(C, meet(C, A), B, A)",
+            "fn_6(A, B, C) = join(C, meet(B, A))",
+            "fn_7(A, B, C, D, E) = fn_0(fn_3(C, A, fn_0(E, D, C)), B, A)",
+            "fn_8(A, B, C) = fn_0(meet(C, A), B, A)",
+            "fn_9(A, B, C, D, E) = B(C, A(D, C, E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 14.982361999999998,
+        "hints_time_sys": 0.29670599999999997,
+        "hints_time": 15.279067999999999
+    },
+    {
+        "problem": "LAT160-1",
+        "mean_base_user_time": 2.0723638125,
+        "min_base_user_time": 2.05535,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = fn_0(join(C, meet(B, A)))",
+            "fn_2(A, B) = join(A, meet(B, A))",
+            "fn_3(A, B, C) = join(meet(A, C), B(A))",
+            "fn_4(A, B, C, D, E) = fn_0(E(A, C), join(D, meet(C, B)), A)",
+            "fn_5(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_6(A, B, C) = join(C(A), B(A))",
+            "fn_7(A, B, C, D) = fn_0(fn_0(D, A, C), B, A)",
+            "fn_8(A, B) = meet(A, B)",
+            "fn_9(A, B, C, D) = D(C, meet(A, C), B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.05093,
+        "hints_time_sys": 0.03250199999999999,
+        "hints_time": 1.083432
+    },
+    {
+        "problem": "LAT161-1",
+        "mean_base_user_time": 366.8040523125,
+        "min_base_user_time": 361.405118,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = fn_0(fn_0(meet(B, A), D, C), B, A)",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_4(A, B, C) = C(meet(B, A), join(B, A))",
+            "fn_5(A, B, C) = fn_3(join(A, B), meet(A, B), C, B, A)",
+            "fn_6(A, B, C) = C(meet(A, B), B, A)",
+            "fn_7(A, B, C) = fn_3(join(A, B), C, meet(B, A), B, A)",
+            "fn_8(A, B, C) = fn_0(A, C, B)",
+            "fn_9(A, B, C) = C(B, join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 160.901962,
+        "hints_time_sys": 2.7647779999999997,
+        "hints_time": 163.66674
+    },
+    {
+        "problem": "LAT162-1",
+        "mean_base_user_time": 824.2203828125,
+        "min_base_user_time": 806.794426,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B, C, D) = join(D, meet(C, join(B, A)))",
+            "fn_1(A, B, C, D) = meet(D, fn_0(meet(D, A), C, B, A))",
+            "fn_2(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C, D) = fn_0(meet(A, D), C, B, A)",
+            "fn_4(A, B, C) = fn_0(C, A, B, A)",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_6(A, B, C) = fn_0(A, C, B, A)",
+            "fn_7(A, B, C) = meet(C, meet(B, A))",
+            "fn_8(A, B, C, D, E) = fn_5(fn_0(D, B, join(meet(A, B), E), C), B, A)",
+            "fn_9(A, B, C) = C(A, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = join(D, meet(C, join(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 478.520352,
+        "hints_time_sys": 6.952638,
+        "hints_time": 485.47299
+    },
+    {
+        "problem": "LAT163-1",
+        "mean_base_user_time": 41.49039718750001,
+        "min_base_user_time": 39.998233,
+        "min_base_dir": "20251112_031405_LAT_7667286_234",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = fn_0(join(A, C), B, A)",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B, C) = fn_0(C, A, B, A)",
+            "fn_5(A, B, C, D) = meet(D, meet(join(C, B), A))",
+            "fn_6(A, B, C) = fn_0(A, C, B, A)",
+            "fn_7(A, B) = meet(A, B)",
+            "fn_8(A, B, C) = join(C, fn_1(C, B, A))",
+            "fn_9(A, B, C, D) = fn_0(D, C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 17.192319,
+        "hints_time_sys": 0.37513699999999994,
+        "hints_time": 17.567456
+    },
+    {
+        "problem": "LAT164-1",
+        "mean_base_user_time": 221.06771881250003,
+        "min_base_user_time": 208.44246900000002,
+        "min_base_dir": "20251112_030721_LAT_7667274_222",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = fn_0(C, A, B, A)",
+            "fn_3(A, B, C) = C(A, meet(B, A))",
+            "fn_4(A, B, C, D) = fn_1(fn_0(B, A, D, C), B, A)",
+            "fn_5(A, B, C) = join(meet(B, A), C)",
+            "fn_6(A, B, C) = fn_1(C, B, join(B, A))",
+            "fn_7(A, B, C, D) = fn_0(D, C(A, B), B, A)",
+            "fn_8(A, B, C) = fn_1(fn_2(A, C, B), fn_1(C, A, B), A)",
+            "fn_9(A, B, C, D, E) = B(C, A(D, C, E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 37.957997999999996,
+        "hints_time_sys": 0.6979679999999999,
+        "hints_time": 38.655966
+    },
+    {
+        "problem": "LAT165-1",
+        "mean_base_user_time": 18.040676312499997,
+        "min_base_user_time": 17.766414,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_2(A, B, C) = fn_0(join(A, C), B, A)",
+            "fn_3(A, B, C, D) = fn_1(D, B, A, C, B)",
+            "fn_4(A, B) = meet(a, fn_1(d, B, A, c, b))",
+            "fn_5(A, B, C) = fn_1(C, A, B, A)",
+            "fn_6(A, B, C) = meet(C, fn_0(C, B, A))",
+            "fn_7(A, B, C, D) = fn_1(D, B, meet(C, A), C, B)",
+            "fn_8(A, B, C, D) = fn_5(C, meet(A, B), D, B)",
+            "fn_9(A, B, C) = meet(B, C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 7.774407,
+        "hints_time_sys": 0.19574799999999998,
+        "hints_time": 7.970155
+    },
+    {
+        "problem": "LAT166-1",
+        "mean_base_user_time": 35.990819875,
+        "min_base_user_time": 34.958543,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B) = fn_0(meet(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = fn_0(fn_0(A, C, B), A)",
+            "fn_4(A, B, C) = fn_0(fn_0(C, A, B), A)",
+            "fn_5(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_6(A, B, C, D, E) = fn_1(fn_0(E, A, D), C, B, A)",
+            "fn_7(A, B, C) = fn_1(C, A, B, A)",
+            "fn_8(A, B, C, D) = D(A, C, B, join(B, A))",
+            "fn_9(A, B, C, D, E) = E(D(C, B, A), C, D(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 6.994870000000001,
+        "hints_time_sys": 0.188507,
+        "hints_time": 7.183377000000001
+    },
+    {
+        "problem": "LAT167-1",
+        "mean_base_user_time": 73.1129315625,
+        "min_base_user_time": 70.01128200000001,
+        "min_base_dir": "20251112_030053_LAT_7667262_210",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B) = fn_0(meet(B, A))",
+            "fn_2(A, B, C) = fn_0(fn_0(C, A, B), A)",
+            "fn_3(A, B, C) = join(C, fn_0(C, B, A))",
+            "fn_4(A, B, C) = fn_0(fn_0(A, C, B), A)",
+            "fn_5(A, B, C) = join(B, fn_0(C, B, A))",
+            "fn_6(A, B, C) = join(C, meet(B, A))",
+            "fn_7(A, B, C) = fn_1(C, A, B, A)",
+            "fn_8(A, B, C, D, E) = A(C, fn_1(B, C, E, D))",
+            "fn_9(A, B, C) = meet(C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 15.007214,
+        "hints_time_sys": 0.308046,
+        "hints_time": 15.315259999999999
+    },
+    {
+        "problem": "LAT168-1",
+        "mean_base_user_time": 4.067653624999999,
+        "min_base_user_time": 4.020786,
+        "min_base_dir": "20251112_030721_LAT_7667274_222",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(join(D, C), join(B, A))",
+            "fn_1(A, B, C, D) = fn_0(meet(A, D), C, B, A)",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_3(A, B, C) = fn_0(C, A, B, A)",
+            "fn_4(A, B, C) = join(A, fn_0(meet(B, A), C, B, A))",
+            "fn_5(A, B, C, D) = join(D, fn_1(C, A, B, A))",
+            "fn_6(A, B, C) = A(B, C)",
+            "fn_7(A, B, C) = fn_3(A, B, C)",
+            "fn_8(A, B, C) = join(C, meet(B, A))",
+            "fn_9(A, B, C) = fn_5(B, C, A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(join(D, C), join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.281053,
+        "hints_time_sys": 0.04335,
+        "hints_time": 1.324403
+    },
+    {
+        "problem": "LAT169-1",
+        "mean_base_user_time": 160.43144725000002,
+        "min_base_user_time": 154.513058,
+        "min_base_dir": "20251112_024658_LAT_7667248_196",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = fn_0(fn_0(join(C, B), A, C), fn_0(C, A, B), A)",
+            "fn_2(A, B, C) = meet(join(B, C), join(B, A))",
+            "fn_3(A, B, C) = fn_0(fn_0(A, B, C), join(B, A))",
+            "fn_4(A, B, C) = meet(C, join(B, A))",
+            "fn_5(A, B, C) = meet(join(B, A), fn_0(C, B, A))",
+            "fn_6(A, B, C) = fn_2(B, A, C)",
+            "fn_7(A, B, C) = fn_0(C, join(A, B), A)",
+            "fn_8(A, B, C) = C(A, B, A)",
+            "fn_9(A, B, C) = fn_0(fn_0(A, B, C), B, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 253.737502,
+        "hints_time_sys": 4.102828,
+        "hints_time": 257.84033
+    },
+    {
+        "problem": "LAT170-1",
+        "mean_base_user_time": 31.183235125000003,
+        "min_base_user_time": 30.739532,
+        "min_base_dir": "20251112_024528_LAT_7667246_194",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = fn_0(D, C, join(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C, D) = fn_1(B, D, D, C(B, A))",
+            "fn_4(A, B, C, D) = meet(D, fn_0(C(A), B, A))",
+            "fn_5(A, B, C, D) = fn_2(fn_1(D, A, D, C), B, A)",
+            "fn_6(A, B) = meet(A, B)",
+            "fn_7(A, B, C, D) = fn_2(fn_1(D, C, C, B), join(A, B), A)",
+            "fn_8(A, B, C, D) = fn_0(fn_1(D, A, C, meet(A, B)), B, A)",
+            "fn_9(A, B, C) = join(meet(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 18.469250000000002,
+        "hints_time_sys": 0.398217,
+        "hints_time": 18.867467
+    },
+    {
+        "problem": "LAT171-1",
+        "mean_base_user_time": 10.3765910625,
+        "min_base_user_time": 9.928412000000002,
+        "min_base_dir": "20251112_024827_LAT_7667250_198",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B) = fn_0(meet(B, A))",
+            "fn_2(A, B, C, D) = join(meet(C, D), fn_1(D, C, B, A))",
+            "fn_3(A, B, C) = fn_0(fn_0(B, A, C), meet(A, B), A)",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_5(A, B) = fn_0(B, A, A)",
+            "fn_6(A, B, C, D) = fn_0(fn_0(B, A, D), C(B, A), A)",
+            "fn_7(A, B) = fn_4(A, B, A)",
+            "fn_8(A, B, C) = fn_0(join(A, C), B, join(B, A))",
+            "fn_9(A, B, C) = fn_1(A, C, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.0555610000000004,
+        "hints_time_sys": 0.09091599999999998,
+        "hints_time": 2.1464770000000004
+    },
+    {
+        "problem": "LAT172-1",
+        "mean_base_user_time": 282.35712268749995,
+        "min_base_user_time": 279.439776,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C, D) = fn_0(D, C, A, join(B, A))",
+            "fn_4(A, B, C, D) = fn_1(fn_0(A, C, B, D), C, B)",
+            "fn_5(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_6(A, B) = fn_2(A, B, A)",
+            "fn_7(A, B, C) = fn_0(C, A, B, A)",
+            "fn_8(A, B) = fn_1(join(B, A))",
+            "fn_9(A, B, C, D) = fn_0(D, C, B, join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = meet(D, join(C, meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.622602,
+        "hints_time_sys": 0.11997299999999998,
+        "hints_time": 4.7425749999999995
+    },
+    {
+        "problem": "LAT173-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT174-1",
+        "mean_base_user_time": 114.926323125,
+        "min_base_user_time": 111.4354,
+        "min_base_dir": "20251112_031405_LAT_7667286_234",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = C(A, B, A)",
+            "fn_4(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_5(A, B, C) = fn_2(C, B, meet(B, A))",
+            "fn_6(A, B, C, D, E, F) = fn_0(meet(join(E, A), F), D, join(C, join(B, A)))",
+            "fn_7(A, B, C, D) = D(B, C, meet(B, A))",
+            "fn_8(A, B, C, D) = D(meet(B, C), meet(B, A))",
+            "fn_9(A, B, C, D, E) = fn_1(E, B, fn_7(D, C, E, A), meet(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 27.058076,
+        "hints_time_sys": 0.515265,
+        "hints_time": 27.573341
+    },
+    {
+        "problem": "LAT175-1",
+        "mean_base_user_time": 348.7599659375,
+        "min_base_user_time": 337.929822,
+        "min_base_dir": "20251112_031305_LAT_7667284_232",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C, D) = meet(D, fn_0(C, B, A))",
+            "fn_2(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_4(A, B, C, D) = fn_1(A, D, C, join(B, A))",
+            "fn_5(A, B, C) = C(A, B, A)",
+            "fn_6(A, B, C, D) = fn_0(fn_1(B, C, A, D), C, B)",
+            "fn_7(A, B, C) = fn_0(join(A, C), B, A)",
+            "fn_8(A, B, C, D) = fn_0(fn_3(A, C, B, C), D, B)",
+            "fn_9(A, B, C, D) = fn_0(fn_3(C, B, C, A), D, B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 44.688568,
+        "hints_time_sys": 0.78273,
+        "hints_time": 45.471298
+    },
+    {
+        "problem": "LAT176-1",
+        "mean_base_user_time": 522.3403283125,
+        "min_base_user_time": 513.012382,
+        "min_base_dir": "20251112_030121_LAT_7667264_212",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C, D) = join(D, fn_0(C, B, A))",
+            "fn_2(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B) = fn_0(meet(B, A))",
+            "fn_5(A, B, C, D) = fn_1(D, C, meet(B, A))",
+            "fn_6(A, B, C) = C(A, B, A)",
+            "fn_7(A, B, C) = fn_2(C, A, B, A)",
+            "fn_8(A, B, C, D) = fn_5(A, B, D, C, meet(B, A))",
+            "fn_9(A, B, C) = fn_1(C, A, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 225.917429,
+        "hints_time_sys": 3.234637,
+        "hints_time": 229.152066
+    },
+    {
+        "problem": "LAT177-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT183-10",
+        "mean_base_user_time": 73.8243673125,
+        "min_base_user_time": 63.386770999999996,
+        "min_base_dir": "20251112_030548_LAT_7667272_220",
+        "abstractions": [
+            "fn_0(A, B) = meet(A, complement(meet(B, A)))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = join(B, complement(A))",
+            "fn_3(A, B, C) = ifeq(C, one, ifeq(meet(B, A), zero, complement(B), A), A)",
+            "fn_4(A, B) = complement(meet(B, A))",
+            "fn_5(A, B, C) = ifeq(join(C, A), one, B, A)",
+            "fn_6(A, B, C) = C(fn_2(A, B), A)",
+            "fn_7(A, B, C) = fn_1(C, B, meet(B, A))",
+            "fn_8(A, B, C) = join(C, join(B, A))",
+            "fn_9(A, B, C) = ifeq(meet(C, A), zero, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = meet(A, complement(meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 63.78007000000001,
+        "hints_time_sys": 1.49604,
+        "hints_time": 65.27611
+    },
+    {
+        "problem": "LAT186-10",
+        "mean_base_user_time": 31.873214437500003,
+        "min_base_user_time": 31.367787999999997,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0(A, B) = meet(A, complement(meet(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = ifeq(C, one, ifeq(meet(B, A), zero, complement(B), A), A)",
+            "fn_3(A, B) = complement(meet(B, A))",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_5(A, B) = fn_0(join(B, complement(A)), A)",
+            "fn_6(A, B) = fn_1(meet(B, A))",
+            "fn_7(A, B) = join(A, complement(join(B, A)))",
+            "fn_8(A, B) = B(A, complement(A))",
+            "fn_9(A, B, C) = ifeq(meet(C, A), zero, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = meet(A, complement(meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 24.581493,
+        "hints_time_sys": 0.765699,
+        "hints_time": 25.347192
+    },
+    {
+        "problem": "LAT190-10",
+        "mean_base_user_time": 27.455832,
+        "min_base_user_time": 27.455832,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B) = meet(A, complement(meet(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B) = join(B, complement(A))",
+            "fn_3(A, B, C, D) = ifeq(D, one, ifeq(meet(C, A), zero, B, A), A)",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A, B) = fn_1(complement(A), B, A)",
+            "fn_6(A, B, C) = ifeq(B, one, complement(A), C)",
+            "fn_7(A, B, C) = join(B, C(B, A))",
+            "fn_8(A, B, C) = join(meet(B, A), C)",
+            "fn_9(A, B) = fn_0(fn_2(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = meet(A, complement(meet(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 8.07414,
+        "hints_time_sys": 0.26199799999999995,
+        "hints_time": 8.336138
+    },
+    {
+        "problem": "LAT206-10",
+        "mean_base_user_time": 11.477336,
+        "min_base_user_time": 11.477336,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = C(A, complement(C(B, A)))",
+            "fn_2(A, B, C) = join(B, fn_0(C, B, A))",
+            "fn_3(A, B) = complement(join(B, A))",
+            "fn_4(A, B, C, D) = ifeq(D, one, ifeq(C, zero, B, A), A)",
+            "fn_5(A, B, C, D) = fn_0(D, C, join(B, A))",
+            "fn_6(A, B, C) = fn_0(fn_0(complement(A), C, B), complement(A), A)",
+            "fn_7(A, B, C) = join(C, meet(B, A))",
+            "fn_8(A, B, C) = fn_0(C(A, B), A)",
+            "fn_9(A, B) = fn_0(meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 10.584482,
+        "hints_time_sys": 0.319506,
+        "hints_time": 10.903988
+    },
+    {
+        "problem": "LAT222-10",
+        "mean_base_user_time": 136.05198693749998,
+        "min_base_user_time": 134.271002,
+        "min_base_dir": "20251112_031452_LAT_7667288_236",
+        "abstractions": [
+            "fn_0 = complement(join(a, meet(b, complement(a))))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = ifeq(join(B, A), one, ifeq(C, zero, complement(B), A), A)",
+            "fn_3(A, B) = complement(join(B, A))",
+            "fn_4 = meet(b, complement(a))",
+            "fn_5(A, B, C) = fn_1(meet(A, C), B, A)",
+            "fn_6(A, B, C) = ifeq(C, one, complement(meet(B, complement(meet(A, B)))), A)",
+            "fn_7(A, B, C, D) = fn_1(fn_1(B, A, D), C(B, A))",
+            "fn_8(A) = join(b, A)",
+            "fn_9(A, B, C) = fn_1(fn_5(A, C, B), fn_1(C, A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = complement(join(a, meet(b, complement(a))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 50.962367,
+        "hints_time_sys": 1.847186,
+        "hints_time": 52.809553
+    },
+    {
+        "problem": "LAT223-10",
+        "mean_base_user_time": 42.055143,
+        "min_base_user_time": 42.055143,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2 = complement(a)",
+            "fn_3(A, B, C) = fn_1(fn_1(join(B, A), C, meet(B, A)))",
+            "fn_4 = ifeq(meet(b, fn_0), zero, complement(b), fn_0)",
+            "fn_5(A) = fn_1(A, fn_2, b)",
+            "fn_6(A) = join(b, A)",
+            "fn_7 = meet(b, fn_2)",
+            "fn_8(A, B, C, D) = fn_1(fn_1(A, B, D), C, meet(B, A))",
+            "fn_9(A, B, C) = meet(C, fn_1(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 49.403111,
+        "hints_time_sys": 1.860731,
+        "hints_time": 51.263842000000004
+    },
+    {
+        "problem": "LAT224-10",
+        "mean_base_user_time": 1.2324776249999996,
+        "min_base_user_time": 1.196628,
+        "min_base_dir": "20251112_025851_LAT_7667260_208",
+        "abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = complement(meet(B, A))",
+            "fn_3(A, B, C) = meet(C, join(B, A))",
+            "fn_4(A, B, C) = fn_1(fn_2(C, A), B, A)",
+            "fn_5 = ifeq(meet(b, fn_0), zero, complement(b), fn_0)",
+            "fn_6(A) = join(b, A)",
+            "fn_7(A, B) = fn_1(A, B, A)",
+            "fn_8 = complement(a)",
+            "fn_9(A, B, C, D, E) = fn_1(join(E, D), C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.3110190000000002,
+        "hints_time_sys": 0.068409,
+        "hints_time": 1.379428
+    },
+    {
+        "problem": "LAT229-10",
+        "mean_base_user_time": 158.576444,
+        "min_base_user_time": 158.576444,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = complement(meet(B, A))",
+            "fn_3(A, B, C, D) = meet(B, fn_1(D, A, meet(C, join(B, A))))",
+            "fn_4(A, B) = fn_1(fn_2(B, A), B, meet(A, fn_2(B, A)))",
+            "fn_5(A, B, C) = fn_1(C, B, meet(B, A))",
+            "fn_6 = ifeq(meet(b, fn_0), zero, complement(b), fn_0)",
+            "fn_7(A, B, C, D) = meet(D(B, A), C(B, A))",
+            "fn_8(A) = join(b, A)",
+            "fn_9(A, B, C, D) = meet(B(C, D), A(D, C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 173.352979,
+        "hints_time_sys": 5.901455,
+        "hints_time": 179.254434
+    },
+    {
+        "problem": "LAT230-10",
+        "mean_base_user_time": 7.622280125,
+        "min_base_user_time": 5.456723,
+        "min_base_dir": "20251112_030053_LAT_7667262_210",
+        "abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))",
+            "fn_1 = complement(a)",
+            "fn_2(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_3 = meet(b, fn_1)",
+            "fn_4(A) = join(b, A)",
+            "fn_5 = ifeq(meet(b, fn_0), zero, complement(b), fn_0)",
+            "fn_6(A, B, C) = meet(C, join(B, A))",
+            "fn_7(A, B, C, D) = fn_2(join(A, D), C, B, A)",
+            "fn_8(A) = A(fn_1, b)",
+            "fn_9(A, B, C) = join(C, join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = meet(complement(a), complement(meet(b, complement(a))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 12.817905,
+        "hints_time_sys": 0.570065,
+        "hints_time": 13.38797
+    },
+    {
+        "problem": "LAT241-10",
+        "mean_base_user_time": 0.135411,
+        "min_base_user_time": 0.135411,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0 = join(complement(b), complement(a))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = meet(A, B(complement(A)))",
+            "fn_3(A, B) = ifeq(B, one, ifeq(A, zero, complement(a), fn_0), fn_0)",
+            "fn_4(A) = meet(a, A)",
+            "fn_5(A, B) = fn_1(B, A, A)",
+            "fn_6(A, B) = join(B, A)",
+            "fn_7(A, B, C, D) = B(C, A(complement(C), D))",
+            "fn_8(A, B, C, D) = A(B, fn_1(join(B, C), D, C))",
+            "fn_9(A, B) = meet(B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = join(complement(b), complement(a))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.14919199999999977,
+        "hints_time_sys": 0.00975899999999999,
+        "hints_time": 0.15895099999999976
+    },
+    {
+        "problem": "LAT268-10",
+        "mean_base_user_time": 0.007097,
+        "min_base_user_time": 0.007097,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B, C, D) = ifeq(D, true, ifeq(C, true, c_in(c_Pair(B, A(t_a), t_a, t_a), c_Tarski_Opotype_Oorder(c_Tarski_Odual(v_cl, t_a), t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a)), true), true)",
+            "fn_1(A, B, C, D) = ifeq(c_lessequals(C, B, tc_set(t_a)), true, ifeq(A, true, fn_0(c_Tarski_Olub(C, c_Tarski_Odual(v_cl, t_a)), D, c_in(D, C, t_a), c_in(c_Tarski_Odual(v_cl, t_a), c_Tarski_OPartialOrder, tc_Tarski_Opotype_Opotype__ext__type(t_a, tc_Product__Type_Ounit))), true), true)",
+            "fn_2(A, B, C) = c_in(c_Pair(C, B, t_a, t_a), c_Tarski_Opotype_Oorder(A, t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a))",
+            "fn_3 = c_Tarski_Oglb(v_S, v_cl, t_a)",
+            "fn_4(A, B, C, D) = fn_0(D(A, C), B, c_in(B, A, t_a), c_lessequals(A, v_A, tc_set(t_a)))",
+            "fn_5(A, B, C) = ifeq(c_lessequals(B, v_A, tc_set(t_a)), true, fn_0(c_Tarski_Olub(B, c_Tarski_Odual(v_cl, t_a)), C, c_in(C, B, t_a), A), true)",
+            "fn_6 = c_Tarski_Odual(v_cl, t_a)",
+            "fn_7 = c_in(c_Pair(fn_3, v_x, t_a, t_a), v_r, tc_prod(t_a, t_a))",
+            "fn_8 = fn_2(fn_6, fn_3, v_x)",
+            "fn_9 = fn_2(v_cl, v_x, fn_3)"
+        ],
+        "expanded_abstractions": [
+            "fn_2(A, B, C) = c_in(c_Pair(C, B, t_a, t_a), c_Tarski_Opotype_Oorder(A, t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006561000000000039,
+        "hints_time_sys": 0.0065820000000000045,
+        "hints_time": 0.013143000000000044
+    },
+    {
+        "problem": "LAT389-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT390-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT391-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT392-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT393-1",
+        "mean_base_user_time": 1.6859065625000003,
+        "min_base_user_time": 1.5370320000000035,
+        "min_base_dir": "20251112_031300_LAT_7667282_230",
+        "abstractions": [
+            "fn_0(A, B, C, D) = C(D(C(B), A))",
+            "fn_1(A, B) = or(neg(A), B)",
+            "fn_2(A, B) = and(B, neg(A))",
+            "fn_3(A, B, C) = or(C, and(B, A))",
+            "fn_4(A, B, C) = fn_0(C, f(neg(B), B), f(A), f)",
+            "fn_5(A, B, C) = fn_0(C, B, and(A), or)",
+            "fn_6(A, B) = or(B, neg(A))",
+            "fn_7(A, B) = fn_1(B, neg(A))",
+            "fn_8(A, B) = fn_0(fn_2(B, neg(A)), B, or(A), and)",
+            "fn_9(A) = and(neg(A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B) = or(neg(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.9721560000000005,
+        "hints_time_sys": 0.07626700000000003,
+        "hints_time": 2.0484230000000005
+    },
+    {
+        "problem": "LAT393-2",
+        "mean_base_user_time": 1.4446531875000002,
+        "min_base_user_time": 1.3662210000000004,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_1(A, B) = fn_0(B, A, B, A)",
+            "fn_2(A, B, C) = fn_0(f(f(A, f(f(C, C), C)), B), A)",
+            "fn_3(A, B, C) = f(C, f(B, A))",
+            "fn_4(A, B) = fn_0(B, A, A)",
+            "fn_5(A, B, C) = fn_0(f(fn_1(C, f(A, B)), fn_3(B, A, C)), A, B, A)",
+            "fn_6(A, B) = fn_2(A, A, A, B, A)",
+            "fn_7(A, B, C, D, E) = fn_0(E, fn_0(f(D, C), fn_1(D, C), B, A), B, A)",
+            "fn_8(A) = f(A, A)",
+            "fn_9(A, B, C, D) = fn_2(C, B, A, D, fn_4(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.938271,
+        "hints_time_sys": 0.16329800000000003,
+        "hints_time": 5.1015690000000005
+    },
+    {
+        "problem": "LAT394-1",
+        "mean_base_user_time": 0.49670156249999964,
+        "min_base_user_time": 0.4905739999999996,
+        "min_base_dir": "20251112_024528_LAT_7667246_194",
+        "abstractions": [
+            "fn_0(A, B) = or(B, neg(A))",
+            "fn_1(A, B, C, D) = C(D(C(B), A))",
+            "fn_2(A, B) = or(neg(A), B)",
+            "fn_3(A, B) = and(B, neg(A))",
+            "fn_4(A, B) = fn_0(B, neg(A))",
+            "fn_5(A) = fn_0(A, A)",
+            "fn_6(A, B, C) = fn_1(C, f(neg(B), B), f(A), f)",
+            "fn_7(A, B) = and(B(A), A)",
+            "fn_8(A, B, C) = fn_2(C, and(fn_4(C, B), A))",
+            "fn_9(A, B, C) = or(C, and(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = or(B, neg(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.44733,
+        "hints_time_sys": 0.02945500000000001,
+        "hints_time": 0.476785
+    },
+    {
+        "problem": "LAT394-2",
+        "mean_base_user_time": 0.08143787499999994,
+        "min_base_user_time": 0.07571800000000017,
+        "min_base_dir": "20251112_025429_LAT_7667258_206",
+        "abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))",
+            "fn_1(A, B, C) = fn_0(f(f(A, f(f(C, C), C)), B), A)",
+            "fn_2(A, B) = fn_0(B, A, B, A)",
+            "fn_3(A) = f(A, A)",
+            "fn_4(A, B, C, D) = fn_1(B, C, A, D, fn_0(C, B, B, A))",
+            "fn_5(A, B, C, D, E) = fn_0(E, fn_0(f(D, C), fn_2(D, C), B, A), B, A)",
+            "fn_6(A, B) = fn_0(B, A, A)",
+            "fn_7(A, B) = fn_1(A, A, A, B, A)",
+            "fn_8(A, B) = f(A, B(A))",
+            "fn_9(A, B, C) = f(fn_2(C, f(B, A)), f(C, f(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = f(f(D, C), f(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0998209999999995,
+        "hints_time_sys": 0.007894000000000012,
+        "hints_time": 0.1077149999999995
+    },
+    {
+        "problem": "LAT399-1",
+        "mean_base_user_time": 23.722141,
+        "min_base_user_time": 23.722141,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A) = meet(A, a)",
+            "fn_1(A, B) = lome(a, A, B)",
+            "fn_2(A, B, C) = join(meet(B, A), C)",
+            "fn_3(A, B, C, D) = lome(D, C, meet(B, A))",
+            "fn_4(A, B, C, D) = upme(D, C, meet(B, A))",
+            "fn_5(A, B, C) = lome(join(A, B), A, C)",
+            "fn_6(A, B, C) = C(B, meet(B, A))",
+            "fn_7(A, B, C, D) = D(B, upme(C, B, A))",
+            "fn_8(A) = meet(a, A)",
+            "fn_9(A, B, C) = join(C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = meet(A, a)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 29.600123999999997,
+        "hints_time_sys": 0.778856,
+        "hints_time": 30.37898
+    },
+    {
+        "problem": "LAT399-2",
+        "mean_base_user_time": 3.499138,
+        "min_base_user_time": 3.499138,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A) = meet(A, a)",
+            "fn_1(A, B) = lojo(A, a, B)",
+            "fn_2(A) = meet(a, A)",
+            "fn_3(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_4(A, B, C, D) = A(B, C, D)",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_6(A, B) = lojo(B, A, a)",
+            "fn_7(A, B, C, D, E) = B(C, A(D, E))",
+            "fn_8(A, B, C) = A(B, C)",
+            "fn_9(A, B, C, D, E) = B(C, D, A(D, E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = meet(A, a)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.779915,
+        "hints_time_sys": 0.164479,
+        "hints_time": 3.944394
+    },
+    {
+        "problem": "LAT400-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT400-2",
+        "mean_base_user_time": 727.427186,
+        "min_base_user_time": 727.427186,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A) = meet(A, a)",
+            "fn_2(A) = meet(a, A)",
+            "fn_3(A, B) = lojo(A, a, B)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_5(A, B) = lojo(B, A, a)",
+            "fn_6(A, B, C, D) = A(B, C, D)",
+            "fn_7(A, B, C) = join(C, meet(B, A))",
+            "fn_8(A, B, C) = A(B, C)",
+            "fn_9(A, B, C, D) = A(B, D, C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 562.664292,
+        "hints_time_sys": 9.454233,
+        "hints_time": 572.1185250000001
+    },
+    {
+        "problem": "LAT400-3",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT400-4",
+        "mean_base_user_time": 159.47788,
+        "min_base_user_time": 159.47788,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A) = meet(A, a)",
+            "fn_2(A) = meet(a, A)",
+            "fn_3(A, B) = lojo(B, A, a)",
+            "fn_4(A, B, C, D) = A(B, C, D)",
+            "fn_5(A, B) = lojo(A, a, B)",
+            "fn_6(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_7(A, B, C) = upjo(meet(A, B), A, C)",
+            "fn_8(A, B, C, D) = join(D, lome(C, B, A))",
+            "fn_9(A, B, C, D) = A(B, D, C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 400.272137,
+        "hints_time_sys": 6.949519,
+        "hints_time": 407.221656
+    },
+    {
+        "problem": "LAT401-1",
+        "mean_base_user_time": 37.76742,
+        "min_base_user_time": 37.76742,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B) = lojo(A, a, B)",
+            "fn_1(A, B) = lojo(B, A, a)",
+            "fn_2(A) = meet(A, a)",
+            "fn_3(A) = meet(a, A)",
+            "fn_4 = join(z2, x2)",
+            "fn_5(A, B) = upme(a, A, B)",
+            "fn_6(A, B, C, D) = lojo(D, C, join(B, A))",
+            "fn_7(A, B, C, D) = upme(join(B, A), C, D)",
+            "fn_8(A, B, C) = fn_0(C, join(B, A))",
+            "fn_9(A, B) = join(B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = lojo(A, a, B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 84.130731,
+        "hints_time_sys": 1.729845,
+        "hints_time": 85.860576
+    },
+    {
+        "problem": "LAT401-2",
+        "mean_base_user_time": 139.660366,
+        "min_base_user_time": 139.660366,
+        "min_base_dir": "20251112_20251209_130501_LAT_7726483_10",
+        "abstractions": [
+            "fn_0(A, B) = lojo(B, A, a)",
+            "fn_1(A, B) = lome(a, A, B)",
+            "fn_2(A, B) = lojo(A, a, B)",
+            "fn_3(A, B, C, D) = lome(join(B, A), C, D)",
+            "fn_4(A) = meet(A, a)",
+            "fn_5(A, B, C, D) = A(B, C, D)",
+            "fn_6(A) = meet(a, A)",
+            "fn_7(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_8(A, B, C, D) = upme(C(A, B), A, D)",
+            "fn_9(A, B, C, D, E) = B(C, D, A(C, E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = lojo(B, A, a)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 18.136263999999997,
+        "hints_time_sys": 0.45240199999999997,
+        "hints_time": 18.588665999999996
+    }
+]

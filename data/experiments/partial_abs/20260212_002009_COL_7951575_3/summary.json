@@ -1,0 +1,1480 @@
+[
+    {
+        "problem": "COL001-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.6769029999999998
+    },
+    {
+        "problem": "COL001-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009174999999999999
+    },
+    {
+        "problem": "COL002-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010827999999999999
+    },
+    {
+        "problem": "COL002-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(s, B), A), C)",
+            "fn_1(A) = apply(A, i)",
+            "fn_2 = apply(s, apply(s, i))",
+            "fn_3(A) = apply(A, A)",
+            "fn_4 = apply(c, i)",
+            "fn_5(A, B, C) = apply(apply(B, A), C)",
+            "fn_7(A) = apply(c, A)",
+            "fn_8 = apply(s, i)",
+            "fn_9(A) = apply(apply(c, i), A)",
+            "fn_14(A) = apply(s, A)",
+            "fn_15(A, B) = apply(apply(B, A), A)",
+            "fn_16 = apply(apply(s, i), i)",
+            "fn_17(A) = apply(i, A)"
+        ],
+        "final_hints": [
+            "apply(c, i)",
+            "apply(apply(A, B), C)",
+            "apply(s, A)",
+            "apply(apply(c, i), A)",
+            "apply(apply(A, B), B)",
+            "apply(c, A)",
+            "apply(s, apply(s, i))",
+            "apply(A, i)",
+            "apply(A, A)",
+            "apply(s, i)",
+            "apply(apply(apply(s, A), B), C)",
+            "apply(apply(s, i), i)",
+            "apply(i, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL002-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004017
+    },
+    {
+        "problem": "COL002-5.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(s, B), A), C)",
+            "fn_1(A) = apply(A, i)",
+            "fn_2(A) = apply(s, A)",
+            "fn_4 = apply(s, i)",
+            "fn_5(A, B, C) = apply(C, apply(B, A))",
+            "fn_6 = apply(c, i)",
+            "fn_7(A) = apply(c, A)",
+            "fn_8(A) = apply(apply(s, A), i)",
+            "fn_11(A) = apply(A, A)",
+            "fn_13(A) = apply(apply(c, i), A)",
+            "fn_14 = apply(apply(s, i), i)",
+            "fn_16 = apply(apply(s, c), i)",
+            "fn_17 = apply(b, i)",
+            "fn_18(A, B) = apply(A, apply(B, A))"
+        ],
+        "final_hints": [
+            "apply(c, i)",
+            "apply(b, i)",
+            "apply(s, A)",
+            "apply(apply(c, i), A)",
+            "apply(c, A)",
+            "apply(A, i)",
+            "apply(A, A)",
+            "apply(apply(s, c), i)",
+            "apply(A, apply(B, A))",
+            "apply(s, i)",
+            "apply(apply(s, A), i)",
+            "apply(apply(apply(s, A), B), C)",
+            "apply(A, apply(B, C))",
+            "apply(apply(s, i), i)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL003-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(w, A), B)",
+            "fn_1 = apply(w, b)",
+            "fn_2(A) = apply(A, A)",
+            "fn_3(A) = apply(b, A)",
+            "fn_5(A) = apply(w, A)",
+            "fn_6(A, B) = apply(B, apply(B, A))",
+            "fn_7 = apply(b, b)",
+            "fn_9(A, B) = apply(apply(b, A), B)",
+            "fn_14 = apply(w, apply(w, b))",
+            "fn_16 = apply(apply(b, w), b)",
+            "fn_18 = apply(w, apply(b, w))",
+            "fn_19 = apply(w, apply(b, b))"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(w, b)",
+            "apply(w, apply(w, b))",
+            "apply(apply(b, w), b)",
+            "apply(apply(w, A), B)",
+            "apply(A, apply(A, B))",
+            "apply(w, apply(b, w))",
+            "apply(A, A)",
+            "apply(w, apply(b, b))",
+            "apply(apply(b, A), B)",
+            "apply(b, A)",
+            "apply(w, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL003-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = apply(apply(w, C), apply(B, A))",
+            "fn_1 = apply(w, b)",
+            "fn_2(A) = apply(A, A)",
+            "fn_3(A) = apply(b, A)",
+            "fn_4(A) = apply(w, A)",
+            "fn_8 = apply(b, b)",
+            "fn_9(A, B) = apply(apply(w, A), B)",
+            "fn_10 = apply(b, w)",
+            "fn_11(A, B, C) = apply(apply(B, A), C)",
+            "fn_13(A, B) = apply(apply(w, b), apply(A, B))",
+            "fn_14(A, B) = apply(B, apply(B, A))",
+            "fn_16(A) = apply(w, apply(w, A))",
+            "fn_18(A) = apply(apply(w, b), A)",
+            "fn_19(A, B) = apply(apply(b, A), B)"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(w, b)",
+            "apply(apply(A, B), C)",
+            "apply(b, w)",
+            "apply(apply(w, b), apply(A, B))",
+            "apply(apply(w, A), apply(B, C))",
+            "apply(w, apply(w, A))",
+            "apply(apply(w, A), B)",
+            "apply(A, apply(A, B))",
+            "apply(A, A)",
+            "apply(apply(w, b), A)",
+            "apply(apply(b, A), B)",
+            "apply(b, A)",
+            "apply(w, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL003-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.130029
+    },
+    {
+        "problem": "COL003-13.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.133797
+    },
+    {
+        "problem": "COL003-14.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.126252
+    },
+    {
+        "problem": "COL003-15.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.12878499999999998
+    },
+    {
+        "problem": "COL003-16.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.137365
+    },
+    {
+        "problem": "COL003-17.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.131481
+    },
+    {
+        "problem": "COL003-18.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.128558
+    },
+    {
+        "problem": "COL003-19.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.138898
+    },
+    {
+        "problem": "COL003-20.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.13161499999999998
+    },
+    {
+        "problem": "COL004-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1(A, B) = apply(B, apply(s, A))",
+            "fn_7(A) = apply(s, A)",
+            "fn_8(A) = apply(k, A)",
+            "fn_9(A, B, C) = apply(apply(apply(s, B), A), C)",
+            "fn_13 = apply(fn_5, apply(k, k))",
+            "fn_14 = apply(s, s)",
+            "fn_17 = apply(s, k)"
+        ],
+        "final_hints": [
+            "apply(s, A)",
+            "apply(s, s)",
+            "apply(k, A)",
+            "apply(apply(s, A), B)",
+            "apply(fn_5, apply(k, k))",
+            "apply(A, apply(s, B))",
+            "apply(s, k)",
+            "apply(apply(apply(s, A), B), C)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL004-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0049499999999999995
+    },
+    {
+        "problem": "COL006-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.723869
+    },
+    {
+        "problem": "COL006-5.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1(A, B) = apply(B, apply(s, A))",
+            "fn_2 = apply(apply(s, s), k)",
+            "fn_6(A) = apply(s, A)",
+            "fn_7(A, B, C) = apply(C, apply(B, A))",
+            "fn_14(A) = apply(k, A)",
+            "fn_16(A, B) = apply(apply(apply(s, B), A), apply(s, B))",
+            "fn_19(A, B, C) = apply(apply(apply(s, B), A), C)"
+        ],
+        "final_hints": [
+            "apply(s, A)",
+            "apply(apply(apply(s, A), B), apply(s, A))",
+            "apply(k, A)",
+            "apply(apply(s, A), B)",
+            "apply(A, apply(s, B))",
+            "apply(apply(s, s), k)",
+            "apply(A, apply(B, C))",
+            "apply(apply(apply(s, A), B), C)"
+        ],
+        "status": "success",
+        "hint_time_user": 106.224603
+    },
+    {
+        "problem": "COL006-6.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1(A, B) = apply(B, apply(s, A))",
+            "fn_2 = apply(apply(s, s), k)",
+            "fn_3(A, B, C) = apply(apply(apply(s, B), A), C)",
+            "fn_5(A) = apply(s, A)",
+            "fn_8(A, B, C) = apply(apply(apply(apply(s, s), B), A), C)",
+            "fn_9(A) = apply(k, A)",
+            "fn_10 = apply(s, k)",
+            "fn_14 = apply(s, s)",
+            "fn_15 = apply(apply(apply(s, s), k), apply(k, k))",
+            "fn_16(A) = apply(A, A)",
+            "fn_18(A, B, C, D) = apply(apply(apply(apply(s, B), C), A), D)",
+            "fn_19(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "final_hints": [
+            "apply(apply(A, B), C)",
+            "apply(s, A)",
+            "apply(s, s)",
+            "apply(apply(apply(s, s), k), apply(k, k))",
+            "apply(k, A)",
+            "apply(apply(s, A), B)",
+            "apply(A, A)",
+            "apply(A, apply(s, B))",
+            "apply(apply(s, s), k)",
+            "apply(apply(apply(s, A), B), C)",
+            "apply(s, k)",
+            "apply(apply(apply(apply(s, s), A), B), C)",
+            "apply(apply(apply(apply(s, A), B), C), D)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL006-7.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1(A, B) = apply(B, apply(s, A))",
+            "fn_2 = apply(apply(s, s), k)",
+            "fn_3(A, B, C) = apply(apply(apply(s, B), A), C)",
+            "fn_5(A) = apply(s, A)",
+            "fn_7(A) = apply(k, A)",
+            "fn_9(A, B, C) = apply(apply(apply(apply(s, s), B), A), C)",
+            "fn_11 = apply(s, k)",
+            "fn_14 = apply(s, s)",
+            "fn_15(A) = apply(apply(apply(s, s), k), A)",
+            "fn_17(A, B, C, D) = apply(apply(apply(apply(s, B), C), A), D)",
+            "fn_18 = apply(k, k)",
+            "fn_19(A, B) = apply(apply(apply(s, B), A), apply(s, B))"
+        ],
+        "final_hints": [
+            "apply(apply(apply(s, s), k), A)",
+            "apply(s, A)",
+            "apply(s, s)",
+            "apply(apply(apply(s, A), B), apply(s, A))",
+            "apply(k, A)",
+            "apply(apply(s, A), B)",
+            "apply(A, apply(s, B))",
+            "apply(apply(s, s), k)",
+            "apply(apply(apply(s, A), B), C)",
+            "apply(s, k)",
+            "apply(apply(apply(apply(s, s), A), B), C)",
+            "apply(apply(apply(apply(s, A), B), C), D)",
+            "apply(k, k)"
+        ],
+        "status": "success",
+        "hint_time_user": 13.858767
+    },
+    {
+        "problem": "COL007-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0
+    },
+    {
+        "problem": "COL008-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00401
+    },
+    {
+        "problem": "COL009-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.75914
+    },
+    {
+        "problem": "COL010-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001985
+    },
+    {
+        "problem": "COL011-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(o, apply(B, A))",
+            "fn_1(A, B, C) = apply(C, apply(B, A))",
+            "fn_3(A) = apply(o, A)",
+            "fn_4(A) = apply(q1, A)",
+            "fn_6(A, B) = apply(A, apply(B, A))",
+            "fn_8(A) = apply(o, apply(q1, A))",
+            "fn_9 = apply(o, o)",
+            "fn_10 = apply(q1, o)",
+            "fn_15(A, B) = apply(B, apply(B, apply(A, B)))",
+            "fn_16(A, B, C) = apply(apply(o, apply(A, B)), C)",
+            "fn_17(A, B) = apply(o, apply(o, apply(A, B)))",
+            "fn_18(A) = apply(apply(q1, A), A)",
+            "fn_19 = apply(apply(q1, o), o)"
+        ],
+        "final_hints": [
+            "apply(o, o)",
+            "apply(apply(q1, o), o)",
+            "apply(o, apply(o, apply(A, B)))",
+            "apply(o, A)",
+            "apply(q1, o)",
+            "apply(A, apply(B, A))",
+            "apply(o, apply(q1, A))",
+            "apply(o, apply(A, B))",
+            "apply(A, apply(A, apply(B, A)))",
+            "apply(A, apply(B, C))",
+            "apply(apply(o, apply(A, B)), C)",
+            "apply(q1, A)",
+            "apply(apply(q1, A), A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL012-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006032
+    },
+    {
+        "problem": "COL013-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0049559999999999995
+    },
+    {
+        "problem": "COL014-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001898
+    },
+    {
+        "problem": "COL015-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006769
+    },
+    {
+        "problem": "COL016-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004919
+    },
+    {
+        "problem": "COL017-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004971
+    },
+    {
+        "problem": "COL018-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0058709999999999995
+    },
+    {
+        "problem": "COL019-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008003
+    },
+    {
+        "problem": "COL020-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014646999999999999
+    },
+    {
+        "problem": "COL021-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009049
+    },
+    {
+        "problem": "COL022-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009708999999999999
+    },
+    {
+        "problem": "COL023-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013878
+    },
+    {
+        "problem": "COL024-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004919
+    },
+    {
+        "problem": "COL025-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0029349999999999997
+    },
+    {
+        "problem": "COL026-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.037573999999999996
+    },
+    {
+        "problem": "COL027-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015785
+    },
+    {
+        "problem": "COL029-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003952
+    },
+    {
+        "problem": "COL030-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.238054
+    },
+    {
+        "problem": "COL031-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002938
+    },
+    {
+        "problem": "COL032-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006972
+    },
+    {
+        "problem": "COL033-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018411
+    },
+    {
+        "problem": "COL034-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, apply(A, t)))",
+            "fn_1(A) = apply(b, A)",
+            "fn_2(A) = apply(m, A)",
+            "fn_5(A) = apply(b, apply(t, A))",
+            "fn_6(A, B) = apply(apply(m, A), B)",
+            "fn_7(A) = apply(m, apply(m, apply(A, t)))",
+            "fn_8 = apply(b, apply(t, apply(m, t)))",
+            "fn_11 = apply(b, t)",
+            "fn_12 = apply(b, b)",
+            "fn_15(A) = apply(t, A)",
+            "fn_18 = apply(m, apply(m, apply(b, t)))",
+            "fn_19(A) = apply(A, apply(m, A))"
+        ],
+        "final_hints": [
+            "apply(A, apply(B, apply(C, t)))",
+            "apply(b, b)",
+            "apply(b, apply(t, A))",
+            "apply(apply(m, A), B)",
+            "apply(b, t)",
+            "apply(m, A)",
+            "apply(t, A)",
+            "apply(b, apply(t, apply(m, t)))",
+            "apply(A, apply(m, A))",
+            "apply(b, A)",
+            "apply(m, apply(m, apply(b, t)))",
+            "apply(m, apply(m, apply(A, t)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL035-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.17810499999999999
+    },
+    {
+        "problem": "COL036-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.043386
+    },
+    {
+        "problem": "COL037-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.10192
+    },
+    {
+        "problem": "COL038-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(B, apply(A, v))",
+            "fn_1(A) = apply(A, v)",
+            "fn_2(A, B) = apply(B, apply(A, apply(m, v)))",
+            "fn_3 = apply(m, v)",
+            "fn_4(A, B) = apply(m, apply(B, A))",
+            "fn_7(A) = apply(v, A)",
+            "fn_8(A) = apply(m, A)",
+            "fn_10(A) = apply(b, A)",
+            "fn_12(A) = apply(apply(A, v), v)",
+            "fn_15(A) = apply(A, m)",
+            "fn_18 = apply(apply(m, v), v)",
+            "fn_19 = apply(m, apply(b, apply(m, v)))"
+        ],
+        "final_hints": [
+            "apply(v, A)",
+            "apply(apply(m, v), v)",
+            "apply(A, apply(B, v))",
+            "apply(A, m)",
+            "apply(apply(A, v), v)",
+            "apply(A, apply(B, apply(m, v)))",
+            "apply(m, A)",
+            "apply(m, apply(A, B))",
+            "apply(m, v)",
+            "apply(A, v)",
+            "apply(b, A)",
+            "apply(m, apply(b, apply(m, v)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL039-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007895
+    },
+    {
+        "problem": "COL041-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = apply(m, A)",
+            "fn_1 = apply(m, c)",
+            "fn_2(A, B) = apply(m, apply(B, A))",
+            "fn_3(A) = apply(c, A)",
+            "fn_4(A, B, C) = apply(apply(m, apply(A, B)), C)",
+            "fn_6 = apply(m, apply(c, apply(m, c)))",
+            "fn_7(A) = apply(apply(m, c), A)",
+            "fn_8 = apply(m, apply(m, c))",
+            "fn_10(A) = apply(b, A)",
+            "fn_11 = apply(c, apply(m, c))",
+            "fn_12 = apply(m, apply(m, apply(m, c)))",
+            "fn_13(A) = apply(m, apply(apply(m, c), A))",
+            "fn_14(A) = apply(apply(b, c), A)",
+            "fn_15(A, B) = apply(m, apply(apply(c, A), B))",
+            "fn_16(A) = apply(m, apply(apply(b, A), m))",
+            "fn_18(A, B) = apply(apply(m, A), B)"
+        ],
+        "final_hints": [
+            "apply(m, apply(apply(m, c), A))",
+            "apply(m, apply(m, apply(m, c)))",
+            "apply(c, A)",
+            "apply(m, apply(c, apply(m, c)))",
+            "apply(apply(b, c), A)",
+            "apply(apply(m, A), B)",
+            "apply(m, A)",
+            "apply(c, apply(m, c))",
+            "apply(m, apply(A, B))",
+            "apply(m, apply(m, c))",
+            "apply(m, apply(apply(c, A), B))",
+            "apply(b, A)",
+            "apply(m, c)",
+            "apply(apply(m, c), A)",
+            "apply(m, apply(apply(b, A), m))",
+            "apply(apply(m, apply(A, B)), C)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL042-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(w1, A), B)",
+            "fn_1(A) = apply(b, A)",
+            "fn_2(A) = apply(w1, A)",
+            "fn_3 = apply(w1, b)",
+            "fn_4 = apply(b, b)",
+            "fn_5(A) = apply(A, A)",
+            "fn_6(A, B, C) = apply(apply(apply(w1, B), A), C)",
+            "fn_8 = apply(b, w1)",
+            "fn_9(A) = apply(b, apply(w1, A))",
+            "fn_10(A) = apply(apply(w1, A), b)",
+            "fn_13(A) = apply(A, b)",
+            "fn_14(A) = apply(apply(w1, A), w1)",
+            "fn_15 = apply(b, apply(w1, b))",
+            "fn_16(A) = apply(apply(b, b), A)",
+            "fn_17 = apply(apply(w1, apply(w1, b)), b)"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(apply(w1, A), w1)",
+            "apply(apply(w1, A), b)",
+            "apply(apply(w1, A), B)",
+            "apply(apply(b, b), A)",
+            "apply(A, A)",
+            "apply(b, apply(w1, A))",
+            "apply(w1, b)",
+            "apply(apply(w1, apply(w1, b)), b)",
+            "apply(b, apply(w1, b))",
+            "apply(b, w1)",
+            "apply(A, b)",
+            "apply(b, A)",
+            "apply(w1, A)",
+            "apply(apply(apply(w1, A), B), C)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL042-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(w1, A), B)",
+            "fn_1(A) = apply(b, A)",
+            "fn_2 = apply(w1, b)",
+            "fn_3(A) = apply(A, A)",
+            "fn_4 = apply(b, b)",
+            "fn_5(A) = apply(w1, A)",
+            "fn_6(A, B, C) = apply(apply(apply(w1, B), A), C)",
+            "fn_8 = apply(b, w1)",
+            "fn_9(A, B) = apply(apply(b, A), B)",
+            "fn_11(A, B) = apply(apply(w1, B), apply(apply(w1, B), A))",
+            "fn_12(A) = apply(apply(w1, A), b)",
+            "fn_13(A) = apply(apply(b, b), A)",
+            "fn_15(A) = apply(apply(w1, A), w1)",
+            "fn_16(A) = apply(b, apply(w1, A))",
+            "fn_17(A, B) = apply(apply(w1, B), apply(b, A))",
+            "fn_19 = apply(apply(b, b), apply(b, b))"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(apply(w1, A), w1)",
+            "apply(apply(w1, A), b)",
+            "apply(apply(w1, A), B)",
+            "apply(apply(w1, A), apply(apply(w1, A), B))",
+            "apply(apply(b, b), A)",
+            "apply(A, A)",
+            "apply(b, apply(w1, A))",
+            "apply(w1, b)",
+            "apply(apply(b, b), apply(b, b))",
+            "apply(apply(b, A), B)",
+            "apply(apply(w1, A), apply(b, B))",
+            "apply(b, w1)",
+            "apply(b, A)",
+            "apply(w1, A)",
+            "apply(apply(apply(w1, A), B), C)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL042-6.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.079203
+    },
+    {
+        "problem": "COL042-7.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.662342
+    },
+    {
+        "problem": "COL042-8.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.088144
+    },
+    {
+        "problem": "COL042-9.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.817041
+    },
+    {
+        "problem": "COL043-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(h, A), B)",
+            "fn_1 = apply(h, b)",
+            "fn_2(A, B) = apply(apply(apply(h, B), A), A)",
+            "fn_3(A) = apply(b, A)",
+            "fn_4(A, B, C) = apply(apply(apply(h, B), A), C)",
+            "fn_5(A) = apply(h, A)",
+            "fn_6 = apply(apply(apply(h, h), apply(h, b)), apply(h, b))",
+            "fn_7 = apply(b, b)",
+            "fn_9 = apply(b, h)",
+            "fn_11(A) = apply(A, A)",
+            "fn_13 = apply(h, h)",
+            "fn_14 = apply(apply(h, h), b)",
+            "fn_16(A, B) = apply(apply(apply(h, apply(h, A)), B), B)"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(h, b)",
+            "apply(h, A)",
+            "apply(apply(h, h), b)",
+            "apply(h, h)",
+            "apply(apply(apply(h, A), B), C)",
+            "apply(apply(apply(h, A), B), B)",
+            "apply(A, A)",
+            "apply(b, h)",
+            "apply(apply(apply(h, apply(h, A)), B), B)",
+            "apply(b, A)",
+            "apply(apply(apply(h, h), apply(h, b)), apply(h, b))",
+            "apply(apply(h, A), B)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL043-3.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(h, A), B)",
+            "fn_1 = apply(apply(apply(h, h), apply(h, b)), apply(h, b))",
+            "fn_2(A) = apply(b, A)",
+            "fn_3(A) = apply(h, A)",
+            "fn_4(A, B, C) = apply(apply(apply(h, B), A), C)",
+            "fn_5(A, B) = apply(apply(apply(h, B), A), A)",
+            "fn_6 = apply(apply(apply(h, b), apply(apply(h, b), apply(h, b))), apply(h, b))",
+            "fn_7 = apply(b, b)",
+            "fn_8 = apply(b, h)",
+            "fn_10 = apply(h, b)",
+            "fn_11 = apply(apply(h, h), b)",
+            "fn_12(A, B) = apply(apply(apply(h, apply(h, A)), B), B)",
+            "fn_14(A) = apply(apply(b, b), A)",
+            "fn_18(A, B) = apply(apply(b, A), B)",
+            "fn_19(A) = apply(apply(apply(apply(h, h), apply(h, b)), apply(h, b)), A)"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(h, b)",
+            "apply(h, A)",
+            "apply(apply(h, h), b)",
+            "apply(apply(b, b), A)",
+            "apply(apply(apply(h, A), B), C)",
+            "apply(apply(apply(h, A), B), B)",
+            "apply(b, h)",
+            "apply(apply(apply(h, b), apply(apply(h, b), apply(h, b))), apply(h, b))",
+            "apply(apply(b, A), B)",
+            "apply(apply(apply(apply(h, h), apply(h, b)), apply(h, b)), A)",
+            "apply(apply(apply(h, apply(h, A)), B), B)",
+            "apply(b, A)",
+            "apply(apply(apply(h, h), apply(h, b)), apply(h, b))",
+            "apply(apply(h, A), B)"
+        ],
+        "status": "success",
+        "hint_time_user": 172.849323
+    },
+    {
+        "problem": "COL044-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011603000000000002
+    },
+    {
+        "problem": "COL044-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = apply(n, b)",
+            "fn_1(A, B, C) = apply(apply(apply(n, B), A), C)",
+            "fn_2(A) = apply(b, A)",
+            "fn_3(A) = apply(apply(n, b), A)",
+            "fn_4(A) = apply(n, A)",
+            "fn_5(A, B) = apply(apply(b, A), B)",
+            "fn_6(A, B) = apply(apply(apply(n, b), A), B)",
+            "fn_7 = apply(n, n)",
+            "fn_8 = apply(b, b)",
+            "fn_9(A, B) = apply(apply(apply(n, A), B), apply(n, b))",
+            "fn_11 = apply(b, n)",
+            "fn_12 = apply(b, apply(n, b))",
+            "fn_13(A) = apply(A, apply(n, b))",
+            "fn_15(A, B, C) = apply(apply(apply(n, apply(B, A)), C), A)",
+            "fn_16(A, B, C) = apply(C, apply(B, A))",
+            "fn_18 = apply(apply(b, apply(n, b)), apply(n, b))",
+            "fn_19(A) = apply(A, b)"
+        ],
+        "final_hints": [
+            "apply(b, b)",
+            "apply(n, A)",
+            "apply(apply(apply(n, A), B), apply(n, b))",
+            "apply(apply(apply(n, b), A), B)",
+            "apply(apply(n, b), A)",
+            "apply(n, b)",
+            "apply(A, apply(n, b))",
+            "apply(apply(b, A), B)",
+            "apply(b, n)",
+            "apply(apply(apply(n, A), B), C)",
+            "apply(b, A)",
+            "apply(n, n)",
+            "apply(apply(apply(n, apply(A, B)), C), B)",
+            "apply(A, apply(B, C))",
+            "apply(A, b)",
+            "apply(apply(b, apply(n, b)), apply(n, b))",
+            "apply(b, apply(n, b))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL044-6.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = apply(n, b)",
+            "fn_1(A, B, C) = apply(apply(apply(n, B), A), C)",
+            "fn_2(A) = apply(b, A)",
+            "fn_3(A) = apply(apply(n, b), A)",
+            "fn_4(A) = apply(n, A)",
+            "fn_5(A, B) = apply(apply(b, A), B)",
+            "fn_6(A, B) = apply(apply(apply(n, b), A), B)",
+            "fn_7 = apply(n, n)",
+            "fn_8(A, B) = apply(apply(apply(n, A), B), apply(n, b))",
+            "fn_10 = apply(b, b)",
+            "fn_11 = apply(b, apply(n, b))",
+            "fn_12 = apply(b, n)",
+            "fn_13(A) = apply(A, apply(n, b))",
+            "fn_15(A, B, C) = apply(C, apply(B, A))",
+            "fn_16(A, B, C) = apply(apply(apply(n, apply(B, A)), C), A)",
+            "fn_18 = apply(apply(b, apply(n, b)), apply(n, b))",
+            "fn_19(A) = apply(A, b)"
+        ],
+        "final_hints": [
+            "apply(apply(apply(n, A), B), apply(n, b))",
+            "apply(n, A)",
+            "apply(b, b)",
+            "apply(apply(apply(n, b), A), B)",
+            "apply(apply(n, b), A)",
+            "apply(n, b)",
+            "apply(A, apply(n, b))",
+            "apply(apply(b, A), B)",
+            "apply(b, n)",
+            "apply(apply(apply(n, A), B), C)",
+            "apply(b, A)",
+            "apply(n, n)",
+            "apply(A, apply(B, C))",
+            "apply(apply(apply(n, apply(A, B)), C), B)",
+            "apply(A, b)",
+            "apply(apply(b, apply(n, b)), apply(n, b))",
+            "apply(b, apply(n, b))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL044-7.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = apply(n, b)",
+            "fn_1(A, B, C) = apply(apply(apply(n, B), A), C)",
+            "fn_2(A) = apply(b, A)",
+            "fn_3(A) = apply(apply(n, b), A)",
+            "fn_4(A) = apply(n, A)",
+            "fn_5(A, B) = apply(apply(b, A), B)",
+            "fn_6(A, B) = apply(apply(apply(n, b), A), B)",
+            "fn_7 = apply(n, n)",
+            "fn_8(A, B) = apply(apply(apply(n, A), B), apply(n, b))",
+            "fn_10 = apply(b, b)",
+            "fn_11 = apply(b, apply(n, b))",
+            "fn_12 = apply(b, n)",
+            "fn_13(A) = apply(A, apply(n, b))",
+            "fn_15(A, B, C) = apply(C, apply(B, A))",
+            "fn_16(A, B, C) = apply(apply(apply(n, apply(B, A)), C), A)",
+            "fn_18 = apply(apply(b, apply(n, b)), apply(n, b))",
+            "fn_19(A) = apply(A, b)"
+        ],
+        "final_hints": [
+            "apply(apply(apply(n, A), B), apply(n, b))",
+            "apply(n, A)",
+            "apply(b, b)",
+            "apply(apply(apply(n, b), A), B)",
+            "apply(apply(n, b), A)",
+            "apply(n, b)",
+            "apply(A, apply(n, b))",
+            "apply(apply(b, A), B)",
+            "apply(b, n)",
+            "apply(apply(apply(n, A), B), C)",
+            "apply(b, A)",
+            "apply(n, n)",
+            "apply(A, apply(B, C))",
+            "apply(apply(apply(n, apply(A, B)), C), B)",
+            "apply(A, b)",
+            "apply(apply(b, apply(n, b)), apply(n, b))",
+            "apply(b, apply(n, b))"
+        ],
+        "status": "success",
+        "hint_time_user": 423.245266
+    },
+    {
+        "problem": "COL044-8.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = apply(n, b)",
+            "fn_1(A, B, C) = apply(apply(apply(n, B), A), C)",
+            "fn_2(A) = apply(b, A)",
+            "fn_3(A) = apply(apply(n, b), A)",
+            "fn_4(A) = apply(n, A)",
+            "fn_5(A, B) = apply(apply(b, A), B)",
+            "fn_6(A, B) = apply(apply(apply(n, b), A), B)",
+            "fn_7 = apply(n, n)",
+            "fn_8(A, B) = apply(apply(apply(n, A), B), apply(n, b))",
+            "fn_10 = apply(b, b)",
+            "fn_11 = apply(b, apply(n, b))",
+            "fn_12 = apply(b, n)",
+            "fn_13(A) = apply(A, apply(n, b))",
+            "fn_15(A, B, C) = apply(C, apply(B, A))",
+            "fn_16(A, B, C) = apply(apply(apply(n, apply(B, A)), C), A)",
+            "fn_18 = apply(apply(b, apply(n, b)), apply(n, b))",
+            "fn_19(A) = apply(A, b)"
+        ],
+        "final_hints": [
+            "apply(apply(apply(n, A), B), apply(n, b))",
+            "apply(n, A)",
+            "apply(b, b)",
+            "apply(apply(apply(n, b), A), B)",
+            "apply(apply(n, b), A)",
+            "apply(n, b)",
+            "apply(A, apply(n, b))",
+            "apply(apply(b, A), B)",
+            "apply(b, n)",
+            "apply(apply(apply(n, A), B), C)",
+            "apply(b, A)",
+            "apply(n, n)",
+            "apply(A, apply(B, C))",
+            "apply(apply(apply(n, apply(A, B)), C), B)",
+            "apply(A, b)",
+            "apply(apply(b, apply(n, b)), apply(n, b))",
+            "apply(b, apply(n, b))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL044-9.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = apply(n, b)",
+            "fn_1(A, B, C) = apply(apply(apply(n, B), A), C)",
+            "fn_2(A) = apply(b, A)",
+            "fn_3(A) = apply(apply(n, b), A)",
+            "fn_4(A) = apply(n, A)",
+            "fn_5(A, B) = apply(apply(b, A), B)",
+            "fn_6(A, B) = apply(apply(apply(n, b), A), B)",
+            "fn_7 = apply(n, n)",
+            "fn_8(A, B) = apply(apply(apply(n, A), B), apply(n, b))",
+            "fn_10 = apply(b, b)",
+            "fn_11 = apply(b, apply(n, b))",
+            "fn_12 = apply(b, n)",
+            "fn_13(A) = apply(A, apply(n, b))",
+            "fn_15(A, B, C) = apply(C, apply(B, A))",
+            "fn_16(A, B, C) = apply(apply(apply(n, apply(B, A)), C), A)",
+            "fn_18 = apply(apply(b, apply(n, b)), apply(n, b))",
+            "fn_19(A) = apply(A, b)"
+        ],
+        "final_hints": [
+            "apply(apply(apply(n, A), B), apply(n, b))",
+            "apply(n, A)",
+            "apply(b, b)",
+            "apply(apply(apply(n, b), A), B)",
+            "apply(apply(n, b), A)",
+            "apply(n, b)",
+            "apply(A, apply(n, b))",
+            "apply(apply(b, A), B)",
+            "apply(b, n)",
+            "apply(apply(apply(n, A), B), C)",
+            "apply(b, A)",
+            "apply(n, n)",
+            "apply(A, apply(B, C))",
+            "apply(apply(apply(n, apply(A, B)), C), B)",
+            "apply(A, b)",
+            "apply(apply(b, apply(n, b)), apply(n, b))",
+            "apply(b, apply(n, b))"
+        ],
+        "status": "success",
+        "hint_time_user": 2.8129770000000036
+    },
+    {
+        "problem": "COL045-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0030399999999999997
+    },
+    {
+        "problem": "COL046-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, A))",
+            "fn_1 = apply(m, apply(apply(b, m), m))",
+            "fn_2(A) = apply(s, A)",
+            "fn_5(A, B) = apply(A, apply(A, B))",
+            "fn_6(A, B, C) = apply(apply(B, A), C)",
+            "fn_7 = apply(s, m)",
+            "fn_10(A, B, C) = apply(apply(B, A), apply(C, A))",
+            "fn_12 = apply(s, s)",
+            "fn_14(A, B) = apply(A, apply(B, A))",
+            "fn_15(A) = apply(A, m)",
+            "fn_16(A) = apply(m, A)",
+            "fn_18(A, B, C) = apply(apply(B, apply(C, A)), A)",
+            "fn_19 = apply(s, b)"
+        ],
+        "final_hints": [
+            "apply(apply(A, B), C)",
+            "apply(s, A)",
+            "apply(s, s)",
+            "apply(A, m)",
+            "apply(s, b)",
+            "apply(apply(A, B), apply(C, B))",
+            "apply(A, apply(A, B))",
+            "apply(m, A)",
+            "apply(A, apply(B, A))",
+            "apply(s, m)",
+            "apply(apply(A, apply(B, C)), C)",
+            "apply(A, apply(B, C))",
+            "apply(m, apply(apply(b, m), m))"
+        ],
+        "status": "success",
+        "hint_time_user": 324.210675
+    },
+    {
+        "problem": "COL048-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0051199999999999996
+    },
+    {
+        "problem": "COL049-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = apply(A, apply(w, b))",
+            "fn_1(A, B, C) = apply(C, apply(B, A))",
+            "fn_2 = apply(w, b)",
+            "fn_4(A, B) = apply(A, apply(A, B))",
+            "fn_5 = apply(m, apply(w, b))",
+            "fn_6(A) = apply(w, A)",
+            "fn_8 = apply(w, apply(w, b))",
+            "fn_9(A) = apply(w, apply(b, A))",
+            "fn_10 = apply(apply(w, w), apply(w, b))",
+            "fn_11 = apply(m, apply(b, w))",
+            "fn_16(A) = apply(m, A)",
+            "fn_17(A) = apply(apply(w, b), A)",
+            "fn_18(A, B) = apply(apply(w, A), B)",
+            "fn_19 = apply(apply(b, apply(w, b)), apply(w, b))"
+        ],
+        "final_hints": [
+            "apply(m, apply(b, w))",
+            "apply(w, b)",
+            "apply(w, apply(b, A))",
+            "apply(apply(w, w), apply(w, b))",
+            "apply(w, apply(w, b))",
+            "apply(A, apply(A, B))",
+            "apply(apply(w, A), B)",
+            "apply(m, A)",
+            "apply(apply(w, b), A)",
+            "apply(A, apply(B, C))",
+            "apply(apply(b, apply(w, b)), apply(w, b))",
+            "apply(w, A)",
+            "apply(A, apply(w, b))",
+            "apply(m, apply(w, b))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL050-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002887999999999999
+    },
+    {
+        "problem": "COL051-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0019700000000000013
+    },
+    {
+        "problem": "COL052-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002973
+    },
+    {
+        "problem": "COL053-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001914
+    },
+    {
+        "problem": "COL056-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0029109999999999995
+    },
+    {
+        "problem": "COL057-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.066022
+    },
+    {
+        "problem": "COL058-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003887999999999999
+    },
+    {
+        "problem": "COL058-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005783
+    },
+    {
+        "problem": "COL058-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0020180000000000007
+    },
+    {
+        "problem": "COL059-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004945999999999999
+    },
+    {
+        "problem": "COL060-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.043926999999999994
+    },
+    {
+        "problem": "COL060-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0
+    },
+    {
+        "problem": "COL060-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0020960000000000006
+    },
+    {
+        "problem": "COL061-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.040096999999999994
+    },
+    {
+        "problem": "COL061-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0038320000000000003
+    },
+    {
+        "problem": "COL061-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004012
+    },
+    {
+        "problem": "COL062-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.27299799999999996
+    },
+    {
+        "problem": "COL062-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0027840000000000018
+    },
+    {
+        "problem": "COL062-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003148999999999999
+    },
+    {
+        "problem": "COL063-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.661075
+    },
+    {
+        "problem": "COL063-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0010020000000000003
+    },
+    {
+        "problem": "COL063-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0009220000000000001
+    },
+    {
+        "problem": "COL063-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00294
+    },
+    {
+        "problem": "COL063-5.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003040000000000001
+    },
+    {
+        "problem": "COL063-6.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0018759999999999992
+    },
+    {
+        "problem": "COL064-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.58154
+    },
+    {
+        "problem": "COL064-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0009689999999999994
+    },
+    {
+        "problem": "COL064-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0022979999999999997
+    },
+    {
+        "problem": "COL064-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005704999999999999
+    },
+    {
+        "problem": "COL064-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003946
+    },
+    {
+        "problem": "COL064-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001838000000000001
+    },
+    {
+        "problem": "COL064-5.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001912999999999998
+    },
+    {
+        "problem": "COL064-6.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001032
+    },
+    {
+        "problem": "COL064-7.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.001105
+    },
+    {
+        "problem": "COL064-8.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0010480000000000003
+    },
+    {
+        "problem": "COL064-9.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0028590000000000004
+    },
+    {
+        "problem": "COL065-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.597593
+    },
+    {
+        "problem": "COL066-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = apply(apply(w, A), B)",
+            "fn_1(A) = apply(w, A)",
+            "fn_2(A, B) = apply(B, apply(B, A))",
+            "fn_4 = apply(w, b)",
+            "fn_5 = apply(w, q)",
+            "fn_6(A) = apply(q, A)",
+            "fn_7(A) = apply(b, A)",
+            "fn_13(A) = apply(A, A)",
+            "fn_17 = apply(w, apply(w, q))"
+        ],
+        "final_hints": [
+            "apply(w, b)",
+            "apply(A, apply(A, B))",
+            "apply(apply(w, A), B)",
+            "apply(w, q)",
+            "apply(A, A)",
+            "apply(b, A)",
+            "apply(w, A)",
+            "apply(w, apply(w, q))",
+            "apply(q, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "COL066-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013059999999999995
+    },
+    {
+        "problem": "COL066-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011432999999999999
+    },
+    {
+        "problem": "COL070-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009366999999999999
+    },
+    {
+        "problem": "COL075-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015986
+    },
+    {
+        "problem": "COL083-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003094999999999997
+    },
+    {
+        "problem": "COL084-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0010419999999999995
+    },
+    {
+        "problem": "COL085-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0008500000000000001
+    },
+    {
+        "problem": "COL086-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0
+    }
+]

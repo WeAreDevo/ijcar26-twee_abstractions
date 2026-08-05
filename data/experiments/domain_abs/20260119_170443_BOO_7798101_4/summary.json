@@ -1,0 +1,1438 @@
+[
+    {
+        "problem": "BOO001-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.004101,
+        "hint_time_sys": 0.0051389999999999995,
+        "hint_time": 0.009239999999999998
+    },
+    {
+        "problem": "BOO002-1.p",
+        "domain_hints": [],
+        "error": "No hints collected."
+    },
+    {
+        "problem": "BOO002-2.p",
+        "domain_hints": [],
+        "error": "No hints collected."
+    },
+    {
+        "problem": "BOO003-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.006901,
+        "hint_time_sys": 0.026602999999999998,
+        "hint_time": 0.033504
+    },
+    {
+        "problem": "BOO003-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.004014,
+        "hint_time_sys": 0.026116999999999998,
+        "hint_time": 0.030130999999999998
+    },
+    {
+        "problem": "BOO004-10.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "ifeq2(true, true, A, B)",
+            "multiply(A, inverse(B))",
+            "ifeq(product(A, B, C), true, D, true)",
+            "ifeq(A, true, B, true)",
+            "add(multiply(A, B), multiply(C, B))",
+            "ifeq(true, true, product(A, B, C), true)",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "ifeq(sum(A, B, C), true, product(C, D, E), true)",
+            "multiply(A, multiplicative_identity)",
+            "ifeq(product(A, B, C), true, ifeq(sum(D, E, F), true, G, true), true)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "ifeq(product(A, additive_identity, B), true, C, true)",
+            "add(A, inverse(B))",
+            "ifeq2(product(A, B, C), true, C, D)",
+            "ifeq2(product(A, B, C), true, D, C)",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "ifeq2(product(D, E, C), true, B, A)",
+            "add(C, multiply(B, A))",
+            "ifeq(product(B, C, D), true, A, true)",
+            "ifeq(B, true, A, true)",
+            "multiply(additive_identity, A)",
+            "add(B, inverse(A))"
+        ],
+        "status": "success",
+        "hint_time_user": 28.479329,
+        "hint_time_sys": 0.407528,
+        "hint_time": 28.886857
+    },
+    {
+        "problem": "BOO004-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0059889999999999995,
+        "hint_time_sys": 0.008986,
+        "hint_time": 0.014974999999999999
+    },
+    {
+        "problem": "BOO004-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0027689999999999998,
+        "hint_time_sys": 0.009228,
+        "hint_time": 0.011997
+    },
+    {
+        "problem": "BOO005-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.005111,
+        "hint_time_sys": 0.015364999999999998,
+        "hint_time": 0.020475999999999998
+    },
+    {
+        "problem": "BOO005-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0032229999999999997,
+        "hint_time_sys": 0.028994,
+        "hint_time": 0.032216999999999996
+    },
+    {
+        "problem": "BOO006-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0019399999999999999,
+        "hint_time_sys": 0.03217,
+        "hint_time": 0.034109999999999994
+    },
+    {
+        "problem": "BOO006-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.003836,
+        "hint_time_sys": 0.026858,
+        "hint_time": 0.030694
+    },
+    {
+        "problem": "BOO007-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.14504799999999998,
+        "hint_time_sys": 0.038588,
+        "hint_time": 0.18363599999999997
+    },
+    {
+        "problem": "BOO007-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.090803,
+        "hint_time_sys": 0.037494,
+        "hint_time": 0.128297
+    },
+    {
+        "problem": "BOO008-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.05355,
+        "hint_time_sys": 0.01389,
+        "hint_time": 0.06744
+    },
+    {
+        "problem": "BOO008-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.105901,
+        "hint_time_sys": 0.033235,
+        "hint_time": 0.13913599999999998
+    },
+    {
+        "problem": "BOO009-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.007089,
+        "hint_time_sys": 0.028414,
+        "hint_time": 0.035503
+    },
+    {
+        "problem": "BOO009-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.005174,
+        "hint_time_sys": 0.019719999999999998,
+        "hint_time": 0.024894
+    },
+    {
+        "problem": "BOO010-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.009901,
+        "hint_time_sys": 0.027736,
+        "hint_time": 0.037637000000000004
+    },
+    {
+        "problem": "BOO010-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.007643,
+        "hint_time_sys": 0.026771,
+        "hint_time": 0.034414
+    },
+    {
+        "problem": "BOO011-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.006258,
+        "hint_time_sys": 0.019830999999999998,
+        "hint_time": 0.026088999999999998
+    },
+    {
+        "problem": "BOO011-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0,
+        "hint_time_sys": 0.010647,
+        "hint_time": 0.010647
+    },
+    {
+        "problem": "BOO012-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.006827,
+        "hint_time_sys": 0.0107,
+        "hint_time": 0.017527
+    },
+    {
+        "problem": "BOO012-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.013387999999999999,
+        "hint_time_sys": 0.022692,
+        "hint_time": 0.03608
+    },
+    {
+        "problem": "BOO013-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.00881,
+        "hint_time_sys": 0.02351,
+        "hint_time": 0.03232
+    },
+    {
+        "problem": "BOO013-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.018262999999999998,
+        "hint_time_sys": 0.008126999999999999,
+        "hint_time": 0.026389999999999997
+    },
+    {
+        "problem": "BOO014-10.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "ifeq2(true, true, A, B)",
+            "multiply(A, inverse(B))",
+            "ifeq(product(A, B, C), true, D, true)",
+            "ifeq(A, true, B, true)",
+            "add(multiply(A, B), multiply(C, B))",
+            "ifeq(true, true, product(A, B, C), true)",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "ifeq(sum(A, B, C), true, product(C, D, E), true)",
+            "multiply(A, multiplicative_identity)",
+            "ifeq(product(A, B, C), true, ifeq(sum(D, E, F), true, G, true), true)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "ifeq(product(A, additive_identity, B), true, C, true)",
+            "add(A, inverse(B))",
+            "ifeq2(product(A, B, C), true, C, D)",
+            "ifeq2(product(A, B, C), true, D, C)",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "ifeq2(product(D, E, C), true, B, A)",
+            "add(C, multiply(B, A))",
+            "ifeq(product(B, C, D), true, A, true)",
+            "ifeq(B, true, A, true)",
+            "multiply(additive_identity, A)",
+            "add(B, inverse(A))"
+        ],
+        "status": "success",
+        "hint_time_user": 59.341002,
+        "hint_time_sys": 0.621589,
+        "hint_time": 59.962591
+    },
+    {
+        "problem": "BOO014-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.081493,
+        "hint_time_sys": 0.011933,
+        "hint_time": 0.093426
+    },
+    {
+        "problem": "BOO014-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.318609,
+        "hint_time_sys": 0.015941,
+        "hint_time": 0.33454999999999996
+    },
+    {
+        "problem": "BOO015-10.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "ifeq2(true, true, A, B)",
+            "multiply(A, inverse(B))",
+            "ifeq(product(A, B, C), true, D, true)",
+            "ifeq(A, true, B, true)",
+            "add(multiply(A, B), multiply(C, B))",
+            "ifeq(true, true, product(A, B, C), true)",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "ifeq(sum(A, B, C), true, product(C, D, E), true)",
+            "multiply(A, multiplicative_identity)",
+            "ifeq(product(A, B, C), true, ifeq(sum(D, E, F), true, G, true), true)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "ifeq(product(A, additive_identity, B), true, C, true)",
+            "add(A, inverse(B))",
+            "ifeq2(product(A, B, C), true, C, D)",
+            "ifeq2(product(A, B, C), true, D, C)",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "ifeq2(product(D, E, C), true, B, A)",
+            "add(C, multiply(B, A))",
+            "ifeq(product(B, C, D), true, A, true)",
+            "ifeq(B, true, A, true)",
+            "multiply(additive_identity, A)",
+            "add(B, inverse(A))"
+        ],
+        "status": "success",
+        "hint_time_user": 45.605148,
+        "hint_time_sys": 0.541921,
+        "hint_time": 46.147069
+    },
+    {
+        "problem": "BOO015-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.084855,
+        "hint_time_sys": 0.032917999999999996,
+        "hint_time": 0.11777299999999999
+    },
+    {
+        "problem": "BOO015-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.11495899999999999,
+        "hint_time_sys": 0.027986,
+        "hint_time": 0.142945
+    },
+    {
+        "problem": "BOO016-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.010253,
+        "hint_time_sys": 0.009356999999999999,
+        "hint_time": 0.01961
+    },
+    {
+        "problem": "BOO017-10.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "ifeq2(true, true, A, B)",
+            "multiply(A, inverse(B))",
+            "ifeq(product(A, B, C), true, D, true)",
+            "ifeq(A, true, B, true)",
+            "add(multiply(A, B), multiply(C, B))",
+            "ifeq(true, true, product(A, B, C), true)",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "ifeq(sum(A, B, C), true, product(C, D, E), true)",
+            "multiply(A, multiplicative_identity)",
+            "ifeq(product(A, B, C), true, ifeq(sum(D, E, F), true, G, true), true)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "ifeq(product(A, additive_identity, B), true, C, true)",
+            "add(A, inverse(B))",
+            "ifeq2(product(A, B, C), true, C, D)",
+            "ifeq2(product(A, B, C), true, D, C)",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "ifeq2(product(D, E, C), true, B, A)",
+            "add(C, multiply(B, A))",
+            "ifeq(product(B, C, D), true, A, true)",
+            "ifeq(B, true, A, true)",
+            "multiply(additive_identity, A)",
+            "add(B, inverse(A))"
+        ],
+        "status": "success",
+        "hint_time_user": 40.599979,
+        "hint_time_sys": 0.483603,
+        "hint_time": 41.083582
+    },
+    {
+        "problem": "BOO017-2.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0062169999999999994,
+        "hint_time_sys": 0.030095999999999998,
+        "hint_time": 0.036313
+    },
+    {
+        "problem": "BOO018-4.p",
+        "domain_hints": [
+            "multiply(additive_identity, A)",
+            "multiply(A, add(B, multiplicative_identity))",
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, multiplicative_identity)",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "multiply(A, additive_identity)",
+            "add(A, inverse(B))",
+            "add(A, A)",
+            "multiply(additive_identity, additive_identity)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))",
+            "multiply(additive_identity, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.004815,
+        "hint_time_sys": 0.023882999999999998,
+        "hint_time": 0.028697999999999998
+    },
+    {
+        "problem": "BOO021-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.003671,
+        "hint_time_sys": 0.006409,
+        "hint_time": 0.010079999999999999
+    },
+    {
+        "problem": "BOO022-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.065164,
+        "hint_time_sys": 0.015931,
+        "hint_time": 0.081095
+    },
+    {
+        "problem": "BOO023-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 1.104732,
+        "hint_time_sys": 0.053655999999999995,
+        "hint_time": 1.158388
+    },
+    {
+        "problem": "BOO024-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.037251,
+        "hint_time_sys": 0.007855,
+        "hint_time": 0.045106
+    },
+    {
+        "problem": "BOO025-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.038128999999999996,
+        "hint_time_sys": 0.010041,
+        "hint_time": 0.04817
+    },
+    {
+        "problem": "BOO026-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.085223,
+        "hint_time_sys": 0.006017,
+        "hint_time": 0.09123999999999999
+    },
+    {
+        "problem": "BOO028-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "multiply(C, add(B, inverse(A)))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.200936,
+        "hint_time_sys": 0.019903999999999998,
+        "hint_time": 0.22084
+    },
+    {
+        "problem": "BOO029-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "multiply(C, add(B, inverse(A)))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.027391,
+        "hint_time_sys": 0.008135,
+        "hint_time": 0.035526
+    },
+    {
+        "problem": "BOO031-1.p",
+        "domain_hints": [
+            "multiply(A, inverse(B))",
+            "multiply(A, n1)",
+            "add(multiply(A, B), multiply(C, B))",
+            "add(multiply(A, inverse(B)), multiply(C, add(A, inverse(B))))",
+            "multiply(A, inverse(A))",
+            "add(A, multiply(B, C))",
+            "multiply(A, add(B, C))",
+            "multiply(A, add(B, inverse(A)))",
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "final_hints": [
+            "add(B, inverse(A))",
+            "add(C, multiply(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.112858,
+        "hint_time_sys": 0.017842999999999998,
+        "hint_time": 0.130701
+    },
+    {
+        "problem": "BOO034-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.006754,
+        "hint_time_sys": 0.0067269999999999995,
+        "hint_time": 0.013481
+    },
+    {
+        "problem": "BOO067-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 1.071749,
+        "hint_time_sys": 0.054653,
+        "hint_time": 1.1264020000000001
+    },
+    {
+        "problem": "BOO068-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.222461,
+        "hint_time_sys": 0.030598999999999998,
+        "hint_time": 0.25306
+    },
+    {
+        "problem": "BOO069-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.172093,
+        "hint_time_sys": 0.025841,
+        "hint_time": 0.197934
+    },
+    {
+        "problem": "BOO070-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.23707099999999998,
+        "hint_time_sys": 0.027735,
+        "hint_time": 0.264806
+    },
+    {
+        "problem": "BOO071-1.p",
+        "domain_hints": [
+            "multiply(A, multiply(B, inverse(multiply(C, A, D)), D), C)",
+            "multiply(A, inverse(A), B)",
+            "multiply(multiply(A, B, C), D, multiply(multiply(B, A, C), B, E))",
+            "multiply(A, inverse(B), C)",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), E)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(multiply(D, E, F), G, multiply(D, E, X2))), multiply(E, multiply(X2, G, F), D)), inverse(multiply(multiply(Y2, Z2, W2), V2, multiply(Y2, Z2, U2))), multiply(Z2, multiply(U2, V2, W2), Y2))",
+            "multiply(A, inverse(multiply(B, inverse(B), multiply(C, inverse(C), D))), D)",
+            "multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(multiply(C, inverse(C), D), inverse(multiply(C, inverse(C), D)), multiply(C, inverse(C), multiply(A, inverse(A), B)))), E), A)",
+            "multiply(multiply(A, inverse(multiply(B, inverse(B), C)), C), multiply(B, D, B), inverse(B))",
+            "multiply(inverse(A), multiply(B, inverse(multiply(C, inverse(C), D)), E), A)",
+            "multiply(A, inverse(multiply(multiply(B, C, D), E, multiply(B, C, F))), multiply(C, multiply(F, E, D), B))",
+            "multiply(multiply(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D)), inverse(multiply(multiply(A, B, C), inverse(multiply(A, B, C)), multiply(A, B, D))), multiply(B, multiply(D, inverse(multiply(A, B, C)), C), A)), inverse(multiply(multiply(E, F, G), H, multiply(E, F, I))), multiply(F, multiply(I, H, G), E))",
+            "multiply(A, inverse(multiply(multiply(B, inverse(B), C), inverse(multiply(B, inverse(B), C)), multiply(B, inverse(B), D))), D)"
+        ],
+        "final_hints": [
+            "multiply(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D)), inverse(multiply(multiply(A, C, B), inverse(multiply(A, C, B)), multiply(A, C, D))), multiply(C, multiply(D, inverse(multiply(A, C, B)), B), A))",
+            "multiply(D, multiply(C, B, A), E)",
+            "multiply(C, inverse(multiply(B, inverse(B), A)), D)",
+            "multiply(A, inverse(A), B)",
+            "multiply(inverse(A), B, A)",
+            "multiply(C, inverse(multiply(D, inverse(D), multiply(E, inverse(E), B))), A)"
+        ],
+        "status": "success",
+        "hint_time_user": 0.176284,
+        "hint_time_sys": 0.029859,
+        "hint_time": 0.206143
+    },
+    {
+        "problem": "BOO072-1.p",
+        "domain_hints": [
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "error": "No hints collected."
+    },
+    {
+        "problem": "BOO073-1.p",
+        "domain_hints": [
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "error": "No hints collected."
+    },
+    {
+        "problem": "BOO074-1.p",
+        "domain_hints": [
+            "add(A, inverse(B))",
+            "add(A, A)"
+        ],
+        "error": "No hints collected."
+    },
+    {
+        "problem": "BOO075-1.p",
+        "domain_hints": [],
+        "error": "No hints collected."
+    },
+    {
+        "problem": "BOO076-1.p",
+        "domain_hints": [],
+        "error": "No hints collected."
+    }
+]

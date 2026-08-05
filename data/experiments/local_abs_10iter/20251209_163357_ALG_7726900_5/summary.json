@@ -1,0 +1,62 @@
+[
+    {
+        "problem": "ALG212-10",
+        "mean_base_user_time": 9.569857,
+        "min_base_user_time": 9.569857,
+        "min_base_dir": "20251112_20251209_130501_ALG_7726474_1",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = f(f(D, B, A), f(C, B, A), E)",
+            "fn_1(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_2(A, B, C, D, E, F) = F(A, B, E, D, f(C, B, A))",
+            "fn_3(A, B, C, D) = fn_1(D, C, A, B, A)",
+            "fn_4(A, B, C) = fn_1(C, B, A, A)",
+            "fn_5(A, B, C, D, E) = f(D, f(C, B, A), E)",
+            "fn_6(A, B, C) = fn_1(C, A, B, A)",
+            "fn_7(G, H, I) = f(G, H, I)",
+            "fn_8(A, B, C, D, E) = fn_2(E, D, C, B, A, fn_0)",
+            "fn_9(A, B, C, D) = fn_1(A, B, D, f(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = f(f(D, B, A), f(C, B, A), E)",
+            "fn_1(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_3(A, B, C, D) = f(A, B, f(A, C, D))",
+            "fn_5(A, B, C, D, E) = f(D, f(C, B, A), E)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 25.656992,
+        "hints_time_sys": 0.647121,
+        "hints_time": 26.304112999999997
+    },
+    {
+        "problem": "ALG213-10",
+        "mean_base_user_time": 5.32293,
+        "min_base_user_time": 5.32293,
+        "min_base_dir": "20251112_20251209_130501_ALG_7726474_1",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = f(E, f(D, B, A), f(C, B, A))",
+            "fn_1(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_2(A, B, C, D) = fn_1(D, C, A, B, A)",
+            "fn_3(A, B, C, D, E) = f(D, f(C, B, A), E)",
+            "fn_4(A, B, C) = fn_1(C, B, A, A)",
+            "fn_5(F, G, H) = f(F, G, H)",
+            "fn_6(A, B, C) = fn_1(C, A, B, A)",
+            "fn_7(F, G, H, I) = fn_2(G, H, I, F)",
+            "fn_8(F, G, H, I) = fn_1(F, G, I, H, G)",
+            "fn_9(A, B, C, D, E) = f(f(C, B, A), D, E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = f(E, f(D, B, A), f(C, B, A))",
+            "fn_1(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_2(A, B, C, D) = f(A, B, f(A, C, D))",
+            "fn_3(A, B, C, D, E) = f(D, f(C, B, A), E)",
+            "fn_8(F, G, H, I) = f(G, H, f(I, G, F))",
+            "fn_9(A, B, C, D, E) = f(f(C, B, A), D, E)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 132.795239,
+        "hints_time_sys": 2.501014,
+        "hints_time": 135.296253
+    }
+]

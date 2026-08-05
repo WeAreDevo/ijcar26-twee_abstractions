@@ -1,0 +1,326 @@
+[
+    {
+        "problem": "RNG001-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG006-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG007-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006117,
+        "base_time_sys": 0.06114,
+        "base_time": 0.067257
+    },
+    {
+        "problem": "RNG008-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010693,
+        "base_time_sys": 0.083683,
+        "base_time": 0.09437599999999999
+    },
+    {
+        "problem": "RNG008-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012858999999999999,
+        "base_time_sys": 0.081027,
+        "base_time": 0.093886
+    },
+    {
+        "problem": "RNG008-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.024641,
+        "base_time_sys": 0.06298,
+        "base_time": 0.08762099999999999
+    },
+    {
+        "problem": "RNG009-5",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.2997360000000002,
+        "base_time_sys": 0.15076199999999998,
+        "base_time": 2.450498
+    },
+    {
+        "problem": "RNG009-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.16561,
+        "base_time_sys": 0.138874,
+        "base_time": 2.304484
+    },
+    {
+        "problem": "RNG011-5",
+        "base_status": "success",
+        "error": "Rust backend panicked with exception: index out of bounds: the len is 0 but the index is 0",
+        "base_time_user": 0.004921,
+        "base_time_sys": 0.084876,
+        "base_time": 0.08979699999999999,
+        "staus": "error"
+    },
+    {
+        "problem": "RNG012-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010916,
+        "base_time_sys": 0.078373,
+        "base_time": 0.089289
+    },
+    {
+        "problem": "RNG013-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011961999999999999,
+        "base_time_sys": 0.073664,
+        "base_time": 0.085626
+    },
+    {
+        "problem": "RNG014-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013923999999999999,
+        "base_time_sys": 0.076585,
+        "base_time": 0.090509
+    },
+    {
+        "problem": "RNG015-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012145999999999999,
+        "base_time_sys": 0.08097299999999999,
+        "base_time": 0.093119
+    },
+    {
+        "problem": "RNG016-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014799,
+        "base_time_sys": 0.07993399999999999,
+        "base_time": 0.09473299999999998
+    },
+    {
+        "problem": "RNG017-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.017789,
+        "base_time_sys": 0.081884,
+        "base_time": 0.099673
+    },
+    {
+        "problem": "RNG018-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.017956,
+        "base_time_sys": 0.08183499999999999,
+        "base_time": 0.09979099999999999
+    },
+    {
+        "problem": "RNG019-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.7299289999999998,
+        "base_time_sys": 0.12103699999999999,
+        "base_time": 1.850966
+    },
+    {
+        "problem": "RNG019-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 126.231975,
+        "base_time_sys": 0.978105,
+        "base_time": 127.21008
+    },
+    {
+        "problem": "RNG020-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.7174809999999998,
+        "base_time_sys": 0.13594399999999998,
+        "base_time": 1.8534249999999999
+    },
+    {
+        "problem": "RNG020-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 124.505398,
+        "base_time_sys": 0.9939169999999999,
+        "base_time": 125.499315
+    },
+    {
+        "problem": "RNG021-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.25646,
+        "base_time_sys": 0.18359499999999998,
+        "base_time": 4.440055
+    },
+    {
+        "problem": "RNG021-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 126.01265,
+        "base_time_sys": 1.014375,
+        "base_time": 127.027025
+    },
+    {
+        "problem": "RNG023-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003909999999999999,
+        "base_time_sys": 0.08484499999999999,
+        "base_time": 0.08875499999999999
+    },
+    {
+        "problem": "RNG023-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016977,
+        "base_time_sys": 0.080867,
+        "base_time": 0.09784399999999999
+    },
+    {
+        "problem": "RNG024-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007911,
+        "base_time_sys": 0.081214,
+        "base_time": 0.089125
+    },
+    {
+        "problem": "RNG024-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011824999999999999,
+        "base_time_sys": 0.084715,
+        "base_time": 0.09654
+    },
+    {
+        "problem": "RNG025-4",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 380.585016,
+        "base_time_sys": 2.160885,
+        "base_time": 382.745901
+    },
+    {
+        "problem": "RNG025-5",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG025-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.448315,
+        "base_time_sys": 0.11785999999999999,
+        "base_time": 1.566175
+    },
+    {
+        "problem": "RNG025-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.325127,
+        "base_time_sys": 0.15778499999999998,
+        "base_time": 3.4829120000000002
+    },
+    {
+        "problem": "RNG026-6",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 14.532534,
+        "base_time_sys": 0.404503,
+        "base_time": 14.937037
+    },
+    {
+        "problem": "RNG026-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 636.948573,
+        "base_time_sys": 4.005275,
+        "base_time": 640.953848
+    },
+    {
+        "problem": "RNG027-5",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG027-7",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG027-8",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG027-9",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG028-5",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG028-7",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG028-8",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG028-9",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG029-10",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG029-5",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG029-6",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG029-7",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "RNG035-7",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 141.41586,
+        "base_time_sys": 1.3120699999999998,
+        "base_time": 142.72793000000001
+    },
+    {
+        "problem": "RNG128-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012879999999999999,
+        "base_time_sys": 0.08433,
+        "base_time": 0.09721
+    }
+]

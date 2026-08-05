@@ -1,0 +1,66 @@
+[
+    {
+        "problem": "REL016-10",
+        "mean_base_user_time": 1.125879,
+        "min_base_user_time": 1.125879,
+        "min_base_dir": "20251112_20251209_130502_REL_7726486_13",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A, B, C) = join(B(C), B(A))",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C, D) = fn_2(composition(C, A), fn_1(D), composition(C, fn_1(B, A)))",
+            "fn_7(A, B, C, D, E) = E(D(A, B), C(B, A))",
+            "fn_8(A, B, C) = fn_1(C, composition(B, A))",
+            "fn_9(A) = converse(complement(converse(A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_5(A, B) = join(complement(A), complement(B))",
+            "fn_8(A, B, C) = meet(composition(B, A), complement(C))",
+            "fn_9(A) = converse(complement(converse(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.209174,
+        "hints_time_sys": 0.069725,
+        "hints_time": 1.278899
+    },
+    {
+        "problem": "REL040-10",
+        "mean_base_user_time": 8.651266,
+        "min_base_user_time": 8.651266,
+        "min_base_dir": "20251112_20251209_130502_REL_7726486_13",
+        "abstractions": [
+            "fn_0(A, B, C) = join(meet(composition(C, B), composition(C, A)), composition(C, meet(B, A)))",
+            "fn_1(A, B) = join(B, complement(A))",
+            "fn_2(A, B, C, D) = D(composition(B, C), composition(B, A))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B, C) = join(C, composition(B, A))",
+            "fn_5(A, B) = fn_1(B, complement(A))",
+            "fn_6(A, B, C) = fn_4(complement(C), A, fn_0(C, B, A))",
+            "fn_7(A, B, C) = join(C, join(B, A))",
+            "fn_8(A, B, C) = fn_2(C, B, A, meet)",
+            "fn_9(A, B) = meet(complement(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(meet(composition(C, B), composition(C, A)), composition(C, meet(B, A)))",
+            "fn_1(A, B) = join(B, complement(A))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B, C) = join(C, composition(B, A))",
+            "fn_5(A, B) = join(complement(A), complement(B))",
+            "fn_6(A, B, C) = join(join(meet(composition(A, B), composition(A, C)), composition(A, meet(B, C))), composition(A, complement(C)))",
+            "fn_7(A, B, C) = join(C, join(B, A))",
+            "fn_9(A, B) = meet(complement(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.436798,
+        "hints_time_sys": 0.183163,
+        "hints_time": 4.619961
+    }
+]

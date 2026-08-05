@@ -1,0 +1,28 @@
+[
+    {
+        "problem": "ROB015-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 33.801051,
+        "base_time_sys": 0.59614,
+        "base_time": 34.397191
+    },
+    {
+        "problem": "ROB018-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 93.920877,
+        "base_time_sys": 0.41539,
+        "base_time": 94.336267
+    },
+    {
+        "problem": "ROB031-1",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 1500 seconds]"
+    },
+    {
+        "problem": "ROB032-1",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 1500 seconds]"
+    }
+]

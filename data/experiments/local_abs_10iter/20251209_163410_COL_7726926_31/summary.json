@@ -1,0 +1,72 @@
+[
+    {
+        "problem": "COL002-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL003-10",
+        "mean_base_user_time": 0.33775499999999997,
+        "min_base_user_time": 0.33775499999999997,
+        "min_base_dir": "20251112_20251209_130501_COL_7726478_5",
+        "abstractions": [
+            "fn_0 = apply(apply(b, apply(apply(b, apply(w, w)), apply(apply(b, apply(b, w)), b))), b)",
+            "fn_1(A) = apply(apply(apply(b, apply(b, w)), b), apply(b, A))",
+            "fn_2(A, B, C) = apply(apply(B, A), C)",
+            "fn_3(A) = apply(fn_2(apply(w, w), b, fn_2(apply(b, w), b, b)), apply(b, A))",
+            "fn_4(A) = fn_2(A, A, A)",
+            "fn_5(A, B) = ifeq(apply(fn_0, fixed_pt), apply(B, A), fixed_point(fn_0), true)",
+            "fn_6(A) = fn_2(A, b)",
+            "fn_7 = fn_2(w, w)",
+            "fn_8(A, C) = apply(C, A(fn_1(C)))",
+            "fn_9(A, B, C) = fn_2(C, fn_6(apply(b, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, apply(apply(b, apply(w, w)), apply(apply(b, apply(b, w)), b))), b)",
+            "fn_1(A) = apply(apply(apply(b, apply(b, w)), b), apply(b, A))",
+            "fn_2(A, B, C) = apply(apply(B, A), C)",
+            "fn_3(A) = apply(apply(apply(b, apply(w, w)), apply(apply(b, apply(b, w)), b)), apply(b, A))",
+            "fn_4(A) = apply(apply(A, A), A)",
+            "fn_5(A, B) = ifeq(apply(apply(apply(b, apply(apply(b, apply(w, w)), apply(apply(b, apply(b, w)), b))), b), fixed_pt), apply(B, A), fixed_point(apply(apply(b, apply(apply(b, apply(w, w)), apply(apply(b, apply(b, w)), b))), b)), true)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.089471,
+        "hints_time_sys": 0.007955,
+        "hints_time": 0.097426
+    },
+    {
+        "problem": "COL044-10",
+        "mean_base_user_time": 1.827272,
+        "min_base_user_time": 1.827272,
+        "min_base_dir": "20251112_20251209_130501_COL_7726478_5",
+        "abstractions": [
+            "fn_0 = apply(apply(b, apply(apply(n, apply(apply(b, b), apply(apply(n, apply(n, apply(b, b))), n))), n)), b)",
+            "fn_1(A) = apply(n, apply(b, A))",
+            "fn_2(A, B, C) = apply(apply(B, A), C)",
+            "fn_3 = fn_2(fn_0, b, b)",
+            "fn_4 = fn_2(fn_1(b), n, n)",
+            "fn_5(A) = apply(b, A)",
+            "fn_6(A, B, C) = apply(fn_2(fn_2(b, b, B), n, A), C)",
+            "fn_7(A, B, C) = fn_2(apply(A, C), B, A)",
+            "fn_8(A, B) = ifeq(apply(fn_3, fixed_pt), apply(B, A), fixed_point(fn_3), true)",
+            "fn_9(A) = fn_2(fn_5(A), fn_4, fn_1(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, apply(apply(n, apply(apply(b, b), apply(apply(n, apply(n, apply(b, b))), n))), n)), b)",
+            "fn_1(A) = apply(n, apply(b, A))",
+            "fn_2(A, B, C) = apply(apply(B, A), C)",
+            "fn_3 = apply(apply(b, apply(apply(b, apply(apply(n, apply(apply(b, b), apply(apply(n, apply(n, apply(b, b))), n))), n)), b)), b)",
+            "fn_4 = apply(apply(n, apply(n, apply(b, b))), n)",
+            "fn_5(A) = apply(b, A)",
+            "fn_6(A, B, C) = apply(apply(apply(n, apply(apply(b, b), B)), A), C)",
+            "fn_7(A, B, C) = apply(apply(B, apply(A, C)), A)",
+            "fn_8(A, B) = ifeq(apply(apply(apply(b, apply(apply(b, apply(apply(n, apply(apply(b, b), apply(apply(n, apply(n, apply(b, b))), n))), n)), b)), b), fixed_pt), apply(B, A), fixed_point(apply(apply(b, apply(apply(b, apply(apply(n, apply(apply(b, b), apply(apply(n, apply(n, apply(b, b))), n))), n)), b)), b)), true)",
+            "fn_9(A) = apply(apply(apply(apply(n, apply(n, apply(b, b))), n), apply(b, A)), apply(n, apply(b, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.156799,
+        "hints_time_sys": 0.009989999999999999,
+        "hints_time": 0.166789
+    }
+]

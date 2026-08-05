@@ -1,0 +1,40 @@
+[
+    {
+        "problem": "BOO004-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "BOO015-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "BOO017-10",
+        "mean_base_user_time": 574.760225,
+        "min_base_user_time": 574.760225,
+        "min_base_dir": "20251112_20251209_130502_BOO_7726476_3",
+        "abstractions": [
+            "fn_0(A, B) = ifeq(B, true, A, true)",
+            "fn_1(A, B, C, D, E, F) = fn_0(fn_0(product(F, E, D), sum(C, B, A)))",
+            "fn_2(A, B, C, D) = ifeq2(product(C, B, A), true, A, D)",
+            "fn_3(A, B, C, D, E) = fn_1(D, B, E, B, A, D, sum(C, B, A))",
+            "fn_4 = multiply(additive_identity, additive_identity)",
+            "fn_5(A, B, C) = fn_0(C, product(B, additive_identity, A))",
+            "fn_6(A, B, C, D, E, F) = ifeq2(F(C, E, A), true, D(C, B), A)",
+            "fn_7(A, B, C) = fn_0(product(C, B, A), true)",
+            "fn_8(A, B, C, D, E) = fn_0(E(A, D, B), sum(C, B, A))",
+            "fn_9(A, B, C, D, E) = fn_5(C, E, fn_1(D, B, E, A, B, D, sum(C, B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ifeq(B, true, A, true)",
+            "fn_2(A, B, C, D) = ifeq2(product(C, B, A), true, A, D)",
+            "fn_4 = multiply(additive_identity, additive_identity)",
+            "fn_5(A, B, C) = ifeq(product(B, additive_identity, A), true, C, true)",
+            "fn_7(A, B, C) = ifeq(true, true, product(C, B, A), true)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.670234,
+        "hints_time_sys": 0.02591,
+        "hints_time": 0.696144
+    }
+]

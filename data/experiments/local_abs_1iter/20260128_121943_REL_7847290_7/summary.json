@@ -1,0 +1,1878 @@
+[
+    {
+        "problem": "REL001-1",
+        "mean_base_user_time": 0.018519749999999998,
+        "min_base_user_time": 0.014192999999999999,
+        "min_base_dir": "20251112_035913_REL_7667343_290",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_2(A, B) = join(zero, meet(B, A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B) = join(complement(B), fn_3(A, complement(composition(A, B))))",
+            "fn_6 = complement(zero)",
+            "fn_7(A, B, C) = fn_0(C(A), meet(B, complement(A)))",
+            "fn_8(A) = fn_0(complement(A), zero)",
+            "fn_9(A) = join(meet(A, top), meet(zero, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.013678,
+        "hints_time_sys": 0.007273,
+        "hints_time": 0.020950999999999997
+    },
+    {
+        "problem": "REL002-1",
+        "mean_base_user_time": 0.009937333333333334,
+        "min_base_user_time": 0.0049759999999999995,
+        "min_base_dir": "20251112_041642_REL_7667382_328",
+        "abstractions": [
+            "fn_0(A, B) = composition(converse(A), B)",
+            "fn_1(A, B) = join(B, complement(A))",
+            "fn_2(A) = join(A, top)",
+            "fn_3(A, B) = join(complement(B), fn_0(A, complement(composition(A, B))))",
+            "fn_4(A, B) = join(B, fn_1(B, A))",
+            "fn_5(A) = fn_1(A, A)",
+            "fn_6(A) = fn_2(A)",
+            "fn_7 = fn_0(one)",
+            "fn_8(A) = fn_4(top, A)",
+            "fn_9(A) = composition(one, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = composition(converse(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012118,
+        "hints_time_sys": 0.0055249999999999995,
+        "hints_time": 0.017643
+    },
+    {
+        "problem": "REL004-1",
+        "mean_base_user_time": 0.11095720833333333,
+        "min_base_user_time": 0.09913799999999999,
+        "min_base_dir": "20251112_041759_REL_7667388_334",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = converse(complement(A))",
+            "fn_2(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_3(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_4(A) = join(A, top)",
+            "fn_5(A, B) = join(zero, meet(B, A))",
+            "fn_6(A, B, C) = meet(converse(B), converse(C(B, A)))",
+            "fn_7(A) = meet(fn_1(fn_1(A)), A)",
+            "fn_8(A, B) = join(complement(A), B)",
+            "fn_9(A, B, C) = B(C, composition(converse(A), complement(composition(A, C))))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.052440999999999995,
+        "hints_time_sys": 0.014107999999999999,
+        "hints_time": 0.066549
+    },
+    {
+        "problem": "REL004-2",
+        "mean_base_user_time": 0.08117287499999999,
+        "min_base_user_time": 0.07711599999999999,
+        "min_base_dir": "20251112_041318_REL_7667376_322",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(composition(A, B), complement(composition(A, top)))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(converse(B), complement(composition(B, A)))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_6(A, B) = meet(B, complement(A))",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A) = composition(converse(A), complement(A))",
+            "fn_9(A) = join(zero, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.12118,
+        "hints_time_sys": 0.015042,
+        "hints_time": 0.136222
+    },
+    {
+        "problem": "REL004-3",
+        "mean_base_user_time": 0.07999066666666665,
+        "min_base_user_time": 0.07113,
+        "min_base_dir": "20251112_041628_REL_7667380_326",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(composition(A, B), complement(composition(A, top)))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(converse(B), complement(composition(B, A)))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_6(A, B) = meet(B, complement(A))",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A) = composition(converse(A), complement(A))",
+            "fn_9(A) = join(zero, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.118391,
+        "hints_time_sys": 0.01593,
+        "hints_time": 0.134321
+    },
+    {
+        "problem": "REL005-1",
+        "mean_base_user_time": 0.22294633333333327,
+        "min_base_user_time": 0.210316,
+        "min_base_dir": "20251112_041759_REL_7667388_334",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A, B) = converse(meet(B, A))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8(A) = fn_0(A, zero)",
+            "fn_9(A, B, C, D) = meet(join(B, D), C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.23355299999999998,
+        "hints_time_sys": 0.024881999999999998,
+        "hints_time": 0.25843499999999997
+    },
+    {
+        "problem": "REL005-3",
+        "mean_base_user_time": 0.20497420833333327,
+        "min_base_user_time": 0.19347499999999998,
+        "min_base_dir": "20251112_041523_REL_7667378_324",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = converse(complement(A))",
+            "fn_2(A, B) = meet(composition(A, B), complement(composition(A, top)))",
+            "fn_3(A, B) = composition(converse(B), complement(composition(B, A)))",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A) = composition(converse(A), complement(A))",
+            "fn_9 = converse(zero)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.160655,
+        "hints_time_sys": 0.013143,
+        "hints_time": 0.17379799999999998
+    },
+    {
+        "problem": "REL006-1",
+        "mean_base_user_time": 0.087886375,
+        "min_base_user_time": 0.080526,
+        "min_base_dir": "20251112_041523_REL_7667378_324",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = fn_0(B, complement(A))",
+            "fn_3(A, B) = fn_0(fn_1(B, A), meet(B, A))",
+            "fn_4 = converse(sk1)",
+            "fn_5(A, B, C) = join(C, meet(B, complement(A)))",
+            "fn_6 = converse(complement(sk1))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8(A) = meet(A, top)",
+            "fn_9(A, B, C, D) = D(fn_0(A, B), C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.063834,
+        "hints_time_sys": 0.007744999999999999,
+        "hints_time": 0.071579
+    },
+    {
+        "problem": "REL007-1",
+        "mean_base_user_time": 0.08763054166666666,
+        "min_base_user_time": 0.079816,
+        "min_base_dir": "20251112_041642_REL_7667382_328",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = fn_0(B, complement(A))",
+            "fn_3(A, B) = fn_0(fn_1(B, A), meet(B, A))",
+            "fn_4(A, B, C) = join(C, meet(B, complement(A)))",
+            "fn_5 = converse(sk2)",
+            "fn_6 = converse(complement(sk2))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8(A) = meet(A, top)",
+            "fn_9(A, B, C, D) = D(fn_0(A, B), C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.062586,
+        "hints_time_sys": 0.014655999999999999,
+        "hints_time": 0.077242
+    },
+    {
+        "problem": "REL008-1",
+        "mean_base_user_time": 0.11477204166666667,
+        "min_base_user_time": 0.10760499999999999,
+        "min_base_dir": "20251112_041700_REL_7667384_330",
+        "abstractions": [
+            "fn_0(A, B) = composition(B, converse(A))",
+            "fn_1(A, B) = join(B, converse(A))",
+            "fn_2(A, B, C) = join(composition(A, C), fn_0(B, A))",
+            "fn_3(A, B, C) = join(B(C), B(A))",
+            "fn_4(A, B, C) = converse(composition(C, fn_1(B, A)))",
+            "fn_5(A, B, C, D, E) = B(C, A(E, D))",
+            "fn_6(A, B) = converse(A(B))",
+            "fn_7(A, B) = join(converse(A), B)",
+            "fn_8(A, B, C, D) = fn_0(D, A(B, C))",
+            "fn_9(A, B, C) = A(B, converse(converse(C)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = composition(B, converse(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.045644,
+        "hints_time_sys": 0.008727,
+        "hints_time": 0.054370999999999996
+    },
+    {
+        "problem": "REL008-3",
+        "mean_base_user_time": 0.571535,
+        "min_base_user_time": 0.557833,
+        "min_base_dir": "20251112_041724_REL_7667386_332",
+        "abstractions": [
+            "fn_0(A, B, C) = join(composition(B, C), composition(B, A))",
+            "fn_1(A, B, C) = composition(C, join(B, converse(A)))",
+            "fn_2(A, B, C) = C(converse(B), converse(A))",
+            "fn_3(A, B, C) = fn_0(converse(B), C, A)",
+            "fn_4(A, B, C) = fn_2(C, B, fn_0, converse(A))",
+            "fn_5(A, B, C) = fn_1(B, A, C)",
+            "fn_6(A, B, C) = A(converse(converse(B)), C)",
+            "fn_7(A, B, C, D) = D(composition(C, A), composition(B, A))",
+            "fn_8(A, B, C) = A(B, C)",
+            "fn_9(A, B, C) = A(B, converse(C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(composition(B, C), composition(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.13883299999999998,
+        "hints_time_sys": 0.010197,
+        "hints_time": 0.14903
+    },
+    {
+        "problem": "REL010-1",
+        "mean_base_user_time": 60.125285749999996,
+        "min_base_user_time": 27.353083,
+        "min_base_dir": "20251112_040209_REL_7667347_294",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(one), composition(B, A))",
+            "fn_2(A) = composition(A, top)",
+            "fn_3(A, B) = composition(B, converse(A))",
+            "fn_4(A) = meet(one, A)",
+            "fn_5(A) = composition(top, A)",
+            "fn_6(A, B) = composition(converse(A), B)",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A) = converse(complement(A))",
+            "fn_9(A, B, C) = fn_0(C(B, A), meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 6.718405,
+        "hints_time_sys": 0.166127,
+        "hints_time": 6.884532
+    },
+    {
+        "problem": "REL010-2",
+        "mean_base_user_time": 0.3263663333333333,
+        "min_base_user_time": 0.313505,
+        "min_base_dir": "20251112_035913_REL_7667343_290",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B) = fn_3(B, complement(composition(B, A)))",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A, B) = fn_4(composition(B, top), composition(B, A))",
+            "fn_9 = converse(zero)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.9210109999999999,
+        "hints_time_sys": 0.054429,
+        "hints_time": 0.9754399999999999
+    },
+    {
+        "problem": "REL011-1",
+        "mean_base_user_time": 23.694843125000006,
+        "min_base_user_time": 22.530223,
+        "min_base_dir": "20251112_041759_REL_7667388_334",
+        "abstractions": [
+            "fn_0(A, B) = join(complement(one), composition(B, A))",
+            "fn_1(A, B) = join(B, complement(A))",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A) = converse(complement(A))",
+            "fn_5(A) = composition(top, A)",
+            "fn_6(A) = meet(one, A)",
+            "fn_7(A, B, C) = fn_1(C(B, A), meet(B, A))",
+            "fn_8(A) = composition(A, top)",
+            "fn_9(A, B) = join(B, converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(complement(one), composition(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.845729,
+        "hints_time_sys": 0.111189,
+        "hints_time": 3.956918
+    },
+    {
+        "problem": "REL011-2",
+        "mean_base_user_time": 0.19723691666666662,
+        "min_base_user_time": 0.18703499999999998,
+        "min_base_dir": "20251112_040318_REL_7667353_300",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B) = fn_3(B, complement(composition(B, A)))",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A, B) = fn_4(composition(B, top), composition(B, A))",
+            "fn_9 = composition(sk3, converse(sk1))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.225762,
+        "hints_time_sys": 0.025889,
+        "hints_time": 0.251651
+    },
+    {
+        "problem": "REL012-1",
+        "mean_base_user_time": 0.36578179166666663,
+        "min_base_user_time": 0.356784,
+        "min_base_dir": "20251112_041700_REL_7667384_330",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = converse(complement(A))",
+            "fn_2(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_3(A, B) = join(complement(B), composition(complement(composition(B, A)), converse(A)))",
+            "fn_4(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_5(A, B) = composition(converse(A), B)",
+            "fn_6(A, B) = converse(join(B, A))",
+            "fn_7(A) = complement(converse(A))",
+            "fn_8(A) = join(A, top)",
+            "fn_9(A, B) = join(zero, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.3319,
+        "hints_time_sys": 0.033371,
+        "hints_time": 0.36527099999999996
+    },
+    {
+        "problem": "REL012-2",
+        "mean_base_user_time": 0.4176635416666665,
+        "min_base_user_time": 0.40558,
+        "min_base_dir": "20251112_041700_REL_7667384_330",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(composition(A, B), complement(composition(A, top)))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(converse(B), complement(composition(B, A)))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_7(A, B, C) = fn_4(C, composition(complement(composition(C, B)), A))",
+            "fn_8(A, B) = meet(B, complement(A))",
+            "fn_9(A) = composition(converse(A), complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.364143,
+        "hints_time_sys": 0.030539999999999998,
+        "hints_time": 0.394683
+    },
+    {
+        "problem": "REL015-1",
+        "mean_base_user_time": 0.02580795833333334,
+        "min_base_user_time": 0.021758,
+        "min_base_dir": "20251112_041315_REL_7667374_320",
+        "abstractions": [
+            "fn_0(A) = join(A, top)",
+            "fn_1(A, B) = composition(converse(A), B)",
+            "fn_2(A, B) = join(B, complement(A))",
+            "fn_3(A, B) = join(complement(B), fn_1(A, complement(composition(A, B))))",
+            "fn_4(A, B) = join(B, fn_2(B, A))",
+            "fn_5(A) = join(top, A)",
+            "fn_6(A) = fn_2(A, A)",
+            "fn_7(A) = composition(A, top)",
+            "fn_8 = fn_1(one)",
+            "fn_9(A) = composition(one, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = join(A, top)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.027174,
+        "hints_time_sys": 0.007768,
+        "hints_time": 0.034942
+    },
+    {
+        "problem": "REL016-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL016-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL016-3",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL017-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL017-3",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL018-1",
+        "mean_base_user_time": 0.07955375,
+        "min_base_user_time": 0.071383,
+        "min_base_dir": "20251112_041700_REL_7667384_330",
+        "abstractions": [
+            "fn_0(A, B) = composition(converse(A), B)",
+            "fn_1(A, B) = join(B, complement(A))",
+            "fn_2(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_3 = complement(sk1)",
+            "fn_4(A) = join(A, top)",
+            "fn_5(A, B) = join(complement(A), fn_0(B, complement(composition(B, A))))",
+            "fn_6(A, B, C) = join(C, B(C, A))",
+            "fn_7(A, B) = join(zero, meet(B, A))",
+            "fn_8 = fn_0(sk1, fn_3)",
+            "fn_9(A, B) = join(B, converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = composition(converse(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.054051999999999996,
+        "hints_time_sys": 0.009842,
+        "hints_time": 0.06389399999999999
+    },
+    {
+        "problem": "REL019-1",
+        "mean_base_user_time": 2.0149769999999996,
+        "min_base_user_time": 1.950097,
+        "min_base_dir": "20251112_041232_REL_7667372_318",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), composition(converse(B), complement(composition(B, A))))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A) = composition(A, top)",
+            "fn_5(A, B) = join(complement(A), B)",
+            "fn_6(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_7(A, B) = fn_0(fn_5(B, A), meet(B, A))",
+            "fn_8 = complement(sk1)",
+            "fn_9(A) = composition(top, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.646901,
+        "hints_time_sys": 0.049256,
+        "hints_time": 0.6961569999999999
+    },
+    {
+        "problem": "REL019-2",
+        "mean_base_user_time": 1.1769615833333333,
+        "min_base_user_time": 1.163616,
+        "min_base_dir": "20251112_041642_REL_7667382_328",
+        "abstractions": [
+            "fn_0(A, B) = join(complement(A), B)",
+            "fn_1(A) = converse(complement(A))",
+            "fn_2(A, B) = composition(converse(B), complement(A))",
+            "fn_3(A, B) = join(B, complement(A))",
+            "fn_4(A, B) = fn_0(B, fn_2(composition(A, B), A))",
+            "fn_5(A, B, C) = fn_0(C, composition(complement(B), A))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7 = meet(sk1, sk2)",
+            "fn_8(A, B, C, D) = join(C(D, A), C(B, A))",
+            "fn_9(A) = join(zero, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(complement(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.645908,
+        "hints_time_sys": 0.080219,
+        "hints_time": 1.726127
+    },
+    {
+        "problem": "REL020-1",
+        "mean_base_user_time": 2.7794396666666668,
+        "min_base_user_time": 2.578215,
+        "min_base_dir": "20251112_040413_REL_7667355_302",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_5(A, B, C) = join(C, composition(B, A))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8 = complement(sk1)",
+            "fn_9(A, B) = fn_1(sk1, composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.744904,
+        "hints_time_sys": 0.132853,
+        "hints_time": 4.877757
+    },
+    {
+        "problem": "REL020-2",
+        "mean_base_user_time": 17.11232958333333,
+        "min_base_user_time": 16.459896,
+        "min_base_dir": "20251112_040731_REL_7667363_310",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = meet(B, complement(A))",
+            "fn_3(A, B, C) = join(C, composition(B, A))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B, C, D) = fn_1(complement(C), composition(B, D), fn_2(C, composition(B, A)))",
+            "fn_6(A, B, C) = meet(C, composition(B, A))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B) = meet(B, A)",
+            "fn_9(A) = fn_1(complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 19.794915,
+        "hints_time_sys": 0.511271,
+        "hints_time": 20.306186
+    },
+    {
+        "problem": "REL021-1",
+        "mean_base_user_time": 2.7952699583333334,
+        "min_base_user_time": 2.760346,
+        "min_base_dir": "20251112_041642_REL_7667382_328",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C) = join(C, composition(B, A))",
+            "fn_7(A, B, C, D) = C(D, B(D, A))",
+            "fn_8 = complement(sk1)",
+            "fn_9(A, B) = fn_1(sk1, composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.712743,
+        "hints_time_sys": 0.144818,
+        "hints_time": 4.857561
+    },
+    {
+        "problem": "REL021-2",
+        "mean_base_user_time": 16.978570458333333,
+        "min_base_user_time": 16.774508,
+        "min_base_dir": "20251112_040219_REL_7667349_296",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = meet(B, complement(A))",
+            "fn_3(A, B, C) = join(C, composition(B, A))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B, C, D) = fn_1(complement(C), composition(B, D), fn_2(C, composition(B, A)))",
+            "fn_6(A, B, C) = meet(C, composition(B, A))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B) = meet(B, A)",
+            "fn_9(A) = fn_1(complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 19.823569,
+        "hints_time_sys": 0.48300499999999996,
+        "hints_time": 20.306573999999998
+    },
+    {
+        "problem": "REL022-1",
+        "mean_base_user_time": 2.783096,
+        "min_base_user_time": 2.6006549999999997,
+        "min_base_dir": "20251112_041318_REL_7667376_322",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_3(A, B, C) = join(C, meet(B, A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C) = join(C, composition(B, A))",
+            "fn_7(A, B, C, D) = C(D, B(D, A))",
+            "fn_8 = complement(sk1)",
+            "fn_9(A, B) = fn_1(sk1, composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.790227,
+        "hints_time_sys": 0.138435,
+        "hints_time": 4.928662
+    },
+    {
+        "problem": "REL022-2",
+        "mean_base_user_time": 16.977284291666667,
+        "min_base_user_time": 16.65383,
+        "min_base_dir": "20251112_041642_REL_7667382_328",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = meet(B, complement(A))",
+            "fn_3(A, B, C) = join(C, composition(B, A))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B, C, D) = fn_1(complement(C), composition(B, D), fn_2(C, composition(B, A)))",
+            "fn_6(A, B, C) = meet(C, composition(B, A))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B) = meet(B, A)",
+            "fn_9(A) = fn_1(complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 19.999829,
+        "hints_time_sys": 0.453646,
+        "hints_time": 20.453474999999997
+    },
+    {
+        "problem": "REL023-1",
+        "mean_base_user_time": 0.029168708333333335,
+        "min_base_user_time": 0.022002999999999998,
+        "min_base_dir": "20251112_040116_REL_7667345_292",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_2(A) = composition(A, meet(sk2, sk3))",
+            "fn_3(A, B) = join(zero, meet(B, A))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B, C) = B(C, composition(converse(A), complement(composition(A, C))))",
+            "fn_6(A) = fn_0(A, zero)",
+            "fn_7(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_8(A, B, C, D) = B(C, A(C, D))",
+            "fn_9(A, B) = fn_0(B, complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.019407,
+        "hints_time_sys": 0.006807,
+        "hints_time": 0.026214
+    },
+    {
+        "problem": "REL023-2",
+        "mean_base_user_time": 0.029899125,
+        "min_base_user_time": 0.022213,
+        "min_base_dir": "20251112_041026_REL_7667369_316",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = fn_0(B, complement(A))",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B, C) = join(B, A(B, C))",
+            "fn_5(A) = join(zero, A)",
+            "fn_6(A) = fn_0(A, zero)",
+            "fn_7(A) = composition(A, meet(sk2, sk3))",
+            "fn_8(A, B, C, D) = D(C(B, A), meet(B, A))",
+            "fn_9(A, B) = A(B, top)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.026074,
+        "hints_time_sys": 0.011191,
+        "hints_time": 0.037265
+    },
+    {
+        "problem": "REL024-1",
+        "mean_base_user_time": 0.12009195833333335,
+        "min_base_user_time": 0.11373699999999999,
+        "min_base_dir": "20251112_040852_REL_7667365_312",
+        "abstractions": [
+            "fn_0(A, B, C) = join(B(C), B(A))",
+            "fn_1(A, B) = join(B, complement(A))",
+            "fn_2(A) = composition(meet(sk1, converse(sk2)), A)",
+            "fn_3(A, B) = composition(B, converse(A))",
+            "fn_4(A, B) = join(zero, meet(B, A))",
+            "fn_5(A, B) = join(complement(A), B)",
+            "fn_6(A, B, C) = B(C, composition(converse(A), complement(composition(A, C))))",
+            "fn_7(A) = fn_1(A, zero)",
+            "fn_8(A) = fn_0(A, complement)",
+            "fn_9(A, B) = join(B, converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.12068799999999999,
+        "hints_time_sys": 0.012081999999999999,
+        "hints_time": 0.13277
+    },
+    {
+        "problem": "REL024-2",
+        "mean_base_user_time": 0.581188875,
+        "min_base_user_time": 0.568759,
+        "min_base_dir": "20251112_040209_REL_7667347_294",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(B(C), B(A))",
+            "fn_2(A, B) = fn_0(B, complement(A))",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B) = meet(B, complement(A))",
+            "fn_6(A) = composition(meet(sk1, converse(sk2)), A)",
+            "fn_7(A, B, C) = join(B, A(B, C))",
+            "fn_8(A) = join(zero, A)",
+            "fn_9(A) = fn_0(A, zero)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.592073,
+        "hints_time_sys": 0.053526,
+        "hints_time": 0.6455989999999999
+    },
+    {
+        "problem": "REL025-1",
+        "mean_base_user_time": 0.6329306666666666,
+        "min_base_user_time": 0.6174529999999999,
+        "min_base_dir": "20251112_041315_REL_7667374_320",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = composition(B, converse(A))",
+            "fn_5(A, B) = join(complement(A), B)",
+            "fn_6(A) = composition(sk1, A)",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8 = converse(sk1)",
+            "fn_9(A, B, C) = join(C, join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.6594059999999999,
+        "hints_time_sys": 0.038575,
+        "hints_time": 0.697981
+    },
+    {
+        "problem": "REL026-1",
+        "mean_base_user_time": 0.6222330833333333,
+        "min_base_user_time": 0.6062919999999999,
+        "min_base_dir": "20251112_040116_REL_7667345_292",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_3(A, B, C) = join(B(C), B(A))",
+            "fn_4(A) = composition(sk1, A)",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C, D) = B(C, A(C, D))",
+            "fn_7(A, B, C) = join(composition(B, A), C)",
+            "fn_8(A, B, C, D) = D(fn_0(A, B), C(B, A))",
+            "fn_9(A, B) = join(B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.638721,
+        "hints_time_sys": 0.046296,
+        "hints_time": 0.685017
+    },
+    {
+        "problem": "REL026-3",
+        "mean_base_user_time": 1.1006607083333335,
+        "min_base_user_time": 1.041453,
+        "min_base_dir": "20251112_040944_REL_7667367_314",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A, B) = fn_0(B, complement(A))",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A, B, C) = join(B(C), B(A))",
+            "fn_5(A) = composition(sk1, A)",
+            "fn_6(A, B, C, D) = B(C, A(C, D))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B, C) = C(join(A, B), fn_0(B, A))",
+            "fn_9(A, B) = composition(converse(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.152388,
+        "hints_time_sys": 0.06924799999999999,
+        "hints_time": 1.221636
+    },
+    {
+        "problem": "REL027-1",
+        "mean_base_user_time": 1.0457925000000003,
+        "min_base_user_time": 1.029705,
+        "min_base_dir": "20251112_041759_REL_7667388_334",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B) = fn_0(B, complement(A))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B, C, D) = C(D, B(D, A))",
+            "fn_6(A, B, C, D) = D(fn_0(A, B), C(B, A))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B) = meet(B, complement(A))",
+            "fn_9(A, B, C) = B(C, composition(converse(A), complement(composition(A, C))))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.944657,
+        "hints_time_sys": 0.055569,
+        "hints_time": 1.000226
+    },
+    {
+        "problem": "REL027-3",
+        "mean_base_user_time": 0.3979988749999999,
+        "min_base_user_time": 0.382283,
+        "min_base_dir": "20251112_040318_REL_7667353_300",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = converse(complement(converse(A)))",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B) = meet(B, complement(A))",
+            "fn_6(A) = join(zero, A)",
+            "fn_7(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_8(A, B) = join(B, A)",
+            "fn_9(A, B) = join(converse(B), converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.291033,
+        "hints_time_sys": 0.023774,
+        "hints_time": 0.314807
+    },
+    {
+        "problem": "REL028-1",
+        "mean_base_user_time": 0.4323909166666666,
+        "min_base_user_time": 0.414931,
+        "min_base_dir": "20251112_040852_REL_7667365_312",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_3(A) = composition(sk1, A)",
+            "fn_4(A, B, C, D) = join(B(D, C), B(D, A))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B) = join(B, A)",
+            "fn_7(A, B) = composition(B, converse(A))",
+            "fn_8(A, B, C, D) = D(fn_0(A, B), C(B, A))",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.364991,
+        "hints_time_sys": 0.03473,
+        "hints_time": 0.399721
+    },
+    {
+        "problem": "REL028-2",
+        "mean_base_user_time": 1.3094488333333334,
+        "min_base_user_time": 1.238304,
+        "min_base_dir": "20251112_041315_REL_7667374_320",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = composition(converse(A), B)",
+            "fn_2(A, B) = meet(B, complement(A))",
+            "fn_3(A, B, C) = join(C, composition(B, A))",
+            "fn_4(A) = converse(complement(converse(A)))",
+            "fn_5(A, B) = fn_3(fn_1(B, B), meet(B, composition(B, converse(one))), A)",
+            "fn_6(A, B) = join(B, converse(A))",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A, B) = join(complement(A), B)",
+            "fn_9(A, B) = fn_2(composition(B, top), composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.29826,
+        "hints_time_sys": 0.06737699999999999,
+        "hints_time": 1.365637
+    },
+    {
+        "problem": "REL029-1",
+        "mean_base_user_time": 2.1821694583333335,
+        "min_base_user_time": 2.131619,
+        "min_base_dir": "20251112_040219_REL_7667349_296",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = composition(sk1, A)",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3(A) = composition(sk2, A)",
+            "fn_4(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_5(A, B) = meet(B, complement(A))",
+            "fn_6(A, B, C) = join(C, join(B, A))",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A, B) = join(B, A)",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.774033,
+        "hints_time_sys": 0.111173,
+        "hints_time": 2.885206
+    },
+    {
+        "problem": "REL029-10",
+        "mean_base_user_time": 1.6784071666666665,
+        "min_base_user_time": 1.655726,
+        "min_base_dir": "20251112_041759_REL_7667388_334",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, composition(B, A))",
+            "fn_2 = composition(meet(sk1, sk2), sk3)",
+            "fn_3(A, B) = B(A, A)",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A) = composition(sk2, A)",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A) = composition(sk1, A)",
+            "fn_8(A, B) = join(complement(A), B)",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.8217439999999998,
+        "hints_time_sys": 0.09103499999999999,
+        "hints_time": 1.9127789999999998
+    },
+    {
+        "problem": "REL029-3",
+        "mean_base_user_time": 1.6220614166666663,
+        "min_base_user_time": 1.598808,
+        "min_base_dir": "20251112_041232_REL_7667372_318",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, composition(B, A))",
+            "fn_2(A, B) = meet(B, complement(A))",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B, C) = meet(C, composition(B, A))",
+            "fn_5 = converse(sk1)",
+            "fn_6(A, B) = fn_2(composition(B, top), composition(B, A))",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A, B) = join(complement(A), B)",
+            "fn_9(A, B, C) = C(converse(B), converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.897795,
+        "hints_time_sys": 0.11299999999999999,
+        "hints_time": 2.010795
+    },
+    {
+        "problem": "REL030-1",
+        "mean_base_user_time": 5.022263791666667,
+        "min_base_user_time": 4.824678,
+        "min_base_dir": "20251112_035913_REL_7667343_290",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A) = composition(sk1, A)",
+            "fn_4(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_5(A) = converse(complement(A))",
+            "fn_6(A, B) = meet(B, complement(A))",
+            "fn_7(A) = meet(sk1, A)",
+            "fn_8(A) = composition(A, sk1)",
+            "fn_9 = converse(sk1)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.4259209999999998,
+        "hints_time_sys": 0.099394,
+        "hints_time": 2.525315
+    },
+    {
+        "problem": "REL030-3",
+        "mean_base_user_time": 1.4947869166666667,
+        "min_base_user_time": 1.470673,
+        "min_base_dir": "20251112_041318_REL_7667376_322",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A) = composition(sk1, A)",
+            "fn_3(A, B) = fn_0(B, complement(A))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B, C) = join(B(C), B(A))",
+            "fn_6(A, B, C, D) = B(C, A(C, D))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B) = meet(B, A)",
+            "fn_9(A, B, C) = C(join(A, B), fn_0(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.186577,
+        "hints_time_sys": 0.079321,
+        "hints_time": 1.265898
+    },
+    {
+        "problem": "REL031-1",
+        "mean_base_user_time": 1.8305713749999997,
+        "min_base_user_time": 1.78628,
+        "min_base_dir": "20251112_040852_REL_7667365_312",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_2(A) = join(one, composition(A, sk2))",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B) = converse(meet(B, A))",
+            "fn_6(A) = composition(converse(A), A)",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.126203,
+        "hints_time_sys": 0.04854,
+        "hints_time": 1.174743
+    },
+    {
+        "problem": "REL031-2",
+        "mean_base_user_time": 8.563379958333334,
+        "min_base_user_time": 5.994227,
+        "min_base_dir": "20251112_041523_REL_7667378_324",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = composition(converse(A), B)",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A) = converse(complement(converse(A)))",
+            "fn_5(A, B) = fn_0(B, complement(A))",
+            "fn_6(A, B, C, D) = D(composition(B, C), composition(B, A))",
+            "fn_7(A, B) = join(complement(A), B)",
+            "fn_8(A) = join(one, fn_1(sk2, A))",
+            "fn_9(A) = fn_0(A, zero)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.650843,
+        "hints_time_sys": 0.12022899999999999,
+        "hints_time": 3.771072
+    },
+    {
+        "problem": "REL032-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL032-2",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL033-1",
+        "mean_base_user_time": 2.790788666666666,
+        "min_base_user_time": 2.767222,
+        "min_base_dir": "20251112_035913_REL_7667343_290",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_5(A, B, C) = join(C, composition(B, A))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8 = complement(sk1)",
+            "fn_9(A, B) = fn_1(sk1, composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.754204,
+        "hints_time_sys": 0.13383899999999999,
+        "hints_time": 4.888043
+    },
+    {
+        "problem": "REL033-3",
+        "mean_base_user_time": 16.986354458333334,
+        "min_base_user_time": 16.461541,
+        "min_base_dir": "20251112_040731_REL_7667363_310",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = meet(B, complement(A))",
+            "fn_3(A, B, C) = join(C, composition(B, A))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B, C, D) = fn_1(complement(C), composition(B, D), fn_2(C, composition(B, A)))",
+            "fn_6(A, B, C) = meet(C, composition(B, A))",
+            "fn_7(A) = fn_0(A, zero)",
+            "fn_8(A, B) = meet(B, A)",
+            "fn_9(A) = fn_1(complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 19.978172999999998,
+        "hints_time_sys": 0.461045,
+        "hints_time": 20.439217999999997
+    },
+    {
+        "problem": "REL034-1",
+        "mean_base_user_time": 2.8408693333333335,
+        "min_base_user_time": 2.805069,
+        "min_base_dir": "20251112_041315_REL_7667374_320",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = fn_0(fn_1(B, A), meet(B, A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A, B) = meet(B, converse(A))",
+            "fn_6(A) = meet(A, sk1)",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8(A, B) = join(B, converse(A))",
+            "fn_9(A, B, C, D) = D(composition(C, A), composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 35.376488,
+        "hints_time_sys": 0.609157,
+        "hints_time": 35.985645000000005
+    },
+    {
+        "problem": "REL034-2",
+        "mean_base_user_time": 43.19952245833333,
+        "min_base_user_time": 42.759436,
+        "min_base_dir": "20251112_041921_REL_7667390_336",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_6(A) = meet(one, A)",
+            "fn_7(A) = composition(A, top)",
+            "fn_8(A, B, C) = fn_2(C, B, complement(A))",
+            "fn_9(A, B) = fn_0(B, complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 58.854311,
+        "hints_time_sys": 1.110615,
+        "hints_time": 59.964926000000006
+    },
+    {
+        "problem": "REL035-1",
+        "mean_base_user_time": 2.835649958333333,
+        "min_base_user_time": 2.800652,
+        "min_base_dir": "20251112_040251_REL_7667351_298",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A, B) = fn_0(fn_1(B, A), meet(B, A))",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A) = converse(complement(A))",
+            "fn_6(A) = meet(A, sk1)",
+            "fn_7(A, B) = converse(meet(B, A))",
+            "fn_8(A, B, C) = join(C, composition(B, A))",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 35.583441,
+        "hints_time_sys": 0.623872,
+        "hints_time": 36.207313
+    },
+    {
+        "problem": "REL035-2",
+        "mean_base_user_time": 43.22198400000001,
+        "min_base_user_time": 42.660152,
+        "min_base_dir": "20251112_040705_REL_7667361_308",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_6(A) = meet(one, A)",
+            "fn_7(A) = composition(A, top)",
+            "fn_8(A, B, C) = fn_2(C, B, complement(A))",
+            "fn_9(A, B) = fn_0(B, complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 60.629115,
+        "hints_time_sys": 1.140577,
+        "hints_time": 61.769692
+    },
+    {
+        "problem": "REL036-1",
+        "mean_base_user_time": 2.842799,
+        "min_base_user_time": 2.803772,
+        "min_base_dir": "20251112_040705_REL_7667361_308",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A, B) = fn_0(fn_1(B, A), meet(B, A))",
+            "fn_4(A, B) = meet(B, converse(A))",
+            "fn_5(A, B) = meet(B, complement(A))",
+            "fn_6(A, B, C) = join(C, composition(B, A))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8(A) = meet(A, sk1)",
+            "fn_9(A, B) = join(B, converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 35.763944,
+        "hints_time_sys": 0.677782,
+        "hints_time": 36.441726
+    },
+    {
+        "problem": "REL036-2",
+        "mean_base_user_time": 43.42336083333334,
+        "min_base_user_time": 42.976162,
+        "min_base_dir": "20251112_040318_REL_7667353_300",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_6(A) = meet(one, A)",
+            "fn_7(A) = composition(A, top)",
+            "fn_8(A, B, C) = fn_2(C, B, complement(A))",
+            "fn_9(A, B) = fn_0(B, complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 59.552444,
+        "hints_time_sys": 1.184731,
+        "hints_time": 60.737175
+    },
+    {
+        "problem": "REL037-1",
+        "mean_base_user_time": 2.8290584583333334,
+        "min_base_user_time": 2.773824,
+        "min_base_dir": "20251112_035913_REL_7667343_290",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A, B) = fn_0(fn_1(B, A), meet(B, A))",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A) = converse(complement(A))",
+            "fn_6(A) = meet(A, sk1)",
+            "fn_7(A, B) = meet(B, converse(A))",
+            "fn_8(A, B, C) = join(C, composition(B, A))",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 35.545653,
+        "hints_time_sys": 0.6605829999999999,
+        "hints_time": 36.206236000000004
+    },
+    {
+        "problem": "REL037-2",
+        "mean_base_user_time": 43.75023075000001,
+        "min_base_user_time": 42.885493,
+        "min_base_dir": "20251112_041724_REL_7667386_332",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(B, complement(A))",
+            "fn_2(A, B, C) = join(C, composition(B, A))",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_6(A) = meet(one, A)",
+            "fn_7(A) = composition(A, top)",
+            "fn_8(A, B, C) = fn_2(C, B, complement(A))",
+            "fn_9(A, B) = fn_0(B, complement(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 58.945302,
+        "hints_time_sys": 1.2282,
+        "hints_time": 60.173502
+    },
+    {
+        "problem": "REL038-1",
+        "mean_base_user_time": 197.56352195833335,
+        "min_base_user_time": 166.712693,
+        "min_base_dir": "20251112_041921_REL_7667390_336",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, meet(B, A))",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B) = composition(converse(A), B)",
+            "fn_6(A, B, C) = meet(C, join(B, A))",
+            "fn_7(A, B, C, D) = B(C, A(C, D))",
+            "fn_8(A, B) = meet(B, complement(A))",
+            "fn_9(A) = fn_0(A, zero)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 151.124572,
+        "hints_time_sys": 2.353624,
+        "hints_time": 153.478196
+    },
+    {
+        "problem": "REL039-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL040-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL040-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "REL040-3",
+        "mean_base_user_time": 407.2149870454546,
+        "min_base_user_time": 371.55681000000004,
+        "min_base_dir": "20251112_041700_REL_7667384_330",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = composition(converse(A), B)",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B, C, D) = D(composition(B, C), composition(B, A))",
+            "fn_5(A) = converse(complement(converse(A)))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A) = composition(A, top)",
+            "fn_8(A, B) = join(complement(A), B)",
+            "fn_9(A, B, C) = meet(C, fn_1(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 1.0: join(Y, complement(X))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "REL041-1",
+        "mean_base_user_time": 4.729556875,
+        "min_base_user_time": 4.683128,
+        "min_base_dir": "20251112_040518_REL_7667357_304",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = composition(converse(A), B)",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3(A) = converse(complement(A))",
+            "fn_4(A, B) = fn_0(fn_2(B, A), meet(B, A))",
+            "fn_5 = fn_1(sk1, sk1)",
+            "fn_6(A, B, C) = join(B(C), B(A))",
+            "fn_7(A, B) = converse(meet(B, A))",
+            "fn_8(A, B) = fn_0(B, complement(A))",
+            "fn_9(A, B, C, D) = B(C, A(C, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.879513,
+        "hints_time_sys": 0.138979,
+        "hints_time": 5.018492
+    },
+    {
+        "problem": "REL041-2",
+        "mean_base_user_time": 0.6736920416666665,
+        "min_base_user_time": 0.616055,
+        "min_base_dir": "20251112_040518_REL_7667357_304",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(composition(sk1, B), composition(sk1, complement(A)))",
+            "fn_2(A, B) = composition(converse(A), B)",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A) = join(A, top)",
+            "fn_5(A) = fn_2(sk1, composition(sk1, A))",
+            "fn_6(A, B, C) = fn_3(composition(C, A), composition(B, A))",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A) = join(zero, A)",
+            "fn_9(A, B) = join(B(A), B(complement(A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.623763,
+        "hints_time_sys": 0.045548,
+        "hints_time": 0.669311
+    },
+    {
+        "problem": "REL042-1",
+        "mean_base_user_time": 1.4609145833333332,
+        "min_base_user_time": 1.433659,
+        "min_base_dir": "20251112_041232_REL_7667372_318",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = composition(converse(A), B)",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3(A) = composition(sk1, A)",
+            "fn_4(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_5(A) = converse(complement(A))",
+            "fn_6(A, B, C) = join(B(C), B(A))",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A) = fn_0(A, zero)",
+            "fn_9(A, B, C) = fn_1(C(composition(A, top), B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.667477,
+        "hints_time_sys": 0.041353,
+        "hints_time": 0.70883
+    },
+    {
+        "problem": "REL042-2",
+        "mean_base_user_time": 0.32003525,
+        "min_base_user_time": 0.304875,
+        "min_base_dir": "20251112_040251_REL_7667351_298",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = converse(complement(A))",
+            "fn_2(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B) = composition(converse(A), B)",
+            "fn_5(A, B) = join(complement(A), B)",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A, B) = fn_4(B, complement(composition(B, A)))",
+            "fn_8 = complement(one)",
+            "fn_9(A, B) = fn_3(composition(B, top), composition(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.445708,
+        "hints_time_sys": 0.026758999999999998,
+        "hints_time": 0.47246699999999997
+    },
+    {
+        "problem": "REL043-1",
+        "mean_base_user_time": 24.26490329166667,
+        "min_base_user_time": 23.80779,
+        "min_base_dir": "20251112_040852_REL_7667365_312",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1 = composition(sk1, converse(sk2))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = join(complement(A), B)",
+            "fn_4(A, B) = fn_0(fn_3(B, A), meet(B, A))",
+            "fn_5(A, B) = composition(B, converse(A))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_8(A, B) = composition(converse(A), B)",
+            "fn_9(A, B) = converse(join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.668955,
+        "hints_time_sys": 0.14387,
+        "hints_time": 4.812825
+    },
+    {
+        "problem": "REL043-2",
+        "mean_base_user_time": 0.7266021666666668,
+        "min_base_user_time": 0.712323,
+        "min_base_dir": "20251112_041523_REL_7667378_324",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(composition(A, B), complement(composition(A, top)))",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3 = composition(complement(sk3), sk2)",
+            "fn_4(A, B) = meet(B, complement(A))",
+            "fn_5(A, B) = composition(converse(B), complement(composition(B, A)))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A) = composition(A, converse(sk2))",
+            "fn_8(A) = join(zero, A)",
+            "fn_9(A, B, C) = meet(C, meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.11823499999999999,
+        "hints_time_sys": 0.012924,
+        "hints_time": 0.131159
+    },
+    {
+        "problem": "REL044-1",
+        "mean_base_user_time": 23.63652795833333,
+        "min_base_user_time": 23.132858000000002,
+        "min_base_dir": "20251112_040209_REL_7667347_294",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = join(complement(A), B)",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_4 = composition(complement(sk1), sk2)",
+            "fn_5(A, B) = composition(B, converse(A))",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A, B, C) = join(meet(C, B), meet(C, A))",
+            "fn_8(A, B, C, D, E) = E(D(A, B), C(B, A))",
+            "fn_9(A, B) = composition(converse(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.6891739999999995,
+        "hints_time_sys": 0.142808,
+        "hints_time": 4.831981999999999
+    },
+    {
+        "problem": "REL044-2",
+        "mean_base_user_time": 0.8778339166666668,
+        "min_base_user_time": 0.828606,
+        "min_base_dir": "20251112_040731_REL_7667363_310",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(meet(C, A), meet(B, A))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A, B) = composition(converse(B), complement(A))",
+            "fn_5(A, B) = join(complement(A), B)",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7 = composition(complement(sk1), sk2)",
+            "fn_8 = composition(sk2, converse(sk3))",
+            "fn_9 = converse(zero)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.359415,
+        "hints_time_sys": 0.12007199999999998,
+        "hints_time": 3.4794869999999998
+    },
+    {
+        "problem": "REL045-1",
+        "mean_base_user_time": 64.25726458333337,
+        "min_base_user_time": 60.3978,
+        "min_base_dir": "20251112_040209_REL_7667347_294",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B, C) = join(C, composition(B, A))",
+            "fn_2(A) = converse(complement(A))",
+            "fn_3(A, B) = composition(B, converse(A))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B, C) = fn_1(C, B, complement(A))",
+            "fn_6(A, B, C) = fn_0(C(B, A), meet(B, A))",
+            "fn_7(A, B) = fn_0(B, complement(A))",
+            "fn_8(A) = fn_3(A, complement(A))",
+            "fn_9(A, B) = fn_5(B, complement(composition(B, A)), converse(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 16.580874,
+        "hints_time_sys": 0.339315,
+        "hints_time": 16.920189
+    },
+    {
+        "problem": "REL045-2",
+        "mean_base_user_time": 2.8036454583333335,
+        "min_base_user_time": 2.777486,
+        "min_base_dir": "20251112_041759_REL_7667388_334",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = meet(composition(A, B), complement(composition(A, top)))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B) = composition(converse(A), B)",
+            "fn_4(A, B) = fn_0(B, complement(A))",
+            "fn_5(A, B) = fn_3(B, complement(composition(B, A)))",
+            "fn_6(A) = composition(A, fn_3(A, A))",
+            "fn_7(A, B, C, D) = D(composition(B, C), composition(B, A))",
+            "fn_8(A) = fn_0(A, zero)",
+            "fn_9(A, B) = join(complement(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.037942,
+        "hints_time_sys": 0.122899,
+        "hints_time": 3.160841
+    },
+    {
+        "problem": "REL047-1",
+        "mean_base_user_time": 2.963473458333333,
+        "min_base_user_time": 2.915198,
+        "min_base_dir": "20251112_040705_REL_7667361_308",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = fn_0(join(complement(B), A), meet(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B) = fn_0(B, complement(A))",
+            "fn_4(A, B) = join(complement(A), B)",
+            "fn_5(A, B, C, D) = B(C, A(C, D))",
+            "fn_6(A, B, C) = meet(C, join(B, A))",
+            "fn_7(A, B, C, D, E) = E(D(A, B), C(B, A))",
+            "fn_8(A, B, C) = fn_2(B, C, meet(C, A))",
+            "fn_9(A) = join(A, top)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.939888,
+        "hints_time_sys": 0.086228,
+        "hints_time": 2.026116
+    },
+    {
+        "problem": "REL049-1",
+        "mean_base_user_time": 0.006840124999999986,
+        "min_base_user_time": 0.0034330000000000194,
+        "min_base_dir": "20251112_041318_REL_7667376_322",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, join(B, A))",
+            "fn_1(A) = join(sk1, A)",
+            "fn_2 = fn_0(sk3)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004489,
+        "hints_time_sys": 0.007165000000000001,
+        "hints_time": 0.011654000000000001
+    },
+    {
+        "problem": "REL050-1",
+        "mean_base_user_time": 0.9238402916666665,
+        "min_base_user_time": 0.908566,
+        "min_base_dir": "20251112_040116_REL_7667345_292",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A) = converse(complement(A))",
+            "fn_2(A, B) = join(complement(A), B)",
+            "fn_3(A) = composition(A, top)",
+            "fn_4(A, B) = composition(B, converse(A))",
+            "fn_5(A, B) = composition(converse(A), B)",
+            "fn_6(A) = fn_0(A, zero)",
+            "fn_7(A, B) = B(A, complement(A))",
+            "fn_8(A) = complement(converse(A))",
+            "fn_9(A, B) = fn_0(fn_2(B, A), meet(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.297685,
+        "hints_time_sys": 0.023582,
+        "hints_time": 0.32126699999999997
+    },
+    {
+        "problem": "REL050-3",
+        "mean_base_user_time": 0.41482187499999995,
+        "min_base_user_time": 0.39871199999999996,
+        "min_base_dir": "20251112_041318_REL_7667376_322",
+        "abstractions": [
+            "fn_0(A, B) = join(B, complement(A))",
+            "fn_1(A, B) = composition(converse(B), complement(composition(B, A)))",
+            "fn_2(A) = composition(A, top)",
+            "fn_3(A, B) = meet(B, complement(A))",
+            "fn_4(A) = join(zero, A)",
+            "fn_5(A, B) = join(complement(A), B)",
+            "fn_6(A, B) = fn_0(B, complement(A))",
+            "fn_7(A) = join(A, top)",
+            "fn_8(A, B) = join(converse(B), converse(A))",
+            "fn_9 = converse(top)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(B, complement(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.141766,
+        "hints_time_sys": 0.047499,
+        "hints_time": 1.189265
+    }
+]

@@ -1,0 +1,42 @@
+%--------------------------------------------------------------------------
+% File     : COL002-1 : TPTP v9.2.1. Released v1.0.0.
+% Domain   : Combinatory Logic
+% Problem  : Weak fixed point for S, B, C, and I
+% Version  : [WM88] (equality) axioms.
+% English  : The weak fixed point property holds for the set P consisting
+%            of the combinators S, B, C, and I, where ((Sx)y)z = (xz)(yz),
+%            ((Bx)y)z = x(yz), ((Cx)y)z = (xz)y, and Ix = x.
+
+% Refs     : [WM88]  Wos & McCune (1988), Challenge Problems Focusing on Eq
+% Source   : [WM88]
+% Names    : C1.1 [WM88]
+
+% Status   : Unsatisfiable
+% Rating   : 0.13 v9.1.0, 0.18 v8.2.0, 0.25 v7.4.0, 0.35 v7.3.0, 0.26 v7.1.0, 0.17 v7.0.0, 0.16 v6.4.0, 0.21 v6.3.0, 0.18 v6.2.0, 0.14 v6.1.0, 0.06 v6.0.0, 0.14 v5.5.0, 0.11 v5.4.0, 0.07 v5.3.0, 0.08 v5.2.0, 0.07 v5.1.0, 0.20 v5.0.0, 0.21 v4.1.0, 0.27 v4.0.1, 0.21 v4.0.0, 0.23 v3.7.0, 0.11 v3.4.0, 0.12 v3.3.0, 0.00 v2.1.0, 0.13 v2.0.0
+% Syntax   : Number of clauses     :    5 (   5 unt;   0 nHn;   1 RR)
+%            Number of literals    :    5 (   5 equ;   1 neg)
+%            Maximal clause size   :    1 (   1 avg)
+%            Maximal term depth    :    4 (   2 avg)
+%            Number of predicates  :    1 (   0 usr;   0 prp; 2-2 aty)
+%            Number of functors    :    6 (   6 usr;   5 con; 0-2 aty)
+%            Number of variables   :   11 (   0 sgn)
+% SPC      : CNF_UNS_RFO_PEQ_UEQ
+
+% Comments :
+%--------------------------------------------------------------------------
+cnf(s_definition,axiom,
+    apply(apply(apply(s,X),Y),Z) = apply(apply(X,Z),apply(Y,Z)) ).
+
+cnf(b_definition,axiom,
+    apply(apply(apply(b,X),Y),Z) = apply(X,apply(Y,Z)) ).
+
+cnf(c_definition,axiom,
+    apply(apply(apply(c,X),Y),Z) = apply(apply(X,Z),Y) ).
+
+cnf(i_definition,axiom,
+    apply(i,X) = X ).
+
+cnf(prove_fixed_point,negated_conjecture,
+    Y != apply(fixed_pt,Y) ).
+
+%--------------------------------------------------------------------------

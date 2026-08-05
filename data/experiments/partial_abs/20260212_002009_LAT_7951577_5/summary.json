@@ -1,0 +1,1661 @@
+[
+    {
+        "problem": "LAT005-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.06142
+    },
+    {
+        "problem": "LAT006-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.170392
+    },
+    {
+        "problem": "LAT007-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.017099
+    },
+    {
+        "problem": "LAT008-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004997
+    },
+    {
+        "problem": "LAT009-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.411476
+    },
+    {
+        "problem": "LAT010-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.146947
+    },
+    {
+        "problem": "LAT011-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11166
+    },
+    {
+        "problem": "LAT012-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02282
+    },
+    {
+        "problem": "LAT013-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.237291
+    },
+    {
+        "problem": "LAT014-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002964
+    },
+    {
+        "problem": "LAT017-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B) = meet(complement(A), join(A, B))",
+            "fn_4(A, B) = meet(complement(A), join(B, meet(complement(A), join(A, complement(B)))))",
+            "fn_5(A, B, C) = meet(join(B, A), join(B, meet(A, join(B, complement(C)))))",
+            "fn_6(A, B, C) = meet(join(B, A), C)",
+            "fn_7(A, B) = meet(join(B, A), join(B, B))",
+            "fn_8(A, B, C) = meet(A, join(complement(A), meet(B, join(complement(C), complement(join(complement(A), B))))))",
+            "fn_15(A, B, C) = join(meet(B, C), meet(B, A))",
+            "fn_16(A, B) = meet(complement(B), join(B, meet(A, join(B, complement(join(B, A))))))",
+            "fn_17(A, B, C, D, E) = join(D, meet(join(E, join(A, complement(D))), join(B, join(C, complement(D)))))",
+            "fn_19(A, B) = meet(A, join(complement(A), B))"
+        ],
+        "final_hints": [
+            "join(meet(A, B), meet(A, C))",
+            "meet(join(A, B), C)",
+            "meet(A, join(complement(A), B))",
+            "meet(complement(A), join(A, meet(B, join(A, complement(join(A, B))))))",
+            "meet(complement(A), join(A, B))",
+            "meet(A, join(B, C))",
+            "meet(join(A, B), join(A, A))",
+            "join(A, join(B, C))",
+            "meet(join(A, B), join(A, meet(B, join(A, complement(C)))))",
+            "meet(complement(A), join(B, meet(complement(A), join(A, complement(B)))))",
+            "join(A, meet(join(B, join(C, complement(A))), join(D, join(E, complement(A)))))",
+            "meet(A, join(complement(A), meet(B, join(complement(C), complement(join(complement(A), B))))))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT018-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B) = meet(complement(A), join(A, B))",
+            "fn_4(A, B) = meet(complement(A), join(B, meet(complement(A), join(A, complement(B)))))",
+            "fn_5(A, B, C) = meet(join(B, A), join(B, meet(A, join(B, complement(C)))))",
+            "fn_6(A, B, C) = meet(join(B, A), C)",
+            "fn_7(A, B) = meet(join(B, A), join(B, B))",
+            "fn_8(A, B, C) = meet(A, join(complement(A), meet(B, join(complement(C), complement(join(complement(A), B))))))",
+            "fn_15(A, B, C) = join(meet(B, C), meet(B, A))",
+            "fn_16(A, B) = meet(complement(B), join(B, meet(A, join(B, complement(join(B, A))))))",
+            "fn_17(A, B, C, D, E) = join(D, meet(join(E, join(A, complement(D))), join(B, join(C, complement(D)))))",
+            "fn_19(A, B) = meet(A, join(complement(A), B))"
+        ],
+        "final_hints": [
+            "join(meet(A, B), meet(A, C))",
+            "meet(join(A, B), C)",
+            "meet(A, join(complement(A), B))",
+            "meet(complement(A), join(A, meet(B, join(A, complement(join(A, B))))))",
+            "meet(complement(A), join(A, B))",
+            "meet(A, join(B, C))",
+            "meet(join(A, B), join(A, A))",
+            "join(A, join(B, C))",
+            "meet(join(A, B), join(A, meet(B, join(A, complement(C)))))",
+            "meet(complement(A), join(B, meet(complement(A), join(A, complement(B)))))",
+            "join(A, meet(join(B, join(C, complement(A))), join(D, join(E, complement(A)))))",
+            "meet(A, join(complement(A), meet(B, join(complement(C), complement(join(complement(A), B))))))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT019-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.124473
+    },
+    {
+        "problem": "LAT020-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.063157
+    },
+    {
+        "problem": "LAT021-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.055231999999999996
+    },
+    {
+        "problem": "LAT022-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.38497699999999996
+    },
+    {
+        "problem": "LAT023-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09603199999999999
+    },
+    {
+        "problem": "LAT026-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.23673
+    },
+    {
+        "problem": "LAT027-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.073153
+    },
+    {
+        "problem": "LAT028-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016047
+    },
+    {
+        "problem": "LAT031-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.027954
+    },
+    {
+        "problem": "LAT032-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029720999999999997
+    },
+    {
+        "problem": "LAT033-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.000982
+    },
+    {
+        "problem": "LAT034-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00586
+    },
+    {
+        "problem": "LAT038-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.511958
+    },
+    {
+        "problem": "LAT039-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008974
+    },
+    {
+        "problem": "LAT039-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009923999999999999
+    },
+    {
+        "problem": "LAT040-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.021292
+    },
+    {
+        "problem": "LAT042-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.042308
+    },
+    {
+        "problem": "LAT043-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.13264199999999998
+    },
+    {
+        "problem": "LAT044-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 30.304446
+    },
+    {
+        "problem": "LAT045-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016493999999999998
+    },
+    {
+        "problem": "LAT065-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 45.548546
+    },
+    {
+        "problem": "LAT070-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.407461
+    },
+    {
+        "problem": "LAT072-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 12.984081
+    },
+    {
+        "problem": "LAT074-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 31.028652
+    },
+    {
+        "problem": "LAT075-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = f(f(B, C), f(B, A))",
+            "fn_1(A, B, C) = f(C, f(B, A))",
+            "fn_2(A, B) = f(f(B, A), f(B, A))",
+            "fn_3(A, B) = f(A, f(A, B))",
+            "fn_5(A, B, C) = f(f(B, A), f(C, A))",
+            "fn_6(A) = f(A, f(A, A))",
+            "fn_7(A, B) = f(A, f(B, f(A, f(B, f(A, f(B, A))))))",
+            "fn_8(A, B, C) = f(f(B, f(B, A)), f(B, f(C, f(B, f(C, f(B, A))))))",
+            "fn_9(A, B) = f(f(A, f(B, A)), f(A, f(B, f(B, B))))",
+            "fn_10(A) = f(A, A)",
+            "fn_14(A, B) = f(f(f(A, f(A, A)), f(f(A, f(A, A)), f(B, B))), f(f(A, f(A, A)), f(f(A, f(A, A)), f(B, B))))",
+            "fn_15(A, B, C) = f(C, f(A, f(B, C)))",
+            "fn_16(A, B) = f(A, f(B, A))",
+            "fn_18(A, B, C) = f(f(B, A), C)"
+        ],
+        "final_hints": [
+            "f(f(A, B), f(A, C))",
+            "f(f(f(A, f(A, A)), f(f(A, f(A, A)), f(B, B))), f(f(A, f(A, A)), f(f(A, f(A, A)), f(B, B))))",
+            "f(A, f(A, A))",
+            "f(f(A, B), C)",
+            "f(f(A, f(B, A)), f(A, f(B, f(B, B))))",
+            "f(A, f(B, A))",
+            "f(f(A, B), f(C, B))",
+            "f(f(A, B), f(A, B))",
+            "f(A, f(B, C))",
+            "f(A, f(B, f(A, f(B, f(A, f(B, A))))))",
+            "f(A, A)",
+            "f(f(A, f(A, B)), f(A, f(C, f(A, f(C, f(A, B))))))",
+            "f(A, f(B, f(C, A)))",
+            "f(A, f(A, B))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT076-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.9482629999999999
+    },
+    {
+        "problem": "LAT077-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = f(B, f(A, A))",
+            "fn_1(A, B, C) = f(C, f(B, A))",
+            "fn_2(A, B, C) = f(f(B, A), f(B, C))",
+            "fn_3(A) = f(A, f(A, A))",
+            "fn_7(A, B, C) = f(f(B, A), C)",
+            "fn_8(A, B) = f(A, f(A, B))",
+            "fn_9(A, B) = f(A, f(B, A))",
+            "fn_12(A, B) = f(f(B, A), f(B, A))",
+            "fn_14(A, B, C) = f(f(f(A, B), f(A, f(A, A))), f(C, f(C, f(A, B))))",
+            "fn_16(A, B) = f(f(A, B), f(A, f(B, f(A, B))))"
+        ],
+        "final_hints": [
+            "f(f(A, B), f(A, C))",
+            "f(f(A, B), C)",
+            "f(A, f(A, A))",
+            "f(f(A, B), f(A, f(B, f(A, B))))",
+            "f(A, f(B, A))",
+            "f(A, f(B, C))",
+            "f(A, f(B, B))",
+            "f(f(A, B), f(A, B))",
+            "f(f(f(A, B), f(A, f(A, A))), f(C, f(C, f(A, B))))",
+            "f(A, f(A, B))"
+        ],
+        "status": "success",
+        "hint_time_user": 259.227525
+    },
+    {
+        "problem": "LAT078-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.11954
+    },
+    {
+        "problem": "LAT079-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = f(A, A)",
+            "fn_1(A, B, C) = f(C, f(B, A))",
+            "fn_2(A, B) = f(B, f(A, A))",
+            "fn_3(A, B) = f(A, f(A, B))",
+            "fn_4(A, B, C) = f(f(A, f(A, A)), f(B, C))",
+            "fn_5(A, B) = f(f(B, A), f(B, A))",
+            "fn_6(A, B, C) = f(f(B, A), C)",
+            "fn_9(A, B, C) = f(f(f(C, B), f(C, B)), f(B, f(B, A)))",
+            "fn_12(A, B, C, D) = f(f(f(D, B), f(C, f(C, B))), A)",
+            "fn_17(A, B, C) = f(f(f(f(B, A), f(B, A)), A), f(C, B))"
+        ],
+        "final_hints": [
+            "f(f(A, B), C)",
+            "f(f(f(A, B), f(A, B)), f(B, f(B, C)))",
+            "f(f(f(A, B), f(C, f(C, B))), D)",
+            "f(f(f(f(A, B), f(A, B)), B), f(C, A))",
+            "f(f(A, f(A, A)), f(B, C))",
+            "f(A, f(B, B))",
+            "f(A, f(B, C))",
+            "f(A, A)",
+            "f(f(A, B), f(A, B))",
+            "f(A, f(A, B))"
+        ],
+        "status": "success",
+        "hint_time_user": 136.876067
+    },
+    {
+        "problem": "LAT080-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.217462
+    },
+    {
+        "problem": "LAT081-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.6033749999999998
+    },
+    {
+        "problem": "LAT082-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.337897
+    },
+    {
+        "problem": "LAT083-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.205845
+    },
+    {
+        "problem": "LAT084-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.828938
+    },
+    {
+        "problem": "LAT085-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.682556
+    },
+    {
+        "problem": "LAT086-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.323791
+    },
+    {
+        "problem": "LAT087-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.322297
+    },
+    {
+        "problem": "LAT088-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0029189999999999997
+    },
+    {
+        "problem": "LAT089-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016802
+    },
+    {
+        "problem": "LAT090-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007123999999999999
+    },
+    {
+        "problem": "LAT091-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.030323
+    },
+    {
+        "problem": "LAT092-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.90198
+    },
+    {
+        "problem": "LAT093-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.140095
+    },
+    {
+        "problem": "LAT094-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.010755
+    },
+    {
+        "problem": "LAT095-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.1421609999999998
+    },
+    {
+        "problem": "LAT096-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.078994
+    },
+    {
+        "problem": "LAT097-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.035674
+    },
+    {
+        "problem": "LAT138-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, meet(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), C)",
+            "fn_14(A, B, C) = meet(join(B, A), C)",
+            "fn_15(A, B) = join(join(B, A), join(B, A))"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "join(join(A, B), join(A, B))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT139-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), meet(A, C))",
+            "fn_5(A, B, C) = join(meet(B, A), C)",
+            "fn_6(A, B, C, D, E, F) = meet(join(D, join(E, meet(F, meet(A, B)))), join(meet(F, meet(A, B)), meet(F, C)))",
+            "fn_18(A, B) = join(join(B, A), join(B, A))"
+        ],
+        "final_hints": [
+            "join(join(A, B), join(A, B))",
+            "join(meet(A, B), meet(B, C))",
+            "meet(join(A, join(B, meet(C, meet(D, E)))), join(meet(C, meet(D, E)), meet(C, F)))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 294.29834500000004
+    },
+    {
+        "problem": "LAT140-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = join(meet(B, A), meet(B, C))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), meet(A, C))",
+            "fn_5(A, B, C) = meet(join(B, A), C)",
+            "fn_6(A, B, C, D, E, F) = meet(join(D, join(E, meet(F, meet(C, B)))), join(meet(F, meet(C, B)), meet(F, A)))",
+            "fn_7(A, B, C) = join(meet(B, A), meet(C, B))",
+            "fn_8(A, B, C) = join(meet(B, A), meet(C, A))",
+            "fn_10(A, B, C) = join(C, join(B, A))"
+        ],
+        "final_hints": [
+            "join(meet(A, B), meet(A, C))",
+            "meet(join(A, B), C)",
+            "join(meet(A, B), meet(C, B))",
+            "join(meet(A, B), meet(B, C))",
+            "join(meet(A, B), meet(C, A))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "meet(join(A, join(B, meet(C, meet(D, E)))), join(meet(C, meet(D, E)), meet(C, F)))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 239.22598100000002
+    },
+    {
+        "problem": "LAT141-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = join(meet(B, A), meet(B, C))",
+            "fn_2(A, B, C) = join(meet(B, A), meet(A, C))",
+            "fn_4(A, B, C) = meet(join(B, A), C)",
+            "fn_5(A, B, C, D, E, F) = meet(join(D, join(E, meet(F, C))), join(meet(F, C), meet(F, meet(B, A))))",
+            "fn_6(A, B, C) = meet(C, meet(B, A))",
+            "fn_7(A, B, C) = join(meet(B, A), meet(C, B))",
+            "fn_8(A, B, C) = join(meet(B, A), meet(C, A))",
+            "fn_10(A, B, C) = join(C, join(B, A))"
+        ],
+        "final_hints": [
+            "join(meet(A, B), meet(A, C))",
+            "meet(join(A, B), C)",
+            "join(meet(A, B), meet(C, B))",
+            "join(meet(A, B), meet(B, C))",
+            "join(meet(A, B), meet(C, A))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "meet(join(A, join(B, meet(C, D))), join(meet(C, D), meet(C, meet(E, F))))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT142-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 17.824243
+    },
+    {
+        "problem": "LAT143-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.031714
+    },
+    {
+        "problem": "LAT144-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), meet(A, C))",
+            "fn_5(A, B, C) = join(meet(B, A), meet(B, C))",
+            "fn_7(A, B, C) = join(meet(B, A), C)",
+            "fn_12(A, B, C) = join(meet(B, C), meet(C, join(A, meet(B, C))))",
+            "fn_16(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "join(meet(A, B), meet(A, C))",
+            "meet(join(A, B), C)",
+            "join(meet(A, B), meet(B, C))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), meet(B, join(C, meet(A, B))))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 427.13025899999997
+    },
+    {
+        "problem": "LAT145-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), meet(A, C))",
+            "fn_9(A, B, C) = join(meet(B, A), C)",
+            "fn_12(A, B, C) = join(meet(B, C), meet(C, join(A, meet(B, C))))",
+            "fn_15(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "join(meet(A, B), meet(B, C))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), meet(B, join(C, meet(A, B))))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT146-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, meet(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), C)",
+            "fn_16(A, B) = join(join(B, A), join(B, A))",
+            "fn_18(A, B, C) = meet(B, join(A, meet(B, C)))",
+            "fn_19(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "join(join(A, B), join(A, B))",
+            "meet(A, join(B, meet(A, C)))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 610.2990540000001
+    },
+    {
+        "problem": "LAT147-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 6.6963799999999996
+    },
+    {
+        "problem": "LAT148-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, meet(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = join(C, meet(B, A))",
+            "fn_3(A, B, C) = join(meet(B, A), C)",
+            "fn_16(A, B) = join(join(B, A), join(B, A))",
+            "fn_18(A, B, C) = meet(B, join(A, meet(B, C)))",
+            "fn_19(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "join(join(A, B), join(A, B))",
+            "meet(A, join(B, meet(A, C)))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 2.297294000000001
+    },
+    {
+        "problem": "LAT149-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, join(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_4(A, B, C) = join(meet(B, A), C)",
+            "fn_8(A, B, C) = meet(join(join(B, A), C), join(join(B, A), join(B, A)))",
+            "fn_13(A, B, C, D) = join(meet(C, meet(D, B)), A)",
+            "fn_17(A, B, C) = meet(join(B, A), join(B, C))"
+        ],
+        "final_hints": [
+            "meet(join(A, B), join(A, C))",
+            "join(meet(A, meet(B, C)), D)",
+            "meet(A, join(B, C))",
+            "join(A, join(B, C))",
+            "meet(join(join(A, B), C), join(join(A, B), join(A, B)))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 300.575363
+    },
+    {
+        "problem": "LAT150-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 16.821455999999998
+    },
+    {
+        "problem": "LAT151-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 6.953656
+    },
+    {
+        "problem": "LAT152-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_6(A, B, C) = meet(join(B, A), C)",
+            "fn_11(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_12(A, B, C) = join(meet(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "meet(join(A, B), join(B, C))",
+            "meet(A, join(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 600.5622850000001
+    },
+    {
+        "problem": "LAT153-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_5(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_7(A, B, C) = meet(join(B, A), C)",
+            "fn_12(A, B, C) = join(meet(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "meet(join(A, B), join(B, C))",
+            "meet(A, join(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 147.39792599999998
+    },
+    {
+        "problem": "LAT154-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_4(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_11(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), join(B, C))",
+            "meet(join(A, B), C)",
+            "meet(A, join(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 8.088551000000002
+    },
+    {
+        "problem": "LAT155-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 30.920847000000002
+    },
+    {
+        "problem": "LAT156-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_3(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_6(A, B, C) = join(meet(B, A), C)",
+            "fn_9(A, B, C) = join(meet(C, B), meet(B, A))"
+        ],
+        "final_hints": [
+            "join(meet(A, B), meet(B, C))",
+            "meet(join(A, B), join(B, C))",
+            "meet(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 77.04962599999999
+    },
+    {
+        "problem": "LAT157-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 31.551382999999998
+    },
+    {
+        "problem": "LAT158-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 7.058482
+    },
+    {
+        "problem": "LAT159-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 19.794600000000003
+    },
+    {
+        "problem": "LAT160-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.0674129999999997
+    },
+    {
+        "problem": "LAT161-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, join(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C) = meet(join(B, A), C)",
+            "fn_15(A, B) = meet(meet(B, A), meet(B, A))",
+            "fn_18(A, B, C) = join(meet(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "meet(A, join(B, C))",
+            "meet(meet(A, B), meet(A, B))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT162-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(join(B, C), join(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_3(A, B, C) = join(C, join(B, A))",
+            "fn_4(A, B, C) = meet(join(B, A), join(C, B))",
+            "fn_5(A, B, C) = meet(join(B, A), join(C, A))",
+            "fn_6(A, B, C) = join(meet(B, A), C)",
+            "fn_11(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "meet(join(A, B), join(A, C))",
+            "meet(join(A, B), join(B, C))",
+            "meet(A, join(B, C))",
+            "meet(join(A, B), join(C, A))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(join(A, B), join(C, B))"
+        ],
+        "status": "success",
+        "hint_time_user": 406.12323
+    },
+    {
+        "problem": "LAT163-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 40.594395
+    },
+    {
+        "problem": "LAT164-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_6(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_14(A, B, C) = join(meet(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), join(B, C))",
+            "meet(A, join(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 29.269788
+    },
+    {
+        "problem": "LAT165-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 18.034795
+    },
+    {
+        "problem": "LAT166-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 34.620054
+    },
+    {
+        "problem": "LAT167-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(meet(C, B), meet(B, A))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_3(A, B, C) = join(C, join(B, A))",
+            "fn_6(A, B, C) = join(meet(B, A), C)"
+        ],
+        "final_hints": [
+            "join(meet(A, B), C)",
+            "meet(A, join(B, C))",
+            "join(meet(A, B), meet(B, C))",
+            "join(A, join(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 628.6455430000001
+    },
+    {
+        "problem": "LAT168-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.066045
+    },
+    {
+        "problem": "LAT169-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = meet(join(B, A), join(B, C))",
+            "fn_2(A, B, C) = meet(join(B, A), join(A, C))",
+            "fn_4(A, B, C) = join(meet(B, A), C)",
+            "fn_5(A, B, C, D, E, F) = join(meet(D, meet(E, join(F, C))), meet(join(F, C), join(F, join(B, A))))",
+            "fn_6(A, B, C) = join(C, join(B, A))",
+            "fn_7(A, B, C) = meet(join(B, A), join(C, B))",
+            "fn_8(A, B, C) = meet(join(B, A), join(C, A))",
+            "fn_10(A, B, C) = meet(C, meet(B, A))"
+        ],
+        "final_hints": [
+            "meet(join(A, B), join(A, C))",
+            "meet(join(A, B), join(B, C))",
+            "meet(A, join(B, C))",
+            "join(meet(A, meet(B, join(C, D))), meet(join(C, D), join(C, join(E, F))))",
+            "meet(join(A, B), join(C, A))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(join(A, B), join(C, B))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 238.959095
+    },
+    {
+        "problem": "LAT170-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 30.86573
+    },
+    {
+        "problem": "LAT171-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 9.975641999999999
+    },
+    {
+        "problem": "LAT172-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_4(A, B, C) = meet(join(B, A), join(C, B))",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_12(A, B) = meet(join(A, B), join(A, A))",
+            "fn_17(A, B) = meet(meet(B, A), meet(B, A))"
+        ],
+        "final_hints": [
+            "meet(A, join(B, C))",
+            "meet(join(A, B), join(A, A))",
+            "join(A, meet(B, C))",
+            "meet(join(A, B), join(C, A))",
+            "meet(meet(A, B), meet(A, B))",
+            "join(A, join(B, C))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 75.658026
+    },
+    {
+        "problem": "LAT173-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_6(A, B, C) = join(meet(B, A), meet(A, C))",
+            "fn_14(A, B, C) = meet(join(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "join(meet(A, B), meet(B, C))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 914.791882
+    },
+    {
+        "problem": "LAT174-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_4(A, B, C) = meet(join(B, A), join(C, B))",
+            "fn_5(A, B, C) = join(C, meet(B, A))",
+            "fn_12(A, B) = meet(join(A, B), join(A, A))",
+            "fn_17(A, B) = meet(meet(B, A), meet(B, A))"
+        ],
+        "final_hints": [
+            "meet(A, join(B, C))",
+            "meet(join(A, B), join(A, A))",
+            "join(A, meet(B, C))",
+            "meet(join(A, B), join(C, A))",
+            "meet(meet(A, B), meet(A, B))",
+            "join(A, join(B, C))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 326.055775
+    },
+    {
+        "problem": "LAT175-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_7(A, B, C) = join(C, join(B, A))",
+            "fn_16(A, B) = meet(meet(B, A), meet(B, A))",
+            "fn_19(A, B, C) = join(meet(B, A), C)"
+        ],
+        "final_hints": [
+            "meet(A, join(B, C))",
+            "meet(meet(A, B), meet(A, B))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(meet(A, B), C)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 145.027031
+    },
+    {
+        "problem": "LAT176-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_6(A, B, C) = meet(join(B, A), C)",
+            "fn_11(A, B, C) = join(C, meet(B, A))",
+            "fn_14(A, B, C, D) = join(D, meet(A, meet(B, join(D, C))))"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "meet(A, join(B, C))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(A, meet(B, meet(C, join(A, D))))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 162.06056800000002
+    },
+    {
+        "problem": "LAT177-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B, C) = join(C, join(B, A))",
+            "fn_2(A, B, C) = meet(C, meet(B, A))",
+            "fn_6(A, B, C) = meet(join(B, A), C)",
+            "fn_11(A, B, C) = join(C, meet(B, A))",
+            "fn_14(A, B, C, D) = join(D, meet(A, meet(B, join(D, C))))"
+        ],
+        "final_hints": [
+            "meet(join(A, B), C)",
+            "meet(A, join(B, C))",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "join(A, meet(B, meet(C, join(A, D))))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 393.501016
+    },
+    {
+        "problem": "LAT183-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = meet(join(B, complement(A)), complement(meet(A, join(B, complement(A)))))",
+            "fn_1(A, B, C) = meet(C, meet(B, A))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B) = complement(meet(B, A))",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_5(A, B, C) = ifeq(meet(C, A), zero, B, A)",
+            "fn_7(A, B) = complement(meet(complement(A), join(A, B)))",
+            "fn_8(A, B, C) = ifeq(C, one, ifeq(meet(B, A), zero, complement(B), A), A)",
+            "fn_9(A, B, C) = join(A, meet(complement(meet(A, B)), join(C, meet(A, B))))",
+            "fn_10(A, B) = complement(join(B, A))",
+            "fn_12(A, B, C) = ifeq(C, zero, meet(B, A), A)",
+            "fn_17(A, B) = complement(meet(complement(A), join(B, A)))",
+            "fn_19(A, B, C) = ifeq(C, one, ifeq(meet(complement(B), meet(join(A, complement(complement(B))), complement(meet(complement(B), join(A, complement(complement(B))))))), zero, B, meet(join(A, complement(complement(B))), complement(meet(complement(B), join(A, complement(complement(B))))))), meet(join(A, complement(complement(B))), complement(meet(complement(B), join(A, complement(complement(B)))))))"
+        ],
+        "final_hints": [
+            "complement(join(A, B))",
+            "complement(meet(A, B))",
+            "complement(meet(complement(A), join(B, A)))",
+            "join(A, meet(complement(meet(A, B)), join(C, meet(A, B))))",
+            "ifeq(A, zero, meet(B, C), C)",
+            "meet(join(A, complement(B)), complement(meet(B, join(A, complement(B)))))",
+            "ifeq(meet(A, B), zero, C, B)",
+            "join(A, meet(B, C))",
+            "join(A, join(B, C))",
+            "ifeq(A, one, ifeq(meet(B, C), zero, complement(B), C), C)",
+            "complement(meet(complement(A), join(A, B)))",
+            "ifeq(A, one, ifeq(meet(complement(B), meet(join(C, complement(complement(B))), complement(meet(complement(B), join(C, complement(complement(B))))))), zero, B, meet(join(C, complement(complement(B))), complement(meet(complement(B), join(C, complement(complement(B))))))), meet(join(C, complement(complement(B))), complement(meet(complement(B), join(C, complement(complement(B)))))))",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT186-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 31.672354000000002
+    },
+    {
+        "problem": "LAT190-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 35.174943
+    },
+    {
+        "problem": "LAT206-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 11.556958
+    },
+    {
+        "problem": "LAT222-10.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A, B) = meet(complement(A), join(meet(complement(A), B), meet(A, join(complement(A), B))))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B, C) = meet(C, meet(B, A))",
+            "fn_5(A, B) = complement(join(B, A))",
+            "fn_6(A, B, C, D) = ifeq(meet(B, A), zero, C, D)",
+            "fn_8(A, B, C, D) = ifeq(join(B, A), one, C, D)",
+            "fn_9 = meet(b, complement(a))",
+            "fn_10(A, B) = complement(meet(B, A))",
+            "fn_11(A, B, C) = ifeq(join(complement(join(C, B)), A), one, join(C, B), A)",
+            "fn_12(A, B, C) = ifeq(join(A, complement(join(C, B))), one, join(C, B), A)",
+            "fn_13(A, B, C) = ifeq(C, zero, A, join(B, A))"
+        ],
+        "final_hints": [
+            "complement(join(A, B))",
+            "ifeq(meet(A, B), zero, C, D)",
+            "complement(meet(A, B))",
+            "meet(b, complement(a))",
+            "meet(A, join(B, C))",
+            "ifeq(join(A, B), one, C, D)",
+            "meet(complement(A), join(meet(complement(A), B), meet(A, join(complement(A), B))))",
+            "ifeq(join(complement(join(A, B)), C), one, join(A, B), C)",
+            "ifeq(A, zero, B, join(C, B))",
+            "join(A, join(B, C))",
+            "ifeq(join(A, complement(join(B, C))), one, join(B, C), A)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 9.577913000000002
+    },
+    {
+        "problem": "LAT223-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 44.114116
+    },
+    {
+        "problem": "LAT224-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.237711
+    },
+    {
+        "problem": "LAT229-10.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = meet(C, meet(B, A))",
+            "fn_1(A, B) = meet(complement(A), join(B, meet(A, join(complement(A), meet(B, A)))))",
+            "fn_2(A, B, C) = join(C, join(B, A))",
+            "fn_3(A, B) = complement(join(B, A))",
+            "fn_4(A, B, C) = join(C, meet(B, A))",
+            "fn_5(A, B, C) = ifeq(meet(C, A), zero, B, A)",
+            "fn_6(A, B) = complement(meet(B, A))",
+            "fn_8(A, B, C) = ifeq(A, one, B, C)",
+            "fn_9(A, B, C) = ifeq(join(C, meet(B, A)), one, A, meet(B, A))",
+            "fn_10(A, B, C) = join(complement(meet(A, B)), meet(B, join(C, meet(A, B))))",
+            "fn_11(A, B, C, D) = ifeq(meet(B, A), zero, C, D)",
+            "fn_12(A, B, C) = ifeq(join(A, complement(join(C, B))), one, join(C, B), A)",
+            "fn_13(A, B) = ifeq(meet(A, B), zero, complement(A), B)"
+        ],
+        "final_hints": [
+            "complement(join(A, B))",
+            "ifeq(meet(A, B), zero, complement(A), B)",
+            "complement(meet(A, B))",
+            "ifeq(meet(A, B), zero, C, D)",
+            "ifeq(A, one, B, C)",
+            "ifeq(join(A, meet(B, C)), one, C, meet(B, C))",
+            "ifeq(meet(A, B), zero, C, B)",
+            "join(complement(meet(A, B)), meet(B, join(C, meet(A, B))))",
+            "join(A, meet(B, C))",
+            "meet(complement(A), join(B, meet(A, join(complement(A), meet(B, A)))))",
+            "join(A, join(B, C))",
+            "ifeq(join(A, complement(join(B, C))), one, join(B, C), A)",
+            "meet(A, meet(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 255.558264
+    },
+    {
+        "problem": "LAT230-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 12.207596
+    },
+    {
+        "problem": "LAT241-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.1416179999999998
+    },
+    {
+        "problem": "LAT268-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008099000000000078
+    },
+    {
+        "problem": "LAT389-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = plus(mult(A, C), plus(mult(A, B), mult(A, A)))",
+            "fn_1(A, B, C) = plus(mult(A, C), mult(B, A))",
+            "fn_2(A) = plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "fn_4(A, B, C) = plus(plus(mult(A, C), B), A)",
+            "fn_5(A, B, C) = plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "fn_6(A) = plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "fn_12(A) = plus(A, A)",
+            "fn_16(A, B, C) = plus(plus(mult(A, B), mult(C, A)), A)",
+            "fn_18(A, B, C) = mult(A, plus(C, mult(B, A)))"
+        ],
+        "final_hints": [
+            "plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "plus(plus(mult(A, B), mult(C, A)), A)",
+            "plus(mult(A, B), mult(C, A))",
+            "plus(mult(A, B), plus(mult(A, C), mult(A, A)))",
+            "mult(A, plus(B, mult(C, A)))",
+            "plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "plus(plus(mult(A, B), C), A)",
+            "plus(A, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT390-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = plus(mult(A, C), plus(mult(A, B), mult(A, A)))",
+            "fn_1(A, B, C) = plus(mult(A, C), mult(B, A))",
+            "fn_2(A) = plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "fn_4(A, B, C) = plus(plus(mult(A, C), B), A)",
+            "fn_5(A, B, C) = plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "fn_6(A) = plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "fn_12(A) = plus(A, A)",
+            "fn_16(A, B, C) = plus(plus(mult(A, B), mult(C, A)), A)",
+            "fn_18(A, B, C) = mult(A, plus(C, mult(B, A)))"
+        ],
+        "final_hints": [
+            "plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "plus(plus(mult(A, B), mult(C, A)), A)",
+            "plus(mult(A, B), mult(C, A))",
+            "plus(mult(A, B), plus(mult(A, C), mult(A, A)))",
+            "mult(A, plus(B, mult(C, A)))",
+            "plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "plus(plus(mult(A, B), C), A)",
+            "plus(A, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT391-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = plus(mult(A, C), plus(mult(A, B), mult(A, A)))",
+            "fn_1(A, B, C) = plus(mult(A, C), mult(B, A))",
+            "fn_2(A) = plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "fn_4(A, B, C) = plus(plus(mult(A, C), B), A)",
+            "fn_5(A, B, C) = plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "fn_6(A) = plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "fn_12(A) = plus(A, A)",
+            "fn_16(A, B, C) = plus(plus(mult(A, B), mult(C, A)), A)",
+            "fn_18(A, B, C) = mult(A, plus(C, mult(B, A)))"
+        ],
+        "final_hints": [
+            "plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "plus(plus(mult(A, B), mult(C, A)), A)",
+            "plus(mult(A, B), mult(C, A))",
+            "plus(mult(A, B), plus(mult(A, C), mult(A, A)))",
+            "mult(A, plus(B, mult(C, A)))",
+            "plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "plus(plus(mult(A, B), C), A)",
+            "plus(A, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT392-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = plus(mult(A, C), plus(mult(A, B), mult(A, A)))",
+            "fn_1(A, B, C) = plus(mult(A, C), mult(B, A))",
+            "fn_2(A) = plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "fn_4(A, B, C) = plus(plus(mult(A, C), B), A)",
+            "fn_5(A, B, C) = plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "fn_6(A) = plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "fn_12(A) = plus(A, A)",
+            "fn_16(A, B, C) = plus(plus(mult(A, B), mult(C, A)), A)",
+            "fn_18(A, B, C) = mult(A, plus(C, mult(B, A)))"
+        ],
+        "final_hints": [
+            "plus(plus(mult(A, B), plus(mult(A, C), mult(A, A))), A)",
+            "plus(plus(mult(A, B), mult(C, A)), A)",
+            "plus(mult(A, B), mult(C, A))",
+            "plus(mult(A, B), plus(mult(A, C), mult(A, A)))",
+            "mult(A, plus(B, mult(C, A)))",
+            "plus(plus(mult(A, A), plus(mult(A, A), mult(A, A))), A)",
+            "plus(mult(A, A), plus(mult(A, A), mult(A, A)))",
+            "plus(plus(mult(A, B), C), A)",
+            "plus(A, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT393-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.642973
+    },
+    {
+        "problem": "LAT393-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.4432299999999998
+    },
+    {
+        "problem": "LAT394-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.49333399999999994
+    },
+    {
+        "problem": "LAT394-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08452400000000004
+    },
+    {
+        "problem": "LAT399-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 24.236653
+    },
+    {
+        "problem": "LAT399-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.5571719999999996
+    },
+    {
+        "problem": "LAT400-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A) = meet(A, a)",
+            "fn_3(A, B, C) = lome(meet(A, a), B, C)",
+            "fn_5(A) = join(x2, A)",
+            "fn_6(A) = join(z2, A)",
+            "fn_7(A, B, C) = lome(a, C, meet(B, A))",
+            "fn_8(A, B, C, D) = lome(lome(a, B, A), C, D)",
+            "fn_9(A, B) = meet(B, meet(A, a))",
+            "fn_10(A, B, C) = lome(a, x2, lome(C, B, A))",
+            "fn_11(A) = lome(join(z2, x2), z2, A)",
+            "fn_14(A) = join(y2, A)",
+            "fn_15(A, B, C, D) = lome(join(B, A), C, D)",
+            "fn_16(A, B, C) = join(x2, lome(a, C, meet(A, B)))",
+            "fn_17(A, B) = upme(a, A, B)"
+        ],
+        "final_hints": [
+            "lome(lome(a, A, B), C, D)",
+            "lome(a, x2, lome(A, B, C))",
+            "lome(meet(A, a), B, C)",
+            "lome(a, A, B)",
+            "join(z2, A)",
+            "lome(join(A, B), C, D)",
+            "meet(A, a)",
+            "join(y2, A)",
+            "lome(join(z2, x2), z2, A)",
+            "upme(a, A, B)",
+            "join(x2, A)",
+            "lome(a, A, meet(B, C))",
+            "meet(A, meet(B, a))",
+            "join(x2, lome(a, A, meet(B, C)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT400-2.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A) = meet(A, a)",
+            "fn_2(A, B) = lojo(A, a, B)",
+            "fn_3 = join(z2, x2)",
+            "fn_4(A, B, C, D) = lojo(join(B, A), C, D)",
+            "fn_6(A, B, C, D) = lome(lome(a, B, A), C, D)",
+            "fn_9(A, B) = lome(y2, A, B)",
+            "fn_10(A, B, C) = lojo(C, a, join(B, A))",
+            "fn_11 = meet(x2, a)",
+            "fn_12(A, B, C, D, E) = lome(a, meet(D, upme(E, join(D, B), A)), upjo(C, join(D, B), upme(E, join(D, B), A)))",
+            "fn_14(A, B) = lojo(x2, A, B)",
+            "fn_16(A) = join(A, a)",
+            "fn_18(A, B) = upme(B, x2, A)"
+        ],
+        "final_hints": [
+            "lome(a, meet(A, upme(B, join(A, C), D)), upjo(E, join(A, C), upme(B, join(A, C), D)))",
+            "lome(lome(a, A, B), C, D)",
+            "upme(A, x2, B)",
+            "lome(a, A, B)",
+            "meet(A, a)",
+            "lojo(A, a, B)",
+            "meet(x2, a)",
+            "join(z2, x2)",
+            "lojo(x2, A, B)",
+            "lojo(join(A, B), C, D)",
+            "lome(y2, A, B)",
+            "join(A, a)",
+            "lojo(A, a, join(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT400-3.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A, B, C) = lome(meet(A, a), B, C)",
+            "fn_2(A) = meet(A, a)",
+            "fn_4(A) = join(x2, A)",
+            "fn_5(A) = join(A, x2)",
+            "fn_6(A, B, C, D) = lome(lome(a, B, A), C, D)",
+            "fn_7(A) = join(z2, A)",
+            "fn_9(A) = lome(join(z2, x2), z2, A)",
+            "fn_10(A, B, C) = lome(a, C, meet(B, A))",
+            "fn_11(A, B, C) = lome(a, x2, lome(C, B, A))",
+            "fn_12 = meet(x2, a)",
+            "fn_15 = join(y2, x2)",
+            "fn_19(A, B, C) = join(x2, lome(a, C, meet(A, B)))"
+        ],
+        "final_hints": [
+            "lome(lome(a, A, B), C, D)",
+            "lome(a, x2, lome(A, B, C))",
+            "join(A, x2)",
+            "lome(meet(A, a), B, C)",
+            "lome(a, A, B)",
+            "join(z2, A)",
+            "meet(A, a)",
+            "meet(x2, a)",
+            "join(y2, x2)",
+            "lome(join(z2, x2), z2, A)",
+            "join(x2, A)",
+            "lome(a, A, meet(B, C))",
+            "join(x2, lome(a, A, meet(B, C)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT400-4.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A, B) = lojo(A, a, B)",
+            "fn_2(A) = meet(A, a)",
+            "fn_4(A, B, C) = lome(a, C, meet(B, A))",
+            "fn_5(A) = join(A, x2)",
+            "fn_7(A, B, C) = upme(lome(a, B, A), A, C)",
+            "fn_8(A, B, C) = upjo(meet(A, a), B, C)",
+            "fn_9(A, B, C, D) = upjo(lome(a, B, A), C, D)",
+            "fn_10(A, B, C) = lojo(C, a, join(B, A))",
+            "fn_11(A, B, C, D) = lome(lome(a, B, A), C, D)",
+            "fn_14(A, B) = upme(a, A, B)",
+            "fn_15(A) = meet(a, A)",
+            "fn_16(A, B, C) = lome(a, C, join(B, A))",
+            "fn_17(A, B, C) = lojo(meet(B, a), C, lome(a, B, A))",
+            "fn_18 = join(z2, x2)",
+            "fn_19(A, B) = lojo(B, A, a)"
+        ],
+        "final_hints": [
+            "meet(a, A)",
+            "lome(lome(a, A, B), C, D)",
+            "join(A, x2)",
+            "lome(a, A, B)",
+            "meet(A, a)",
+            "lojo(A, a, B)",
+            "upjo(meet(A, a), B, C)",
+            "upjo(lome(a, A, B), C, D)",
+            "upme(lome(a, A, B), B, C)",
+            "lojo(meet(A, a), B, lome(a, A, C))",
+            "join(z2, x2)",
+            "upme(a, A, B)",
+            "lojo(A, B, a)",
+            "lome(a, A, join(B, C))",
+            "lome(a, A, meet(B, C))",
+            "lojo(A, a, join(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "LAT401-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 35.908395999999996
+    },
+    {
+        "problem": "LAT401-2.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = lome(a, A, B)",
+            "fn_1(A) = meet(A, a)",
+            "fn_2(A, B) = lojo(A, a, B)",
+            "fn_3(A, B, C) = lome(meet(A, a), B, C)",
+            "fn_6(A, B, C) = upjo(A, lome(a, B, lome(x2, z2, y2)), C)",
+            "fn_8(A) = lome(y2, z2, A)",
+            "fn_9(A, B, C, D) = upjo(upme(A, C, B), A, D)",
+            "fn_10(A, B, C, D) = lome(join(B, A), C, D)",
+            "fn_14(A) = meet(a, A)",
+            "fn_15(A) = join(A, a)",
+            "fn_16(A, B, C, D) = lome(lome(a, B, A), C, D)",
+            "fn_17(A, B) = lojo(join(meet(z2, a), B), a, A)",
+            "fn_18(A, B) = join(z2, lome(x2, B, A))"
+        ],
+        "final_hints": [
+            "meet(a, A)",
+            "lojo(join(meet(z2, a), A), a, B)",
+            "upjo(upme(A, B, C), A, D)",
+            "lome(lome(a, A, B), C, D)",
+            "lome(meet(A, a), B, C)",
+            "lome(a, A, B)",
+            "meet(A, a)",
+            "lojo(A, a, B)",
+            "lome(y2, z2, A)",
+            "lome(join(A, B), C, D)",
+            "join(z2, lome(x2, A, B))",
+            "join(A, a)",
+            "upjo(A, lome(a, B, lome(x2, z2, y2)), C)"
+        ],
+        "status": "success",
+        "hint_time_user": 325.478658
+    }
+]

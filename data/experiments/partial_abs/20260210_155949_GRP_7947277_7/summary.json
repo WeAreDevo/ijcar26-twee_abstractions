@@ -1,0 +1,4570 @@
+[
+    {
+        "problem": "GRP001-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0078119999999999995
+    },
+    {
+        "problem": "GRP001-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004868
+    },
+    {
+        "problem": "GRP002-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 25.130094
+    },
+    {
+        "problem": "GRP002-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.037776
+    },
+    {
+        "problem": "GRP002-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.021889
+    },
+    {
+        "problem": "GRP002-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.032444
+    },
+    {
+        "problem": "GRP010-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.000983
+    },
+    {
+        "problem": "GRP011-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00299
+    },
+    {
+        "problem": "GRP012-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0029779999999999997
+    },
+    {
+        "problem": "GRP014-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.161831
+    },
+    {
+        "problem": "GRP022-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002951
+    },
+    {
+        "problem": "GRP023-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0009939999999999999
+    },
+    {
+        "problem": "GRP024-5.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 46.881341
+    },
+    {
+        "problem": "GRP048-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = multiply(multiply(identity, multiply(B, A)), C)",
+            "fn_1(A, B, C, D) = ifeq(D, true, product(C, B, A), true)",
+            "fn_2(A, B, C, D, E) = ifeq(equalish(multiply(identity, A), multiply(multiply(identity, multiply(B, C)), A)), true, product(D, E, multiply(multiply(identity, multiply(B, C)), A)), true)",
+            "fn_3(A, B, C, D) = ifeq(product(C, B, A), true, product(C, B, D), true)",
+            "fn_6 = multiply(inverse2, b)",
+            "fn_7 = multiply(inverse3, a)",
+            "fn_8(A) = multiply(identity, A)",
+            "fn_9(A, B, C) = ifeq(C, true, equalish(B, A), true)",
+            "fn_10(A, B, C) = ifeq(true, true, product(A, B, C), true)",
+            "fn_11(A) = multiply(multiply(A, identity), multiply(A, identity))",
+            "fn_12(A, B) = ifeq(product(multiply(identity, A), B, B), true, equalish(B, multiply(A, B)), true)",
+            "fn_13(A, B) = product(identity, A, B)",
+            "fn_14(A) = ifeq(product(A, b, b), true, product(A, b, a), true)",
+            "fn_18(A, B, C) = ifeq(product(identity, B, A), true, product(A, C, C), true)",
+            "fn_19(A) = multiply(inverse(A), A)"
+        ],
+        "final_hints": [
+            "ifeq(equalish(multiply(identity, A), multiply(multiply(identity, multiply(B, C)), A)), true, product(D, E, multiply(multiply(identity, multiply(B, C)), A)), true)",
+            "ifeq(product(A, B, C), true, product(A, B, D), true)",
+            "ifeq(A, true, product(B, C, D), true)",
+            "ifeq(true, true, product(A, B, C), true)",
+            "multiply(inverse3, a)",
+            "multiply(inverse2, b)",
+            "ifeq(product(multiply(identity, A), B, B), true, equalish(B, multiply(A, B)), true)",
+            "multiply(inverse(A), A)",
+            "multiply(identity, A)",
+            "multiply(multiply(A, identity), multiply(A, identity))",
+            "product(identity, A, B)",
+            "ifeq(product(A, b, b), true, product(A, b, a), true)",
+            "ifeq(product(identity, A, B), true, product(B, C, C), true)",
+            "multiply(multiply(identity, multiply(A, B)), C)",
+            "ifeq(A, true, equalish(B, C), true)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP114-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.10460599999999999
+    },
+    {
+        "problem": "GRP115-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01496
+    },
+    {
+        "problem": "GRP116-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01096
+    },
+    {
+        "problem": "GRP117-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006852
+    },
+    {
+        "problem": "GRP118-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012839
+    },
+    {
+        "problem": "GRP119-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07796199999999999
+    },
+    {
+        "problem": "GRP120-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.154839
+    },
+    {
+        "problem": "GRP121-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04188
+    },
+    {
+        "problem": "GRP122-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.084807
+    },
+    {
+        "problem": "GRP136-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00297
+    },
+    {
+        "problem": "GRP137-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0048519999999999995
+    },
+    {
+        "problem": "GRP138-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006971
+    },
+    {
+        "problem": "GRP139-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007885999999999999
+    },
+    {
+        "problem": "GRP140-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007859999999999999
+    },
+    {
+        "problem": "GRP141-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00983
+    },
+    {
+        "problem": "GRP142-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004952
+    },
+    {
+        "problem": "GRP143-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010997999999999999
+    },
+    {
+        "problem": "GRP144-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005083
+    },
+    {
+        "problem": "GRP145-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006004
+    },
+    {
+        "problem": "GRP146-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008031
+    },
+    {
+        "problem": "GRP147-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007069
+    },
+    {
+        "problem": "GRP148-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0068319999999999995
+    },
+    {
+        "problem": "GRP149-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0069889999999999996
+    },
+    {
+        "problem": "GRP150-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007913
+    },
+    {
+        "problem": "GRP151-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009774999999999999
+    },
+    {
+        "problem": "GRP152-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00498
+    },
+    {
+        "problem": "GRP153-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007951999999999999
+    },
+    {
+        "problem": "GRP154-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010005
+    },
+    {
+        "problem": "GRP155-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015038999999999999
+    },
+    {
+        "problem": "GRP156-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010655999999999999
+    },
+    {
+        "problem": "GRP157-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0077729999999999995
+    },
+    {
+        "problem": "GRP158-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012771
+    },
+    {
+        "problem": "GRP159-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01624
+    },
+    {
+        "problem": "GRP160-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007823
+    },
+    {
+        "problem": "GRP161-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0039049999999999996
+    },
+    {
+        "problem": "GRP162-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013803
+    },
+    {
+        "problem": "GRP163-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011824999999999999
+    },
+    {
+        "problem": "GRP164-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = least_upper_bound(identity, inverse(A))",
+            "fn_1(A, B) = multiply(inverse(least_upper_bound(identity, inverse(A))), least_upper_bound(least_upper_bound(B, identity), least_upper_bound(identity, inverse(A))))",
+            "fn_2(A, B) = greatest_lower_bound(B, inverse(A))",
+            "fn_3(A) = least_upper_bound(identity, A)",
+            "fn_4(A) = least_upper_bound(A, identity)",
+            "fn_5(A) = greatest_lower_bound(A, identity)",
+            "fn_6(A) = least_upper_bound(A, inverse(A))",
+            "fn_7(A) = greatest_lower_bound(identity, A)",
+            "fn_8(A, B) = multiply(greatest_lower_bound(least_upper_bound(A, identity), least_upper_bound(identity, inverse(B))), multiply(inverse(least_upper_bound(identity, inverse(B))), least_upper_bound(least_upper_bound(A, identity), least_upper_bound(identity, inverse(B)))))",
+            "fn_9(A) = greatest_lower_bound(identity, inverse(A))",
+            "fn_11(A, B) = multiply(greatest_lower_bound(A, identity), least_upper_bound(least_upper_bound(B, identity), least_upper_bound(identity, inverse(A))))",
+            "fn_12(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_13(A, B, C) = greatest_lower_bound(least_upper_bound(identity, C), least_upper_bound(identity, inverse(greatest_lower_bound(B, least_upper_bound(identity, A)))))",
+            "fn_14(A, B) = least_upper_bound(inverse(A), B)",
+            "fn_15(A, B) = least_upper_bound(identity, multiply(greatest_lower_bound(B, identity), least_upper_bound(A, identity)))",
+            "fn_16(A) = greatest_lower_bound(A, inverse(A))",
+            "fn_17(A, B) = greatest_lower_bound(least_upper_bound(identity, A), least_upper_bound(identity, least_upper_bound(inverse(B), inverse(least_upper_bound(identity, A)))))",
+            "fn_18(A, B) = greatest_lower_bound(B, least_upper_bound(identity, inverse(A)))",
+            "fn_19(A) = greatest_lower_bound(identity, multiply(A, A))"
+        ],
+        "final_hints": [
+            "multiply(greatest_lower_bound(A, identity), least_upper_bound(least_upper_bound(B, identity), least_upper_bound(identity, inverse(A))))",
+            "greatest_lower_bound(A, inverse(A))",
+            "greatest_lower_bound(identity, multiply(A, A))",
+            "greatest_lower_bound(least_upper_bound(identity, A), least_upper_bound(identity, inverse(greatest_lower_bound(B, least_upper_bound(identity, C)))))",
+            "least_upper_bound(identity, multiply(greatest_lower_bound(A, identity), least_upper_bound(B, identity)))",
+            "least_upper_bound(A, inverse(A))",
+            "least_upper_bound(identity, A)",
+            "multiply(inverse(least_upper_bound(identity, inverse(A))), least_upper_bound(least_upper_bound(B, identity), least_upper_bound(identity, inverse(A))))",
+            "greatest_lower_bound(least_upper_bound(identity, A), least_upper_bound(identity, least_upper_bound(inverse(B), inverse(least_upper_bound(identity, A)))))",
+            "greatest_lower_bound(identity, A)",
+            "greatest_lower_bound(A, least_upper_bound(identity, inverse(B)))",
+            "least_upper_bound(identity, inverse(A))",
+            "greatest_lower_bound(identity, inverse(A))",
+            "multiply(A, multiply(B, C))",
+            "greatest_lower_bound(A, identity)",
+            "least_upper_bound(inverse(A), B)",
+            "greatest_lower_bound(A, inverse(B))",
+            "least_upper_bound(A, identity)",
+            "multiply(greatest_lower_bound(least_upper_bound(A, identity), least_upper_bound(identity, inverse(B))), multiply(inverse(least_upper_bound(identity, inverse(B))), least_upper_bound(least_upper_bound(A, identity), least_upper_bound(identity, inverse(B)))))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP164-2.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = least_upper_bound(B, inverse(A))",
+            "fn_1(A, B) = greatest_lower_bound(B, inverse(A))",
+            "fn_2(A, B) = multiply(inverse(A), B)",
+            "fn_3(A) = greatest_lower_bound(A, identity)",
+            "fn_4(A) = least_upper_bound(identity, inverse(A))",
+            "fn_5(A) = greatest_lower_bound(identity, inverse(A))",
+            "fn_6(A) = least_upper_bound(identity, A)",
+            "fn_7(A) = least_upper_bound(A, inverse(A))",
+            "fn_8(A, B) = multiply(greatest_lower_bound(inverse(B), inverse(A)), least_upper_bound(B, A))",
+            "fn_9(A) = greatest_lower_bound(identity, A)",
+            "fn_10(A) = least_upper_bound(A, identity)",
+            "fn_11(A, B) = greatest_lower_bound(inverse(A), inverse(B))",
+            "fn_14(A, B) = multiply(least_upper_bound(inverse(B), inverse(A)), A)",
+            "fn_15(A, B) = least_upper_bound(identity, multiply(inverse(B), inverse(inverse(A))))",
+            "fn_16(A, B) = greatest_lower_bound(B, least_upper_bound(identity, inverse(A)))",
+            "fn_18(A, B, C, D) = multiply(D, least_upper_bound(greatest_lower_bound(C, B), greatest_lower_bound(C, greatest_lower_bound(B, A))))",
+            "fn_19(A, B) = multiply(inverse(greatest_lower_bound(B, A)), A)"
+        ],
+        "final_hints": [
+            "multiply(inverse(greatest_lower_bound(A, B)), B)",
+            "greatest_lower_bound(identity, A)",
+            "greatest_lower_bound(A, least_upper_bound(identity, inverse(B)))",
+            "multiply(inverse(A), B)",
+            "least_upper_bound(identity, inverse(A))",
+            "greatest_lower_bound(A, inverse(B))",
+            "multiply(least_upper_bound(inverse(A), inverse(B)), B)",
+            "least_upper_bound(A, inverse(B))",
+            "least_upper_bound(identity, multiply(inverse(A), inverse(inverse(B))))",
+            "multiply(A, least_upper_bound(greatest_lower_bound(B, C), greatest_lower_bound(B, greatest_lower_bound(C, D))))",
+            "least_upper_bound(A, inverse(A))",
+            "least_upper_bound(A, identity)",
+            "greatest_lower_bound(identity, inverse(A))",
+            "multiply(greatest_lower_bound(inverse(A), inverse(B)), least_upper_bound(A, B))",
+            "least_upper_bound(identity, A)",
+            "greatest_lower_bound(A, identity)",
+            "greatest_lower_bound(inverse(A), inverse(B))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP165-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012922
+    },
+    {
+        "problem": "GRP165-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012927
+    },
+    {
+        "problem": "GRP166-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015226
+    },
+    {
+        "problem": "GRP166-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018167
+    },
+    {
+        "problem": "GRP166-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013712
+    },
+    {
+        "problem": "GRP166-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012615999999999999
+    },
+    {
+        "problem": "GRP167-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.148597
+    },
+    {
+        "problem": "GRP167-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.12489399999999999
+    },
+    {
+        "problem": "GRP167-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.135632
+    },
+    {
+        "problem": "GRP167-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.139791
+    },
+    {
+        "problem": "GRP167-5.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.034222999999999996
+    },
+    {
+        "problem": "GRP168-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012861999999999998
+    },
+    {
+        "problem": "GRP168-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012228
+    },
+    {
+        "problem": "GRP169-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018647
+    },
+    {
+        "problem": "GRP169-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.023298
+    },
+    {
+        "problem": "GRP170-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.055187
+    },
+    {
+        "problem": "GRP170-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.024566999999999995
+    },
+    {
+        "problem": "GRP170-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029411999999999994
+    },
+    {
+        "problem": "GRP170-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05393099999999999
+    },
+    {
+        "problem": "GRP171-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010691
+    },
+    {
+        "problem": "GRP171-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.022528999999999997
+    },
+    {
+        "problem": "GRP172-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.027716999999999995
+    },
+    {
+        "problem": "GRP172-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016669999999999997
+    },
+    {
+        "problem": "GRP173-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010355
+    },
+    {
+        "problem": "GRP174-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013995
+    },
+    {
+        "problem": "GRP175-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018057
+    },
+    {
+        "problem": "GRP175-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.021729
+    },
+    {
+        "problem": "GRP175-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018574
+    },
+    {
+        "problem": "GRP175-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01558
+    },
+    {
+        "problem": "GRP176-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.017937
+    },
+    {
+        "problem": "GRP176-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018806999999999997
+    },
+    {
+        "problem": "GRP177-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.695833
+    },
+    {
+        "problem": "GRP177-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.2319400000000003
+    },
+    {
+        "problem": "GRP178-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.72607
+    },
+    {
+        "problem": "GRP178-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.407174
+    },
+    {
+        "problem": "GRP179-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09274099999999999
+    },
+    {
+        "problem": "GRP179-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09775899999999998
+    },
+    {
+        "problem": "GRP179-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.058795999999999994
+    },
+    {
+        "problem": "GRP180-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.359887
+    },
+    {
+        "problem": "GRP180-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.192674
+    },
+    {
+        "problem": "GRP181-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 13.651256
+    },
+    {
+        "problem": "GRP181-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 6.142003
+    },
+    {
+        "problem": "GRP181-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.413655
+    },
+    {
+        "problem": "GRP181-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.16950300000000001
+    },
+    {
+        "problem": "GRP182-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004796999999999999
+    },
+    {
+        "problem": "GRP182-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008766
+    },
+    {
+        "problem": "GRP182-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004987
+    },
+    {
+        "problem": "GRP182-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007876999999999999
+    },
+    {
+        "problem": "GRP183-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.258663
+    },
+    {
+        "problem": "GRP183-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.270857
+    },
+    {
+        "problem": "GRP183-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.24844999999999998
+    },
+    {
+        "problem": "GRP183-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15539599999999998
+    },
+    {
+        "problem": "GRP184-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.062641
+    },
+    {
+        "problem": "GRP184-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04581199999999999
+    },
+    {
+        "problem": "GRP184-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.06299199999999999
+    },
+    {
+        "problem": "GRP184-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.035445000000000004
+    },
+    {
+        "problem": "GRP185-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07783699999999999
+    },
+    {
+        "problem": "GRP185-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05108299999999999
+    },
+    {
+        "problem": "GRP185-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.042157999999999994
+    },
+    {
+        "problem": "GRP185-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.047379000000000004
+    },
+    {
+        "problem": "GRP186-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.34474499999999997
+    },
+    {
+        "problem": "GRP186-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.489244
+    },
+    {
+        "problem": "GRP186-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013877
+    },
+    {
+        "problem": "GRP186-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008359999999999996
+    },
+    {
+        "problem": "GRP187-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.3092580000000003
+    },
+    {
+        "problem": "GRP188-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008484000000000005
+    },
+    {
+        "problem": "GRP188-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005154000000000002
+    },
+    {
+        "problem": "GRP189-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004865000000000001
+    },
+    {
+        "problem": "GRP189-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00459
+    },
+    {
+        "problem": "GRP190-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.023696999999999996
+    },
+    {
+        "problem": "GRP190-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.025522000000000003
+    },
+    {
+        "problem": "GRP191-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.021059999999999995
+    },
+    {
+        "problem": "GRP191-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.026668999999999998
+    },
+    {
+        "problem": "GRP192-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006741000000000004
+    },
+    {
+        "problem": "GRP193-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.022954
+    },
+    {
+        "problem": "GRP193-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.022202
+    },
+    {
+        "problem": "GRP195-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.054985
+    },
+    {
+        "problem": "GRP196-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D) = multiply(D, multiply(C, multiply(B, A)))",
+            "fn_1(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_3(A, B, C) = multiply(multiply35, multiply(A, multiply(B, C)))",
+            "fn_4(A, B, C, D, E) = multiply(E, multiply(A, multiply(B, multiply(C, D))))",
+            "fn_8(A, B) = multiply(multiply35, multiply(A, B))",
+            "fn_9(A, B, C) = multiply(A, multiply(multiply35, multiply(B, C)))",
+            "fn_10(A, B, C, D) = multiply(A, multiply(multiply30, multiply(D, multiply(C, B))))",
+            "fn_13(A, B) = multiply(multiply35, multiply(B, multiply(A, multiply9)))",
+            "fn_14(A, B) = multiply(A, multiply(multiply17, B))"
+        ],
+        "final_hints": [
+            "multiply(A, multiply(multiply30, multiply(B, multiply(C, D))))",
+            "multiply(multiply35, multiply(A, multiply(B, C)))",
+            "multiply(multiply35, multiply(A, multiply(B, multiply9)))",
+            "multiply(A, multiply(multiply35, multiply(B, C)))",
+            "multiply(A, multiply(B, multiply(C, D)))",
+            "multiply(multiply35, multiply(A, B))",
+            "multiply(A, multiply(multiply17, B))",
+            "multiply(A, multiply(B, multiply(C, multiply(D, E))))",
+            "multiply(A, multiply(B, C))"
+        ],
+        "status": "success",
+        "hint_time_user": 403.242352
+    },
+    {
+        "problem": "GRP200-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07215300000000001
+    },
+    {
+        "problem": "GRP201-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.28275399999999995
+    },
+    {
+        "problem": "GRP202-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.084078
+    },
+    {
+        "problem": "GRP203-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11360600000000001
+    },
+    {
+        "problem": "GRP205-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07793199999999999
+    },
+    {
+        "problem": "GRP206-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010549999999999997
+    },
+    {
+        "problem": "GRP403-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.144497
+    },
+    {
+        "problem": "GRP404-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.17299399999999998
+    },
+    {
+        "problem": "GRP405-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.670079
+    },
+    {
+        "problem": "GRP406-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.043311999999999996
+    },
+    {
+        "problem": "GRP407-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.035549
+    },
+    {
+        "problem": "GRP408-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.493333
+    },
+    {
+        "problem": "GRP409-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04561799999999999
+    },
+    {
+        "problem": "GRP410-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.055171000000000005
+    },
+    {
+        "problem": "GRP411-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.230022
+    },
+    {
+        "problem": "GRP412-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.065201
+    },
+    {
+        "problem": "GRP413-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03716599999999998
+    },
+    {
+        "problem": "GRP414-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.132301
+    },
+    {
+        "problem": "GRP415-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.71173
+    },
+    {
+        "problem": "GRP416-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.22612900000000002
+    },
+    {
+        "problem": "GRP417-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = multiply(inverse(A), B)",
+            "fn_2(A, B, C, D, E) = inverse(inverse(multiply(E, inverse(multiply(inverse(multiply(inverse(D), multiply(C, B))), inverse(multiply(inverse(A), A)))))))",
+            "fn_3(A) = multiply(inverse(A), A)",
+            "fn_4(A, B, C, D) = multiply(inverse(multiply(D, C)), multiply(B, A))",
+            "fn_5(A, B, C, D) = multiply(D, multiply(inverse(multiply(inverse(multiply(C, multiply(B, multiply4))), A)), multiply(inverse(multiply(a3, multiply(b3, multiply4))), multiply4)))",
+            "fn_6(A) = multiply(inverse(multiply4), multiply(a3, A))",
+            "fn_7(A) = multiply(multiply3, A)",
+            "fn_9(A, B) = multiply(inverse(multiply(inverse(multiply4), B)), inverse(inverse(multiply(multiply(inverse(multiply5), multiply5), A))))",
+            "fn_10(A) = inverse(inverse(multiply(c3, inverse(multiply(inverse(multiply(inverse(multiply5), multiply(multiply3, A))), inverse(multiply(inverse(c3), c3)))))))",
+            "fn_11(A, B, C, D) = multiply(inverse(multiply(inverse(multiply(C, A)), multiply(C, multiply(D, multiply4)))), multiply(inverse(multiply(C, A)), multiply(C, B)))",
+            "fn_12(A) = multiply(a3, A)",
+            "fn_15(A, B, C) = multiply(inverse(multiply(inverse(multiply5), multiply5)), multiply(inverse(multiply(inverse(multiply(C, multiply(B, A))), c3)), multiply(inverse(multiply5), multiply5)))",
+            "fn_16(A, B) = multiply(inverse(multiply(multiply(multiply3, multiply2), A)), multiply(multiply5, B))",
+            "fn_17(A, B, C) = multiply(inverse(multiply(inverse(multiply(inverse(multiply(B, C)), multiply(B, multiply4))), c3)), multiply(inverse(multiply4), multiply(a3, inverse(inverse(multiply(multiply2, A))))))"
+        ],
+        "final_hints": [
+            "multiply(inverse(multiply(A, B)), multiply(C, D))",
+            "multiply(a3, A)",
+            "multiply(multiply3, A)",
+            "multiply(inverse(multiply(inverse(multiply(A, B)), multiply(A, multiply(C, multiply4)))), multiply(inverse(multiply(A, B)), multiply(A, D)))",
+            "multiply(inverse(A), B)",
+            "multiply(inverse(multiply4), multiply(a3, A))",
+            "inverse(inverse(multiply(c3, inverse(multiply(inverse(multiply(inverse(multiply5), multiply(multiply3, A))), inverse(multiply(inverse(c3), c3)))))))",
+            "multiply(A, multiply(inverse(multiply(inverse(multiply(B, multiply(C, multiply4))), D)), multiply(inverse(multiply(a3, multiply(b3, multiply4))), multiply4)))",
+            "multiply(inverse(multiply(inverse(multiply4), A)), inverse(inverse(multiply(multiply(inverse(multiply5), multiply5), B))))",
+            "multiply(inverse(multiply(multiply(multiply3, multiply2), A)), multiply(multiply5, B))",
+            "multiply(inverse(multiply(inverse(multiply5), multiply5)), multiply(inverse(multiply(inverse(multiply(A, multiply(B, C))), c3)), multiply(inverse(multiply5), multiply5)))",
+            "inverse(inverse(multiply(A, inverse(multiply(inverse(multiply(inverse(B), multiply(C, D))), inverse(multiply(inverse(E), E)))))))",
+            "multiply(inverse(A), A)",
+            "multiply(inverse(multiply(inverse(multiply(inverse(multiply(A, B)), multiply(A, multiply4))), c3)), multiply(inverse(multiply4), multiply(a3, inverse(inverse(multiply(multiply2, C))))))"
+        ],
+        "status": "success",
+        "hint_time_user": 46.616389
+    },
+    {
+        "problem": "GRP418-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.093289
+    },
+    {
+        "problem": "GRP419-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08154399999999999
+    },
+    {
+        "problem": "GRP420-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.18315099999999998
+    },
+    {
+        "problem": "GRP421-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.052233999999999996
+    },
+    {
+        "problem": "GRP422-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07038
+    },
+    {
+        "problem": "GRP423-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.8350129999999999
+    },
+    {
+        "problem": "GRP424-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05235099999999998
+    },
+    {
+        "problem": "GRP425-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.061445
+    },
+    {
+        "problem": "GRP426-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.051038
+    },
+    {
+        "problem": "GRP427-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.139569
+    },
+    {
+        "problem": "GRP428-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.10231699999999999
+    },
+    {
+        "problem": "GRP429-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.162481
+    },
+    {
+        "problem": "GRP430-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04046299999999997
+    },
+    {
+        "problem": "GRP431-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.059428999999999996
+    },
+    {
+        "problem": "GRP432-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.038047
+    },
+    {
+        "problem": "GRP433-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.031117000000000006
+    },
+    {
+        "problem": "GRP434-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.025779999999999997
+    },
+    {
+        "problem": "GRP435-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.031249
+    },
+    {
+        "problem": "GRP436-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.7217979999999999
+    },
+    {
+        "problem": "GRP437-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.34326399999999996
+    },
+    {
+        "problem": "GRP438-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.8657509999999997
+    },
+    {
+        "problem": "GRP439-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C, D, E) = multiply(multiply(D, multiply(multiply(C, multiply(a1, inverse(B))), A)), E)",
+            "fn_1(A, B, C, D, E) = multiply(multiply(B, multiply(multiply(C, multiply(a1, inverse(D))), inverse(multiply(A, multiply(multiply(inverse3, multiply(a1, multiply(E, inverse(multiply(a1, E))))), multiply(a1, inverse(D))))))), A)",
+            "fn_2(A, B, C, D, E) = multiply(multiply(B, multiply(multiply(C, multiply(a1, inverse(multiply(D, A)))), inverse(multiply(inverse3, multiply(a1, multiply(E, inverse(multiply(D, E)))))))), A)",
+            "fn_3(A, B, C, D, E) = multiply(E, multiply(multiply(B, multiply(multiply(C, multiply(a1, inverse(multiply(D, A)))), D)), A))",
+            "fn_4(A, B, C) = multiply(C, multiply(B, A))",
+            "fn_5(A, B, C, D, E, F, G) = multiply(A, multiply(B, multiply(multiply(E, multiply(multiply(D, multiply(a1, inverse(multiply(F, C)))), inverse(multiply(C, multiply(multiply(inverse3, multiply(a1, multiply(G, inverse(multiply(a1, G))))), multiply(a1, inverse(multiply(F, C)))))))), C)))",
+            "fn_14(A, B, C, D) = multiply(D, multiply(b1, multiply(multiply(C, multiply(multiply(B, multiply(a1, inverse(multiply(A, a1)))), A)), a1)))"
+        ],
+        "final_hints": [
+            "multiply(multiply(A, multiply(multiply(B, multiply(a1, inverse(C))), inverse(multiply(D, multiply(multiply(inverse3, multiply(a1, multiply(E, inverse(multiply(a1, E))))), multiply(a1, inverse(C))))))), D)",
+            "multiply(multiply(A, multiply(multiply(B, multiply(a1, inverse(C))), D)), E)",
+            "multiply(A, multiply(b1, multiply(multiply(B, multiply(multiply(C, multiply(a1, inverse(multiply(D, a1)))), D)), a1)))",
+            "multiply(A, multiply(B, multiply(multiply(C, multiply(multiply(D, multiply(a1, inverse(multiply(E, F)))), inverse(multiply(F, multiply(multiply(inverse3, multiply(a1, multiply(G, inverse(multiply(a1, G))))), multiply(a1, inverse(multiply(E, F)))))))), F)))",
+            "multiply(A, multiply(multiply(B, multiply(multiply(C, multiply(a1, inverse(multiply(D, E)))), D)), E))",
+            "multiply(A, multiply(B, C))",
+            "multiply(multiply(A, multiply(multiply(B, multiply(a1, inverse(multiply(C, D)))), inverse(multiply(inverse3, multiply(a1, multiply(E, inverse(multiply(C, E)))))))), D)"
+        ],
+        "status": "success",
+        "hint_time_user": 598.9143549999999
+    },
+    {
+        "problem": "GRP440-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.512198
+    },
+    {
+        "problem": "GRP441-1.p",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 70 seconds]"
+    },
+    {
+        "problem": "GRP442-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.17747799999999997
+    },
+    {
+        "problem": "GRP443-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08689799999999999
+    },
+    {
+        "problem": "GRP444-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.14816300000000002
+    },
+    {
+        "problem": "GRP445-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010246999999999992
+    },
+    {
+        "problem": "GRP446-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010499999999999982
+    },
+    {
+        "problem": "GRP447-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014778000000000013
+    },
+    {
+        "problem": "GRP448-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009191000000000005
+    },
+    {
+        "problem": "GRP449-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0072349999999999914
+    },
+    {
+        "problem": "GRP450-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018483
+    },
+    {
+        "problem": "GRP451-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010863999999999999
+    },
+    {
+        "problem": "GRP452-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011443999999999996
+    },
+    {
+        "problem": "GRP453-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02383600000000001
+    },
+    {
+        "problem": "GRP454-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0037659999999999916
+    },
+    {
+        "problem": "GRP455-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005320999999999992
+    },
+    {
+        "problem": "GRP456-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011148999999999992
+    },
+    {
+        "problem": "GRP457-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002034000000000008
+    },
+    {
+        "problem": "GRP458-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005163000000000001
+    },
+    {
+        "problem": "GRP459-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01244300000000001
+    },
+    {
+        "problem": "GRP460-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0038630000000000053
+    },
+    {
+        "problem": "GRP461-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0041059999999999985
+    },
+    {
+        "problem": "GRP462-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009555999999999981
+    },
+    {
+        "problem": "GRP463-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0020780000000000243
+    },
+    {
+        "problem": "GRP464-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003820999999999991
+    },
+    {
+        "problem": "GRP465-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007857000000000003
+    },
+    {
+        "problem": "GRP466-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0051310000000000106
+    },
+    {
+        "problem": "GRP467-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007593000000000016
+    },
+    {
+        "problem": "GRP468-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008191000000000004
+    },
+    {
+        "problem": "GRP469-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.39643999999999996
+    },
+    {
+        "problem": "GRP470-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08838499999999999
+    },
+    {
+        "problem": "GRP471-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.280478
+    },
+    {
+        "problem": "GRP472-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.6872049999999998
+    },
+    {
+        "problem": "GRP473-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.301417
+    },
+    {
+        "problem": "GRP474-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.075366
+    },
+    {
+        "problem": "GRP475-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.5443330000000001
+    },
+    {
+        "problem": "GRP476-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.283497
+    },
+    {
+        "problem": "GRP477-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.777324
+    },
+    {
+        "problem": "GRP478-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15597799999999998
+    },
+    {
+        "problem": "GRP479-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11343199999999998
+    },
+    {
+        "problem": "GRP480-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.433905
+    },
+    {
+        "problem": "GRP481-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0018920000000000048
+    },
+    {
+        "problem": "GRP482-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009047
+    },
+    {
+        "problem": "GRP483-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.020423999999999998
+    },
+    {
+        "problem": "GRP484-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008700999999999987
+    },
+    {
+        "problem": "GRP485-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01782099999999999
+    },
+    {
+        "problem": "GRP486-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.042503999999999986
+    },
+    {
+        "problem": "GRP487-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00475600000000001
+    },
+    {
+        "problem": "GRP488-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07408000000000001
+    },
+    {
+        "problem": "GRP489-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.13704
+    },
+    {
+        "problem": "GRP490-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006517999999999996
+    },
+    {
+        "problem": "GRP491-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008434999999999998
+    },
+    {
+        "problem": "GRP492-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.018698999999999993
+    },
+    {
+        "problem": "GRP493-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005846999999999991
+    },
+    {
+        "problem": "GRP494-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008718000000000004
+    },
+    {
+        "problem": "GRP495-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029276000000000024
+    },
+    {
+        "problem": "GRP496-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0030230000000000257
+    },
+    {
+        "problem": "GRP497-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009255999999999986
+    },
+    {
+        "problem": "GRP498-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014917999999999987
+    },
+    {
+        "problem": "GRP499-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.198774
+    },
+    {
+        "problem": "GRP500-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.12783599999999998
+    },
+    {
+        "problem": "GRP501-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.669015
+    },
+    {
+        "problem": "GRP502-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.175583
+    },
+    {
+        "problem": "GRP503-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.26183999999999996
+    },
+    {
+        "problem": "GRP504-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.22827499999999995
+    },
+    {
+        "problem": "GRP505-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.610678
+    },
+    {
+        "problem": "GRP506-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.32603
+    },
+    {
+        "problem": "GRP507-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.5938050000000001
+    },
+    {
+        "problem": "GRP508-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.13820600000000002
+    },
+    {
+        "problem": "GRP509-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01953900000000003
+    },
+    {
+        "problem": "GRP510-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016217999999999955
+    },
+    {
+        "problem": "GRP511-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.06280999999999998
+    },
+    {
+        "problem": "GRP512-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02066499999999999
+    },
+    {
+        "problem": "GRP513-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04033599999999998
+    },
+    {
+        "problem": "GRP514-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.027301999999999993
+    },
+    {
+        "problem": "GRP515-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05313200000000001
+    },
+    {
+        "problem": "GRP516-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.021587999999999996
+    },
+    {
+        "problem": "GRP517-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008280999999999983
+    },
+    {
+        "problem": "GRP518-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008742000000000028
+    },
+    {
+        "problem": "GRP519-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015550999999999982
+    },
+    {
+        "problem": "GRP520-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012420000000000042
+    },
+    {
+        "problem": "GRP521-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006398999999999988
+    },
+    {
+        "problem": "GRP522-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008255000000000012
+    },
+    {
+        "problem": "GRP523-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013266
+    },
+    {
+        "problem": "GRP524-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.016544999999999976
+    },
+    {
+        "problem": "GRP525-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006867000000000012
+    },
+    {
+        "problem": "GRP526-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006478000000000039
+    },
+    {
+        "problem": "GRP527-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013051000000000035
+    },
+    {
+        "problem": "GRP528-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0045920000000000405
+    },
+    {
+        "problem": "GRP529-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009711999999999998
+    },
+    {
+        "problem": "GRP530-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.002707999999999988
+    },
+    {
+        "problem": "GRP531-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014353999999999978
+    },
+    {
+        "problem": "GRP532-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014846000000000026
+    },
+    {
+        "problem": "GRP533-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.003752999999999951
+    },
+    {
+        "problem": "GRP534-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005327000000000026
+    },
+    {
+        "problem": "GRP535-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013170000000000015
+    },
+    {
+        "problem": "GRP536-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007757999999999987
+    },
+    {
+        "problem": "GRP537-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004217000000000026
+    },
+    {
+        "problem": "GRP538-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004176999999999986
+    },
+    {
+        "problem": "GRP539-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013403999999999971
+    },
+    {
+        "problem": "GRP540-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007580000000000031
+    },
+    {
+        "problem": "GRP541-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00362800000000002
+    },
+    {
+        "problem": "GRP542-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0067869999999999875
+    },
+    {
+        "problem": "GRP543-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01231199999999999
+    },
+    {
+        "problem": "GRP544-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004469000000000001
+    },
+    {
+        "problem": "GRP545-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0028220000000000467
+    },
+    {
+        "problem": "GRP546-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004895000000000038
+    },
+    {
+        "problem": "GRP547-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010948000000000013
+    },
+    {
+        "problem": "GRP548-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009559999999999957
+    },
+    {
+        "problem": "GRP549-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0018529999999999935
+    },
+    {
+        "problem": "GRP550-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007056000000000007
+    },
+    {
+        "problem": "GRP551-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015237999999999974
+    },
+    {
+        "problem": "GRP552-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00488999999999995
+    },
+    {
+        "problem": "GRP553-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010500999999999983
+    },
+    {
+        "problem": "GRP554-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009402999999999995
+    },
+    {
+        "problem": "GRP555-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.019916999999999963
+    },
+    {
+        "problem": "GRP556-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012955999999999968
+    },
+    {
+        "problem": "GRP557-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008124999999999993
+    },
+    {
+        "problem": "GRP558-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014624000000000026
+    },
+    {
+        "problem": "GRP559-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02681699999999998
+    },
+    {
+        "problem": "GRP560-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009479000000000015
+    },
+    {
+        "problem": "GRP561-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02461399999999997
+    },
+    {
+        "problem": "GRP562-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01696399999999998
+    },
+    {
+        "problem": "GRP563-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.015395999999999965
+    },
+    {
+        "problem": "GRP564-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01264599999999999
+    },
+    {
+        "problem": "GRP565-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.004838999999999982
+    },
+    {
+        "problem": "GRP566-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005153000000000019
+    },
+    {
+        "problem": "GRP567-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03322299999999995
+    },
+    {
+        "problem": "GRP568-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014322000000000001
+    },
+    {
+        "problem": "GRP569-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.009809000000000012
+    },
+    {
+        "problem": "GRP570-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0027870000000000394
+    },
+    {
+        "problem": "GRP571-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.024787000000000003
+    },
+    {
+        "problem": "GRP572-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012322
+    },
+    {
+        "problem": "GRP573-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.0038449999999999873
+    },
+    {
+        "problem": "GRP574-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.008809999999999985
+    },
+    {
+        "problem": "GRP575-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.021876000000000007
+    },
+    {
+        "problem": "GRP576-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010404000000000024
+    },
+    {
+        "problem": "GRP577-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006649999999999989
+    },
+    {
+        "problem": "GRP578-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013824999999999976
+    },
+    {
+        "problem": "GRP579-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.058277999999999996
+    },
+    {
+        "problem": "GRP580-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01673800000000003
+    },
+    {
+        "problem": "GRP581-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010630000000000028
+    },
+    {
+        "problem": "GRP582-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01943499999999998
+    },
+    {
+        "problem": "GRP583-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05743900000000002
+    },
+    {
+        "problem": "GRP584-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01910400000000001
+    },
+    {
+        "problem": "GRP585-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.019575999999999982
+    },
+    {
+        "problem": "GRP586-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04075400000000001
+    },
+    {
+        "problem": "GRP587-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.7858200000000001
+    },
+    {
+        "problem": "GRP588-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09151699999999996
+    },
+    {
+        "problem": "GRP589-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.035138
+    },
+    {
+        "problem": "GRP590-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.030818999999999985
+    },
+    {
+        "problem": "GRP591-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.24838899999999997
+    },
+    {
+        "problem": "GRP592-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04669400000000001
+    },
+    {
+        "problem": "GRP593-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013961000000000001
+    },
+    {
+        "problem": "GRP594-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.027067000000000008
+    },
+    {
+        "problem": "GRP595-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03185300000000002
+    },
+    {
+        "problem": "GRP596-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.050785000000000025
+    },
+    {
+        "problem": "GRP597-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.044625000000000026
+    },
+    {
+        "problem": "GRP598-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.046470999999999985
+    },
+    {
+        "problem": "GRP599-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.21420499999999998
+    },
+    {
+        "problem": "GRP600-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.056032000000000026
+    },
+    {
+        "problem": "GRP601-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03310400000000002
+    },
+    {
+        "problem": "GRP602-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.048997999999999986
+    },
+    {
+        "problem": "GRP603-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.028305999999999998
+    },
+    {
+        "problem": "GRP604-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02839400000000003
+    },
+    {
+        "problem": "GRP605-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.27246600000000004
+    },
+    {
+        "problem": "GRP606-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.13729300000000005
+    },
+    {
+        "problem": "GRP607-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.535221
+    },
+    {
+        "problem": "GRP608-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.10497800000000002
+    },
+    {
+        "problem": "GRP609-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.06282299999999996
+    },
+    {
+        "problem": "GRP610-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03962199999999999
+    },
+    {
+        "problem": "GRP611-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02596200000000004
+    },
+    {
+        "problem": "GRP612-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04739500000000002
+    },
+    {
+        "problem": "GRP613-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.22197
+    },
+    {
+        "problem": "GRP614-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11967299999999997
+    },
+    {
+        "problem": "GRP615-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.33394699999999994
+    },
+    {
+        "problem": "GRP616-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08164699999999997
+    },
+    {
+        "problem": "GRP654-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.3503609999999999
+    },
+    {
+        "problem": "GRP654-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.344778
+    },
+    {
+        "problem": "GRP654-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.21628899999999995
+    },
+    {
+        "problem": "GRP655-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.523273
+    },
+    {
+        "problem": "GRP655-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.15575500000000003
+    },
+    {
+        "problem": "GRP655-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.25633799999999995
+    },
+    {
+        "problem": "GRP655-13.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.354331
+    },
+    {
+        "problem": "GRP655-14.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.39270399999999994
+    },
+    {
+        "problem": "GRP656-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007537000000000016
+    },
+    {
+        "problem": "GRP657-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.007623000000000046
+    },
+    {
+        "problem": "GRP658-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02038599999999996
+    },
+    {
+        "problem": "GRP659-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012328999999999979
+    },
+    {
+        "problem": "GRP660-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.047897999999999996
+    },
+    {
+        "problem": "GRP660-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03596000000000005
+    },
+    {
+        "problem": "GRP660-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03489599999999998
+    },
+    {
+        "problem": "GRP660-13.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02923599999999993
+    },
+    {
+        "problem": "GRP660-14.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03623799999999999
+    },
+    {
+        "problem": "GRP661-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = rd(mult6, mult5)",
+            "fn_1 = rd(mult2, mult6)",
+            "fn_2 = rd(mult5, mult6)",
+            "fn_3(A) = ld(A, mult6)",
+            "fn_4(A) = ld(A, mult2)",
+            "fn_5 = rd(mult6, mult2)",
+            "fn_6(A) = ld(mult3, A)",
+            "fn_7(A) = ld(A, mult5)",
+            "fn_8(A) = mult(mult3, A)",
+            "fn_9(A) = mult(A, mult3)",
+            "fn_10(A) = ld(A, mult3)",
+            "fn_11(A) = ld(ld(mult6, mult2), A)",
+            "fn_12 = ld(mult5, mult6)",
+            "fn_13(A, B, C) = mult(rd(B, A), C)",
+            "fn_14 = ld(mult6, mult5)",
+            "fn_15 = ld(mult3, unit)",
+            "fn_16 = ld(mult5, mult2)",
+            "fn_17(A, B, C) = mult(C, ld(B, A))",
+            "fn_18(A) = rd(unit, A)",
+            "fn_19(A) = ld(rd(mult6, mult5), A)"
+        ],
+        "final_hints": [
+            "ld(A, mult2)",
+            "mult(mult3, A)",
+            "ld(rd(mult6, mult5), A)",
+            "rd(mult5, mult6)",
+            "rd(mult6, mult5)",
+            "ld(mult5, mult6)",
+            "rd(unit, A)",
+            "mult(A, mult3)",
+            "ld(mult6, mult5)",
+            "ld(A, mult3)",
+            "ld(ld(mult6, mult2), A)",
+            "rd(mult6, mult2)",
+            "ld(A, mult5)",
+            "ld(A, mult6)",
+            "ld(mult5, mult2)",
+            "rd(mult2, mult6)",
+            "ld(mult3, A)",
+            "mult(rd(A, B), C)",
+            "ld(mult3, unit)",
+            "mult(A, ld(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP662-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = rd(mult2, a)",
+            "fn_1(A) = mult(mult4, A)",
+            "fn_2 = rd(a, mult2)",
+            "fn_3(A) = ld(mult4, A)",
+            "fn_4 = mult(rd(unit, mult6), b)",
+            "fn_5(A) = ld(rd(mult2, a), A)",
+            "fn_6(A) = ld(mult2, mult(mult4, A))",
+            "fn_7(A, B, C) = ld(rd(B, A), C)",
+            "fn_8(A, B, C) = mult(rd(B, A), C)",
+            "fn_9(A) = ld(rd(a, mult2), A)",
+            "fn_10(A) = mult(A, mult4)",
+            "fn_11(A) = rd(A, mult4)",
+            "fn_13 = ld(mult4, rd(mult2, a))",
+            "fn_14 = ld(rd(mult2, a), mult4)",
+            "fn_15 = rd(mult(mult4, mult5), mult3)",
+            "fn_16(A) = rd(A, rd(mult2, a))",
+            "fn_17(A) = rd(A, a)",
+            "fn_18 = rd(mult3, mult5)",
+            "fn_19 = ld(mult3, rd(mult5, mult4))"
+        ],
+        "final_hints": [
+            "ld(mult3, rd(mult5, mult4))",
+            "ld(mult4, rd(mult2, a))",
+            "ld(rd(a, mult2), A)",
+            "ld(mult2, mult(mult4, A))",
+            "rd(mult(mult4, mult5), mult3)",
+            "rd(a, mult2)",
+            "mult(mult4, A)",
+            "mult(rd(unit, mult6), b)",
+            "ld(rd(mult2, a), A)",
+            "rd(A, rd(mult2, a))",
+            "mult(A, mult4)",
+            "ld(mult4, A)",
+            "ld(rd(A, B), C)",
+            "mult(rd(A, B), C)",
+            "rd(mult2, a)",
+            "rd(A, mult4)",
+            "rd(A, a)",
+            "ld(rd(mult2, a), mult4)",
+            "rd(mult3, mult5)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP663-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = ld(mult4, A)",
+            "fn_1(A) = mult(A, mult5)",
+            "fn_2(A) = rd(A, mult5)",
+            "fn_3(A, B, C) = mult(C, ld(B, A))",
+            "fn_4(A) = mult(mult5, A)",
+            "fn_5 = ld(mult4, mult6)",
+            "fn_6 = ld(mult4, mult(mult6, mult5))",
+            "fn_7(A) = ld(mult5, A)",
+            "fn_8(A, B, C) = ld(rd(B, A), C)",
+            "fn_9(A) = rd(A, ld(mult3, mult4))",
+            "fn_10 = mult(mult5, b)",
+            "fn_11 = rd(mult4, mult5)",
+            "fn_12 = ld(a, mult6)",
+            "fn_13 = mult(b, op_c)",
+            "fn_14(A) = ld(mult2, A)",
+            "fn_15 = ld(mult4, mult3)",
+            "fn_17(A) = ld(mult6, A)",
+            "fn_18(A) = mult(A, ld(mult4, mult6))",
+            "fn_19(A) = ld(rd(mult6, mult3), rd(A, mult4))"
+        ],
+        "final_hints": [
+            "ld(mult4, mult3)",
+            "ld(a, mult6)",
+            "mult(mult5, b)",
+            "ld(mult6, A)",
+            "rd(A, mult5)",
+            "mult(b, op_c)",
+            "mult(A, ld(B, C))",
+            "mult(mult5, A)",
+            "ld(mult4, A)",
+            "ld(mult2, A)",
+            "ld(mult4, mult6)",
+            "ld(rd(mult6, mult3), rd(A, mult4))",
+            "mult(A, mult5)",
+            "ld(mult4, mult(mult6, mult5))",
+            "ld(rd(A, B), C)",
+            "mult(A, ld(mult4, mult6))",
+            "rd(A, ld(mult3, mult4))",
+            "rd(mult4, mult5)",
+            "ld(mult5, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP664-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = rd(mult6, mult5)",
+            "fn_1 = ld(mult6, mult5)",
+            "fn_2 = rd(mult5, mult6)",
+            "fn_3(A) = rd(mult6, A)",
+            "fn_4 = rd(mult2, mult6)",
+            "fn_5(A, B) = rd(ld(B, A), A)",
+            "fn_6(A, B, C) = ld(C, mult(B, A))",
+            "fn_7(A) = ld(A, mult6)",
+            "fn_8(A) = ld(rd(mult6, mult5), A)",
+            "fn_9(A, B, C) = rd(mult(B, A), C)",
+            "fn_10 = rd(mult6, mult2)",
+            "fn_11(A) = rd(mult5, A)",
+            "fn_12(A) = ld(mult3, A)",
+            "fn_13(A) = mult(A, mult3)",
+            "fn_14(A) = ld(mult5, A)",
+            "fn_15(A, B) = rd(rd(unit, A), B)",
+            "fn_16(A, B) = ld(A, mult(B, A))",
+            "fn_17 = ld(mult6, mult(mult5, mult3))",
+            "fn_19(A) = ld(A, rd(mult6, rd(mult6, mult5)))"
+        ],
+        "final_hints": [
+            "rd(mult5, A)",
+            "ld(rd(mult6, mult5), A)",
+            "ld(A, rd(mult6, rd(mult6, mult5)))",
+            "rd(mult5, mult6)",
+            "rd(mult6, mult5)",
+            "ld(A, mult(B, A))",
+            "mult(A, mult3)",
+            "ld(mult6, mult5)",
+            "rd(rd(unit, A), B)",
+            "rd(mult6, mult2)",
+            "ld(A, mult6)",
+            "ld(mult6, mult(mult5, mult3))",
+            "rd(mult2, mult6)",
+            "ld(mult3, A)",
+            "rd(mult(A, B), C)",
+            "rd(mult6, A)",
+            "ld(A, mult(B, C))",
+            "rd(ld(A, B), B)",
+            "ld(mult5, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP664-11.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_1(A) = ld(mult4, A)",
+            "fn_2 = ld(mult3, mult5)",
+            "fn_3 = rd(mult2, x2)",
+            "fn_4 = ld(mult5, mult3)",
+            "fn_5(A) = mult(mult4, A)",
+            "fn_6(A, B, C) = ld(rd(B, A), C)",
+            "fn_7(A) = ld(x2, A)",
+            "fn_8(A) = mult(mult2, A)",
+            "fn_9(A) = rd(x2, A)",
+            "fn_14(A) = mult(x2, A)",
+            "fn_15 = ld(mult4, mult2)",
+            "fn_16(A) = rd(A, mult4)",
+            "fn_17(A) = ld(mult2, A)",
+            "fn_18 = mult(mult4, x2)",
+            "fn_19 = mult(mult2, mult4)"
+        ],
+        "final_hints": [
+            "ld(rd(A, B), C)",
+            "rd(x2, A)",
+            "ld(mult4, mult2)",
+            "mult(mult2, mult4)",
+            "ld(x2, A)",
+            "mult(mult4, x2)",
+            "mult(mult4, A)",
+            "ld(mult3, mult5)",
+            "rd(mult2, x2)",
+            "ld(mult4, A)",
+            "rd(A, mult4)",
+            "ld(mult5, mult3)",
+            "mult(mult2, A)",
+            "mult(x2, A)",
+            "ld(mult2, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP664-12.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = ld(rd(B, A), C)",
+            "fn_1(A) = mult(A, mult5)",
+            "fn_2 = ld(x2, mult6)",
+            "fn_4(A, B, C) = mult(C, ld(B, A))",
+            "fn_5(A) = rd(A, mult5)",
+            "fn_6(A) = rd(A, ld(mult5, rd(mult3, mult6)))",
+            "fn_7 = ld(rd(mult4, mult6), mult3)",
+            "fn_8 = rd(mult2, ld(mult3, mult4))",
+            "fn_9 = ld(mult4, mult(mult6, mult5))",
+            "fn_11(A) = rd(A, x3)",
+            "fn_12(A, B, C) = mult(rd(B, A), C)",
+            "fn_13(A) = mult(x2, A)",
+            "fn_15(A, B, C) = rd(C, ld(B, A))",
+            "fn_16(A) = mult(mult5, A)"
+        ],
+        "final_hints": [
+            "rd(A, x3)",
+            "mult(A, mult5)",
+            "ld(rd(A, B), C)",
+            "rd(A, mult5)",
+            "ld(mult4, mult(mult6, mult5))",
+            "mult(rd(A, B), C)",
+            "mult(x2, A)",
+            "rd(A, ld(mult5, rd(mult3, mult6)))",
+            "ld(x2, mult6)",
+            "ld(rd(mult4, mult6), mult3)",
+            "mult(mult5, A)",
+            "rd(mult2, ld(mult3, mult4))",
+            "rd(A, ld(B, C))",
+            "mult(A, ld(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP665-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01089999999999991
+    },
+    {
+        "problem": "GRP665-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00683200000000006
+    },
+    {
+        "problem": "GRP665-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.006554000000000004
+    },
+    {
+        "problem": "GRP666-2.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = rd(C, rd(B, A))",
+            "fn_1 = i(a)",
+            "fn_2(A, B, C, D) = rd(D, rd(A, rd(B, C)))",
+            "fn_3 = i(mult6)",
+            "fn_5 = i(mult4)",
+            "fn_7(A) = rd(A, a)",
+            "fn_8(A) = rd(A, mult4)",
+            "fn_11 = i(b)",
+            "fn_13(A) = rd(A, i(a))",
+            "fn_14(A, B) = rd(A, rd(A, B))",
+            "fn_15(A, B, C) = rd(A, rd(A, rd(C, B)))",
+            "fn_16(A) = rd(A, b)"
+        ],
+        "final_hints": [
+            "rd(A, b)",
+            "i(b)",
+            "rd(A, rd(A, B))",
+            "rd(A, rd(B, rd(C, D)))",
+            "rd(A, i(a))",
+            "rd(A, rd(A, rd(B, C)))",
+            "i(a)",
+            "rd(A, mult4)",
+            "rd(A, a)",
+            "i(mult4)",
+            "rd(A, rd(B, C))",
+            "i(mult6)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP666-3.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = rd(C, rd(B, A))",
+            "fn_1 = i(c)",
+            "fn_2(A) = rd(mult2, rd(A, mult3))",
+            "fn_3 = i(mult3)",
+            "fn_4(A, B, C) = rd(rd(B, A), C)",
+            "fn_5 = i(b)",
+            "fn_6(A, B) = rd(mult3, rd(A, B))",
+            "fn_7 = i(mult2)",
+            "fn_9(A, B, C, D) = rd(rd(B, A), rd(C, D))",
+            "fn_10(A, B) = i(rd(B, A))",
+            "fn_11 = rd(mult3, rd(i(c), mult3))",
+            "fn_15 = rd(mult2, rd(b, mult3))",
+            "fn_19 = rd(mult2, rd(i(c), mult3))"
+        ],
+        "final_hints": [
+            "rd(rd(A, B), C)",
+            "rd(mult2, rd(A, mult3))",
+            "rd(mult2, rd(b, mult3))",
+            "i(rd(A, B))",
+            "i(c)",
+            "i(mult3)",
+            "i(b)",
+            "rd(mult3, rd(i(c), mult3))",
+            "rd(mult3, rd(A, B))",
+            "rd(mult2, rd(i(c), mult3))",
+            "rd(A, rd(B, C))",
+            "i(mult2)",
+            "rd(rd(A, B), rd(C, D))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP666-4.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = rd(C, rd(B, A))",
+            "fn_1 = i(mult7)",
+            "fn_2 = i(mult5)",
+            "fn_4(A, B, C) = rd(rd(B, A), C)",
+            "fn_5 = i(a)",
+            "fn_9 = i(mult3)",
+            "fn_10(A) = rd(mult5, A)",
+            "fn_11 = rd(mult5, rd(i(mult7), mult3))",
+            "fn_17(A) = rd(mult7, A)",
+            "fn_18(A) = rd(a, A)"
+        ],
+        "final_hints": [
+            "rd(mult5, A)",
+            "rd(rd(A, B), C)",
+            "rd(a, A)",
+            "i(mult3)",
+            "i(mult5)",
+            "i(mult7)",
+            "rd(mult7, A)",
+            "rd(mult5, rd(i(mult7), mult3))",
+            "i(a)",
+            "rd(A, rd(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP666-5.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = rd(C, rd(B, A))",
+            "fn_1 = i(a)",
+            "fn_2 = i(mult3)",
+            "fn_3(A, B, C, D) = rd(D, rd(A, rd(B, C)))",
+            "fn_4 = i(mult5)",
+            "fn_5(A) = rd(A, mult3)",
+            "fn_6(A) = rd(mult6, rd(A, mult5))",
+            "fn_7(A) = rd(A, mult6)",
+            "fn_11(A) = rd(A, a)",
+            "fn_12 = i(mult6)",
+            "fn_14(A) = rd(mult6, A)",
+            "fn_16(A) = rd(A, i(mult3))",
+            "fn_17 = rd(a, rd(i(mult5), i(mult3)))"
+        ],
+        "final_hints": [
+            "rd(A, mult6)",
+            "rd(a, rd(i(mult5), i(mult3)))",
+            "i(mult3)",
+            "rd(A, a)",
+            "i(mult5)",
+            "rd(A, rd(B, rd(C, D)))",
+            "rd(mult6, A)",
+            "i(a)",
+            "rd(mult6, rd(A, mult5))",
+            "rd(A, mult3)",
+            "rd(A, rd(B, C))",
+            "i(mult6)",
+            "rd(A, i(mult3))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP667-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 17.847211
+    },
+    {
+        "problem": "GRP667-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 5.353998
+    },
+    {
+        "problem": "GRP667-3.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.828518
+    },
+    {
+        "problem": "GRP667-4.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.631253
+    },
+    {
+        "problem": "GRP667-5.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.525325
+    },
+    {
+        "problem": "GRP668-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.6447020000000001
+    },
+    {
+        "problem": "GRP669-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.02649199999999996
+    },
+    {
+        "problem": "GRP670-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 10.284348
+    },
+    {
+        "problem": "GRP671-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00991299999999995
+    },
+    {
+        "problem": "GRP672-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = asoc(C, op_t, rd(B, A))",
+            "fn_1(A, B, C) = rd(C, rd(B, A))",
+            "fn_2(A) = asoc(A, mult3, asoc2)",
+            "fn_3(A) = ld(A, op_t)",
+            "fn_4(A, B) = asoc(B, A, op_t)",
+            "fn_5(A) = rd(mult2, A)",
+            "fn_6(A) = rd(A, asoc2)",
+            "fn_7(A, B) = rd(mult2, rd(A, B))",
+            "fn_8(A) = ld(mult3, A)",
+            "fn_9(A) = ld(mult2, A)",
+            "fn_10(A) = mult(mult3, A)",
+            "fn_11(A) = rd(mult3, A)",
+            "fn_12(A) = ld(asoc2, A)",
+            "fn_13(A, B) = rd(asoc2, rd(A, B))",
+            "fn_14(A) = mult(op_t, A)",
+            "fn_15(A) = ld(A, mult3)",
+            "fn_16(A) = mult(mult2, A)",
+            "fn_17(A, B) = asoc(mult3, A, B)",
+            "fn_18(A) = mult(A, mult3)",
+            "fn_19(A) = ld(rd(op_t, ld(A, op_t)), ld(rd(mult2, A), asoc2))"
+        ],
+        "final_hints": [
+            "rd(mult3, A)",
+            "mult(mult3, A)",
+            "asoc(A, B, op_t)",
+            "asoc(A, op_t, rd(B, C))",
+            "rd(A, asoc2)",
+            "mult(A, mult3)",
+            "mult(op_t, A)",
+            "ld(A, mult3)",
+            "rd(asoc2, rd(A, B))",
+            "rd(mult2, A)",
+            "ld(rd(op_t, ld(A, op_t)), ld(rd(mult2, A), asoc2))",
+            "asoc(A, mult3, asoc2)",
+            "mult(mult2, A)",
+            "ld(asoc2, A)",
+            "ld(mult3, A)",
+            "ld(A, op_t)",
+            "ld(mult2, A)",
+            "rd(mult2, rd(A, B))",
+            "asoc(mult3, A, B)",
+            "rd(A, rd(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP672-11.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = rd(asoc2, rd(B, A))",
+            "fn_1(A, B, C) = rd(C, ld(B, A))",
+            "fn_3(A) = rd(A, asoc2)",
+            "fn_4(A, B, C) = rd(C, rd(B, A))",
+            "fn_5(A) = ld(mult3, A)",
+            "fn_6(A) = rd(asoc2, A)",
+            "fn_7(A) = ld(A, mult3)",
+            "fn_9(A) = mult(A, mult3)",
+            "fn_10(A) = ld(asoc2, A)",
+            "fn_11(A) = rd(A, mult3)",
+            "fn_13(A) = ld(asoc3, A)",
+            "fn_14(A) = ld(A, asoc2)",
+            "fn_16(A) = mult(A, op_t)",
+            "fn_18(A) = asoc(asoc2, op_z, A)",
+            "fn_19(A) = rd(op_t, A)"
+        ],
+        "final_hints": [
+            "asoc(asoc2, op_z, A)",
+            "ld(A, asoc2)",
+            "rd(A, asoc2)",
+            "rd(asoc2, rd(A, B))",
+            "rd(op_t, A)",
+            "mult(A, mult3)",
+            "ld(asoc3, A)",
+            "mult(A, op_t)",
+            "rd(A, mult3)",
+            "ld(A, mult3)",
+            "rd(A, rd(B, C))",
+            "ld(asoc2, A)",
+            "rd(A, ld(B, C))",
+            "ld(mult3, A)",
+            "rd(asoc2, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP673-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = asoc(C, op_z, rd(B, A))",
+            "fn_1(A, B, C) = rd(C, rd(B, A))",
+            "fn_2 = ld(ld(mult3, op_z), mult(mult3, op_z))",
+            "fn_3(A) = asoc(A, mult3, asoc2)",
+            "fn_4(A, B, C) = rd(mult3, rd(rd(rd(mult2, asoc(A, B, C)), ld(rd(ld(ld(mult3, op_z), mult(mult3, op_z)), op_z), asoc2)), mult3))",
+            "fn_5 = rd(op_z, rd(mult(mult3, op_z), ld(mult(mult2, op_z), mult(mult3, mult(mult3, op_z)))))",
+            "fn_7(A) = rd(mult3, A)",
+            "fn_8(A) = ld(A, op_z)",
+            "fn_9 = rd(op_z, mult(mult2, op_y))",
+            "fn_10(A, B) = asoc(mult3, A, B)",
+            "fn_11(A) = mult(mult3, A)",
+            "fn_12(A) = rd(mult2, A)",
+            "fn_14(A, B) = rd(mult2, rd(A, B))",
+            "fn_15(A) = rd(A, asoc2)",
+            "fn_16(A) = mult(op_z, A)",
+            "fn_17(A, B) = rd(mult3, rd(A, B))",
+            "fn_18(A) = rd(asoc2, A)",
+            "fn_19(A) = ld(mult2, A)"
+        ],
+        "final_hints": [
+            "rd(op_z, mult(mult2, op_y))",
+            "rd(mult3, A)",
+            "rd(mult2, rd(A, B))",
+            "mult(mult3, A)",
+            "asoc(mult3, A, B)",
+            "ld(ld(mult3, op_z), mult(mult3, op_z))",
+            "rd(A, asoc2)",
+            "mult(op_z, A)",
+            "asoc(A, op_z, rd(B, C))",
+            "rd(mult2, A)",
+            "ld(mult2, A)",
+            "rd(mult3, rd(A, B))",
+            "rd(op_z, rd(mult(mult3, op_z), ld(mult(mult2, op_z), mult(mult3, mult(mult3, op_z)))))",
+            "asoc(A, mult3, asoc2)",
+            "rd(A, rd(B, C))",
+            "ld(A, op_z)",
+            "rd(mult3, rd(rd(rd(mult2, asoc(A, B, C)), ld(rd(ld(ld(mult3, op_z), mult(mult3, op_z)), op_z), asoc2)), mult3))",
+            "rd(asoc2, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP673-11.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = rd(C, rd(B, A))",
+            "fn_1(A, B, C) = rd(C, ld(B, A))",
+            "fn_2(A) = asoc(A, mult2, op_t)",
+            "fn_4(A) = rd(A, ld(rd(rd(mult3, asoc2), asoc(op_z, mult3, asoc3)), mult2))",
+            "fn_5(A) = rd(A, asoc2)",
+            "fn_6(A) = ld(mult3, A)",
+            "fn_8(A, B) = asoc(B, asoc2, A)",
+            "fn_9(A, B) = rd(asoc2, rd(A, B))",
+            "fn_11 = rd(op_t, mult3)",
+            "fn_12 = rd(op_z, asoc(asoc2, mult2, op_t))",
+            "fn_13(A) = rd(A, asoc3)",
+            "fn_14(A, B) = rd(mult3, rd(A, B))",
+            "fn_16(A) = mult(op_t, A)",
+            "fn_17(A) = ld(A, mult2)",
+            "fn_18(A) = mult(mult2, A)"
+        ],
+        "final_hints": [
+            "ld(A, mult2)",
+            "rd(A, asoc2)",
+            "rd(asoc2, rd(A, B))",
+            "rd(A, asoc3)",
+            "asoc(A, mult2, op_t)",
+            "asoc(A, asoc2, B)",
+            "rd(op_t, mult3)",
+            "rd(op_z, asoc(asoc2, mult2, op_t))",
+            "rd(mult3, rd(A, B))",
+            "mult(op_t, A)",
+            "mult(mult2, A)",
+            "rd(A, rd(B, C))",
+            "rd(A, ld(rd(rd(mult3, asoc2), asoc(op_z, mult3, asoc3)), mult2))",
+            "rd(A, ld(B, C))",
+            "ld(mult3, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP674-10.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = asoc(C, op_t, rd(B, A))",
+            "fn_1 = asoc(mult3, op_x, op_y)",
+            "fn_2(A, B, C) = rd(C, rd(B, A))",
+            "fn_3 = rd(asoc2, mult(mult2, ld(rd(asoc2, op_t), op_z)))",
+            "fn_4 = mult(op_t, op_z)",
+            "fn_5(A, B) = asoc(mult3, A, B)",
+            "fn_6 = asoc(op_t, op_x, op_y)",
+            "fn_7(A) = asoc(A, mult3, asoc2)",
+            "fn_8(A, B, C) = rd(C, ld(B, A))",
+            "fn_9(A) = rd(A, asoc2)",
+            "fn_10(A) = mult(A, op_t)",
+            "fn_11(A, B, C, D) = rd(op_t, rd(A, ld(mult(D, C), B)))",
+            "fn_12(A) = mult(mult3, A)",
+            "fn_13(A) = rd(A, op_t)",
+            "fn_14(A, B, C) = ld(C, ld(B, A))",
+            "fn_16(A) = mult(mult2, A)",
+            "fn_17 = asoc(mult3, op_y, op_x)",
+            "fn_19(A) = rd(mult2, A)"
+        ],
+        "final_hints": [
+            "asoc(A, op_t, rd(B, C))",
+            "mult(op_t, op_z)",
+            "asoc(mult3, op_y, op_x)",
+            "rd(A, asoc2)",
+            "asoc(mult3, A, B)",
+            "rd(asoc2, mult(mult2, ld(rd(asoc2, op_t), op_z)))",
+            "asoc(op_t, op_x, op_y)",
+            "mult(mult3, A)",
+            "ld(A, ld(B, C))",
+            "rd(mult2, A)",
+            "mult(A, op_t)",
+            "rd(A, op_t)",
+            "asoc(mult3, op_x, op_y)",
+            "asoc(A, mult3, asoc2)",
+            "rd(A, rd(B, C))",
+            "mult(mult2, A)",
+            "rd(op_t, rd(A, ld(mult(B, C), D)))",
+            "rd(A, ld(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP674-11.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = asoc(C, op_z, rd(B, A))",
+            "fn_1(A, B, C) = rd(C, rd(B, A))",
+            "fn_2(A) = asoc(A, mult3, asoc2)",
+            "fn_3(A, B) = asoc(mult3, asoc2, rd(B, A))",
+            "fn_5 = rd(op_z, mult(mult2, op_y))",
+            "fn_6(A) = rd(mult3, A)",
+            "fn_7(A) = rd(mult2, A)",
+            "fn_8(A) = mult(mult3, A)",
+            "fn_9(A) = ld(A, op_z)",
+            "fn_10(A, B) = rd(mult2, rd(A, B))",
+            "fn_11(A) = mult(op_z, A)",
+            "fn_12(A) = ld(mult2, A)",
+            "fn_13(A) = rd(A, asoc2)",
+            "fn_14(A) = rd(asoc2, A)",
+            "fn_17(A) = ld(asoc2, A)",
+            "fn_18(A) = mult(mult2, A)",
+            "fn_19 = rd(op_z, rd(mult2, op_y))"
+        ],
+        "final_hints": [
+            "rd(op_z, mult(mult2, op_y))",
+            "rd(mult3, A)",
+            "rd(mult2, rd(A, B))",
+            "mult(mult3, A)",
+            "rd(A, asoc2)",
+            "ld(asoc2, A)",
+            "mult(op_z, A)",
+            "asoc(A, op_z, rd(B, C))",
+            "rd(mult2, A)",
+            "asoc(A, mult3, asoc2)",
+            "rd(A, rd(B, C))",
+            "mult(mult2, A)",
+            "asoc(mult3, asoc2, rd(A, B))",
+            "ld(A, op_z)",
+            "rd(op_z, rd(mult2, op_y))",
+            "rd(asoc2, A)",
+            "ld(mult2, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP675-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = asoc(A, A, A)",
+            "fn_1(A, B) = asoc(B, A, A)",
+            "fn_2(A, B, C) = ld(C, mult(B, A))",
+            "fn_3(A) = rd(unit, A)",
+            "fn_4(A) = ld(A, unit)",
+            "fn_6(A, B, C, D) = rd(ld(C, mult(B, D)), ld(A, mult(B, C)))",
+            "fn_7 = asoc(asoc2, d, d)",
+            "fn_9(A, B) = mult(A, ld(B, A))",
+            "fn_10 = rd(e, rd(mult5, mult3))",
+            "fn_11(A) = rd(A, asoc(A, A, A))",
+            "fn_12(A, B, C, D) = mult(rd(D, ld(A, mult(B, A))), rd(ld(A, mult(B, A)), ld(C, mult(B, A))))",
+            "fn_13(A) = mult(A, A)",
+            "fn_15(A) = rd(unit, asoc(A, A, A))",
+            "fn_16(A, B, C) = rd(mult(ld(C, mult(B, C)), ld(ld(A, mult(B, C)), unit)), ld(A, mult(B, C)))",
+            "fn_17(A, B, C) = rd(ld(C, ld(rd(mult(B, C), A), mult(B, C))), ld(A, mult(B, C)))",
+            "fn_18 = rd(d, rd(mult3, asoc2))",
+            "fn_19(A) = mult(e, A)"
+        ],
+        "final_hints": [
+            "rd(unit, asoc(A, A, A))",
+            "asoc(A, B, B)",
+            "mult(A, ld(B, A))",
+            "rd(unit, A)",
+            "mult(A, A)",
+            "rd(mult(ld(A, mult(B, A)), ld(ld(C, mult(B, A)), unit)), ld(C, mult(B, A)))",
+            "mult(e, A)",
+            "rd(ld(A, mult(B, C)), ld(D, mult(B, A)))",
+            "ld(A, mult(B, C))",
+            "ld(A, unit)",
+            "rd(ld(A, ld(rd(mult(B, A), C), mult(B, A))), ld(C, mult(B, A)))",
+            "rd(e, rd(mult5, mult3))",
+            "asoc(A, A, A)",
+            "mult(rd(A, ld(B, mult(C, B))), rd(ld(B, mult(C, B)), ld(D, mult(C, B))))",
+            "rd(d, rd(mult3, asoc2))",
+            "rd(A, asoc(A, A, A))",
+            "asoc(asoc2, d, d)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP676-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = asoc(A, A, B)",
+            "fn_1(A) = ld(A, unit)",
+            "fn_2(A) = rd(unit, A)",
+            "fn_3(A) = asoc(A, A, A)",
+            "fn_4(A) = asoc(A, A, rd(unit, A))",
+            "fn_5(A, B) = ld(B, rd(B, A))",
+            "fn_6(A, B) = rd(B, mult(B, A))",
+            "fn_7(A) = rd(A, asoc(A, A, A))",
+            "fn_8(A, B) = mult(B, rd(ld(A, unit), ld(ld(ld(A, unit), unit), unit)))",
+            "fn_9(A) = mult(ld(A, unit), A)",
+            "fn_10(A) = asoc(A, A, ld(A, unit))",
+            "fn_15(A, B) = ld(mult(A, B), A)",
+            "fn_16(A) = ld(ld(A, unit), unit)",
+            "fn_17(A) = rd(unit, asoc(A, A, A))",
+            "fn_18(A, B) = rd(B, ld(A, unit))"
+        ],
+        "final_hints": [
+            "rd(unit, asoc(A, A, A))",
+            "rd(unit, A)",
+            "mult(A, rd(ld(B, unit), ld(ld(ld(B, unit), unit), unit)))",
+            "rd(A, ld(B, unit))",
+            "asoc(A, A, rd(unit, A))",
+            "ld(mult(A, B), A)",
+            "ld(ld(A, unit), unit)",
+            "asoc(A, A, B)",
+            "ld(A, rd(A, B))",
+            "asoc(A, A, ld(A, unit))",
+            "ld(A, unit)",
+            "rd(A, mult(A, B))",
+            "asoc(A, A, A)",
+            "mult(ld(A, unit), A)",
+            "rd(A, asoc(A, A, A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP677-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = asoc(A, A, A)",
+            "fn_1(A) = rd(unit, A)",
+            "fn_2(A) = ld(A, unit)",
+            "fn_5(A) = rd(A, asoc(A, A, A))",
+            "fn_6(A, B, C, D, E) = ld(rd(E, rd(D, C)), mult(B, A))",
+            "fn_8(A) = rd(unit, asoc(A, A, A))",
+            "fn_9(A) = mult(ld(A, unit), A)",
+            "fn_12(A) = ld(asoc(A, A, A), A)",
+            "fn_13(A) = rd(ld(A, unit), unit)",
+            "fn_14(A) = mult(A, A)",
+            "fn_15(A, B, C) = ld(rd(A, rd(B, C)), mult(rd(unit, rd(A, rd(B, C))), mult(A, C)))",
+            "fn_16(A, B, C) = ld(rd(A, rd(B, C)), mult(A, mult(rd(ld(A, B), C), C)))",
+            "fn_17(A, B, C) = mult(B, ld(mult(A, C), ld(rd(A, rd(B, C)), mult(A, C))))",
+            "fn_18(A, B, C) = ld(rd(A, rd(B, C)), mult(rd(B, mult(A, C)), mult(A, C)))"
+        ],
+        "final_hints": [
+            "rd(unit, asoc(A, A, A))",
+            "ld(rd(A, rd(B, C)), mult(A, mult(rd(ld(A, B), C), C)))",
+            "rd(ld(A, unit), unit)",
+            "rd(unit, A)",
+            "ld(asoc(A, A, A), A)",
+            "mult(A, A)",
+            "ld(rd(A, rd(B, C)), mult(D, E))",
+            "ld(A, unit)",
+            "mult(A, ld(mult(B, C), ld(rd(B, rd(A, C)), mult(B, C))))",
+            "ld(rd(A, rd(B, C)), mult(rd(B, mult(A, C)), mult(A, C)))",
+            "asoc(A, A, A)",
+            "mult(ld(A, unit), A)",
+            "rd(A, asoc(A, A, A))",
+            "ld(rd(A, rd(B, C)), mult(rd(unit, rd(A, rd(B, C))), mult(A, C)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP678-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = ld(mult3, unit)",
+            "fn_1(A) = ld(A, unit)",
+            "fn_2(A) = rd(unit, A)",
+            "fn_3(A, B) = asoc(mult3, A, B)",
+            "fn_4(A) = rd(asoc2, A)",
+            "fn_5(A) = ld(A, op_c)",
+            "fn_6(A) = rd(mult3, A)",
+            "fn_7(A) = mult(ld(mult3, unit), A)",
+            "fn_8 = rd(mult2, op_c)",
+            "fn_9(A, B) = mult(ld(B, rd(asoc2, A)), rd(unit, ld(mult2, rd(asoc2, A))))",
+            "fn_11 = asoc(mult3, mult3, ld(mult3, unit))",
+            "fn_12(A, B, C) = ld(C, mult(B, A))",
+            "fn_14(A) = ld(op_c, A)",
+            "fn_15(A) = mult(op_c, A)",
+            "fn_16(A) = ld(A, asoc2)",
+            "fn_17(A) = ld(A, mult3)",
+            "fn_18(A) = mult(mult3, A)",
+            "fn_19 = rd(asoc2, mult3)"
+        ],
+        "final_hints": [
+            "mult(ld(A, rd(asoc2, B)), rd(unit, ld(mult2, rd(asoc2, B))))",
+            "mult(op_c, A)",
+            "rd(mult2, op_c)",
+            "rd(mult3, A)",
+            "mult(mult3, A)",
+            "asoc(mult3, A, B)",
+            "rd(unit, A)",
+            "ld(A, op_c)",
+            "ld(mult3, unit)",
+            "ld(op_c, A)",
+            "ld(A, unit)",
+            "asoc(mult3, mult3, ld(mult3, unit))",
+            "ld(A, mult(B, C))",
+            "rd(asoc2, mult3)",
+            "ld(A, mult3)",
+            "ld(A, asoc2)",
+            "mult(ld(mult3, unit), A)",
+            "rd(asoc2, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP679-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011215000000000086
+    },
+    {
+        "problem": "GRP680-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014249999999999985
+    },
+    {
+        "problem": "GRP681-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.509468
+    },
+    {
+        "problem": "GRP682-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010040999999999967
+    },
+    {
+        "problem": "GRP682-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05883499999999997
+    },
+    {
+        "problem": "GRP683-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.020013999999999976
+    },
+    {
+        "problem": "GRP683-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029650000000000065
+    },
+    {
+        "problem": "GRP684-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.035712999999999995
+    },
+    {
+        "problem": "GRP685-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07098000000000004
+    },
+    {
+        "problem": "GRP685-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00725000000000009
+    },
+    {
+        "problem": "GRP686-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.12933899999999998
+    },
+    {
+        "problem": "GRP687-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.05209499999999989
+    },
+    {
+        "problem": "GRP688-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.431633
+    },
+    {
+        "problem": "GRP689-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = ld(i(op_d), i(op_c))",
+            "fn_1(A, B) = ld(i(A), B)",
+            "fn_2(A) = ld(mult2, A)",
+            "fn_3(A) = ld(op_d, A)",
+            "fn_7 = ld(op_d, op_c)",
+            "fn_8(A, B) = rd(i(A), B)",
+            "fn_9(A, B) = ld(B, i(A))",
+            "fn_10 = ld(mult2, ld(i(op_d), i(op_c)))",
+            "fn_11 = rd(op_c, op_d)",
+            "fn_12 = ld(op_d, i(i(op_c)))",
+            "fn_13 = i(op_d)",
+            "fn_14(A, B, C) = ld(rd(B, A), C)",
+            "fn_15 = ld(mult2, i(mult2))",
+            "fn_16(A) = rd(A, rd(i(ld(op_d, ld(mult2, op_d))), rd(i(ld(op_c, i(op_c))), i(ld(op_d, ld(mult2, op_d))))))",
+            "fn_17(A, B) = ld(i(A), rd(B, A))",
+            "fn_18(A, B, C) = rd(rd(B, C), ld(rd(B, rd(i(B), i(C))), A))",
+            "fn_19 = rd(op_d, op_c)"
+        ],
+        "final_hints": [
+            "ld(A, i(B))",
+            "ld(op_d, A)",
+            "ld(i(A), B)",
+            "i(op_d)",
+            "ld(rd(A, B), C)",
+            "rd(op_d, op_c)",
+            "ld(mult2, ld(i(op_d), i(op_c)))",
+            "ld(mult2, i(mult2))",
+            "rd(i(A), B)",
+            "rd(op_c, op_d)",
+            "ld(i(A), rd(B, A))",
+            "rd(rd(A, B), ld(rd(A, rd(i(A), i(B))), C))",
+            "rd(A, rd(i(ld(op_d, ld(mult2, op_d))), rd(i(ld(op_c, i(op_c))), i(ld(op_d, ld(mult2, op_d))))))",
+            "ld(i(op_d), i(op_c))",
+            "ld(op_d, op_c)",
+            "ld(op_d, i(i(op_c)))",
+            "ld(mult2, A)"
+        ],
+        "status": "success",
+        "hint_time_user": 523.013056
+    },
+    {
+        "problem": "GRP690-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = ld(i(A), B)",
+            "fn_1(A, B) = ld(B, i(A))",
+            "fn_2(A, B, C) = ld(C, ld(B, A))",
+            "fn_4(A, B, C) = ld(i(C), ld(B, A))",
+            "fn_5(A, B) = ld(i(B), i(A))",
+            "fn_8 = ld(i(op_d), mult3)",
+            "fn_9 = ld(i(op_c), mult2)",
+            "fn_12(A, B) = rd(i(B), rd(B, A))",
+            "fn_14(A, B) = ld(A, ld(A, B))",
+            "fn_15(A, B, C) = rd(C, ld(B, A))"
+        ],
+        "final_hints": [
+            "ld(i(op_d), mult3)",
+            "ld(i(A), i(B))",
+            "ld(A, i(B))",
+            "ld(i(A), B)",
+            "ld(A, ld(B, C))",
+            "rd(i(A), rd(A, B))",
+            "ld(i(A), ld(B, C))",
+            "ld(A, ld(A, B))",
+            "ld(i(op_c), mult2)",
+            "rd(A, ld(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP691-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = ld(i(op_c), A)",
+            "fn_1(A) = ld(op_c, A)",
+            "fn_2 = i(op_c)",
+            "fn_3(A) = ld(op_f, A)",
+            "fn_4 = i(op_d)",
+            "fn_5 = ld(op_f, ld(op_c, op_d))",
+            "fn_6 = ld(op_c, i(op_e))",
+            "fn_7(A) = ld(op_e, A)",
+            "fn_8 = ld(i(op_c), op_e)",
+            "fn_9(A) = ld(op_d, A)",
+            "fn_10 = ld(i(op_c), op_d)",
+            "fn_11(A) = rd(A, op_c)",
+            "fn_12 = i(op_f)",
+            "fn_13 = ld(op_c, ld(op_c, op_f))",
+            "fn_14(A) = rd(A, rd(ld(op_e, op_c), rd(ld(op_e, op_c), ld(i(op_c), op_e))))",
+            "fn_15(A, B) = ld(ld(op_c, A), B)",
+            "fn_16 = ld(op_f, op_d)",
+            "fn_17(A) = ld(i(op_c), mult(A, i(op_c)))",
+            "fn_18 = ld(op_f, op_c)",
+            "fn_19(A, B) = ld(i(A), B)"
+        ],
+        "final_hints": [
+            "ld(op_f, ld(op_c, op_d))",
+            "ld(op_f, op_c)",
+            "ld(op_f, A)",
+            "ld(i(op_c), op_d)",
+            "rd(A, op_c)",
+            "ld(i(op_c), A)",
+            "i(op_f)",
+            "ld(i(op_c), op_e)",
+            "ld(op_d, A)",
+            "i(op_d)",
+            "ld(op_c, A)",
+            "ld(op_e, A)",
+            "ld(ld(op_c, A), B)",
+            "ld(i(A), B)",
+            "ld(i(op_c), mult(A, i(op_c)))",
+            "rd(A, rd(ld(op_e, op_c), rd(ld(op_e, op_c), ld(i(op_c), op_e))))",
+            "ld(op_c, i(op_e))",
+            "i(op_c)",
+            "ld(op_c, ld(op_c, op_f))",
+            "ld(op_f, op_d)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP692-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = ld(op_c, A)",
+            "fn_1 = i(op_c)",
+            "fn_2(A, B) = ld(i(A), B)",
+            "fn_3 = ld(op_c, op_d)",
+            "fn_4(A) = ld(op_f, A)",
+            "fn_5(A) = ld(op_d, A)",
+            "fn_6(A) = ld(i(op_c), A)",
+            "fn_7 = i(op_d)",
+            "fn_8 = ld(op_c, i(op_c))",
+            "fn_9 = ld(op_c, i(op_e))",
+            "fn_10(A) = rd(rd(i(op_c), rd(A, i(op_c))), op_d)",
+            "fn_11(A) = ld(op_e, A)",
+            "fn_12 = ld(op_d, op_f)",
+            "fn_13 = rd(a, mult4)",
+            "fn_16(A, B) = rd(B, i(A))",
+            "fn_17 = ld(op_c, op_f)",
+            "fn_18 = ld(i(op_c), op_d)",
+            "fn_19 = ld(i(op_c), op_e)"
+        ],
+        "final_hints": [
+            "ld(op_c, i(op_e))",
+            "rd(A, i(B))",
+            "ld(i(op_c), op_e)",
+            "ld(op_d, A)",
+            "i(op_c)",
+            "ld(i(A), B)",
+            "i(op_d)",
+            "ld(op_c, op_d)",
+            "ld(op_c, i(op_c))",
+            "ld(op_f, A)",
+            "ld(i(op_c), op_d)",
+            "ld(op_c, A)",
+            "rd(a, mult4)",
+            "ld(op_e, A)",
+            "rd(rd(i(op_c), rd(A, i(op_c))), op_d)",
+            "ld(i(op_c), A)",
+            "ld(op_d, op_f)",
+            "ld(op_c, op_f)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP693-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = i(op_d)",
+            "fn_1(A, B) = ld(B, i(A))",
+            "fn_2(A, B) = rd(B, i(A))",
+            "fn_3(A) = ld(op_d, A)",
+            "fn_4(A, B) = mult(i(A), B)",
+            "fn_5(A) = ld(i(op_d), A)",
+            "fn_6 = i(op_e)",
+            "fn_7(A) = rd(A, op_d)",
+            "fn_8(A, B) = ld(i(A), B)",
+            "fn_9(A) = rd(op_d, A)",
+            "fn_10(A) = rd(A, i(op_d))",
+            "fn_11(A) = ld(op_e, A)",
+            "fn_13(A) = rd(A, op_e)",
+            "fn_14(A) = rd(i(op_d), A)",
+            "fn_15(A) = ld(op_d, i(A))",
+            "fn_16(A) = mult(A, op_d)",
+            "fn_17(A) = ld(i(op_d), i(A))",
+            "fn_18(A) = rd(op_e, A)",
+            "fn_19(A) = mult(A, i(op_d))"
+        ],
+        "final_hints": [
+            "i(op_e)",
+            "rd(A, op_e)",
+            "rd(A, op_d)",
+            "ld(op_d, A)",
+            "i(op_d)",
+            "mult(A, op_d)",
+            "ld(op_d, i(A))",
+            "ld(op_e, A)",
+            "ld(A, i(B))",
+            "ld(i(A), B)",
+            "ld(i(op_d), i(A))",
+            "rd(i(op_d), A)",
+            "rd(A, i(op_d))",
+            "rd(op_e, A)",
+            "mult(i(A), B)",
+            "rd(A, i(B))",
+            "rd(op_d, A)",
+            "ld(i(op_d), A)",
+            "mult(A, i(op_d))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP694-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = ld(i(A), B)",
+            "fn_1(A, B) = ld(B, i(A))",
+            "fn_2(A, B) = rd(i(A), B)",
+            "fn_3(A) = ld(op_f, A)",
+            "fn_5(A) = ld(b, A)",
+            "fn_6(A, B) = rd(B, i(A))",
+            "fn_9(A, B) = mult(i(A), B)",
+            "fn_10(A) = ld(a, A)",
+            "fn_11(A) = rd(mult4, A)",
+            "fn_13(A, B) = mult(B, i(A))",
+            "fn_14 = ld(mult2, i(a))",
+            "fn_18 = ld(op_f, b)"
+        ],
+        "final_hints": [
+            "mult(A, i(B))",
+            "rd(A, i(B))",
+            "ld(A, i(B))",
+            "ld(b, A)",
+            "ld(i(A), B)",
+            "ld(a, A)",
+            "ld(mult2, i(a))",
+            "ld(op_f, A)",
+            "rd(i(A), B)",
+            "ld(op_f, b)",
+            "mult(i(A), B)",
+            "rd(mult4, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP695-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = ld(i(A), B)",
+            "fn_1(A, B) = ld(B, i(A))",
+            "fn_2(A, B) = rd(B, i(A))",
+            "fn_3(A) = ld(op_f, A)",
+            "fn_4(A, B) = rd(i(A), B)",
+            "fn_5(A) = ld(A, op_f)",
+            "fn_8(A) = rd(A, mult(i(ld(ld(i(b), i(op_f)), mult2)), mult2))",
+            "fn_9(A) = ld(i(A), A)",
+            "fn_10(A, B) = mult(i(A), B)",
+            "fn_15 = ld(i(b), i(op_f))",
+            "fn_18(A, B) = mult(B, i(A))"
+        ],
+        "final_hints": [
+            "mult(A, i(B))",
+            "rd(A, i(B))",
+            "ld(A, i(B))",
+            "ld(A, op_f)",
+            "ld(i(A), B)",
+            "rd(A, mult(i(ld(ld(i(b), i(op_f)), mult2)), mult2))",
+            "ld(i(A), A)",
+            "ld(op_f, A)",
+            "rd(i(A), B)",
+            "ld(i(b), i(op_f))",
+            "mult(i(A), B)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP696-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.3165619999999999
+    },
+    {
+        "problem": "GRP697-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04627300000000001
+    },
+    {
+        "problem": "GRP698-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.07867199999999985
+    },
+    {
+        "problem": "GRP699-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.638744
+    },
+    {
+        "problem": "GRP700-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01706999999999992
+    },
+    {
+        "problem": "GRP701-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.648302
+    },
+    {
+        "problem": "GRP702-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012937000000000198
+    },
+    {
+        "problem": "GRP702-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.00742799999999999
+    },
+    {
+        "problem": "GRP702-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014183999999999974
+    },
+    {
+        "problem": "GRP703-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010237000000000052
+    },
+    {
+        "problem": "GRP703-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010070999999999941
+    },
+    {
+        "problem": "GRP703-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.01132500000000003
+    },
+    {
+        "problem": "GRP704-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.013031999999999933
+    },
+    {
+        "problem": "GRP704-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005961000000000105
+    },
+    {
+        "problem": "GRP704-12.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.014523000000000064
+    },
+    {
+        "problem": "GRP705-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 12.98564
+    },
+    {
+        "problem": "GRP706-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 31.517027000000002
+    },
+    {
+        "problem": "GRP707-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08752599999999999
+    },
+    {
+        "problem": "GRP708-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.025601999999999903
+    },
+    {
+        "problem": "GRP709-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.03414500000000009
+    },
+    {
+        "problem": "GRP710-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.010453999999999963
+    },
+    {
+        "problem": "GRP710-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.011897999999999964
+    },
+    {
+        "problem": "GRP712-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = mult(mult5, A)",
+            "fn_1(A) = ld(mult5, A)",
+            "fn_2(A) = mult(mult4, A)",
+            "fn_3 = rd(a, mult5)",
+            "fn_4(A) = ld(mult4, A)",
+            "fn_5 = mult(mult5, mult4)",
+            "fn_6 = rd(a, mult(mult4, mult5))",
+            "fn_7(A) = rd(A, a)",
+            "fn_8(A) = ld(a, A)",
+            "fn_9 = mult(mult5, a)",
+            "fn_10(A) = ld(A, rd(ld(mult5, unit), rd(ld(mult5, rd(mult4, a)), ld(mult5, unit))))",
+            "fn_11 = mult(mult3, mult4)",
+            "fn_12 = ld(ld(a, ld(mult5, mult(mult4, mult5))), ld(a, ld(mult5, mult4)))",
+            "fn_13 = rd(mult4, rd(a, mult5))",
+            "fn_14 = ld(mult5, unit)",
+            "fn_15(A) = mult(a, A)",
+            "fn_16(A, B, C) = rd(C, rd(B, A))",
+            "fn_17(A) = mult(A, a)",
+            "fn_18 = ld(mult5, mult4)",
+            "fn_19 = mult(mult4, mult5)"
+        ],
+        "final_hints": [
+            "mult(a, A)",
+            "mult(mult5, a)",
+            "rd(a, mult(mult4, mult5))",
+            "ld(mult5, mult4)",
+            "ld(mult5, unit)",
+            "mult(mult4, A)",
+            "mult(A, a)",
+            "rd(mult4, rd(a, mult5))",
+            "mult(mult5, A)",
+            "ld(ld(a, ld(mult5, mult(mult4, mult5))), ld(a, ld(mult5, mult4)))",
+            "rd(a, mult5)",
+            "ld(mult4, A)",
+            "mult(mult4, mult5)",
+            "mult(mult5, mult4)",
+            "mult(mult3, mult4)",
+            "ld(a, A)",
+            "ld(A, rd(ld(mult5, unit), rd(ld(mult5, rd(mult4, a)), ld(mult5, unit))))",
+            "rd(A, a)",
+            "rd(A, rd(B, C))",
+            "ld(mult5, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP713-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = mult(mult3, A)",
+            "fn_1(A) = mult(mult4, A)",
+            "fn_2(A) = ld(mult4, A)",
+            "fn_3(A) = rd(A, rd(b, mult4))",
+            "fn_4(A) = ld(mult3, A)",
+            "fn_5 = mult(mult2, mult3)",
+            "fn_6 = mult(mult4, mult3)",
+            "fn_7 = mult(mult3, mult4)",
+            "fn_8 = rd(mult3, b)",
+            "fn_9(A) = rd(b, A)",
+            "fn_10(A) = ld(A, rd(ld(mult4, unit), rd(ld(mult4, rd(mult3, b)), ld(mult4, unit))))",
+            "fn_11(A) = ld(b, A)",
+            "fn_12 = mult(mult3, mult3)",
+            "fn_13 = ld(mult4, unit)",
+            "fn_14(A, B, C) = mult(mult(B, A), C)",
+            "fn_15 = ld(mult4, ld(mult3, unit))",
+            "fn_16 = ld(mult4, ld(mult4, mult2))",
+            "fn_17(A) = rd(A, b)",
+            "fn_18(A) = rd(unit, A)",
+            "fn_19 = mult(mult4, b)"
+        ],
+        "final_hints": [
+            "ld(mult4, unit)",
+            "mult(mult3, A)",
+            "rd(unit, A)",
+            "mult(mult2, mult3)",
+            "mult(mult3, mult3)",
+            "mult(mult4, A)",
+            "rd(mult3, b)",
+            "rd(A, b)",
+            "rd(A, rd(b, mult4))",
+            "ld(A, rd(ld(mult4, unit), rd(ld(mult4, rd(mult3, b)), ld(mult4, unit))))",
+            "ld(b, A)",
+            "ld(mult4, ld(mult3, unit))",
+            "mult(mult4, mult3)",
+            "ld(mult4, A)",
+            "mult(mult(A, B), C)",
+            "ld(mult3, A)",
+            "mult(mult3, mult4)",
+            "rd(b, A)",
+            "ld(mult4, ld(mult4, mult2))",
+            "mult(mult4, b)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP714-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = mult(mult4, A)",
+            "fn_1(A) = ld(mult4, A)",
+            "fn_2(A) = mult(mult3, A)",
+            "fn_3(A) = mult(mult2, A)",
+            "fn_4 = rd(c, mult4)",
+            "fn_5(A) = ld(c, A)",
+            "fn_6(A) = ld(mult3, A)",
+            "fn_7(A) = mult(c, A)",
+            "fn_8 = ld(mult4, ld(mult4, mult2))",
+            "fn_9 = mult(mult4, mult3)",
+            "fn_10(A) = rd(A, c)",
+            "fn_11 = mult(mult3, mult4)",
+            "fn_12 = mult(mult4, mult(mult2, mult3))",
+            "fn_13(A) = mult(A, mult3)",
+            "fn_14(A) = rd(c, A)",
+            "fn_15(A) = mult(A, mult2)",
+            "fn_16 = mult(c, ld(mult4, mult3))",
+            "fn_17(A) = ld(ld(c, unit), A)",
+            "fn_18 = mult(mult3, mult(mult4, c))",
+            "fn_19(A) = ld(A, ld(ld(c, ld(mult2, ld(mult2, ld(mult2, unit)))), mult2))"
+        ],
+        "final_hints": [
+            "mult(mult3, A)",
+            "mult(A, mult2)",
+            "mult(c, A)",
+            "mult(mult4, mult(mult2, mult3))",
+            "mult(mult3, mult(mult4, c))",
+            "mult(A, mult3)",
+            "mult(mult4, A)",
+            "mult(c, ld(mult4, mult3))",
+            "ld(A, ld(ld(c, ld(mult2, ld(mult2, ld(mult2, unit)))), mult2))",
+            "rd(A, c)",
+            "ld(ld(c, unit), A)",
+            "mult(mult4, mult3)",
+            "ld(mult4, A)",
+            "mult(mult2, A)",
+            "ld(mult3, A)",
+            "mult(mult3, mult4)",
+            "rd(c, A)",
+            "ld(c, A)",
+            "rd(c, mult4)",
+            "ld(mult4, ld(mult4, mult2))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP715-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.038872999999999935
+    },
+    {
+        "problem": "GRP715-11.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.039570000000000105
+    },
+    {
+        "problem": "GRP716-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(minus(B), A))",
+            "fn_1(A, B) = mult(mult(B, A), mult(minus(op_b), op_a))",
+            "fn_2(A, B) = mult(mult(B, A), mult(minus(op_a), op_b))",
+            "fn_3(A) = mult(A, op_a)",
+            "fn_4 = minus(op_b)",
+            "fn_5(A) = mult(A, op_b)",
+            "fn_7 = minus(op_a)",
+            "fn_10 = plus(op_b, minus(unit))",
+            "fn_12(A, B) = mult(plus(B, A), op_a)",
+            "fn_14(A, B) = mult(B, minus(A))",
+            "fn_18 = minus(mult3)",
+            "fn_19 = minus(mult4)"
+        ],
+        "final_hints": [
+            "minus(mult3)",
+            "mult(A, op_a)",
+            "mult(plus(A, B), op_a)",
+            "minus(mult4)",
+            "mult(A, op_b)",
+            "plus(op_b, minus(unit))",
+            "mult(A, minus(B))",
+            "mult(mult(A, B), mult(minus(op_a), op_b))",
+            "minus(op_a)",
+            "mult(A, mult(minus(B), C))",
+            "mult(mult(A, B), mult(minus(op_b), op_a))",
+            "minus(op_b)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP717-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(minus(B), A))",
+            "fn_1(A, B) = mult(mult(B, A), mult(minus(op_b), op_a))",
+            "fn_2(A, B) = mult(mult(B, A), mult(minus(op_a), op_b))",
+            "fn_3(A) = mult(A, op_a)",
+            "fn_4 = minus(op_b)",
+            "fn_5(A) = mult(A, op_b)",
+            "fn_7 = minus(op_a)",
+            "fn_9(A) = plus(A, A)",
+            "fn_11 = plus(op_b, minus(unit))",
+            "fn_12 = minus(mult3)",
+            "fn_15(A, B) = mult(B, minus(A))",
+            "fn_16(A, B) = mult(B, mult(A, op_a))",
+            "fn_19 = minus(mult2)"
+        ],
+        "final_hints": [
+            "minus(mult3)",
+            "mult(A, op_a)",
+            "mult(A, mult(B, op_a))",
+            "mult(A, op_b)",
+            "plus(A, A)",
+            "plus(op_b, minus(unit))",
+            "mult(A, minus(B))",
+            "mult(mult(A, B), mult(minus(op_a), op_b))",
+            "minus(mult2)",
+            "minus(op_a)",
+            "mult(A, mult(minus(B), C))",
+            "mult(mult(A, B), mult(minus(op_b), op_a))",
+            "minus(op_b)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP718-1.p",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 70 seconds]"
+    },
+    {
+        "problem": "GRP719-1.p",
+        "base_status": "timeout",
+        "error": "\n[Timeout after 70 seconds]"
+    },
+    {
+        "problem": "GRP720-2.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.795556
+    },
+    {
+        "problem": "GRP721-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 6.882027000000001
+    },
+    {
+        "problem": "GRP723-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_1(A, B, C) = mult(C, mult(B, A))",
+            "fn_4(A, B) = f(ld(B, A), mult(B, A))",
+            "fn_5(A, B, C, D, E) = ld(ld(D, E), mult(ld(mult(ld(A, B), mult(A, C)), E), ld(mult(ld(A, B), mult(A, C)), A)))",
+            "fn_7(A, B, C) = mult(A, mult(B, ld(A, C)))",
+            "fn_8(A, B) = f(ld(A, B), mult(B, A))",
+            "fn_9 = f(c, ld(f2, b))",
+            "fn_10 = f(f2, ld(f4, a))",
+            "fn_13(A, B) = f(B, f(A, mult(B, A)))",
+            "fn_14(A, B) = mult(A, mult(B, A))"
+        ],
+        "final_hints": [
+            "f(f2, ld(f4, a))",
+            "f(ld(A, B), mult(A, B))",
+            "f(c, ld(f2, b))",
+            "mult(A, mult(B, A))",
+            "f(A, f(B, mult(A, B)))",
+            "ld(ld(A, B), mult(ld(mult(ld(C, D), mult(C, E)), B), ld(mult(ld(C, D), mult(C, E)), C)))",
+            "mult(A, mult(B, C))",
+            "f(ld(A, B), mult(B, A))",
+            "mult(A, mult(B, ld(A, C)))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP724-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = rd(unit, A)",
+            "fn_1(A) = rd(rd(unit, A), A)",
+            "fn_2(A, B) = rd(mult(B, s(A)), op_t(B, s(A)))",
+            "fn_3(A) = rd(s(A), A)",
+            "fn_4(A) = mult(A, A)",
+            "fn_5(A, B) = rd(mult(A, s(B)), A)",
+            "fn_8(A) = mult(rd(unit, s(A)), A)",
+            "fn_9(A) = rd(A, mult(A, A))",
+            "fn_11(A) = ld(A, unit)",
+            "fn_12(A, B) = op_t(B, s(A))",
+            "fn_13(A, B) = mult(op_l(B, A, B), A)",
+            "fn_17(A) = rd(mult2, A)",
+            "fn_18(A, B) = op_t(mult(A, B), A)",
+            "fn_19 = rd(b, mult3)"
+        ],
+        "final_hints": [
+            "rd(b, mult3)",
+            "rd(unit, A)",
+            "op_t(mult(A, B), A)",
+            "rd(s(A), A)",
+            "mult(A, A)",
+            "rd(mult2, A)",
+            "rd(rd(unit, A), A)",
+            "mult(rd(unit, s(A)), A)",
+            "rd(mult(A, s(B)), A)",
+            "ld(A, unit)",
+            "op_t(A, s(B))",
+            "mult(op_l(A, B, A), B)",
+            "rd(mult(A, s(B)), op_t(A, s(B)))",
+            "rd(A, mult(A, A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP725-1.p",
+        "base_status": "success",
+        "error": "",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A) = rd(unit, A)",
+            "fn_1(A) = rd(s(A), A)",
+            "fn_2(A, B, C) = rd(mult(C, op_t(A, B)), A)",
+            "fn_3(A) = rd(unit, s(A))",
+            "fn_4(A, B) = rd(op_t(A, B), s(A))",
+            "fn_5(A) = mult(A, A)",
+            "fn_6(A, B) = mult(s(B), op_t(B, A))",
+            "fn_7(A, B, C) = op_l(rd(C, rd(B, rd(s(A), A))), rd(B, rd(s(A), A)), rd(s(A), A))",
+            "fn_11(A) = ld(rd(unit, s(A)), rd(unit, rd(s(A), A)))",
+            "fn_14(A, B) = mult(A, rd(B, A))",
+            "fn_15(A) = ld(A, unit)",
+            "fn_16(A, B) = rd(mult(s(A), op_t(A, B)), A)",
+            "fn_17(A, B, C) = rd(mult(B, A), C)"
+        ],
+        "final_hints": [
+            "rd(mult(A, op_t(B, C)), B)",
+            "op_l(rd(A, rd(B, rd(s(C), C))), rd(B, rd(s(C), C)), rd(s(C), C))",
+            "rd(op_t(A, B), s(A))",
+            "rd(unit, A)",
+            "rd(s(A), A)",
+            "mult(A, A)",
+            "rd(mult(s(A), op_t(A, B)), A)",
+            "rd(unit, s(A))",
+            "ld(A, unit)",
+            "mult(s(A), op_t(A, B))",
+            "mult(A, rd(B, A))",
+            "ld(rd(unit, s(A)), rd(unit, rd(s(A), A)))",
+            "rd(mult(A, B), C)"
+        ],
+        "status": "success",
+        "hint_time_user": 276.972077
+    },
+    {
+        "problem": "GRP726-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B) = op_l(i(A), A, B)",
+            "fn_1(A, B) = op_l(A, A, B)",
+            "fn_2(A, B) = asoc(A, B, i(A))",
+            "fn_3(A, B) = op_r(B, A, A)",
+            "fn_4(A, B) = asoc(A, B, A)",
+            "fn_11(A, B) = op_l(A, B, A)",
+            "fn_15(A) = i(i(A))",
+            "fn_16(A, B) = op_t(op_t(B, A), i(A))",
+            "fn_17(A, B) = mult(mult(A, B), op_r(i(A), B, B))",
+            "fn_18(A, B, C, D) = mult(D, rd(A, op_t(op_r(i(B), C, C), A)))",
+            "fn_19(A, B, C) = op_l(i(A), B, C)"
+        ],
+        "final_hints": [
+            "mult(mult(A, B), op_r(i(A), B, B))",
+            "op_l(i(A), B, C)",
+            "asoc(A, B, A)",
+            "asoc(A, B, i(A))",
+            "i(i(A))",
+            "op_t(op_t(A, B), i(B))",
+            "mult(A, rd(B, op_t(op_r(i(C), D, D), B)))",
+            "op_l(A, B, A)",
+            "op_r(A, B, B)",
+            "op_l(i(A), A, B)",
+            "op_l(A, A, B)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP727-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.1815929999999999
+    },
+    {
+        "problem": "GRP728-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.2408900000000003
+    },
+    {
+        "problem": "GRP729-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.859381
+    },
+    {
+        "problem": "GRP730-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.8264969999999998
+    },
+    {
+        "problem": "GRP731-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04902500000000032
+    },
+    {
+        "problem": "GRP732-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = ld(mult6, mult7)",
+            "fn_1 = ld(mult7, mult6)",
+            "fn_2 = ld(mult6, mult5)",
+            "fn_3 = ld(mult5, mult6)",
+            "fn_4(A) = rd(A, ld2)",
+            "fn_5(A) = rd(mult7, A)",
+            "fn_6 = rd(mult6, mult7)",
+            "fn_7(A, B, C) = rd(mult(B, A), C)",
+            "fn_8(A, B, C) = ld(C, mult(B, A))",
+            "fn_9(A) = ld(ld(mult6, mult7), A)",
+            "fn_10(A) = rd(unit, A)",
+            "fn_11 = rd(unit, ld2)",
+            "fn_12(A) = rd(mult5, A)",
+            "fn_13(A) = ld(ld(mult7, mult6), A)",
+            "fn_14(A) = mult(A, ld2)",
+            "fn_15(A) = mult(ld2, A)",
+            "fn_16(A) = rd(ld2, A)",
+            "fn_17(A) = ld(A, mult7)",
+            "fn_18 = rd(mult7, mult6)",
+            "fn_19(A) = mult(A, ld(mult6, mult7))"
+        ],
+        "final_hints": [
+            "rd(mult5, A)",
+            "ld(ld(mult7, mult6), A)",
+            "rd(unit, ld2)",
+            "ld(A, mult7)",
+            "rd(ld2, A)",
+            "ld(mult5, mult6)",
+            "rd(unit, A)",
+            "rd(A, ld2)",
+            "ld(ld(mult6, mult7), A)",
+            "ld(mult6, mult5)",
+            "rd(mult6, mult7)",
+            "ld(mult7, mult6)",
+            "mult(A, ld2)",
+            "ld(mult6, mult7)",
+            "mult(A, ld(mult6, mult7))",
+            "rd(mult(A, B), C)",
+            "rd(mult7, mult6)",
+            "rd(mult7, A)",
+            "ld(A, mult(B, C))",
+            "mult(ld2, A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP740-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = ld(C, ld(B, A))",
+            "fn_1(A) = mult(mult5, A)",
+            "fn_2(A, B, C, D) = ld(D, ld(A, ld(B, C)))",
+            "fn_3(A) = mult(mult4, A)",
+            "fn_4(A) = mult(mult3, A)",
+            "fn_5(A) = ld(mult4, A)",
+            "fn_6 = mult(mult5, mult3)",
+            "fn_7(A, B) = ld(mult5, ld(A, B))",
+            "fn_8 = mult(a, c)",
+            "fn_9(A) = mult(mult2, A)",
+            "fn_10(A, B, C) = ld(ld(B, A), C)",
+            "fn_11(A, B, C) = ld(mult5, ld(C, ld(B, A)))",
+            "fn_12(A, B) = ld(A, ld(A, B))",
+            "fn_13(A) = ld(A, a)",
+            "fn_14(A) = ld(mult5, A)",
+            "fn_16(A) = mult(A, A)",
+            "fn_17(A) = ld(mult3, A)",
+            "fn_18(A) = ld(A, mult3)"
+        ],
+        "final_hints": [
+            "mult(mult3, A)",
+            "ld(mult5, ld(A, B))",
+            "ld(A, ld(B, C))",
+            "mult(mult5, mult3)",
+            "ld(A, ld(A, B))",
+            "ld(mult5, ld(A, ld(B, C)))",
+            "ld(A, a)",
+            "mult(mult5, A)",
+            "ld(A, ld(B, ld(C, D)))",
+            "mult(mult4, A)",
+            "ld(ld(A, B), C)",
+            "mult(A, A)",
+            "ld(mult4, A)",
+            "ld(A, mult3)",
+            "mult(mult2, A)",
+            "ld(mult3, A)",
+            "ld(mult5, A)",
+            "mult(a, c)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP749-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = ld(C, mult(B, A))",
+            "fn_1(A) = ld(rd(mult4, A), mult(a, mult2))",
+            "fn_2(A, B, C) = rd(mult(B, A), C)",
+            "fn_3 = rd(c, c)",
+            "fn_4 = ld(c, mult(mult2, mult2))",
+            "fn_5(A) = rd(mult2, A)",
+            "fn_6(A, B, C) = mult(C, ld(B, A))",
+            "fn_9(A) = mult(A, c)",
+            "fn_11(A) = mult(a, A)",
+            "fn_12(A, B) = ld(c, mult(A, B))",
+            "fn_13(A) = rd(c, A)",
+            "fn_14(A) = mult(A, mult2)",
+            "fn_15(A) = rd(A, c)",
+            "fn_17(A, B) = rd(mult(A, B), c)",
+            "fn_18(A) = rd(mult2, mult(c, ld(A, c)))",
+            "fn_19(A) = mult(c, A)"
+        ],
+        "final_hints": [
+            "rd(c, c)",
+            "mult(a, A)",
+            "rd(mult2, mult(c, ld(A, c)))",
+            "rd(c, A)",
+            "rd(mult2, A)",
+            "ld(c, mult(A, B))",
+            "rd(A, c)",
+            "ld(rd(mult4, A), mult(a, mult2))",
+            "ld(c, mult(mult2, mult2))",
+            "ld(A, mult(B, C))",
+            "mult(A, mult2)",
+            "rd(mult(A, B), c)",
+            "mult(c, A)",
+            "mult(A, c)",
+            "rd(mult(A, B), C)",
+            "mult(A, ld(B, C))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP750-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.024149999999999998
+    },
+    {
+        "problem": "GRP751-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 3.9044820000000002
+    },
+    {
+        "problem": "GRP752-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.7004070000000002
+    },
+    {
+        "problem": "GRP753-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.016425
+    },
+    {
+        "problem": "GRP754-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.3656870000000003
+    },
+    {
+        "problem": "GRP756-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.04769700000000032
+    },
+    {
+        "problem": "GRP764-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = eta(difference(C, difference(B, A)))",
+            "fn_1(A) = difference(j(A), j(difference(i(difference(x1, eta2)), difference(j3, eta(product4)))))",
+            "fn_2(A, B) = eta(difference(B, A))",
+            "fn_3(A, B) = difference(j(A), B)",
+            "fn_5(A, B) = difference(j(B), j(i(i(difference(j3, eta(A))))))",
+            "fn_6(A) = j(quotient(A, quotient(j2, j(A))))",
+            "fn_7 = difference(difference(j3, eta(product4)), i(difference(x1, eta2)))",
+            "fn_8(A, B) = j(product(B, A))",
+            "fn_9(A, B) = j(difference(B, A))",
+            "fn_11(A, B, C) = eta(difference(A, difference(B, difference(C, A))))",
+            "fn_13 = eta(product3)",
+            "fn_14 = difference(j(product(x1, x0)), j(eta2))",
+            "fn_15(A) = difference(eta(A), j3)",
+            "fn_16(A, B) = eta(difference(j3, difference(A, B)))",
+            "fn_17(A) = difference(j(j(j2)), product(j(j2), A))",
+            "fn_18(A) = difference(j3, A)",
+            "fn_19(A) = eta(difference(j3, j(A)))"
+        ],
+        "final_hints": [
+            "eta(difference(A, difference(B, difference(C, A))))",
+            "difference(j3, A)",
+            "difference(j(A), B)",
+            "j(quotient(A, quotient(j2, j(A))))",
+            "difference(j(A), j(difference(i(difference(x1, eta2)), difference(j3, eta(product4)))))",
+            "eta(difference(j3, difference(A, B)))",
+            "eta(difference(A, B))",
+            "eta(product3)",
+            "difference(j(product(x1, x0)), j(eta2))",
+            "difference(j(A), j(i(i(difference(j3, eta(B))))))",
+            "eta(difference(A, difference(B, C)))",
+            "j(product(A, B))",
+            "difference(eta(A), j3)",
+            "eta(difference(j3, j(A)))",
+            "difference(difference(j3, eta(product4)), i(difference(x1, eta2)))",
+            "j(difference(A, B))",
+            "difference(j(j(j2)), product(j(j2), A))"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP765-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0(A, B, C) = eta(difference(C, difference(B, A)))",
+            "fn_1(A, B) = eta(difference(B, A))",
+            "fn_2(A) = i(i(A))",
+            "fn_4(A, B) = quotient(i(A), B)",
+            "fn_5 = quotient(difference(i(product3), i(i(product2))), product3)",
+            "fn_6(A) = difference(A, i2)",
+            "fn_9(A, B) = difference(i(A), B)",
+            "fn_11(A) = product(i3, A)",
+            "fn_13(A) = difference(i(i(difference(A, x0))), eta(A))",
+            "fn_14(A) = difference(i3, A)",
+            "fn_15(A) = product(x0, A)",
+            "fn_16(A) = difference(i2, difference(i2, quotient(A, i2)))",
+            "fn_17 = product(x1, i(product2))",
+            "fn_19(A) = quotient(j(difference(A, i2)), A)"
+        ],
+        "final_hints": [
+            "product(x0, A)",
+            "product(x1, i(product2))",
+            "difference(i2, difference(i2, quotient(A, i2)))",
+            "product(i3, A)",
+            "eta(difference(A, B))",
+            "quotient(difference(i(product3), i(i(product2))), product3)",
+            "quotient(i(A), B)",
+            "difference(A, i2)",
+            "i(i(A))",
+            "difference(i3, A)",
+            "eta(difference(A, difference(B, C)))",
+            "difference(i(i(difference(A, x0))), eta(A))",
+            "difference(i(A), B)",
+            "quotient(j(difference(A, i2)), A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP766-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.760269
+    },
+    {
+        "problem": "GRP767-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.19418799999999958
+    },
+    {
+        "problem": "GRP768-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.5141159999999996
+    },
+    {
+        "problem": "GRP769-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 10.748502000000002
+    },
+    {
+        "problem": "GRP770-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 11.462411
+    },
+    {
+        "problem": "GRP771-1.p",
+        "base_status": "success",
+        "error": "\n[Timeout after 950 seconds]",
+        "expanded_partial_proof_abstractions": [
+            "fn_0 = eta(c2)",
+            "fn_1 = j(c(x0, product2))",
+            "fn_2(A, B) = difference(j(A), B)",
+            "fn_3 = quotient(j(product4), j(j(j(c(x0, product2)))))",
+            "fn_4(A) = c(A, eta(c2))",
+            "fn_5(A, B) = eta(difference(B, A))",
+            "fn_7(A) = j(j(A))",
+            "fn_9(A, B) = t(j(A), B)",
+            "fn_10(A) = c(eta(c2), A)",
+            "fn_11 = quotient(j(product4), j(c(x0, product2)))",
+            "fn_12 = c(x0, product2)",
+            "fn_13 = eta(product5)",
+            "fn_14(A) = difference(c(A, eta(c2)), A)",
+            "fn_15(A) = t(eta(c2), A)",
+            "fn_16 = c(product3, c2)",
+            "fn_17(A, B) = difference(B, j(A))",
+            "fn_18 = difference(j(product2), x1)",
+            "fn_19 = difference(j(product5), product3)"
+        ],
+        "final_hints": [
+            "eta(product5)",
+            "c(product3, c2)",
+            "difference(j(A), B)",
+            "quotient(j(product4), j(c(x0, product2)))",
+            "eta(difference(A, B))",
+            "c(eta(c2), A)",
+            "c(A, eta(c2))",
+            "eta(c2)",
+            "c(x0, product2)",
+            "quotient(j(product4), j(j(j(c(x0, product2)))))",
+            "difference(j(product2), x1)",
+            "difference(j(product5), product3)",
+            "difference(A, j(B))",
+            "difference(c(A, eta(c2)), A)",
+            "j(j(A))",
+            "j(c(x0, product2))",
+            "t(j(A), B)",
+            "t(eta(c2), A)"
+        ],
+        "status": "timeout"
+    },
+    {
+        "problem": "GRP772-1.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.7524889999999989
+    },
+    {
+        "problem": "GRP777-10.p",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.36030799999999985
+    }
+]

@@ -1,0 +1,590 @@
+[
+    {
+        "problem": "ROB001-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(X2, Y2)), negate(add(Z2, W2)))\nhint 2.2: negate(add(negate(add(Y2, W2)), negate(add(Y2, Z2))))\nhint 0.4: negate(add(Z2, W2))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB002-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.008383,
+        "hint_time_sys": 0.008412,
+        "hint_time": 0.016794999999999997
+    },
+    {
+        "problem": "ROB003-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.063636,
+        "hint_time_sys": 0.012936,
+        "hint_time": 0.076572
+    },
+    {
+        "problem": "ROB004-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.033381,
+        "hint_time_sys": 0.015266,
+        "hint_time": 0.048647
+    },
+    {
+        "problem": "ROB005-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.8809849999999999,
+        "hint_time_sys": 0.030809,
+        "hint_time": 0.9117939999999999
+    },
+    {
+        "problem": "ROB006-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 222.130966,
+        "hint_time_sys": 0.684098,
+        "hint_time": 222.815064
+    },
+    {
+        "problem": "ROB006-2.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 160.342156,
+        "hint_time_sys": 0.508714,
+        "hint_time": 160.85087
+    },
+    {
+        "problem": "ROB008-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.039353,
+        "hint_time_sys": 0.012595,
+        "hint_time": 0.051948
+    },
+    {
+        "problem": "ROB009-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.006684,
+        "hint_time_sys": 0.008365,
+        "hint_time": 0.015049
+    },
+    {
+        "problem": "ROB010-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.001047,
+        "hint_time_sys": 0.007359999999999999,
+        "hint_time": 0.008407
+    },
+    {
+        "problem": "ROB013-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.0026449999999999998,
+        "hint_time_sys": 0.013174,
+        "hint_time": 0.015819
+    },
+    {
+        "problem": "ROB015-10.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "ifeq4(negate(add(A, negate(B))), C, negate(add(A, negate(add(B, multiply(k, add(A, C)))))), C)",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(a, b)), A))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(d, A))",
+            "negate(add(e, multiply(k, add(d, negate(add(d, negate(e)))))))",
+            "negate(add(d, negate(e)))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(e)",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(A, multiply(k, add(B, negate(add(B, negate(A)))))))",
+            "ifeq4(negate(add(negate(add(A, B)), C)), negate(add(D, negate(add(E, F)))), C, D)",
+            "negate(d)",
+            "negate(add(A, negate(add(B, multiply(k, add(A, C))))))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(a, b))",
+            "negate(add(A, negate(A)))",
+            "ifeq2(A, true, ifeq4(negate(add(B, negate(C))), D, negate(add(B, negate(add(C, multiply(k, add(B, D)))))), D), D)",
+            "ifeq4(negate(add(negate(add(A, B)), C)), negate(add(B, negate(add(C, A)))), C, B)"
+        ],
+        "final_hints": [
+            "ifeq4(negate(add(negate(add(D, E)), B)), negate(add(A, C)), B, A)",
+            "negate(add(a, b))",
+            "ifeq4(negate(add(B, negate(C))), A, negate(add(B, negate(add(C, multiply(k, add(B, A)))))), A)",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "add(negate(add(C, D)), negate(add(A, B)))",
+            "negate(add(A, multiply(k, add(B, negate(add(B, negate(A)))))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 1.429763,
+        "hint_time_sys": 0.030833,
+        "hint_time": 1.4605959999999998
+    },
+    {
+        "problem": "ROB018-10.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 34.54021,
+        "hint_time_sys": 0.184105,
+        "hint_time": 34.724315000000004
+    },
+    {
+        "problem": "ROB022-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.087987,
+        "hint_time_sys": 0.015170999999999999,
+        "hint_time": 0.103158
+    },
+    {
+        "problem": "ROB023-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.135231,
+        "hint_time_sys": 0.008891,
+        "hint_time": 0.144122
+    },
+    {
+        "problem": "ROB025-10.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(W2, Z)), negate(add(Y, X)))\nhint 2.2: negate(add(negate(add(Z, X)), negate(add(Z, Y))))\nhint 0.4: negate(add(Y, X))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB026-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 218.842204,
+        "hint_time_sys": 0.709708,
+        "hint_time": 219.55191200000002
+    },
+    {
+        "problem": "ROB030-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 0.002933,
+        "hint_time_sys": 0.0048969999999999994,
+        "hint_time": 0.00783
+    },
+    {
+        "problem": "ROB031-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(W2, V2)), negate(add(Y2, X2)))\nhint 2.2: negate(add(negate(add(V2, X2)), negate(add(V2, Y2))))\nhint 0.4: negate(add(Y2, X2))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB031-2.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(h(A))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))",
+            "add(A, g(A))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 373.882468,
+        "hint_time_sys": 0.935232,
+        "hint_time": 374.8177
+    },
+    {
+        "problem": "ROB032-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(Y2, X2)), negate(add(W2, V2)))\nhint 2.2: negate(add(negate(add(X2, V2)), negate(add(X2, W2))))\nhint 0.4: negate(add(W2, V2))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB032-2.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(h(A))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))",
+            "add(A, g(A))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(T2, S2)), negate(add(X3, T)))\nhint 2.2: negate(add(negate(add(S2, T)), negate(add(S2, X3))))\nhint 0.4: negate(add(X3, T))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB033-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(h(A))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))",
+            "add(A, g(A))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(W2, V2)), negate(add(U2, T)))\nhint 2.2: negate(add(negate(add(V2, T)), negate(add(V2, U2))))\nhint 0.4: negate(add(U2, T))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB034-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(h(A))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))",
+            "add(A, g(A))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "timeout",
+        "error": "hint 1.0: add(negate(add(T2, S2)), negate(add(X3, T)))\nhint 2.2: negate(add(negate(add(S2, T)), negate(add(S2, X3))))\nhint 0.4: negate(add(X3, T))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ROB035-1.p",
+        "domain_hints": [
+            "negate(add(A, B))",
+            "add(A, add(B, C))",
+            "negate(add(negate(add(A, B)), negate(add(B, C))))",
+            "negate(h(A))",
+            "negate(add(negate(add(A, B)), negate(add(A, negate(B)))))",
+            "negate(add(A, negate(B)))",
+            "add(negate(add(A, B)), negate(add(negate(A), B)))",
+            "negate(add(negate(add(A, B)), negate(add(A, C))))",
+            "add(negate(add(A, B)), negate(add(C, D)))",
+            "negate(add(A, negate(A)))",
+            "add(A, g(A))"
+        ],
+        "final_hints": [
+            "add(negate(add(D, C)), negate(add(B, A)))",
+            "negate(add(negate(add(C, A)), negate(add(C, B))))",
+            "negate(add(B, A))"
+        ],
+        "status": "success",
+        "hint_time_user": 385.254937,
+        "hint_time_sys": 0.933118,
+        "hint_time": 386.18805499999996
+    }
+]

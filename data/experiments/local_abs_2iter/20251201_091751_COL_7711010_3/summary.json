@@ -1,0 +1,1914 @@
+[
+    {
+        "problem": "COL001-1",
+        "mean_base_user_time": 1.6289283749999999,
+        "min_base_user_time": 1.608125,
+        "min_base_dir": "20250627_182042_COL_7178266_158",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(s, apply(s, apply(k, B))), apply(apply(s, k), A))",
+            "fn_1(A, B, C) = apply(apply(apply(s, B), A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(s, apply(s, apply(k, B))), apply(apply(s, k), A))",
+            "fn_1(A, B, C) = apply(apply(apply(s, B), A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.59632,
+        "hints_time_sys": 0.18825,
+        "hints_time": 1.78457
+    },
+    {
+        "problem": "COL001-2",
+        "mean_base_user_time": 0.010397375,
+        "min_base_user_time": 0.007646999999999999,
+        "min_base_dir": "20250627_182206_COL_7178278_170",
+        "abstractions": [
+            "fn_0(A) = apply(apply(s, apply(b, A)), i)",
+            "fn_1(A) = equals(apply(A, A), apply(fn_0(combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(apply(s, apply(b, A)), i)",
+            "fn_1(A) = equals(apply(A, A), apply(apply(apply(s, apply(b, combinator)), i), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003946,
+        "hints_time_sys": 0.161998,
+        "hints_time": 0.165944
+    },
+    {
+        "problem": "COL002-1",
+        "mean_base_user_time": 0.0081998125,
+        "min_base_user_time": 0.0038989999999999997,
+        "min_base_dir": "20250627_182631_COL_7178296_188",
+        "abstractions": [
+            "fn_0(A) = apply(apply(s, apply(b, A)), i)",
+            "fn_1(A) = equals(apply(A, A), apply(fn_0(fixed_pt), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(apply(s, apply(b, A)), i)",
+            "fn_1(A) = equals(apply(A, A), apply(apply(apply(s, apply(b, fixed_pt)), i), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00199,
+        "hints_time_sys": 0.142887,
+        "hints_time": 0.14487699999999998
+    },
+    {
+        "problem": "COL002-4",
+        "mean_base_user_time": 0.0038754375000000013,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182701_COL_7178298_190",
+        "abstractions": [
+            "fn_0(A) = apply(apply(s, apply(b, A)), i)",
+            "fn_1(A, B) = apply(B(A), fn_0(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(apply(s, apply(b, A)), i)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002025,
+        "hints_time_sys": 0.154329,
+        "hints_time": 0.156354
+    },
+    {
+        "problem": "COL002-5",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL003-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL003-12",
+        "mean_base_user_time": 0.140123375,
+        "min_base_user_time": 0.134872,
+        "min_base_dir": "20250627_181430_COL_7178208_140",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(w, A), B)",
+            "fn_1(A) = apply(b, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(w, A), B)",
+            "fn_1(A) = apply(b, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.10108299999999999,
+        "hints_time_sys": 0.162745,
+        "hints_time": 0.263828
+    },
+    {
+        "problem": "COL003-13",
+        "mean_base_user_time": 0.13994418750000004,
+        "min_base_user_time": 0.133982,
+        "min_base_dir": "20250627_182230_COL_7178282_174",
+        "abstractions": [
+            "fn_0(A) = apply(w, apply(b, apply(b, A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(w, apply(b, apply(b, A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010803,
+        "hints_time_sys": 0.163133,
+        "hints_time": 0.173936
+    },
+    {
+        "problem": "COL003-14",
+        "mean_base_user_time": 0.13915109374999998,
+        "min_base_user_time": 0.131888,
+        "min_base_dir": "20250627_182402_COL_7178284_176",
+        "abstractions": [
+            "fn_0(A) = apply(w, apply(b, apply(b, A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(w, apply(b, apply(b, A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.014705999999999999,
+        "hints_time_sys": 0.1619,
+        "hints_time": 0.17660599999999999
+    },
+    {
+        "problem": "COL003-15",
+        "mean_base_user_time": 0.14001165624999995,
+        "min_base_user_time": 0.132527,
+        "min_base_dir": "20250627_181300_COL_7178202_134",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, A))",
+            "fn_1(A, B) = fn_0(b, apply(B, A), fn_0(w, fn_0(w, w, b), b))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, A))",
+            "fn_1(A, B) = apply(apply(b, apply(apply(b, apply(w, w)), w)), apply(apply(B, A), b))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.142903,
+        "hints_time_sys": 0.16097699999999998,
+        "hints_time": 0.30388
+    },
+    {
+        "problem": "COL003-16",
+        "mean_base_user_time": 0.13974337499999998,
+        "min_base_user_time": 0.130079,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0(A) = apply(w, apply(b, apply(b, A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(w, apply(b, apply(b, A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.014801,
+        "hints_time_sys": 0.159107,
+        "hints_time": 0.173908
+    },
+    {
+        "problem": "COL003-17",
+        "mean_base_user_time": 0.13405818749999998,
+        "min_base_user_time": 0.128104,
+        "min_base_dir": "20250627_182831_COL_7178300_192",
+        "abstractions": [
+            "fn_0(A) = apply(b, A)",
+            "fn_1(A, B) = apply(apply(w, A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(b, A)",
+            "fn_1(A, B) = apply(apply(w, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.119932,
+        "hints_time_sys": 0.161413,
+        "hints_time": 0.281345
+    },
+    {
+        "problem": "COL003-18",
+        "mean_base_user_time": 0.13476512499999999,
+        "min_base_user_time": 0.128025,
+        "min_base_dir": "20250627_182201_COL_7178276_168",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A, B) = fn_0(B, w, fn_0(w, b, apply(b, apply(b, A))))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A, B) = apply(apply(w, B), apply(apply(b, w), apply(b, apply(b, A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.26969,
+        "hints_time_sys": 0.166576,
+        "hints_time": 0.436266
+    },
+    {
+        "problem": "COL003-19",
+        "mean_base_user_time": 0.13462984375,
+        "min_base_user_time": 0.128695,
+        "min_base_dir": "20250627_181430_COL_7178204_136",
+        "abstractions": [
+            "fn_0(A) = apply(b, A)",
+            "fn_1(A, B) = apply(apply(w, A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(b, A)",
+            "fn_1(A, B) = apply(apply(w, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.116245,
+        "hints_time_sys": 0.166747,
+        "hints_time": 0.282992
+    },
+    {
+        "problem": "COL003-20",
+        "mean_base_user_time": 0.13549512500000002,
+        "min_base_user_time": 0.128857,
+        "min_base_dir": "20250627_181435_COL_7178206_138",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A, B) = fn_0(B, w, fn_0(w, b, apply(b, apply(b, A))))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A, B) = apply(apply(w, B), apply(apply(b, w), apply(b, apply(b, A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.268943,
+        "hints_time_sys": 0.173505,
+        "hints_time": 0.44244799999999995
+    },
+    {
+        "problem": "COL004-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL004-3",
+        "mean_base_user_time": 0.0045483749999999995,
+        "min_base_user_time": 0.000998,
+        "min_base_dir": "20250627_182632_COL_7178294_186",
+        "abstractions": [
+            "fn_0(A) = apply(apply(s, A), A)",
+            "fn_1(A) = apply(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(apply(s, A), A)",
+            "fn_1(A) = apply(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004893,
+        "hints_time_sys": 0.15759499999999999,
+        "hints_time": 0.162488
+    },
+    {
+        "problem": "COL006-1",
+        "mean_base_user_time": 1.6775560312500002,
+        "min_base_user_time": 1.611219,
+        "min_base_dir": "20250627_182042_COL_7178266_158",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(A, A), f(apply(A, A))), apply(apply(apply(apply(E, apply(s, D)), apply(C, B)), A), f(apply(A, A))))",
+            "fn_1(A, B, C) = apply(apply(apply(s, B), A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(A, A), f(apply(A, A))), apply(apply(apply(apply(E, apply(s, D)), apply(C, B)), A), f(apply(A, A))))",
+            "fn_1(A, B, C) = apply(apply(apply(s, B), A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.644635,
+        "hints_time_sys": 0.204954,
+        "hints_time": 1.8495890000000001
+    },
+    {
+        "problem": "COL006-5",
+        "mean_base_user_time": 544.1946535,
+        "min_base_user_time": 336.899555,
+        "min_base_dir": "20250627_181641_COL_7178214_146",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1 = fn_0(apply(k, fn_0(s, apply(s, k))), fn_0(apply(k, s), k))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1 = apply(apply(s, apply(k, apply(apply(s, s), apply(s, k)))), apply(apply(s, apply(k, s)), k))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 970.123262,
+        "hints_time_sys": 4.078419,
+        "hints_time": 974.201681
+    },
+    {
+        "problem": "COL006-6",
+        "mean_base_user_time": 532.3528806562499,
+        "min_base_user_time": 513.307158,
+        "min_base_dir": "20250627_182402_COL_7178290_182",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1 = fn_0(fn_0(k, k), fn_0(k, k))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1 = apply(apply(s, apply(apply(s, k), k)), apply(apply(s, k), k))"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 1.5: apply(apply(s, Y2), Z2)\nhint 6.5: apply(apply(s, apply(apply(s, k), k)), apply(apply(s, k), k))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "COL006-7",
+        "mean_base_user_time": 218.58979028124998,
+        "min_base_user_time": 216.44573,
+        "min_base_dir": "20250627_182206_COL_7178280_172",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1(A, B, C) = apply(C, apply(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(s, A), B)",
+            "fn_1(A, B, C) = apply(C, apply(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 101.720725,
+        "hints_time_sys": 0.743398,
+        "hints_time": 102.464123
+    },
+    {
+        "problem": "COL007-1",
+        "mean_base_user_time": 0.002352875,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002953,
+        "hints_time_sys": 0.150472,
+        "hints_time": 0.153425
+    },
+    {
+        "problem": "COL008-1",
+        "mean_base_user_time": 0.00402946875,
+        "min_base_user_time": 0.0009549999999999999,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = fn_0(A, combinator, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = apply(A, apply(apply(b, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004834,
+        "hints_time_sys": 0.149938,
+        "hints_time": 0.154772
+    },
+    {
+        "problem": "COL009-1",
+        "mean_base_user_time": 3.56474278125,
+        "min_base_user_time": 3.4644,
+        "min_base_dir": "20250627_182402_COL_7178284_176",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, apply(b, B)), A))",
+            "fn_1(A, B) = equals(apply(A, fn_0(B, combinator, B)), apply(fn_0(B, combinator, l2), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, apply(b, B)), A))",
+            "fn_1(A, B) = equals(apply(A, apply(B, apply(apply(b, apply(b, combinator)), B))), apply(apply(l2, apply(apply(b, apply(b, combinator)), B)), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.12794,
+        "hints_time_sys": 0.159744,
+        "hints_time": 0.287684
+    },
+    {
+        "problem": "COL010-1",
+        "mean_base_user_time": 0.0036938124999999996,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_181641_COL_7178216_148",
+        "abstractions": [
+            "fn_0(A) = apply(A, A)",
+            "fn_1(A) = apply(s2, apply(b, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(A, A)",
+            "fn_1(A) = apply(s2, apply(b, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0019679999999999997,
+        "hints_time_sys": 0.152964,
+        "hints_time": 0.154932
+    },
+    {
+        "problem": "COL011-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL012-1",
+        "mean_base_user_time": 0.002384156249999999,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0(A) = apply(apply(A, A), combinator)",
+            "fn_1(A, B) = equals(fn_0(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(apply(A, A), combinator)",
+            "fn_1(A, B) = equals(apply(apply(A, A), combinator), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.001006,
+        "hints_time_sys": 0.14679499999999998,
+        "hints_time": 0.147801
+    },
+    {
+        "problem": "COL013-1",
+        "mean_base_user_time": 0.0037106562499999995,
+        "min_base_user_time": 0.000954,
+        "min_base_dir": "20250627_181641_COL_7178216_148",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.001982,
+        "hints_time_sys": 0.150815,
+        "hints_time": 0.15279700000000002
+    },
+    {
+        "problem": "COL014-1",
+        "mean_base_user_time": 0.00329259375,
+        "min_base_user_time": 0.0009549999999999999,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00197,
+        "hints_time_sys": 0.151285,
+        "hints_time": 0.153255
+    },
+    {
+        "problem": "COL015-1",
+        "mean_base_user_time": 0.004758468749999999,
+        "min_base_user_time": 0.001926,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(q, B), A))",
+            "fn_1(A) = fn_0(combinator, A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(q, B), A))",
+            "fn_1(A) = apply(A, apply(apply(q, A), combinator))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002963,
+        "hints_time_sys": 0.152328,
+        "hints_time": 0.15529099999999998
+    },
+    {
+        "problem": "COL016-1",
+        "mean_base_user_time": 0.003511625,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_181229_COL_7178200_132",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0038959999999999997,
+        "hints_time_sys": 0.149606,
+        "hints_time": 0.153502
+    },
+    {
+        "problem": "COL017-1",
+        "mean_base_user_time": 0.0055570937499999995,
+        "min_base_user_time": 0.002054,
+        "min_base_dir": "20250627_182230_COL_7178282_174",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = fn_0(A, combinator, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = apply(A, apply(apply(b, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005108,
+        "hints_time_sys": 0.15148699999999998,
+        "hints_time": 0.15659499999999998
+    },
+    {
+        "problem": "COL018-1",
+        "mean_base_user_time": 0.0036425625,
+        "min_base_user_time": 0.0009110000000000004,
+        "min_base_dir": "20250627_181641_COL_7178212_144",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(l, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.000987,
+        "hints_time_sys": 0.154077,
+        "hints_time": 0.15506399999999998
+    },
+    {
+        "problem": "COL019-1",
+        "mean_base_user_time": 0.00735090625,
+        "min_base_user_time": 0.004052999999999999,
+        "min_base_dir": "20250627_182501_COL_7178292_184",
+        "abstractions": [
+            "fn_0(A) = apply(apply(s, t), apply(b, A))",
+            "fn_1(A) = equals(apply(A, A), apply(fn_0(combinator), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = apply(apply(s, t), apply(b, A))",
+            "fn_1(A) = equals(apply(A, A), apply(apply(apply(s, t), apply(b, combinator)), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0029259999999999998,
+        "hints_time_sys": 0.150466,
+        "hints_time": 0.153392
+    },
+    {
+        "problem": "COL020-1",
+        "mean_base_user_time": 0.012789125000000002,
+        "min_base_user_time": 0.008063999999999998,
+        "min_base_dir": "20250627_181430_COL_7178210_142",
+        "abstractions": [
+            "fn_0 = apply(s, apply(c, apply(b, combinator)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(s, apply(c, apply(b, combinator)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.072005,
+        "hints_time_sys": 0.158333,
+        "hints_time": 0.230338
+    },
+    {
+        "problem": "COL021-1",
+        "mean_base_user_time": 0.0079540625,
+        "min_base_user_time": 0.00512,
+        "min_base_dir": "20250627_182831_COL_7178300_192",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = fn_0(A, combinator, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = apply(A, apply(apply(b, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0029939999999999997,
+        "hints_time_sys": 0.153108,
+        "hints_time": 0.156102
+    },
+    {
+        "problem": "COL022-1",
+        "mean_base_user_time": 0.0086974375,
+        "min_base_user_time": 0.005804999999999999,
+        "min_base_dir": "20250627_182101_COL_7178272_164",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = fn_0(A, combinator, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = apply(A, apply(apply(b, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005959,
+        "hints_time_sys": 0.150444,
+        "hints_time": 0.156403
+    },
+    {
+        "problem": "COL023-1",
+        "mean_base_user_time": 0.013106468750000003,
+        "min_base_user_time": 0.009673999999999999,
+        "min_base_dir": "20250627_182206_COL_7178280_172",
+        "abstractions": [
+            "fn_0(A, B) = equals(apply(apply(A, B), A), apply(apply(apply(n, apply(b, apply(b, combinator))), B), A))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = equals(apply(apply(A, B), A), apply(apply(apply(n, apply(b, apply(b, combinator))), B), A))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.025224999999999997,
+        "hints_time_sys": 0.15933799999999998,
+        "hints_time": 0.18456299999999998
+    },
+    {
+        "problem": "COL024-1",
+        "mean_base_user_time": 0.00575309375,
+        "min_base_user_time": 0.002829,
+        "min_base_dir": "20250627_181430_COL_7178208_140",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = fn_0(A, combinator, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = apply(A, apply(apply(b, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002944,
+        "hints_time_sys": 0.151371,
+        "hints_time": 0.154315
+    },
+    {
+        "problem": "COL025-1",
+        "mean_base_user_time": 0.004661937499999999,
+        "min_base_user_time": 0.002555000000000001,
+        "min_base_dir": "20250627_182501_COL_7178292_184",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(w, apply(b, combinator)), A))",
+            "fn_1(A) = apply(w, apply(b, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(w, apply(b, combinator)), A))",
+            "fn_1(A) = apply(w, apply(b, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003909,
+        "hints_time_sys": 0.150927,
+        "hints_time": 0.154836
+    },
+    {
+        "problem": "COL026-1",
+        "mean_base_user_time": 0.03925668750000001,
+        "min_base_user_time": 0.03478,
+        "min_base_dir": "20250627_181641_COL_7178216_148",
+        "abstractions": [
+            "fn_0(A, B) = equals(apply(apply(A, B), B), apply(apply(w1, B), apply(apply(b, apply(b, combinator)), A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = equals(apply(apply(A, B), B), apply(apply(w1, B), apply(apply(b, apply(b, combinator)), A)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.023569999999999997,
+        "hints_time_sys": 0.15251399999999998,
+        "hints_time": 0.176084
+    },
+    {
+        "problem": "COL027-1",
+        "mean_base_user_time": 0.017015875,
+        "min_base_user_time": 0.013661,
+        "min_base_dir": "20250627_182402_COL_7178290_182",
+        "abstractions": [
+            "fn_0 = apply(h, apply(b, apply(b, combinator)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(h, apply(b, apply(b, combinator)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.047276,
+        "hints_time_sys": 0.162265,
+        "hints_time": 0.20954099999999998
+    },
+    {
+        "problem": "COL029-1",
+        "mean_base_user_time": 0.0028916249999999997,
+        "min_base_user_time": 0.0009910000000000001,
+        "min_base_dir": "20250627_181935_COL_7178264_156",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(B, A), f(apply(A, A)))",
+            "fn_1(A) = equals(fn_0(A, A), fn_0(A, u))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(B, A), f(apply(A, A)))",
+            "fn_1(A) = equals(apply(apply(A, A), f(apply(A, A))), apply(apply(u, A), f(apply(A, A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0029749999999999998,
+        "hints_time_sys": 0.149202,
+        "hints_time": 0.152177
+    },
+    {
+        "problem": "COL030-1",
+        "mean_base_user_time": 2.20446259375,
+        "min_base_user_time": 2.1782280000000003,
+        "min_base_dir": "20250627_181430_COL_7178204_136",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(apply(s, B), A), f(apply(apply(s, A), A)))",
+            "fn_1(A) = apply(apply(s, A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(apply(s, B), A), f(apply(apply(s, A), A)))",
+            "fn_1(A) = apply(apply(s, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 438.657872,
+        "hints_time_sys": 1.465598,
+        "hints_time": 440.12347
+    },
+    {
+        "problem": "COL031-1",
+        "mean_base_user_time": 0.004827281249999999,
+        "min_base_user_time": 0.0014150000000000005,
+        "min_base_dir": "20250627_181700_COL_7178218_150",
+        "abstractions": [
+            "fn_0(A, B, C) = equals(apply(apply(A, A), f(apply(A, A))), apply(apply(C, B), f(apply(A, A))))",
+            "fn_1(A) = fn_0(A, A, apply(l, o))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = equals(apply(apply(A, A), f(apply(A, A))), apply(apply(C, B), f(apply(A, A))))",
+            "fn_1(A) = equals(apply(apply(A, A), f(apply(A, A))), apply(apply(apply(l, o), A), f(apply(A, A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006867,
+        "hints_time_sys": 0.159466,
+        "hints_time": 0.166333
+    },
+    {
+        "problem": "COL032-1",
+        "mean_base_user_time": 0.0083580625,
+        "min_base_user_time": 0.004807000000000002,
+        "min_base_dir": "20250627_182401_COL_7178286_178",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, f(apply(apply(q, B), A))))",
+            "fn_1(A, B, C) = C(A, apply(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, f(apply(apply(q, B), A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.007873999999999999,
+        "hints_time_sys": 0.15792799999999999,
+        "hints_time": 0.16580199999999998
+    },
+    {
+        "problem": "COL033-1",
+        "mean_base_user_time": 0.01543115625,
+        "min_base_user_time": 0.012075,
+        "min_base_dir": "20250627_181300_COL_7178202_134",
+        "abstractions": [
+            "fn_0(A, B) = apply(B, apply(A, f(apply(apply(b, B), A))))",
+            "fn_1(A, B, C) = C(B(A), apply(A, B(A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(B, apply(A, f(apply(apply(b, B), A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005850999999999999,
+        "hints_time_sys": 0.161445,
+        "hints_time": 0.167296
+    },
+    {
+        "problem": "COL034-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL035-1",
+        "mean_base_user_time": 0.16570456249999996,
+        "min_base_user_time": 0.159881,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A, B, C, D) = equals(apply(A, f(A)), apply(apply(D, apply(C, B)), f(A)))",
+            "fn_1(A, B) = apply(B, apply(apply(q, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = equals(apply(A, f(A)), apply(apply(D, apply(C, B)), f(A)))",
+            "fn_1(A, B) = apply(B, apply(apply(q, B), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.18159699999999998,
+        "hints_time_sys": 0.16985899999999998,
+        "hints_time": 0.351456
+    },
+    {
+        "problem": "COL036-1",
+        "mean_base_user_time": 0.9828680625000001,
+        "min_base_user_time": 0.959374,
+        "min_base_dir": "20250627_182701_COL_7178298_190",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(apply(s, B), A), apply(b, f(apply(apply(b, apply(apply(s, A), A)), b))))",
+            "fn_1(A, B, C) = equals(A, apply(f(apply(apply(b, C), B)), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(apply(s, B), A), apply(b, f(apply(apply(b, apply(apply(s, A), A)), b))))",
+            "fn_1(A, B, C) = equals(A, apply(f(apply(apply(b, C), B)), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.052757,
+        "hints_time_sys": 0.183032,
+        "hints_time": 1.235789
+    },
+    {
+        "problem": "COL037-1",
+        "mean_base_user_time": 0.12303809375000001,
+        "min_base_user_time": 0.11970399999999999,
+        "min_base_dir": "20250627_182201_COL_7178276_168",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(B, f(apply(apply(c, B), A))), A), apply(apply(apply(apply(E, D), C), f(apply(apply(c, B), A))), A))",
+            "fn_1 = apply(s, apply(c, apply(b, apply(s, b))))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(B, f(apply(apply(c, B), A))), A), apply(apply(apply(apply(E, D), C), f(apply(apply(c, B), A))), A))",
+            "fn_1 = apply(s, apply(c, apply(b, apply(s, b))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.104228,
+        "hints_time_sys": 0.161601,
+        "hints_time": 0.265829
+    },
+    {
+        "problem": "COL038-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL039-1",
+        "mean_base_user_time": 0.009388499999999998,
+        "min_base_user_time": 0.006019999999999998,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0(A, B, C) = equals(apply(A, f(A)), apply(apply(C, B), f(A)))",
+            "fn_1(A, B) = apply(apply(b, A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = equals(apply(A, f(A)), apply(apply(C, B), f(A)))",
+            "fn_1(A, B) = apply(apply(b, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010749,
+        "hints_time_sys": 0.15839,
+        "hints_time": 0.169139
+    },
+    {
+        "problem": "COL041-1",
+        "mean_base_user_time": 152.29259796875,
+        "min_base_user_time": 136.244437,
+        "min_base_dir": "20250627_182042_COL_7178268_160",
+        "abstractions": [
+            "fn_0(A, B, C, D) = equals(apply(B, A), apply(f(apply(apply(b, D), C)), apply(B, A)))",
+            "fn_1(A, B, C) = apply(apply(B, f(apply(apply(b, C), apply(apply(c, B), A)))), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = equals(apply(B, A), apply(f(apply(apply(b, D), C)), apply(B, A)))",
+            "fn_1(A, B, C) = apply(apply(B, f(apply(apply(b, C), apply(apply(c, B), A)))), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.448098,
+        "hints_time_sys": 0.16891199999999998,
+        "hints_time": 0.61701
+    },
+    {
+        "problem": "COL042-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL042-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL042-6",
+        "mean_base_user_time": 0.08040781250000001,
+        "min_base_user_time": 0.07552399999999998,
+        "min_base_dir": "20250627_181430_COL_7178204_136",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, A))",
+            "fn_1(A, B) = fn_0(B, fn_0(A, b, b))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.07338299999999999,
+        "hints_time_sys": 0.16153299999999998,
+        "hints_time": 0.23491599999999996
+    },
+    {
+        "problem": "COL042-7",
+        "mean_base_user_time": 0.6412351249999999,
+        "min_base_user_time": 0.61931,
+        "min_base_dir": "20250627_182701_COL_7178298_190",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A, B) = apply(apply(w1, A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A, B) = apply(apply(w1, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.080444,
+        "hints_time_sys": 0.159346,
+        "hints_time": 0.23979
+    },
+    {
+        "problem": "COL042-8",
+        "mean_base_user_time": 0.07994656250000001,
+        "min_base_user_time": 0.073464,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, apply(b, B)), A))",
+            "fn_1(A, B, C) = apply(C, apply(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, apply(b, B)), A))",
+            "fn_1(A, B, C) = apply(C, apply(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.07735299999999999,
+        "hints_time_sys": 0.16205899999999998,
+        "hints_time": 0.23941199999999996
+    },
+    {
+        "problem": "COL042-9",
+        "mean_base_user_time": 0.7623862499999999,
+        "min_base_user_time": 0.752375,
+        "min_base_dir": "20250627_182402_COL_7178284_176",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, apply(b, B)), A))",
+            "fn_1(A, B) = fn_0(apply(apply(B, b), A), w1, apply(b, apply(w1, w1)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, apply(b, B)), A))",
+            "fn_1(A, B) = apply(apply(b, apply(w1, w1)), apply(apply(b, apply(b, w1)), apply(apply(B, b), A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.097498,
+        "hints_time_sys": 0.19527599999999998,
+        "hints_time": 1.292774
+    },
+    {
+        "problem": "COL043-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL043-3",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL044-1",
+        "mean_base_user_time": 0.016292031250000005,
+        "min_base_user_time": 0.012399000000000049,
+        "min_base_dir": "20250627_181229_COL_7178200_132",
+        "abstractions": [
+            "fn_0(A, B) = equals(apply(apply(apply(A, B), A), f(apply(apply(A, B), A))), apply(apply(apply(apply(n, apply(b, apply(b, apply(n, b)))), B), A), f(apply(apply(A, B), A))))",
+            "fn_1(A) = equals(apply(A, f(A)), apply(apply(apply(n, b), A), f(A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = equals(apply(apply(apply(A, B), A), f(apply(apply(A, B), A))), apply(apply(apply(apply(n, apply(b, apply(b, apply(n, b)))), B), A), f(apply(apply(A, B), A))))",
+            "fn_1(A) = equals(apply(A, f(A)), apply(apply(apply(n, b), A), f(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.015151,
+        "hints_time_sys": 0.15878299999999998,
+        "hints_time": 0.17393399999999998
+    },
+    {
+        "problem": "COL044-6",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL044-7",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL044-8",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL044-9",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL045-1",
+        "mean_base_user_time": 0.006780999999999995,
+        "min_base_user_time": 0.0037539999999999796,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = fn_0(A, combinator, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(C, apply(apply(b, B), A))",
+            "fn_1(A) = apply(A, apply(apply(b, combinator), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004874,
+        "hints_time_sys": 0.150579,
+        "hints_time": 0.15545299999999998
+    },
+    {
+        "problem": "COL046-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "COL048-1",
+        "mean_base_user_time": 0.006760750000000018,
+        "min_base_user_time": 0.003287000000000012,
+        "min_base_dir": "20250627_182201_COL_7178276_168",
+        "abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(w, apply(b, combinator)), A))",
+            "fn_1(A) = apply(w, apply(b, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = equals(apply(A, A), apply(apply(w, apply(b, combinator)), A))",
+            "fn_1(A) = apply(w, apply(b, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003029,
+        "hints_time_sys": 0.151393,
+        "hints_time": 0.154422
+    },
+    {
+        "problem": "COL049-1",
+        "mean_base_user_time": 515.482721875,
+        "min_base_user_time": 459.15250199999997,
+        "min_base_dir": "20250627_181430_COL_7178208_140",
+        "abstractions": [
+            "fn_0(A, B, C, D) = equals(apply(B, A), apply(f(apply(apply(b, D), C)), apply(B, A)))",
+            "fn_1(A, B) = apply(apply(b, A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = equals(apply(B, A), apply(f(apply(apply(b, D), C)), apply(B, A)))",
+            "fn_1(A, B) = apply(apply(b, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 47.95073,
+        "hints_time_sys": 0.40701899999999996,
+        "hints_time": 48.357749
+    },
+    {
+        "problem": "COL050-1",
+        "mean_base_user_time": 0.0032730937500000026,
+        "min_base_user_time": 0.0011010000000000186,
+        "min_base_dir": "20250627_181641_COL_7178216_148",
+        "abstractions": [
+            "fn_0(A) = response(A, compose(a, A))",
+            "fn_1(A, B, C) = equals(response(B, A(C)), fn_0(C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = response(A, compose(a, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003939,
+        "hints_time_sys": 0.152212,
+        "hints_time": 0.15615099999999998
+    },
+    {
+        "problem": "COL051-1",
+        "mean_base_user_time": 0.003693156250000007,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A) = response(A, compose(mocking_bird, A))",
+            "fn_1(A, B) = equals(response(B, A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = response(A, compose(mocking_bird, A))",
+            "fn_1(A, B) = equals(response(B, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00401,
+        "hints_time_sys": 0.15245599999999998,
+        "hints_time": 0.156466
+    },
+    {
+        "problem": "COL052-1",
+        "mean_base_user_time": 0.004248375000000003,
+        "min_base_user_time": 0.0011030000000000761,
+        "min_base_dir": "20250627_182042_COL_7178268_160",
+        "abstractions": [
+            "fn_0(A) = response(A, common_bird(compose(odd_bird, b)))",
+            "fn_1(A, B) = response(B, response(b, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = response(A, common_bird(compose(odd_bird, b)))",
+            "fn_1(A, B) = response(B, response(b, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006045,
+        "hints_time_sys": 0.149947,
+        "hints_time": 0.155992
+    },
+    {
+        "problem": "COL053-1",
+        "mean_base_user_time": 0.003991937500000012,
+        "min_base_user_time": 0.0021579999999999933,
+        "min_base_dir": "20250627_181430_COL_7178210_142",
+        "abstractions": [
+            "fn_0(A, B, C, D) = equals(response(D, C), response(a, response(b, response(c, f(compose(B, A))))))",
+            "fn_1(A, B, C) = fn_0(B, compose(A, C), response(C, response(B, f(compose(compose(A, C), B)))), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = equals(response(D, C), response(a, response(b, response(c, f(compose(B, A))))))",
+            "fn_1(A, B, C) = equals(response(A, response(C, response(B, f(compose(compose(A, C), B))))), response(a, response(b, response(c, f(compose(compose(A, C), B))))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005804999999999999,
+        "hints_time_sys": 0.139428,
+        "hints_time": 0.145233
+    },
+    {
+        "problem": "COL056-1",
+        "mean_base_user_time": 0.002842968750000002,
+        "min_base_user_time": 0.0008740000000000414,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A, B, C) = equals(response(C, response(B, A)), A)",
+            "fn_1(A) = equals(response(A, c), b)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = equals(response(C, response(B, A)), A)",
+            "fn_1(A) = equals(response(A, c), b)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.000986,
+        "hints_time_sys": 0.152974,
+        "hints_time": 0.15395999999999999
+    },
+    {
+        "problem": "COL057-1",
+        "mean_base_user_time": 0.07472018749999998,
+        "min_base_user_time": 0.06895299999999999,
+        "min_base_dir": "20250627_182401_COL_7178286_178",
+        "abstractions": [
+            "fn_0(A, B) = equals(apply(apply(apply(B, A), A), f(apply(apply(B, A), A))), apply(apply(apply(apply(s, apply(c, apply(b, apply(s, i)))), B), A), f(apply(apply(B, A), A))))",
+            "fn_1(A) = equals(apply(A, f(A)), apply(apply(apply(s, i), A), f(A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = equals(apply(apply(apply(B, A), A), f(apply(apply(B, A), A))), apply(apply(apply(apply(s, apply(c, apply(b, apply(s, i)))), B), A), f(apply(apply(B, A), A))))",
+            "fn_1(A) = equals(apply(A, f(A)), apply(apply(apply(s, i), A), f(A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.070196,
+        "hints_time_sys": 0.157665,
+        "hints_time": 0.22786099999999998
+    },
+    {
+        "problem": "COL058-1",
+        "mean_base_user_time": 0.005534468749999989,
+        "min_base_user_time": 0.0028920000000000057,
+        "min_base_dir": "20250627_181229_COL_7178200_132",
+        "abstractions": [
+            "fn_0(A) = response(A, A)",
+            "fn_1(A, B) = equals(B(A), fn_0(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = response(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004959,
+        "hints_time_sys": 0.159025,
+        "hints_time": 0.163984
+    },
+    {
+        "problem": "COL058-2",
+        "mean_base_user_time": 0.004967187499999995,
+        "min_base_user_time": 0.0019399999999999973,
+        "min_base_dir": "20250627_182631_COL_7178296_188",
+        "abstractions": [
+            "fn_0(A) = response(response(lark, A), response(lark, response(lark, lark)))",
+            "fn_1(A) = response(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = response(response(lark, A), response(lark, response(lark, lark)))",
+            "fn_1(A) = response(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0031399999999999996,
+        "hints_time_sys": 0.008395000000000014,
+        "hints_time": 0.011535000000000014
+    },
+    {
+        "problem": "COL058-3",
+        "mean_base_user_time": 0.00517224999999999,
+        "min_base_user_time": 0.0023620000000000307,
+        "min_base_dir": "20250627_182402_COL_7178290_182",
+        "abstractions": [
+            "fn_0(A) = response(A, response(lark, response(lark, lark)))",
+            "fn_1(A) = response(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = response(A, response(lark, response(lark, lark)))",
+            "fn_1(A) = response(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0026599999999999996,
+        "hints_time_sys": 0.00978699999999999,
+        "hints_time": 0.01244699999999999
+    },
+    {
+        "problem": "COL059-1",
+        "mean_base_user_time": 0.0061431562500000045,
+        "min_base_user_time": 0.003371000000000013,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A, C, D) = response(response(A, C), D)",
+            "fn_1(A) = response(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, C, D) = response(response(A, C), D)",
+            "fn_1(A) = response(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005172999999999999,
+        "hints_time_sys": 0.00933299999999998,
+        "hints_time": 0.014505999999999979
+    },
+    {
+        "problem": "COL060-1",
+        "mean_base_user_time": 0.04335834375,
+        "min_base_user_time": 0.03975400000000007,
+        "min_base_dir": "20250627_181430_COL_7178210_142",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(apply(E, D), C), h(apply(apply(b, B), A))), apply(g(apply(apply(b, B), A)), apply(f(apply(apply(b, B), A)), h(apply(apply(b, B), A)))))",
+            "fn_1(A, B, C) = apply(apply(b, apply(t, C)), apply(apply(b, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(apply(E, D), C), h(apply(apply(b, B), A))), apply(g(apply(apply(b, B), A)), apply(f(apply(apply(b, B), A)), h(apply(apply(b, B), A)))))",
+            "fn_1(A, B, C) = apply(apply(b, apply(t, C)), apply(apply(b, B), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.014975,
+        "hints_time_sys": 0.0049970000000000014,
+        "hints_time": 0.019972000000000004
+    },
+    {
+        "problem": "COL060-2",
+        "mean_base_user_time": 0.0031403750000000077,
+        "min_base_user_time": 0.0009320000000000439,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(C, B), A), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(C, B), A), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003089,
+        "hints_time_sys": 0.008218000000000003,
+        "hints_time": 0.011307000000000003
+    },
+    {
+        "problem": "COL060-3",
+        "mean_base_user_time": 0.0034003124999999737,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(C, B), A), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(C, B), A), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0032079999999999995,
+        "hints_time_sys": 0.008532999999999985,
+        "hints_time": 0.011740999999999984
+    },
+    {
+        "problem": "COL061-1",
+        "mean_base_user_time": 0.04468981250000001,
+        "min_base_user_time": 0.03988999999999998,
+        "min_base_dir": "20250627_181430_COL_7178208_140",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(b, apply(t, C)), apply(apply(b, B), A))",
+            "fn_1(A, B, C, D) = equals(apply(apply(apply(D, C), B), h(A)), apply(f(A), apply(h(A), g(A))))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(b, apply(t, C)), apply(apply(b, B), A))",
+            "fn_1(A, B, C, D) = equals(apply(apply(apply(D, C), B), h(A)), apply(f(A), apply(h(A), g(A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011635999999999999,
+        "hints_time_sys": 0.008740999999999999,
+        "hints_time": 0.020377
+    },
+    {
+        "problem": "COL061-2",
+        "mean_base_user_time": 0.003359656249999991,
+        "min_base_user_time": 0.0008420000000000094,
+        "min_base_dir": "20250627_182201_COL_7178276_168",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005435,
+        "hints_time_sys": 0.00544,
+        "hints_time": 0.010875
+    },
+    {
+        "problem": "COL061-3",
+        "mean_base_user_time": 0.0029517187500000125,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182402_COL_7178284_176",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002868,
+        "hints_time_sys": 0.008578000000000002,
+        "hints_time": 0.011446000000000001
+    },
+    {
+        "problem": "COL062-1",
+        "mean_base_user_time": 0.28135915624999996,
+        "min_base_user_time": 0.2747919999999999,
+        "min_base_dir": "20250627_182101_COL_7178272_164",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(E, D(apply(apply(b, B), A))), C(apply(apply(b, B), A))), apply(apply(f(apply(apply(b, B), A)), h(apply(apply(b, B), A))), g(apply(apply(b, B), A))))",
+            "fn_1(A, B) = apply(apply(b, apply(t, B)), apply(apply(b, b), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B) = apply(apply(b, apply(t, B)), apply(apply(b, b), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.050574999999999995,
+        "hints_time_sys": 0.0069049999999999945,
+        "hints_time": 0.05747999999999999
+    },
+    {
+        "problem": "COL062-2",
+        "mean_base_user_time": 0.003173062499999978,
+        "min_base_user_time": 0.0009149999999999991,
+        "min_base_dir": "20250627_182230_COL_7178282_174",
+        "abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(C, B), A), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(C, B), A), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003051,
+        "hints_time_sys": 0.0071239999999999915,
+        "hints_time": 0.010174999999999991
+    },
+    {
+        "problem": "COL062-3",
+        "mean_base_user_time": 0.003531656250000008,
+        "min_base_user_time": 0.0010040000000000049,
+        "min_base_dir": "20250627_181230_COL_7178198_130",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(C, B), A), z)",
+            "fn_1 = apply(apply(b, b), t)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(C, B), A), z)",
+            "fn_1 = apply(apply(b, b), t)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0037809999999999996,
+        "hints_time_sys": 0.007560999999999984,
+        "hints_time": 0.011341999999999984
+    },
+    {
+        "problem": "COL063-1",
+        "mean_base_user_time": 0.6660430937500001,
+        "min_base_user_time": 0.650932,
+        "min_base_dir": "20250627_182206_COL_7178280_172",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(E, D), C), apply(apply(h(apply(apply(b, B), A)), g(apply(apply(b, B), A))), f(apply(apply(b, B), A))))",
+            "fn_1(A, B) = apply(apply(b, A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(E, D), C), apply(apply(h(apply(apply(b, B), A)), g(apply(apply(b, B), A))), f(apply(apply(b, B), A))))",
+            "fn_1(A, B) = apply(apply(b, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.359226,
+        "hints_time_sys": 0.009950000000000014,
+        "hints_time": 0.369176
+    },
+    {
+        "problem": "COL063-2",
+        "mean_base_user_time": 0.0033822812500000337,
+        "min_base_user_time": 0.0017780000000000573,
+        "min_base_dir": "20250627_182831_COL_7178300_192",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(apply(b, b), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(apply(b, b), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0010119999999999999,
+        "hints_time_sys": 0.010136000000000006,
+        "hints_time": 0.011148000000000005
+    },
+    {
+        "problem": "COL063-3",
+        "mean_base_user_time": 0.0035911562499999893,
+        "min_base_user_time": 0.001591000000000009,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002656,
+        "hints_time_sys": 0.00620699999999999,
+        "hints_time": 0.00886299999999999
+    },
+    {
+        "problem": "COL063-4",
+        "mean_base_user_time": 0.00281178125000002,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182201_COL_7178276_168",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1 = apply(t, x)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1 = apply(t, x)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0023039999999999988,
+        "hints_time_sys": 0.005760999999999988,
+        "hints_time": 0.008064999999999987
+    },
+    {
+        "problem": "COL063-5",
+        "mean_base_user_time": 0.003206999999999998,
+        "min_base_user_time": 0.0010040000000000049,
+        "min_base_dir": "20250627_181700_COL_7178218_150",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1 = apply(t, x)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1 = apply(t, x)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0008840000000000002,
+        "hints_time_sys": 0.009672999999999987,
+        "hints_time": 0.010556999999999987
+    },
+    {
+        "problem": "COL063-6",
+        "mean_base_user_time": 0.003054249999999998,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182831_COL_7178300_192",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)",
+            "fn_1(A) = apply(b, apply(t, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0028339999999999997,
+        "hints_time_sys": 0.005674000000000012,
+        "hints_time": 0.008508000000000012
+    },
+    {
+        "problem": "COL064-1",
+        "mean_base_user_time": 3.721365343749999,
+        "min_base_user_time": 3.5005300000000004,
+        "min_base_dir": "20250627_181229_COL_7178200_132",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = equals(apply(apply(E, D(apply(apply(b, B), A))), C), apply(apply(h(apply(apply(b, B), A)), f(apply(apply(b, B), A))), g(apply(apply(b, B), A))))",
+            "fn_1(A, B, C) = apply(apply(b, apply(t, C)), apply(apply(b, b), apply(apply(b, B), A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B, C) = apply(apply(b, apply(t, C)), apply(apply(b, b), apply(apply(b, B), A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.308897,
+        "hints_time_sys": 0.014863999999999988,
+        "hints_time": 0.32376099999999997
+    },
+    {
+        "problem": "COL064-10",
+        "mean_base_user_time": 0.004567593750000033,
+        "min_base_user_time": 0.0021369999999998335,
+        "min_base_dir": "20250627_181700_COL_7178218_150",
+        "abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(C, B), A), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(C, B), A), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003029,
+        "hints_time_sys": 0.007079000000000002,
+        "hints_time": 0.010108000000000002
+    },
+    {
+        "problem": "COL064-11",
+        "mean_base_user_time": 0.003788437500000014,
+        "min_base_user_time": 0.0017700000000000493,
+        "min_base_dir": "20250627_182501_COL_7178292_184",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A) = apply(t, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A) = apply(t, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0025569999999999994,
+        "hints_time_sys": 0.007703000000000015,
+        "hints_time": 0.010260000000000016
+    },
+    {
+        "problem": "COL064-2",
+        "mean_base_user_time": 0.004360656249999961,
+        "min_base_user_time": 0.0021019999999998262,
+        "min_base_dir": "20250627_182401_COL_7178286_178",
+        "abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005186999999999999,
+        "hints_time_sys": 0.006947000000000009,
+        "hints_time": 0.012134000000000008
+    },
+    {
+        "problem": "COL064-3",
+        "mean_base_user_time": 0.004227218750000018,
+        "min_base_user_time": 0.0018839999999999968,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(apply(C, B), A), y), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0020340000000000002,
+        "hints_time_sys": 0.0071209999999999885,
+        "hints_time": 0.00915499999999999
+    },
+    {
+        "problem": "COL064-4",
+        "mean_base_user_time": 0.0037010937500000325,
+        "min_base_user_time": 0.0009969999999999146,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A, B, C, D, E) = apply(apply(D(apply(t, fn_0(b, t)), D(C, B)), A), E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0021279999999999997,
+        "hints_time_sys": 0.008506000000000014,
+        "hints_time": 0.010634000000000013
+    },
+    {
+        "problem": "COL064-5",
+        "mean_base_user_time": 0.0034850312500000254,
+        "min_base_user_time": 0.0009790000000000632,
+        "min_base_dir": "20250627_182042_COL_7178270_162",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A, B, C, D, E, F) = apply(E(D(apply(t, fn_0(b, t)), D(C, B)), A), F)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00287,
+        "hints_time_sys": 0.007655999999999996,
+        "hints_time": 0.010525999999999997
+    },
+    {
+        "problem": "COL064-6",
+        "mean_base_user_time": 0.003688874999999958,
+        "min_base_user_time": 0.0018179999999998753,
+        "min_base_dir": "20250627_181700_COL_7178218_150",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A) = apply(apply(A, y), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A) = apply(apply(A, y), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.003745,
+        "hints_time_sys": 0.008422999999999986,
+        "hints_time": 0.012167999999999986
+    },
+    {
+        "problem": "COL064-7",
+        "mean_base_user_time": 0.004126843749999997,
+        "min_base_user_time": 0.0009180000000001964,
+        "min_base_dir": "20250627_181700_COL_7178218_150",
+        "abstractions": [
+            "fn_0(A, B, C, D, E, F) = apply(apply(apply(E, apply(D, C)), apply(B, A)), F)",
+            "fn_1(A, B) = apply(fn_0(B, A, t, apply(b, b), t, y), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E, F) = apply(apply(apply(E, apply(D, C)), apply(B, A)), F)",
+            "fn_1(A, B) = apply(apply(apply(apply(t, apply(apply(b, b), t)), apply(A, B)), y), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004033,
+        "hints_time_sys": 0.008121000000000017,
+        "hints_time": 0.012154000000000017
+    },
+    {
+        "problem": "COL064-8",
+        "mean_base_user_time": 0.0040675625000000035,
+        "min_base_user_time": 0.0021160000000000068,
+        "min_base_dir": "20250627_181641_COL_7178214_146",
+        "abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A) = apply(t, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = apply(apply(b, A), B)",
+            "fn_1(A) = apply(t, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0016759999999999995,
+        "hints_time_sys": 0.00759399999999999,
+        "hints_time": 0.00926999999999999
+    },
+    {
+        "problem": "COL064-9",
+        "mean_base_user_time": 0.00391228125000001,
+        "min_base_user_time": 0.0017039999999999278,
+        "min_base_dir": "20250627_182631_COL_7178296_188",
+        "abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(C, B), A), z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(b, b), t)",
+            "fn_1(A, B, C) = apply(apply(apply(C, B), A), z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002861,
+        "hints_time_sys": 0.008575,
+        "hints_time": 0.011435999999999998
+    },
+    {
+        "problem": "COL065-1",
+        "mean_base_user_time": 5.229228593749999,
+        "min_base_user_time": 4.812937,
+        "min_base_dir": "20250627_181229_COL_7178200_132",
+        "status": "no valid abstractions produced by Stitch"
+    },
+    {
+        "problem": "COL066-1",
+        "mean_base_user_time": 215.13216243749997,
+        "min_base_user_time": 163.95599800000002,
+        "min_base_dir": "20250627_181831_COL_7178220_152",
+        "abstractions": [
+            "fn_0 = apply(apply(w, apply(b, w)), apply(apply(q, q), apply(q, q)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(w, apply(b, w)), apply(apply(q, q), apply(q, q)))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 6.5: apply(apply(w, apply(b, w)), apply(apply(q, q), apply(q, q)))\nhint 1.0: apply(apply(T2, S2), X3)\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "COL066-2",
+        "mean_base_user_time": 0.013270750000000088,
+        "min_base_user_time": 0.009225000000000039,
+        "min_base_dir": "20250627_182042_COL_7178266_158",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A) = apply(q, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A) = apply(q, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012653,
+        "hints_time_sys": 0.006301000000000001,
+        "hints_time": 0.018954
+    },
+    {
+        "problem": "COL066-3",
+        "mean_base_user_time": 0.013004906250000042,
+        "min_base_user_time": 0.00939000000000001,
+        "min_base_dir": "20250627_181229_COL_7178200_132",
+        "abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A) = apply(q, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = apply(apply(B, A), C)",
+            "fn_1(A) = apply(q, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010691999999999998,
+        "hints_time_sys": 0.005868000000000012,
+        "hints_time": 0.016560000000000012
+    },
+    {
+        "problem": "COL070-1",
+        "mean_base_user_time": 0.0113482187499999,
+        "min_base_user_time": 0.006814000000000098,
+        "min_base_dir": "20250627_182201_COL_7178276_168",
+        "abstractions": [
+            "fn_0(A, B) = equals(apply(apply(B, B), A), apply(apply(apply(n1, apply(b, apply(b, combinator))), B), A))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = equals(apply(apply(B, B), A), apply(apply(apply(n1, apply(b, apply(b, combinator))), B), A))",
+            "fn_1(A, B, C) = apply(apply(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.023284,
+        "hints_time_sys": 0.007080000000000003,
+        "hints_time": 0.030364000000000002
+    },
+    {
+        "problem": "COL075-2",
+        "mean_base_user_time": 0.019112406250000102,
+        "min_base_user_time": 0.0148029999999999,
+        "min_base_dir": "20250627_181430_COL_7178210_142",
+        "abstractions": [
+            "fn_0 = apply(apply(abstraction, abstraction), k)",
+            "fn_1(A, B, C) = apply(apply(B, apply(k, A)), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = apply(apply(abstraction, abstraction), k)",
+            "fn_1(A, B, C) = apply(apply(B, apply(k, A)), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012190999999999999,
+        "hints_time_sys": 0.006597999999999993,
+        "hints_time": 0.018788999999999993
+    },
+    {
+        "problem": "COL083-1",
+        "mean_base_user_time": 0.002300437499999943,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_181430_COL_7178204_136",
+        "status": "no valid abstractions produced by Stitch"
+    },
+    {
+        "problem": "COL084-1",
+        "mean_base_user_time": 0.002269718750000012,
+        "min_base_user_time": 0.0007429999999999382,
+        "min_base_dir": "20250627_182101_COL_7178272_164",
+        "status": "no valid abstractions produced by Stitch"
+    },
+    {
+        "problem": "COL085-1",
+        "mean_base_user_time": 0.0016001875000000096,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_182831_COL_7178300_192",
+        "status": "no valid abstractions produced by Stitch"
+    },
+    {
+        "problem": "COL086-1",
+        "mean_base_user_time": 0.0015521250000000535,
+        "min_base_user_time": 0.0,
+        "min_base_dir": "20250627_181641_COL_7178212_144",
+        "status": "no valid abstractions produced by Stitch"
+    }
+]

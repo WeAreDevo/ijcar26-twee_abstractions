@@ -1,0 +1,33 @@
+[
+    {
+        "problem": "ALG212-10",
+        "mean_base_user_time": 962.494653,
+        "min_base_user_time": 962.494653,
+        "min_base_dir": "20251112_20251209_130501_ALG_7726475_2",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_1(A, B, C, D, E) = fn_0(E, D, C, f(C, B, A))",
+            "fn_2(A, B, C, D, E, F, G) = f(G, F, fn_0(E, D, C, B, A))",
+            "fn_3(A, B, C, D, E, F) = fn_2(A, F, E, D, C, B, A)",
+            "fn_4(A, B, C) = fn_0(C, B, A, A)",
+            "fn_5(A, B, C, D) = fn_0(D, C, A, B, A)",
+            "fn_6(H, I, J, K, L) = fn_2(L, I, J, K, H, K, J)",
+            "fn_7(H, I, J, K, L) = fn_1(I, L, K, I, H, J)",
+            "fn_8(A, B, C, D, E, F) = fn_0(F, E, D, f(C, B, A))",
+            "fn_9(H, I, J, K, L) = fn_1(I, L, K, L, H, J)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_2(A, B, C, D, E, F, G) = f(G, F, f(A, B, f(C, D, E)))",
+            "fn_3(A, B, C, D, E, F) = f(A, B, f(A, F, f(E, D, C)))",
+            "fn_5(A, B, C, D) = f(A, B, f(A, C, D))",
+            "fn_6(H, I, J, K, L) = f(J, K, f(L, I, f(J, K, H)))"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 1.0: f(W2, V2, f(U2, T2, S2))\nhint 1.0: f(X3, Y3, f(S2, T2, f(U2, V2, W2)))\nhint 2.0: f(S2, T2, f(S2, Y3, f(W2, V2, U2)))\nhint 2.0: f(S2, T2, f(S2, U2, V2))\nhint 3.0: f(Z3, W3, f(V3, U3, f(Z3, W3, T3)))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG213-10",
+        "status": "base timeout"
+    }
+]

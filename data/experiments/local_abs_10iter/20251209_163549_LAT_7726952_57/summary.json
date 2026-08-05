@@ -1,0 +1,381 @@
+[
+    {
+        "problem": "LAT005-10",
+        "mean_base_user_time": 0.37564,
+        "min_base_user_time": 0.37564,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A) = meet(A, a)",
+            "fn_2 = meet(r2, b)",
+            "fn_3(A) = join(r1, fn_1(A))",
+            "fn_4(A, B, C) = join(B, fn_0(C, B, A))",
+            "fn_5(A, B, C, D) = ifeq3(meet(D, A), C(A), fn_0(B, C(A), A), join(C(A), meet(B, A)))",
+            "fn_6(A, B, C) = fn_0(C, B, join(B, A))",
+            "fn_7 = fn_0(b, a)",
+            "fn_8(A) = meet(a, A)",
+            "fn_9(A, E, F) = A(E, F)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = meet(C, join(B, A))",
+            "fn_1(A) = meet(A, a)",
+            "fn_2 = meet(r2, b)",
+            "fn_3(A) = join(r1, meet(A, a))",
+            "fn_4(A, B, C) = join(B, meet(A, join(B, C)))",
+            "fn_6(A, B, C) = meet(join(B, A), join(B, C))",
+            "fn_8(A) = meet(a, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.072881,
+        "hints_time_sys": 0.011977,
+        "hints_time": 0.084858
+    },
+    {
+        "problem": "LAT065-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT190-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT206-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT223-10",
+        "mean_base_user_time": 52.920027,
+        "min_base_user_time": 52.920027,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1 = complement(a)",
+            "fn_2(A, B, C, D, E) = ifeq(fn_0(complement(meet(B, A)), C, E), one, D, meet(C, complement(meet(B, A))))",
+            "fn_3(A) = A(fn_1, b)",
+            "fn_4(A, B, C) = fn_0(C, join(B, A), A)",
+            "fn_5(A, B, C) = meet(C, join(B, A))",
+            "fn_6(A, B, C) = fn_2(B, A, B, ifeq(C, zero, complement(A), meet(B, complement(meet(A, B)))), A)",
+            "fn_7(A, B, C) = fn_0(fn_0(C, B, A))",
+            "fn_8(A, B) = fn_0(join(B, A))",
+            "fn_9(A, F, G) = A(F, G)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1 = complement(a)",
+            "fn_2(A, B, C, D, E) = ifeq(join(E, meet(C, complement(meet(B, A)))), one, D, meet(C, complement(meet(B, A))))",
+            "fn_4(A, B, C) = join(A, meet(join(B, A), C))",
+            "fn_5(A, B, C) = meet(C, join(B, A))",
+            "fn_6(A, B, C) = ifeq(join(A, meet(B, complement(meet(A, B)))), one, ifeq(C, zero, complement(A), meet(B, complement(meet(A, B)))), meet(B, complement(meet(A, B))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 564.934843,
+        "hints_time_sys": 16.312442,
+        "hints_time": 581.247285
+    },
+    {
+        "problem": "LAT229-10",
+        "mean_base_user_time": 54.435438,
+        "min_base_user_time": 54.435438,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A) = meet(complement(a), A)",
+            "fn_2(A, B, C, D, E) = ifeq(fn_0(complement(meet(E, C)), C, E), one, D, meet(C, complement(meet(B, A))))",
+            "fn_3 = complement(a)",
+            "fn_4 = complement(fn_1(b))",
+            "fn_5(A, B, C, D) = fn_0(D, C, meet(B, A))",
+            "fn_6(A, B, C) = fn_0(C, join(B, A), A)",
+            "fn_7(A, B, C) = join(C, join(B, A))",
+            "fn_8(A, B, C) = C(A, complement(meet(B, A)))",
+            "fn_9(A, B, C) = meet(C, join(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = join(C, meet(B, A))",
+            "fn_1(A) = meet(complement(a), A)",
+            "fn_2(A, B, C, D, E) = ifeq(join(E, meet(C, complement(meet(E, C)))), one, D, meet(C, complement(meet(B, A))))",
+            "fn_3 = complement(a)",
+            "fn_4 = complement(meet(complement(a), b))",
+            "fn_5(A, B, C, D) = join(meet(B, A), meet(C, D))",
+            "fn_6(A, B, C) = join(A, meet(join(B, A), C))",
+            "fn_7(A, B, C) = join(C, join(B, A))",
+            "fn_9(A, B, C) = meet(C, join(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 179.645144,
+        "hints_time_sys": 3.9338699999999998,
+        "hints_time": 183.579014
+    },
+    {
+        "problem": "LAT241-10",
+        "mean_base_user_time": 0.385079,
+        "min_base_user_time": 0.385079,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A, B) = join(complement(B), complement(join(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C, D) = ifeq(D, one, ifeq(C, zero, complement(A), fn_0(B, A)), fn_0(B, A))",
+            "fn_3(A, B, C) = join(C, join(B, A))",
+            "fn_4(A, B) = fn_1(B, complement(A), A)",
+            "fn_5(A, B) = join(B, meet(B, A))",
+            "fn_6(A, B) = join(complement(B), complement(A))",
+            "fn_7(A, B, C) = fn_2(A, B, C, join(A, fn_0(B, A)))",
+            "fn_8(A, B, C) = meet(C, meet(join(C, B), A))",
+            "fn_9(A, E, F) = A(complement(E), F, E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = join(complement(B), complement(join(B, A)))",
+            "fn_1(A, B, C) = meet(C, join(B, A))",
+            "fn_2(A, B, C, D) = ifeq(D, one, ifeq(C, zero, complement(A), join(complement(A), complement(join(A, B)))), join(complement(A), complement(join(A, B))))",
+            "fn_3(A, B, C) = join(C, join(B, A))",
+            "fn_4(A, B) = meet(A, join(complement(A), B))",
+            "fn_5(A, B) = join(B, meet(B, A))",
+            "fn_6(A, B) = join(complement(B), complement(A))",
+            "fn_7(A, B, C) = ifeq(join(A, join(complement(A), complement(join(A, B)))), one, ifeq(C, zero, complement(A), join(complement(A), complement(join(A, B)))), join(complement(A), complement(join(A, B))))",
+            "fn_8(A, B, C) = meet(C, meet(join(C, B), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.372487,
+        "hints_time_sys": 0.066704,
+        "hints_time": 1.439191
+    },
+    {
+        "problem": "LAT268-10",
+        "mean_base_user_time": 0.0072959999999999995,
+        "min_base_user_time": 0.0072959999999999995,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A, B, C, D) = ifeq(D, true, ifeq(C, true, c_in(c_Pair(B, A(t_a), t_a, t_a), c_Tarski_Opotype_Oorder(c_Tarski_Odual(v_cl, t_a), t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a)), true), true)",
+            "fn_1(A, B, E, F) = ifeq(c_lessequals(E, B, tc_set(t_a)), true, ifeq(A, true, fn_0(c_Tarski_Olub(E, c_Tarski_Odual(v_cl, t_a)), F, c_in(F, E, t_a), c_in(c_Tarski_Odual(v_cl, t_a), c_Tarski_OPartialOrder, tc_Tarski_Opotype_Opotype__ext__type(t_a, tc_Product__Type_Ounit))), true), true)",
+            "fn_2(A, B, C) = c_in(c_Pair(C, B, t_a, t_a), c_Tarski_Opotype_Oorder(A, t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a))",
+            "fn_3 = c_Tarski_Oglb(v_S, v_cl, t_a)",
+            "fn_4(A, B, C, D) = fn_0(D(A, C), B, c_in(B, A, t_a), c_lessequals(A, v_A, tc_set(t_a)))",
+            "fn_5(A, B, C) = ifeq(c_lessequals(B, v_A, tc_set(t_a)), true, fn_0(c_Tarski_Olub(B, c_Tarski_Odual(v_cl, t_a)), C, c_in(C, B, t_a), A), true)",
+            "fn_6 = c_Tarski_Odual(v_cl, t_a)",
+            "fn_7 = c_in(c_Pair(fn_3, v_x, t_a, t_a), v_r, tc_prod(t_a, t_a))",
+            "fn_8 = fn_2(fn_6, fn_3, v_x)",
+            "fn_9 = fn_2(v_cl, v_x, fn_3)"
+        ],
+        "expanded_abstractions": [
+            "fn_2(A, B, C) = c_in(c_Pair(C, B, t_a, t_a), c_Tarski_Opotype_Oorder(A, t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a))",
+            "fn_3 = c_Tarski_Oglb(v_S, v_cl, t_a)",
+            "fn_6 = c_Tarski_Odual(v_cl, t_a)",
+            "fn_7 = c_in(c_Pair(c_Tarski_Oglb(v_S, v_cl, t_a), v_x, t_a, t_a), v_r, tc_prod(t_a, t_a))",
+            "fn_8 = c_in(c_Pair(v_x, c_Tarski_Oglb(v_S, v_cl, t_a), t_a, t_a), c_Tarski_Opotype_Oorder(c_Tarski_Odual(v_cl, t_a), t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a))",
+            "fn_9 = c_in(c_Pair(c_Tarski_Oglb(v_S, v_cl, t_a), v_x, t_a, t_a), c_Tarski_Opotype_Oorder(v_cl, t_a, tc_Product__Type_Ounit), tc_prod(t_a, t_a))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008348999999999999,
+        "hints_time_sys": 0.007284,
+        "hints_time": 0.015632999999999998
+    },
+    {
+        "problem": "LAT399-1",
+        "mean_base_user_time": 464.966454,
+        "min_base_user_time": 464.966454,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A) = meet(a, A)",
+            "fn_1(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_2(A, B, C, D) = lome(D, C, meet(B, A))",
+            "fn_3(A, B, C, D, E) = upme(join(D, A), fn_0(meet(lome(B, C, fn_0(B)), A)), E)",
+            "fn_4(A, B, C) = join(meet(B, A), C)",
+            "fn_5(E, F, G) = lome(E, F, G)",
+            "fn_6(E, F) = meet(E, F)",
+            "fn_7(A, B, C, D) = upme(D, C, meet(B, A))",
+            "fn_8(A, B, C) = join(C, meet(B, A))",
+            "fn_9(A) = lome(a, a, fn_0(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = meet(a, A)",
+            "fn_1(A, B, C, D) = join(meet(D, C), meet(B, A))",
+            "fn_2(A, B, C, D) = lome(D, C, meet(B, A))",
+            "fn_3(A, B, C, D, E) = upme(join(D, A), meet(a, meet(lome(B, C, meet(a, B)), A)), E)",
+            "fn_4(A, B, C) = join(meet(B, A), C)",
+            "fn_7(A, B, C, D) = upme(D, C, meet(B, A))",
+            "fn_8(A, B, C) = join(C, meet(B, A))",
+            "fn_9(A) = lome(a, a, meet(a, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.18124,
+        "hints_time_sys": 0.058691999999999994,
+        "hints_time": 1.239932
+    },
+    {
+        "problem": "LAT399-2",
+        "mean_base_user_time": 43.226471,
+        "min_base_user_time": 43.226471,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A) = meet(a, A)",
+            "fn_1(A, B, C) = upme(fn_0(A), B, C)",
+            "fn_2(A, B, C, D) = upjo(meet(B, A), C, D)",
+            "fn_3(A, C, D, E) = A(C, D, E)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_5(A, B, C, D) = upme(join(B, A), C, D)",
+            "fn_6(A, B, C) = C(B, join(B, A))",
+            "fn_7(A, B) = lojo(A, a, B)",
+            "fn_8(A, B, C) = lome(fn_0(A), B, C)",
+            "fn_9(A, B) = lojo(B, A, a)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = meet(a, A)",
+            "fn_1(A, B, C) = upme(meet(a, A), B, C)",
+            "fn_2(A, B, C, D) = upjo(meet(B, A), C, D)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_5(A, B, C, D) = upme(join(B, A), C, D)",
+            "fn_7(A, B) = lojo(A, a, B)",
+            "fn_8(A, B, C) = lome(meet(a, A), B, C)",
+            "fn_9(A, B) = lojo(B, A, a)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 10.141812,
+        "hints_time_sys": 0.374256,
+        "hints_time": 10.516068
+    },
+    {
+        "problem": "LAT400-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT400-2",
+        "mean_base_user_time": 150.832135,
+        "min_base_user_time": 150.832135,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0 = upme(x2, y2, z2)",
+            "fn_1(A, B) = lojo(B, A, a)",
+            "fn_2(A, B) = lome(a, A, B)",
+            "fn_3(A) = meet(A, a)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_5(A, C, D, E) = A(C, D, E)",
+            "fn_6(A, B, C, D, E) = lojo(lome(C, B, A), D, E)",
+            "fn_7(A) = meet(a, A)",
+            "fn_8(A, B) = lojo(A, a, B)",
+            "fn_9(A, B, C, D) = join(D, lome(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = upme(x2, y2, z2)",
+            "fn_1(A, B) = lojo(B, A, a)",
+            "fn_2(A, B) = lome(a, A, B)",
+            "fn_3(A) = meet(A, a)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_6(A, B, C, D, E) = lojo(lome(C, B, A), D, E)",
+            "fn_7(A) = meet(a, A)",
+            "fn_8(A, B) = lojo(A, a, B)",
+            "fn_9(A, B, C, D) = join(D, lome(C, B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 58.586076,
+        "hints_time_sys": 1.450575,
+        "hints_time": 60.036651
+    },
+    {
+        "problem": "LAT400-3",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LAT400-4",
+        "mean_base_user_time": 771.975598,
+        "min_base_user_time": 771.975598,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0 = upme(x2, y2, z2)",
+            "fn_1(A, B) = lome(a, A, B)",
+            "fn_2(A, B) = lojo(B, A, a)",
+            "fn_3 = lome(x2, y2, z2)",
+            "fn_4(A) = meet(A, a)",
+            "fn_5(A, C, D, E) = A(C, D, E)",
+            "fn_6(A) = meet(a, A)",
+            "fn_7(A, B) = lojo(A, a, B)",
+            "fn_8(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_9(A, B, C, D) = D(B, upme(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = upme(x2, y2, z2)",
+            "fn_1(A, B) = lome(a, A, B)",
+            "fn_2(A, B) = lojo(B, A, a)",
+            "fn_3 = lome(x2, y2, z2)",
+            "fn_4(A) = meet(A, a)",
+            "fn_6(A) = meet(a, A)",
+            "fn_7(A, B) = lojo(A, a, B)",
+            "fn_8(A, B, C, D) = lojo(meet(B, A), C, D)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 44.753847,
+        "hints_time_sys": 1.174686,
+        "hints_time": 45.928533
+    },
+    {
+        "problem": "LAT401-1",
+        "mean_base_user_time": 190.714133,
+        "min_base_user_time": 190.714133,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0 = upjo(x2, y2, z2)",
+            "fn_1(A, B) = lojo(B, A, a)",
+            "fn_2(A, B) = lojo(A, a, B)",
+            "fn_3(A) = meet(A, a)",
+            "fn_4(A) = meet(a, A)",
+            "fn_5(A, B) = upme(a, A, B)",
+            "fn_6 = lojo(x2, y2, z2)",
+            "fn_7(A, B, C, D) = lojo(B, D, C(B, A))",
+            "fn_8(A, B, C, D) = upme(join(B, A), C, D)",
+            "fn_9(A, E, F, G) = A(E, F, G)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = upjo(x2, y2, z2)",
+            "fn_1(A, B) = lojo(B, A, a)",
+            "fn_2(A, B) = lojo(A, a, B)",
+            "fn_3(A) = meet(A, a)",
+            "fn_4(A) = meet(a, A)",
+            "fn_5(A, B) = upme(a, A, B)",
+            "fn_6 = lojo(x2, y2, z2)",
+            "fn_8(A, B, C, D) = upme(join(B, A), C, D)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 93.579204,
+        "hints_time_sys": 2.48621,
+        "hints_time": 96.065414
+    },
+    {
+        "problem": "LAT401-2",
+        "mean_base_user_time": 74.268054,
+        "min_base_user_time": 74.268054,
+        "min_base_dir": "20251112_20251209_130502_LAT_7726482_9",
+        "abstractions": [
+            "fn_0(A) = A(x2, y2, z2)",
+            "fn_1(A, B) = lome(a, A, B)",
+            "fn_2(A) = A(fn_0(upjo), a)",
+            "fn_3 = fn_0(lojo)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_5(A, C, D, E) = A(C, D, E)",
+            "fn_6(A, B) = lojo(B, A, a)",
+            "fn_7(A) = meet(a, A)",
+            "fn_8(A, B) = lojo(A, a, B)",
+            "fn_9(A) = lojo(x2, A, z2)"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B) = lome(a, A, B)",
+            "fn_4(A, B, C, D) = lojo(meet(B, A), C, D)",
+            "fn_6(A, B) = lojo(B, A, a)",
+            "fn_7(A) = meet(a, A)",
+            "fn_8(A, B) = lojo(A, a, B)",
+            "fn_9(A) = lojo(x2, A, z2)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 14.334506,
+        "hints_time_sys": 0.397536,
+        "hints_time": 14.732042
+    }
+]

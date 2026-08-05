@@ -1,0 +1,271 @@
+[
+    {
+        "problem": "ALG005-1",
+        "mean_base_user_time": 0.07347237499999999,
+        "min_base_user_time": 0.067593,
+        "min_base_dir": "20251112_003808_ALG_7667063_18",
+        "abstractions": [
+            "fn_0(A, B, C) = difference(C, difference(B, A))",
+            "fn_1(A, B) = fn_0(B, A, A)",
+            "fn_2(A, B, C) = multiply(C, difference(B, A))",
+            "fn_3(A) = difference(A, A)",
+            "fn_4(A, B, C) = fn_0(A, C, difference(B, A))",
+            "fn_5(A, B, C) = difference(difference(B, A), C)",
+            "fn_6(A, B, C, D, E) = E(D(B, C), fn_0(C, B, A))",
+            "fn_7(A, B, C, D) = B(D, C, A(C, D))",
+            "fn_8(A, B, C) = A(B, C)",
+            "fn_9(A, B, C) = difference(multiply(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = difference(C, difference(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.054165,
+        "hints_time_sys": 0.007157999999999999,
+        "hints_time": 0.061322999999999996
+    },
+    {
+        "problem": "ALG006-1",
+        "mean_base_user_time": 0.03887858333333333,
+        "min_base_user_time": 0.03559,
+        "min_base_dir": "20251112_010623_ALG_7667092_44",
+        "abstractions": [
+            "fn_0(A) = difference(A, A)",
+            "fn_1(A, B) = difference(B, difference(B, A))",
+            "fn_2(A, B, C) = difference(C, difference(B, A))",
+            "fn_3(A, B, C) = B(difference(C, A))",
+            "fn_4(A, B, C) = difference(difference(B, A), C)",
+            "fn_5(A, B) = fn_2(fn_0(A), B, A)",
+            "fn_6(A, B, C) = fn_2(A, C, B(difference(C, A)))",
+            "fn_7(A, B) = difference(A, fn_1(B, A))",
+            "fn_8(A, B) = fn_3(B, fn_2(B, A))",
+            "fn_9(A, B, C) = A(B, C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = difference(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.037467,
+        "hints_time_sys": 0.009621,
+        "hints_time": 0.047088
+    },
+    {
+        "problem": "ALG007-1",
+        "mean_base_user_time": 0.01819766666666667,
+        "min_base_user_time": 0.015619,
+        "min_base_dir": "20251112_004113_ALG_7667065_20",
+        "abstractions": [
+            "fn_0(A, B) = difference(B, difference(B, A))",
+            "fn_1(A, B, C) = difference(difference(B, A), C)",
+            "fn_2(A, B, C) = fn_1(B, C, difference(C, A))",
+            "fn_3(A, B, C) = fn_1(B, A, C)",
+            "fn_4(A, B, C) = fn_0(fn_1(B, C, A), C)",
+            "fn_5(A, B, C) = difference(fn_0(B, A), C)",
+            "fn_6(A, B) = fn_0(difference(B, A))",
+            "fn_7(A, B, C) = A(B, C)",
+            "fn_8(A, B, C) = A(C, B)",
+            "fn_9(A, B, C) = fn_1(B, C, A(C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = difference(B, difference(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.024967999999999997,
+        "hints_time_sys": 0.003129,
+        "hints_time": 0.028096999999999997
+    },
+    {
+        "problem": "ALG030-10",
+        "mean_base_user_time": 0.11048220833333332,
+        "min_base_user_time": 0.10658999999999999,
+        "min_base_dir": "20251112_004654_ALG_7667071_26",
+        "abstractions": [
+            "fn_0 = op1(sK1_ax3_V, sK2_ax3_U)",
+            "fn_1 = op2(h(sK2_ax3_U), h(sK1_ax3_V))",
+            "fn_2(A) = ifeq2(sorti2(h(sK2_ax3_U)), true, op1(j(h(sK2_ax3_U)), j(h(sK1_ax3_V))), j(A))",
+            "fn_3(A, B, C, D) = ifeq2(C, true, B(h(A)), D)",
+            "fn_4(A, B) = ifeq(B, true, A, true)",
+            "fn_5(A) = fn_3(sK2_ax3_U, op2(A), sorti2(A), op2(h(sK2_ax3_U), A))",
+            "fn_6 = h(sK1_ax3_V)",
+            "fn_7(A, B) = fn_3(A, j, B, A)",
+            "fn_8(A) = fn_4(sorti1(op1(A, sK2_ax3_U)), sorti1(A))",
+            "fn_9 = h(sK2_ax3_U)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = op1(sK1_ax3_V, sK2_ax3_U)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.258428,
+        "hints_time_sys": 0.021868,
+        "hints_time": 0.280296
+    },
+    {
+        "problem": "ALG069-10",
+        "mean_base_user_time": 0.007230083333333334,
+        "min_base_user_time": 0.0030589999999999997,
+        "min_base_dir": "20251112_010016_ALG_7667083_36",
+        "abstractions": [
+            "fn_0 = sK2_ax3_V(j(sK1_ax4_U))",
+            "fn_1(A, B, C) = ifeq2(C, true, ifeq2(B, true, op2(h(fn_0), h(fn_0)), h(A)), h(op1(fn_0, fn_0)))",
+            "fn_2 = j(sK1_ax4_U)",
+            "fn_3(A, B) = ifeq(B, true, A, true)",
+            "fn_4 = h(fn_0)",
+            "fn_5 = sorti1(fn_0)",
+            "fn_6 = op1(fn_0, fn_0)",
+            "fn_7(A, B, C) = ifeq2(C, true, B, A)",
+            "fn_8 = sorti1(fn_2)",
+            "fn_9 = h(fn_2)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = sK2_ax3_V(j(sK1_ax4_U))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006620999999999999,
+        "hints_time_sys": 0.005533,
+        "hints_time": 0.012153999999999998
+    },
+    {
+        "problem": "ALG212-10",
+        "mean_base_user_time": 962.494653,
+        "min_base_user_time": 962.494653,
+        "min_base_dir": "20251112_20251209_130501_ALG_7726475_2",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = f(E, D, f(C, B, A))",
+            "fn_1(A, B, C, D, E) = fn_0(E, D, C, f(C, B, A))",
+            "fn_2(A, B, C) = fn_0(C, B, A, A)",
+            "fn_3(A, B, C) = f(A, C, B(A))",
+            "fn_4(A, B, C, D) = fn_0(D, C, A, B, A)",
+            "fn_5(A, B, C, D, E) = f(C, D, fn_0(E, D, C, B, A))",
+            "fn_6(A, B, C, D, E) = fn_0(E, D, B, f(C, B, A))",
+            "fn_7(A, B, C, D, E, F) = A(C, F, E, C, B, D)",
+            "fn_8(A, B, C, D, E) = f(D, f(C, B, A), E)",
+            "fn_9(A, B, C, D, E) = fn_3(E, fn_0(D, C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D, E) = f(E, D, f(C, B, A))"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 1.0: f(W2, V2, f(U2, T2, S2))\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "ALG213-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG235-1",
+        "mean_base_user_time": 0.003070125,
+        "min_base_user_time": 0.000957,
+        "min_base_dir": "20251112_002946_ALG_7667057_12",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(b, mult(B, mult(c, mult(A, c)))))",
+            "fn_1(A, B) = mult(B, mult(b, mult(A, c)))",
+            "fn_2(A) = A(d, a)",
+            "fn_3 = fn_0(a)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(b, mult(B, mult(c, mult(A, c)))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.001836,
+        "hints_time_sys": 0.008217,
+        "hints_time": 0.010053
+    },
+    {
+        "problem": "ALG236-1",
+        "mean_base_user_time": 0.03912654166666666,
+        "min_base_user_time": 0.034485,
+        "min_base_dir": "20251112_003427_ALG_7667061_16",
+        "abstractions": [
+            "fn_0(A, B, C, D) = mult(D, mult(C, mult(B, A)))",
+            "fn_1(A, B, C, D, E) = mult(E, mult(D, fn_0(B, C, B, A)))",
+            "fn_2(A, B) = fn_0(A, B, A)",
+            "fn_3(A, B, C, D) = fn_0(D, C, B, A)",
+            "fn_4(A, B, C, D) = mult(fn_2(C, B, A), D)",
+            "fn_5(A, B, C, D) = fn_2(D, A, mult(B, C))",
+            "fn_6(A, B, C, D, E) = fn_1(D, E, C, B, A)",
+            "fn_7(A, B, C) = C(A, B, A)",
+            "fn_8(A, B) = fn_0(e, B, c, A)",
+            "fn_9(A, B, C) = fn_6(A, C, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = mult(D, mult(C, mult(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.021082999999999998,
+        "hints_time_sys": 0.003833,
+        "hints_time": 0.024915999999999997
+    },
+    {
+        "problem": "ALG237-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG238-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG239-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG240-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG241-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG242-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG243-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG244-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG245-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "ALG246-1",
+        "mean_base_user_time": 21.0064665,
+        "min_base_user_time": 19.952917,
+        "min_base_dir": "20251112_010016_ALG_7667083_36",
+        "abstractions": [
+            "fn_0(A, B, C) = tptp0(C, tptp0(B, A))",
+            "fn_1(A, B) = n(tptp0(B, A))",
+            "fn_2(A, B) = m(tptp1(B, A))",
+            "fn_3(A, B, C) = tptp4(C, tptp0(tptp0(B, A), A))",
+            "fn_4(A, B) = tptp0(m(A), B)",
+            "fn_5(A, B) = tptp4(B, m(A))",
+            "fn_6(A, B, C) = tptp1(B, C(B, A))",
+            "fn_7(A, B) = v(n(A), B)",
+            "fn_8(A, B) = tptp1(B, m(A))",
+            "fn_9(A, B) = fn_3(B, A, tptp0(tptp0(B, A), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = tptp0(C, tptp0(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 13.500816,
+        "hints_time_sys": 0.341536,
+        "hints_time": 13.842352
+    },
+    {
+        "problem": "ALG441-10",
+        "status": "base timeout"
+    }
+]

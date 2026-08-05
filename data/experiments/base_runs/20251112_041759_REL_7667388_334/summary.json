@@ -1,0 +1,610 @@
+[
+    {
+        "problem": "REL001-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.017109,
+        "base_time_sys": 0.107556,
+        "base_time": 0.124665
+    },
+    {
+        "problem": "REL002-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.012752999999999999,
+        "base_time_sys": 0.110729,
+        "base_time": 0.123482
+    },
+    {
+        "problem": "REL004-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.09913799999999999,
+        "base_time_sys": 0.127477,
+        "base_time": 0.226615
+    },
+    {
+        "problem": "REL004-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.081756,
+        "base_time_sys": 0.11814699999999999,
+        "base_time": 0.199903
+    },
+    {
+        "problem": "REL004-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.075836,
+        "base_time_sys": 0.119984,
+        "base_time": 0.19582
+    },
+    {
+        "problem": "REL005-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.210316,
+        "base_time_sys": 0.13749999999999998,
+        "base_time": 0.347816
+    },
+    {
+        "problem": "REL005-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.20824099999999998,
+        "base_time_sys": 0.126264,
+        "base_time": 0.33450499999999994
+    },
+    {
+        "problem": "REL006-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.081194,
+        "base_time_sys": 0.126575,
+        "base_time": 0.20776899999999998
+    },
+    {
+        "problem": "REL007-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.08458099999999999,
+        "base_time_sys": 0.12268699999999999,
+        "base_time": 0.20726799999999998
+    },
+    {
+        "problem": "REL008-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.12125499999999999,
+        "base_time_sys": 0.11719299999999999,
+        "base_time": 0.238448
+    },
+    {
+        "problem": "REL008-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.583714,
+        "base_time_sys": 0.146147,
+        "base_time": 0.729861
+    },
+    {
+        "problem": "REL010-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 27.772541,
+        "base_time_sys": 0.714326,
+        "base_time": 28.486867
+    },
+    {
+        "problem": "REL010-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.32872799999999996,
+        "base_time_sys": 0.138879,
+        "base_time": 0.467607
+    },
+    {
+        "problem": "REL011-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 22.530223,
+        "base_time_sys": 1.944969,
+        "base_time": 24.475192
+    },
+    {
+        "problem": "REL011-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.202672,
+        "base_time_sys": 0.12297,
+        "base_time": 0.325642
+    },
+    {
+        "problem": "REL012-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.37393,
+        "base_time_sys": 0.133451,
+        "base_time": 0.507381
+    },
+    {
+        "problem": "REL012-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.419373,
+        "base_time_sys": 0.136121,
+        "base_time": 0.5554939999999999
+    },
+    {
+        "problem": "REL015-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.029127999999999998,
+        "base_time_sys": 0.114394,
+        "base_time": 0.14352199999999998
+    },
+    {
+        "problem": "REL016-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL016-3",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL017-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL017-3",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL018-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.079153,
+        "base_time_sys": 0.12154,
+        "base_time": 0.200693
+    },
+    {
+        "problem": "REL019-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.075611,
+        "base_time_sys": 0.19744899999999999,
+        "base_time": 2.27306
+    },
+    {
+        "problem": "REL019-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.167735,
+        "base_time_sys": 0.192843,
+        "base_time": 1.3605779999999998
+    },
+    {
+        "problem": "REL020-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.791293,
+        "base_time_sys": 0.21936799999999998,
+        "base_time": 3.010661
+    },
+    {
+        "problem": "REL020-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 17.431974,
+        "base_time_sys": 0.640343,
+        "base_time": 18.072317
+    },
+    {
+        "problem": "REL021-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.804178,
+        "base_time_sys": 0.218304,
+        "base_time": 3.0224819999999997
+    },
+    {
+        "problem": "REL021-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 17.200932,
+        "base_time_sys": 0.6524719999999999,
+        "base_time": 17.853404
+    },
+    {
+        "problem": "REL022-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.769615,
+        "base_time_sys": 0.236843,
+        "base_time": 3.006458
+    },
+    {
+        "problem": "REL022-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 17.06868,
+        "base_time_sys": 0.628945,
+        "base_time": 17.697625000000002
+    },
+    {
+        "problem": "REL023-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.031453999999999996,
+        "base_time_sys": 0.111608,
+        "base_time": 0.143062
+    },
+    {
+        "problem": "REL023-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.031806,
+        "base_time_sys": 0.10911399999999999,
+        "base_time": 0.14092
+    },
+    {
+        "problem": "REL024-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.11861999999999999,
+        "base_time_sys": 0.12251,
+        "base_time": 0.24112999999999998
+    },
+    {
+        "problem": "REL024-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.583565,
+        "base_time_sys": 0.14117,
+        "base_time": 0.724735
+    },
+    {
+        "problem": "REL025-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.6322169999999999,
+        "base_time_sys": 0.157997,
+        "base_time": 0.790214
+    },
+    {
+        "problem": "REL026-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.625448,
+        "base_time_sys": 0.159248,
+        "base_time": 0.7846960000000001
+    },
+    {
+        "problem": "REL026-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.101561,
+        "base_time_sys": 0.188937,
+        "base_time": 1.290498
+    },
+    {
+        "problem": "REL027-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.029705,
+        "base_time_sys": 0.19578299999999998,
+        "base_time": 1.2254880000000001
+    },
+    {
+        "problem": "REL027-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.39288599999999996,
+        "base_time_sys": 0.143813,
+        "base_time": 0.5366989999999999
+    },
+    {
+        "problem": "REL028-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.43176499999999995,
+        "base_time_sys": 0.155444,
+        "base_time": 0.587209
+    },
+    {
+        "problem": "REL028-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.297333,
+        "base_time_sys": 0.20935199999999998,
+        "base_time": 1.506685
+    },
+    {
+        "problem": "REL029-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.187095,
+        "base_time_sys": 0.22991,
+        "base_time": 2.4170049999999996
+    },
+    {
+        "problem": "REL029-10",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.655726,
+        "base_time_sys": 0.24803599999999998,
+        "base_time": 1.903762
+    },
+    {
+        "problem": "REL029-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.6185800000000001,
+        "base_time_sys": 0.226269,
+        "base_time": 1.8448490000000002
+    },
+    {
+        "problem": "REL030-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 5.013029,
+        "base_time_sys": 0.303384,
+        "base_time": 5.316413000000001
+    },
+    {
+        "problem": "REL030-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.5207009999999999,
+        "base_time_sys": 0.193481,
+        "base_time": 1.7141819999999999
+    },
+    {
+        "problem": "REL031-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.8352870000000001,
+        "base_time_sys": 0.19358999999999998,
+        "base_time": 2.028877
+    },
+    {
+        "problem": "REL031-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 6.033088,
+        "base_time_sys": 0.307591,
+        "base_time": 6.340679000000001
+    },
+    {
+        "problem": "REL032-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL032-2",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL033-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.7959899999999998,
+        "base_time_sys": 0.221832,
+        "base_time": 3.017822
+    },
+    {
+        "problem": "REL033-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 17.082546,
+        "base_time_sys": 0.635079,
+        "base_time": 17.717625
+    },
+    {
+        "problem": "REL034-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.878593,
+        "base_time_sys": 0.23088399999999998,
+        "base_time": 3.109477
+    },
+    {
+        "problem": "REL034-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.548831,
+        "base_time_sys": 1.277156,
+        "base_time": 44.825987
+    },
+    {
+        "problem": "REL035-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.829546,
+        "base_time_sys": 0.225551,
+        "base_time": 3.055097
+    },
+    {
+        "problem": "REL035-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.497224,
+        "base_time_sys": 1.23593,
+        "base_time": 44.733154000000006
+    },
+    {
+        "problem": "REL036-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.8055849999999998,
+        "base_time_sys": 0.22672199999999998,
+        "base_time": 3.032307
+    },
+    {
+        "problem": "REL036-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.115306,
+        "base_time_sys": 1.2240739999999999,
+        "base_time": 44.33938
+    },
+    {
+        "problem": "REL037-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.841127,
+        "base_time_sys": 0.242979,
+        "base_time": 3.0841060000000002
+    },
+    {
+        "problem": "REL037-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 43.231301,
+        "base_time_sys": 1.2267489999999999,
+        "base_time": 44.45805
+    },
+    {
+        "problem": "REL038-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 179.03893,
+        "base_time_sys": 2.861229,
+        "base_time": 181.900159
+    },
+    {
+        "problem": "REL039-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL040-1",
+        "base_status": "timeout",
+        "error": ""
+    },
+    {
+        "problem": "REL040-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 383.97294700000003,
+        "base_time_sys": 5.492711,
+        "base_time": 389.465658
+    },
+    {
+        "problem": "REL041-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 4.750421,
+        "base_time_sys": 0.175236,
+        "base_time": 4.925657
+    },
+    {
+        "problem": "REL041-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.687473,
+        "base_time_sys": 0.04860099999999999,
+        "base_time": 0.736074
+    },
+    {
+        "problem": "REL042-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 1.4722069999999998,
+        "base_time_sys": 0.08224799999999999,
+        "base_time": 1.554455
+    },
+    {
+        "problem": "REL042-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.31918199999999997,
+        "base_time_sys": 0.032055,
+        "base_time": 0.35123699999999997
+    },
+    {
+        "problem": "REL043-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 24.54137,
+        "base_time_sys": 0.5527869999999999,
+        "base_time": 25.094157
+    },
+    {
+        "problem": "REL043-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.724889,
+        "base_time_sys": 0.053269999999999984,
+        "base_time": 0.778159
+    },
+    {
+        "problem": "REL044-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 23.825357999999998,
+        "base_time_sys": 0.48941099999999993,
+        "base_time": 24.314769
+    },
+    {
+        "problem": "REL044-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.8762469999999999,
+        "base_time_sys": 0.059671,
+        "base_time": 0.9359179999999999
+    },
+    {
+        "problem": "REL045-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 62.722802,
+        "base_time_sys": 1.099715,
+        "base_time": 63.822517000000005
+    },
+    {
+        "problem": "REL045-2",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.777486,
+        "base_time_sys": 0.140652,
+        "base_time": 2.918138
+    },
+    {
+        "problem": "REL047-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 2.983351,
+        "base_time_sys": 0.143316,
+        "base_time": 3.126667
+    },
+    {
+        "problem": "REL049-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.005937999999999999,
+        "base_time_sys": 0.007932999999999996,
+        "base_time": 0.013870999999999994
+    },
+    {
+        "problem": "REL050-1",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.932013,
+        "base_time_sys": 0.056296999999999986,
+        "base_time": 0.98831
+    },
+    {
+        "problem": "REL050-3",
+        "base_status": "success",
+        "error": "",
+        "base_time_user": 0.40706699999999996,
+        "base_time_sys": 0.043349,
+        "base_time": 0.4504159999999999
+    }
+]

@@ -1,0 +1,23 @@
+abstractions:
+  lemma_abstraction:
+    max_arity: 3
+    stitch_iterations: 20
+    topk: 50
+  use_domain_abstractions: false
+  use_partial_proof_lemmas: true
+hints_twee:
+  flags:
+  - --all-lemmas
+  - --show-peaks
+  - --hint-skel-factor 0.2
+  - --hint-skel-cost 0
+  - --no-flatten-goal
+timeslice: 50
+twee:
+  flags:
+  - --all-lemmas
+  - --show-peaks
+  - --proof-on-saturation
+  - --max-time 50
+  - --no-flatten-goal
+  timeout: 1000

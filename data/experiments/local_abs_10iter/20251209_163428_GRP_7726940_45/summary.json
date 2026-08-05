@@ -1,0 +1,1413 @@
+[
+    {
+        "problem": "GRP048-10",
+        "mean_base_user_time": 259.756745,
+        "min_base_user_time": 259.756745,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = ifeq(B, true, A, true)",
+            "fn_1(A, B, C, D) = fn_0(D, product(C, B, A))",
+            "fn_2(A, B, C) = fn_1(B, A, C, product(inverse(C), B, A))",
+            "fn_3(A, B, C, D) = fn_1(B, A, D, fn_1(identity, D, C, product(C, B, A)))",
+            "fn_4(A, B, C, D) = fn_1(B, D, inverse(C), equalish(B, A))",
+            "fn_5(A, B, C) = fn_0(product(C, B, A), true)",
+            "fn_6(A, B, C, D) = fn_0(fn_1(B, C, D, product(D, C, A)), equalish(B, A))",
+            "fn_7(A, B, C, D) = fn_0(product(D, B, A), equalish(multiply(C, B), A))",
+            "fn_8 = fn_4(inverse(b), inverse(a), b, identity)",
+            "fn_9(A, B, C, D, E, F) = fn_1(A, F, E, fn_1(C, D, identity, product(C, B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ifeq(B, true, A, true)",
+            "fn_1(A, B, C, D) = ifeq(product(C, B, A), true, D, true)",
+            "fn_2(A, B, C) = ifeq(product(C, A, B), true, product(inverse(C), B, A), true)",
+            "fn_3(A, B, C, D) = ifeq(product(D, A, B), true, ifeq(product(C, D, identity), true, product(C, B, A), true), true)",
+            "fn_4(A, B, C, D) = ifeq(product(inverse(C), D, B), true, equalish(B, A), true)",
+            "fn_5(A, B, C) = ifeq(true, true, product(C, B, A), true)",
+            "fn_6(A, B, C, D) = ifeq(equalish(B, A), true, ifeq(product(D, C, B), true, product(D, C, A), true), true)",
+            "fn_7(A, B, C, D) = ifeq(equalish(multiply(C, B), A), true, product(D, B, A), true)",
+            "fn_8 = ifeq(product(inverse(b), identity, inverse(a)), true, equalish(inverse(a), inverse(b)), true)",
+            "fn_9(A, B, C, D, E, F) = ifeq(product(E, F, A), true, ifeq(product(identity, D, C), true, product(C, B, A), true), true)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.047373,
+        "hints_time_sys": 0.006921999999999999,
+        "hints_time": 0.054294999999999996
+    },
+    {
+        "problem": "GRP177-1",
+        "mean_base_user_time": 2.643893,
+        "min_base_user_time": 2.643893,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0 = multiply(greatest_lower_bound(a, b), greatest_lower_bound(a, c))",
+            "fn_1(A, B) = greatest_lower_bound(B, multiply(A, c))",
+            "fn_2(A, B, C) = greatest_lower_bound(multiply(B, A), C)",
+            "fn_3(A, B, C) = greatest_lower_bound(C, multiply(B, A))",
+            "fn_4 = greatest_lower_bound(a, b)",
+            "fn_5 = fn_1(b, a)",
+            "fn_6(A, B, C) = least_upper_bound(multiply(B, A), C)",
+            "fn_7(A, D, E, F, G) = A(F, greatest_lower_bound(D, E), G)",
+            "fn_8(A) = greatest_lower_bound(identity, A)",
+            "fn_9(A, B, C, D) = C(D(B), C(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = multiply(greatest_lower_bound(a, b), greatest_lower_bound(a, c))",
+            "fn_1(A, B) = greatest_lower_bound(B, multiply(A, c))",
+            "fn_2(A, B, C) = greatest_lower_bound(multiply(B, A), C)",
+            "fn_3(A, B, C) = greatest_lower_bound(C, multiply(B, A))",
+            "fn_4 = greatest_lower_bound(a, b)",
+            "fn_5 = greatest_lower_bound(a, multiply(b, c))",
+            "fn_6(A, B, C) = least_upper_bound(multiply(B, A), C)",
+            "fn_8(A) = greatest_lower_bound(identity, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.9526519999999999,
+        "hints_time_sys": 0.070566,
+        "hints_time": 1.023218
+    },
+    {
+        "problem": "GRP654-10",
+        "mean_base_user_time": 0.339955,
+        "min_base_user_time": 0.339955,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A) = mult(A, A)",
+            "fn_2(A, B) = ld(A, rd(B, A))",
+            "fn_3(A, B, C) = ld(rd(B, A), C)",
+            "fn_4(A, B) = ld(fn_0(A), B)",
+            "fn_5(A, B, C) = mult(C(A, B), A)",
+            "fn_6(A, B, C) = B(mult(C, B(A)))",
+            "fn_7(A, B, C) = rd(mult(B, C), ld(B, A))",
+            "fn_8(A, B, C) = mult(rd(B, A), C)",
+            "fn_9(A, B) = rd(B(A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A) = mult(A, A)",
+            "fn_2(A, B) = ld(A, rd(B, A))",
+            "fn_3(A, B, C) = ld(rd(B, A), C)",
+            "fn_4(A, B) = ld(ld(A, A), B)",
+            "fn_7(A, B, C) = rd(mult(B, C), ld(B, A))",
+            "fn_8(A, B, C) = mult(rd(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 12.751695999999999,
+        "hints_time_sys": 0.09251799999999999,
+        "hints_time": 12.844214
+    },
+    {
+        "problem": "GRP654-11",
+        "mean_base_user_time": 0.339205,
+        "min_base_user_time": 0.339205,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A) = rd(A, A)",
+            "fn_2(A, B) = ld(A, B(A))",
+            "fn_3(A, B, C) = rd(C, mult(B, A))",
+            "fn_4(A, B, C) = ld(C, mult(B, A))",
+            "fn_5(A, B, C) = rd(mult(B, C), ld(B, A))",
+            "fn_6(A, B) = mult(mult(A, B), A)",
+            "fn_7(A, B) = rd(ld(B, A), A)",
+            "fn_8(A, B) = fn_3(fn_1(A), B, ld(B, fn_1(A)))",
+            "fn_9(A) = mult(A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A) = rd(A, A)",
+            "fn_3(A, B, C) = rd(C, mult(B, A))",
+            "fn_4(A, B, C) = ld(C, mult(B, A))",
+            "fn_5(A, B, C) = rd(mult(B, C), ld(B, A))",
+            "fn_6(A, B) = mult(mult(A, B), A)",
+            "fn_7(A, B) = rd(ld(B, A), A)",
+            "fn_8(A, B) = rd(ld(B, rd(A, A)), mult(B, rd(A, A)))",
+            "fn_9(A) = mult(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.35014999999999996,
+        "hints_time_sys": 0.018900999999999998,
+        "hints_time": 0.36905099999999996
+    },
+    {
+        "problem": "GRP654-12",
+        "mean_base_user_time": 0.21414799999999998,
+        "min_base_user_time": 0.21414799999999998,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B, C) = ld(B, mult(C(B), A))",
+            "fn_3(A, B, C, D) = D(B, C(mult(B, A)))",
+            "fn_4(A, B) = ld(A, B(A))",
+            "fn_5(A, B) = rd(B(A), A)",
+            "fn_6(A) = mult(A, A)",
+            "fn_7(A, B, C) = mult(rd(B, A), C)",
+            "fn_8(A, B) = rd(A, mult(B, A))",
+            "fn_9(A, B) = fn_3(B, fn_0(A), fn_1, ld)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A) = ld(A, A)",
+            "fn_6(A) = mult(A, A)",
+            "fn_7(A, B, C) = mult(rd(B, A), C)",
+            "fn_8(A, B) = rd(A, mult(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.351821,
+        "hints_time_sys": 0.01398,
+        "hints_time": 0.365801
+    },
+    {
+        "problem": "GRP655-10",
+        "mean_base_user_time": 0.515783,
+        "min_base_user_time": 0.515783,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = ld(B, rd(B, A))",
+            "fn_2(A, B, C) = ld(rd(C, A), mult(B, A))",
+            "fn_3(A, B) = mult(A, mult(B, A))",
+            "fn_4(A, B, C) = mult(rd(B, A), C)",
+            "fn_5(A, B, C) = rd(C, ld(B, A))",
+            "fn_6(A, B) = fn_2(B, A, A)",
+            "fn_7(A, B, C) = rd(fn_4(A, C, B), A)",
+            "fn_8(A, B) = rd(B(A), A)",
+            "fn_9(A, B) = rd(ld(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = ld(B, rd(B, A))",
+            "fn_2(A, B, C) = ld(rd(C, A), mult(B, A))",
+            "fn_3(A, B) = mult(A, mult(B, A))",
+            "fn_4(A, B, C) = mult(rd(B, A), C)",
+            "fn_5(A, B, C) = rd(C, ld(B, A))",
+            "fn_6(A, B) = ld(rd(A, B), mult(A, B))",
+            "fn_7(A, B, C) = rd(mult(rd(C, A), B), A)",
+            "fn_9(A, B) = rd(ld(A, B), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.49216,
+        "hints_time_sys": 0.044771,
+        "hints_time": 2.536931
+    },
+    {
+        "problem": "GRP655-11",
+        "mean_base_user_time": 0.159792,
+        "min_base_user_time": 0.159792,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = mult(A, mult(B, A))",
+            "fn_3(A, B) = mult(B, fn_0(A))",
+            "fn_4(A, B, C) = ld(B, C(B, A))",
+            "fn_5(A, B) = rd(B(A), A)",
+            "fn_6(A, B) = rd(B, fn_0(A))",
+            "fn_7(A, B, D) = rd(mult(rd(D, A), B), A)",
+            "fn_8(A, B) = fn_4(B, A, rd)",
+            "fn_9(A, B) = mult(B(A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = mult(A, mult(B, A))",
+            "fn_3(A, B) = mult(B, rd(A, A))",
+            "fn_6(A, B) = rd(B, rd(A, A))",
+            "fn_7(A, B, D) = rd(mult(rd(D, A), B), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.22459199999999999,
+        "hints_time_sys": 0.013913,
+        "hints_time": 0.238505
+    },
+    {
+        "problem": "GRP655-12",
+        "mean_base_user_time": 0.252056,
+        "min_base_user_time": 0.252056,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = mult(A, mult(B, A))",
+            "fn_3(A, B) = rd(B(A), A)",
+            "fn_4(A, B) = mult(fn_0(A), B)",
+            "fn_5(A, B, C, D) = ld(D(ld(B, fn_0(B)), A), C(ld(B, fn_0(B)), A))",
+            "fn_6(A, B) = mult(B(A), A)",
+            "fn_7(A, B) = ld(B, rd(B, A))",
+            "fn_8(A, B) = ld(mult(A, B), A)",
+            "fn_9(A, B) = rd(B, fn_0(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = mult(A, mult(B, A))",
+            "fn_4(A, B) = mult(rd(A, A), B)",
+            "fn_7(A, B) = ld(B, rd(B, A))",
+            "fn_8(A, B) = ld(mult(A, B), A)",
+            "fn_9(A, B) = rd(B, rd(A, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.348506,
+        "hints_time_sys": 0.016898,
+        "hints_time": 0.365404
+    },
+    {
+        "problem": "GRP655-13",
+        "mean_base_user_time": 0.355998,
+        "min_base_user_time": 0.355998,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B) = mult(B, fn_0(A))",
+            "fn_3(A) = rd(A, A)",
+            "fn_4(A, B, C) = rd(mult(B, A), C)",
+            "fn_5(A, B) = rd(ld(A, B), A)",
+            "fn_6(A, B, C) = ld(B, C(B, A))",
+            "fn_7(A) = mult(A, A)",
+            "fn_8(A, B, C) = mult(C, ld(B, A))",
+            "fn_9(A, B, C) = rd(C, ld(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B) = mult(B, ld(A, A))",
+            "fn_3(A) = rd(A, A)",
+            "fn_4(A, B, C) = rd(mult(B, A), C)",
+            "fn_5(A, B) = rd(ld(A, B), A)",
+            "fn_7(A) = mult(A, A)",
+            "fn_8(A, B, C) = mult(C, ld(B, A))",
+            "fn_9(A, B, C) = rd(C, ld(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.43021499999999996,
+        "hints_time_sys": 0.019920999999999998,
+        "hints_time": 0.450136
+    },
+    {
+        "problem": "GRP655-14",
+        "mean_base_user_time": 0.39480099999999996,
+        "min_base_user_time": 0.39480099999999996,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = ld(B, rd(B, A))",
+            "fn_3(A) = rd(A, A)",
+            "fn_4(A, B, C) = rd(mult(B, A), C)",
+            "fn_5(A) = mult(A, A)",
+            "fn_6(A, B, C, D, E, F) = fn_4(F(fn_3(B), fn_1(A)), A, C(E(fn_3(B), fn_1(A)), ld(D(B, fn_1(A)), C(B, fn_1(A)))))",
+            "fn_7(A, B) = rd(ld(A, B), A)",
+            "fn_8(A, B, C) = ld(rd(C, A), mult(B, A))",
+            "fn_9(A, B, C, G) = mult(C(G, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = ld(B, rd(B, A))",
+            "fn_3(A) = rd(A, A)",
+            "fn_4(A, B, C) = rd(mult(B, A), C)",
+            "fn_5(A) = mult(A, A)",
+            "fn_7(A, B) = rd(ld(A, B), A)",
+            "fn_8(A, B, C) = ld(rd(C, A), mult(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.477815,
+        "hints_time_sys": 0.020907,
+        "hints_time": 0.498722
+    },
+    {
+        "problem": "GRP656-10",
+        "mean_base_user_time": 0.009888,
+        "min_base_user_time": 0.009888,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C, D) = D(mult(A, C), mult(B, A))",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = mult(mult(A, B), A)",
+            "fn_3(A, B, C) = fn_0(C, ld(A, B), A, mult)",
+            "fn_4(A, B, C) = mult(C, mult(B, A))",
+            "fn_5(A, B, C) = rd(fn_0(A, C, B, mult), A)",
+            "fn_6(A, B, C) = fn_0(C, mult(C, B), A, ld)",
+            "fn_7(A, B, C) = rd(fn_4(A, C, B), A)",
+            "fn_8(A, E, F) = A(E, fn_1(F))",
+            "fn_9(A, B, C) = fn_4(C, ld(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = mult(mult(A, B), A)",
+            "fn_4(A, B, C) = mult(C, mult(B, A))",
+            "fn_7(A, B, C) = rd(mult(B, mult(C, A)), A)",
+            "fn_9(A, B, C) = mult(A, mult(ld(A, B), C))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008036,
+        "hints_time_sys": 0.008029999999999999,
+        "hints_time": 0.016065999999999997
+    },
+    {
+        "problem": "GRP657-10",
+        "mean_base_user_time": 0.00405,
+        "min_base_user_time": 0.00405,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_1(A, B) = tuple(mult(ld(A, A), x1(ld(A, A))), B(ld(A, A)))",
+            "fn_2(A, B, C) = mult(A, rd(C, rd(B, A)))",
+            "fn_3(A, B) = rd(mult(B, A), A)",
+            "fn_4(A) = ld(A, A)",
+            "fn_5(A, D, E, F) = A(D, mult(ld(D, E), F))",
+            "fn_6(A, B) = mult(rd(B, A), A)",
+            "fn_7(A, B, D, E, F) = B(A(D, E), F)",
+            "fn_8(A, B, D, E, F) = B(D, mult(E, A(F, D)))",
+            "fn_9(A, B) = rd(ld(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B, C) = mult(A, rd(C, rd(B, A)))",
+            "fn_3(A, B) = rd(mult(B, A), A)",
+            "fn_4(A) = ld(A, A)",
+            "fn_6(A, B) = mult(rd(B, A), A)",
+            "fn_9(A, B) = rd(ld(A, B), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.009935,
+        "hints_time_sys": 0.0066489999999999995,
+        "hints_time": 0.016583999999999998
+    },
+    {
+        "problem": "GRP658-10",
+        "mean_base_user_time": 0.027426,
+        "min_base_user_time": 0.027426,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = rd(mult(C, mult(B, A)), A)",
+            "fn_1(A, B, C) = rd(mult(C, A), B(A))",
+            "fn_2(A, B) = mult(rd(B, mult(A, A)), A)",
+            "fn_3(A, B) = rd(mult(B, A), A)",
+            "fn_4(A, B, C) = mult(rd(B, A), C)",
+            "fn_5(A, B, C) = ld(rd(B, A), C)",
+            "fn_6(A) = ld(A, A)",
+            "fn_7(A, B) = rd(A, B(A))",
+            "fn_8(A, B) = tuple(mult(A, x1(A)), B(A))",
+            "fn_9(A, D, E, F) = fn_1(D, A(F), E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = rd(mult(C, mult(B, A)), A)",
+            "fn_2(A, B) = mult(rd(B, mult(A, A)), A)",
+            "fn_3(A, B) = rd(mult(B, A), A)",
+            "fn_4(A, B, C) = mult(rd(B, A), C)",
+            "fn_5(A, B, C) = ld(rd(B, A), C)",
+            "fn_6(A) = ld(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011849,
+        "hints_time_sys": 0.007918,
+        "hints_time": 0.019767
+    },
+    {
+        "problem": "GRP659-10",
+        "mean_base_user_time": 0.017955,
+        "min_base_user_time": 0.017955,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B, C) = mult(C, mult(ld(A, B), A))",
+            "fn_2(A, B, C) = rd(mult(C, mult(B, A)), A)",
+            "fn_3(A, B) = mult(fn_0(A), B)",
+            "fn_4(A, B, C) = mult(rd(B, A), C)",
+            "fn_5(A) = fn_3(A, A)",
+            "fn_6(A, B) = mult(B, ld(B, A))",
+            "fn_7(A, B, C) = ld(mult(C, A), mult(B, A))",
+            "fn_8(A, B) = tuple(B, mult(x1_2(A), A))",
+            "fn_9(A, D, E, F) = A(E, F, fn_4(E, D, E))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B, C) = mult(C, mult(ld(A, B), A))",
+            "fn_2(A, B, C) = rd(mult(C, mult(B, A)), A)",
+            "fn_3(A, B) = mult(ld(A, A), B)",
+            "fn_4(A, B, C) = mult(rd(B, A), C)",
+            "fn_5(A) = mult(ld(A, A), A)",
+            "fn_6(A, B) = mult(B, ld(B, A))",
+            "fn_7(A, B, C) = ld(mult(C, A), mult(B, A))",
+            "fn_8(A, B) = tuple(B, mult(x1_2(A), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.024805999999999998,
+        "hints_time_sys": 0.007928,
+        "hints_time": 0.032734
+    },
+    {
+        "problem": "GRP660-10",
+        "mean_base_user_time": 0.043431,
+        "min_base_user_time": 0.043431,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = ld(A, B(A))",
+            "fn_2(A, B) = rd(mult(A, B), A)",
+            "fn_3(A) = rd(A, A)",
+            "fn_4(A, B, C) = mult(A, C(mult(B, A)))",
+            "fn_5(A, B) = rd(A, B(A))",
+            "fn_6(A, B, C) = mult(ld(B, A), C)",
+            "fn_7(A, B, C) = ld(B, C(B, A))",
+            "fn_8(A, B, C) = mult(B, C(B, A))",
+            "fn_9(A, B, C) = ld(C(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_2(A, B) = rd(mult(A, B), A)",
+            "fn_3(A) = rd(A, A)",
+            "fn_6(A, B, C) = mult(ld(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.039568,
+        "hints_time_sys": 0.0089,
+        "hints_time": 0.048468
+    },
+    {
+        "problem": "GRP660-11",
+        "mean_base_user_time": 0.037575,
+        "min_base_user_time": 0.037575,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B) = ld(A, mult(B, A))",
+            "fn_3(A, B, C) = mult(C, rd(B, A))",
+            "fn_4(A, B) = B(fn_0(A), fn_0(A))",
+            "fn_5(A, B) = mult(rd(B, A), A)",
+            "fn_6(A, B, C) = C(B, ld(B, A))",
+            "fn_7(A) = rd(fn_0(A), A)",
+            "fn_8(A, B, C) = mult(C, mult(B, A))",
+            "fn_9(A, B, C, D) = D(B(A), C(A, B(A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B) = ld(A, mult(B, A))",
+            "fn_3(A, B, C) = mult(C, rd(B, A))",
+            "fn_5(A, B) = mult(rd(B, A), A)",
+            "fn_7(A) = rd(rd(A, A), A)",
+            "fn_8(A, B, C) = mult(C, mult(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.032681999999999996,
+        "hints_time_sys": 0.009904999999999999,
+        "hints_time": 0.04258699999999999
+    },
+    {
+        "problem": "GRP660-12",
+        "mean_base_user_time": 0.036551,
+        "min_base_user_time": 0.036551,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B, C) = mult(C, rd(B, A))",
+            "fn_3(A, B) = mult(B, fn_0(A))",
+            "fn_4(A, B, C) = ld(rd(B, C), fn_2(C, B, A))",
+            "fn_5(A, B) = mult(fn_0(A), B)",
+            "fn_6(A, B) = ld(fn_0(A), B(A))",
+            "fn_7(A, B) = B(A, fn_0(A))",
+            "fn_8(A, B) = mult(rd(B, A), A)",
+            "fn_9(A, B, C) = mult(fn_2(mult(A, B), C, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = rd(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B, C) = mult(C, rd(B, A))",
+            "fn_3(A, B) = mult(B, rd(A, A))",
+            "fn_4(A, B, C) = ld(rd(B, C), mult(A, rd(B, C)))",
+            "fn_5(A, B) = mult(rd(A, A), B)",
+            "fn_8(A, B) = mult(rd(B, A), A)",
+            "fn_9(A, B, C) = mult(mult(B, rd(C, mult(A, B))), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.038412999999999996,
+        "hints_time_sys": 0.004938,
+        "hints_time": 0.043350999999999994
+    },
+    {
+        "problem": "GRP660-13",
+        "mean_base_user_time": 0.03119,
+        "min_base_user_time": 0.03119,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B, C) = C(A, mult(B, A))",
+            "fn_3(A, B, C) = mult(C, mult(B, A))",
+            "fn_4(A, B) = rd(mult(B, A), A)",
+            "fn_5(A, B, C) = mult(mult(B, A), C)",
+            "fn_6(A, B) = B(fn_0(A), fn_0(A))",
+            "fn_7(A) = ld(A, fn_0(A))",
+            "fn_8(A, B, C) = mult(B, fn_3(B, C, ld(B, A)))",
+            "fn_9(A, B) = fn_2(B, A, ld)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_3(A, B, C) = mult(C, mult(B, A))",
+            "fn_4(A, B) = rd(mult(B, A), A)",
+            "fn_5(A, B, C) = mult(mult(B, A), C)",
+            "fn_7(A) = ld(A, ld(A, A))",
+            "fn_8(A, B, C) = mult(B, mult(ld(B, A), mult(C, B)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.023458,
+        "hints_time_sys": 0.005109,
+        "hints_time": 0.028567
+    },
+    {
+        "problem": "GRP660-14",
+        "mean_base_user_time": 0.03251,
+        "min_base_user_time": 0.03251,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B) = mult(fn_0(A), B)",
+            "fn_3(A, B) = rd(B, fn_0(A))",
+            "fn_4(A, B, C) = mult(C, mult(ld(C, B), A))",
+            "fn_5(A, B) = mult(B(A), A)",
+            "fn_6(A, B, C) = mult(mult(B, A), C)",
+            "fn_7(A, B) = B(A, fn_0(A))",
+            "fn_8(A, B) = rd(B(A), A)",
+            "fn_9(A) = fn_1(fn_0(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = ld(A, A)",
+            "fn_1(A, B) = rd(mult(A, B), A)",
+            "fn_2(A, B) = mult(ld(A, A), B)",
+            "fn_3(A, B) = rd(B, ld(A, A))",
+            "fn_4(A, B, C) = mult(C, mult(ld(C, B), A))",
+            "fn_6(A, B, C) = mult(mult(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.021181,
+        "hints_time_sys": 0.0060669999999999995,
+        "hints_time": 0.027247999999999998
+    },
+    {
+        "problem": "GRP664-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP664-11",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP664-12",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP665-10",
+        "mean_base_user_time": 0.008558999999999999,
+        "min_base_user_time": 0.008558999999999999,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = mult(op_c, mult(A, B))",
+            "fn_1(A, B) = mult(A, mult(B, op_c))",
+            "fn_2(A, B, C) = mult(mult(C, B), A)",
+            "fn_3(A) = mult(op_c, A)",
+            "fn_4(C, D) = mult(fn_3(C), D)",
+            "fn_5(A, B) = mult(rd(B, op_c), fn_3(A))",
+            "fn_6(A, B) = fn_2(ld(A, B), A)",
+            "fn_7(C) = fn_2(C, op_c)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = mult(op_c, mult(A, B))",
+            "fn_1(A, B) = mult(A, mult(B, op_c))",
+            "fn_2(A, B, C) = mult(mult(C, B), A)",
+            "fn_3(A) = mult(op_c, A)",
+            "fn_4(C, D) = mult(mult(op_c, C), D)",
+            "fn_5(A, B) = mult(rd(B, op_c), mult(op_c, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008638,
+        "hints_time_sys": 0.0075509999999999996,
+        "hints_time": 0.016189
+    },
+    {
+        "problem": "GRP665-11",
+        "mean_base_user_time": 0.008961,
+        "min_base_user_time": 0.008961,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(mult(C, B), A)",
+            "fn_1(A, B, C) = mult(C, mult(B, A))",
+            "fn_2(D, E) = fn_1(E, D, op_c)",
+            "fn_3(D, E) = fn_1(op_c, E, D)",
+            "fn_4(D) = fn_0(D, op_c)",
+            "fn_5(A) = fn_1(A, op_c)",
+            "fn_6(A, B, C) = fn_0(ld(A, mult(C, B)), A)",
+            "fn_7(A, B, C) = fn_5(C, rd(mult(B, A), op_c))",
+            "fn_8(D, E) = fn_5(E, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(mult(C, B), A)",
+            "fn_1(A, B, C) = mult(C, mult(B, A))",
+            "fn_2(D, E) = mult(op_c, mult(D, E))",
+            "fn_3(D, E) = mult(D, mult(E, op_c))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005434,
+        "hints_time_sys": 0.008708,
+        "hints_time": 0.014142
+    },
+    {
+        "problem": "GRP665-12",
+        "mean_base_user_time": 0.008041999999999999,
+        "min_base_user_time": 0.008041999999999999,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B, C) = fn_0(C, op_c, rd(mult(B, A), op_c))",
+            "fn_2(D, E) = fn_0(E, D, op_c)",
+            "fn_3(D, E) = fn_0(op_c, E, D)",
+            "fn_4(A, B) = mult(mult(B, A), op_c)",
+            "fn_5(A) = A(x1, x0)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B, C) = mult(rd(mult(B, A), op_c), mult(op_c, C))",
+            "fn_2(D, E) = mult(op_c, mult(D, E))",
+            "fn_3(D, E) = mult(D, mult(E, op_c))",
+            "fn_4(A, B) = mult(mult(B, A), op_c)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006571,
+        "hints_time_sys": 0.005640999999999999,
+        "hints_time": 0.012211999999999999
+    },
+    {
+        "problem": "GRP667-10",
+        "mean_base_user_time": 16.194579,
+        "min_base_user_time": 16.194579,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B) = fn_0(A, B, A)",
+            "fn_2(A, B, C) = mult(mult(B, A), C)",
+            "fn_3(A, B) = ld(mult(A, B), A)",
+            "fn_4(A, B, C) = ifeq(fn_0(fn_1(B, B), B, A), C, fn_0(fn_1(B, B), A, B), fn_0(B, B, fn_1(B, A)))",
+            "fn_5(A, B, C) = ld(B, C(B, A))",
+            "fn_6(A, B, C) = rd(mult(B, A), C)",
+            "fn_7(A, B, C, D, E) = ifeq(mult(E, fn_1(C, A)), mult(fn_2(C, E, A), C), mult(C, fn_0(A, C, E)), mult(D(C, B), A))",
+            "fn_8(A, B) = fn_0(B, mult(B, A))",
+            "fn_9(A) = ld(A, unit)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, B) = mult(A, mult(B, A))",
+            "fn_2(A, B, C) = mult(mult(B, A), C)",
+            "fn_3(A, B) = ld(mult(A, B), A)",
+            "fn_4(A, B, C) = ifeq(mult(A, mult(B, mult(B, mult(B, B)))), C, mult(B, mult(A, mult(B, mult(B, B)))), mult(mult(B, mult(A, B)), mult(B, B)))",
+            "fn_6(A, B, C) = rd(mult(B, A), C)",
+            "fn_9(A) = ld(A, unit)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 4.905981,
+        "hints_time_sys": 0.072708,
+        "hints_time": 4.978688999999999
+    },
+    {
+        "problem": "GRP672-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP672-11",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP673-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP673-11",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP674-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP674-11",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP682-10",
+        "mean_base_user_time": 0.012072,
+        "min_base_user_time": 0.012072,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = ld(B, mult(B, A))",
+            "fn_1(A, B) = mult(fn_0(A, B), rd(A, A))",
+            "fn_2(C, D, E) = mult(fn_0(D, C), E)",
+            "fn_3(C, D, E) = fn_0(mult(D, E), C)",
+            "fn_4(C, D, E, F) = fn_0(mult(E, F), ld(D, C))",
+            "fn_5(A, B) = mult(A, B(A, A))",
+            "fn_6(A, B, C) = rd(C(B(A, A), A), A)",
+            "fn_7(A) = fn_0(A, A)",
+            "fn_8(A, D, E) = A(E, D)",
+            "fn_9(A, D, E, F) = A(E, ld(D, F))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ld(B, mult(B, A))",
+            "fn_1(A, B) = mult(ld(B, mult(B, A)), rd(A, A))",
+            "fn_2(C, D, E) = mult(ld(C, mult(C, D)), E)",
+            "fn_3(C, D, E) = ld(C, mult(C, mult(D, E)))",
+            "fn_4(C, D, E, F) = ld(ld(D, C), mult(ld(D, C), mult(E, F)))",
+            "fn_7(A) = ld(A, mult(A, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008447999999999999,
+        "hints_time_sys": 0.0074199999999999995,
+        "hints_time": 0.015868
+    },
+    {
+        "problem": "GRP682-11",
+        "mean_base_user_time": 0.059184,
+        "min_base_user_time": 0.059184,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = ld(B, mult(B, A))",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = rd(mult(B, A), A)",
+            "fn_3(A, B) = fn_0(mult(B, A))",
+            "fn_4(A, B) = fn_1(mult(B, A))",
+            "fn_5(A, B, C) = fn_2(C, mult(B, A))",
+            "fn_6(A, B) = ld(fn_1(B), mult(B, A))",
+            "fn_7(A) = rd(A, A)",
+            "fn_8(A, B) = B(A, fn_1(A))",
+            "fn_9(A, B, C) = ld(mult(B, C), mult(fn_6(C, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ld(B, mult(B, A))",
+            "fn_1(A) = ld(A, A)",
+            "fn_2(A, B) = rd(mult(B, A), A)",
+            "fn_4(A, B) = ld(mult(B, A), mult(B, A))",
+            "fn_5(A, B, C) = rd(mult(mult(B, A), C), C)",
+            "fn_6(A, B) = ld(ld(B, B), mult(B, A))",
+            "fn_7(A) = rd(A, A)",
+            "fn_9(A, B, C) = ld(mult(B, C), mult(ld(ld(B, B), mult(B, C)), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.064612,
+        "hints_time_sys": 0.008073,
+        "hints_time": 0.072685
+    },
+    {
+        "problem": "GRP683-10",
+        "mean_base_user_time": 0.024554,
+        "min_base_user_time": 0.024554,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = ld(B, mult(B, A))",
+            "fn_1(A, B, C) = mult(fn_0(B, A), C)",
+            "fn_2(A) = mult(A, rd(A, A))",
+            "fn_3(A, B) = fn_0(mult(B, A))",
+            "fn_4(C, D, E) = fn_1(C, D, E)",
+            "fn_5(A, C) = mult(C, A)",
+            "fn_6(A, B, C) = rd(C(B(A, A), A), A)",
+            "fn_7(D, E, F) = mult(D, fn_1(D, E, F))",
+            "fn_8(A, B) = mult(A, B(A))",
+            "fn_9(A, B) = fn_3(B, A, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ld(B, mult(B, A))",
+            "fn_1(A, B, C) = mult(ld(A, mult(A, B)), C)",
+            "fn_2(A) = mult(A, rd(A, A))",
+            "fn_7(D, E, F) = mult(D, mult(ld(D, mult(D, E)), F))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.018892,
+        "hints_time_sys": 0.007954,
+        "hints_time": 0.026846
+    },
+    {
+        "problem": "GRP683-11",
+        "mean_base_user_time": 0.027759,
+        "min_base_user_time": 0.027759,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = rd(mult(B, A), A)",
+            "fn_1(A, B, C) = mult(C, fn_0(B, A))",
+            "fn_2(A) = mult(ld(A, A), A)",
+            "fn_3(A, B, C) = fn_0(C, mult(B, A))",
+            "fn_4(A, B, D) = mult(B(A, D), A)",
+            "fn_5(D, E, F) = fn_1(E, F, D)",
+            "fn_6(A, B, C) = ld(A, C(A, B(A, A)))",
+            "fn_7(A, D) = fn_3(A, D, A)",
+            "fn_8(A, B) = fn_1(A, B, ld(A, A))",
+            "fn_9(A, B, C, D, E) = C(B(D, E), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = rd(mult(B, A), A)",
+            "fn_1(A, B, C) = mult(C, rd(mult(A, B), B))",
+            "fn_2(A) = mult(ld(A, A), A)",
+            "fn_3(A, B, C) = rd(mult(mult(B, A), C), C)",
+            "fn_7(A, D) = rd(mult(mult(D, A), A), A)",
+            "fn_8(A, B) = mult(ld(A, A), rd(mult(A, B), B))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.022085,
+        "hints_time_sys": 0.006039,
+        "hints_time": 0.028124
+    },
+    {
+        "problem": "GRP685-10",
+        "mean_base_user_time": 0.066824,
+        "min_base_user_time": 0.066824,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = rd(mult(B, A), A)",
+            "fn_1(A, B) = ld(B, mult(B, A))",
+            "fn_2(A, B, C) = fn_0(C, mult(B, A))",
+            "fn_3(A, B, C, D) = rd(mult(mult(D, ld(C, A)), rd(fn_0(A, B), A)), rd(B, A))",
+            "fn_4(A) = rd(A, A)",
+            "fn_5(A, E, F, G, H) = fn_2(ld(G, H), F, A(E, H))",
+            "fn_6(A, B, C, D, E) = rd(mult(mult(E, D), mult(B, C)), fn_2(C, B, A))",
+            "fn_7(A, F) = mult(F, A)",
+            "fn_8(A, B, F) = fn_2(B, F, A)",
+            "fn_9(A) = fn_2(fn_4(A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = rd(mult(B, A), A)",
+            "fn_1(A, B) = ld(B, mult(B, A))",
+            "fn_2(A, B, C) = rd(mult(mult(B, A), C), C)",
+            "fn_3(A, B, C, D) = rd(mult(mult(D, ld(C, A)), rd(rd(mult(B, A), A), A)), rd(B, A))",
+            "fn_4(A) = rd(A, A)",
+            "fn_6(A, B, C, D, E) = rd(mult(mult(E, D), mult(B, C)), rd(mult(mult(B, C), A), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.020443,
+        "hints_time_sys": 0.009297,
+        "hints_time": 0.02974
+    },
+    {
+        "problem": "GRP685-11",
+        "mean_base_user_time": 0.006911,
+        "min_base_user_time": 0.006911,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = rd(mult(B, A), A)",
+            "fn_1(A, C) = mult(ld(C, C), fn_0(A, C))",
+            "fn_2(A, C, D) = fn_0(A, mult(C, D))",
+            "fn_3(C, D, E) = mult(C, fn_0(E, D))",
+            "fn_4(C, D, E, F) = fn_0(rd(C, F), mult(D, E))",
+            "fn_5(A, B) = mult(B(A, A), A)",
+            "fn_6(A, B, C) = ld(A, C(A, B(A, A)))",
+            "fn_7(A) = fn_0(A, A)",
+            "fn_8(D) = fn_2(D)",
+            "fn_9(D, E) = fn_0(E, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = rd(mult(B, A), A)",
+            "fn_1(A, C) = mult(ld(C, C), rd(mult(C, A), A))",
+            "fn_2(A, C, D) = rd(mult(mult(C, D), A), A)",
+            "fn_3(C, D, E) = mult(C, rd(mult(D, E), E))",
+            "fn_4(C, D, E, F) = rd(mult(mult(D, E), rd(C, F)), rd(C, F))",
+            "fn_7(A) = rd(mult(A, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0070869999999999995,
+        "hints_time_sys": 0.009117,
+        "hints_time": 0.016204
+    },
+    {
+        "problem": "GRP700-10",
+        "mean_base_user_time": 0.016807,
+        "min_base_user_time": 0.016807,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = rd(mult(A, mult(B, A)), A)",
+            "fn_1(A, B) = mult(mult(A, B), A)",
+            "fn_2(A) = tuple(mult(rd(unit, x0), x0), A)",
+            "fn_3(A, B) = rd(mult(B, A), A)",
+            "fn_4(A, B) = mult(A, rd(B, A))",
+            "fn_5(A, B, C, D) = B(C, mult(A(D, C), C))",
+            "fn_6(A, B, C) = rd(C(A, B), A)",
+            "fn_7(A, D, E) = A(D, E)",
+            "fn_8(D) = rd(D, D)",
+            "fn_9(A, B, D, E) = B(D, A(E, D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = rd(mult(A, mult(B, A)), A)",
+            "fn_1(A, B) = mult(mult(A, B), A)",
+            "fn_2(A) = tuple(mult(rd(unit, x0), x0), A)",
+            "fn_3(A, B) = rd(mult(B, A), A)",
+            "fn_4(A, B) = mult(A, rd(B, A))",
+            "fn_8(D) = rd(D, D)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008022999999999999,
+        "hints_time_sys": 0.008032,
+        "hints_time": 0.016055
+    },
+    {
+        "problem": "GRP702-10",
+        "mean_base_user_time": 0.012874,
+        "min_base_user_time": 0.012874,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(A, mult(B, C))",
+            "fn_1(A, B, C) = mult(mult(A, B), C)",
+            "fn_2(A, B, C) = mult(B, mult(C, A))",
+            "fn_3(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_4(A, C, D) = mult(mult(C, D), A)",
+            "fn_5(A, C) = mult(A, C)",
+            "fn_6(A, B) = mult(B, mult(unit, ld(A, op_c)))",
+            "fn_7(A) = ld(A, mult(op_c, A))",
+            "fn_8 = fn_0(op_e)",
+            "fn_9(A, C) = fn_3(C, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(A, mult(B, C))",
+            "fn_1(A, B, C) = mult(mult(A, B), C)",
+            "fn_2(A, B, C) = mult(B, mult(C, A))",
+            "fn_3(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_4(A, C, D) = mult(mult(C, D), A)",
+            "fn_6(A, B) = mult(B, mult(unit, ld(A, op_c)))",
+            "fn_7(A) = ld(A, mult(op_c, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012756,
+        "hints_time_sys": 0.011876,
+        "hints_time": 0.024632
+    },
+    {
+        "problem": "GRP702-11",
+        "mean_base_user_time": 0.00787,
+        "min_base_user_time": 0.00787,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(mult(B, C), A)",
+            "fn_1(A, B, C) = mult(B, mult(C, A))",
+            "fn_2(A) = mult(x0, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(mult(B, C), A)",
+            "fn_1(A, B, C) = mult(B, mult(C, A))",
+            "fn_2(A) = mult(x0, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004848,
+        "hints_time_sys": 0.011703,
+        "hints_time": 0.016551
+    },
+    {
+        "problem": "GRP702-12",
+        "mean_base_user_time": 0.01646,
+        "min_base_user_time": 0.01646,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, D, E) = mult(mult(D, E), A)",
+            "fn_2(A, D, E) = fn_0(A, E, D)",
+            "fn_3(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_4(A, D, E) = fn_0(E, D, A)",
+            "fn_5(A, D, E) = mult(mult(A, D), E)",
+            "fn_6(A, D) = ld(ld(A, D), D)",
+            "fn_7(A) = ld(A, mult(op_c, A))",
+            "fn_8(A) = mult(A, op_d)",
+            "fn_9(A, D) = mult(A, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, D, E) = mult(mult(D, E), A)",
+            "fn_3(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_5(A, D, E) = mult(mult(A, D), E)",
+            "fn_6(A, D) = ld(ld(A, D), D)",
+            "fn_7(A) = ld(A, mult(op_c, A))",
+            "fn_8(A) = mult(A, op_d)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.015437999999999999,
+        "hints_time_sys": 0.005509,
+        "hints_time": 0.020947
+    },
+    {
+        "problem": "GRP703-10",
+        "mean_base_user_time": 0.01328,
+        "min_base_user_time": 0.01328,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(A, mult(B, C))",
+            "fn_1(A, B, C) = mult(mult(A, B), C)",
+            "fn_2(A, B, C) = mult(B, mult(C, A))",
+            "fn_3(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, C, D) = mult(mult(C, D), A)",
+            "fn_6 = fn_0(op_d)",
+            "fn_7 = fn_2(op_d)",
+            "fn_8 = fn_1(op_d)",
+            "fn_9 = fn_1(op_e)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(A, mult(B, C))",
+            "fn_1(A, B, C) = mult(mult(A, B), C)",
+            "fn_2(A, B, C) = mult(B, mult(C, A))",
+            "fn_3(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, C, D) = mult(mult(C, D), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010360999999999999,
+        "hints_time_sys": 0.010381,
+        "hints_time": 0.020741999999999997
+    },
+    {
+        "problem": "GRP703-11",
+        "mean_base_user_time": 0.008003999999999999,
+        "min_base_user_time": 0.008003999999999999,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_1(A, C) = mult(C, A)",
+            "fn_2(A, C, D) = mult(mult(C, D), A)",
+            "fn_3(A, C) = fn_1(mult(C, A))",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A) = mult(op_d, A)",
+            "fn_6(C) = fn_5(C)",
+            "fn_7 = fn_1(op_d)",
+            "fn_8(A) = mult(x2, A)",
+            "fn_9(A, C) = fn_0(C, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_2(A, C, D) = mult(mult(C, D), A)",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A) = mult(op_d, A)",
+            "fn_8(A) = mult(x2, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.007803,
+        "hints_time_sys": 0.009800999999999999,
+        "hints_time": 0.017603999999999998
+    },
+    {
+        "problem": "GRP703-12",
+        "mean_base_user_time": 0.011949,
+        "min_base_user_time": 0.011949,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, D, E) = fn_0(A, E, D)",
+            "fn_2(A, B, D) = mult(mult(D, B), A)",
+            "fn_3(D, E) = fn_0(E, D, op_d)",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_6(A, D, E) = mult(mult(A, D), E)",
+            "fn_7(A, B) = fn_0(B, mult(A, op_e), op_d)",
+            "fn_8(A, D) = A(op_d, D)",
+            "fn_9(A) = fn_0(A, op_e)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_2(A, B, D) = mult(mult(D, B), A)",
+            "fn_3(D, E) = mult(op_d, mult(D, E))",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, B) = mult(rd(B, mult(unit, A)), A)",
+            "fn_6(A, D, E) = mult(mult(A, D), E)",
+            "fn_7(A, B) = mult(op_d, mult(mult(A, op_e), B))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012766999999999999,
+        "hints_time_sys": 0.010780999999999999,
+        "hints_time": 0.023548
+    },
+    {
+        "problem": "GRP704-10",
+        "mean_base_user_time": 0.007248,
+        "min_base_user_time": 0.007248,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(A, mult(B, C))",
+            "fn_1(A, B, C) = mult(mult(A, B), C)",
+            "fn_2(A, B, C) = mult(B, mult(C, A))",
+            "fn_3(A, B) = mult(B, ld(A, op_c))",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, C, D) = mult(mult(C, D), A)",
+            "fn_6 = fn_0(op_d)",
+            "fn_7 = fn_2(op_d)",
+            "fn_8(A, B) = mult(B, fn_3(A, unit))",
+            "fn_9 = fn_1(op_d)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(A, mult(B, C))",
+            "fn_1(A, B, C) = mult(mult(A, B), C)",
+            "fn_2(A, B, C) = mult(B, mult(C, A))",
+            "fn_3(A, B) = mult(B, ld(A, op_c))",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, C, D) = mult(mult(C, D), A)",
+            "fn_8(A, B) = mult(B, mult(unit, ld(A, op_c)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.009378,
+        "hints_time_sys": 0.01124,
+        "hints_time": 0.020617999999999997
+    },
+    {
+        "problem": "GRP704-11",
+        "mean_base_user_time": 0.013746999999999999,
+        "min_base_user_time": 0.013746999999999999,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, D, E) = mult(mult(D, E), A)",
+            "fn_2(A, D, E) = fn_0(A, E, D)",
+            "fn_3(A) = ld(A, mult(op_c, A))",
+            "fn_4(A) = fn_0(ld(A, op_c), unit)",
+            "fn_5(D) = mult(op_d, D)",
+            "fn_6(D) = mult(D, op_d)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, D, E) = mult(mult(D, E), A)",
+            "fn_3(A) = ld(A, mult(op_c, A))",
+            "fn_5(D) = mult(op_d, D)",
+            "fn_6(D) = mult(D, op_d)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.00937,
+        "hints_time_sys": 0.008331999999999999,
+        "hints_time": 0.017702
+    },
+    {
+        "problem": "GRP704-12",
+        "mean_base_user_time": 0.01002,
+        "min_base_user_time": 0.01002,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_1(A, D, E) = fn_0(A, E, D)",
+            "fn_2(A, B, D) = mult(mult(D, B), A)",
+            "fn_3(D, E) = fn_0(E, D, op_d)",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, D, E) = mult(mult(A, D), E)",
+            "fn_6(A, B) = fn_0(B, mult(A, op_f), op_d)",
+            "fn_7(A, D) = A(op_d, D)",
+            "fn_8(A) = fn_0(A, op_f)",
+            "fn_9(A, B) = ld(ld(B, A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, A))",
+            "fn_2(A, B, D) = mult(mult(D, B), A)",
+            "fn_3(D, E) = mult(op_d, mult(D, E))",
+            "fn_4(A) = ld(A, mult(op_c, A))",
+            "fn_5(A, D, E) = mult(mult(A, D), E)",
+            "fn_6(A, B) = mult(op_d, mult(mult(A, op_f), B))",
+            "fn_9(A, B) = ld(ld(B, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.014114999999999999,
+        "hints_time_sys": 0.007069,
+        "hints_time": 0.021183999999999998
+    },
+    {
+        "problem": "GRP710-10",
+        "mean_base_user_time": 0.006836999999999999,
+        "min_base_user_time": 0.006836999999999999,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, mult(B, A)))",
+            "fn_1(A, B, C) = mult(mult(B(A), A), C)",
+            "fn_2(A, B) = mult(i(B), mult(B, A))",
+            "fn_3(A, B) = fn_0(B, A, i(mult(A, A)))",
+            "fn_4(A, B) = fn_0(mult(A, B), i(A), A)",
+            "fn_5(D, E) = fn_0(E, D, i(D))",
+            "fn_6(A, D, E) = A(D, E)",
+            "fn_7(A, D, E) = fn_1(E, mult(D), A)",
+            "fn_8(A, D, E) = A(D, fn_2(E, D))",
+            "fn_9(A, B, C) = mult(mult(B, A), C)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, mult(B, A)))",
+            "fn_2(A, B) = mult(i(B), mult(B, A))",
+            "fn_3(A, B) = mult(i(mult(A, A)), mult(A, mult(A, B)))",
+            "fn_4(A, B) = mult(A, mult(i(A), mult(i(A), mult(A, B))))",
+            "fn_5(D, E) = mult(i(D), mult(D, mult(D, E)))",
+            "fn_9(A, B, C) = mult(mult(B, A), C)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.007202,
+        "hints_time_sys": 0.011751,
+        "hints_time": 0.018952999999999998
+    },
+    {
+        "problem": "GRP710-11",
+        "mean_base_user_time": 0.013534,
+        "min_base_user_time": 0.013534,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, mult(B, A)))",
+            "fn_1(A, B) = mult(mult(B, A), A)",
+            "fn_2(A, B) = mult(B, i(A))",
+            "fn_3 = mult(x3, x4)",
+            "fn_4(A, B, D, E) = mult(B(E, D), A)",
+            "fn_5(A, D, E) = mult(D, A(E, E))",
+            "fn_6(A) = fn_2(A, i(A))",
+            "fn_7(A, D, E) = A(E, D)",
+            "fn_8 = i(x4)",
+            "fn_9(A, B, D) = fn_2(B, mult(D, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(C, mult(B, mult(B, A)))",
+            "fn_1(A, B) = mult(mult(B, A), A)",
+            "fn_2(A, B) = mult(B, i(A))",
+            "fn_3 = mult(x3, x4)",
+            "fn_6(A) = mult(i(A), i(A))",
+            "fn_8 = i(x4)",
+            "fn_9(A, B, D) = mult(mult(D, A), i(B))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006692,
+        "hints_time_sys": 0.00954,
+        "hints_time": 0.016232
+    },
+    {
+        "problem": "GRP715-10",
+        "mean_base_user_time": 0.045447999999999995,
+        "min_base_user_time": 0.045447999999999995,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(mult(mult(B, op_a), A), C)",
+            "fn_1(A, B, C) = B(C, mult(A, op_a))",
+            "fn_2(A) = mult(A, op_b)",
+            "fn_3 = fn_0(op_b)",
+            "fn_4 = mult(op_a, fn_2(op_b))",
+            "fn_5(A) = mult(A, op_a)",
+            "fn_6(C) = fn_0(fn_2(op_b), C, op_a)",
+            "fn_7(C) = fn_5(fn_3(C, op_b))",
+            "fn_8(A) = fn_1(A, mult)",
+            "fn_9(A) = fn_1(A, fn_3)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(mult(mult(B, op_a), A), C)",
+            "fn_2(A) = mult(A, op_b)",
+            "fn_4 = mult(op_a, mult(op_b, op_b))",
+            "fn_5(A) = mult(A, op_a)",
+            "fn_6(C) = mult(mult(mult(C, op_a), mult(op_b, op_b)), op_a)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.020156,
+        "hints_time_sys": 0.007685999999999999,
+        "hints_time": 0.027842
+    },
+    {
+        "problem": "GRP715-11",
+        "mean_base_user_time": 0.042919,
+        "min_base_user_time": 0.042919,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = mult(mult(mult(B, op_b), A), C)",
+            "fn_1(A, B, C) = B(C, mult(A, op_b))",
+            "fn_2(A) = mult(A, op_a)",
+            "fn_3 = fn_0(op_a)",
+            "fn_4 = mult(op_b, fn_2(op_a))",
+            "fn_5(A) = mult(A, op_b)",
+            "fn_6(C) = fn_0(fn_2(op_a), C, op_b)",
+            "fn_7(C) = fn_5(fn_3(C, op_a))",
+            "fn_8(A) = fn_1(A, mult)",
+            "fn_9(A) = fn_1(A, fn_3)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = mult(mult(mult(B, op_b), A), C)",
+            "fn_2(A) = mult(A, op_a)",
+            "fn_4 = mult(op_b, mult(op_a, op_a))",
+            "fn_5(A) = mult(A, op_b)",
+            "fn_6(C) = mult(mult(mult(C, op_b), mult(op_a, op_a)), op_b)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.017599999999999998,
+        "hints_time_sys": 0.012079,
+        "hints_time": 0.029678999999999997
+    },
+    {
+        "problem": "GRP718-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP719-1",
+        "status": "base timeout"
+    },
+    {
+        "problem": "GRP777-10",
+        "mean_base_user_time": 0.345148,
+        "min_base_user_time": 0.345148,
+        "min_base_dir": "20251112_20251209_130501_GRP_7726480_7",
+        "abstractions": [
+            "fn_0(A, B, C) = product(C, product(B, A))",
+            "fn_1(A, B) = difference(A, product(B, A))",
+            "fn_2(A, B, C) = product(product(B, A), C)",
+            "fn_3(A, B, C) = difference(B, C(B, A))",
+            "fn_4(A, B, C, D) = fn_0(D, C, product(B, A))",
+            "fn_5(A) = A(c, b)",
+            "fn_6(A, B) = bigC(A, A, B)",
+            "fn_7(A, B, C) = difference(product(B, A), C)",
+            "fn_8(A, B, C) = product(C, difference(B, A))",
+            "fn_9(A, B, E, F) = B(A(E, F), E)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = product(C, product(B, A))",
+            "fn_1(A, B) = difference(A, product(B, A))",
+            "fn_2(A, B, C) = product(product(B, A), C)",
+            "fn_4(A, B, C, D) = product(product(B, A), product(C, D))",
+            "fn_6(A, B) = bigC(A, A, B)",
+            "fn_7(A, B, C) = difference(product(B, A), C)",
+            "fn_8(A, B, C) = product(C, difference(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.142724,
+        "hints_time_sys": 0.013864999999999999,
+        "hints_time": 0.15658899999999998
+    }
+]

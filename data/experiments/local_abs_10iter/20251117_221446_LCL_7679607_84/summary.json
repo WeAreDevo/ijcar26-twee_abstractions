@@ -1,0 +1,1428 @@
+[
+    {
+        "problem": "LCL026-10",
+        "mean_base_user_time": 1.5520009062499998,
+        "min_base_user_time": 1.501298,
+        "min_base_dir": "20250627_193440_LCL_7178496_372",
+        "abstractions": [
+            "fn_0(A, B, C) = ifeq(C, true, is_a_theorem(implies(B, A)), true)",
+            "fn_1(A, B, C, D) = D(implies(B, C), implies(B, A))",
+            "fn_2(A, B, C) = implies(implies(B, A), C)",
+            "fn_3(A, B) = ifeq(is_a_theorem(B), true, A, true)",
+            "fn_4(A, B) = fn_0(A, B, is_a_theorem(A))",
+            "fn_5(A, B, C) = fn_1(B, C, A, fn_0, is_a_theorem(implies(C, implies(B, A))))",
+            "fn_6(A, B, C) = fn_0(B, C, is_a_theorem(implies(C, fn_2(falsehood, B, A))))",
+            "fn_7(A, B, C) = fn_2(implies(A, C), B, fn_1(C, B, A, implies))",
+            "fn_8(A, B, C) = fn_1(C, B, A, implies)",
+            "fn_9(A) = ifeq(true, true, A, true)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = ifeq(C, true, is_a_theorem(implies(B, A)), true)",
+            "fn_2(A, B, C) = implies(implies(B, A), C)",
+            "fn_3(A, B) = ifeq(is_a_theorem(B), true, A, true)",
+            "fn_4(A, B) = ifeq(is_a_theorem(A), true, is_a_theorem(implies(B, A)), true)",
+            "fn_6(A, B, C) = ifeq(is_a_theorem(implies(C, implies(implies(B, falsehood), A))), true, is_a_theorem(implies(C, B)), true)",
+            "fn_9(A) = ifeq(true, true, A, true)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.8095759999999999,
+        "hints_time_sys": 0.032795,
+        "hints_time": 1.8423709999999998
+    },
+    {
+        "problem": "LCL050-10",
+        "mean_base_user_time": 1.8437921249999996,
+        "min_base_user_time": 1.7619340000000001,
+        "min_base_dir": "20250627_192831_LCL_7178475_354",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_1(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_2(A) = implies(not(A), A)",
+            "fn_3(A, B, C) = fn_1(C(A), is_a_theorem(implies(B, A)))",
+            "fn_4(A, B, C, D, E) = ifeq(is_a_theorem(E(A, C)), true, D(C, B(A)), true)",
+            "fn_5(A) = implies(fn_2(A), A)",
+            "fn_6(A, B) = implies(not(A), B)",
+            "fn_7(A, B, C, D) = implies(implies(B, D(A)), implies(C, implies(B, A)))",
+            "fn_8(A, B) = fn_1(A, is_a_theorem(implies(B, A)))",
+            "fn_9(A, B) = implies(implies(B, A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_1(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_2(A) = implies(not(A), A)",
+            "fn_5(A) = implies(implies(not(A), A), A)",
+            "fn_6(A, B) = implies(not(A), B)",
+            "fn_8(A, B) = ifeq(is_a_theorem(implies(B, A)), true, is_a_theorem(A), true)",
+            "fn_9(A, B) = implies(implies(B, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.7648679999999999,
+        "hints_time_sys": 0.035803999999999996,
+        "hints_time": 1.8006719999999998
+    },
+    {
+        "problem": "LCL054-10",
+        "mean_base_user_time": 797.8497833870967,
+        "min_base_user_time": 721.196009,
+        "min_base_dir": "20250627_193231_LCL_7178488_364",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_1(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_2(A) = implies(not(A), A)",
+            "fn_3(A, B) = ifeq(is_a_theorem(implies(A, B)), true, fn_1(B, is_a_theorem(A)), true)",
+            "fn_4(A, B, C) = fn_1(C(A), is_a_theorem(implies(B, A)))",
+            "fn_5(A, B, C) = implies(C, implies(B, A))",
+            "fn_6(A, B, C) = implies(implies(B, A), C)",
+            "fn_7(A, B) = ifeq(B, true, A, true)",
+            "fn_8(A) = fn_1(A, true)",
+            "fn_9(A, B) = fn_1(B, is_a_theorem(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_1(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_2(A) = implies(not(A), A)",
+            "fn_3(A, B) = ifeq(is_a_theorem(implies(A, B)), true, ifeq(is_a_theorem(A), true, is_a_theorem(B), true), true)",
+            "fn_5(A, B, C) = implies(C, implies(B, A))",
+            "fn_6(A, B, C) = implies(implies(B, A), C)",
+            "fn_7(A, B) = ifeq(B, true, A, true)",
+            "fn_8(A) = ifeq(true, true, is_a_theorem(A), true)",
+            "fn_9(A, B) = ifeq(is_a_theorem(A), true, is_a_theorem(B), true)"
+        ],
+        "hints_status": "timeout",
+        "error": "hint 4.0: implies(implies(Z, X), implies(Y, X))\nhint 4.0: ifeq(Y, true, is_a_theorem(X), true)\nhint 3.0: implies(not(X), X)\nhint 12.0: ifeq(is_a_theorem(implies(X, Y)), true, ifeq(is_a_theorem(X), true, is_a_theorem(Y), true), true)\nhint 2.0: implies(Z, implies(Y, X))\nhint 2.0: implies(implies(Y, X), Z)\nhint 3.0: ifeq(Y, true, X, true)\nhint 5.0: ifeq(true, true, is_a_theorem(X), true)\nhint 5.0: ifeq(is_a_theorem(X), true, is_a_theorem(Y), true)\n\n[Timeout after 1000 seconds]"
+    },
+    {
+        "problem": "LCL060-10",
+        "mean_base_user_time": 260.03586403124996,
+        "min_base_user_time": 236.566222,
+        "min_base_dir": "20250627_191206_LCL_7178445_324",
+        "abstractions": [
+            "fn_0(A, B, C, D) = D(is_a_theorem(implies(implies(C, B), A)), true)",
+            "fn_1(A) = implies(not(A), A)",
+            "fn_2(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_3(A, B) = fn_0(implies(B, A), A)",
+            "fn_4(A, B, C) = C(is_a_theorem(implies(B, A)), true)",
+            "fn_5(A, B) = ifeq(true, true, A, B)",
+            "fn_6(A, B) = implies(not(A), B)",
+            "fn_7(A, B, C, D, E, F) = fn_0(C, F, E, D(C, B, A, ifeq))",
+            "fn_8(A, B) = implies(implies(B, A), A)",
+            "fn_9(A, B, C, D) = D(implies(C, A), implies(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A) = implies(not(A), A)",
+            "fn_2(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_5(A, B) = ifeq(true, true, A, B)",
+            "fn_6(A, B) = implies(not(A), B)",
+            "fn_8(A, B) = implies(implies(B, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 93.714593,
+        "hints_time_sys": 0.309709,
+        "hints_time": 94.02430199999999
+    },
+    {
+        "problem": "LCL096-10",
+        "mean_base_user_time": 0.35265578125,
+        "min_base_user_time": 0.342493,
+        "min_base_dir": "20250627_192413_LCL_7178465_344",
+        "abstractions": [
+            "fn_0(A, B, C) = equivalent(equivalent(B, C), equivalent(B, A))",
+            "fn_1(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_2(A, B, C) = equivalent(equivalent(B, A), C)",
+            "fn_3(A, B) = fn_1(A, is_a_theorem(B(A)))",
+            "fn_4(A, B, C) = ifeq(C, true, fn_1(B, is_a_theorem(A)), true)",
+            "fn_5(A, B, C) = fn_1(C(A), is_a_theorem(B(A)))",
+            "fn_6(A, B, C) = fn_4(equivalent(B, C), A, is_a_theorem(fn_2(C, B, A)))",
+            "fn_7(A, B, C, D) = fn_2(D, C, fn_2(C, B, A))",
+            "fn_8(A, B, C) = fn_2(equivalent(A, C), fn_0(C, B, A))",
+            "fn_9(A, B) = fn_0(A, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = equivalent(equivalent(B, C), equivalent(B, A))",
+            "fn_1(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_2(A, B, C) = equivalent(equivalent(B, A), C)",
+            "fn_4(A, B, C) = ifeq(C, true, ifeq(is_a_theorem(A), true, is_a_theorem(B), true), true)",
+            "fn_6(A, B, C) = ifeq(is_a_theorem(equivalent(equivalent(B, C), A)), true, ifeq(is_a_theorem(equivalent(B, C)), true, is_a_theorem(A), true), true)",
+            "fn_7(A, B, C, D) = equivalent(equivalent(C, D), equivalent(equivalent(B, C), A))",
+            "fn_9(A, B) = equivalent(equivalent(B, A), equivalent(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.290197,
+        "hints_time_sys": 0.018458,
+        "hints_time": 0.30865499999999996
+    },
+    {
+        "problem": "LCL109-2",
+        "mean_base_user_time": 0.6828535625000001,
+        "min_base_user_time": 0.6722049999999999,
+        "min_base_dir": "20250627_193210_LCL_7178486_362",
+        "abstractions": [
+            "fn_0(A, B) = implies(B, not(A))",
+            "fn_1(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_2(A, B) = fn_0(B, not(A))",
+            "fn_3(A, B) = implies(implies(B, A), A)",
+            "fn_4 = not(truth)",
+            "fn_5(A, B, C) = implies(implies(C, A), fn_1(B, C, B, A))",
+            "fn_6(A, B) = B(B(A))",
+            "fn_7(A, B) = fn_1(A, B, A)",
+            "fn_8(A, B, C) = implies(C, implies(B, A))",
+            "fn_9(A, B) = fn_0(implies(A, B), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(B, not(A))",
+            "fn_1(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_2(A, B) = implies(not(A), not(B))",
+            "fn_3(A, B) = implies(implies(B, A), A)",
+            "fn_4 = not(truth)",
+            "fn_5(A, B, C) = implies(implies(C, A), implies(implies(A, B), implies(C, B)))",
+            "fn_8(A, B, C) = implies(C, implies(B, A))",
+            "fn_9(A, B) = implies(A, not(implies(A, B)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.8699399999999999,
+        "hints_time_sys": 0.020863,
+        "hints_time": 0.8908029999999999
+    },
+    {
+        "problem": "LCL109-6",
+        "mean_base_user_time": 0.12695425000000002,
+        "min_base_user_time": 0.119516,
+        "min_base_dir": "20250627_193440_LCL_7178496_372",
+        "abstractions": [
+            "fn_0(A, B) = implies(B, not(A))",
+            "fn_1(A) = xor(truth, A)",
+            "fn_2(A, B) = and_star(B, fn_0(B, A))",
+            "fn_3(A, B) = and_star(B, not(A))",
+            "fn_4(A, B) = and_star(not(A), B)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6 = implies(a, b)",
+            "fn_7(A, B) = fn_3(and_star(fn_1(B), A), A)",
+            "fn_8 = fn_3(a, b)",
+            "fn_9(A, B, C) = and_star(implies(C, B), fn_4(C, and_star(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(B, not(A))",
+            "fn_1(A) = xor(truth, A)",
+            "fn_2(A, B) = and_star(B, implies(A, not(B)))",
+            "fn_3(A, B) = and_star(B, not(A))",
+            "fn_4(A, B) = and_star(not(A), B)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6 = implies(a, b)",
+            "fn_7(A, B) = and_star(A, not(and_star(xor(truth, B), A)))",
+            "fn_8 = and_star(b, not(a))",
+            "fn_9(A, B, C) = and_star(implies(C, B), and_star(not(C), and_star(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.14030099999999998,
+        "hints_time_sys": 0.017662999999999998,
+        "hints_time": 0.157964
+    },
+    {
+        "problem": "LCL110-2",
+        "mean_base_user_time": 0.010881250000000002,
+        "min_base_user_time": 0.006919,
+        "min_base_dir": "20250627_191231_LCL_7178447_326",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C, D) = implies(D, fn_0(A, C, implies(B, A)))",
+            "fn_2(A, B, C, D) = fn_0(D, C, fn_0(D, C, implies(B, A)))",
+            "fn_3(A, B) = fn_0(B, implies(A, B), A)",
+            "fn_4(A, B) = fn_0(B, A, not(A))",
+            "fn_5(A, B, C, E) = fn_0(fn_0(A, C, E), B, implies(E, A))",
+            "fn_6(A, B) = fn_2(B, A, not(B), not(A))",
+            "fn_7(A, B) = implies(implies(B, A), A)",
+            "fn_8(A, B, C) = fn_1(C, A, B, implies(B, A))",
+            "fn_9(A, E) = A(E, truth)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C, D) = implies(D, implies(implies(B, A), implies(C, A)))",
+            "fn_2(A, B, C, D) = implies(implies(implies(B, A), implies(C, D)), implies(C, D))",
+            "fn_3(A, B) = implies(A, implies(implies(A, B), B))",
+            "fn_4(A, B) = implies(not(A), implies(A, B))",
+            "fn_5(A, B, C, E) = implies(implies(E, A), implies(B, implies(E, implies(C, A))))",
+            "fn_6(A, B) = implies(implies(implies(A, B), implies(not(B), not(A))), implies(not(B), not(A)))",
+            "fn_7(A, B) = implies(implies(B, A), A)",
+            "fn_8(A, B, C) = implies(implies(B, A), implies(implies(A, C), implies(B, C)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012929999999999999,
+        "hints_time_sys": 0.005984,
+        "hints_time": 0.018914
+    },
+    {
+        "problem": "LCL111-2",
+        "mean_base_user_time": 0.6561765937499998,
+        "min_base_user_time": 0.645308,
+        "min_base_dir": "20250627_193231_LCL_7178488_364",
+        "abstractions": [
+            "fn_0(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_1 = not(not(truth))",
+            "fn_2(A, B) = implies(not(B), not(A))",
+            "fn_3(A, B, C) = implies(implies(C, A), fn_0(B, C, B, A))",
+            "fn_4(A, B) = implies(implies(B, A), A)",
+            "fn_5 = not(truth)",
+            "fn_6(A, B) = fn_0(A, B, A)",
+            "fn_7(A) = implies(truth, A)",
+            "fn_8(A, B) = fn_0(not(B), not(A))",
+            "fn_9(A, B, C, D, E, F) = fn_2(F(fn_6(E, C, B), A), D(implies(C, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_1 = not(not(truth))",
+            "fn_2(A, B) = implies(not(B), not(A))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(implies(A, B), implies(C, B)))",
+            "fn_4(A, B) = implies(implies(B, A), A)",
+            "fn_5 = not(truth)",
+            "fn_7(A) = implies(truth, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 1.155576,
+        "hints_time_sys": 0.031701,
+        "hints_time": 1.187277
+    },
+    {
+        "problem": "LCL112-2",
+        "mean_base_user_time": 0.011174468749999998,
+        "min_base_user_time": 0.007993,
+        "min_base_dir": "20250627_192940_LCL_7178477_356",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C, D) = implies(D, fn_0(A, C, implies(B, A)))",
+            "fn_2(A, B) = fn_0(B, A, implies(not(B), not(A)))",
+            "fn_3(A, B) = fn_0(not(B), not(A), fn_0(not(B), not(A), implies(B, A)))",
+            "fn_4(A, B) = fn_0(B, implies(A, B), A)",
+            "fn_5(A) = not(not(A))",
+            "fn_6(A, B) = fn_0(B, A, not(A))",
+            "fn_7(A, B, C, E) = fn_0(fn_0(A, C, E), B, implies(E, A))",
+            "fn_8(A, B) = implies(implies(B, A), A)",
+            "fn_9(A, B, C) = fn_0(A, C, B(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C, D) = implies(D, implies(implies(B, A), implies(C, A)))",
+            "fn_2(A, B) = implies(implies(not(B), not(A)), implies(A, B))",
+            "fn_3(A, B) = implies(implies(implies(B, A), implies(not(A), not(B))), implies(not(A), not(B)))",
+            "fn_4(A, B) = implies(A, implies(implies(A, B), B))",
+            "fn_5(A) = not(not(A))",
+            "fn_6(A, B) = implies(not(A), implies(A, B))",
+            "fn_7(A, B, C, E) = implies(implies(E, A), implies(B, implies(E, implies(C, A))))",
+            "fn_8(A, B) = implies(implies(B, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.007646999999999999,
+        "hints_time_sys": 0.008624999999999999,
+        "hints_time": 0.016272
+    },
+    {
+        "problem": "LCL113-10",
+        "mean_base_user_time": 5.810635468749999,
+        "min_base_user_time": 5.508462,
+        "min_base_dir": "20250627_191407_LCL_7178453_332",
+        "abstractions": [
+            "fn_0(A, B, C) = C(is_a_theorem(implies(B, A)), true)",
+            "fn_1(A, B, C, D) = fn_0(implies(D, C), implies(B, A))",
+            "fn_2(A, B, C, D) = fn_1(B, A, D, C, ifeq, fn_0(D, C, fn_0(B, A, ifeq)), true)",
+            "fn_3(A, B) = ifeq(true, true, A, B)",
+            "fn_4(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_5(A, B, C) = fn_1(C, B, C, A, fn_0(B, A, ifeq))",
+            "fn_6(A, B, C, D, E, F) = F(B, A, fn_1(implies(E, D), C, B, A, ifeq))",
+            "fn_7(A, B, C, D, E, F) = fn_1(A, B, C, D, fn_1(F, E, implies(D, C), implies(B, A), ifeq))",
+            "fn_8(A, B, C) = fn_0(A, C, ifeq, B(is_a_theorem(A), true), true)",
+            "fn_9(A) = not(not(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_3(A, B) = ifeq(true, true, A, B)",
+            "fn_4(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_9(A) = not(not(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 8.857024,
+        "hints_time_sys": 0.106455,
+        "hints_time": 8.963479
+    },
+    {
+        "problem": "LCL113-2",
+        "mean_base_user_time": 0.016831781249999997,
+        "min_base_user_time": 0.014440999999999999,
+        "min_base_dir": "20250627_193611_LCL_7178504_380",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1 = not(not(truth))",
+            "fn_2(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_3 = not(truth)",
+            "fn_4(A, B, C) = implies(implies(C, A), fn_2(B, C, B, A))",
+            "fn_5(A) = implies(truth, A)",
+            "fn_6(A, B) = implies(not(A), B)",
+            "fn_7(A, B, C) = fn_2(A, C, B, not(A))",
+            "fn_8(A, B) = fn_0(fn_6(A, not(B)), implies(B, A))",
+            "fn_9 = not(fn_1)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1 = not(not(truth))",
+            "fn_2(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_3 = not(truth)",
+            "fn_4(A, B, C) = implies(implies(C, A), implies(implies(A, B), implies(C, B)))",
+            "fn_5(A) = implies(truth, A)",
+            "fn_6(A, B) = implies(not(A), B)",
+            "fn_7(A, B, C) = implies(implies(not(A), B), implies(C, A))",
+            "fn_8(A, B) = implies(implies(implies(B, A), implies(not(A), not(B))), implies(not(A), not(B)))",
+            "fn_9 = not(not(not(truth)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.049873999999999995,
+        "hints_time_sys": 0.008819,
+        "hints_time": 0.058692999999999995
+    },
+    {
+        "problem": "LCL114-2",
+        "mean_base_user_time": 0.015286937500000002,
+        "min_base_user_time": 0.012562,
+        "min_base_dir": "20250627_193530_LCL_7178502_378",
+        "abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6(A, B, C) = implies(implies(B, A), fn_3(C, B, A))",
+            "fn_7 = not(fn_0)",
+            "fn_8(A, B, C) = implies(implies(A, C), fn_5(C, B(A)))",
+            "fn_9 = not(truth)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6(A, B, C) = implies(implies(B, A), implies(implies(A, C), implies(B, C)))",
+            "fn_7 = not(not(not(truth)))",
+            "fn_9 = not(truth)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.021344,
+        "hints_time_sys": 0.00815,
+        "hints_time": 0.029494
+    },
+    {
+        "problem": "LCL115-2",
+        "mean_base_user_time": 0.013838187499999998,
+        "min_base_user_time": 0.009348,
+        "min_base_dir": "20250627_191331_LCL_7178449_328",
+        "abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6(A, B, C) = implies(implies(B, A), fn_3(C, B, A))",
+            "fn_7 = not(fn_0)",
+            "fn_8 = not(truth)",
+            "fn_9(A, B) = implies(fn_2(A), B)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6(A, B, C) = implies(implies(B, A), implies(implies(A, C), implies(B, C)))",
+            "fn_7 = not(not(not(truth)))",
+            "fn_8 = not(truth)",
+            "fn_9(A, B) = implies(implies(A, not(truth)), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.012017,
+        "hints_time_sys": 0.007398,
+        "hints_time": 0.019415
+    },
+    {
+        "problem": "LCL116-2",
+        "mean_base_user_time": 0.020032468749999997,
+        "min_base_user_time": 0.016357999999999998,
+        "min_base_dir": "20250627_192531_LCL_7178469_348",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1 = not(not(truth))",
+            "fn_2(A, B) = implies(B, not(A))",
+            "fn_3(A, B, C) = implies(C, implies(B, A))",
+            "fn_4 = fn_2(truth)",
+            "fn_5(A, B, C) = fn_3(A, C, implies(B, A))",
+            "fn_6 = not(truth)",
+            "fn_7(A, D, E) = A(implies(D, E), fn_2(D, not(E)))",
+            "fn_8(A) = implies(truth, A)",
+            "fn_9(A, B) = fn_0(fn_2(B, not(A)), implies(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1 = not(not(truth))",
+            "fn_2(A, B) = implies(B, not(A))",
+            "fn_3(A, B, C) = implies(C, implies(B, A))",
+            "fn_5(A, B, C) = implies(implies(B, A), implies(C, A))",
+            "fn_6 = not(truth)",
+            "fn_8(A) = implies(truth, A)",
+            "fn_9(A, B) = implies(implies(implies(B, A), implies(not(A), not(B))), implies(not(A), not(B)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.020619,
+        "hints_time_sys": 0.008848,
+        "hints_time": 0.029467
+    },
+    {
+        "problem": "LCL132-1",
+        "mean_base_user_time": 0.003741625,
+        "min_base_user_time": 0.000957,
+        "min_base_dir": "20250627_191807_LCL_7178457_336",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(implies(C, B), A))",
+            "fn_1(A) = implies(truth, A)",
+            "fn_2(A) = fn_0(A, A)",
+            "fn_3(A) = implies(A, A)",
+            "fn_4(A, B) = B(fn_1(A), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(implies(C, B), A))",
+            "fn_1(A) = implies(truth, A)",
+            "fn_3(A) = implies(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.002585,
+        "hints_time_sys": 0.007774,
+        "hints_time": 0.010359
+    },
+    {
+        "problem": "LCL133-1",
+        "mean_base_user_time": 0.0048925,
+        "min_base_user_time": 0.0009699999999999999,
+        "min_base_dir": "20250627_193310_LCL_7178490_366",
+        "abstractions": [
+            "fn_0(A) = implies(truth, A)",
+            "fn_1(A) = implies(A, A)",
+            "fn_2(B) = fn_0(B)",
+            "fn_3(A, B) = implies(A, B(A))",
+            "fn_4(A, B) = implies(implies(B, A), A)",
+            "fn_5(C) = fn_0(fn_0(C))",
+            "fn_6(A, B, C) = implies(C, fn_1(implies(B, A)))",
+            "fn_7(A, D) = fn_3(D, A)",
+            "fn_8(A, D) = A(implies(D))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = implies(truth, A)",
+            "fn_1(A) = implies(A, A)",
+            "fn_4(A, B) = implies(implies(B, A), A)",
+            "fn_5(C) = implies(truth, implies(truth, C))",
+            "fn_6(A, B, C) = implies(C, implies(implies(B, A), implies(B, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.004575,
+        "hints_time_sys": 0.006412999999999999,
+        "hints_time": 0.010988
+    },
+    {
+        "problem": "LCL134-1",
+        "mean_base_user_time": 0.00434096875,
+        "min_base_user_time": 0.000946,
+        "min_base_dir": "20250627_191331_LCL_7178449_328",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_2(A, B) = implies(A, fn_0(B, A))",
+            "fn_3(A, D) = A(D, truth)",
+            "fn_4(A) = implies(A, A)",
+            "fn_5(D) = fn_4(D)",
+            "fn_6 = fn_3(fn_0)",
+            "fn_7(A, D) = A(truth, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_2(A, B) = implies(A, implies(implies(A, B), B))",
+            "fn_4(A) = implies(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.005032,
+        "hints_time_sys": 0.007045,
+        "hints_time": 0.012077000000000001
+    },
+    {
+        "problem": "LCL135-1",
+        "mean_base_user_time": 0.004823031249999999,
+        "min_base_user_time": 0.002061,
+        "min_base_dir": "20250627_193711_LCL_7178506_382",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(implies(C, B), A))",
+            "fn_1(A, B, C) = implies(B(C), implies(implies(C, A), B(A)))",
+            "fn_2(A, B) = implies(implies(B, A), A)",
+            "fn_3(A, B) = implies(A, implies(B, A))",
+            "fn_4(A, D) = fn_0(A, A, D)",
+            "fn_5(A, B) = fn_0(implies(B, A), A)",
+            "fn_6(D) = implies(D, D)",
+            "fn_7(D) = fn_2(D, truth)",
+            "fn_8(A) = implies(truth, A)",
+            "fn_9(A, B, D, E) = B(E, A, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(implies(C, B), A))",
+            "fn_2(A, B) = implies(implies(B, A), A)",
+            "fn_3(A, B) = implies(A, implies(B, A))",
+            "fn_4(A, D) = implies(D, implies(implies(D, A), A))",
+            "fn_6(D) = implies(D, D)",
+            "fn_7(D) = implies(implies(truth, D), D)",
+            "fn_8(A) = implies(truth, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.0068119999999999995,
+        "hints_time_sys": 0.005677,
+        "hints_time": 0.012489
+    },
+    {
+        "problem": "LCL138-1",
+        "mean_base_user_time": 2.4860320000000002,
+        "min_base_user_time": 2.4524,
+        "min_base_dir": "20250627_193510_LCL_7178498_374",
+        "abstractions": [
+            "fn_0(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_1(A, B) = implies(not(B), not(A))",
+            "fn_2(A, B, C) = implies(implies(C, A), fn_0(B, C, B, A))",
+            "fn_3(A, B, C) = implies(C, implies(B, A))",
+            "fn_4(A, B) = fn_0(A, B, A)",
+            "fn_5(A, B) = fn_0(not(B), not(A))",
+            "fn_6(A, B) = implies(implies(B, A), A)",
+            "fn_7(A, B) = fn_0(A, B, not(B), not(A))",
+            "fn_8(A, B, C, D, E) = fn_5(C, E(fn_4(D, A, B), C), B, A)",
+            "fn_9(A, B, C, D, E, F) = fn_1(F(fn_4(E, C, B), A), D(implies(C, B), A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = implies(implies(D, C), implies(B, A))",
+            "fn_1(A, B) = implies(not(B), not(A))",
+            "fn_2(A, B, C) = implies(implies(C, A), implies(implies(A, B), implies(C, B)))",
+            "fn_3(A, B, C) = implies(C, implies(B, A))",
+            "fn_6(A, B) = implies(implies(B, A), A)",
+            "fn_7(A, B) = implies(implies(not(A), not(B)), implies(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.292688,
+        "hints_time_sys": 0.029876999999999997,
+        "hints_time": 2.322565
+    },
+    {
+        "problem": "LCL139-1",
+        "mean_base_user_time": 0.013217156249999997,
+        "min_base_user_time": 0.009226,
+        "min_base_dir": "20250627_191908_LCL_7178459_338",
+        "abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5 = not(truth)",
+            "fn_6 = not(fn_0)",
+            "fn_7(A, B, C) = implies(implies(B, A), fn_3(C, B, A))",
+            "fn_8(A, D) = implies(D, A(D))",
+            "fn_9(A) = implies(fn_5, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5 = not(truth)",
+            "fn_6 = not(not(not(truth)))",
+            "fn_7(A, B, C) = implies(implies(B, A), implies(implies(A, C), implies(B, C)))",
+            "fn_9(A) = implies(not(truth), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.010106,
+        "hints_time_sys": 0.005079,
+        "hints_time": 0.015185
+    },
+    {
+        "problem": "LCL140-1",
+        "mean_base_user_time": 0.01132009375,
+        "min_base_user_time": 0.007892999999999999,
+        "min_base_dir": "20250627_191231_LCL_7178447_326",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C, D) = implies(D, fn_0(A, C, implies(B, A)))",
+            "fn_2(A, B) = fn_0(B, A, implies(not(B), not(A)))",
+            "fn_3(A, B) = fn_0(not(B), not(A), fn_0(not(B), not(A), implies(B, A)))",
+            "fn_4(A) = not(not(A))",
+            "fn_5(A, B) = implies(implies(B, A), A)",
+            "fn_6(A, B) = fn_0(B, implies(A, B), A)",
+            "fn_7(A, B) = fn_0(B, A, not(A))",
+            "fn_8(A, B, C, E) = fn_0(fn_0(A, C, E), B, implies(E, A))",
+            "fn_9(A, B, C) = fn_0(A, C, B(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C, D) = implies(D, implies(implies(B, A), implies(C, A)))",
+            "fn_2(A, B) = implies(implies(not(B), not(A)), implies(A, B))",
+            "fn_3(A, B) = implies(implies(implies(B, A), implies(not(A), not(B))), implies(not(A), not(B)))",
+            "fn_4(A) = not(not(A))",
+            "fn_5(A, B) = implies(implies(B, A), A)",
+            "fn_6(A, B) = implies(A, implies(implies(A, B), B))",
+            "fn_7(A, B) = implies(not(A), implies(A, B))",
+            "fn_8(A, B, C, E) = implies(implies(E, A), implies(B, implies(E, implies(C, A))))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008886,
+        "hints_time_sys": 0.007901,
+        "hints_time": 0.016787
+    },
+    {
+        "problem": "LCL141-1",
+        "mean_base_user_time": 0.01502584375,
+        "min_base_user_time": 0.010498,
+        "min_base_dir": "20250627_192940_LCL_7178477_356",
+        "abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6(A, B, C) = implies(implies(B, A), fn_3(C, B, A))",
+            "fn_7 = not(fn_0)",
+            "fn_8(A, B, D, E) = B(implies(D, E), fn_5(E, A(D)))",
+            "fn_9 = not(truth)"
+        ],
+        "expanded_abstractions": [
+            "fn_0 = not(not(truth))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A) = implies(A, not(truth))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B, A))",
+            "fn_4(A) = implies(truth, A)",
+            "fn_5(A, B) = implies(not(A), B)",
+            "fn_6(A, B, C) = implies(implies(B, A), implies(implies(A, C), implies(B, C)))",
+            "fn_7 = not(not(not(truth)))",
+            "fn_9 = not(truth)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.017906,
+        "hints_time_sys": 0.012928,
+        "hints_time": 0.030834
+    },
+    {
+        "problem": "LCL148-10",
+        "mean_base_user_time": 38.726921062500004,
+        "min_base_user_time": 35.681371,
+        "min_base_dir": "20250627_193210_LCL_7178486_362",
+        "abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_1(A, B, C) = C(not(B), not(A))",
+            "fn_2(A, B, C) = fn_0(A, C, implies(B, A))",
+            "fn_3(A, B, C) = big_V(C, big_V(B, A))",
+            "fn_4(A, B, C) = implies(big_V(B, A), C)",
+            "fn_5(A, B) = fn_1(B, A, implies)",
+            "fn_6(A, B) = implies(implies(B, A), A)",
+            "fn_7(A, B, C, D, E, F, G) = fn_4(fn_0(C, B, F), fn_0(C, E, B), fn_1(G, D, fn_0, implies(fn_0(C, B, A), G)))",
+            "fn_8(A, B, C) = big_hat(C, big_hat(B, A))",
+            "fn_9(A) = not(not(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = implies(C, implies(B, A))",
+            "fn_2(A, B, C) = implies(implies(B, A), implies(C, A))",
+            "fn_3(A, B, C) = big_V(C, big_V(B, A))",
+            "fn_4(A, B, C) = implies(big_V(B, A), C)",
+            "fn_6(A, B) = implies(implies(B, A), A)",
+            "fn_8(A, B, C) = big_hat(C, big_hat(B, A))",
+            "fn_9(A) = not(not(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 39.828718,
+        "hints_time_sys": 0.5330119999999999,
+        "hints_time": 40.36173
+    },
+    {
+        "problem": "LCL153-1",
+        "mean_base_user_time": 0.02382096875,
+        "min_base_user_time": 0.018834,
+        "min_base_dir": "20250627_192709_LCL_7178471_350",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, B, C, D) = or(C(D, not(A)), B(not(D), A))",
+            "fn_2(A, D) = not(or(A, not(D)))",
+            "fn_3(A, D) = implies(or(D, A), D)",
+            "fn_4(A, B) = implies(or(B, A), A)",
+            "fn_5(A, B, D) = implies(or(D, B), implies(A, D))",
+            "fn_6(A, D) = A(D, truth)",
+            "fn_7(A, D) = A(D, falsehood)",
+            "fn_8(A, D) = A(falsehood, D)",
+            "fn_9(A, D) = A(truth, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_2(A, D) = not(or(A, not(D)))",
+            "fn_3(A, D) = implies(or(D, A), D)",
+            "fn_4(A, B) = implies(or(B, A), A)",
+            "fn_5(A, B, D) = implies(or(D, B), implies(A, D))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.024613,
+        "hints_time_sys": 0.008239,
+        "hints_time": 0.032852
+    },
+    {
+        "problem": "LCL154-1",
+        "mean_base_user_time": 0.01469003125,
+        "min_base_user_time": 0.009672,
+        "min_base_dir": "20250627_193510_LCL_7178500_376",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, B, C, D) = or(C(D, not(A)), B(not(D), A))",
+            "fn_2(A, D) = not(or(A, not(D)))",
+            "fn_3(A, D) = implies(or(D, A), D)",
+            "fn_4(A, B) = implies(or(B, A), A)",
+            "fn_5(A, D) = A(D, falsehood)",
+            "fn_6(A, B, D) = implies(or(D, B), implies(A, D))",
+            "fn_7(A, D) = A(falsehood, D)",
+            "fn_8(A, D) = A(D, truth)",
+            "fn_9 = not(falsehood)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_2(A, D) = not(or(A, not(D)))",
+            "fn_3(A, D) = implies(or(D, A), D)",
+            "fn_4(A, B) = implies(or(B, A), A)",
+            "fn_6(A, B, D) = implies(or(D, B), implies(A, D))",
+            "fn_9 = not(falsehood)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011151999999999999,
+        "hints_time_sys": 0.010117,
+        "hints_time": 0.021268999999999996
+    },
+    {
+        "problem": "LCL155-1",
+        "mean_base_user_time": 0.012489937499999998,
+        "min_base_user_time": 0.007643,
+        "min_base_dir": "20250627_193510_LCL_7178498_374",
+        "abstractions": [
+            "fn_0(A, B, C, D) = or(D(B, not(A)), C(not(B), A))",
+            "fn_1(A, B) = implies(B(A), A)",
+            "fn_2(E) = implies(or(E, falsehood), E)",
+            "fn_3(A, B, E) = implies(or(E, B), implies(A, E))",
+            "fn_4(A, E) = A(E, not(E))",
+            "fn_5(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_6(A) = or(falsehood, A)",
+            "fn_7 = fn_1(truth)",
+            "fn_8(A) = implies(A, A)",
+            "fn_9(A, B, E, F) = fn_0(F, E, B, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_2(E) = implies(or(E, falsehood), E)",
+            "fn_3(A, B, E) = implies(or(E, B), implies(A, E))",
+            "fn_5(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_6(A) = or(falsehood, A)",
+            "fn_8(A) = implies(A, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011975,
+        "hints_time_sys": 0.008286,
+        "hints_time": 0.020261
+    },
+    {
+        "problem": "LCL156-1",
+        "mean_base_user_time": 0.012850062500000002,
+        "min_base_user_time": 0.009208,
+        "min_base_dir": "20250627_192531_LCL_7178469_348",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, C) = implies(or(C, A), C)",
+            "fn_2(A, B) = implies(or(B, A), A)",
+            "fn_3(A, B, C) = implies(or(C, B), implies(A, C))",
+            "fn_4(A, C) = not(or(A, not(C)))",
+            "fn_5(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_6(A, D) = A(falsehood, D)",
+            "fn_7(A, D) = A(D, falsehood)",
+            "fn_8(A, D) = A(D, truth)",
+            "fn_9(A, D) = A(truth, D)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, C) = implies(or(C, A), C)",
+            "fn_2(A, B) = implies(or(B, A), A)",
+            "fn_3(A, B, C) = implies(or(C, B), implies(A, C))",
+            "fn_4(A, C) = not(or(A, not(C)))",
+            "fn_5(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.013925,
+        "hints_time_sys": 0.004979,
+        "hints_time": 0.018904
+    },
+    {
+        "problem": "LCL157-1",
+        "mean_base_user_time": 0.013659718749999997,
+        "min_base_user_time": 0.009889,
+        "min_base_dir": "20250627_192731_LCL_7178473_352",
+        "abstractions": [
+            "fn_0(A, B) = implies(B(A), A)",
+            "fn_1(C) = implies(or(C, falsehood), C)",
+            "fn_2(A, B, C) = implies(or(C, B), implies(A, C))",
+            "fn_3(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_4 = not(falsehood)",
+            "fn_5(A) = implies(A, A)",
+            "fn_6 = fn_0(truth)",
+            "fn_7(A, B, D) = B(D, A(D))",
+            "fn_8(A) = or(falsehood, A)",
+            "fn_9(A) = implies(truth, A)"
+        ],
+        "expanded_abstractions": [
+            "fn_1(C) = implies(or(C, falsehood), C)",
+            "fn_2(A, B, C) = implies(or(C, B), implies(A, C))",
+            "fn_3(A, B, C) = implies(C, implies(implies(B, A), implies(truth, A)))",
+            "fn_4 = not(falsehood)",
+            "fn_5(A) = implies(A, A)",
+            "fn_8(A) = or(falsehood, A)",
+            "fn_9(A) = implies(truth, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.011255,
+        "hints_time_sys": 0.009386,
+        "hints_time": 0.020641
+    },
+    {
+        "problem": "LCL158-1",
+        "mean_base_user_time": 0.023899687499999992,
+        "min_base_user_time": 0.017703,
+        "min_base_dir": "20250627_193710_LCL_7178508_384",
+        "abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_1(A, B, C, D) = or(C(D, not(A)), B(not(D), A))",
+            "fn_2(A, B, C) = implies(or(B, A), C)",
+            "fn_3(A, D) = not(or(A, not(D)))",
+            "fn_4(A, D) = A(D, truth)",
+            "fn_5(A, D) = fn_2(A, D, D)",
+            "fn_6(A, B, D) = B(D, A(D))",
+            "fn_7(A) = implies(truth, A)",
+            "fn_8(A, D) = A(D, falsehood)",
+            "fn_9 = not(falsehood)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(implies(B, A), A)",
+            "fn_2(A, B, C) = implies(or(B, A), C)",
+            "fn_3(A, D) = not(or(A, not(D)))",
+            "fn_5(A, D) = implies(or(D, A), D)",
+            "fn_7(A) = implies(truth, A)",
+            "fn_9 = not(falsehood)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.021821999999999998,
+        "hints_time_sys": 0.009911999999999999,
+        "hints_time": 0.031734
+    },
+    {
+        "problem": "LCL159-1",
+        "mean_base_user_time": 0.5365980625,
+        "min_base_user_time": 0.522122,
+        "min_base_dir": "20250627_192940_LCL_7178477_356",
+        "abstractions": [
+            "fn_0(A, B) = or(B, not(A))",
+            "fn_1(A, B) = or(and_star(B, not(A)), and_star(not(B), A))",
+            "fn_2(A, B) = fn_0(B, not(A))",
+            "fn_3(A, B) = and_star(B, not(A))",
+            "fn_4(A, B) = implies(implies(B, A), A)",
+            "fn_5(A, B) = or(not(A), B)",
+            "fn_6(A, B, C, D) = B(C, A(C, D))",
+            "fn_7(A, B) = xor(A, B(A))",
+            "fn_8(A, B) = and_star(not(A), B)",
+            "fn_9(A, B, C, D) = B(D, A(D, C))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = or(B, not(A))",
+            "fn_1(A, B) = or(and_star(B, not(A)), and_star(not(B), A))",
+            "fn_2(A, B) = or(not(A), not(B))",
+            "fn_3(A, B) = and_star(B, not(A))",
+            "fn_4(A, B) = implies(implies(B, A), A)",
+            "fn_5(A, B) = or(not(A), B)",
+            "fn_8(A, B) = and_star(not(A), B)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.438004,
+        "hints_time_sys": 0.026754,
+        "hints_time": 0.464758
+    },
+    {
+        "problem": "LCL160-1",
+        "mean_base_user_time": 0.03553278125,
+        "min_base_user_time": 0.030684999999999997,
+        "min_base_dir": "20250627_192208_LCL_7178461_340",
+        "abstractions": [
+            "fn_0(A, B) = or(B, not(A))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A, B) = implies(or(A, B), A)",
+            "fn_3(A, B) = fn_0(B, not(A))",
+            "fn_4(A, B, C, D) = D(B, xor(truth, C(B, xor(A, truth))))",
+            "fn_5(A, B, C) = and_star(xor(truth, and_star(xor(C, B), A)), A)",
+            "fn_6(A) = fn_0(A, falsehood)",
+            "fn_7(A, B) = implies(B, not(A))",
+            "fn_8(A, E, F) = A(F, fn_0(F, E))",
+            "fn_9(A, B) = or(not(B), and(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = or(B, not(A))",
+            "fn_1(A, B) = implies(implies(B, A), A)",
+            "fn_2(A, B) = implies(or(A, B), A)",
+            "fn_3(A, B) = or(not(A), not(B))",
+            "fn_5(A, B, C) = and_star(xor(truth, and_star(xor(C, B), A)), A)",
+            "fn_6(A) = or(falsehood, not(A))",
+            "fn_7(A, B) = implies(B, not(A))",
+            "fn_9(A, B) = or(not(B), and(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.029224999999999998,
+        "hints_time_sys": 0.0070739999999999996,
+        "hints_time": 0.036299
+    },
+    {
+        "problem": "LCL161-1",
+        "mean_base_user_time": 0.005973562499999998,
+        "min_base_user_time": 0.003687,
+        "min_base_dir": "20250627_193510_LCL_7178498_374",
+        "abstractions": [
+            "fn_0(A) = xor(truth, A)",
+            "fn_1(A, B) = xor(B, A)",
+            "fn_2(A, B) = A(A(B))",
+            "fn_3(A, B) = xor(not(B), A)",
+            "fn_4 = fn_2(not)",
+            "fn_5(A) = and_star(truth, A)",
+            "fn_6(A) = implies(truth, A)",
+            "fn_7(A, B) = A(fn_0(B))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = xor(truth, A)",
+            "fn_3(A, B) = xor(not(B), A)",
+            "fn_5(A) = and_star(truth, A)",
+            "fn_6(A) = implies(truth, A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.006088,
+        "hints_time_sys": 0.0060929999999999995,
+        "hints_time": 0.012180999999999999
+    },
+    {
+        "problem": "LCL162-1",
+        "mean_base_user_time": 0.6025829999999999,
+        "min_base_user_time": 0.5851949999999999,
+        "min_base_dir": "20250627_193530_LCL_7178502_378",
+        "abstractions": [
+            "fn_0(A, B) = implies(B, not(A))",
+            "fn_1(A, B, C) = implies(C, implies(B, A))",
+            "fn_2(A) = xor(truth, A)",
+            "fn_3(A, B) = not(and_star(B, A))",
+            "fn_4 = implies(x, y)",
+            "fn_5(A, B, C) = implies(C, fn_0(B, A))",
+            "fn_6(A, B, C) = and_star(B, C(B, A))",
+            "fn_7(A, B, C) = fn_1(and_star(C, A), B, A)",
+            "fn_8(A, D, E) = A(E, D)",
+            "fn_9 = implies(y, z)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = implies(B, not(A))",
+            "fn_1(A, B, C) = implies(C, implies(B, A))",
+            "fn_2(A) = xor(truth, A)",
+            "fn_3(A, B) = not(and_star(B, A))",
+            "fn_4 = implies(x, y)",
+            "fn_5(A, B, C) = implies(C, implies(A, not(B)))",
+            "fn_7(A, B, C) = implies(A, implies(B, and_star(C, A)))",
+            "fn_9 = implies(y, z)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.655215,
+        "hints_time_sys": 0.017869,
+        "hints_time": 0.673084
+    },
+    {
+        "problem": "LCL163-1",
+        "mean_base_user_time": 0.03735371875,
+        "min_base_user_time": 0.030330999999999997,
+        "min_base_dir": "20250627_191908_LCL_7178459_338",
+        "abstractions": [
+            "fn_0(A, B) = and_star(A, implies(B, not(A)))",
+            "fn_1(A, B) = and_star(A, not(and_star(xor(truth, B), A)))",
+            "fn_2(A, B, C) = implies(not(A), C(B(A)))",
+            "fn_3(A) = xor(truth, A)",
+            "fn_4(A, B) = not(and_star(B, A))",
+            "fn_5(A, D, E) = A(D, not(E))",
+            "fn_6(A, B) = and_star(B, implies(B, A))",
+            "fn_7(A, D, E) = A(E, D)",
+            "fn_8(A, D, E) = A(E, not(D))",
+            "fn_9(A, B) = fn_2(B, implies(A), not)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = and_star(A, implies(B, not(A)))",
+            "fn_1(A, B) = and_star(A, not(and_star(xor(truth, B), A)))",
+            "fn_3(A) = xor(truth, A)",
+            "fn_4(A, B) = not(and_star(B, A))",
+            "fn_6(A, B) = and_star(B, implies(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.030382,
+        "hints_time_sys": 0.005699,
+        "hints_time": 0.036081
+    },
+    {
+        "problem": "LCL164-1",
+        "mean_base_user_time": 0.007854187499999998,
+        "min_base_user_time": 0.003992000000000001,
+        "min_base_dir": "20250627_193530_LCL_7178502_378",
+        "abstractions": [
+            "fn_0(A) = xor(truth, A)",
+            "fn_1(A, B) = implies(implies(B, A), implies(y, x))",
+            "fn_2(A, C) = not(and_star(C, A))",
+            "fn_3(A, C) = xor(C, A)",
+            "fn_4(C, D) = implies(C, not(D))",
+            "fn_5(A, C) = A(not(C))",
+            "fn_6(A, B, C) = fn_0(and_star(C, B(not(A))))",
+            "fn_7(A) = and_star(A, fn_0(A))",
+            "fn_8(A, C) = fn_2(xor(C, A))",
+            "fn_9(A, C) = xor(not(C), A)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A) = xor(truth, A)",
+            "fn_1(A, B) = implies(implies(B, A), implies(y, x))",
+            "fn_2(A, C) = not(and_star(C, A))",
+            "fn_4(C, D) = implies(C, not(D))",
+            "fn_7(A) = and_star(A, xor(truth, A))",
+            "fn_9(A, C) = xor(not(C), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.008544,
+        "hints_time_sys": 0.0064199999999999995,
+        "hints_time": 0.014963999999999998
+    },
+    {
+        "problem": "LCL192-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL195-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL203-10",
+        "mean_base_user_time": 3.5476322812499994,
+        "min_base_user_time": 3.333321,
+        "min_base_dir": "20250627_192731_LCL_7178473_352",
+        "abstractions": [
+            "fn_0(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_1(A, B, C) = implies(implies(C, A), implies(B(C), B(A)))",
+            "fn_2(A, B, C) = implies(C, or(B, A))",
+            "fn_3(A) = fn_0(A, axiom(A))",
+            "fn_4(A, B, C) = ifeq(C, true, fn_0(B, theorem(A)), true)",
+            "fn_5(A, B) = theorem(implies(B, A))",
+            "fn_6(A, B, C) = fn_2(implies(A, C), B, fn_2(C, B, A))",
+            "fn_7(A, B) = fn_4(A, B, fn_5(B, A))",
+            "fn_8(A, B) = fn_2(not(not(A)), B, or(B, A))",
+            "fn_9(A, B) = fn_0(or(B, not(A)), fn_5(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_2(A, B, C) = implies(C, or(B, A))",
+            "fn_3(A) = ifeq(axiom(A), true, theorem(A), true)",
+            "fn_4(A, B, C) = ifeq(C, true, ifeq(theorem(A), true, theorem(B), true), true)",
+            "fn_5(A, B) = theorem(implies(B, A))",
+            "fn_6(A, B, C) = implies(implies(A, or(B, C)), or(B, implies(A, C)))",
+            "fn_7(A, B) = ifeq(theorem(implies(A, B)), true, ifeq(theorem(A), true, theorem(B), true), true)",
+            "fn_8(A, B) = implies(or(B, A), or(B, not(not(A))))",
+            "fn_9(A, B) = ifeq(theorem(implies(A, B)), true, theorem(or(B, not(A))), true)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 2.327549,
+        "hints_time_sys": 0.058814,
+        "hints_time": 2.386363
+    },
+    {
+        "problem": "LCL218-10",
+        "mean_base_user_time": 0.6401794687499999,
+        "min_base_user_time": 0.627987,
+        "min_base_dir": "20250627_193530_LCL_7178502_378",
+        "abstractions": [
+            "fn_0(A, B, C) = or(not(or(B, A)), C)",
+            "fn_1(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_2(A, B, C, D) = fn_1(D(A), theorem(fn_0(C, B, A)))",
+            "fn_3(A, B, C) = fn_1(B(C(A)), theorem(C(B(A))))",
+            "fn_4(A, B, C) = ifeq(theorem(C), true, fn_1(B, A), true)",
+            "fn_5(A, B) = or(not(A), B)",
+            "fn_6(A, B) = fn_0(not(or(B, A)))",
+            "fn_7(A, B, C, D) = fn_4(axiom(D(C, or(B, C))), D(C, A), fn_0(C, B, A))",
+            "fn_8(A, B) = fn_0(B, A, or(B, A))",
+            "fn_9(A, B, C) = fn_5(fn_0(C, B, A), fn_5(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = or(not(or(B, A)), C)",
+            "fn_1(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_4(A, B, C) = ifeq(theorem(C), true, ifeq(A, true, theorem(B), true), true)",
+            "fn_5(A, B) = or(not(A), B)",
+            "fn_8(A, B) = or(not(or(A, B)), or(B, A))",
+            "fn_9(A, B, C) = or(not(or(not(or(B, C)), A)), or(not(B), A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 0.874039,
+        "hints_time_sys": 0.020843999999999998,
+        "hints_time": 0.894883
+    },
+    {
+        "problem": "LCL220-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL225-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL250-10",
+        "mean_base_user_time": 131.55339728124997,
+        "min_base_user_time": 114.14261599999999,
+        "min_base_dir": "20250627_191331_LCL_7178451_330",
+        "abstractions": [
+            "fn_0(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_1(A, B) = ifeq(theorem(implies(A, B)), true, fn_0(B, theorem(A)), true)",
+            "fn_2(A, B, C) = implies(implies(B, C(A)), C(implies(B, A)))",
+            "fn_3(A, B, C) = implies(implies(C, A), implies(B(C), B(A)))",
+            "fn_4(A, B, C) = implies(C, or(B, A))",
+            "fn_5(A) = fn_0(A, axiom(A))",
+            "fn_6(A, B) = implies(implies(B, A), A)",
+            "fn_7(A, B) = ifeq(true, true, fn_0(B, theorem(A)), true)",
+            "fn_8(A, B, C) = fn_4(C, B, or(B, A))",
+            "fn_9(A, B) = theorem(implies(B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_1(A, B) = ifeq(theorem(implies(A, B)), true, ifeq(theorem(A), true, theorem(B), true), true)",
+            "fn_4(A, B, C) = implies(C, or(B, A))",
+            "fn_5(A) = ifeq(axiom(A), true, theorem(A), true)",
+            "fn_6(A, B) = implies(implies(B, A), A)",
+            "fn_7(A, B) = ifeq(true, true, ifeq(theorem(A), true, theorem(B), true), true)",
+            "fn_8(A, B, C) = implies(or(B, A), or(B, C))",
+            "fn_9(A, B) = theorem(implies(B, A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 264.300779,
+        "hints_time_sys": 0.763258,
+        "hints_time": 265.064037
+    },
+    {
+        "problem": "LCL265-10",
+        "mean_base_user_time": 3.7212404375000006,
+        "min_base_user_time": 3.533786,
+        "min_base_dir": "20250627_191206_LCL_7178445_324",
+        "abstractions": [
+            "fn_0(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_1(A, B) = ifeq(theorem(implies(A, B)), true, fn_0(B, theorem(A)), true)",
+            "fn_2(A, B, C) = implies(implies(B, C(A)), C(implies(B, A)))",
+            "fn_3(A) = fn_0(A, axiom(A))",
+            "fn_4(A) = not(not(A))",
+            "fn_5(A, B) = theorem(implies(B, A))",
+            "fn_6(A, B, C) = ifeq(C, true, fn_0(B, A), true)",
+            "fn_7(A, B, C) = implies(or(B, C), or(B, A))",
+            "fn_8(A, B) = implies(implies(A, fn_4(A)), B)",
+            "fn_9(A, B) = or(B, not(A))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B) = ifeq(B, true, theorem(A), true)",
+            "fn_1(A, B) = ifeq(theorem(implies(A, B)), true, ifeq(theorem(A), true, theorem(B), true), true)",
+            "fn_3(A) = ifeq(axiom(A), true, theorem(A), true)",
+            "fn_4(A) = not(not(A))",
+            "fn_5(A, B) = theorem(implies(B, A))",
+            "fn_6(A, B, C) = ifeq(C, true, ifeq(A, true, theorem(B), true), true)",
+            "fn_7(A, B, C) = implies(or(B, C), or(B, A))",
+            "fn_8(A, B) = implies(implies(A, not(not(A))), B)",
+            "fn_9(A, B) = or(B, not(A))"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 14.277592,
+        "hints_time_sys": 0.132304,
+        "hints_time": 14.409896
+    },
+    {
+        "problem": "LCL270-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL282-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL306-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL316-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL330-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL339-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL348-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL375-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL395-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL416-10",
+        "mean_base_user_time": 2.973539562499999,
+        "min_base_user_time": 2.80552,
+        "min_base_dir": "20250627_192413_LCL_7178465_344",
+        "abstractions": [
+            "fn_0(A, B, C) = equivalent(equivalent(C, A), equivalent(B, A))",
+            "fn_1(A, B, C) = equivalent(fn_0(C, A, B), A)",
+            "fn_2(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_3(A, B, C) = equivalent(B, fn_1(C, B, A))",
+            "fn_4(A, B, C) = equivalent(fn_0(B, A, A), C)",
+            "fn_5(A, B, D) = fn_2(fn_0(D, A, equivalent(B, A)), is_a_theorem(fn_1(fn_0(D, A, equivalent(B, A)), B, A)))",
+            "fn_6(A, B, C) = ifeq(C, true, fn_2(B, is_a_theorem(A)), true)",
+            "fn_7(A, B, D) = fn_6(equivalent(B(A), D), equivalent(A, D), is_a_theorem(fn_0(D, A, B(A))))",
+            "fn_8(A, B, D) = fn_2(fn_1(D, A, B), is_a_theorem(A))",
+            "fn_9(A, B, C) = C(A, is_a_theorem(equivalent(B, A)))"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C) = equivalent(equivalent(C, A), equivalent(B, A))",
+            "fn_1(A, B, C) = equivalent(equivalent(equivalent(B, C), equivalent(A, C)), A)",
+            "fn_2(A, B) = ifeq(B, true, is_a_theorem(A), true)",
+            "fn_3(A, B, C) = equivalent(B, equivalent(equivalent(equivalent(B, A), equivalent(C, A)), C))",
+            "fn_4(A, B, C) = equivalent(equivalent(equivalent(A, B), equivalent(A, B)), C)",
+            "fn_5(A, B, D) = ifeq(is_a_theorem(equivalent(equivalent(equivalent(B, A), equivalent(equivalent(equivalent(equivalent(B, A), D), equivalent(A, D)), A)), equivalent(equivalent(equivalent(B, A), D), equivalent(A, D)))), true, is_a_theorem(equivalent(equivalent(equivalent(B, A), D), equivalent(A, D))), true)",
+            "fn_6(A, B, C) = ifeq(C, true, ifeq(is_a_theorem(A), true, is_a_theorem(B), true), true)",
+            "fn_8(A, B, D) = ifeq(is_a_theorem(A), true, is_a_theorem(equivalent(equivalent(equivalent(A, B), equivalent(D, B)), D)), true)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 3.001848,
+        "hints_time_sys": 0.042790999999999996,
+        "hints_time": 3.0446389999999997
+    },
+    {
+        "problem": "LCL423-10",
+        "status": "base timeout"
+    },
+    {
+        "problem": "LCL443-10",
+        "mean_base_user_time": 0.03482253125,
+        "min_base_user_time": 0.029600000000000015,
+        "min_base_dir": "20250627_191131_LCL_7178443_322",
+        "abstractions": [
+            "fn_0(A, B, C, D) = c_in(D, c_PropLog_Othms(c_insert(C, B, tc_PropLog_Opl(A)), A), tc_PropLog_Opl(A))",
+            "fn_1(A, B, C, D, E) = ifeq(fn_0(D, C, B, E), true, fn_0(D, C, B, A), true)",
+            "fn_2 = c_in(c_PropLog_Opl_Oop_A_N_62(c_PropLog_Opl_Oop_A_N_62(v_p, v_q, t_a), c_PropLog_Opl_Ofalse, t_a), c_PropLog_Othms(v_H, t_a), tc_PropLog_Opl(t_a))",
+            "fn_3(A, B) = ifeq(B, true, A, true)",
+            "fn_4 = fn_0(t_a, v_H)",
+            "fn_5(A, B, C, D) = fn_1(D, c_PropLog_Opl_Oop_A_N_62(A, D, B), C, B, A)",
+            "fn_6(A, F) = fn_3(fn_4(F, A), c_in(A, c_PropLog_Othms(v_H, t_a), tc_PropLog_Opl(t_a)))",
+            "fn_7(A) = fn_4(c_PropLog_Opl_Oop_A_N_62(v_p, A, t_a))",
+            "fn_8(A) = fn_1(c_PropLog_Opl_Ofalse, A, v_H, t_a, v_q)",
+            "fn_9 = c_PropLog_Opl_Oop_A_N_62(v_q, c_PropLog_Opl_Ofalse, t_a)"
+        ],
+        "expanded_abstractions": [
+            "fn_0(A, B, C, D) = c_in(D, c_PropLog_Othms(c_insert(C, B, tc_PropLog_Opl(A)), A), tc_PropLog_Opl(A))",
+            "fn_1(A, B, C, D, E) = ifeq(c_in(E, c_PropLog_Othms(c_insert(B, C, tc_PropLog_Opl(D)), D), tc_PropLog_Opl(D)), true, c_in(A, c_PropLog_Othms(c_insert(B, C, tc_PropLog_Opl(D)), D), tc_PropLog_Opl(D)), true)",
+            "fn_2 = c_in(c_PropLog_Opl_Oop_A_N_62(c_PropLog_Opl_Oop_A_N_62(v_p, v_q, t_a), c_PropLog_Opl_Ofalse, t_a), c_PropLog_Othms(v_H, t_a), tc_PropLog_Opl(t_a))",
+            "fn_3(A, B) = ifeq(B, true, A, true)",
+            "fn_5(A, B, C, D) = ifeq(c_in(A, c_PropLog_Othms(c_insert(c_PropLog_Opl_Oop_A_N_62(A, D, B), C, tc_PropLog_Opl(B)), B), tc_PropLog_Opl(B)), true, c_in(D, c_PropLog_Othms(c_insert(c_PropLog_Opl_Oop_A_N_62(A, D, B), C, tc_PropLog_Opl(B)), B), tc_PropLog_Opl(B)), true)",
+            "fn_8(A) = ifeq(c_in(v_q, c_PropLog_Othms(c_insert(A, v_H, tc_PropLog_Opl(t_a)), t_a), tc_PropLog_Opl(t_a)), true, c_in(c_PropLog_Opl_Ofalse, c_PropLog_Othms(c_insert(A, v_H, tc_PropLog_Opl(t_a)), t_a), tc_PropLog_Opl(t_a)), true)",
+            "fn_9 = c_PropLog_Opl_Oop_A_N_62(v_q, c_PropLog_Opl_Ofalse, t_a)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 7.781777,
+        "hints_time_sys": 0.06663,
+        "hints_time": 7.848407
+    },
+    {
+        "problem": "LCL890-10",
+        "mean_base_user_time": 161.64694846875003,
+        "min_base_user_time": 142.726502,
+        "min_base_dir": "20250627_193310_LCL_7178490_366",
+        "status": "error",
+        "error": "pop from empty list"
+    },
+    {
+        "problem": "LCL927-10",
+        "mean_base_user_time": 6.895383281250002,
+        "min_base_user_time": 4.127263,
+        "min_base_dir": "20250627_192940_LCL_7178477_356",
+        "abstractions": [
+            "fn_0(A, B, C, D, E) = E(p(i(i(D, C), i(B, A))), true)",
+            "fn_1(A, B, C) = i(i(B, A), C)",
+            "fn_2(A, B, C) = C(p(i(B, A)), true)",
+            "fn_3(A, B) = ifeq(true, true, A, B)",
+            "fn_4(A, B, C, D, E, F) = fn_0(E, D, F, C, fn_0(E, D, i(C, A), B(A), ifeq))",
+            "fn_5(A) = i(A, A)",
+            "fn_6(A, B) = fn_1(A, B, A)",
+            "fn_7(A, B, C, D) = fn_0(fn_1(C, B, A), A, D(fn_1(C, B, A)), fn_1(C, B, A))",
+            "fn_8(A, B, C, D) = fn_2(D, C, fn_0(D, C, B, A, ifeq))",
+            "fn_9(A, B, C, D) = D(A, fn_1(C, B, A))"
+        ],
+        "expanded_abstractions": [
+            "fn_1(A, B, C) = i(i(B, A), C)",
+            "fn_3(A, B) = ifeq(true, true, A, B)",
+            "fn_5(A) = i(A, A)",
+            "fn_6(A, B) = i(i(B, A), A)"
+        ],
+        "hints_status": "success",
+        "hints_steps": -1,
+        "hints_time_user": 8.330107,
+        "hints_time_sys": 0.10055499999999999,
+        "hints_time": 8.430662
+    }
+]

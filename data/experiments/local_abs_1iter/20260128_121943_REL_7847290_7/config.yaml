@@ -1,0 +1,14 @@
+extraction:
+  onlyPeakTerms: false
+  onlyProofTerms: true
+stitch:
+  iterations: 1
+  max_arity: 5
+twee:
+  flags:
+  - --all-lemmas
+  - --show-peaks
+  - --hint-skel-factor 0.5
+  - --hint-skel-cost 0
+  - --no-flatten-goal
+  timeout: 1000
