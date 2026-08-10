@@ -22,6 +22,8 @@ domain**.
   `TPTP_ROOT` is needed to resolve TPTP axiom includes.
 - A **`twee` executable with abstraction support** (the `--hint-skel-*` flags
   used by the configs below).
+- *(optional, for the babble backend)* a **Rust toolchain**, to build
+  [babble](https://github.com/dcao/babble) from source — see below.
 
 ### Install
 
@@ -37,11 +39,85 @@ Create a `.env` file in the repo root:
 TPTP_ROOT=<path to your TPTP root>
 TWEE_PATH=<path to your twee executable>
 LOG_DIR=<directory for full logs and raw twee/TPTP output>
+BABBLE_ROOT=<path to your babble checkout>   # only for the babble backend
 ```
 
 `LOG_DIR` receives the bulky per-problem artifacts (twee output, TPTP files with
 hints added). Result summaries go under the `--output_dir` you pass on the
 command line.
+
+### Optional: the babble compression backend
+
+Abstractions are learned with [Stitch](https://github.com/mlb2251/stitch) by
+default, which installs from `requirements.txt` like any other Python package.
+[babble](https://github.com/dcao/babble) is an alternative backend, built from
+source:
+
+```bash
+git clone https://github.com/dcao/babble.git third_party/babble
+cd third_party/babble && cargo build --release --bin=fof
+```
+
+Four local patches are needed and are **not** upstream, so they must be
+reapplied on a fresh clone:
+
+1. `src/ast_node/expr.rs` — replace `Self(node)` with `Expr(node)` inside the
+   nested `build` function. Newer rustc rejects referencing `Self` from an
+   inner item (`E0401`); babble predates that becoming a hard error.
+2. `src/bin/fof/main.rs` — a new binary, copied from `src/bin/list/main.rs`.
+   It reuses the `list` binary's `ListOp` language (whose `Ident` catch-all
+   accepts arbitrary function symbols) but prints the learned expression as a
+   raw single-line s-expression instead of via babble's `Pretty` formatter,
+   which sugars away the `@` applications and de Bruijn indices that the
+   back-translation needs.
+3. `src/extract/beam.rs` — `LibExtractor::best` falls back to a plain
+   size-based extraction instead of panicking. Its memo caches a provisional
+   `None` while breaking cycles, so a class can end up recorded as
+   unextractable when it is not. Any rewrite that puts an e-class inside
+   itself reaches this, which the axiom theories below routinely do.
+4. `src/experiments/beam_experiment.rs` — a `dsr_node_limit` on the rewrite
+   saturation runner, which previously had no node limit at all (unlike the
+   lib-learning runner beneath it).
+
+Then point `BABBLE_ROOT` at the checkout. Smoke-test with `python run_babble.py`,
+and run `python src/babble/test_translation.py` for the translation tests (which
+need neither the binary nor `BABBLE_ROOT`).
+
+Note that babble writes `target/rec_expr` relative to the working directory and
+unwraps the result, so it must be run from `BABBLE_ROOT` — `run_babble` does this.
+
+#### Compressing modulo a theory
+
+babble's distinguishing feature is that it takes an equational theory and
+compresses modulo it, so it can share structure between subterms that are equal
+under the axioms but not syntactically identical. `src/babble/theory.py` builds
+that theory from a TPTP problem's own axioms:
+
+```bash
+python run_babble.py data/TPTP/LAT_UEQ_UNSAT/LAT005-10.p
+```
+
+To see what this buys, `compare_engines.py` runs Stitch, babble, and babble
+with the theory over corpora whose terms are rearrangements of each other under
+the associativity and commutativity of `add`:
+
+```bash
+python compare_engines.py            # constructed examples, a few seconds
+python compare_engines.py --real     # also a real twee proof, ~45s
+```
+
+The middle configuration is the point: without it you cannot tell whether a
+difference came from switching engines or from adding the theory.
+
+TPTP equations are symmetric but babble's rules are directed, so each axiom
+yields up to two rules, and a direction is dropped when egg could not use it or
+when it would make the e-graph pathological. `directed_rules` documents the four
+conditions. The most consequential is the last: rules that collapse a term to
+one of its own subterms (absorption, idempotence, the identity laws) are
+excluded by default, because together with associativity and commutativity they
+send the e-matcher into a search that egg cannot interrupt — a 40-term corpus
+goes from ten seconds to not finishing in two minutes. Pass
+`include_collapsing=True` to get them back.
 
 ## Running experiments
 

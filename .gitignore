@@ -2,8 +2,11 @@
 # Project-specific
 # ---------------------------------------------------------------------------
 
-# Local environment configuration (TPTP_ROOT, LOG_DIR, TWEE_PATH)
+# Local environment configuration (TPTP_ROOT, LOG_DIR, TWEE_PATH, BABBLE_ROOT)
 .env
+
+# External tools built from source (babble; see README "Prerequisites")
+third_party/
 
 # Cluster job output
 slurm*.out
