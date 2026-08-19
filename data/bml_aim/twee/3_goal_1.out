@@ -1,0 +1,3833 @@
+Here is the input problem:
+  Axiom 1 (flattening): T3 = T(x0, x1).
+  Axiom 2 (flattening): T2 = T(x0, x2).
+  Axiom 3 (sos): op(X, zero) = X.
+  Axiom 4 (sos): op(zero, X) = X.
+  Axiom 5 (sos): rdiv(op(X, Y), Y) = X.
+  Axiom 6 (sos): ldiv(X, op(X, Y)) = Y.
+  Axiom 7 (sos): T(X, Y) = ldiv(Y, op(X, Y)).
+  Axiom 8 (sos): K(X, K(Y, Z)) = 1.
+  Axiom 9 (sos): K(K(X, Y), Z) = 1.
+  Axiom 10 (flattening): T5 = T(T(x0, x1), x2).
+  Axiom 11 (flattening): T4 = T(T(x0, x2), x1).
+  Axiom 12 (sos): op(X, ldiv(X, Y)) = Y.
+  Axiom 13 (sos): op(rdiv(X, Y), Y) = X.
+  Axiom 14 (sos): K(X, a(Y, Z, W)) = 1.
+  Axiom 15 (sos): K(a(X, Y, Z), W) = 1.
+  Axiom 16 (sos): a(X, Y, K(Z, W)) = 1.
+  Axiom 17 (sos): a(X, K(Y, Z), W) = 1.
+  Axiom 18 (sos): a(K(X, Y), Z, W) = 1.
+  Axiom 19 (sos): a(X, Y, a(Z, W, V)) = 1.
+  Axiom 20 (sos): a(X, a(Y, Z, W), V) = 1.
+  Axiom 21 (sos): a(a(X, Y, Z), W, V) = 1.
+  Axiom 22 (sos): op(X, Y) = op(op(Y, X), K(X, Y)).
+  Axiom 23 (sos): R(X, Y, Z) = rdiv(op(op(X, Y), Z), op(Y, Z)).
+  Axiom 24 (sos): L(X, Y, Z) = ldiv(op(Z, Y), op(Z, op(Y, X))).
+  Axiom 25 (sos): op(op(X, Y), Z) = op(op(X, op(Y, Z)), a(X, Y, Z)).
+  Goal 1 (goals): T(T(x0, x1), x2) = T(T(x0, x2), x1).
+
+(13.0) 1. T(x0, x1) -> T3
+(13.0) 2. T(x0, x2) -> T2
+(12.285714) 3. op(X, zero) -> X
+(12.285714) 4. op(zero, X) -> X
+(19.142859) 5. rdiv(op(X, Y), Y) -> X
+(19.142859) 6. ldiv(X, op(X, Y)) -> Y
+(21.000002) 7. ldiv(X, op(Y, X)) -> T(Y, X)
+(19.285715) 8. K(X, K(Y, Z)) -> 1
+(19.285715) 9. K(K(X, Y), Z) -> 1
+(13.0) 10. T(T3, x2) -> T5
+(13.0) 11. T(T2, x1) -> T4
+(19.142859) 12. op(X, ldiv(X, Y)) -> Y
+(19.142859) 13. op(rdiv(X, Y), Y) -> X
+(22.714287) 14. K(X, a(Y, Z, W)) -> 1
+(22.714287) 15. K(a(X, Y, Z), W) -> 1
+(22.714287) 16. a(X, Y, K(Z, W)) -> 1
+(22.714287) 17. a(X, K(Y, Z), W) -> 1
+(22.714287) 18. a(K(X, Y), Z, W) -> 1
+(26.142859) 19. a(X, Y, a(Z, W, V)) -> 1
+(26.142859) 20. a(X, a(Y, Z, W), V) -> 1
+(26.142859) 21. a(a(X, Y, Z), W, V) -> 1
+(28.428574) 22. op(op(X, Y), K(Y, X)) -> op(Y, X)
+(36.714287) 23. rdiv(op(op(X, Y), Z), op(Y, Z)) -> R(X, Y, Z)
+(36.714287) 24. ldiv(op(X, Y), op(X, op(Y, Z))) -> L(Z, Y, X)
+(41.142853) 25. op(op(X, op(Y, Z)), a(X, Y, Z)) -> op(op(X, Y), Z)
+(13.714287) 26. T(X, X) -> X
+(13.857143) 27. rdiv(X, X) -> zero
+(13.857143) 28. ldiv(X, X) -> zero
+(14.285714) 29. rdiv(X, zero) -> X
+(14.285714) 30. ldiv(zero, X) -> X
+(14.428572) 31. K(X, 1) -> 1
+(14.428572) 32. K(1, X) -> 1
+(14.428572) 33. T(zero, X) -> zero
+(14.285714) 34. T(X, zero) -> X
+(17.714287) 35. R(X, Y, zero) -> X
+(17.714287) 36. R(X, zero, Y) -> X
+(17.714287) 37. L(X, zero, Y) -> X
+(17.714287) 38. L(X, Y, zero) -> X
+(17.857143) 39. a(X, Y, 1) -> 1
+(17.857143) 40. a(X, 1, Y) -> 1
+(17.857143) 41. a(1, X, Y) -> 1
+(21.142859) 42. rdiv(X, ldiv(Y, X)) -> Y
+(21.142859) 43. ldiv(rdiv(X, Y), X) -> Y
+(21.714287) 44. op(X, K(zero, X)) -> X
+(16.428572) 45. K(zero, X) -> zero
+(11.0) 46. 1 -> zero
+(18.428572) 47. K(X, zero) -> zero
+(21.857143) 48. a(X, Y, zero) -> zero
+(21.857143) 49. a(X, zero, Y) -> zero
+(21.857143) 50. a(zero, X, Y) -> zero
+(23.000002) 51. op(X, T(Y, X)) -> op(Y, X)
+(19.0) 52. op(x0, x1) -> op(x1, T3)
+(19.0) 53. op(x0, x2) -> op(x2, T2)
+(19.0) 54. op(x2, T5) -> op(T3, x2)
+(19.0) 55. op(x1, T4) -> op(T2, x1)
+(23.000002) 56. T(rdiv(X, Y), Y) -> ldiv(Y, X)
+(23.857143) 57. T(X, op(X, X)) -> L(X, X, X)
+(17.857143) 58. R(zero, X, Y) -> zero
+(17.857143) 59. L(zero, X, Y) -> zero
+(24.857143) 60. T(X, ldiv(X, Y)) = ldiv(ldiv(X, Y), Y)
+(27.0) 61. rdiv(op(x1, T3), x1) -> x0
+(27.0) 62. ldiv(x0, op(x1, T3)) -> x1
+(27.0) 63. rdiv(op(x2, T2), x2) -> x0
+(27.0) 64. ldiv(x0, op(x2, T2)) -> x2
+(27.0) 65. rdiv(op(T3, x2), T5) -> x2
+(27.0) 66. rdiv(op(T2, x1), T4) -> x1
+(29.0) 67. ldiv(T5, op(T3, x2)) -> T(x2, T5)
+(29.0) 68. ldiv(T4, op(T2, x1)) -> T(x1, T4)
+(30.428574) 69. rdiv(op(X, Y), K(X, Y)) -> op(Y, X)
+(26.857143) 70. op(K(X, Y), Z) = op(Z, K(X, Y))
+(25.142859) 71. T(X, K(Y, Z)) -> X
+(27.000002) 72. T(K(X, Y), Z) -> K(X, Y)
+(30.428574) 73. ldiv(op(X, Y), op(Y, X)) -> K(Y, X)
+(15.857143) 74. K(X, X) -> zero
+(30.57143) 75. rdiv(op(X, Y), T(X, Y)) -> Y
+(30.857143) 76. ldiv(K(X, Y), Z) -> rdiv(Z, K(X, Y))
+(31.142859) 77. op(a(X, Y, Z), W) = op(W, a(X, Y, Z))
+(28.57143) 78. T(X, a(Y, Z, W)) -> X
+(31.285715) 79. T(a(X, Y, Z), W) -> a(X, Y, Z)
+(32.285713) 80. op(X, K(ldiv(Y, X), Y)) -> op(ldiv(Y, X), Y)
+(27.57143) 81. op(ldiv(X, zero), X) -> K(ldiv(X, zero), X)
+(29.57143) 82. op(X, rdiv(zero, X)) -> K(X, rdiv(zero, X))
+(32.285713) 83. op(X, K(Y, rdiv(X, Y))) -> op(Y, rdiv(X, Y))
+(31.142859) 84. op(K(X, Y), rdiv(Z, K(X, Y))) -> Z
+(30.428574) 85. op(K(X, Y), op(Y, X)) -> op(X, Y)
+(32.428574) 86. rdiv(X, T(Y, ldiv(Y, X))) -> ldiv(Y, X)
+(32.428574) 87. rdiv(op(X, Y), op(Y, X)) -> K(X, Y)
+(32.428574) 88. op(op(X, K(Y, X)), Y) -> op(Y, X)
+(28.857143) 89. op(X, K(Y, X)) = rdiv(op(Y, X), Y)
+(30.857143) 90. op(K(X, Y), Y) = rdiv(op(X, Y), X)
+(33.14286) 91. R(rdiv(X, Y), Y, Z) = rdiv(op(X, Z), op(Y, Z))
+(30.857143) 92. R(rdiv(zero, X), X, Y) = rdiv(Y, op(X, Y))
+(33.14286) 93. L(ldiv(X, Y), X, Z) = ldiv(op(Z, X), op(Z, Y))
+(30.285715) 94. L(T(X, Y), Y, X) -> T(X, op(X, Y))
+(30.0) 95. T(x0, op(x1, T3)) -> L(T3, x1, x0)
+(30.0) 96. T(x0, op(x2, T2)) -> L(T2, x2, x0)
+(30.0) 97. T(T3, op(T3, x2)) -> L(T5, x2, T3)
+(30.0) 98. T(T2, op(T2, x1)) -> L(T4, x1, T2)
+(30.857143) 99. L(ldiv(X, zero), X, Y) = ldiv(op(Y, X), Y)
+(33.0) 100. L(K(X, Y), Z, K(X, Y)) -> K(X, Y)
+(33.14286) 101. rdiv(op(K(X, Y), Z), K(X, Y)) -> Z
+(33.714287) 102. ldiv(ldiv(X, zero), K(ldiv(X, zero), X)) -> X
+(34.285713) 103. ldiv(T(X, Y), op(X, Y)) -> T(Y, T(X, Y))
+(34.285713) 104. rdiv(X, K(Y, ldiv(Y, X))) -> op(ldiv(Y, X), Y)
+(34.285713) 105. rdiv(X, K(rdiv(X, Y), Y)) -> op(Y, rdiv(X, Y))
+(34.285713) 106. ldiv(X, op(ldiv(Y, X), Y)) -> K(ldiv(Y, X), Y)
+(34.285713) 107. ldiv(op(ldiv(X, Y), X), Y) -> K(X, ldiv(X, Y))
+(34.285713) 108. ldiv(X, op(Y, rdiv(X, Y))) -> K(Y, rdiv(X, Y))
+(34.285713) 109. ldiv(op(X, rdiv(Y, X)), Y) -> K(rdiv(Y, X), X)
+(34.428574) 110. rdiv(op(X, K(Y, Z)), X) -> K(Y, Z)
+(33.0) 111. R(K(X, Y), Z, K(X, Y)) -> K(X, Y)
+(34.428574) 112. rdiv(X, rdiv(X, K(Y, Z))) -> K(Y, Z)
+(34.57143) 113. op(a(X, Y, Z), rdiv(W, a(X, Y, Z))) -> W
+(33.14286) 114. ldiv(a(X, Y, Z), W) -> rdiv(W, a(X, Y, Z))
+(34.57143) 115. T(op(X, K(Y, X)), Y) -> X
+(35.0) 116. rdiv(op(T3, x2), T(x2, T5)) -> T5
+(35.0) 117. rdiv(op(T2, x1), T(x1, T4)) -> T4
+(35.14286) 118. rdiv(K(ldiv(X, zero), X), X) -> ldiv(X, zero)
+(35.714287) 119. op(R(X, Y, Z), op(Y, Z)) -> op(op(X, Y), Z)
+(35.714287) 120. op(op(X, Y), L(Z, Y, X)) -> op(X, op(Y, Z))
+(35.714287) 121. rdiv(K(X, rdiv(zero, X)), rdiv(zero, X)) -> X
+(36.285713) 122. rdiv(op(ldiv(X, Y), X), Y) -> K(ldiv(X, Y), X)
+(36.285713) 123. rdiv(op(X, rdiv(Y, X)), Y) -> K(X, rdiv(Y, X))
+(36.285713) 124. rdiv(X, op(ldiv(Y, X), Y)) -> K(Y, ldiv(Y, X))
+(36.285713) 125. rdiv(X, op(Y, rdiv(X, Y))) -> K(rdiv(X, Y), Y)
+(36.428574) 126. ldiv(X, rdiv(op(Y, X), Y)) -> K(Y, X)
+(25.0) 127. K(x2, T5) -> ldiv(T5, T3)
+(25.0) 128. K(x1, T4) -> ldiv(T4, T2)
+(25.0) 129. K(x1, T3) -> ldiv(T3, x0)
+(25.0) 130. K(x2, T2) -> ldiv(T2, x0)
+(32.285713) 131. T(X, ldiv(T5, T3)) -> X
+(29.0) 132. ldiv(T5, T3) -> rdiv(T3, T5)
+(32.285713) 133. T(X, ldiv(T4, T2)) -> X
+(29.0) 134. ldiv(T4, T2) -> rdiv(T2, T4)
+(32.285713) 135. T(X, ldiv(T3, x0)) -> X
+(29.0) 136. ldiv(T3, x0) -> rdiv(x0, T3)
+(32.285713) 137. T(X, ldiv(T2, x0)) -> X
+(29.0) 138. ldiv(T2, x0) -> rdiv(x0, T2)
+(32.428574) 139. K(X, rdiv(T3, T5)) -> zero
+(32.428574) 140. K(rdiv(T3, T5), X) -> zero
+(32.428574) 141. K(X, rdiv(T2, T4)) -> zero
+(32.428574) 142. K(rdiv(T2, T4), X) -> zero
+(32.428574) 143. K(X, rdiv(x0, T3)) -> zero
+(32.428574) 144. K(rdiv(x0, T3), X) -> zero
+(32.428574) 145. K(X, rdiv(x0, T2)) -> zero
+(32.428574) 146. K(rdiv(x0, T2), X) -> zero
+(32.857143) 147. K(X, T(Y, X)) = ldiv(T(Y, X), Y)
+(34.285713) 148. T(X, rdiv(T3, T5)) -> X
+(34.285713) 149. T(X, rdiv(T2, T4)) -> X
+(34.285713) 150. T(X, rdiv(x0, T3)) -> X
+(34.285713) 151. T(X, rdiv(x0, T2)) -> X
+(34.428574) 152. T(rdiv(T3, T5), X) -> rdiv(T3, T5)
+(34.428574) 153. T(rdiv(T2, T4), X) -> rdiv(T2, T4)
+(34.428574) 154. T(rdiv(x0, T3), X) -> rdiv(x0, T3)
+(34.428574) 155. T(rdiv(x0, T2), X) -> rdiv(x0, T2)
+(34.857143) 156. ldiv(T(X, Y), X) -> rdiv(X, T(X, Y))
+(35.0) 157. op(T5, rdiv(T3, T5)) -> T3
+(35.0) 158. op(T4, rdiv(T2, T4)) -> T2
+(35.0) 159. op(T3, rdiv(x0, T3)) -> x0
+(35.0) 160. op(T2, rdiv(x0, T2)) -> x0
+(35.857143) 161. a(X, Y, rdiv(T3, T5)) -> zero
+(35.857143) 162. a(X, rdiv(T3, T5), Y) -> zero
+(35.857143) 163. a(rdiv(T3, T5), X, Y) -> zero
+(35.857143) 164. a(X, Y, rdiv(T2, T4)) -> zero
+(35.857143) 165. a(X, rdiv(T2, T4), Y) -> zero
+(35.857143) 166. a(rdiv(T2, T4), X, Y) -> zero
+(35.857143) 167. a(X, Y, rdiv(x0, T3)) -> zero
+(35.857143) 168. a(X, rdiv(x0, T3), Y) -> zero
+(35.857143) 169. a(rdiv(x0, T3), X, Y) -> zero
+(35.857143) 170. a(X, Y, rdiv(x0, T2)) -> zero
+(35.857143) 171. a(X, rdiv(x0, T2), Y) -> zero
+(35.857143) 172. a(rdiv(x0, T2), X, Y) -> zero
+(36.285713) 173. ldiv(X, R(X, X, X)) -> K(op(X, X), X)
+(36.285713) 174. op(X, rdiv(T3, T5)) = op(rdiv(T3, T5), X)
+(36.285713) 175. ldiv(rdiv(T3, T5), X) -> rdiv(X, rdiv(T3, T5))
+(35.0) 176. rdiv(T3, rdiv(T3, T5)) -> T5
+(36.285713) 177. op(X, rdiv(T2, T4)) = op(rdiv(T2, T4), X)
+(36.285713) 178. ldiv(rdiv(T2, T4), X) -> rdiv(X, rdiv(T2, T4))
+(35.0) 179. rdiv(T2, rdiv(T2, T4)) -> T4
+(36.285713) 180. op(X, rdiv(x0, T3)) = op(rdiv(x0, T3), X)
+(36.285713) 181. ldiv(rdiv(x0, T3), X) -> rdiv(X, rdiv(x0, T3))
+(35.0) 182. rdiv(x0, rdiv(x0, T3)) -> T3
+(36.285713) 183. op(X, rdiv(x0, T2)) = op(rdiv(x0, T2), X)
+(36.285713) 184. ldiv(rdiv(x0, T2), X) -> rdiv(X, rdiv(x0, T2))
+(35.0) 185. rdiv(x0, rdiv(x0, T2)) -> T2
+(36.428574) 186. rdiv(rdiv(op(X, Y), X), Y) -> K(X, Y)
+(32.857143) 187. K(X, T(Y, X)) = rdiv(Y, T(Y, X))
+(36.285713) 188. rdiv(R(X, X, X), X) -> K(op(X, X), X)
+(36.57143) 189. rdiv(op(a(X, Y, Z), W), a(X, Y, Z)) -> W
+(36.714287) 190. ldiv(ldiv(ldiv(X, Y), Y), Y) = T(ldiv(X, Y), T(X, ldiv(X, Y)))
+(37.0) 191. op(K(x1, x0), op(x1, T3)) -> op(x1, x0)
+(37.0) 192. op(K(x2, x0), op(x2, T2)) -> op(x2, x0)
+(37.0) 193. op(K(T5, x2), op(T3, x2)) -> op(T5, x2)
+(37.0) 194. op(K(T4, x1), op(T2, x1)) -> op(T4, x1)
+(37.0) 195. rdiv(op(x1, T3), K(x0, x1)) -> op(x1, x0)
+(37.0) 196. rdiv(op(x2, T2), K(x0, x2)) -> op(x2, x0)
+(37.0) 197. rdiv(op(T3, x2), rdiv(T3, T5)) -> op(T5, x2)
+(37.0) 198. rdiv(op(T2, x1), rdiv(T2, T4)) -> op(T4, x1)
+(33.0) 199. L(rdiv(x0, T3), T3, x1) -> K(x1, x0)
+(33.0) 200. L(ldiv(x0, T3), x0, x1) -> K(x0, x1)
+(33.0) 201. L(rdiv(x0, T2), T2, x2) -> K(x2, x0)
+(33.0) 202. L(ldiv(x0, T2), x0, x2) -> K(x0, x2)
+(37.0) 203. ldiv(op(T3, x2), op(T5, x2)) -> K(T5, x2)
+(37.0) 204. ldiv(op(T5, x2), op(T3, x2)) -> rdiv(T3, T5)
+(37.0) 205. ldiv(op(T2, x1), op(T4, x1)) -> K(T4, x1)
+(37.0) 206. ldiv(op(T4, x1), op(T2, x1)) -> rdiv(T2, T4)
+(37.0) 207. ldiv(X, K(ldiv(X, zero), X)) -> T(ldiv(X, zero), X)
+(37.0) 208. rdiv(op(x1, T3), op(x1, x0)) -> K(x0, x1)
+(37.0) 209. rdiv(op(x1, x0), op(x1, T3)) -> K(x1, x0)
+(37.0) 210. rdiv(op(x2, T2), op(x2, x0)) -> K(x0, x2)
+(37.0) 211. rdiv(op(x2, x0), op(x2, T2)) -> K(x2, x0)
+(33.0) 212. R(rdiv(T3, T5), T5, x2) -> rdiv(T3, T5)
+(33.0) 213. R(rdiv(T5, T3), T3, x2) -> K(T5, x2)
+(33.0) 214. R(rdiv(T2, T4), T4, x1) -> rdiv(T2, T4)
+(33.0) 215. R(rdiv(T4, T2), T2, x1) -> K(T4, x1)
+(37.14286) 216. ldiv(X, K(X, rdiv(zero, X))) -> rdiv(zero, X)
+(37.14286) 217. K(X, rdiv(op(X, Y), X)) = L(K(X, Y), Y, X)
+(35.0) 218. L(rdiv(T3, T5), T5, x2) -> K(x2, T3)
+(35.0) 219. L(rdiv(T2, T4), T4, x1) -> K(x1, T2)
+(37.285713) 220. op(X, K(op(X, X), X)) -> R(X, X, X)
+(37.285713) 221. L(a(X, Y, Z), W, a(X, Y, Z)) -> a(X, Y, Z)
+(37.571426) 222. rdiv(zero, K(ldiv(X, zero), X)) -> K(X, ldiv(X, zero))
+(37.714287) 223. R(rdiv(rdiv(X, Y), Z), Z, Y) -> rdiv(X, op(Z, Y))
+(34.428574) 224. R(K(X, Y), Y, X) -> K(X, Y)
+(37.714287) 225. L(ldiv(X, ldiv(Y, Z)), X, Y) -> ldiv(op(Y, X), Z)
+(37.857143) 226. rdiv(X, op(ldiv(Y, zero), X)) = R(Y, ldiv(Y, zero), X)
+(37.857143) 227. rdiv(X, K(ldiv(X, zero), X)) -> R(X, ldiv(X, zero), X)
+(37.857143) 228. ldiv(op(X, rdiv(zero, Y)), X) = L(Y, rdiv(zero, Y), X)
+(38.0) 229. T(X, L(K(Y, Z), Z, Y)) -> X
+(38.14286) 230. op(op(X, K(Y, Z)), W) -> op(K(Y, Z), op(X, W))
+(38.14286) 231. op(K(X, Y), op(Z, W)) = op(Z, op(W, K(X, Y)))
+(32.428574) 232. L(K(X, Y), Z, W) -> K(X, Y)
+(36.428574) 233. op(X, op(Y, K(Y, X))) -> op(Y, X)
+(31.000002) 234. op(X, K(X, Y)) -> T(X, Y)
+(33.0) 235. ldiv(X, T(X, Y)) -> K(X, Y)
+(29.0) 236. K(x0, x1) -> ldiv(x0, T3)
+(29.0) 237. K(x0, x2) -> ldiv(x0, T2)
+(29.0) 238. K(T3, x2) -> ldiv(T3, T5)
+(29.0) 239. K(T2, x1) -> ldiv(T2, T4)
+(33.0) 240. op(K(X, Y), X) -> T(X, Y)
+(33.0) 241. rdiv(T(X, Y), X) -> K(X, Y)
+(29.0) 242. K(x0, x1) -> rdiv(T3, x0)
+(29.0) 243. K(x0, x2) -> rdiv(T2, x0)
+(29.0) 244. K(T3, x2) -> rdiv(T5, T3)
+(29.0) 245. K(T2, x1) -> rdiv(T4, T2)
+(31.0) 246. ldiv(x0, T3) -> rdiv(T3, x0)
+(31.0) 247. ldiv(x0, T2) -> rdiv(T2, x0)
+(31.0) 248. ldiv(T3, T5) -> rdiv(T5, T3)
+(31.0) 249. ldiv(T2, T4) -> rdiv(T4, T2)
+(35.0) 250. op(x2, rdiv(T3, T5)) -> T(x2, T5)
+(35.0) 251. op(x1, rdiv(T2, T4)) -> T(x1, T4)
+(35.0) 252. op(x1, rdiv(x0, T3)) -> T(x1, T3)
+(35.0) 253. op(x2, rdiv(x0, T2)) -> T(x2, T2)
+(36.285713) 254. T(X, rdiv(T3, x0)) -> X
+(36.285713) 255. T(X, rdiv(T2, x0)) -> X
+(36.285713) 256. T(X, rdiv(T5, T3)) -> X
+(36.285713) 257. T(X, rdiv(T4, T2)) -> X
+(36.428574) 258. K(X, rdiv(T3, x0)) -> zero
+(36.428574) 259. K(rdiv(T3, x0), X) -> zero
+(36.428574) 260. K(X, rdiv(T2, x0)) -> zero
+(36.428574) 261. K(rdiv(T2, x0), X) -> zero
+(36.428574) 262. K(X, rdiv(T5, T3)) -> zero
+(36.428574) 263. K(rdiv(T5, T3), X) -> zero
+(36.428574) 264. K(X, rdiv(T4, T2)) -> zero
+(36.428574) 265. K(rdiv(T4, T2), X) -> zero
+(37.0) 266. op(x0, rdiv(T3, x0)) -> T3
+(37.0) 267. op(x0, rdiv(T2, x0)) -> T2
+(37.0) 268. op(T3, rdiv(T5, T3)) -> T5
+(37.0) 269. op(T2, rdiv(T4, T2)) -> T4
+(37.857143) 270. L(rdiv(T3, T5), X, Y) -> rdiv(T3, T5)
+(29.0) 271. K(x2, T3) -> rdiv(T3, T5)
+(31.0) 272. T(x2, T3) -> T(x2, T5)
+(37.857143) 273. L(rdiv(T2, T4), X, Y) -> rdiv(T2, T4)
+(29.0) 274. K(x1, T2) -> rdiv(T2, T4)
+(31.0) 275. T(x1, T2) -> T(x1, T4)
+(37.857143) 276. L(rdiv(x0, T3), X, Y) -> rdiv(x0, T3)
+(29.0) 277. K(x1, x0) -> rdiv(x0, T3)
+(31.0) 278. T(x1, x0) -> T(x1, T3)
+(37.857143) 279. L(rdiv(x0, T2), X, Y) -> rdiv(x0, T2)
+(29.0) 280. K(x2, x0) -> rdiv(x0, T2)
+(31.0) 281. T(x2, x0) -> T(x2, T2)
+(38.285713) 282. op(X, K(rdiv(Y, X), X)) = rdiv(Y, rdiv(Y, X))
+(35.0) 283. op(x1, rdiv(T3, x0)) -> rdiv(op(x1, T3), x0)
+(35.0) 284. op(x2, rdiv(T2, x0)) -> rdiv(op(x2, T2), x0)
+(37.0) 285. op(rdiv(T3, x0), x1) -> rdiv(op(x1, T3), x0)
+(37.0) 286. op(rdiv(T2, x0), x2) -> rdiv(op(x2, T2), x0)
+(38.428574) 287. ldiv(R(rdiv(zero, X), X, Y), Y) -> op(X, Y)
+(38.428574) 288. rdiv(X, L(ldiv(Y, zero), Y, X)) -> op(X, Y)
+(38.428574) 289. R(rdiv(T3, T5), X, rdiv(T3, T5)) -> rdiv(T3, T5)
+(38.428574) 290. R(rdiv(T2, T4), X, rdiv(T2, T4)) -> rdiv(T2, T4)
+(38.428574) 291. R(rdiv(x0, T3), X, rdiv(x0, T3)) -> rdiv(x0, T3)
+(38.428574) 292. R(rdiv(x0, T2), X, rdiv(x0, T2)) -> rdiv(x0, T2)
+(38.428574) 293. K(X, rdiv(op(X, Y), X)) -> K(X, Y)
+(33.0) 294. K(X, T(Y, X)) -> K(X, Y)
+(34.857143) 295. K(X, ldiv(X, Y)) -> K(X, rdiv(Y, X))
+(35.0) 296. ldiv(T(X, Y), X) -> K(Y, X)
+(33.0) 297. K(T5, x2) -> rdiv(T5, T3)
+(33.0) 298. K(T4, x1) -> rdiv(T4, T2)
+(33.0) 299. K(T3, x1) -> rdiv(T3, x0)
+(33.0) 300. K(T2, x2) -> rdiv(T2, x0)
+(35.0) 301. rdiv(X, T(X, Y)) -> K(Y, X)
+(35.0) 302. T(X, T(Y, X)) -> T(X, Y)
+(36.857143) 303. T(X, ldiv(X, Y)) -> T(X, rdiv(Y, X))
+(37.0) 304. rdiv(X, K(Y, X)) -> T(X, Y)
+(37.0) 305. ldiv(K(X, Y), Y) -> T(Y, X)
+(37.0) 306. K(T(X, Y), Y) -> K(X, Y)
+(38.428574) 307. T(rdiv(T3, x0), X) -> rdiv(T3, x0)
+(38.428574) 308. T(rdiv(T2, x0), X) -> rdiv(T2, x0)
+(38.428574) 309. T(rdiv(T5, T3), X) -> rdiv(T5, T3)
+(38.428574) 310. T(rdiv(T4, T2), X) -> rdiv(T4, T2)
+(38.571426) 311. rdiv(ldiv(X, zero), K(ldiv(X, zero), X)) -> L(ldiv(X, zero), X, ldiv(X, zero))
+(38.57143) 312. rdiv(T(X, Y), K(X, Y)) -> X
+(35.0) 313. rdiv(T3, rdiv(T3, x0)) -> x0
+(35.0) 314. rdiv(T2, rdiv(T2, x0)) -> x0
+(35.0) 315. rdiv(T5, rdiv(T5, T3)) -> T3
+(35.0) 316. rdiv(T4, rdiv(T4, T2)) -> T2
+(38.714287) 317. rdiv(op(X, a(Y, Z, W)), X) -> a(Y, Z, W)
+(37.285713) 318. R(a(X, Y, Z), W, a(X, Y, Z)) -> a(X, Y, Z)
+(36.285713) 319. ldiv(T(X, rdiv(Y, X)), Y) -> T(ldiv(X, Y), X)
+(38.285713) 320. ldiv(T(X, Y), op(Y, X)) -> T(T(Y, X), X)
+(35.0) 321. T(T(x1, T3), x0) -> ldiv(T3, op(x1, x0))
+(35.0) 322. T(T(x2, T2), x0) -> ldiv(T2, op(x2, x0))
+(35.0) 323. T(T(x2, T5), T3) -> ldiv(T5, op(x2, T3))
+(35.0) 324. T(T(x1, T4), T2) -> ldiv(T4, op(x1, T2))
+(38.285713) 325. rdiv(X, T(ldiv(Y, X), Y)) -> T(Y, rdiv(X, Y))
+(36.285713) 326. T(ldiv(X, Y), X) = ldiv(ldiv(ldiv(X, Y), Y), Y)
+(38.285713) 327. rdiv(X, T(ldiv(Y, X), Y)) -> ldiv(ldiv(Y, X), X)
+(30.857143) 328. ldiv(ldiv(X, Y), Y) = T(X, rdiv(Y, X))
+(38.428574) 329. rdiv(op(X, Y), T(Y, X)) -> T(X, Y)
+(35.0) 330. rdiv(op(x1, x0), T3) -> T(x1, T3)
+(35.0) 331. rdiv(op(x2, x0), T2) -> T(x2, T2)
+(35.0) 332. rdiv(op(x2, T3), T5) -> T(x2, T5)
+(35.0) 333. rdiv(op(x1, T2), T4) -> T(x1, T4)
+(37.0) 334. op(T(x1, T3), T3) -> op(x1, x0)
+(37.0) 335. op(T(x2, T2), T2) -> op(x2, x0)
+(37.0) 336. op(T(x2, T5), T5) -> op(x2, T3)
+(37.0) 337. op(T(x1, T4), T4) -> op(x1, T2)
+(38.428574) 338. T(X, rdiv(op(X, Y), X)) -> T(X, Y)
+(38.428574) 339. rdiv(X, T(Y, rdiv(X, Y))) -> ldiv(Y, X)
+(38.428574) 340. T(X, op(Y, K(X, Y))) -> T(X, Y)
+(38.714287) 341. rdiv(X, rdiv(X, a(Y, Z, W))) -> a(Y, Z, W)
+(38.857143) 342. K(ldiv(X, Y), X) -> K(rdiv(Y, X), X)
+(39.0) 343. op(rdiv(x0, T3), op(x1, T3)) -> op(x1, x0)
+(39.0) 344. op(rdiv(x0, T2), op(x2, T2)) -> op(x2, x0)
+(39.0) 345. op(op(T3, x2), rdiv(T5, T3)) -> op(T5, x2)
+(39.0) 346. op(op(T2, x1), rdiv(T4, T2)) -> op(T4, x1)
+(55.0) 347. T(ldiv(X, zero), rdiv(K(rdiv(zero, X), X), ldiv(X, zero))) -> T(ldiv(X, zero), X)
+(37.0) 348. ldiv(T(x2, T5), op(T3, x2)) -> T(T5, x2)
+(37.0) 349. ldiv(T(x1, T4), op(T2, x1)) -> T(T4, x1)
+(39.0) 350. K(rdiv(op(x1, T3), x0), x0) -> rdiv(x0, T3)
+(38.285713) 351. op(rdiv(x0, T3), rdiv(X, rdiv(x0, T3))) -> X
+(38.285713) 352. rdiv(op(rdiv(x0, T3), X), rdiv(x0, T3)) -> X
+(39.0) 353. K(rdiv(op(x2, T2), x0), x0) -> rdiv(x0, T2)
+(38.285713) 354. op(rdiv(x0, T2), rdiv(X, rdiv(x0, T2))) -> X
+(38.285713) 355. rdiv(op(rdiv(x0, T2), X), rdiv(x0, T2)) -> X
+(39.0) 356. K(x0, rdiv(op(x1, T3), x0)) -> rdiv(T3, x0)
+(33.857143) 357. a(X, Y, rdiv(T3, x0)) -> zero
+(33.857143) 358. a(X, rdiv(T3, x0), Y) -> zero
+(33.857143) 359. a(rdiv(T3, x0), X, Y) -> zero
+(34.285713) 360. op(X, rdiv(T3, x0)) = op(rdiv(T3, x0), X)
+(34.285713) 361. ldiv(rdiv(T3, x0), X) -> rdiv(X, rdiv(T3, x0))
+(35.857143) 362. L(rdiv(T3, x0), X, Y) -> rdiv(T3, x0)
+(36.428574) 363. R(rdiv(T3, x0), X, rdiv(T3, x0)) -> rdiv(T3, x0)
+(38.285713) 364. op(rdiv(T3, x0), rdiv(X, rdiv(T3, x0))) -> X
+(38.285713) 365. rdiv(op(rdiv(T3, x0), X), rdiv(T3, x0)) -> X
+(39.0) 366. K(x0, rdiv(op(x2, T2), x0)) -> rdiv(T2, x0)
+(33.857143) 367. a(X, Y, rdiv(T2, x0)) -> zero
+(33.857143) 368. a(X, rdiv(T2, x0), Y) -> zero
+(33.857143) 369. a(rdiv(T2, x0), X, Y) -> zero
+(34.285713) 370. op(X, rdiv(T2, x0)) = op(rdiv(T2, x0), X)
+(34.285713) 371. ldiv(rdiv(T2, x0), X) -> rdiv(X, rdiv(T2, x0))
+(35.857143) 372. L(rdiv(T2, x0), X, Y) -> rdiv(T2, x0)
+(36.428574) 373. R(rdiv(T2, x0), X, rdiv(T2, x0)) -> rdiv(T2, x0)
+(38.285713) 374. op(rdiv(T2, x0), rdiv(X, rdiv(T2, x0))) -> X
+(38.285713) 375. rdiv(op(rdiv(T2, x0), X), rdiv(T2, x0)) -> X
+(39.0) 376. ldiv(X, K(rdiv(zero, X), X)) -> T(ldiv(X, zero), X)
+(39.0) 377. rdiv(op(x1, x0), op(x1, T3)) -> rdiv(x0, T3)
+(39.0) 378. rdiv(op(x2, x0), op(x2, T2)) -> rdiv(x0, T2)
+(39.0) 379. rdiv(op(x1, T3), op(x1, x0)) -> rdiv(T3, x0)
+(39.0) 380. rdiv(op(x2, T2), op(x2, x0)) -> rdiv(T2, x0)
+(39.0) 381. op(rdiv(T3, T5), op(T5, x2)) -> op(T3, x2)
+(35.0) 382. L(x2, T5, rdiv(T3, T5)) -> x2
+(39.0) 383. op(rdiv(T2, T4), op(T4, x1)) -> op(T2, x1)
+(35.0) 384. L(x1, T4, rdiv(T2, T4)) -> x1
+(39.0) 385. R(rdiv(x0, T3), T3, x1) -> rdiv(x0, T3)
+(39.0) 386. R(rdiv(x0, T2), T2, x2) -> rdiv(x0, T2)
+(39.0) 387. op(T3, op(x2, rdiv(T5, T3))) -> op(T5, x2)
+(35.0) 388. op(x2, rdiv(T5, T3)) -> ldiv(T3, op(T5, x2))
+(37.0) 389. L(rdiv(T5, T3), x2, T3) -> rdiv(T5, T3)
+(37.0) 390. op(rdiv(T5, T3), x2) -> ldiv(T3, op(T5, x2))
+(39.0) 391. op(T2, op(x1, rdiv(T4, T2))) -> op(T4, x1)
+(35.0) 392. op(x1, rdiv(T4, T2)) -> ldiv(T2, op(T4, x1))
+(37.0) 393. L(rdiv(T4, T2), x1, T2) -> rdiv(T4, T2)
+(37.0) 394. op(rdiv(T4, T2), x1) -> ldiv(T2, op(T4, x1))
+(39.0) 395. op(T3, T(x2, T5)) -> op(x2, T3)
+(39.0) 396. op(T2, T(x1, T4)) -> op(x1, T2)
+(39.0) 397. op(x0, T(x1, T3)) -> op(x1, x0)
+(39.0) 398. op(x0, T(x2, T2)) -> op(x2, x0)
+(45.857143) 399. op(ldiv(X, Y), K(X, rdiv(Y, X))) -> rdiv(Y, X)
+(38.57143) 400. op(K(X, Y), T(Y, X)) -> Y
+(39.0) 401. op(T(x2, T5), rdiv(T5, T3)) -> x2
+(35.0) 402. rdiv(x2, rdiv(T5, T3)) -> T(x2, T5)
+(35.0) 403. ldiv(rdiv(T5, T3), x2) -> T(x2, T5)
+(39.0) 404. op(T(x1, T4), rdiv(T4, T2)) -> x1
+(35.0) 405. rdiv(x1, rdiv(T4, T2)) -> T(x1, T4)
+(35.0) 406. ldiv(rdiv(T4, T2), x1) -> T(x1, T4)
+(39.0) 407. T(T3, T(x2, T5)) -> T5
+(39.0) 408. T(T2, T(x1, T4)) -> T4
+(39.0) 409. T(x0, T(x1, T3)) -> T3
+(39.0) 410. T(x0, T(x2, T2)) -> T2
+(39.0) 411. T(x0, rdiv(op(x1, T3), x0)) -> T3
+(39.0) 412. T(x0, rdiv(op(x2, T2), x0)) -> T2
+(39.0) 413. T(T(x1, T3), T3) -> ldiv(T3, op(x1, x0))
+(39.0) 414. T(T(x2, T2), T2) -> ldiv(T2, op(x2, x0))
+(39.0) 415. T(T(x2, T5), T5) -> ldiv(T5, op(x2, T3))
+(39.0) 416. T(T(x1, T4), T4) -> ldiv(T4, op(x1, T2))
+(39.14286) 417. R(X, ldiv(X, zero), X) -> ldiv(ldiv(X, zero), zero)
+(39.0) 418. op(T(x2, T5), T(T5, x2)) -> op(T3, x2)
+(39.0) 419. rdiv(op(T3, x2), T(T5, x2)) -> T(x2, T5)
+(39.0) 420. op(T(x1, T4), T(T4, x1)) -> op(T2, x1)
+(39.0) 421. rdiv(op(T2, x1), T(T4, x1)) -> T(x1, T4)
+(39.0) 422. rdiv(op(x1, T3), x0) -> rdiv(x1, rdiv(x0, T3))
+(39.0) 423. rdiv(op(x2, T2), x0) -> rdiv(x2, rdiv(x0, T2))
+(39.142857) 424. R(rdiv(x0, X), X, x1) = rdiv(op(x1, T3), op(X, x1))
+(39.0) 425. R(T3, rdiv(x0, T3), x1) -> T3
+(39.142857) 426. R(rdiv(x0, X), X, x2) = rdiv(op(x2, T2), op(X, x2))
+(39.0) 427. R(T2, rdiv(x0, T2), x2) -> T2
+(39.142857) 428. R(rdiv(x2, X), X, T5) = rdiv(op(T3, x2), op(X, T5))
+(39.142857) 429. R(rdiv(x1, X), X, T4) = rdiv(op(T2, x1), op(X, T4))
+(39.142857) 430. L(ldiv(X, x1), X, x0) = ldiv(op(x0, X), op(x1, T3))
+(39.142857) 431. L(ldiv(X, x2), X, x0) = ldiv(op(x0, X), op(x2, T2))
+(39.142857) 432. L(ldiv(X, T5), X, x2) = ldiv(op(x2, X), op(T3, x2))
+(35.0) 433. L(rdiv(T5, T3), T3, x2) -> rdiv(T5, T3)
+(39.142857) 434. L(ldiv(X, T4), X, x1) = ldiv(op(x1, X), op(T2, x1))
+(35.0) 435. L(rdiv(T4, T2), T2, x1) -> rdiv(T4, T2)
+(39.14286) 436. T(X, op(X, K(Y, Z))) -> L(X, K(Y, Z), X)
+(38.285713) 437. L(X, K(X, Y), X) -> T(X, T(X, Y))
+(36.428574) 438. K(X, op(Y, K(X, Y))) -> K(X, Y)
+(39.285713) 439. rdiv(op(X, x1), op(x1, T3)) -> R(rdiv(X, x0), x0, x1)
+(35.0) 440. R(rdiv(T3, x0), x0, x1) -> rdiv(T3, x0)
+(39.285713) 441. rdiv(op(X, x2), op(x2, T2)) -> R(rdiv(X, x0), x0, x2)
+(35.0) 442. R(rdiv(T2, x0), x0, x2) -> rdiv(T2, x0)
+(39.285713) 443. rdiv(op(X, T5), op(T3, x2)) -> R(rdiv(X, x2), x2, T5)
+(35.0) 444. R(rdiv(T3, T5), x2, T5) -> rdiv(T3, T5)
+(39.0) 445. ldiv(T5, R(T3, x2, T5)) -> K(op(T3, x2), T5)
+(39.0) 446. rdiv(R(T3, x2, T5), T5) -> K(op(T3, x2), T5)
+(39.285713) 447. rdiv(op(X, T4), op(T2, x1)) -> R(rdiv(X, x1), x1, T4)
+(35.0) 448. R(rdiv(T2, T4), x1, T4) -> rdiv(T2, T4)
+(39.0) 449. ldiv(T4, R(T2, x1, T4)) -> K(op(T2, x1), T4)
+(39.0) 450. rdiv(R(T2, x1, T4), T4) -> K(op(T2, x1), T4)
+(39.285713) 451. ldiv(op(x1, T3), op(x0, X)) -> L(ldiv(x1, X), x1, x0)
+(39.285713) 452. ldiv(op(x2, T2), op(x0, X)) -> L(ldiv(x2, X), x2, x0)
+(39.285713) 453. ldiv(op(T3, x2), op(x2, X)) -> L(ldiv(T5, X), T5, x2)
+(39.285713) 454. ldiv(op(T2, x1), op(x1, X)) -> L(ldiv(T4, X), T4, x1)
+(39.714287) 455. ldiv(rdiv(zero, X), K(X, rdiv(zero, X))) -> ldiv(ldiv(X, zero), zero)
+(39.571426) 456. rdiv(zero, K(X, rdiv(zero, X))) -> K(rdiv(zero, X), X)
+(55.0) 457. K(rdiv(K(rdiv(zero, X), X), ldiv(X, zero)), ldiv(X, zero)) -> K(X, rdiv(zero, X))
+(40.142857) 458. K(rdiv(zero, X), rdiv(zero, rdiv(zero, X))) -> K(rdiv(zero, X), X)
+(39.57143) 459. R(rdiv(X, Y), Y, ldiv(X, Z)) = rdiv(Z, op(Y, ldiv(X, Z)))
+(39.57143) 460. R(rdiv(X, Y), Y, ldiv(Y, Z)) = rdiv(op(X, ldiv(Y, Z)), Z)
+(39.57143) 461. L(ldiv(X, Y), X, rdiv(Z, X)) = ldiv(Z, op(rdiv(Z, X), Y))
+(39.57143) 462. L(ldiv(X, Y), X, rdiv(Z, Y)) = ldiv(op(rdiv(Z, Y), X), Z)
+(39.57143) 463. L(ldiv(X, T(Y, Z)), X, Z) -> ldiv(op(Z, X), op(Y, Z))
+(39.57143) 464. op(R(X, Y, ldiv(Y, Z)), Z) -> op(op(X, Y), ldiv(Y, Z))
+(37.857143) 465. op(op(X, Y), ldiv(Y, zero)) -> R(X, Y, ldiv(Y, zero))
+(35.14286) 466. R(X, rdiv(zero, X), X) -> ldiv(ldiv(X, zero), zero)
+(35.571426) 467. R(ldiv(X, zero), X, ldiv(X, zero)) -> T(ldiv(X, zero), X)
+(39.57143) 468. op(R(X, rdiv(Y, Z), Z), Y) -> op(op(X, rdiv(Y, Z)), Z)
+(37.857143) 469. op(op(X, rdiv(zero, Y)), Y) -> R(X, rdiv(zero, Y), Y)
+(39.57143) 470. op(X, L(Y, ldiv(Z, X), Z)) -> op(Z, op(ldiv(Z, X), Y))
+(37.857143) 471. op(X, op(ldiv(X, zero), Y)) -> L(Y, ldiv(X, zero), X)
+(39.57143) 472. op(X, L(Y, Z, rdiv(X, Z))) -> op(rdiv(X, Z), op(Z, Y))
+(37.857143) 473. op(rdiv(zero, X), op(X, Y)) -> L(Y, X, rdiv(zero, X))
+(39.0) 474. op(rdiv(zero, T5), T3) -> rdiv(T3, T5)
+(39.0) 475. op(rdiv(zero, T4), T2) -> rdiv(T2, T4)
+(39.0) 476. op(rdiv(zero, T3), x0) -> rdiv(x0, T3)
+(39.0) 477. op(rdiv(zero, T2), x0) -> rdiv(x0, T2)
+(39.714287) 478. L(ldiv(X, Y), X, rdiv(Y, X)) -> T(rdiv(Y, X), Y)
+(39.714287) 479. R(rdiv(zero, X), X, rdiv(zero, X)) -> ldiv(X, zero)
+(39.857143) 480. rdiv(X, K(X, rdiv(zero, X))) -> L(X, rdiv(zero, X), X)
+(39.857143) 481. a(X, Y, rdiv(T5, T3)) -> zero
+(39.857143) 482. a(X, rdiv(T5, T3), Y) -> zero
+(39.857143) 483. a(rdiv(T5, T3), X, Y) -> zero
+(39.857143) 484. a(X, Y, rdiv(T4, T2)) -> zero
+(39.857143) 485. a(X, rdiv(T4, T2), Y) -> zero
+(39.857143) 486. a(rdiv(T4, T2), X, Y) -> zero
+(48.428574) 487. rdiv(X, K(rdiv(zero, rdiv(zero, X)), rdiv(zero, X))) -> L(X, rdiv(zero, X), X)
+(39.857143) 488. rdiv(op(X, rdiv(x0, T3)), X) -> rdiv(x0, T3)
+(39.857143) 489. rdiv(X, rdiv(X, rdiv(x0, T3))) -> rdiv(x0, T3)
+(39.857143) 490. rdiv(op(X, rdiv(x0, T2)), X) -> rdiv(x0, T2)
+(39.857143) 491. rdiv(X, rdiv(X, rdiv(x0, T2))) -> rdiv(x0, T2)
+(39.857143) 492. rdiv(op(X, rdiv(T3, x0)), X) -> rdiv(T3, x0)
+(39.857143) 493. rdiv(X, rdiv(X, rdiv(T3, x0))) -> rdiv(T3, x0)
+(39.857143) 494. rdiv(op(X, rdiv(T2, x0)), X) -> rdiv(T2, x0)
+(39.857143) 495. rdiv(X, rdiv(X, rdiv(T2, x0))) -> rdiv(T2, x0)
+(39.857143) 496. R(K(X, Y), Z, ldiv(Z, W)) -> K(X, Y)
+(34.428574) 497. R(K(X, Y), Z, W) -> K(X, Y)
+(37.857143) 498. R(rdiv(T3, T5), X, Y) -> rdiv(T3, T5)
+(37.857143) 499. R(rdiv(T2, T4), X, Y) -> rdiv(T2, T4)
+(37.857143) 500. R(rdiv(x0, T3), X, Y) -> rdiv(x0, T3)
+(37.857143) 501. R(rdiv(x0, T2), X, Y) -> rdiv(x0, T2)
+(37.857143) 502. R(rdiv(T3, x0), X, Y) -> rdiv(T3, x0)
+(37.857143) 503. R(rdiv(T2, x0), X, Y) -> rdiv(T2, x0)
+(35.14286) 504. L(X, ldiv(X, zero), X) -> rdiv(zero, rdiv(zero, X))
+(40.0) 505. T(R(X, X, X), op(X, X)) -> X
+(40.0) 506. op(T5, K(op(T3, x2), T5)) -> R(T3, x2, T5)
+(40.0) 507. op(T4, K(op(T2, x1), T4)) -> R(T2, x1, T4)
+(40.14286) 508. op(op(K(X, Y), Z), W) -> op(Z, op(W, K(X, Y)))
+(40.14286) 509. op(X, op(Y, K(Z, X))) = op(rdiv(op(Z, X), Z), Y)
+(37.14286) 510. op(R(X, X, X), X) -> op(X, R(X, X, X))
+(34.57143) 511. T(X, R(X, X, X)) -> X
+(34.714287) 512. K(X, R(X, X, X)) -> zero
+(34.714287) 513. K(R(X, X, X), X) -> zero
+(37.285713) 514. T(R(X, X, X), X) -> R(X, X, X)
+(40.0) 515. op(R(T3, x2, T5), T5) -> op(T5, R(T3, x2, T5))
+(37.0) 516. T(T5, R(T3, x2, T5)) -> T5
+(37.0) 517. K(T5, R(T3, x2, T5)) -> zero
+(37.0) 518. K(R(T3, x2, T5), T5) -> zero
+(40.0) 519. op(R(T2, x1, T4), T4) -> op(T4, R(T2, x1, T4))
+(37.0) 520. T(T4, R(T2, x1, T4)) -> T4
+(37.0) 521. K(T4, R(T2, x1, T4)) -> zero
+(37.0) 522. K(R(T2, x1, T4), T4) -> zero
+(40.0) 523. T(R(T3, x2, T5), T5) -> R(T3, x2, T5)
+(40.0) 524. T(R(T2, x1, T4), T4) -> R(T2, x1, T4)
+(40.14286) 525. op(op(X, Y), K(Z, W)) -> op(X, op(Y, K(Z, W)))
+(32.57143) 526. R(X, Y, K(Z, W)) -> X
+(35.714287) 527. R(X, Y, rdiv(T3, T5)) -> X
+(35.714287) 528. R(X, Y, rdiv(T2, T4)) -> X
+(35.714287) 529. R(X, Y, rdiv(x0, T3)) -> X
+(35.714287) 530. R(X, Y, rdiv(x0, T2)) -> X
+(35.714287) 531. R(X, Y, rdiv(T3, x0)) -> X
+(35.714287) 532. R(X, Y, rdiv(T2, x0)) -> X
+(39.714287) 533. R(X, Y, rdiv(T5, T3)) -> X
+(39.714287) 534. R(X, Y, rdiv(T4, T2)) -> X
+(40.14286) 535. op(K(X, Y), op(Z, W)) = op(Z, op(K(X, Y), W))
+(40.14286) 536. op(K(X, Y), op(Z, Y)) = op(Z, rdiv(op(X, Y), X))
+(40.285713) 537. ldiv(ldiv(X, Y), rdiv(Y, X)) -> K(X, rdiv(Y, X))
+(40.285713) 538. ldiv(X, rdiv(Y, rdiv(Y, X))) -> K(rdiv(Y, X), X)
+(40.285713) 539. op(rdiv(T3, T5), rdiv(X, rdiv(T3, T5))) -> X
+(40.285713) 540. rdiv(op(rdiv(T3, T5), X), rdiv(T3, T5)) -> X
+(40.285713) 541. op(rdiv(T2, T4), rdiv(X, rdiv(T2, T4))) -> X
+(40.285713) 542. rdiv(op(rdiv(T2, T4), X), rdiv(T2, T4)) -> X
+(40.285713) 543. rdiv(rdiv(X, Y), ldiv(Y, X)) -> K(Y, rdiv(X, Y))
+(40.285713) 544. rdiv(rdiv(X, rdiv(X, Y)), Y) -> K(rdiv(X, Y), Y)
+(40.285713) 545. ldiv(X, L(X, X, X)) -> K(X, op(X, X))
+(40.285713) 546. op(X, rdiv(T5, T3)) = op(rdiv(T5, T3), X)
+(40.285713) 547. ldiv(rdiv(T5, T3), X) -> rdiv(X, rdiv(T5, T3))
+(40.285713) 548. op(X, rdiv(T4, T2)) = op(rdiv(T4, T2), X)
+(40.285713) 549. ldiv(rdiv(T4, T2), X) -> rdiv(X, rdiv(T4, T2))
+(40.285713) 550. rdiv(L(X, X, X), X) -> K(X, op(X, X))
+(40.285713) 551. R(rdiv(zero, X), X, ldiv(X, Y)) = rdiv(ldiv(X, Y), Y)
+(35.428574) 552. rdiv(K(X, Y), Y) -> rdiv(zero, T(Y, X))
+(37.0) 553. rdiv(rdiv(x0, T3), x0) -> rdiv(zero, T3)
+(37.0) 554. rdiv(rdiv(x0, T2), x0) -> rdiv(zero, T2)
+(38.428574) 555. rdiv(K(X, Y), op(X, Y)) -> rdiv(zero, op(Y, X))
+(39.0) 556. rdiv(rdiv(T3, T5), T3) -> rdiv(zero, T5)
+(39.0) 557. rdiv(rdiv(T2, T4), T2) -> rdiv(zero, T4)
+(39.0) 558. rdiv(rdiv(T3, T5), T5) -> rdiv(zero, T(T5, x2))
+(39.0) 559. rdiv(rdiv(T2, T4), T4) -> rdiv(zero, T(T4, x1))
+(39.0) 560. rdiv(rdiv(x0, T3), T3) -> rdiv(zero, T(T3, x1))
+(39.0) 561. rdiv(rdiv(x0, T2), T2) -> rdiv(zero, T(T2, x2))
+(40.285713) 562. L(ldiv(X, zero), X, rdiv(Y, X)) = ldiv(Y, rdiv(Y, X))
+(39.571426) 563. ldiv(X, ldiv(ldiv(X, zero), zero)) -> K(X, rdiv(zero, X))
+(40.285713) 564. op(T5, op(X, rdiv(T3, T5))) -> op(T3, X)
+(31.0) 565. op(T3, T5) -> op(T5, T3)
+(31.0) 566. T(T5, T3) -> T5
+(31.0) 567. T(T3, T5) -> T3
+(31.0) 568. K(T5, T3) -> zero
+(31.0) 569. K(T3, T5) -> zero
+(35.0) 570. op(T3, ldiv(T5, zero)) -> rdiv(T3, T5)
+(36.285713) 571. op(X, rdiv(T3, T5)) -> ldiv(T5, op(T3, X))
+(37.0) 572. ldiv(T3, rdiv(T3, T5)) -> ldiv(T5, zero)
+(38.285713) 573. op(rdiv(T3, T5), X) -> ldiv(T5, op(T3, X))
+(39.0) 574. rdiv(op(T5, T3), T5) -> T3
+(39.0) 575. K(T3, ldiv(T5, zero)) -> K(T5, rdiv(zero, T5))
+(39.0) 576. K(T3, rdiv(zero, T5)) -> K(T5, rdiv(zero, T5))
+(39.0) 577. T(T3, ldiv(T5, zero)) -> T(T3, rdiv(zero, T5))
+(39.0) 578. T(rdiv(zero, T5), T3) -> ldiv(T5, zero)
+(40.285713) 579. op(T4, op(X, rdiv(T2, T4))) -> op(T2, X)
+(31.0) 580. op(T2, T4) -> op(T4, T2)
+(31.0) 581. T(T4, T2) -> T4
+(31.0) 582. T(T2, T4) -> T2
+(31.0) 583. K(T4, T2) -> zero
+(31.0) 584. K(T2, T4) -> zero
+(35.0) 585. op(T2, ldiv(T4, zero)) -> rdiv(T2, T4)
+(36.285713) 586. op(X, rdiv(T2, T4)) -> ldiv(T4, op(T2, X))
+(37.0) 587. ldiv(T2, rdiv(T2, T4)) -> ldiv(T4, zero)
+(38.285713) 588. op(rdiv(T2, T4), X) -> ldiv(T4, op(T2, X))
+(39.0) 589. rdiv(op(T4, T2), T4) -> T2
+(39.0) 590. K(T2, ldiv(T4, zero)) -> K(T4, rdiv(zero, T4))
+(39.0) 591. K(T2, rdiv(zero, T4)) -> K(T4, rdiv(zero, T4))
+(39.0) 592. T(T2, ldiv(T4, zero)) -> T(T2, rdiv(zero, T4))
+(39.0) 593. T(rdiv(zero, T4), T2) -> ldiv(T4, zero)
+(40.285713) 594. op(T3, op(X, rdiv(x0, T3))) -> op(x0, X)
+(31.0) 595. op(x0, T3) -> op(T3, x0)
+(31.0) 596. T(T3, x0) -> T3
+(31.0) 597. T(x0, T3) -> x0
+(31.0) 598. K(T3, x0) -> zero
+(31.0) 599. K(x0, T3) -> zero
+(35.0) 600. op(x0, ldiv(T3, zero)) -> rdiv(x0, T3)
+(36.285713) 601. op(X, rdiv(x0, T3)) -> ldiv(T3, op(x0, X))
+(37.0) 602. ldiv(x0, rdiv(x0, T3)) -> ldiv(T3, zero)
+(37.0) 603. rdiv(zero, rdiv(x0, T3)) -> rdiv(T3, x0)
+(37.0) 604. rdiv(zero, rdiv(T3, x0)) -> rdiv(x0, T3)
+(38.285713) 605. op(rdiv(x0, T3), X) -> ldiv(T3, op(x0, X))
+(39.0) 606. rdiv(op(T3, x0), T3) -> x0
+(39.0) 607. K(x0, ldiv(T3, zero)) -> K(T3, rdiv(zero, T3))
+(39.0) 608. K(x0, rdiv(zero, T3)) -> K(T3, rdiv(zero, T3))
+(39.0) 609. T(x0, ldiv(T3, zero)) -> T(x0, rdiv(zero, T3))
+(39.0) 610. T(rdiv(zero, T3), x0) -> ldiv(T3, zero)
+(40.285713) 611. op(T2, op(X, rdiv(x0, T2))) -> op(x0, X)
+(31.0) 612. op(x0, T2) -> op(T2, x0)
+(31.0) 613. T(T2, x0) -> T2
+(31.0) 614. T(x0, T2) -> x0
+(31.0) 615. K(T2, x0) -> zero
+(31.0) 616. K(x0, T2) -> zero
+(35.0) 617. op(x0, ldiv(T2, zero)) -> rdiv(x0, T2)
+(36.285713) 618. op(X, rdiv(x0, T2)) -> ldiv(T2, op(x0, X))
+(37.0) 619. ldiv(x0, rdiv(x0, T2)) -> ldiv(T2, zero)
+(37.0) 620. rdiv(zero, rdiv(x0, T2)) -> rdiv(T2, x0)
+(37.0) 621. rdiv(zero, rdiv(T2, x0)) -> rdiv(x0, T2)
+(38.285713) 622. op(rdiv(x0, T2), X) -> ldiv(T2, op(x0, X))
+(39.0) 623. rdiv(op(T2, x0), T2) -> x0
+(39.0) 624. K(x0, ldiv(T2, zero)) -> K(T2, rdiv(zero, T2))
+(39.0) 625. K(x0, rdiv(zero, T2)) -> K(T2, rdiv(zero, T2))
+(39.0) 626. T(x0, ldiv(T2, zero)) -> T(x0, rdiv(zero, T2))
+(39.0) 627. T(rdiv(zero, T2), x0) -> ldiv(T2, zero)
+(40.285713) 628. ldiv(T5, op(T3, op(X, T5))) -> op(X, T3)
+(27.0) 629. T(x0, T5) -> x0
+(29.0) 630. T(T5, x0) -> T5
+(29.0) 631. K(T5, x0) -> zero
+(29.0) 632. K(x0, T5) -> zero
+(31.0) 633. op(x0, T5) -> op(T5, x0)
+(36.285713) 634. op(T3, op(X, T5)) -> op(T5, op(X, T3))
+(36.285713) 635. op(rdiv(X, T5), T3) -> ldiv(T5, op(T3, X))
+(39.0) 636. rdiv(op(T5, x0), T5) -> x0
+(39.0) 637. op(T3, op(T3, x2)) -> op(T5, op(x2, T3))
+(40.0) 638. T(x0, op(T5, x0)) -> L(x0, T5, x0)
+(40.285713) 639. ldiv(T4, op(T2, op(X, T4))) -> op(X, T2)
+(27.0) 640. T(x0, T4) -> x0
+(29.0) 641. T(T4, x0) -> T4
+(29.0) 642. K(T4, x0) -> zero
+(29.0) 643. K(x0, T4) -> zero
+(31.0) 644. op(x0, T4) -> op(T4, x0)
+(36.285713) 645. op(T2, op(X, T4)) -> op(T4, op(X, T2))
+(36.285713) 646. op(rdiv(X, T4), T2) -> ldiv(T4, op(T2, X))
+(39.0) 647. rdiv(op(T4, x0), T4) -> x0
+(39.0) 648. op(T2, op(T2, x1)) -> op(T4, op(x1, T2))
+(40.0) 649. T(x0, op(T4, x0)) -> L(x0, T4, x0)
+(40.285713) 650. ldiv(T3, op(x0, op(X, T3))) -> op(X, x0)
+(36.285713) 651. op(x0, op(X, T3)) -> op(T3, op(X, x0))
+(36.285713) 652. op(rdiv(X, T3), x0) -> ldiv(T3, op(x0, X))
+(40.285713) 653. ldiv(T2, op(x0, op(X, T2))) -> op(X, x0)
+(36.285713) 654. op(x0, op(X, T2)) -> op(T2, op(X, x0))
+(36.285713) 655. op(rdiv(X, T2), x0) -> ldiv(T2, op(x0, X))
+(40.285713) 656. ldiv(T3, op(x0, X)) -> rdiv(X, rdiv(T3, x0))
+(40.285713) 657. op(rdiv(T3, x0), X) -> rdiv(X, rdiv(x0, T3))
+(40.285713) 658. ldiv(T2, op(x0, X)) -> rdiv(X, rdiv(T2, x0))
+(40.285713) 659. op(rdiv(T2, x0), X) -> rdiv(X, rdiv(x0, T2))
+(40.428574) 660. op(T(X, Y), T(Y, X)) -> op(X, Y)
+(40.428574) 661. K(rdiv(op(X, Y), X), X) -> K(Y, X)
+(36.857143) 662. rdiv(op(X, Y), X) = rdiv(Y, K(Y, X))
+(38.857143) 663. op(X, K(Y, X)) -> rdiv(X, K(X, Y))
+(38.857143) 664. op(K(X, Y), Y) -> rdiv(Y, K(Y, X))
+(39.0) 665. K(ldiv(T5, zero), T3) -> K(rdiv(zero, T5), T3)
+(39.0) 666. K(ldiv(T4, zero), T2) -> K(rdiv(zero, T4), T2)
+(39.0) 667. K(ldiv(T3, zero), x0) -> K(rdiv(zero, T3), x0)
+(39.0) 668. K(ldiv(T2, zero), x0) -> K(rdiv(zero, T2), x0)
+(40.428574) 669. T(X, rdiv(Y, K(Y, X))) -> T(X, Y)
+(40.428574) 670. K(rdiv(X, K(X, Y)), Y) -> K(X, Y)
+(40.428574) 671. K(T(X, Y), T(Y, X)) -> K(X, Y)
+(37.0) 672. K(T(x1, T3), x0) -> rdiv(x0, T3)
+(37.0) 673. K(x0, T(x1, T3)) -> rdiv(T3, x0)
+(37.0) 674. K(T(x2, T2), x0) -> rdiv(x0, T2)
+(37.0) 675. K(x0, T(x2, T2)) -> rdiv(T2, x0)
+(37.0) 676. K(T(x2, T5), T3) -> rdiv(T3, T5)
+(37.0) 677. K(T3, T(x2, T5)) -> rdiv(T5, T3)
+(37.0) 678. K(T(x1, T4), T2) -> rdiv(T2, T4)
+(37.0) 679. K(T2, T(x1, T4)) -> rdiv(T4, T2)
+(40.285713) 680. op(X, rdiv(T3, x0)) -> rdiv(X, rdiv(x0, T3))
+(40.285713) 681. op(X, rdiv(T2, x0)) -> rdiv(X, rdiv(x0, T2))
+(40.0) 682. L(rdiv(zero, X), X, rdiv(zero, X)) -> rdiv(K(X, rdiv(zero, X)), X)
+(40.57143) 683. R(X, ldiv(X, Y), Z) = rdiv(op(Y, Z), op(ldiv(X, Y), Z))
+(40.428574) 684. R(T5, rdiv(T3, T5), X) -> T5
+(40.428574) 685. R(T4, rdiv(T2, T4), X) -> T4
+(40.428574) 686. R(T3, rdiv(x0, T3), X) -> T3
+(40.428574) 687. R(T2, rdiv(x0, T2), X) -> T2
+(40.57143) 688. rdiv(op(op(X, Y), ldiv(Y, Z)), Z) -> R(X, Y, ldiv(Y, Z))
+(36.57143) 689. R(X, K(Y, Z), rdiv(W, K(Y, Z))) -> X
+(30.57143) 690. R(X, K(Y, Z), W) -> X
+(33.714287) 691. R(X, rdiv(x0, T3), Y) -> X
+(33.714287) 692. R(X, rdiv(x0, T2), Y) -> X
+(33.714287) 693. R(X, rdiv(T3, x0), Y) -> X
+(33.714287) 694. R(X, rdiv(T2, x0), Y) -> X
+(35.714287) 695. R(X, rdiv(T3, T5), Y) -> X
+(35.714287) 696. R(X, rdiv(T2, T4), Y) -> X
+(38.428574) 697. rdiv(rdiv(X, K(Y, Z)), X) -> rdiv(zero, K(Y, Z))
+(31.57143) 698. rdiv(zero, K(X, Y)) -> K(Y, X)
+(34.857143) 699. op(K(X, Y), Z) -> rdiv(Z, K(Y, X))
+(35.0) 700. rdiv(zero, rdiv(T3, T5)) -> rdiv(T5, T3)
+(35.0) 701. rdiv(zero, rdiv(T2, T4)) -> rdiv(T4, T2)
+(36.857143) 702. op(X, K(Y, Z)) -> rdiv(X, K(Z, Y))
+(37.0) 703. rdiv(zero, rdiv(T5, T3)) -> rdiv(T3, T5)
+(37.0) 704. rdiv(zero, rdiv(T4, T2)) -> rdiv(T2, T4)
+(38.285713) 705. ldiv(T5, op(T3, X)) -> rdiv(X, rdiv(T5, T3))
+(38.285713) 706. ldiv(T4, op(T2, X)) -> rdiv(X, rdiv(T4, T2))
+(39.714287) 707. R(X, rdiv(T5, T3), Y) -> X
+(39.714287) 708. R(X, rdiv(T4, T2), Y) -> X
+(39.857143) 709. rdiv(rdiv(X, rdiv(x0, T3)), X) -> rdiv(T3, x0)
+(39.857143) 710. rdiv(rdiv(X, rdiv(x0, T2)), X) -> rdiv(T2, x0)
+(39.857143) 711. rdiv(rdiv(X, rdiv(T3, x0)), X) -> rdiv(x0, T3)
+(39.857143) 712. rdiv(rdiv(X, rdiv(T2, x0)), X) -> rdiv(x0, T2)
+(40.285713) 713. op(rdiv(T5, T3), X) -> rdiv(X, rdiv(T3, T5))
+(40.285713) 714. op(rdiv(T4, T2), X) -> rdiv(X, rdiv(T2, T4))
+(40.285713) 715. op(rdiv(T3, T5), X) -> rdiv(X, rdiv(T5, T3))
+(40.285713) 716. op(rdiv(T2, T4), X) -> rdiv(X, rdiv(T4, T2))
+(40.285713) 717. op(X, rdiv(T5, T3)) -> rdiv(X, rdiv(T3, T5))
+(40.285713) 718. op(X, rdiv(T4, T2)) -> rdiv(X, rdiv(T2, T4))
+(40.285713) 719. op(X, rdiv(T3, T5)) -> rdiv(X, rdiv(T5, T3))
+(40.285713) 720. op(X, rdiv(T2, T4)) -> rdiv(X, rdiv(T4, T2))
+(40.57143) 721. rdiv(op(op(X, rdiv(Y, Z)), Z), Y) -> R(X, rdiv(Y, Z), Z)
+(40.57143) 722. ldiv(X, op(Y, op(ldiv(Y, X), Z))) -> L(Z, ldiv(Y, X), Y)
+(33.14286) 723. L(X, rdiv(zero, X), X) -> rdiv(zero, rdiv(zero, X))
+(33.714287) 724. L(ldiv(X, zero), X, ldiv(X, zero)) -> rdiv(zero, X)
+(36.428574) 725. ldiv(X, rdiv(X, K(Y, Z))) -> K(Z, Y)
+(37.0) 726. L(T5, rdiv(T5, T3), T3) -> T5
+(37.0) 727. L(T4, rdiv(T4, T2), T2) -> T4
+(37.0) 728. L(T3, rdiv(T3, x0), x0) -> T3
+(37.0) 729. L(T2, rdiv(T2, x0), x0) -> T2
+(39.857143) 730. ldiv(X, rdiv(X, rdiv(x0, T3))) -> rdiv(T3, x0)
+(39.857143) 731. ldiv(X, rdiv(X, rdiv(x0, T2))) -> rdiv(T2, x0)
+(39.857143) 732. ldiv(X, rdiv(X, rdiv(T3, x0))) -> rdiv(x0, T3)
+(39.857143) 733. ldiv(X, rdiv(X, rdiv(T2, x0))) -> rdiv(x0, T2)
+(40.285713) 734. L(X, rdiv(x0, T3), T3) -> X
+(40.285713) 735. L(X, rdiv(x0, T2), T2) -> X
+(40.57143) 736. ldiv(X, op(rdiv(X, Y), op(Y, Z))) -> L(Z, Y, rdiv(X, Y))
+(44.428574) 737. T(rdiv(X, K(X, Y)), op(Y, X)) -> L(X, Y, rdiv(X, K(X, Y)))
+(37.14286) 738. T(X, rdiv(X, K(Y, Z))) -> L(X, K(Z, Y), X)
+(39.0) 739. L(rdiv(T5, T3), x2, rdiv(T5, T3)) -> rdiv(T5, T3)
+(39.0) 740. L(rdiv(T4, T2), x1, rdiv(T4, T2)) -> rdiv(T4, T2)
+(40.285713) 741. L(X, rdiv(T3, x0), x0) -> X
+(40.285713) 742. L(X, rdiv(T2, x0), x0) -> X
+(40.57143) 743. L(X, rdiv(Y, X), Z) = ldiv(op(Z, rdiv(Y, X)), op(Z, Y))
+(37.0) 744. L(x0, rdiv(T3, x0), x1) -> x0
+(37.0) 745. L(x0, rdiv(T2, x0), x2) -> x0
+(40.57143) 746. T(rdiv(X, K(X, Y)), Y) -> X
+(48.0) 747. rdiv(rdiv(X, K(X, Y)), K(Y, X)) -> X
+(40.714287) 748. T(ldiv(ldiv(X, Y), Y), ldiv(X, Y)) -> ldiv(T(ldiv(X, Y), X), Y)
+(40.714287) 749. rdiv(K(X, rdiv(Y, X)), Y) -> rdiv(zero, op(ldiv(X, Y), X))
+(40.714287) 750. rdiv(K(rdiv(X, Y), Y), X) -> rdiv(zero, op(Y, rdiv(X, Y)))
+(40.857143) 751. K(rdiv(X, Y), rdiv(X, rdiv(X, Y))) -> K(rdiv(X, Y), Y)
+(41.0) 752. ldiv(T3, op(T5, x2)) -> rdiv(x2, rdiv(T3, T5))
+(41.0) 753. ldiv(T2, op(T4, x1)) -> rdiv(x1, rdiv(T2, T4))
+(41.0) 754. rdiv(T5, rdiv(T3, T5)) -> T(T5, x2)
+(41.0) 755. rdiv(T4, rdiv(T2, T4)) -> T(T4, x1)
+(41.0) 756. rdiv(T3, rdiv(x0, T3)) -> T(T3, x1)
+(41.0) 757. rdiv(T2, rdiv(x0, T2)) -> T(T2, x2)
+(41.0) 758. rdiv(x1, rdiv(T3, x0)) -> T(x1, T3)
+(41.0) 759. rdiv(x2, rdiv(T2, x0)) -> T(x2, T2)
+(41.0) 760. ldiv(T(T5, x2), op(T3, x2)) -> ldiv(T5, op(x2, T3))
+(41.0) 761. ldiv(T(T4, x1), op(T2, x1)) -> ldiv(T4, op(x1, T2))
+(41.0) 762. rdiv(op(x1, x0), rdiv(x0, T3)) -> op(x1, T3)
+(41.0) 763. rdiv(op(x2, x0), rdiv(x0, T2)) -> op(x2, T2)
+(41.0) 764. rdiv(op(T5, x2), rdiv(T5, T3)) -> op(T3, x2)
+(41.0) 765. rdiv(op(T4, x1), rdiv(T4, T2)) -> op(T2, x1)
+(41.0) 766. rdiv(op(x1, T3), rdiv(T3, x0)) -> op(x1, x0)
+(41.0) 767. rdiv(op(x2, T2), rdiv(T2, x0)) -> op(x2, x0)
+(41.0) 768. rdiv(T(x2, T5), rdiv(T3, T5)) -> x2
+(41.0) 769. rdiv(T(x1, T4), rdiv(T2, T4)) -> x1
+(41.0) 770. rdiv(op(x2, T3), rdiv(T3, T5)) -> op(T3, x2)
+(41.0) 771. rdiv(op(x1, T2), rdiv(T2, T4)) -> op(T2, x1)
+(41.0) 772. rdiv(op(x1, T3), rdiv(x0, T3)) -> op(T3, x1)
+(41.0) 773. rdiv(op(x2, T2), rdiv(x0, T2)) -> op(T2, x2)
+(41.0) 774. rdiv(R(X, Y, ldiv(Y, zero)), ldiv(Y, zero)) -> op(X, Y)
+(40.857143) 775. rdiv(K(X, Y), ldiv(Z, zero)) -> rdiv(Z, K(Y, X))
+(41.0) 776. ldiv(rdiv(zero, X), L(Y, X, rdiv(zero, X))) -> op(X, Y)
+(40.857143) 777. ldiv(rdiv(zero, X), K(Y, Z)) -> rdiv(X, K(Z, Y))
+(41.0) 778. op(rdiv(zero, X), T(X, Y)) -> K(X, Y)
+(37.0) 779. op(rdiv(zero, x0), T3) -> rdiv(T3, x0)
+(37.0) 780. op(rdiv(zero, x0), T2) -> rdiv(T2, x0)
+(37.0) 781. op(rdiv(zero, T3), T5) -> rdiv(T5, T3)
+(37.0) 782. op(rdiv(zero, T2), T4) -> rdiv(T4, T2)
+(39.0) 783. rdiv(rdiv(T3, x0), T3) -> rdiv(zero, x0)
+(39.0) 784. rdiv(rdiv(T2, x0), T2) -> rdiv(zero, x0)
+(39.0) 785. rdiv(rdiv(T5, T3), T5) -> rdiv(zero, T3)
+(39.0) 786. rdiv(rdiv(T4, T2), T4) -> rdiv(zero, T2)
+(41.0) 787. op(T3, rdiv(x2, rdiv(T3, T5))) -> op(T5, x2)
+(41.0) 788. op(T2, rdiv(x1, rdiv(T2, T4))) -> op(T4, x1)
+(41.0) 789. rdiv(rdiv(T3, T5), op(T3, x2)) -> rdiv(zero, op(T5, x2))
+(41.0) 790. rdiv(rdiv(T2, T4), op(T2, x1)) -> rdiv(zero, op(T4, x1))
+(41.0) 791. rdiv(rdiv(T3, x0), x1) -> rdiv(zero, T(x1, T3))
+(41.0) 792. rdiv(rdiv(T2, x0), x2) -> rdiv(zero, T(x2, T2))
+(41.0) 793. rdiv(rdiv(T5, T3), x2) -> rdiv(zero, T(x2, T5))
+(41.0) 794. rdiv(rdiv(T4, T2), x1) -> rdiv(zero, T(x1, T4))
+(57.0) 795. op(T3, rdiv(rdiv(x0, T3), rdiv(T5, T3))) -> rdiv(x0, rdiv(T5, T3))
+(53.0) 796. rdiv(op(x2, T2), rdiv(x2, rdiv(T3, x0))) -> T3
+(57.0) 797. op(T2, rdiv(rdiv(x0, T2), rdiv(T4, T2))) -> rdiv(x0, rdiv(T4, T2))
+(53.0) 798. rdiv(op(x1, T3), rdiv(x1, rdiv(T2, x0))) -> T2
+(41.0) 799. L(T3, rdiv(T5, T3), T3) -> T3
+(41.0) 800. L(T2, rdiv(T4, T2), T2) -> T2
+(41.0) 801. K(rdiv(zero, T5), T3) -> K(rdiv(zero, T5), T5)
+(41.0) 802. K(rdiv(zero, T4), T2) -> K(rdiv(zero, T4), T4)
+(41.0) 803. K(rdiv(zero, T3), x0) -> K(rdiv(zero, T3), T3)
+(41.0) 804. K(rdiv(zero, T2), x0) -> K(rdiv(zero, T2), T2)
+(41.0) 805. rdiv(op(op(T5, x2), T3), T5) -> op(T3, x2)
+(37.0) 806. op(op(T3, x2), T5) -> op(op(T5, x2), T3)
+(41.0) 807. rdiv(op(op(T4, x1), T2), T4) -> op(T2, x1)
+(37.0) 808. op(op(T2, x1), T4) -> op(op(T4, x1), T2)
+(41.0) 809. L(T5, rdiv(T3, T5), T5) -> T5
+(41.0) 810. L(T4, rdiv(T2, T4), T4) -> T4
+(41.0) 811. T(rdiv(zero, x0), T3) -> ldiv(T3, rdiv(T3, x0))
+(41.0) 812. T(rdiv(zero, x0), T2) -> ldiv(T2, rdiv(T2, x0))
+(41.0) 813. T(rdiv(zero, T3), T5) -> ldiv(T5, rdiv(T5, T3))
+(41.0) 814. T(rdiv(zero, T2), T4) -> ldiv(T4, rdiv(T4, T2))
+(48.571426) 815. rdiv(K(rdiv(zero, X), X), T(ldiv(X, zero), X)) -> X
+(40.285713) 816. ldiv(L(X, X, X), X) -> K(op(X, X), X)
+(38.428574) 817. K(X, rdiv(Y, K(Y, X))) -> K(X, Y)
+(48.0) 818. rdiv(K(X, Y), rdiv(Z, K(Y, X))) -> rdiv(zero, Z)
+(41.285713) 819. rdiv(X, K(X, op(X, X))) -> R(X, X, X)
+(40.285713) 820. ldiv(R(X, X, X), X) -> K(X, op(X, X))
+(40.285713) 821. rdiv(X, R(X, X, X)) -> K(X, op(X, X))
+(41.428574) 822. T(X, op(X, a(Y, Z, W))) -> L(X, a(Y, Z, W), X)
+(48.57143) 823. T(X, rdiv(K(X, rdiv(zero, X)), X)) -> ldiv(ldiv(X, zero), zero)
+(48.428574) 824. K(rdiv(K(X, rdiv(zero, X)), X), X) -> K(rdiv(zero, X), X)
+(41.571426) 825. op(x0, rdiv(x1, K(X, Y))) -> rdiv(op(x1, T3), K(X, Y))
+(41.571426) 826. op(x0, rdiv(x2, K(X, Y))) -> rdiv(op(x2, T2), K(X, Y))
+(41.571426) 827. op(x2, rdiv(T5, K(X, Y))) -> rdiv(op(T3, x2), K(X, Y))
+(41.571426) 828. op(x1, rdiv(T4, K(X, Y))) -> rdiv(op(T2, x1), K(X, Y))
+(41.571426) 829. ldiv(rdiv(zero, X), ldiv(X, zero)) -> K(rdiv(zero, X), X)
+(41.571426) 830. rdiv(ldiv(ldiv(X, zero), zero), X) -> K(X, rdiv(zero, X))
+(41.571426) 831. rdiv(ldiv(X, zero), rdiv(zero, X)) -> K(rdiv(zero, X), X)
+(34.285713) 832. op(X, rdiv(Y, K(Y, X))) -> op(T(X, Y), Y)
+(34.428574) 833. op(rdiv(X, K(X, Y)), Y) -> op(Y, X)
+(36.285713) 834. ldiv(X, op(T(X, Y), Y)) -> rdiv(Y, K(Y, X))
+(33.0) 835. ldiv(x0, op(T3, x1)) -> rdiv(x1, rdiv(x0, T3))
+(33.0) 836. ldiv(x0, op(T2, x2)) -> rdiv(x2, rdiv(x0, T2))
+(38.285713) 837. rdiv(op(X, Y), K(Y, X)) -> op(T(X, Y), Y)
+(40.14286) 838. op(X, rdiv(Y, K(Z, W))) -> rdiv(op(X, Y), K(Z, W))
+(40.285713) 839. rdiv(X, K(Y, rdiv(X, Y))) -> op(ldiv(Y, X), Y)
+(40.285713) 840. rdiv(X, K(X, rdiv(Y, X))) = rdiv(Y, rdiv(Y, X))
+(40.714287) 841. rdiv(rdiv(X, K(X, Y)), K(X, Y)) -> rdiv(op(T(Y, X), X), Y)
+(41.0) 842. rdiv(op(T3, x2), rdiv(T5, T3)) -> op(x2, T3)
+(41.0) 843. rdiv(op(T2, x1), rdiv(T4, T2)) -> op(x1, T2)
+(41.0) 844. op(x0, rdiv(x1, rdiv(x0, T3))) -> op(T3, x1)
+(41.0) 845. op(x0, rdiv(x2, rdiv(x0, T2))) -> op(T2, x2)
+(39.857143) 846. ldiv(op(X, Y), op(T(X, Y), Y)) -> K(X, Y)
+(39.857143) 847. ldiv(op(T(X, Y), Y), op(X, Y)) -> K(Y, X)
+(40.714287) 848. rdiv(K(X, Y), op(Y, X)) -> rdiv(zero, op(T(Y, X), X))
+(41.714287) 849. rdiv(op(X, op(Y, Z)), K(Y, Z)) -> op(X, op(Z, Y))
+(39.0) 850. rdiv(op(T3, x1), rdiv(T3, x0)) -> op(x1, T3)
+(39.0) 851. rdiv(op(T2, x2), rdiv(T2, x0)) -> op(x2, T2)
+(41.714287) 852. L(T(X, Y), T(Y, X), X) -> T(X, op(Y, X))
+(39.0) 853. L(T3, T(x1, T3), x0) -> T(x0, op(x1, x0))
+(39.0) 854. L(T2, T(x2, T2), x0) -> T(x0, op(x2, x0))
+(39.0) 855. L(T5, T(x2, T5), T3) -> T(T3, op(x2, T3))
+(39.0) 856. L(T4, T(x1, T4), T2) -> T(T2, op(x1, T2))
+(41.857143) 857. rdiv(rdiv(X, rdiv(T5, T3)), X) -> rdiv(T3, T5)
+(41.857143) 858. rdiv(X, rdiv(X, rdiv(T3, T5))) -> rdiv(T3, T5)
+(41.857143) 859. rdiv(rdiv(X, rdiv(T4, T2)), X) -> rdiv(T2, T4)
+(41.857143) 860. rdiv(X, rdiv(X, rdiv(T2, T4))) -> rdiv(T2, T4)
+(41.857143) 861. L(rdiv(T5, T3), X, Y) -> rdiv(T5, T3)
+(41.857143) 862. L(rdiv(T4, T2), X, Y) -> rdiv(T4, T2)
+(41.857143) 863. R(rdiv(T5, T3), X, Y) -> rdiv(T5, T3)
+(41.857143) 864. R(rdiv(T4, T2), X, Y) -> rdiv(T4, T2)
+(41.857143) 865. ldiv(op(T5, X), op(T3, X)) -> rdiv(T3, T5)
+(41.857143) 866. ldiv(op(T4, X), op(T2, X)) -> rdiv(T2, T4)
+(41.857143) 867. ldiv(op(T3, X), op(x0, X)) -> rdiv(x0, T3)
+(41.0) 868. L(ldiv(T5, T2), T5, x2) -> rdiv(x0, T3)
+(41.857143) 869. ldiv(op(T2, X), op(x0, X)) -> rdiv(x0, T2)
+(41.0) 870. L(ldiv(T4, T3), T4, x1) -> rdiv(x0, T2)
+(41.857143) 871. ldiv(X, op(T3, ldiv(T5, X))) -> rdiv(T3, T5)
+(38.285713) 872. op(T3, ldiv(T5, X)) -> rdiv(X, rdiv(T5, T3))
+(41.857143) 873. ldiv(X, op(T2, ldiv(T4, X))) -> rdiv(T2, T4)
+(38.285713) 874. op(T2, ldiv(T4, X)) -> rdiv(X, rdiv(T4, T2))
+(41.857143) 875. ldiv(X, op(x0, ldiv(T3, X))) -> rdiv(x0, T3)
+(38.285713) 876. op(x0, ldiv(T3, X)) -> rdiv(X, rdiv(T3, x0))
+(41.857143) 877. ldiv(X, op(x0, ldiv(T2, X))) -> rdiv(x0, T2)
+(38.285713) 878. op(x0, ldiv(T2, X)) -> rdiv(X, rdiv(T2, x0))
+(41.857143) 879. ldiv(X, rdiv(X, rdiv(T3, T5))) -> rdiv(T5, T3)
+(41.0) 880. rdiv(x0, rdiv(T3, T5)) -> rdiv(T5, rdiv(T3, x0))
+(41.857143) 881. ldiv(X, rdiv(X, rdiv(T2, T4))) -> rdiv(T4, T2)
+(41.0) 882. rdiv(x0, rdiv(T2, T4)) -> rdiv(T4, rdiv(T2, x0))
+(41.857143) 883. rdiv(op(T(X, Y), Y), K(X, Y)) -> op(X, Y)
+(41.857143) 884. rdiv(op(X, Y), op(T(X, Y), Y)) -> K(Y, X)
+(42.0) 885. ldiv(rdiv(X, K(X, Y)), op(Y, X)) -> Y
+(42.0) 886. ldiv(op(x2, T2), op(x1, T3)) -> L(ldiv(x2, x1), x2, x0)
+(42.0) 887. ldiv(op(x1, T3), op(x2, T2)) -> L(ldiv(x1, x2), x1, x0)
+(42.0) 888. rdiv(T5, K(T5, op(T3, x2))) -> R(T3, x2, T5)
+(41.0) 889. ldiv(R(T3, x2, T5), T5) -> K(T5, op(T3, x2))
+(41.0) 890. rdiv(T5, R(T3, x2, T5)) -> K(T5, op(T3, x2))
+(41.0) 891. op(x2, R(T3, x2, T5)) -> T(op(T3, x2), T5)
+(42.0) 892. rdiv(T4, K(T4, op(T2, x1))) -> R(T2, x1, T4)
+(41.0) 893. ldiv(R(T2, x1, T4), T4) -> K(T4, op(T2, x1))
+(41.0) 894. rdiv(T4, R(T2, x1, T4)) -> K(T4, op(T2, x1))
+(41.0) 895. op(x1, R(T2, x1, T4)) -> T(op(T2, x1), T4)
+(42.0) 896. op(op(x1, T3), ldiv(x1, zero)) -> R(x0, x1, ldiv(x1, zero))
+(42.0) 897. op(op(x2, T2), ldiv(x2, zero)) -> R(x0, x2, ldiv(x2, zero))
+(42.0) 898. op(op(T3, x2), ldiv(T5, zero)) -> R(x2, T5, ldiv(T5, zero))
+(42.0) 899. op(op(T2, x1), ldiv(T4, zero)) -> R(x1, T4, ldiv(T4, zero))
+(42.0) 900. op(rdiv(zero, x0), op(x1, T3)) -> L(x1, x0, rdiv(zero, x0))
+(42.0) 901. op(rdiv(zero, x0), op(x2, T2)) -> L(x2, x0, rdiv(zero, x0))
+(42.0) 902. op(rdiv(zero, x2), op(T3, x2)) -> L(T5, x2, rdiv(zero, x2))
+(42.0) 903. op(rdiv(zero, x1), op(T2, x1)) -> L(T4, x1, rdiv(zero, x1))
+(42.0) 904. T(T5, op(T5, x0)) -> L(T5, x0, T5)
+(42.0) 905. T(T4, op(T4, x0)) -> L(T4, x0, T4)
+(42.0) 906. L(X, K(Y, Z), K(Z, Y)) -> X
+(42.0) 907. T(T5, op(T5, T3)) -> L(T5, T3, T5)
+(42.0) 908. T(T4, op(T4, T2)) -> L(T4, T2, T4)
+(42.0) 909. T(T3, op(T3, x0)) -> L(T3, x0, T3)
+(42.0) 910. T(T2, op(T2, x0)) -> L(T2, x0, T2)
+(42.142857) 911. K(rdiv(zero, rdiv(zero, X)), rdiv(zero, X)) -> K(X, rdiv(zero, X))
+(42.14286) 912. R(rdiv(zero, X), X, T(Y, X)) = rdiv(T(Y, X), op(Y, X))
+(38.857143) 913. rdiv(zero, rdiv(X, K(Y, Z))) -> rdiv(K(Y, Z), X)
+(40.285713) 914. rdiv(X, rdiv(Y, rdiv(Y, X))) -> K(X, rdiv(Y, X))
+(40.857143) 915. ldiv(rdiv(K(X, Y), Z), zero) -> rdiv(Z, K(X, Y))
+(41.14286) 916. rdiv(ldiv(X, K(Y, Z)), K(Y, Z)) -> ldiv(X, zero)
+(42.14286) 917. op(rdiv(X, K(Y, Z)), W) -> rdiv(op(X, W), K(Y, Z))
+(42.14286) 918. op(rdiv(op(X, Y), X), Z) = rdiv(op(Y, Z), K(Y, X))
+(42.14286) 919. op(rdiv(X, rdiv(X, Y)), Y) -> op(Y, rdiv(X, rdiv(X, Y)))
+(34.857143) 920. op(T(X, Y), X) -> op(X, T(X, Y))
+(33.14286) 921. T(X, T(X, Y)) -> X
+(33.285713) 922. K(X, T(X, Y)) -> zero
+(33.285713) 923. K(T(X, Y), X) -> zero
+(35.0) 924. T(T(X, Y), X) -> T(X, Y)
+(38.57143) 925. T(X, rdiv(Y, rdiv(Y, X))) -> X
+(38.57143) 926. T(X, L(X, X, X)) -> X
+(38.57143) 927. L(X, K(Y, X), X) -> X
+(38.714287) 928. K(X, rdiv(Y, rdiv(Y, X))) -> zero
+(38.714287) 929. K(rdiv(X, rdiv(X, Y)), Y) -> zero
+(38.714287) 930. K(X, L(X, X, X)) -> zero
+(38.714287) 931. K(L(X, X, X), X) -> zero
+(40.714287) 932. K(X, rdiv(X, K(X, Y))) -> zero
+(40.714287) 933. K(ldiv(X, Y), rdiv(Y, X)) -> zero
+(40.714287) 934. K(rdiv(X, K(X, Y)), X) -> zero
+(40.714287) 935. K(rdiv(X, Y), ldiv(Y, X)) -> zero
+(41.0) 936. T(x0, L(T3, x1, x0)) -> x0
+(41.0) 937. T(x0, L(T2, x2, x0)) -> x0
+(41.0) 938. T(T3, L(T5, x2, T3)) -> T3
+(41.0) 939. T(T2, L(T4, x1, T2)) -> T2
+(41.0) 940. K(x0, L(T3, x1, x0)) -> zero
+(41.0) 941. K(x0, L(T2, x2, x0)) -> zero
+(41.0) 942. K(T3, L(T5, x2, T3)) -> zero
+(41.0) 943. K(T2, L(T4, x1, T2)) -> zero
+(41.0) 944. K(L(T3, x1, x0), x0) -> zero
+(41.0) 945. K(L(T2, x2, x0), x0) -> zero
+(41.0) 946. K(L(T5, x2, T3), T3) -> zero
+(41.0) 947. K(L(T4, x1, T2), T2) -> zero
+(41.14286) 948. op(L(X, X, X), X) -> op(X, L(X, X, X))
+(41.285713) 949. T(L(X, X, X), X) -> L(X, X, X)
+(42.14286) 950. rdiv(op(X, Y), K(Y, Z)) = op(X, rdiv(op(Z, Y), Z))
+(42.14286) 951. rdiv(rdiv(X, Y), K(Z, W)) -> rdiv(X, rdiv(Y, K(W, Z)))
+(42.14286) 952. L(op(X, Y), K(Y, X), op(X, Y)) -> T(op(X, Y), op(Y, X))
+(46.57143) 953. L(ldiv(X, zero), X, K(Y, Z)) = ldiv(rdiv(X, K(Z, Y)), K(Y, Z))
+(38.571426) 954. L(X, rdiv(zero, X), K(Y, Z)) -> X
+(41.714287) 955. L(X, rdiv(zero, X), rdiv(x0, T3)) -> X
+(41.714287) 956. L(X, rdiv(zero, X), rdiv(x0, T2)) -> X
+(41.714287) 957. L(X, rdiv(zero, X), rdiv(T3, x0)) -> X
+(41.714287) 958. L(X, rdiv(zero, X), rdiv(T2, x0)) -> X
+(42.285713) 959. op(R(X, x0, x1), op(x1, T3)) -> op(op(X, x0), x1)
+(42.285713) 960. op(R(X, x0, x2), op(x2, T2)) -> op(op(X, x0), x2)
+(42.285713) 961. op(R(X, x2, T5), op(T3, x2)) -> op(op(X, x2), T5)
+(42.285713) 962. op(R(X, x1, T4), op(T2, x1)) -> op(op(X, x1), T4)
+(42.285713) 963. op(op(x1, T3), L(X, x1, x0)) -> op(x0, op(x1, X))
+(42.285713) 964. op(op(x2, T2), L(X, x2, x0)) -> op(x0, op(x2, X))
+(42.285713) 965. op(op(T3, x2), L(X, T5, x2)) -> op(x2, op(T5, X))
+(42.285713) 966. op(op(T2, x1), L(X, T4, x1)) -> op(x1, op(T4, X))
+(50.285717) 967. rdiv(rdiv(X, rdiv(T3, T5)), rdiv(T5, T3)) -> X
+(50.285717) 968. rdiv(rdiv(X, rdiv(T2, T4)), rdiv(T4, T2)) -> X
+(50.285717) 969. rdiv(rdiv(X, rdiv(x0, T3)), rdiv(T3, x0)) -> X
+(50.285717) 970. rdiv(rdiv(X, rdiv(x0, T2)), rdiv(T2, x0)) -> X
+(50.285717) 971. rdiv(rdiv(X, rdiv(T5, T3)), rdiv(T3, T5)) -> X
+(50.285717) 972. rdiv(rdiv(X, rdiv(T4, T2)), rdiv(T2, T4)) -> X
+(50.285717) 973. rdiv(rdiv(X, rdiv(T3, x0)), rdiv(x0, T3)) -> X
+(50.285717) 974. rdiv(rdiv(X, rdiv(T2, x0)), rdiv(x0, T2)) -> X
+(42.285713) 975. rdiv(op(X, Y), K(Z, X)) -> op(T(X, Z), Y)
+(42.285713) 976. rdiv(op(X, Y), K(Z, Y)) -> op(X, T(Y, Z))
+(38.285713) 977. op(T(x1, X), T3) -> op(x0, T(x1, X))
+(36.428574) 978. T(x0, T(x1, X)) -> T3
+(38.285713) 979. op(T(x2, X), T2) -> op(x0, T(x2, X))
+(36.428574) 980. T(x0, T(x2, X)) -> T2
+(38.428574) 981. K(T(x1, X), T3) -> rdiv(x0, T3)
+(38.428574) 982. K(T(x2, X), T2) -> rdiv(x0, T2)
+(38.428574) 983. K(T(x1, X), x0) -> rdiv(x0, T3)
+(40.285713) 984. T(T(x1, X), x0) -> T(T(x1, X), T3)
+(40.285713) 985. K(x0, T(x1, X)) -> K(T3, T(x1, X))
+(38.428574) 986. K(T(x2, X), x0) -> rdiv(x0, T2)
+(40.285713) 987. T(T(x2, X), x0) -> T(T(x2, X), T2)
+(40.285713) 988. K(x0, T(x2, X)) -> K(T2, T(x2, X))
+(40.428574) 989. K(x0, T(x1, X)) -> rdiv(T3, x0)
+(40.428574) 990. K(x0, T(x2, X)) -> rdiv(T2, x0)
+(40.428574) 991. T(T3, T(x1, X)) -> T(T3, x1)
+(40.428574) 992. K(T3, T(x1, X)) -> rdiv(T3, x0)
+(40.428574) 993. T(T2, T(x2, X)) -> T(T2, x2)
+(40.428574) 994. K(T2, T(x2, X)) -> rdiv(T2, x0)
+(42.285713) 995. rdiv(X, L(X, X, X)) -> K(op(X, X), X)
+(42.285713) 996. ldiv(ldiv(ldiv(X, Y), Y), X) -> K(rdiv(Y, X), X)
+(42.285713) 997. rdiv(X, ldiv(ldiv(X, Y), Y)) -> K(rdiv(Y, X), X)
+(42.285713) 998. T(T(X, Y), T(Y, X)) -> T(T(X, Y), Y)
+(42.285713) 999. rdiv(op(X, T5), rdiv(T5, T3)) -> op(X, T3)
+(42.285713) 1000. rdiv(op(X, T4), rdiv(T4, T2)) -> op(X, T2)
+(42.285713) 1001. op(T3, rdiv(X, rdiv(T3, T5))) -> op(T5, X)
+(38.285713) 1002. ldiv(T3, op(T5, X)) -> rdiv(X, rdiv(T3, T5))
+(39.0) 1003. op(T3, op(T5, x2)) -> op(T5, op(T3, x2))
+(36.0) 1004. L(x2, T3, T5) -> L(x2, T5, T3)
+(40.285713) 1005. L(X, rdiv(T3, T5), T5) -> X
+(42.285713) 1006. rdiv(op(T5, X), rdiv(T5, T3)) -> op(T3, X)
+(36.285713) 1007. op(T3, T(X, T5)) -> op(X, T3)
+(30.285715) 1008. T(X, T3) -> T(X, T5)
+(32.285713) 1009. K(T3, X) -> K(T5, X)
+(32.285713) 1010. K(X, T3) -> K(X, T5)
+(35.0) 1011. K(T5, x1) -> rdiv(T3, x0)
+(35.0) 1012. K(x1, T5) -> rdiv(x0, T3)
+(38.285713) 1013. T(T3, T(X, T5)) -> T(T3, X)
+(38.428574) 1014. K(T5, T(T3, X)) -> zero
+(40.285713) 1015. op(T(T5, X), T3) -> op(T3, T(T5, X))
+(38.428574) 1016. T(T3, T(T5, X)) -> T3
+(40.285713) 1017. T(rdiv(X, T3), T5) -> ldiv(T3, X)
+(40.285713) 1018. T(T(T3, X), T5) -> T(T3, X)
+(40.428574) 1019. K(T(T3, X), T5) -> zero
+(40.428574) 1020. T(T5, T(T3, X)) -> T5
+(41.0) 1021. op(x0, T(x1, T5)) -> op(x1, x0)
+(42.285713) 1022. op(T5, rdiv(X, rdiv(T5, T3))) -> op(T3, X)
+(38.285713) 1023. op(T3, op(T5, X)) -> op(T5, op(T3, X))
+(35.285713) 1024. L(X, T3, T5) -> L(X, T5, T3)
+(42.285713) 1025. op(T2, rdiv(X, rdiv(T2, T4))) -> op(T4, X)
+(38.285713) 1026. ldiv(T2, op(T4, X)) -> rdiv(X, rdiv(T2, T4))
+(39.0) 1027. op(T2, op(T4, x1)) -> op(T4, op(T2, x1))
+(36.0) 1028. L(x1, T2, T4) -> L(x1, T4, T2)
+(40.285713) 1029. L(X, rdiv(T2, T4), T4) -> X
+(42.285713) 1030. rdiv(op(T4, X), rdiv(T4, T2)) -> op(T2, X)
+(36.285713) 1031. op(T2, T(X, T4)) -> op(X, T2)
+(30.285715) 1032. T(X, T2) -> T(X, T4)
+(32.285713) 1033. K(T2, X) -> K(T4, X)
+(32.285713) 1034. K(X, T2) -> K(X, T4)
+(35.0) 1035. K(T4, x2) -> rdiv(T2, x0)
+(35.0) 1036. K(x2, T4) -> rdiv(x0, T2)
+(38.285713) 1037. T(T2, T(X, T4)) -> T(T2, X)
+(38.428574) 1038. K(T4, T(T2, X)) -> zero
+(40.285713) 1039. op(T(T4, X), T2) -> op(T2, T(T4, X))
+(38.428574) 1040. T(T2, T(T4, X)) -> T2
+(40.285713) 1041. T(rdiv(X, T2), T4) -> ldiv(T2, X)
+(40.285713) 1042. T(T(T2, X), T4) -> T(T2, X)
+(40.428574) 1043. K(T(T2, X), T4) -> zero
+(40.428574) 1044. T(T4, T(T2, X)) -> T4
+(41.0) 1045. op(x0, T(x2, T4)) -> op(x2, x0)
+(42.285713) 1046. op(T4, rdiv(X, rdiv(T4, T2))) -> op(T2, X)
+(38.285713) 1047. op(T2, op(T4, X)) -> op(T4, op(T2, X))
+(35.285713) 1048. L(X, T2, T4) -> L(X, T4, T2)
+(42.285713) 1049. op(x0, rdiv(X, rdiv(x0, T3))) -> op(T3, X)
+(38.285713) 1050. ldiv(x0, op(T3, X)) -> rdiv(X, rdiv(x0, T3))
+(39.0) 1051. op(x0, op(T3, x1)) -> op(T3, op(x1, T3))
+(40.0) 1052. T(x0, op(T3, x1)) -> L(T3, x1, T3)
+(42.285713) 1053. rdiv(op(T3, X), rdiv(T3, x0)) -> op(x0, X)
+(39.0) 1054. K(x0, rdiv(zero, x0)) -> K(T5, rdiv(zero, x0))
+(41.0) 1055. T(rdiv(zero, x0), T5) -> ldiv(x0, zero)
+(41.0) 1056. K(rdiv(zero, x0), x0) -> K(rdiv(zero, x0), T5)
+(42.285713) 1057. op(x0, rdiv(X, rdiv(x0, T2))) -> op(T2, X)
+(38.285713) 1058. ldiv(x0, op(T2, X)) -> rdiv(X, rdiv(x0, T2))
+(39.0) 1059. op(x0, op(T2, x2)) -> op(T2, op(x2, T2))
+(40.0) 1060. T(x0, op(T2, x2)) -> L(T2, x2, T2)
+(42.285713) 1061. rdiv(op(T2, X), rdiv(T2, x0)) -> op(x0, X)
+(39.0) 1062. K(T4, rdiv(zero, x0)) -> K(T5, rdiv(zero, x0))
+(41.0) 1063. op(rdiv(zero, x0), T4) -> op(T4, ldiv(x0, zero))
+(41.0) 1064. T(rdiv(zero, x0), T4) -> ldiv(x0, zero)
+(41.0) 1065. K(rdiv(zero, x0), T4) -> K(rdiv(zero, x0), T5)
+(41.0) 1066. op(T2, ldiv(x0, zero)) -> rdiv(T2, x0)
+(42.285713) 1067. op(rdiv(X, rdiv(T3, x0)), T3) -> op(X, x0)
+(38.285713) 1068. rdiv(op(X, x0), T3) -> rdiv(X, rdiv(T3, x0))
+(38.285713) 1069. op(op(x0, X), T3) -> op(op(T3, X), x0)
+(39.0) 1070. op(op(x1, x0), T3) -> op(op(x1, T3), x0)
+(36.0) 1071. R(x1, x0, T3) -> R(x1, T3, x0)
+(39.0) 1072. op(op(x1, T3), T3) -> op(op(T3, x1), x0)
+(39.0) 1073. op(T(T3, x1), x0) -> op(T3, T3)
+(40.285713) 1074. op(T(x0, X), T3) -> op(T3, T(x0, X))
+(33.0) 1075. op(T2, T3) -> op(T3, T2)
+(33.0) 1076. T(T3, T4) -> T3
+(33.0) 1077. T(T2, T5) -> T2
+(33.0) 1078. K(T5, T4) -> zero
+(33.0) 1079. K(T4, T5) -> zero
+(35.0) 1080. T(T4, T5) -> T4
+(35.0) 1081. T(T5, T4) -> T5
+(37.0) 1082. op(T3, T4) -> op(T4, T3)
+(37.0) 1083. op(T2, T5) -> op(T5, T2)
+(37.0) 1084. op(T4, T5) -> op(T5, T4)
+(38.428574) 1085. T(T3, T(x0, X)) -> T3
+(38.428574) 1086. K(T5, T(x0, X)) -> zero
+(38.428574) 1087. K(T(x0, X), T5) -> zero
+(40.285713) 1088. T(T(x0, X), T5) -> T(x0, X)
+(40.428574) 1089. T(T5, T(x0, X)) -> T5
+(41.0) 1090. op(op(x2, T2), T3) -> op(op(T3, x2), x0)
+(41.0) 1091. rdiv(op(T3, T3), x0) -> T(T3, x1)
+(41.0) 1092. T(T(T3, x1), x0) -> T(T3, x1)
+(41.0) 1093. K(x0, T(T3, x1)) -> zero
+(41.0) 1094. T(x0, T(T3, x1)) -> x0
+(41.0) 1095. K(T(T3, x1), x0) -> zero
+(42.285713) 1096. op(rdiv(X, rdiv(T2, x0)), T2) -> op(X, x0)
+(38.285713) 1097. rdiv(op(X, x0), T2) -> rdiv(X, rdiv(T2, x0))
+(38.285713) 1098. op(op(x0, X), T2) -> op(op(T2, X), x0)
+(39.0) 1099. op(op(x2, x0), T2) -> op(op(x2, T2), x0)
+(36.0) 1100. R(x2, x0, T2) -> R(x2, T2, x0)
+(39.0) 1101. op(op(x2, T2), T2) -> op(op(T2, x2), x0)
+(39.0) 1102. op(T(T2, x2), x0) -> op(T2, T2)
+(40.285713) 1103. op(T(x0, X), T2) -> op(T2, T(x0, X))
+(38.428574) 1104. T(T2, T(x0, X)) -> T2
+(38.428574) 1105. K(T4, T(x0, X)) -> zero
+(38.428574) 1106. K(T(x0, X), T4) -> zero
+(40.285713) 1107. T(T(x0, X), T4) -> T(x0, X)
+(40.428574) 1108. T(T4, T(x0, X)) -> T4
+(41.0) 1109. op(op(x1, T3), T2) -> op(op(T2, x1), x0)
+(41.0) 1110. rdiv(op(T2, T2), x0) -> T(T2, x2)
+(41.0) 1111. T(T(T2, x2), x0) -> T(T2, x2)
+(41.0) 1112. K(x0, T(T2, x2)) -> zero
+(41.0) 1113. T(x0, T(T2, x2)) -> x0
+(41.0) 1114. K(T(T2, x2), x0) -> zero
+(42.285713) 1115. op(rdiv(X, rdiv(x0, T3)), x0) -> op(X, T3)
+(38.285713) 1116. rdiv(op(X, T3), x0) -> rdiv(X, rdiv(x0, T3))
+(42.285713) 1117. op(rdiv(X, rdiv(x0, T2)), x0) -> op(X, T2)
+(38.285713) 1118. rdiv(op(X, T2), x0) -> rdiv(X, rdiv(x0, T2))
+(42.285713) 1119. ldiv(rdiv(X, rdiv(X, Y)), Y) -> K(Y, rdiv(X, Y))
+(42.285713) 1120. rdiv(ldiv(X, Y), rdiv(Y, X)) -> K(rdiv(Y, X), X)
+(42.285713) 1121. rdiv(zero, rdiv(X, rdiv(x0, T3))) -> rdiv(rdiv(x0, T3), X)
+(42.285713) 1122. rdiv(zero, rdiv(X, rdiv(x0, T2))) -> rdiv(rdiv(x0, T2), X)
+(42.285713) 1123. rdiv(zero, rdiv(X, rdiv(T3, x0))) -> rdiv(rdiv(T3, x0), X)
+(42.285713) 1124. rdiv(zero, rdiv(X, rdiv(T2, x0))) -> rdiv(rdiv(T2, x0), X)
+(42.285713) 1125. T(rdiv(X, rdiv(X, Y)), Y) -> rdiv(X, rdiv(X, Y))
+(42.285713) 1126. rdiv(op(X, T3), rdiv(T3, x0)) -> op(X, x0)
+(38.285713) 1127. op(T(T3, X), x0) -> op(x0, T(T3, X))
+(36.428574) 1128. T(x0, T(T3, X)) -> x0
+(36.428574) 1129. K(x0, T(T3, X)) -> zero
+(36.428574) 1130. K(T(T3, X), x0) -> zero
+(38.285713) 1131. op(op(X, x0), T3) -> op(op(X, T3), x0)
+(35.285713) 1132. R(X, x0, T3) -> R(X, T3, x0)
+(38.285713) 1133. T(T(T3, X), x0) -> T(T3, X)
+(41.0) 1134. op(x0, T(T3, x1)) -> op(T3, T3)
+(42.285713) 1135. rdiv(op(X, T2), rdiv(T2, x0)) -> op(X, x0)
+(38.285713) 1136. op(T(T2, X), x0) -> op(x0, T(T2, X))
+(36.428574) 1137. T(x0, T(T2, X)) -> x0
+(36.428574) 1138. K(x0, T(T2, X)) -> zero
+(36.428574) 1139. K(T(T2, X), x0) -> zero
+(38.285713) 1140. op(op(X, x0), T2) -> op(op(X, T2), x0)
+(35.285713) 1141. R(X, x0, T2) -> R(X, T2, x0)
+(38.285713) 1142. T(T(T2, X), x0) -> T(T2, X)
+(41.0) 1143. op(x0, T(T2, x2)) -> op(T2, T2)
+(42.285713) 1144. op(X, rdiv(op(X, Y), X)) = op(T(X, Y), Y)
+(42.285713) 1145. op(T(T5, X), x0) -> op(x0, T(T5, X))
+(40.428574) 1146. T(x0, T(T5, X)) -> x0
+(40.428574) 1147. K(x0, T(T5, X)) -> zero
+(40.428574) 1148. K(T(T5, X), x0) -> zero
+(42.285713) 1149. op(T(T4, X), x0) -> op(x0, T(T4, X))
+(40.428574) 1150. T(x0, T(T4, X)) -> x0
+(40.428574) 1151. K(x0, T(T4, X)) -> zero
+(40.428574) 1152. K(T(T4, X), x0) -> zero
+(42.285713) 1153. T(T(x1, X), x0) -> T(T(x1, X), T5)
+(42.285713) 1154. T(T(x2, X), x0) -> T(T(x2, X), T4)
+(40.428574) 1155. K(T5, T(x1, X)) -> rdiv(T3, x0)
+(40.428574) 1156. K(T4, T(x2, X)) -> rdiv(T2, x0)
+(42.285713) 1157. rdiv(T3, K(X, T5)) -> T(T3, X)
+(42.285713) 1158. T(T3, ldiv(T5, X)) -> T(T3, rdiv(X, T5))
+(42.285713) 1159. rdiv(T2, K(X, T4)) -> T(T2, X)
+(42.285713) 1160. T(T2, ldiv(T4, X)) -> T(T2, rdiv(X, T4))
+(42.285713) 1161. T(T(T5, X), x0) -> T(T5, X)
+(42.285713) 1162. T(T(T4, X), x0) -> T(T4, X)
+(42.428574) 1163. R(X, Y, ldiv(op(X, Y), Z)) = rdiv(Z, op(Y, ldiv(op(X, Y), Z)))
+(42.428574) 1164. L(X, Y, rdiv(Z, op(Y, X))) = ldiv(op(rdiv(Z, op(Y, X)), Y), Z)
+(28.57143) 1165. L(X, Y, K(X, Y)) -> X
+(33.0) 1166. L(T3, x1, rdiv(x0, T3)) -> T3
+(33.0) 1167. L(T2, x2, rdiv(x0, T2)) -> T2
+(35.0) 1168. L(x0, x1, rdiv(T3, x0)) -> x0
+(35.0) 1169. L(x0, x2, rdiv(T2, x0)) -> x0
+(37.0) 1170. L(x1, T3, rdiv(x0, T3)) -> x1
+(37.0) 1171. L(x2, T2, rdiv(x0, T2)) -> x2
+(38.0) 1172. L(X, T(Y, X), K(X, Y)) -> X
+(41.0) 1173. L(T3, x2, rdiv(T5, T3)) -> T3
+(41.0) 1174. L(T2, x1, rdiv(T4, T2)) -> T2
+(41.0) 1175. L(x2, T3, rdiv(T3, T5)) -> x2
+(41.0) 1176. L(x1, T2, rdiv(T2, T4)) -> x1
+(41.0) 1177. L(x1, x0, rdiv(x0, T3)) -> x1
+(41.0) 1178. L(x2, x0, rdiv(x0, T2)) -> x2
+(37.0) 1179. ldiv(T(x1, T5), op(x1, x0)) -> T3
+(35.0) 1180. T(T(x1, T5), T5) -> ldiv(T3, op(x1, x0))
+(37.0) 1181. ldiv(T(x2, T4), op(x2, x0)) -> T2
+(35.0) 1182. T(T(x2, T4), T4) -> ldiv(T2, op(x2, x0))
+(42.428574) 1183. op(op(X, a(Y, Z, W)), V) = op(op(X, V), a(Y, Z, W))
+(42.428574) 1184. op(op(X, a(Y, Z, W)), V) -> op(X, op(V, a(Y, Z, W)))
+(42.0) 1185. R(X, a(Y, Z, W), rdiv(V, a(Y, Z, W))) -> X
+(36.0) 1186. R(X, a(Y, Z, W), V) -> X
+(42.428574) 1187. op(op(X, Y), a(Z, W, V)) -> op(X, op(Y, a(Z, W, V)))
+(34.0) 1188. R(X, Y, a(Z, W, V)) -> X
+(36.714287) 1189. L(a(X, Y, Z), W, V) -> a(X, Y, Z)
+(42.428574) 1190. ldiv(R(X, ldiv(X, zero), Y), Y) -> op(ldiv(X, zero), Y)
+(42.428574) 1191. rdiv(X, L(Y, rdiv(zero, Y), X)) -> op(X, rdiv(zero, Y))
+(42.428574) 1192. rdiv(R(X, rdiv(zero, Y), Y), Y) -> op(X, rdiv(zero, Y))
+(42.428574) 1193. ldiv(X, L(Y, ldiv(X, zero), X)) -> op(ldiv(X, zero), Y)
+(40.857143) 1194. rdiv(ldiv(X, zero), K(Y, Z)) -> ldiv(X, K(Z, Y))
+(42.428574) 1195. rdiv(op(X, T(X, Y)), X) -> T(X, Y)
+(42.428574) 1196. T(ldiv(X, Y), rdiv(Y, X)) -> ldiv(X, Y)
+(42.428574) 1197. K(T(x1, X), T5) -> rdiv(x0, T3)
+(42.428574) 1198. K(T(x2, X), T4) -> rdiv(x0, T2)
+(42.428574) 1199. rdiv(X, rdiv(op(Y, X), Y)) -> K(X, Y)
+(42.428574) 1200. T(rdiv(X, Y), ldiv(Y, X)) -> rdiv(X, Y)
+(42.571426) 1201. op(ldiv(ldiv(X, Y), Y), T(ldiv(X, Y), X)) -> Y
+(42.571426) 1202. T(X, rdiv(X, rdiv(T3, x0))) -> L(X, rdiv(x0, T3), X)
+(42.571426) 1203. T(X, rdiv(X, rdiv(T2, x0))) -> L(X, rdiv(x0, T2), X)
+(42.571426) 1204. T(X, rdiv(X, rdiv(x0, T3))) -> L(X, rdiv(T3, x0), X)
+(42.571426) 1205. T(X, rdiv(X, rdiv(x0, T2))) -> L(X, rdiv(T2, x0), X)
+(42.57143) 1206. ldiv(op(X, Y), op(X, op(Z, Y))) -> L(T(Z, Y), Y, X)
+(32.57143) 1207. L(X, K(X, Y), Y) -> X
+(34.57143) 1208. L(X, K(Y, Z), Y) -> X
+(35.0) 1209. L(x2, rdiv(T5, T3), T3) -> x2
+(35.0) 1210. L(x1, rdiv(T4, T2), T2) -> x1
+(37.857143) 1211. L(T(X, Y), Y, K(Y, X)) -> T(X, Y)
+(30.57143) 1212. L(X, Y, K(Y, X)) -> X
+(33.0) 1213. L(T5, x2, rdiv(T3, T5)) -> T5
+(33.0) 1214. L(T4, x1, rdiv(T2, T4)) -> T4
+(35.0) 1215. L(x1, x0, rdiv(T3, x0)) -> x1
+(35.0) 1216. L(x2, x0, rdiv(T2, x0)) -> x2
+(38.285713) 1217. L(X, rdiv(T3, T5), x2) -> X
+(38.285713) 1218. L(X, rdiv(T2, T4), x1) -> X
+(38.285713) 1219. L(X, rdiv(x0, T3), x1) -> X
+(38.285713) 1220. L(X, rdiv(x0, T2), x2) -> X
+(40.285713) 1221. L(X, rdiv(T5, T3), T3) -> X
+(40.285713) 1222. L(X, rdiv(T4, T2), T2) -> X
+(41.0) 1223. L(T3, rdiv(T5, T3), x2) -> T3
+(41.0) 1224. L(T2, rdiv(T4, T2), x1) -> T2
+(41.0) 1225. L(x2, rdiv(T3, T5), T3) -> x2
+(41.0) 1226. L(x1, rdiv(T2, T4), T2) -> x1
+(41.0) 1227. L(x1, rdiv(x0, T3), x0) -> x1
+(41.0) 1228. L(x2, rdiv(x0, T2), x0) -> x2
+(41.0) 1229. L(x2, T3, rdiv(T5, T3)) -> x2
+(41.0) 1230. L(x1, T2, rdiv(T4, T2)) -> x1
+(41.0) 1231. L(T3, x2, rdiv(T3, T5)) -> T3
+(41.0) 1232. L(T2, x1, rdiv(T2, T4)) -> T2
+(41.0) 1233. L(x0, x1, rdiv(x0, T3)) -> x0
+(41.0) 1234. L(x0, x2, rdiv(x0, T2)) -> x0
+(41.57143) 1235. L(T(X, Y), Y, K(Z, W)) -> T(X, rdiv(Y, K(W, Z)))
+(39.14286) 1236. T(X, rdiv(X, K(Y, Z))) -> L(X, X, K(Z, Y))
+(37.14286) 1237. L(X, K(Y, Z), X) = L(X, X, K(Y, Z))
+(36.57143) 1238. L(X, X, K(X, Y)) -> X
+(38.571426) 1239. L(X, X, rdiv(T3, x0)) = L(X, rdiv(T3, x0), X)
+(37.0) 1240. L(x0, x0, rdiv(T3, x0)) -> x0
+(38.571426) 1241. L(X, X, rdiv(T2, x0)) = L(X, rdiv(T2, x0), X)
+(37.0) 1242. L(x0, x0, rdiv(T2, x0)) -> x0
+(38.571426) 1243. L(X, X, rdiv(x0, T3)) = L(X, rdiv(x0, T3), X)
+(37.0) 1244. L(T3, T3, rdiv(x0, T3)) -> T3
+(38.571426) 1245. L(X, X, rdiv(x0, T2)) = L(X, rdiv(x0, T2), X)
+(37.0) 1246. L(T2, T2, rdiv(x0, T2)) -> T2
+(40.571426) 1247. T(x0, rdiv(x1, K(X, Y))) -> L(T3, x1, K(Y, X))
+(39.0) 1248. L(T3, x1, rdiv(T3, x0)) -> T3
+(40.571426) 1249. T(x0, rdiv(x2, K(X, Y))) -> L(T2, x2, K(Y, X))
+(39.0) 1250. L(T2, x2, rdiv(T2, x0)) -> T2
+(40.571426) 1251. T(T3, rdiv(x2, K(X, Y))) -> L(T5, x2, K(Y, X))
+(39.0) 1252. L(T5, x2, rdiv(x0, T2)) -> T(T3, T(x2, T4))
+(39.0) 1253. L(T5, x2, rdiv(T5, T3)) -> T5
+(40.571426) 1254. T(T2, rdiv(x1, K(X, Y))) -> L(T4, x1, K(Y, X))
+(39.0) 1255. L(T4, x1, rdiv(x0, T3)) -> T(T2, T(x1, T5))
+(39.0) 1256. L(T4, x1, rdiv(T4, T2)) -> T4
+(40.571426) 1257. L(X, X, K(rdiv(zero, X), X)) -> X
+(40.571426) 1258. L(X, X, rdiv(T3, T5)) = L(X, rdiv(T3, T5), X)
+(39.0) 1259. L(T5, T5, rdiv(T3, T5)) -> T5
+(40.571426) 1260. L(X, X, rdiv(T2, T4)) = L(X, rdiv(T2, T4), X)
+(39.0) 1261. L(T4, T4, rdiv(T2, T4)) -> T4
+(40.57143) 1262. L(X, X, K(Y, X)) -> X
+(41.0) 1263. L(x2, x2, rdiv(T3, T5)) -> x2
+(41.0) 1264. L(x1, x1, rdiv(T2, T4)) -> x1
+(41.0) 1265. L(x1, x1, rdiv(x0, T3)) -> x1
+(41.0) 1266. L(x2, x2, rdiv(x0, T2)) -> x2
+(41.0) 1267. L(T3, T3, rdiv(T5, T3)) -> T3
+(41.0) 1268. L(T2, T2, rdiv(T4, T2)) -> T2
+(41.0) 1269. T(x0, rdiv(x1, rdiv(x0, T3))) -> T3
+(41.0) 1270. L(T3, x1, rdiv(T2, T4)) -> T3
+(41.0) 1271. T(x0, rdiv(x2, rdiv(x0, T2))) -> T2
+(41.0) 1272. L(T2, x2, rdiv(T3, T5)) -> T2
+(41.0) 1273. T(T3, rdiv(x2, rdiv(T3, T5))) -> T5
+(41.0) 1274. T(T2, rdiv(x1, rdiv(T2, T4))) -> T4
+(42.0) 1275. L(X, K(X, Y), T(Y, X)) -> X
+(42.428574) 1276. L(T3, x1, K(x1, X)) -> T3
+(42.428574) 1277. L(T2, x2, K(x2, X)) -> T2
+(46.0) 1278. T(rdiv(X, rdiv(X, Y)), ldiv(Y, X)) -> Y
+(42.57143) 1279. rdiv(K(X, Y), T(X, Y)) -> rdiv(zero, X)
+(42.57143) 1280. T(X, ldiv(ldiv(X, Y), Y)) -> X
+(42.57143) 1281. L(ldiv(X, zero), X, K(Y, Z)) -> ldiv(X, zero)
+(42.57143) 1282. rdiv(a(X, Y, Z), op(W, a(X, Y, Z))) -> rdiv(zero, W)
+(42.57143) 1283. T(X, rdiv(op(Y, X), Y)) -> X
+(42.57143) 1284. T(X, rdiv(K(Y, Z), X)) -> ldiv(ldiv(X, zero), zero)
+(42.714287) 1285. L(rdiv(X, K(Y, Z)), K(Y, Z), rdiv(X, K(Y, Z))) -> T(rdiv(X, K(Y, Z)), X)
+(49.57143) 1286. rdiv(X, rdiv(K(X, Y), K(Y, X))) -> rdiv(op(T(Y, X), X), Y)
+(42.714287) 1287. K(X, ldiv(ldiv(X, Y), Y)) -> zero
+(42.714287) 1288. K(ldiv(ldiv(X, Y), Y), X) -> zero
+(42.714287) 1289. K(X, rdiv(op(Y, X), Y)) -> zero
+(42.714287) 1290. K(rdiv(op(X, Y), X), Y) -> zero
+(58.85714) 1291. rdiv(X, K(ldiv(Y, zero), rdiv(zero, rdiv(zero, Y)))) -> rdiv(X, K(rdiv(zero, Y), Y))
+(42.857143) 1292. K(rdiv(X, rdiv(X, Y)), rdiv(X, Y)) -> K(Y, rdiv(X, Y))
+(42.857143) 1293. op(ldiv(ldiv(X, Y), Y), ldiv(X, Y)) -> op(X, rdiv(Y, X))
+(42.857143) 1294. op(rdiv(X, Y), rdiv(X, rdiv(X, Y))) -> op(ldiv(Y, X), Y)
+(42.857143) 1295. rdiv(op(X, Y), rdiv(op(X, Y), X)) -> rdiv(X, K(X, Y))
+(42.857143) 1296. rdiv(zero, ldiv(X, K(Y, Z))) -> rdiv(X, K(Y, Z))
+(43.0) 1297. ldiv(x0, L(T3, x1, x0)) -> K(x0, op(x1, T3))
+(43.0) 1298. ldiv(x0, L(T2, x2, x0)) -> K(x0, op(x2, T2))
+(43.0) 1299. ldiv(T3, L(T5, x2, T3)) -> K(T5, op(T3, x2))
+(43.0) 1300. ldiv(T2, L(T4, x1, T2)) -> K(T4, op(T2, x1))
+(43.0) 1301. rdiv(L(T3, x1, x0), x0) -> K(x0, op(x1, T3))
+(43.0) 1302. rdiv(L(T2, x2, x0), x0) -> K(x0, op(x2, T2))
+(43.0) 1303. rdiv(L(T5, x2, T3), T3) -> K(T5, op(T3, x2))
+(43.0) 1304. rdiv(L(T4, x1, T2), T2) -> K(T4, op(T2, x1))
+(43.0) 1305. rdiv(T(x1, T5), rdiv(x0, T3)) -> x1
+(43.0) 1306. rdiv(T(x2, T4), rdiv(x0, T2)) -> x2
+(43.0) 1307. rdiv(x1, rdiv(T3, x0)) -> T(x1, T5)
+(43.0) 1308. rdiv(x2, rdiv(T2, x0)) -> T(x2, T4)
+(43.0) 1309. rdiv(op(x1, x0), T(x1, T5)) -> x0
+(43.0) 1310. rdiv(op(x2, x0), T(x2, T4)) -> x0
+(43.0) 1311. ldiv(T(x2, T5), op(x2, T3)) -> T5
+(43.0) 1312. rdiv(op(x2, T3), T(x2, T5)) -> T3
+(43.0) 1313. ldiv(T(x1, T4), op(x1, T2)) -> T4
+(43.0) 1314. rdiv(op(x1, T2), T(x1, T4)) -> T2
+(51.0) 1315. rdiv(op(x1, T3), rdiv(x1, rdiv(x0, T3))) -> rdiv(x0, rdiv(T3, x0))
+(51.0) 1316. rdiv(op(x2, T2), rdiv(x2, rdiv(x0, T2))) -> rdiv(x0, rdiv(T2, x0))
+(43.0) 1317. rdiv(rdiv(x2, rdiv(T3, T5)), x2) -> rdiv(T5, T3)
+(43.0) 1318. rdiv(rdiv(x1, rdiv(T2, T4)), x1) -> rdiv(T4, T2)
+(43.0) 1319. rdiv(T(T5, x2), rdiv(T5, T3)) -> T5
+(39.0) 1320. op(T3, T(T5, x2)) -> op(T5, T5)
+(41.0) 1321. L(T5, rdiv(T5, T3), T5) -> T5
+(41.0) 1322. rdiv(op(T5, T5), T3) -> T(T5, x2)
+(43.0) 1323. rdiv(T(T4, x1), rdiv(T4, T2)) -> T4
+(39.0) 1324. op(T2, T(T4, x1)) -> op(T4, T4)
+(41.0) 1325. L(T4, rdiv(T4, T2), T4) -> T4
+(41.0) 1326. rdiv(op(T4, T4), T2) -> T(T4, x1)
+(43.0) 1327. rdiv(T(T3, x1), rdiv(T3, x0)) -> T3
+(41.0) 1328. L(T3, T3, rdiv(T3, x0)) -> T3
+(43.0) 1329. rdiv(T(T2, x2), rdiv(T2, x0)) -> T2
+(41.0) 1330. L(T2, T2, rdiv(T2, x0)) -> T2
+(43.0) 1331. K(rdiv(x1, rdiv(x0, T3)), T5) -> rdiv(x0, T3)
+(43.0) 1332. K(rdiv(x2, rdiv(x0, T2)), T4) -> rdiv(x0, T2)
+(43.0) 1333. op(X, T(ldiv(X, zero), Y)) -> K(ldiv(X, zero), Y)
+(41.0) 1334. K(ldiv(T3, zero), T5) -> K(rdiv(zero, T3), T5)
+(41.0) 1335. K(ldiv(T2, zero), T4) -> K(rdiv(zero, T2), T4)
+(43.0) 1336. T(R(T3, x2, T5), op(T3, x2)) -> T5
+(43.0) 1337. T(R(T2, x1, T4), op(T2, x1)) -> T4
+(43.0) 1338. op(rdiv(zero, T(X, Y)), X) -> K(Y, X)
+(43.0) 1339. rdiv(rdiv(T3, x0), op(x1, T3)) -> rdiv(zero, op(x1, x0))
+(43.0) 1340. rdiv(rdiv(T2, x0), op(x2, T2)) -> rdiv(zero, op(x2, x0))
+(43.0) 1341. rdiv(rdiv(T3, T5), ldiv(T5, zero)) -> T3
+(43.0) 1342. rdiv(rdiv(T2, T4), ldiv(T4, zero)) -> T2
+(43.0) 1343. rdiv(rdiv(x0, T3), ldiv(T3, zero)) -> x0
+(43.0) 1344. K(ldiv(T3, zero), x0) -> K(rdiv(zero, T3), T5)
+(43.0) 1345. rdiv(rdiv(x0, T2), ldiv(T2, zero)) -> x0
+(43.0) 1346. K(ldiv(T2, zero), x0) -> K(rdiv(zero, T2), T4)
+(43.0) 1347. op(x0, op(T3, x0)) -> op(T3, op(x0, x0))
+(40.0) 1348. L(x0, x0, T3) -> L(x0, T3, x0)
+(43.0) 1349. op(x0, op(T2, x0)) -> op(T2, op(x0, x0))
+(40.0) 1350. L(x0, x0, T2) -> L(x0, T2, x0)
+(43.0) 1351. ldiv(T3, op(x2, T2)) -> rdiv(x2, rdiv(T3, x0))
+(43.0) 1352. ldiv(T3, op(T2, x0)) -> rdiv(T2, rdiv(T3, x0))
+(43.0) 1353. ldiv(T3, op(T4, x0)) -> rdiv(T4, rdiv(T3, x0))
+(43.0) 1354. ldiv(T2, op(x1, T3)) -> rdiv(x1, rdiv(T2, x0))
+(43.0) 1355. ldiv(T2, op(T3, x0)) -> rdiv(T3, rdiv(T2, x0))
+(43.0) 1356. ldiv(T2, op(T5, x0)) -> rdiv(T5, rdiv(T2, x0))
+(51.0) 1357. K(T5, ldiv(T3, op(x1, x0))) -> rdiv(T3, x0)
+(51.0) 1358. K(ldiv(T3, op(x1, x0)), T5) -> rdiv(x0, T3)
+(51.0) 1359. K(T4, ldiv(T2, op(x2, x0))) -> rdiv(T2, x0)
+(51.0) 1360. K(ldiv(T2, op(x2, x0)), T4) -> rdiv(x0, T2)
+(43.0) 1361. rdiv(rdiv(x0, T3), op(x1, T3)) -> rdiv(zero, op(T3, x1))
+(43.0) 1362. rdiv(rdiv(x0, T2), op(x2, T2)) -> rdiv(zero, op(T2, x2))
+(43.0) 1363. rdiv(rdiv(T5, T3), op(T3, x2)) -> rdiv(zero, op(x2, T3))
+(43.0) 1364. rdiv(rdiv(T4, T2), op(T2, x1)) -> rdiv(zero, op(x1, T2))
+(41.0) 1365. ldiv(T3, rdiv(T3, x0)) -> ldiv(x0, zero)
+(41.0) 1366. ldiv(T2, rdiv(T2, x0)) -> ldiv(x0, zero)
+(41.0) 1367. ldiv(T5, rdiv(T5, T3)) -> ldiv(T3, zero)
+(41.0) 1368. ldiv(T4, rdiv(T4, T2)) -> ldiv(T2, zero)
+(43.0) 1369. K(T5, rdiv(x2, rdiv(T3, T5))) -> rdiv(T5, T3)
+(38.285713) 1370. L(X, rdiv(T5, T3), T5) -> X
+(41.0) 1371. L(T5, T5, rdiv(T5, T3)) -> T5
+(42.571426) 1372. L(X, X, rdiv(T5, T3)) = L(X, rdiv(T5, T3), X)
+(43.0) 1373. K(T4, rdiv(x1, rdiv(T2, T4))) -> rdiv(T4, T2)
+(38.285713) 1374. L(X, rdiv(T4, T2), T4) -> X
+(41.0) 1375. L(T4, T4, rdiv(T4, T2)) -> T4
+(42.571426) 1376. L(X, X, rdiv(T4, T2)) = L(X, rdiv(T4, T2), X)
+(43.0) 1377. K(T5, rdiv(x1, rdiv(x0, T3))) -> rdiv(T3, x0)
+(38.285713) 1378. L(X, rdiv(T3, x0), T5) -> X
+(41.0) 1379. L(T5, T5, rdiv(T3, x0)) -> T5
+(43.0) 1380. K(T4, rdiv(x2, rdiv(x0, T2))) -> rdiv(T2, x0)
+(38.285713) 1381. L(X, rdiv(T2, x0), T4) -> X
+(41.0) 1382. L(T4, T4, rdiv(T2, x0)) -> T4
+(43.0) 1383. op(rdiv(x2, rdiv(T3, T5)), T5) -> op(T5, x2)
+(43.0) 1384. op(rdiv(x1, rdiv(T2, T4)), T4) -> op(T4, x1)
+(43.0) 1385. op(rdiv(x1, rdiv(x0, T3)), T3) -> op(T3, x1)
+(43.0) 1386. op(rdiv(x2, rdiv(x0, T2)), T2) -> op(T2, x2)
+(43.0) 1387. rdiv(rdiv(x0, T3), op(x1, x0)) -> rdiv(zero, op(x1, T3))
+(43.0) 1388. rdiv(rdiv(x0, T2), op(x2, x0)) -> rdiv(zero, op(x2, T2))
+(43.0) 1389. T(x0, L(x0, T5, x0)) -> x0
+(43.0) 1390. T(x0, L(x0, T4, x0)) -> x0
+(43.0) 1391. K(x0, L(x0, T5, x0)) -> zero
+(43.0) 1392. K(x0, L(x0, T4, x0)) -> zero
+(43.0) 1393. K(L(x0, T5, x0), x0) -> zero
+(43.0) 1394. K(L(x0, T4, x0), x0) -> zero
+(39.0) 1395. L(x1, x1, rdiv(T3, x0)) -> x1
+(39.0) 1396. L(x2, x2, rdiv(T2, x0)) -> x2
+(43.0) 1397. L(x2, x2, rdiv(T5, T3)) -> x2
+(43.0) 1398. L(x1, x1, rdiv(T4, T2)) -> x1
+(43.0) 1399. L(T3, T3, rdiv(T3, T5)) -> T3
+(43.0) 1400. L(T2, T2, rdiv(T2, T4)) -> T2
+(43.0) 1401. L(x0, x0, rdiv(x0, T3)) -> x0
+(43.0) 1402. L(x0, x0, rdiv(x0, T2)) -> x0
+(43.0) 1403. K(x1, rdiv(x1, rdiv(x0, T3))) -> zero
+(43.0) 1404. K(x2, rdiv(x2, rdiv(x0, T2))) -> zero
+(43.0) 1405. K(rdiv(x1, rdiv(x0, T3)), x1) -> zero
+(43.0) 1406. K(rdiv(x2, rdiv(x0, T2)), x2) -> zero
+(43.0) 1407. T(x0, L(x1, x1, x1)) -> T3
+(43.0) 1408. T(x0, L(x2, x2, x2)) -> T2
+(43.0) 1409. ldiv(x0, op(T5, T3)) -> rdiv(T5, rdiv(x0, T3))
+(43.0) 1410. T(x0, L(T3, x1, T3)) -> x0
+(43.0) 1411. K(x0, L(T3, x1, T3)) -> zero
+(43.0) 1412. K(L(T3, x1, T3), x0) -> zero
+(43.0) 1413. op(T3, ldiv(x0, zero)) -> rdiv(T3, x0)
+(43.0) 1414. ldiv(x0, op(T4, T2)) -> rdiv(T4, rdiv(x0, T2))
+(43.0) 1415. T(x0, L(T2, x2, T2)) -> x0
+(43.0) 1416. K(x0, L(T2, x2, T2)) -> zero
+(43.0) 1417. K(L(T2, x2, T2), x0) -> zero
+(43.0) 1418. T(x0, L(T3, T3, T3)) -> x0
+(43.0) 1419. T(x0, L(T5, x2, T3)) -> x0
+(43.0) 1420. K(x0, L(T3, T3, T3)) -> zero
+(43.0) 1421. K(x0, L(T5, x2, T3)) -> zero
+(43.0) 1422. K(L(T3, T3, T3), x0) -> zero
+(43.0) 1423. K(L(T5, x2, T3), x0) -> zero
+(43.0) 1424. T(x0, L(T2, T2, T2)) -> x0
+(43.0) 1425. T(x0, L(T4, x1, T2)) -> x0
+(43.0) 1426. K(x0, L(T2, T2, T2)) -> zero
+(43.0) 1427. K(x0, L(T4, x1, T2)) -> zero
+(43.0) 1428. K(L(T2, T2, T2), x0) -> zero
+(43.0) 1429. K(L(T4, x1, T2), x0) -> zero
+(43.0) 1430. rdiv(op(x1, x0), T(T3, x1)) -> ldiv(T3, op(x1, x0))
+(43.0) 1431. rdiv(op(x2, x0), T(T2, x2)) -> ldiv(T2, op(x2, x0))
+(43.0) 1432. L(T3, rdiv(x1, rdiv(x0, T3)), rdiv(x0, T3)) -> T3
+(43.0) 1433. L(T2, rdiv(x2, rdiv(x0, T2)), rdiv(x0, T2)) -> T2
+(43.0) 1434. L(x0, rdiv(x1, rdiv(x0, T3)), rdiv(x0, T3)) -> x0
+(43.0) 1435. L(x0, rdiv(x2, rdiv(x0, T2)), rdiv(x0, T2)) -> x0
+(43.0) 1436. rdiv(op(x0, x0), rdiv(x0, T3)) -> op(T3, x0)
+(43.0) 1437. rdiv(op(x0, x0), rdiv(x0, T2)) -> op(T2, x0)
+(43.0) 1438. T(rdiv(x1, rdiv(x0, T3)), x0) -> x1
+(43.0) 1439. T(rdiv(x2, rdiv(x0, T2)), x0) -> x2
+(43.0) 1440. T(rdiv(x2, rdiv(T3, T5)), T5) -> x2
+(41.0) 1441. L(x2, T5, rdiv(T5, T3)) -> x2
+(41.0) 1442. L(T5, rdiv(T5, T3), x2) -> T5
+(43.0) 1443. T(rdiv(x1, rdiv(T2, T4)), T4) -> x1
+(41.0) 1444. L(x1, T4, rdiv(T4, T2)) -> x1
+(41.0) 1445. L(T4, rdiv(T4, T2), x1) -> T4
+(43.0) 1446. T(rdiv(x1, rdiv(x0, T3)), T5) -> x1
+(41.0) 1447. L(T5, x1, rdiv(T3, x0)) -> T5
+(41.0) 1448. L(x1, T5, rdiv(T3, x0)) -> x1
+(41.0) 1449. L(T5, rdiv(T3, x0), x1) -> T5
+(43.0) 1450. T(rdiv(x2, rdiv(x0, T2)), T4) -> x2
+(41.0) 1451. L(T4, x2, rdiv(T2, x0)) -> T4
+(41.0) 1452. L(x2, T4, rdiv(T2, x0)) -> x2
+(41.0) 1453. L(T4, rdiv(T2, x0), x2) -> T4
+(43.0) 1454. L(T5, T5, rdiv(x0, T3)) -> T5
+(43.0) 1455. L(T4, T4, rdiv(x0, T2)) -> T4
+(43.0) 1456. T(T5, ldiv(T3, zero)) -> T(T5, rdiv(zero, T3))
+(43.0) 1457. K(T5, ldiv(T3, zero)) -> K(T5, rdiv(zero, T3))
+(43.0) 1458. T(T4, ldiv(T2, zero)) -> T(T4, rdiv(zero, T2))
+(43.0) 1459. K(T4, ldiv(T2, zero)) -> K(T4, rdiv(zero, T2))
+(43.0) 1460. op(T5, ldiv(T3, zero)) -> rdiv(T5, T3)
+(43.0) 1461. op(T4, ldiv(T2, zero)) -> rdiv(T4, T2)
+(43.142853) 1462. rdiv(op(op(X, Y), Z), a(X, Y, Z)) -> op(X, op(Y, Z))
+(41.714287) 1463. rdiv(op(op(X, Y), Z), K(X, Y)) -> op(op(Y, X), Z)
+(38.14286) 1464. op(op(X, Y), op(Y, X)) <-> op(op(Y, X), op(X, Y))
+(34.714287) 1465. K(op(X, Y), op(Y, X)) -> zero
+(36.428574) 1466. T(op(X, Y), op(Y, X)) -> op(X, Y)
+(36.57143) 1467. T(X, op(ldiv(Y, X), Y)) -> X
+(36.57143) 1468. T(X, op(Y, rdiv(X, Y))) -> X
+(36.714287) 1469. K(X, op(ldiv(Y, X), Y)) -> zero
+(36.714287) 1470. K(op(ldiv(X, Y), X), Y) -> zero
+(36.714287) 1471. K(X, op(Y, rdiv(X, Y))) -> zero
+(36.714287) 1472. K(op(X, rdiv(Y, X)), Y) -> zero
+(39.0) 1473. K(op(x1, T3), op(x1, x0)) -> zero
+(39.0) 1474. K(op(x1, x0), op(x1, T3)) -> zero
+(39.0) 1475. K(op(x2, T2), op(x2, x0)) -> zero
+(39.0) 1476. K(op(x2, x0), op(x2, T2)) -> zero
+(39.0) 1477. K(op(T3, x2), op(T5, x2)) -> zero
+(39.0) 1478. K(op(T5, x2), op(T3, x2)) -> zero
+(39.0) 1479. K(op(T2, x1), op(T4, x1)) -> zero
+(39.0) 1480. K(op(T4, x1), op(T2, x1)) -> zero
+(40.14286) 1481. op(op(ldiv(X, Y), X), Y) -> op(Y, op(ldiv(X, Y), X))
+(40.14286) 1482. op(op(X, rdiv(Y, X)), Y) -> op(Y, op(X, rdiv(Y, X)))
+(40.285713) 1483. T(op(ldiv(X, Y), X), Y) -> op(ldiv(X, Y), X)
+(40.285713) 1484. T(op(X, rdiv(Y, X)), Y) -> op(X, rdiv(Y, X))
+(41.0) 1485. T(op(x1, T3), op(x1, x0)) -> op(x1, T3)
+(41.0) 1486. T(op(x1, x0), op(x1, T3)) -> op(x1, x0)
+(41.0) 1487. T(op(x2, T2), op(x2, x0)) -> op(x2, T2)
+(41.0) 1488. T(op(x2, x0), op(x2, T2)) -> op(x2, x0)
+(41.0) 1489. T(op(T3, x2), op(T5, x2)) -> op(T3, x2)
+(41.0) 1490. T(op(T5, x2), op(T3, x2)) -> op(T5, x2)
+(41.0) 1491. T(op(T2, x1), op(T4, x1)) -> op(T2, x1)
+(41.0) 1492. T(op(T4, x1), op(T2, x1)) -> op(T4, x1)
+(42.428574) 1493. L(op(X, Y), K(X, Y), op(X, Y)) -> op(X, Y)
+(42.0) 1494. L(X, X, K(Y, rdiv(X, Y))) -> X
+(42.0) 1495. L(X, X, K(rdiv(X, Y), Y)) -> X
+(43.0) 1496. op(op(x1, x0), op(x1, T3)) -> op(op(x1, T3), op(x1, x0))
+(40.0) 1497. R(x1, x0, op(x1, T3)) -> R(x1, T3, op(x1, x0))
+(43.0) 1498. op(op(x2, x0), op(x2, T2)) -> op(op(x2, T2), op(x2, x0))
+(40.0) 1499. R(x2, x0, op(x2, T2)) -> R(x2, T2, op(x2, x0))
+(43.0) 1500. op(op(T3, x2), op(T5, x2)) -> op(op(T5, x2), op(T3, x2))
+(40.0) 1501. L(x2, T3, op(T5, x2)) -> L(x2, T5, op(T3, x2))
+(43.0) 1502. op(op(T2, x1), op(T4, x1)) -> op(op(T4, x1), op(T2, x1))
+(40.0) 1503. L(x1, T2, op(T4, x1)) -> L(x1, T4, op(T2, x1))
+(43.142857) 1504. L(rdiv(zero, X), X, rdiv(zero, X)) -> rdiv(zero, rdiv(zero, rdiv(zero, X)))
+(43.285713) 1505. rdiv(op(X, op(Y, Z)), L(Z, Y, X)) -> op(X, Y)
+(42.285713) 1506. rdiv(op(T3, X), rdiv(T3, T5)) -> op(T5, X)
+(38.285713) 1507. op(T5, ldiv(T3, X)) -> rdiv(X, rdiv(T3, T5))
+(42.285713) 1508. rdiv(op(T2, X), rdiv(T2, T4)) -> op(T4, X)
+(38.285713) 1509. op(T4, ldiv(T2, X)) -> rdiv(X, rdiv(T2, T4))
+(42.285713) 1510. rdiv(op(x0, X), rdiv(x0, T3)) -> op(T3, X)
+(38.285713) 1511. op(T3, ldiv(x0, X)) -> rdiv(X, rdiv(x0, T3))
+(38.285713) 1512. op(x0, op(T3, X)) -> op(T3, op(x0, X))
+(35.285713) 1513. L(X, x0, T3) -> L(X, T3, x0)
+(39.0) 1514. rdiv(T2, rdiv(x0, T3)) -> rdiv(T3, rdiv(x0, T2))
+(41.0) 1515. op(T2, op(T3, x0)) -> op(T3, op(T2, x0))
+(38.0) 1516. L(x0, T2, T3) -> L(x0, T3, T2)
+(41.0) 1517. rdiv(rdiv(x0, T2), T3) -> rdiv(rdiv(x0, T3), T2)
+(42.0) 1518. T(T2, op(T3, x0)) -> L(T2, T3, x0)
+(42.0) 1519. T(T3, op(T2, x0)) -> L(T3, x0, T2)
+(42.285713) 1520. rdiv(op(x0, X), rdiv(x0, T2)) -> op(T2, X)
+(38.285713) 1521. op(T2, ldiv(x0, X)) -> rdiv(X, rdiv(x0, T2))
+(38.285713) 1522. op(x0, op(T2, X)) -> op(T2, op(x0, X))
+(35.285713) 1523. L(X, x0, T2) -> L(X, T2, x0)
+(43.285713) 1524. ldiv(R(X, Y, Z), op(op(X, Y), Z)) -> op(Y, Z)
+(41.57143) 1525. op(X, op(Y, a(Z, X, Y))) = ldiv(Z, op(op(Z, X), Y))
+(42.285713) 1526. ldiv(X, op(T(X, Y), Z)) -> rdiv(Z, K(Y, X))
+(43.285713) 1527. ldiv(R(rdiv(X, Y), Y, Z), op(X, Z)) -> op(Y, Z)
+(40.285713) 1528. ldiv(rdiv(T5, X), T3) -> rdiv(X, rdiv(T5, T3))
+(40.285713) 1529. ldiv(rdiv(T4, X), T2) -> rdiv(X, rdiv(T4, T2))
+(40.285713) 1530. ldiv(rdiv(T3, X), x0) -> rdiv(X, rdiv(T3, x0))
+(40.285713) 1531. ldiv(rdiv(T2, X), x0) -> rdiv(X, rdiv(T2, x0))
+(42.285713) 1532. ldiv(rdiv(X, Y), T(X, Z)) -> rdiv(Y, K(Z, X))
+(38.285713) 1533. ldiv(rdiv(x0, X), T3) -> rdiv(X, rdiv(x0, T3))
+(38.285713) 1534. ldiv(rdiv(x0, X), T2) -> rdiv(X, rdiv(x0, T2))
+(38.285713) 1535. ldiv(rdiv(T3, X), T5) -> rdiv(X, rdiv(T3, T5))
+(38.285713) 1536. ldiv(rdiv(T2, X), T4) -> rdiv(X, rdiv(T2, T4))
+(43.285713) 1537. rdiv(op(X, Y), L(ldiv(Z, Y), Z, X)) -> op(X, Z)
+(43.285713) 1538. R(X, rdiv(zero, T3), T3) -> R(X, rdiv(zero, T3), T5)
+(43.285713) 1539. R(X, rdiv(zero, T2), T2) -> R(X, rdiv(zero, T2), T4)
+(43.285713) 1540. R(X, rdiv(zero, x0), x0) -> R(X, rdiv(zero, x0), T3)
+(43.285713) 1541. R(X, rdiv(zero, x0), T2) -> R(X, rdiv(zero, x0), T3)
+(43.285713) 1542. L(T(X, x0), T3, x0) -> L(T(X, T5), T3, x0)
+(43.285713) 1543. L(T(X, x0), T2, x0) -> L(T(X, T4), T2, x0)
+(43.285713) 1544. ldiv(X, R(X, Y, ldiv(Y, zero))) -> a(X, Y, ldiv(Y, zero))
+(37.571426) 1545. a(ldiv(X, zero), X, ldiv(X, zero)) -> K(rdiv(zero, X), X)
+(39.0) 1546. a(X, rdiv(zero, X), X) -> K(X, rdiv(zero, X))
+(43.285713) 1547. ldiv(X, R(X, rdiv(zero, Y), Y)) -> a(X, rdiv(zero, Y), Y)
+(50.85714) 1548. rdiv(K(rdiv(zero, X), X), K(X, rdiv(zero, X))) -> op(T(ldiv(X, zero), X), X)
+(43.428574) 1549. T(X, op(a(Y, Z, W), X)) -> L(X, a(Y, Z, W), X)
+(43.571426) 1550. op(rdiv(X, rdiv(T3, x0)), Y) -> rdiv(op(X, Y), rdiv(T3, x0))
+(43.571426) 1551. op(X, rdiv(Y, rdiv(T3, x0))) -> rdiv(op(X, Y), rdiv(T3, x0))
+(43.571426) 1552. op(rdiv(X, rdiv(T2, x0)), Y) -> rdiv(op(X, Y), rdiv(T2, x0))
+(43.571426) 1553. op(X, rdiv(Y, rdiv(T2, x0))) -> rdiv(op(X, Y), rdiv(T2, x0))
+(43.571426) 1554. op(rdiv(X, rdiv(x0, T3)), Y) -> rdiv(op(X, Y), rdiv(x0, T3))
+(38.285713) 1555. op(T2, op(X, T3)) -> op(T3, op(X, T2))
+(40.285713) 1556. op(T(T3, X), T2) -> op(T2, T(T3, X))
+(38.428574) 1557. T(T2, T(T3, X)) -> T2
+(38.428574) 1558. K(T4, T(T3, X)) -> zero
+(38.428574) 1559. K(T(T3, X), T4) -> zero
+(40.285713) 1560. T(T(T3, X), T4) -> T(T3, X)
+(40.428574) 1561. T(T4, T(T3, X)) -> T4
+(41.0) 1562. op(T3, op(T4, T2)) -> op(T4, op(T3, T2))
+(38.0) 1563. L(T2, T3, T4) -> L(T2, T4, T3)
+(42.0) 1564. T(T3, op(T4, T2)) -> L(T3, T4, T2)
+(42.0) 1565. T(T4, op(T3, T2)) -> L(T4, T2, T3)
+(43.571426) 1566. op(X, rdiv(Y, rdiv(x0, T3))) -> rdiv(op(X, Y), rdiv(x0, T3))
+(40.285713) 1567. op(T2, op(T3, X)) -> op(T3, op(T2, X))
+(37.285713) 1568. L(X, T2, T3) -> L(X, T3, T2)
+(42.285713) 1569. rdiv(op(X, x0), rdiv(x0, T3)) -> op(X, T3)
+(38.285713) 1570. op(rdiv(X, x0), T3) -> rdiv(X, rdiv(x0, T3))
+(40.285713) 1571. op(T(T2, X), T3) -> op(T3, T(T2, X))
+(38.428574) 1572. T(T3, T(T2, X)) -> T3
+(38.428574) 1573. K(T5, T(T2, X)) -> zero
+(38.428574) 1574. K(T(T2, X), T5) -> zero
+(40.285713) 1575. T(T(T2, X), T5) -> T(T2, X)
+(40.428574) 1576. T(T5, T(T2, X)) -> T5
+(43.285713) 1577. R(X, rdiv(zero, T3), x0) -> R(X, rdiv(zero, T3), T5)
+(43.571426) 1578. op(rdiv(X, rdiv(x0, T2)), Y) -> rdiv(op(X, Y), rdiv(x0, T2))
+(43.571426) 1579. op(X, rdiv(Y, rdiv(x0, T2))) -> rdiv(op(X, Y), rdiv(x0, T2))
+(42.285713) 1580. rdiv(op(X, x0), rdiv(x0, T2)) -> op(X, T2)
+(38.285713) 1581. op(rdiv(X, x0), T2) -> rdiv(X, rdiv(x0, T2))
+(43.285713) 1582. R(X, rdiv(zero, T2), x0) -> R(X, rdiv(zero, T2), T4)
+(43.57143) 1583. R(rdiv(X, K(X, Y)), Y, X) -> rdiv(X, K(X, op(Y, X)))
+(43.57143) 1584. rdiv(op(X, Y), K(Z, rdiv(X, Z))) -> op(op(ldiv(Z, X), Z), Y)
+(43.57143) 1585. rdiv(op(X, Y), K(rdiv(X, Z), Z)) -> op(op(Z, rdiv(X, Z)), Y)
+(41.857143) 1586. rdiv(op(T(X, Y), Y), op(X, Y)) -> K(X, Y)
+(43.0) 1587. K(x0, rdiv(x1, rdiv(x0, T3))) -> rdiv(T3, x0)
+(43.0) 1588. K(x0, rdiv(x2, rdiv(x0, T2))) -> rdiv(T2, x0)
+(43.0) 1589. K(ldiv(x0, zero), T4) -> K(rdiv(zero, x0), T5)
+(43.714287) 1590. K(op(X, X), R(X, X, X)) -> K(op(X, X), X)
+(43.714287) 1591. T(rdiv(op(X, Y), X), op(X, Y)) -> L(Y, X, rdiv(op(X, Y), X))
+(40.0) 1592. T(x0, op(T3, x0)) -> L(x0, T3, x0)
+(40.0) 1593. T(x0, op(T2, x0)) -> L(x0, T2, x0)
+(43.0) 1594. T(x0, L(x0, T3, x0)) -> x0
+(43.0) 1595. K(x0, L(x0, T3, x0)) -> zero
+(43.0) 1596. K(L(x0, T3, x0), x0) -> zero
+(43.0) 1597. T(x0, L(x0, T2, x0)) -> x0
+(43.0) 1598. K(x0, L(x0, T2, x0)) -> zero
+(43.0) 1599. K(L(x0, T2, x0), x0) -> zero
+(43.571426) 1600. L(T(X, T5), T3, X) -> T(X, op(X, T3))
+(43.571426) 1601. L(T(X, T4), T2, X) -> T(X, op(X, T2))
+  (simplifying rules with respect to one another...)
+  (delete rule 8)
+(19.285715) 1602. K(X, K(Y, Z)) -> zero
+  (delete rule 9)
+(19.285715) 1603. K(K(X, Y), Z) -> zero
+  (delete rule 14)
+(22.714287) 1604. K(X, a(Y, Z, W)) -> zero
+  (delete rule 15)
+(22.714287) 1605. K(a(X, Y, Z), W) -> zero
+  (delete rule 16)
+(22.714287) 1606. a(X, Y, K(Z, W)) -> zero
+  (delete rule 17)
+(22.714287) 1607. a(X, K(Y, Z), W) -> zero
+  (delete rule 18)
+(22.714287) 1608. a(K(X, Y), Z, W) -> zero
+  (delete rule 19)
+(26.142859) 1609. a(X, Y, a(Z, W, V)) -> zero
+  (delete rule 20)
+(26.142859) 1610. a(X, a(Y, Z, W), V) -> zero
+  (delete rule 21)
+(26.142859) 1611. a(a(X, Y, Z), W, V) -> zero
+  (delete rule 22)
+  (delete rule 25)
+(41.142853) 1612. op(X, op(Y, op(Z, a(X, Y, Z)))) -> op(op(X, Y), Z)
+  (delete rule 31)
+  (delete rule 32)
+  (delete rule 39)
+  (delete rule 40)
+  (delete rule 41)
+  (delete rule 44)
+  (delete rule 61)
+  (delete rule 63)
+  (delete rule 67)
+  (delete rule 68)
+  (delete rule 70)
+  (delete rule 80)
+  (delete rule 81)
+(27.57143) 1613. op(ldiv(X, zero), X) -> K(rdiv(zero, X), X)
+  (delete rule 83)
+  (delete rule 84)
+  (delete rule 85)
+  (delete rule 86)
+  (delete rule 88)
+  (delete rule 89)
+  (delete rule 90)
+  (delete rule 100)
+  (delete rule 101)
+  (delete rule 102)
+(41.142857) 1614. ldiv(ldiv(X, zero), K(rdiv(zero, X), X)) -> X
+  (delete rule 103)
+(32.428574) 1615. ldiv(T(X, Y), op(X, Y)) -> T(Y, X)
+  (delete rule 104)
+  (delete rule 106)
+(34.285713) 1616. ldiv(X, op(ldiv(Y, X), Y)) -> K(rdiv(X, Y), Y)
+  (delete rule 107)
+(34.285713) 1617. ldiv(op(ldiv(X, Y), X), Y) -> K(X, rdiv(Y, X))
+  (delete rule 110)
+  (delete rule 111)
+  (delete rule 115)
+  (delete rule 118)
+  (delete rule 121)
+  (delete rule 122)
+(36.285713) 1618. rdiv(op(ldiv(X, Y), X), Y) -> K(rdiv(Y, X), X)
+  (delete rule 124)
+(36.285713) 1619. rdiv(X, op(ldiv(Y, X), Y)) -> K(Y, rdiv(X, Y))
+  (delete rule 126)
+  (delete rule 127)
+(25.0) 1620. K(x2, T5) -> rdiv(T3, T5)
+  (delete rule 128)
+(25.0) 1621. K(x1, T4) -> rdiv(T2, T4)
+  (delete rule 129)
+  (delete rule 130)
+  (delete rule 131)
+  (delete rule 133)
+  (delete rule 135)
+  (delete rule 137)
+  (delete rule 147)
+  (delete rule 156)
+  (delete rule 157)
+  (delete rule 158)
+  (delete rule 159)
+  (delete rule 160)
+  (delete rule 174)
+  (delete rule 177)
+  (delete rule 180)
+  (delete rule 183)
+  (delete rule 186)
+  (delete rule 187)
+  (delete rule 190)
+  (delete rule 191)
+  (delete rule 192)
+  (delete rule 193)
+  (delete rule 194)
+  (delete rule 195)
+  (delete rule 196)
+  (delete rule 197)
+  (delete rule 198)
+  (delete rule 199)
+  (delete rule 200)
+  (delete rule 201)
+  (delete rule 202)
+  (delete rule 203)
+(37.0) 1622. ldiv(op(T3, x2), op(T5, x2)) -> rdiv(T5, T3)
+  (delete rule 204)
+  (delete rule 205)
+(37.0) 1623. ldiv(op(T2, x1), op(T4, x1)) -> rdiv(T4, T2)
+  (delete rule 206)
+  (delete rule 207)
+  (delete rule 208)
+  (delete rule 209)
+  (delete rule 210)
+  (delete rule 211)
+  (delete rule 212)
+  (delete rule 213)
+  (delete rule 214)
+  (delete rule 215)
+  (delete rule 217)
+  (delete rule 218)
+  (delete rule 219)
+  (delete rule 220)
+  (delete rule 221)
+  (delete rule 222)
+  (delete rule 224)
+  (delete rule 227)
+  (delete rule 229)
+  (delete rule 230)
+  (delete rule 231)
+  (delete rule 233)
+  (delete rule 236)
+  (delete rule 237)
+  (delete rule 238)
+  (delete rule 239)
+  (delete rule 244)
+  (delete rule 245)
+  (delete rule 250)
+  (delete rule 251)
+  (delete rule 252)
+  (delete rule 253)
+  (delete rule 266)
+  (delete rule 267)
+  (delete rule 268)
+  (delete rule 269)
+  (delete rule 271)
+  (delete rule 272)
+  (delete rule 274)
+  (delete rule 275)
+  (delete rule 278)
+(31.0) 1624. T(x1, x0) -> T(x1, T5)
+  (delete rule 281)
+(31.0) 1625. T(x2, x0) -> T(x2, T4)
+  (delete rule 282)
+  (delete rule 283)
+  (delete rule 284)
+  (delete rule 285)
+  (delete rule 286)
+  (delete rule 289)
+  (delete rule 290)
+  (delete rule 291)
+  (delete rule 292)
+  (delete rule 299)
+  (delete rule 300)
+  (delete rule 311)
+  (delete rule 318)
+  (delete rule 319)
+  (delete rule 321)
+  (delete rule 322)
+  (delete rule 323)
+  (delete rule 324)
+  (delete rule 325)
+  (delete rule 330)
+  (delete rule 331)
+  (delete rule 334)
+  (delete rule 335)
+  (delete rule 338)
+  (delete rule 340)
+  (delete rule 343)
+  (delete rule 344)
+  (delete rule 345)
+  (delete rule 346)
+  (delete rule 347)
+  (delete rule 350)
+(39.0) 1626. K(rdiv(x1, rdiv(x0, T3)), x0) -> rdiv(x0, T3)
+  (delete rule 351)
+  (delete rule 352)
+  (delete rule 353)
+(39.0) 1627. K(rdiv(x2, rdiv(x0, T2)), x0) -> rdiv(x0, T2)
+  (delete rule 354)
+  (delete rule 355)
+  (delete rule 356)
+  (delete rule 360)
+  (delete rule 363)
+  (delete rule 364)
+  (delete rule 365)
+  (delete rule 366)
+  (delete rule 370)
+  (delete rule 373)
+  (delete rule 374)
+  (delete rule 375)
+  (delete rule 381)
+  (delete rule 383)
+  (delete rule 385)
+  (delete rule 386)
+  (delete rule 387)
+  (delete rule 388)
+  (delete rule 389)
+  (delete rule 390)
+  (delete rule 391)
+  (delete rule 392)
+  (delete rule 393)
+  (delete rule 394)
+  (delete rule 395)
+  (delete rule 396)
+  (delete rule 397)
+  (delete rule 398)
+  (delete rule 399)
+(45.857143) 1628. rdiv(ldiv(X, Y), K(rdiv(Y, X), X)) -> rdiv(Y, X)
+  (delete rule 400)
+  (delete rule 401)
+  (delete rule 403)
+  (delete rule 404)
+  (delete rule 406)
+  (delete rule 407)
+  (delete rule 408)
+  (delete rule 409)
+  (delete rule 410)
+  (delete rule 411)
+  (delete rule 412)
+  (delete rule 413)
+  (delete rule 414)
+  (delete rule 418)
+  (delete rule 420)
+  (delete rule 422)
+  (delete rule 423)
+  (delete rule 425)
+  (delete rule 427)
+  (delete rule 433)
+  (delete rule 435)
+  (delete rule 436)
+  (delete rule 437)
+  (delete rule 438)
+  (delete rule 440)
+  (delete rule 442)
+  (delete rule 444)
+  (delete rule 448)
+  (delete rule 455)
+  (delete rule 456)
+  (delete rule 457)
+(47.571426) 1629. K(rdiv(zero, rdiv(zero, X)), ldiv(X, zero)) -> K(X, rdiv(zero, X))
+  (delete rule 458)
+  (delete rule 474)
+  (delete rule 475)
+  (delete rule 476)
+  (delete rule 477)
+  (delete rule 480)
+  (delete rule 487)
+  (delete rule 488)
+  (delete rule 490)
+  (delete rule 492)
+  (delete rule 494)
+  (delete rule 496)
+  (delete rule 506)
+  (delete rule 507)
+  (delete rule 508)
+  (delete rule 509)
+  (delete rule 525)
+  (delete rule 535)
+  (delete rule 536)
+  (delete rule 539)
+  (delete rule 540)
+  (delete rule 541)
+  (delete rule 542)
+  (delete rule 546)
+  (delete rule 548)
+  (delete rule 564)
+  (delete rule 566)
+  (delete rule 568)
+  (delete rule 569)
+  (delete rule 570)
+  (delete rule 571)
+  (delete rule 573)
+  (delete rule 574)
+  (delete rule 575)
+  (delete rule 576)
+  (delete rule 577)
+  (delete rule 578)
+  (delete rule 579)
+  (delete rule 581)
+  (delete rule 583)
+  (delete rule 584)
+  (delete rule 585)
+  (delete rule 586)
+  (delete rule 588)
+  (delete rule 589)
+  (delete rule 590)
+  (delete rule 591)
+  (delete rule 592)
+  (delete rule 593)
+  (delete rule 594)
+  (delete rule 597)
+  (delete rule 598)
+  (delete rule 599)
+  (delete rule 600)
+  (delete rule 601)
+(36.285713) 1630. op(X, rdiv(x0, T3)) -> rdiv(X, rdiv(T3, x0))
+  (delete rule 605)
+(38.285713) 1631. op(rdiv(x0, T3), X) -> rdiv(X, rdiv(T3, x0))
+  (delete rule 606)
+  (delete rule 607)
+(39.0) 1632. K(x0, ldiv(T3, zero)) -> K(T5, rdiv(zero, T3))
+  (delete rule 608)
+(39.0) 1633. K(x0, rdiv(zero, T3)) -> K(T5, rdiv(zero, T3))
+  (delete rule 611)
+  (delete rule 614)
+  (delete rule 615)
+  (delete rule 616)
+  (delete rule 617)
+  (delete rule 618)
+(36.285713) 1634. op(X, rdiv(x0, T2)) -> rdiv(X, rdiv(T2, x0))
+  (delete rule 622)
+(38.285713) 1635. op(rdiv(x0, T2), X) -> rdiv(X, rdiv(T2, x0))
+  (delete rule 623)
+  (delete rule 624)
+(39.0) 1636. K(x0, ldiv(T2, zero)) -> K(T4, rdiv(zero, T2))
+  (delete rule 625)
+(39.0) 1637. K(x0, rdiv(zero, T2)) -> K(T4, rdiv(zero, T2))
+  (delete rule 628)
+  (delete rule 635)
+(36.285713) 1638. op(rdiv(X, T5), T3) -> rdiv(X, rdiv(T5, T3))
+  (delete rule 636)
+  (delete rule 639)
+  (delete rule 646)
+(36.285713) 1639. op(rdiv(X, T4), T2) -> rdiv(X, rdiv(T4, T2))
+  (delete rule 647)
+  (delete rule 650)
+  (delete rule 652)
+(36.285713) 1640. op(rdiv(X, T3), x0) -> rdiv(X, rdiv(T3, x0))
+  (delete rule 653)
+  (delete rule 655)
+(36.285713) 1641. op(rdiv(X, T2), x0) -> rdiv(X, rdiv(T2, x0))
+  (delete rule 663)
+  (delete rule 664)
+  (delete rule 665)
+  (delete rule 666)
+  (delete rule 667)
+  (delete rule 668)
+  (delete rule 672)
+  (delete rule 673)
+  (delete rule 674)
+  (delete rule 675)
+  (delete rule 676)
+  (delete rule 677)
+  (delete rule 678)
+  (delete rule 679)
+  (delete rule 682)
+(42.0) 1642. rdiv(K(X, rdiv(zero, X)), X) -> rdiv(zero, rdiv(zero, rdiv(zero, X)))
+  (delete rule 684)
+  (delete rule 685)
+  (delete rule 686)
+  (delete rule 687)
+  (delete rule 689)
+  (delete rule 697)
+(36.428574) 1643. rdiv(rdiv(X, K(Y, Z)), X) -> K(Z, Y)
+  (delete rule 726)
+  (delete rule 727)
+  (delete rule 728)
+  (delete rule 729)
+  (delete rule 738)
+  (delete rule 739)
+  (delete rule 740)
+  (delete rule 747)
+  (delete rule 752)
+  (delete rule 753)
+  (delete rule 758)
+  (delete rule 759)
+  (delete rule 762)
+  (delete rule 763)
+  (delete rule 764)
+  (delete rule 765)
+  (delete rule 766)
+  (delete rule 767)
+  (delete rule 779)
+  (delete rule 780)
+  (delete rule 787)
+  (delete rule 788)
+  (delete rule 791)
+(41.0) 1644. rdiv(rdiv(T3, x0), x1) -> rdiv(zero, T(x1, T5))
+  (delete rule 792)
+(41.0) 1645. rdiv(rdiv(T2, x0), x2) -> rdiv(zero, T(x2, T4))
+  (delete rule 799)
+  (delete rule 800)
+  (delete rule 801)
+  (delete rule 802)
+  (delete rule 803)
+(41.0) 1646. K(rdiv(zero, T3), x0) -> K(rdiv(zero, T3), T5)
+  (delete rule 804)
+(41.0) 1647. K(rdiv(zero, T2), x0) -> K(rdiv(zero, T2), T4)
+  (delete rule 809)
+  (delete rule 810)
+  (delete rule 811)
+  (delete rule 812)
+  (delete rule 813)
+  (delete rule 814)
+  (delete rule 823)
+  (delete rule 824)
+(49.571426) 1648. K(rdiv(zero, rdiv(zero, rdiv(zero, X))), X) -> K(rdiv(zero, X), X)
+  (delete rule 825)
+  (delete rule 826)
+  (delete rule 827)
+  (delete rule 828)
+  (delete rule 831)
+  (delete rule 834)
+  (delete rule 835)
+  (delete rule 836)
+  (delete rule 837)
+  (delete rule 841)
+  (delete rule 844)
+  (delete rule 845)
+  (delete rule 850)
+  (delete rule 851)
+  (delete rule 853)
+(39.0) 1649. L(T3, T(x1, T5), x0) -> T(x0, op(x1, x0))
+  (delete rule 854)
+(39.0) 1650. L(T2, T(x2, T4), x0) -> T(x0, op(x2, x0))
+  (delete rule 871)
+(41.857143) 1651. ldiv(X, rdiv(X, rdiv(T5, T3))) -> rdiv(T3, T5)
+  (delete rule 873)
+(41.857143) 1652. ldiv(X, rdiv(X, rdiv(T4, T2))) -> rdiv(T2, T4)
+  (delete rule 875)
+  (delete rule 877)
+  (delete rule 883)
+  (delete rule 907)
+(42.0) 1653. T(T5, op(T5, T3)) -> L(T5, T5, T3)
+  (delete rule 908)
+(42.0) 1654. T(T4, op(T4, T2)) -> L(T4, T4, T2)
+  (delete rule 909)
+(42.0) 1655. T(T3, op(T3, x0)) -> L(T3, T3, x0)
+  (delete rule 910)
+(42.0) 1656. T(T2, op(T2, x0)) -> L(T2, T2, x0)
+  (delete rule 911)
+  (delete rule 942)
+(41.0) 1657. K(T5, L(T5, x2, T3)) -> zero
+  (delete rule 943)
+(41.0) 1658. K(T4, L(T4, x1, T2)) -> zero
+  (delete rule 946)
+(41.0) 1659. K(L(T5, x2, T3), T5) -> zero
+  (delete rule 947)
+(41.0) 1660. K(L(T4, x1, T2), T4) -> zero
+  (delete rule 952)
+(38.428574) 1661. L(op(X, Y), K(Y, X), op(X, Y)) -> op(X, Y)
+  (delete rule 953)
+(42.0) 1662. ldiv(rdiv(X, K(Y, Z)), K(Z, Y)) -> ldiv(X, zero)
+  (delete rule 981)
+  (delete rule 982)
+  (delete rule 984)
+  (delete rule 985)
+  (delete rule 987)
+  (delete rule 988)
+  (delete rule 992)
+  (delete rule 994)
+  (delete rule 1003)
+  (delete rule 1004)
+  (delete rule 1027)
+  (delete rule 1028)
+  (delete rule 1049)
+  (delete rule 1051)
+  (delete rule 1057)
+  (delete rule 1059)
+  (delete rule 1066)
+  (delete rule 1067)
+  (delete rule 1070)
+  (delete rule 1071)
+  (delete rule 1073)
+  (delete rule 1091)
+  (delete rule 1092)
+  (delete rule 1093)
+  (delete rule 1094)
+  (delete rule 1095)
+  (delete rule 1096)
+  (delete rule 1099)
+  (delete rule 1100)
+  (delete rule 1102)
+  (delete rule 1110)
+  (delete rule 1111)
+  (delete rule 1112)
+  (delete rule 1113)
+  (delete rule 1114)
+  (delete rule 1115)
+  (delete rule 1117)
+  (delete rule 1183)
+  (delete rule 1185)
+  (delete rule 1202)
+(42.571426) 1663. T(X, rdiv(X, rdiv(T3, x0))) -> L(X, X, rdiv(x0, T3))
+  (delete rule 1203)
+(42.571426) 1664. T(X, rdiv(X, rdiv(T2, x0))) -> L(X, X, rdiv(x0, T2))
+  (delete rule 1204)
+(42.571426) 1665. T(X, rdiv(X, rdiv(x0, T3))) -> L(X, X, rdiv(T3, x0))
+  (delete rule 1205)
+(42.571426) 1666. T(X, rdiv(X, rdiv(x0, T2))) -> L(X, X, rdiv(T2, x0))
+  (delete rule 1209)
+  (delete rule 1210)
+  (delete rule 1257)
+  (delete rule 1321)
+  (delete rule 1325)
+  (delete rule 1347)
+  (delete rule 1348)
+  (delete rule 1349)
+  (delete rule 1350)
+  (delete rule 1385)
+  (delete rule 1386)
+  (delete rule 1413)
+  (delete rule 1436)
+  (delete rule 1437)
+  (delete rule 1460)
+  (delete rule 1461)
+  (delete rule 1515)
+  (delete rule 1516)
+  (delete rule 1519)
+(42.0) 1667. T(T3, op(T2, x0)) -> L(T3, T2, x0)
+  (delete rule 1565)
+(42.0) 1668. T(T4, op(T3, T2)) -> L(T4, T3, T2)
+(35.428574) 1669. L(op(X, a(Y, Z, X)), Z, Y) -> X
+(26.57143) 1670. L(X, K(Y, Z), W) -> X
+(26.57143) 1671. L(X, Y, K(Z, W)) -> X
+(30.0) 1672. L(X, a(Y, Z, W), V) -> X
+(30.0) 1673. L(X, Y, a(Z, W, V)) -> X
+(33.714287) 1674. L(X, rdiv(x0, T3), Y) -> X
+(33.714287) 1675. L(X, rdiv(x0, T2), Y) -> X
+(33.714287) 1676. L(X, Y, rdiv(x0, T3)) -> X
+(33.0) 1677. T(T2, T(x1, T5)) -> T4
+(33.714287) 1678. L(X, Y, rdiv(x0, T2)) -> X
+(33.0) 1679. T(T3, T(x2, T4)) -> T5
+(35.714287) 1680. L(X, rdiv(T3, x0), Y) -> X
+(35.714287) 1681. L(X, Y, rdiv(T3, x0)) -> X
+(35.714287) 1682. L(X, rdiv(T2, x0), Y) -> X
+(35.714287) 1683. L(X, Y, rdiv(T2, x0)) -> X
+(35.714287) 1684. L(X, rdiv(T3, T5), Y) -> X
+(35.714287) 1685. L(X, rdiv(T2, T4), Y) -> X
+(35.714287) 1686. L(X, Y, rdiv(T3, T5)) -> X
+(35.714287) 1687. L(X, Y, rdiv(T2, T4)) -> X
+(36.428574) 1688. T(X, rdiv(Y, K(Z, W))) -> T(X, Y)
+(32.857143) 1689. T(X, op(Y, Z)) <-> T(X, op(Z, Y))
+(32.0) 1690. L(T3, x1, x0) -> L(T3, x1, T3)
+(32.0) 1691. L(T2, x2, x0) -> L(T2, x2, T2)
+(34.857143) 1692. T(X, ldiv(Y, Z)) -> T(X, rdiv(Z, Y))
+(28.285715) 1693. T(X, x0) -> T(X, T5)
+(28.285715) 1694. T(X, T4) -> T(X, T5)
+(30.285715) 1695. K(X, x0) -> K(X, T5)
+(30.285715) 1696. K(x0, X) -> K(T5, X)
+(30.285715) 1697. K(X, T4) -> K(X, T5)
+(30.285715) 1698. K(T4, X) -> K(T5, X)
+(33.0) 1699. rdiv(x0, T2) -> rdiv(T3, T5)
+(33.0) 1700. rdiv(T2, x0) -> rdiv(T5, T3)
+(33.0) 1701. K(x1, T5) -> rdiv(T2, T4)
+(35.0) 1702. T(X, T(Y, Z)) -> T(X, Y)
+(35.0) 1703. K(T5, x1) -> rdiv(T4, T2)
+(36.285713) 1704. T(X, op(x1, x0)) -> T(X, op(T3, x1))
+(36.285713) 1705. T(X, op(x2, x0)) -> T(X, op(T2, x2))
+(36.285713) 1706. T(X, op(T3, x2)) -> T(X, op(T5, x2))
+(36.285713) 1707. T(X, op(T2, x1)) -> T(X, op(T4, x1))
+(36.857143) 1708. K(X, op(Y, Z)) <-> K(X, op(Z, Y))
+(36.857143) 1709. K(X, ldiv(Y, Z)) -> K(X, rdiv(Z, Y))
+(29.0) 1710. rdiv(T3, x0) -> rdiv(T4, T2)
+(21.0) 1711. T4 -> T5
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (sos): op(X, zero) = X.
+Axiom 2 (sos): op(zero, X) = X.
+Axiom 3 (sos): rdiv(op(X, Y), Y) = X.
+Axiom 4 (sos): ldiv(X, op(X, Y)) = Y.
+Axiom 5 (sos): T(X, Y) = ldiv(Y, op(X, Y)).
+Axiom 6 (sos): K(X, K(Y, Z)) = 1.
+Axiom 7 (sos): K(K(X, Y), Z) = 1.
+Axiom 8 (sos): op(X, ldiv(X, Y)) = Y.
+Axiom 9 (sos): op(rdiv(X, Y), Y) = X.
+Axiom 10 (sos): K(X, a(Y, Z, W)) = 1.
+Axiom 11 (sos): a(X, Y, K(Z, W)) = 1.
+Axiom 12 (sos): a(X, K(Y, Z), W) = 1.
+Axiom 13 (sos): a(K(X, Y), Z, W) = 1.
+Axiom 14 (sos): a(X, Y, a(Z, W, V)) = 1.
+Axiom 15 (sos): op(X, Y) = op(op(Y, X), K(X, Y)).
+Axiom 16 (sos): R(X, Y, Z) = rdiv(op(op(X, Y), Z), op(Y, Z)).
+Axiom 17 (sos): L(X, Y, Z) = ldiv(op(Z, Y), op(Z, op(Y, X))).
+Axiom 18 (sos): op(op(X, Y), Z) = op(op(X, op(Y, Z)), a(X, Y, Z)).
+
+Lemma 19: op(X, K(zero, X)) = X.
+Proof:
+  op(X, K(zero, X))
+= { by axiom 1 (sos) R->L }
+  op(op(X, zero), K(zero, X)) (peak)
+= { by axiom 15 (sos) R->L }
+  op(zero, X)
+= { by axiom 2 (sos) }
+  X
+
+Lemma 20: ldiv(X, X) = zero.
+Proof:
+  ldiv(X, X)
+= { by axiom 1 (sos) R->L }
+  ldiv(X, op(X, zero)) (peak)
+= { by axiom 4 (sos) }
+  zero
+
+Lemma 21: K(zero, X) = zero.
+Proof:
+  K(zero, X)
+= { by axiom 4 (sos) R->L }
+  ldiv(X, op(X, K(zero, X))) (peak)
+= { by lemma 19 }
+  ldiv(X, X)
+= { by lemma 20 }
+  zero
+
+Lemma 22: 1 = zero.
+Proof:
+  1
+= { by axiom 6 (sos) R->L }
+  K(zero, K(X, Y)) (peak)
+= { by lemma 21 }
+  zero
+
+Lemma 23: rdiv(X, zero) = X.
+Proof:
+  rdiv(X, zero)
+= { by axiom 1 (sos) R->L }
+  rdiv(op(X, zero), zero) (peak)
+= { by axiom 3 (sos) }
+  X
+
+Lemma 24: rdiv(op(X, Y), K(X, Y)) = op(Y, X).
+Proof:
+  rdiv(op(X, Y), K(X, Y))
+= { by axiom 15 (sos) }
+  rdiv(op(op(Y, X), K(X, Y)), K(X, Y)) (peak)
+= { by axiom 3 (sos) }
+  op(Y, X)
+
+Lemma 25: op(K(X, Y), Z) = op(Z, K(X, Y)).
+Proof:
+  op(K(X, Y), Z)
+= { by lemma 24 R->L }
+  rdiv(op(Z, K(X, Y)), K(Z, K(X, Y))) (peak)
+= { by axiom 6 (sos) }
+  rdiv(op(Z, K(X, Y)), 1)
+= { by lemma 22 }
+  rdiv(op(Z, K(X, Y)), zero)
+= { by lemma 23 }
+  op(Z, K(X, Y))
+
+Lemma 26: op(op(X, K(Y, Z)), W) = op(K(Y, Z), op(X, W)).
+Proof:
+  op(op(X, K(Y, Z)), W) (peak)
+= { by lemma 25 R->L }
+  op(op(K(Y, Z), X), W)
+= { by axiom 18 (sos) }
+  op(op(K(Y, Z), op(X, W)), a(K(Y, Z), X, W)) (peak)
+= { by lemma 25 }
+  op(op(op(X, W), K(Y, Z)), a(K(Y, Z), X, W)) (peak)
+= { by axiom 13 (sos) }
+  op(op(op(X, W), K(Y, Z)), 1)
+= { by lemma 22 }
+  op(op(op(X, W), K(Y, Z)), zero)
+= { by axiom 1 (sos) }
+  op(op(X, W), K(Y, Z))
+= { by lemma 25 R->L }
+  op(K(Y, Z), op(X, W))
+
+Lemma 27: op(K(X, Y), op(Z, W)) = op(Z, op(W, K(X, Y))).
+Proof:
+  op(K(X, Y), op(Z, W))
+= { by lemma 26 R->L }
+  op(op(Z, K(X, Y)), W)
+= { by axiom 18 (sos) }
+  op(op(Z, op(K(X, Y), W)), a(Z, K(X, Y), W)) (peak)
+= { by lemma 25 }
+  op(op(Z, op(W, K(X, Y))), a(Z, K(X, Y), W)) (peak)
+= { by axiom 12 (sos) }
+  op(op(Z, op(W, K(X, Y))), 1)
+= { by lemma 22 }
+  op(op(Z, op(W, K(X, Y))), zero)
+= { by axiom 1 (sos) }
+  op(Z, op(W, K(X, Y)))
+
+Lemma 28: op(K(X, Y), op(Y, X)) = op(X, Y).
+Proof:
+  op(K(X, Y), op(Y, X))
+= { by axiom 15 (sos) }
+  op(op(op(Y, X), K(X, Y)), K(K(X, Y), op(Y, X))) (peak)
+= { by axiom 15 (sos) R->L }
+  op(op(X, Y), K(K(X, Y), op(Y, X)))
+= { by axiom 7 (sos) }
+  op(op(X, Y), 1)
+= { by lemma 22 }
+  op(op(X, Y), zero)
+= { by axiom 1 (sos) }
+  op(X, Y)
+
+Lemma 29: op(X, op(Y, K(Y, X))) = op(Y, X).
+Proof:
+  op(X, op(Y, K(Y, X)))
+= { by lemma 27 R->L }
+  op(K(Y, X), op(X, Y)) (peak)
+= { by lemma 28 }
+  op(Y, X)
+
+Lemma 30: op(X, K(X, Y)) = T(X, Y).
+Proof:
+  op(X, K(X, Y))
+= { by axiom 4 (sos) R->L }
+  ldiv(Y, op(Y, op(X, K(X, Y)))) (peak)
+= { by lemma 29 }
+  ldiv(Y, op(X, Y))
+= { by axiom 5 (sos) R->L }
+  T(X, Y)
+
+Lemma 31: op(op(X, K(Y, X)), Y) = op(Y, X).
+Proof:
+  op(op(X, K(Y, X)), Y)
+= { by lemma 25 R->L }
+  op(op(K(Y, X), X), Y)
+= { by axiom 18 (sos) }
+  op(op(K(Y, X), op(X, Y)), a(K(Y, X), X, Y)) (peak)
+= { by lemma 28 }
+  op(op(Y, X), a(K(Y, X), X, Y))
+= { by axiom 13 (sos) }
+  op(op(Y, X), 1)
+= { by lemma 22 }
+  op(op(Y, X), zero)
+= { by axiom 1 (sos) }
+  op(Y, X)
+
+Lemma 32: op(X, K(Y, X)) = rdiv(op(Y, X), Y).
+Proof:
+  op(X, K(Y, X))
+= { by axiom 3 (sos) R->L }
+  rdiv(op(op(X, K(Y, X)), Y), Y) (peak)
+= { by lemma 31 }
+  rdiv(op(Y, X), Y)
+
+Lemma 33: rdiv(op(X, Z), op(Y, Z)) = R(rdiv(X, Y), Y, Z).
+Proof:
+  rdiv(op(X, Z), op(Y, Z))
+= { by axiom 9 (sos) R->L }
+  rdiv(op(op(rdiv(X, Y), Y), Z), op(Y, Z)) (peak)
+= { by axiom 16 (sos) R->L }
+  R(rdiv(X, Y), Y, Z)
+
+Lemma 34: R(rdiv(zero, X), X, Y) = rdiv(Y, op(X, Y)).
+Proof:
+  R(rdiv(zero, X), X, Y) (peak)
+= { by lemma 33 R->L }
+  rdiv(op(zero, Y), op(X, Y)) (peak)
+= { by axiom 2 (sos) }
+  rdiv(Y, op(X, Y))
+
+Lemma 35: ldiv(rdiv(X, Y), X) = Y.
+Proof:
+  ldiv(rdiv(X, Y), X)
+= { by axiom 9 (sos) R->L }
+  ldiv(rdiv(X, Y), op(rdiv(X, Y), Y)) (peak)
+= { by axiom 4 (sos) }
+  Y
+
+Lemma 36: ldiv(R(rdiv(zero, X), X, Y), Y) = op(X, Y).
+Proof:
+  ldiv(R(rdiv(zero, X), X, Y), Y) (peak)
+= { by lemma 34 }
+  ldiv(rdiv(Y, op(X, Y)), Y) (peak)
+= { by lemma 35 }
+  op(X, Y)
+
+Lemma 37: op(X, K(Y, rdiv(X, Y))) = op(Y, rdiv(X, Y)).
+Proof:
+  op(X, K(Y, rdiv(X, Y)))
+= { by axiom 9 (sos) R->L }
+  op(op(rdiv(X, Y), Y), K(Y, rdiv(X, Y))) (peak)
+= { by axiom 15 (sos) R->L }
+  op(Y, rdiv(X, Y))
+
+Lemma 38: op(K(X, Y), rdiv(Z, K(X, Y))) = Z.
+Proof:
+  op(K(X, Y), rdiv(Z, K(X, Y)))
+= { by lemma 37 R->L }
+  op(Z, K(K(X, Y), rdiv(Z, K(X, Y)))) (peak)
+= { by axiom 7 (sos) }
+  op(Z, 1)
+= { by lemma 22 }
+  op(Z, zero)
+= { by axiom 1 (sos) }
+  Z
+
+Lemma 39: T(rdiv(X, Y), Y) = ldiv(Y, X).
+Proof:
+  T(rdiv(X, Y), Y)
+= { by axiom 5 (sos) }
+  ldiv(Y, op(rdiv(X, Y), Y)) (peak)
+= { by axiom 9 (sos) }
+  ldiv(Y, X)
+
+Lemma 40: T(X, K(Y, Z)) = X.
+Proof:
+  T(X, K(Y, Z))
+= { by axiom 5 (sos) }
+  ldiv(K(Y, Z), op(X, K(Y, Z))) (peak)
+= { by lemma 25 R->L }
+  ldiv(K(Y, Z), op(K(Y, Z), X)) (peak)
+= { by axiom 4 (sos) }
+  X
+
+Lemma 41: ldiv(K(X, Y), Z) = rdiv(Z, K(X, Y)).
+Proof:
+  ldiv(K(X, Y), Z)
+= { by lemma 39 R->L }
+  T(rdiv(Z, K(X, Y)), K(X, Y)) (peak)
+= { by lemma 40 }
+  rdiv(Z, K(X, Y))
+
+Lemma 42: rdiv(op(op(X, Y), ldiv(Y, Z)), Z) = R(X, Y, ldiv(Y, Z)).
+Proof:
+  rdiv(op(op(X, Y), ldiv(Y, Z)), Z)
+= { by axiom 8 (sos) R->L }
+  rdiv(op(op(X, Y), ldiv(Y, Z)), op(Y, ldiv(Y, Z))) (peak)
+= { by axiom 16 (sos) R->L }
+  R(X, Y, ldiv(Y, Z))
+
+Lemma 43: op(op(K(X, Y), Z), W) = op(Z, op(W, K(X, Y))).
+Proof:
+  op(op(K(X, Y), Z), W) (peak)
+= { by lemma 25 }
+  op(op(Z, K(X, Y)), W) (peak)
+= { by lemma 26 }
+  op(K(X, Y), op(Z, W))
+= { by lemma 27 }
+  op(Z, op(W, K(X, Y)))
+
+Lemma 44: R(X, K(Y, Z), rdiv(W, K(Y, Z))) = X.
+Proof:
+  R(X, K(Y, Z), rdiv(W, K(Y, Z)))
+= { by lemma 41 R->L }
+  R(X, K(Y, Z), ldiv(K(Y, Z), W))
+= { by lemma 42 R->L }
+  rdiv(op(op(X, K(Y, Z)), ldiv(K(Y, Z), W)), W) (peak)
+= { by lemma 25 R->L }
+  rdiv(op(op(K(Y, Z), X), ldiv(K(Y, Z), W)), W) (peak)
+= { by lemma 43 }
+  rdiv(op(X, op(ldiv(K(Y, Z), W), K(Y, Z))), W)
+= { by lemma 41 }
+  rdiv(op(X, op(rdiv(W, K(Y, Z)), K(Y, Z))), W)
+= { by axiom 9 (sos) }
+  rdiv(op(X, W), W)
+= { by axiom 3 (sos) }
+  X
+
+Lemma 45: rdiv(rdiv(X, K(Y, Z)), X) = rdiv(zero, K(Y, Z)).
+Proof:
+  rdiv(rdiv(X, K(Y, Z)), X)
+= { by lemma 38 R->L }
+  rdiv(rdiv(X, K(Y, Z)), op(K(Y, Z), rdiv(X, K(Y, Z)))) (peak)
+= { by lemma 34 R->L }
+  R(rdiv(zero, K(Y, Z)), K(Y, Z), rdiv(X, K(Y, Z)))
+= { by lemma 44 }
+  rdiv(zero, K(Y, Z))
+
+Lemma 46: rdiv(op(X, Y), op(Y, X)) = K(X, Y).
+Proof:
+  rdiv(op(X, Y), op(Y, X))
+= { by lemma 28 R->L }
+  rdiv(op(K(X, Y), op(Y, X)), op(Y, X)) (peak)
+= { by axiom 3 (sos) }
+  K(X, Y)
+
+Lemma 47: rdiv(zero, K(X, Y)) = K(Y, X).
+Proof:
+  rdiv(zero, K(X, Y))
+= { by lemma 45 R->L }
+  rdiv(rdiv(op(X, Y), K(X, Y)), op(X, Y)) (peak)
+= { by lemma 24 }
+  rdiv(op(Y, X), op(X, Y))
+= { by lemma 46 }
+  K(Y, X)
+
+Lemma 48: rdiv(op(X, K(Y, Z)), X) = K(Y, Z).
+Proof:
+  rdiv(op(X, K(Y, Z)), X) (peak)
+= { by lemma 25 R->L }
+  rdiv(op(K(Y, Z), X), X) (peak)
+= { by axiom 3 (sos) }
+  K(Y, Z)
+
+Lemma 49: R(rdiv(X, Y), Y, ldiv(Y, Z)) = rdiv(op(X, ldiv(Y, Z)), Z).
+Proof:
+  R(rdiv(X, Y), Y, ldiv(Y, Z))
+= { by lemma 33 R->L }
+  rdiv(op(X, ldiv(Y, Z)), op(Y, ldiv(Y, Z))) (peak)
+= { by axiom 8 (sos) }
+  rdiv(op(X, ldiv(Y, Z)), Z)
+
+Lemma 50: R(K(X, Y), Z, ldiv(Z, W)) = K(X, Y).
+Proof:
+  R(K(X, Y), Z, ldiv(Z, W))
+= { by lemma 48 R->L }
+  R(rdiv(op(Z, K(X, Y)), Z), Z, ldiv(Z, W)) (peak)
+= { by lemma 49 }
+  rdiv(op(op(Z, K(X, Y)), ldiv(Z, W)), W) (peak)
+= { by lemma 26 }
+  rdiv(op(K(X, Y), op(Z, ldiv(Z, W))), W)
+= { by axiom 8 (sos) }
+  rdiv(op(K(X, Y), W), W)
+= { by axiom 3 (sos) }
+  K(X, Y)
+
+Lemma 51: R(K(X, Y), Z, W) = K(X, Y).
+Proof:
+  R(K(X, Y), Z, W)
+= { by axiom 4 (sos) R->L }
+  R(K(X, Y), Z, ldiv(Z, op(Z, W))) (peak)
+= { by lemma 50 }
+  K(X, Y)
+
+Lemma 52: op(K(X, Y), Z) = rdiv(Z, K(Y, X)).
+Proof:
+  op(K(X, Y), Z)
+= { by lemma 36 R->L }
+  ldiv(R(rdiv(zero, K(X, Y)), K(X, Y), Z), Z) (peak)
+= { by lemma 47 }
+  ldiv(R(K(Y, X), K(X, Y), Z), Z)
+= { by lemma 51 }
+  ldiv(K(Y, X), Z)
+= { by lemma 41 }
+  rdiv(Z, K(Y, X))
+
+Lemma 53: op(X, K(Y, Z)) = rdiv(X, K(Z, Y)).
+Proof:
+  op(X, K(Y, Z))
+= { by axiom 15 (sos) }
+  op(op(K(Y, Z), X), K(X, K(Y, Z))) (peak)
+= { by lemma 52 }
+  op(rdiv(X, K(Z, Y)), K(X, K(Y, Z)))
+= { by axiom 6 (sos) }
+  op(rdiv(X, K(Z, Y)), 1)
+= { by lemma 22 }
+  op(rdiv(X, K(Z, Y)), zero)
+= { by axiom 1 (sos) }
+  rdiv(X, K(Z, Y))
+
+Lemma 54: op(X, T(Y, X)) = op(Y, X).
+Proof:
+  op(X, T(Y, X))
+= { by axiom 5 (sos) }
+  op(X, ldiv(X, op(Y, X))) (peak)
+= { by axiom 8 (sos) }
+  op(Y, X)
+
+Lemma 55: op(K(X, Y), X) = T(X, Y).
+Proof:
+  op(K(X, Y), X)
+= { by axiom 15 (sos) }
+  op(op(X, K(X, Y)), K(K(X, Y), X)) (peak)
+= { by lemma 30 }
+  op(T(X, Y), K(K(X, Y), X))
+= { by axiom 7 (sos) }
+  op(T(X, Y), 1)
+= { by lemma 22 }
+  op(T(X, Y), zero)
+= { by axiom 1 (sos) }
+  T(X, Y)
+
+Lemma 56: op(K(X, Y), Y) = rdiv(op(X, Y), X).
+Proof:
+  op(K(X, Y), Y)
+= { by axiom 15 (sos) }
+  op(op(Y, K(X, Y)), K(K(X, Y), Y)) (peak)
+= { by lemma 32 }
+  op(rdiv(op(X, Y), X), K(K(X, Y), Y)) (peak)
+= { by axiom 7 (sos) }
+  op(rdiv(op(X, Y), X), 1)
+= { by lemma 22 }
+  op(rdiv(op(X, Y), X), zero)
+= { by axiom 1 (sos) }
+  rdiv(op(X, Y), X)
+
+Lemma 57: ldiv(X, T(X, Y)) = K(X, Y).
+Proof:
+  ldiv(X, T(X, Y))
+= { by lemma 30 R->L }
+  ldiv(X, op(X, K(X, Y))) (peak)
+= { by axiom 4 (sos) }
+  K(X, Y)
+
+Lemma 58: rdiv(X, ldiv(Y, X)) = Y.
+Proof:
+  rdiv(X, ldiv(Y, X))
+= { by axiom 8 (sos) R->L }
+  rdiv(op(Y, ldiv(Y, X)), ldiv(Y, X)) (peak)
+= { by axiom 3 (sos) }
+  Y
+
+Lemma 59: rdiv(op(X, Y), T(X, Y)) = Y.
+Proof:
+  rdiv(op(X, Y), T(X, Y))
+= { by axiom 5 (sos) }
+  rdiv(op(X, Y), ldiv(Y, op(X, Y))) (peak)
+= { by lemma 58 }
+  Y
+
+Lemma 60: rdiv(T(X, Y), X) = K(X, Y).
+Proof:
+  rdiv(T(X, Y), X)
+= { by lemma 40 R->L }
+  rdiv(T(X, Y), T(X, K(X, Y)))
+= { by lemma 30 R->L }
+  rdiv(op(X, K(X, Y)), T(X, K(X, Y))) (peak)
+= { by lemma 59 }
+  K(X, Y)
+
+Lemma 61: ldiv(X, T(X, Y)) = rdiv(T(X, Y), X).
+Proof:
+  ldiv(X, T(X, Y)) (peak)
+= { by lemma 57 }
+  K(X, Y)
+= { by lemma 60 R->L }
+  rdiv(T(X, Y), X)
+
+Lemma 62: ldiv(X, rdiv(op(Y, X), Y)) = K(Y, X).
+Proof:
+  ldiv(X, rdiv(op(Y, X), Y)) (peak)
+= { by lemma 32 R->L }
+  ldiv(X, op(X, K(Y, X))) (peak)
+= { by axiom 4 (sos) }
+  K(Y, X)
+
+Lemma 63: K(X, T(Y, X)) = ldiv(T(Y, X), Y).
+Proof:
+  K(X, T(Y, X))
+= { by lemma 62 R->L }
+  ldiv(T(Y, X), rdiv(op(X, T(Y, X)), X)) (peak)
+= { by lemma 54 }
+  ldiv(T(Y, X), rdiv(op(Y, X), X))
+= { by axiom 3 (sos) }
+  ldiv(T(Y, X), Y)
+
+Lemma 64: ldiv(op(X, Y), op(Y, X)) = K(Y, X).
+Proof:
+  ldiv(op(X, Y), op(Y, X))
+= { by axiom 15 (sos) }
+  ldiv(op(X, Y), op(op(X, Y), K(Y, X))) (peak)
+= { by axiom 4 (sos) }
+  K(Y, X)
+
+Lemma 65: K(X, rdiv(op(X, Y), X)) = L(K(X, Y), Y, X).
+Proof:
+  K(X, rdiv(op(X, Y), X)) (peak)
+= { by lemma 32 R->L }
+  K(X, op(Y, K(X, Y)))
+= { by lemma 64 R->L }
+  ldiv(op(op(Y, K(X, Y)), X), op(X, op(Y, K(X, Y)))) (peak)
+= { by lemma 31 }
+  ldiv(op(X, Y), op(X, op(Y, K(X, Y))))
+= { by axiom 17 (sos) R->L }
+  L(K(X, Y), Y, X)
+
+Lemma 66: T(K(X, Y), Z) = K(X, Y).
+Proof:
+  T(K(X, Y), Z)
+= { by axiom 5 (sos) }
+  ldiv(Z, op(K(X, Y), Z)) (peak)
+= { by lemma 25 }
+  ldiv(Z, op(Z, K(X, Y))) (peak)
+= { by axiom 4 (sos) }
+  K(X, Y)
+
+Lemma 67: L(K(X, Y), Z, W) = K(X, Y).
+Proof:
+  L(K(X, Y), Z, W)
+= { by axiom 17 (sos) }
+  ldiv(op(W, Z), op(W, op(Z, K(X, Y)))) (peak)
+= { by lemma 27 R->L }
+  ldiv(op(W, Z), op(K(X, Y), op(W, Z))) (peak)
+= { by axiom 5 (sos) R->L }
+  T(K(X, Y), op(W, Z))
+= { by lemma 66 }
+  K(X, Y)
+
+Lemma 68: K(X, rdiv(op(X, Y), X)) = K(X, Y).
+Proof:
+  K(X, rdiv(op(X, Y), X)) (peak)
+= { by lemma 65 }
+  L(K(X, Y), Y, X) (peak)
+= { by lemma 67 }
+  K(X, Y)
+
+Lemma 69: K(X, T(Y, X)) = K(X, Y).
+Proof:
+  K(X, T(Y, X))
+= { by lemma 68 R->L }
+  K(X, rdiv(op(X, T(Y, X)), X)) (peak)
+= { by lemma 54 }
+  K(X, rdiv(op(Y, X), X))
+= { by axiom 3 (sos) }
+  K(X, Y)
+
+Lemma 70: ldiv(T(X, Y), X) = K(Y, X).
+Proof:
+  ldiv(T(X, Y), X) (peak)
+= { by lemma 63 R->L }
+  K(Y, T(X, Y)) (peak)
+= { by lemma 69 }
+  K(Y, X)
+
+Lemma 71: T(X, ldiv(X, Y)) = ldiv(ldiv(X, Y), Y).
+Proof:
+  T(X, ldiv(X, Y))
+= { by axiom 5 (sos) }
+  ldiv(ldiv(X, Y), op(X, ldiv(X, Y))) (peak)
+= { by axiom 8 (sos) }
+  ldiv(ldiv(X, Y), Y)
+
+Lemma 72: rdiv(X, T(Y, ldiv(Y, X))) = ldiv(Y, X).
+Proof:
+  rdiv(X, T(Y, ldiv(Y, X))) (peak)
+= { by lemma 71 }
+  rdiv(X, ldiv(ldiv(Y, X), X)) (peak)
+= { by lemma 58 }
+  ldiv(Y, X)
+
+Lemma 73: T(X, ldiv(T(Y, Z), Y)) = X.
+Proof:
+  T(X, ldiv(T(Y, Z), Y)) (peak)
+= { by lemma 63 R->L }
+  T(X, K(Z, T(Y, Z))) (peak)
+= { by lemma 40 }
+  X
+
+Lemma 74: ldiv(T(X, Y), X) = rdiv(X, T(X, Y)).
+Proof:
+  ldiv(T(X, Y), X)
+= { by lemma 72 R->L }
+  rdiv(X, T(T(X, Y), ldiv(T(X, Y), X))) (peak)
+= { by lemma 73 }
+  rdiv(X, T(X, Y))
+
+Lemma 75: rdiv(X, K(Y, X)) = T(X, Y).
+Proof:
+  rdiv(X, K(Y, X))
+= { by lemma 70 R->L }
+  rdiv(X, ldiv(T(X, Y), X)) (peak)
+= { by lemma 58 }
+  T(X, Y)
+
+Lemma 76: L(rdiv(X, T(X, Y)), Z, W) = rdiv(X, T(X, Y)).
+Proof:
+  L(rdiv(X, T(X, Y)), Z, W)
+= { by lemma 74 R->L }
+  L(ldiv(T(X, Y), X), Z, W) (peak)
+= { by lemma 63 R->L }
+  L(K(Y, T(X, Y)), Z, W) (peak)
+= { by lemma 67 }
+  K(Y, T(X, Y))
+= { by lemma 63 }
+  ldiv(T(X, Y), X) (peak)
+= { by lemma 74 }
+  rdiv(X, T(X, Y))
+
+Lemma 77: L(rdiv(X, T(X, Y)), T(X, Y), Y) = K(Y, X).
+Proof:
+  L(rdiv(X, T(X, Y)), T(X, Y), Y)
+= { by lemma 74 R->L }
+  L(ldiv(T(X, Y), X), T(X, Y), Y) (peak)
+= { by lemma 63 R->L }
+  L(K(Y, T(X, Y)), T(X, Y), Y) (peak)
+= { by lemma 65 R->L }
+  K(Y, rdiv(op(Y, T(X, Y)), Y))
+= { by lemma 54 }
+  K(Y, rdiv(op(X, Y), Y))
+= { by axiom 3 (sos) }
+  K(Y, X)
+
+Lemma 78: rdiv(Y, T(Y, X)) = K(X, Y).
+Proof:
+  rdiv(Y, T(Y, X))
+= { by lemma 76 R->L }
+  L(rdiv(Y, T(Y, X)), T(Y, X), X) (peak)
+= { by lemma 77 }
+  K(X, Y)
+
+Lemma 79: K(X, ldiv(X, Y)) = K(X, rdiv(Y, X)).
+Proof:
+  K(X, ldiv(X, Y))
+= { by lemma 68 R->L }
+  K(X, rdiv(op(X, ldiv(X, Y)), X)) (peak)
+= { by axiom 8 (sos) }
+  K(X, rdiv(Y, X))
+
+Lemma 80: rdiv(rdiv(op(X, Y), X), Y) = K(X, Y).
+Proof:
+  rdiv(rdiv(op(X, Y), X), Y)
+= { by lemma 40 R->L }
+  rdiv(rdiv(op(X, Y), X), T(Y, K(X, Y))) (peak)
+= { by lemma 32 R->L }
+  rdiv(op(Y, K(X, Y)), T(Y, K(X, Y))) (peak)
+= { by lemma 59 }
+  K(X, Y)
+
+Lemma 81: K(X, T(Y, X)) = rdiv(Y, T(Y, X)).
+Proof:
+  K(X, T(Y, X))
+= { by lemma 80 R->L }
+  rdiv(rdiv(op(X, T(Y, X)), X), T(Y, X)) (peak)
+= { by lemma 54 }
+  rdiv(rdiv(op(Y, X), X), T(Y, X))
+= { by axiom 3 (sos) }
+  rdiv(Y, T(Y, X))
+
+Lemma 82: op(X, rdiv(Y, T(Y, Z))) = rdiv(X, rdiv(T(Y, Z), Y)).
+Proof:
+  op(X, rdiv(Y, T(Y, Z))) (peak)
+= { by lemma 78 }
+  op(X, K(Z, Y))
+= { by lemma 53 }
+  rdiv(X, K(Y, Z))
+= { by lemma 60 R->L }
+  rdiv(X, rdiv(T(Y, Z), Y))
+
+Lemma 83: op(rdiv(op(Z, X), Z), Y) = op(X, op(Y, K(Z, X))).
+Proof:
+  op(rdiv(op(Z, X), Z), Y) (peak)
+= { by lemma 32 R->L }
+  op(op(X, K(Z, X)), Y) (peak)
+= { by lemma 26 }
+  op(K(Z, X), op(X, Y))
+= { by lemma 27 }
+  op(X, op(Y, K(Z, X)))
+
+Lemma 84: op(T(X, Y), op(Z, rdiv(X, T(X, Y)))) = op(X, Z).
+Proof:
+  op(T(X, Y), op(Z, rdiv(X, T(X, Y))))
+= { by lemma 74 R->L }
+  op(T(X, Y), op(Z, ldiv(T(X, Y), X))) (peak)
+= { by lemma 63 R->L }
+  op(T(X, Y), op(Z, K(Y, T(X, Y)))) (peak)
+= { by lemma 83 R->L }
+  op(rdiv(op(Y, T(X, Y)), Y), Z)
+= { by lemma 54 }
+  op(rdiv(op(X, Y), Y), Z)
+= { by axiom 3 (sos) }
+  op(X, Z)
+
+Lemma 85: a(X, Y, rdiv(Z, T(Z, W))) = zero.
+Proof:
+  a(X, Y, rdiv(Z, T(Z, W)))
+= { by lemma 74 R->L }
+  a(X, Y, ldiv(T(Z, W), Z)) (peak)
+= { by lemma 63 R->L }
+  a(X, Y, K(W, T(Z, W))) (peak)
+= { by axiom 11 (sos) }
+  1
+= { by lemma 22 }
+  zero
+
+Lemma 86: rdiv(op(T(X, Y), Z), rdiv(T(X, Y), X)) = op(X, Z).
+Proof:
+  rdiv(op(T(X, Y), Z), rdiv(T(X, Y), X))
+= { by lemma 82 R->L }
+  op(op(T(X, Y), Z), rdiv(X, T(X, Y)))
+= { by axiom 18 (sos) }
+  op(op(T(X, Y), op(Z, rdiv(X, T(X, Y)))), a(T(X, Y), Z, rdiv(X, T(X, Y)))) (peak)
+= { by lemma 84 }
+  op(op(X, Z), a(T(X, Y), Z, rdiv(X, T(X, Y))))
+= { by lemma 85 }
+  op(op(X, Z), zero)
+= { by axiom 1 (sos) }
+  op(X, Z)
+
+Lemma 87: op(rdiv(X, T(X, Y)), Z) = rdiv(Z, rdiv(T(X, Y), X)).
+Proof:
+  op(rdiv(X, T(X, Y)), Z) (peak)
+= { by lemma 78 }
+  op(K(Y, X), Z)
+= { by lemma 52 }
+  rdiv(Z, K(X, Y))
+= { by lemma 60 R->L }
+  rdiv(Z, rdiv(T(X, Y), X))
+
+Lemma 88: op(K(X, Y), op(Z, Y)) = op(Z, rdiv(op(X, Y), X)).
+Proof:
+  op(K(X, Y), op(Z, Y)) (peak)
+= { by lemma 27 }
+  op(Z, op(Y, K(X, Y))) (peak)
+= { by lemma 32 }
+  op(Z, rdiv(op(X, Y), X)) (peak)
+
+Lemma 89: rdiv(op(X, T(Y, Z)), rdiv(T(Y, Z), Y)) = op(X, Y).
+Proof:
+  rdiv(op(X, T(Y, Z)), rdiv(T(Y, Z), Y))
+= { by lemma 87 R->L }
+  op(rdiv(Y, T(Y, Z)), op(X, T(Y, Z)))
+= { by lemma 74 R->L }
+  op(ldiv(T(Y, Z), Y), op(X, T(Y, Z))) (peak)
+= { by lemma 63 R->L }
+  op(K(Z, T(Y, Z)), op(X, T(Y, Z))) (peak)
+= { by lemma 88 }
+  op(X, rdiv(op(Z, T(Y, Z)), Z))
+= { by lemma 54 }
+  op(X, rdiv(op(Y, Z), Z))
+= { by axiom 3 (sos) }
+  op(X, Y)
+
+Lemma 90: op(X, T(Y, T(X, Z))) = op(Y, X).
+Proof:
+  op(X, T(Y, T(X, Z)))
+= { by lemma 86 R->L }
+  rdiv(op(T(X, Z), T(Y, T(X, Z))), rdiv(T(X, Z), X)) (peak)
+= { by lemma 54 }
+  rdiv(op(Y, T(X, Z)), rdiv(T(X, Z), X))
+= { by lemma 89 }
+  op(Y, X)
+
+Lemma 91: T(X, T(Y, Z)) = T(X, Y).
+Proof:
+  T(X, T(Y, Z))
+= { by axiom 4 (sos) R->L }
+  ldiv(Y, op(Y, T(X, T(Y, Z)))) (peak)
+= { by lemma 90 }
+  ldiv(Y, op(X, Y))
+= { by axiom 5 (sos) R->L }
+  T(X, Y)
+
+Lemma 92: K(X, T(Y, Z)) = rdiv(T(X, Y), X).
+Proof:
+  K(X, T(Y, Z))
+= { by lemma 57 R->L }
+  ldiv(X, T(X, T(Y, Z))) (peak)
+= { by lemma 91 }
+  ldiv(X, T(X, Y))
+= { by lemma 61 }
+  rdiv(T(X, Y), X)
+
+Lemma 93: T(X, ldiv(X, Y)) = T(X, rdiv(Y, X)).
+Proof:
+  T(X, ldiv(X, Y))
+= { by lemma 30 R->L }
+  op(X, K(X, ldiv(X, Y))) (peak)
+= { by lemma 79 }
+  op(X, K(X, rdiv(Y, X)))
+= { by lemma 30 }
+  T(X, rdiv(Y, X))
+
+Lemma 94: K(ldiv(X, Y), X) = K(rdiv(Y, X), X).
+Proof:
+  K(ldiv(X, Y), X)
+= { by lemma 69 R->L }
+  K(ldiv(X, Y), T(X, ldiv(X, Y))) (peak)
+= { by lemma 63 }
+  ldiv(T(X, ldiv(X, Y)), X)
+= { by lemma 93 }
+  ldiv(T(X, rdiv(Y, X)), X)
+= { by lemma 70 }
+  K(rdiv(Y, X), X)
+
+Lemma 95: K(T(X, Z), Y) = K(X, Y).
+Proof:
+  K(T(X, Z), Y)
+= { by lemma 70 R->L }
+  ldiv(T(Y, T(X, Z)), Y) (peak)
+= { by lemma 91 }
+  ldiv(T(Y, X), Y)
+= { by lemma 63 R->L }
+  K(X, T(Y, X)) (peak)
+= { by lemma 69 }
+  K(X, Y)
+
+Lemma 96: ldiv(op(Z, X), op(Z, Y)) = L(ldiv(X, Y), X, Z).
+Proof:
+  ldiv(op(Z, X), op(Z, Y))
+= { by axiom 8 (sos) R->L }
+  ldiv(op(Z, X), op(Z, op(X, ldiv(X, Y)))) (peak)
+= { by axiom 17 (sos) R->L }
+  L(ldiv(X, Y), X, Z)
+
+Lemma 97: ldiv(op(X, Y), op(X, op(Z, Y))) = L(T(Z, Y), Y, X).
+Proof:
+  ldiv(op(X, Y), op(X, op(Z, Y))) (peak)
+= { by lemma 96 }
+  L(ldiv(Y, op(Z, Y)), Y, X) (peak)
+= { by axiom 5 (sos) R->L }
+  L(T(Z, Y), Y, X)
+
+Lemma 98: op(op(X, Y), K(Z, W)) = op(X, op(Y, K(Z, W))).
+Proof:
+  op(op(X, Y), K(Z, W)) (peak)
+= { by lemma 25 R->L }
+  op(K(Z, W), op(X, Y)) (peak)
+= { by lemma 27 }
+  op(X, op(Y, K(Z, W))) (peak)
+
+Lemma 99: L(T(X, Y), Y, K(Z, W)) = T(X, rdiv(Y, K(W, Z))).
+Proof:
+  L(T(X, Y), Y, K(Z, W))
+= { by lemma 97 R->L }
+  ldiv(op(K(Z, W), Y), op(K(Z, W), op(X, Y))) (peak)
+= { by lemma 25 }
+  ldiv(op(K(Z, W), Y), op(op(X, Y), K(Z, W))) (peak)
+= { by lemma 52 }
+  ldiv(rdiv(Y, K(W, Z)), op(op(X, Y), K(Z, W)))
+= { by lemma 98 }
+  ldiv(rdiv(Y, K(W, Z)), op(X, op(Y, K(Z, W))))
+= { by lemma 53 }
+  ldiv(rdiv(Y, K(W, Z)), op(X, rdiv(Y, K(W, Z))))
+= { by axiom 5 (sos) R->L }
+  T(X, rdiv(Y, K(W, Z)))
+
+Lemma 100: a(K(X, Y), Z, W) = zero.
+Proof:
+  a(K(X, Y), Z, W) (peak)
+= { by axiom 13 (sos) }
+  1
+= { by lemma 22 }
+  zero
+
+Lemma 101: op(a(X, Y, Z), W) = op(W, a(X, Y, Z)).
+Proof:
+  op(a(X, Y, Z), W)
+= { by lemma 24 R->L }
+  rdiv(op(W, a(X, Y, Z)), K(W, a(X, Y, Z))) (peak)
+= { by axiom 10 (sos) }
+  rdiv(op(W, a(X, Y, Z)), 1)
+= { by lemma 22 }
+  rdiv(op(W, a(X, Y, Z)), zero)
+= { by lemma 23 }
+  op(W, a(X, Y, Z))
+
+Lemma 102: op(op(X, Y), a(Z, W, V)) = op(X, op(Y, a(Z, W, V))).
+Proof:
+  op(op(X, Y), a(Z, W, V))
+= { by axiom 18 (sos) }
+  op(op(X, op(Y, a(Z, W, V))), a(X, Y, a(Z, W, V))) (peak)
+= { by lemma 101 R->L }
+  op(op(X, op(a(Z, W, V), Y)), a(X, Y, a(Z, W, V))) (peak)
+= { by axiom 14 (sos) }
+  op(op(X, op(a(Z, W, V), Y)), 1)
+= { by lemma 22 }
+  op(op(X, op(a(Z, W, V), Y)), zero)
+= { by axiom 1 (sos) }
+  op(X, op(a(Z, W, V), Y))
+= { by lemma 101 }
+  op(X, op(Y, a(Z, W, V)))
+
+Lemma 103: op(X, op(Y, op(Z, a(X, Y, Z)))) = op(op(X, Y), Z).
+Proof:
+  op(X, op(Y, op(Z, a(X, Y, Z))))
+= { by lemma 102 R->L }
+  op(X, op(op(Y, Z), a(X, Y, Z)))
+= { by lemma 102 R->L }
+  op(op(X, op(Y, Z)), a(X, Y, Z)) (peak)
+= { by axiom 18 (sos) R->L }
+  op(op(X, Y), Z)
+
+Lemma 104: L(op(X, a(Y, Z, X)), Z, Y) = X.
+Proof:
+  L(op(X, a(Y, Z, X)), Z, Y)
+= { by axiom 17 (sos) }
+  ldiv(op(Y, Z), op(Y, op(Z, op(X, a(Y, Z, X))))) (peak)
+= { by lemma 103 }
+  ldiv(op(Y, Z), op(op(Y, Z), X))
+= { by axiom 4 (sos) }
+  X
+
+Lemma 105: L(X, Y, K(Z, W)) = X.
+Proof:
+  L(X, Y, K(Z, W))
+= { by axiom 1 (sos) R->L }
+  L(op(X, zero), Y, K(Z, W))
+= { by lemma 100 R->L }
+  L(op(X, a(K(Z, W), Y, X)), Y, K(Z, W)) (peak)
+= { by lemma 104 }
+  X
+
+Lemma 106: T(X, rdiv(Y, K(Z, W))) = T(X, Y).
+Proof:
+  T(X, rdiv(Y, K(Z, W)))
+= { by lemma 99 R->L }
+  L(T(X, Y), Y, K(W, Z)) (peak)
+= { by lemma 105 }
+  T(X, Y)
+
+Lemma 107: op(X, K(rdiv(Y, X), X)) = rdiv(Y, rdiv(Y, X)).
+Proof:
+  op(X, K(rdiv(Y, X), X))
+= { by lemma 32 }
+  rdiv(op(rdiv(Y, X), X), rdiv(Y, X)) (peak)
+= { by axiom 9 (sos) }
+  rdiv(Y, rdiv(Y, X))
+
+Lemma 108: rdiv(ldiv(X, Y), K(rdiv(Y, X), X)) = rdiv(Y, X).
+Proof:
+  rdiv(ldiv(X, Y), K(rdiv(Y, X), X))
+= { by lemma 53 R->L }
+  op(ldiv(X, Y), K(X, rdiv(Y, X)))
+= { by lemma 79 R->L }
+  op(ldiv(X, Y), K(X, ldiv(X, Y)))
+= { by lemma 58 R->L }
+  op(ldiv(X, Y), K(rdiv(Y, ldiv(X, Y)), ldiv(X, Y))) (peak)
+= { by lemma 107 }
+  rdiv(Y, rdiv(Y, ldiv(X, Y)))
+= { by lemma 58 }
+  rdiv(Y, X)
+
+Lemma 109: T(X, ldiv(Y, Z)) = T(X, rdiv(Z, Y)).
+Proof:
+  T(X, ldiv(Y, Z))
+= { by lemma 106 R->L }
+  T(X, rdiv(ldiv(Y, Z), K(rdiv(Z, Y), Y))) (peak)
+= { by lemma 108 }
+  T(X, rdiv(Z, Y))
+
+Lemma 110: ldiv(rdiv(X, T(X, Y)), Z) = rdiv(Z, rdiv(X, T(X, Y))).
+Proof:
+  ldiv(rdiv(X, T(X, Y)), Z)
+= { by lemma 74 R->L }
+  ldiv(ldiv(T(X, Y), X), Z) (peak)
+= { by lemma 63 R->L }
+  ldiv(K(Y, T(X, Y)), Z) (peak)
+= { by lemma 41 }
+  rdiv(Z, K(Y, T(X, Y)))
+= { by lemma 63 }
+  rdiv(Z, ldiv(T(X, Y), X)) (peak)
+= { by lemma 74 }
+  rdiv(Z, rdiv(X, T(X, Y)))
+
+Lemma 111: rdiv(X, rdiv(X, T(X, Y))) = T(X, Y).
+Proof:
+  rdiv(X, rdiv(X, T(X, Y)))
+= { by lemma 110 R->L }
+  ldiv(rdiv(X, T(X, Y)), X) (peak)
+= { by lemma 35 }
+  T(X, Y)
+
+Lemma 112: rdiv(X, rdiv(T(Y, X), Y)) = T(X, T(Y, Z)).
+Proof:
+  rdiv(X, rdiv(T(Y, X), Y))
+= { by lemma 61 R->L }
+  rdiv(X, ldiv(Y, T(Y, X))) (peak)
+= { by lemma 57 }
+  rdiv(X, K(Y, X))
+= { by lemma 75 }
+  T(X, Y)
+= { by lemma 91 R->L }
+  T(X, T(Y, Z)) (peak)
+
+Lemma 113: op(X, rdiv(Y, T(Y, Z))) = ldiv(T(Y, Z), op(Y, X)).
+Proof:
+  op(X, rdiv(Y, T(Y, Z)))
+= { by axiom 4 (sos) R->L }
+  ldiv(T(Y, Z), op(T(Y, Z), op(X, rdiv(Y, T(Y, Z))))) (peak)
+= { by lemma 84 }
+  ldiv(T(Y, Z), op(Y, X))
+
+Lemma 114: K(rdiv(X, T(X, Y)), Z) = zero.
+Proof:
+  K(rdiv(X, T(X, Y)), Z)
+= { by lemma 74 R->L }
+  K(ldiv(T(X, Y), X), Z) (peak)
+= { by lemma 63 R->L }
+  K(K(Y, T(X, Y)), Z) (peak)
+= { by axiom 7 (sos) }
+  1
+= { by lemma 22 }
+  zero
+
+Lemma 115: op(rdiv(X, T(X, Y)), Z) = ldiv(T(X, Y), op(X, Z)).
+Proof:
+  op(rdiv(X, T(X, Y)), Z)
+= { by axiom 15 (sos) }
+  op(op(Z, rdiv(X, T(X, Y))), K(rdiv(X, T(X, Y)), Z)) (peak)
+= { by lemma 113 }
+  op(ldiv(T(X, Y), op(X, Z)), K(rdiv(X, T(X, Y)), Z))
+= { by lemma 114 }
+  op(ldiv(T(X, Y), op(X, Z)), zero)
+= { by axiom 1 (sos) }
+  ldiv(T(X, Y), op(X, Z))
+
+Lemma 116: op(op(X, Y), L(Z, Y, X)) = op(X, op(Y, Z)).
+Proof:
+  op(op(X, Y), L(Z, Y, X))
+= { by axiom 17 (sos) }
+  op(op(X, Y), ldiv(op(X, Y), op(X, op(Y, Z)))) (peak)
+= { by axiom 8 (sos) }
+  op(X, op(Y, Z))
+
+Lemma 117: op(X, L(Y, ldiv(Z, X), Z)) = op(Z, op(ldiv(Z, X), Y)).
+Proof:
+  op(X, L(Y, ldiv(Z, X), Z))
+= { by axiom 8 (sos) R->L }
+  op(op(Z, ldiv(Z, X)), L(Y, ldiv(Z, X), Z)) (peak)
+= { by lemma 116 }
+  op(Z, op(ldiv(Z, X), Y))
+
+Lemma 118: op(X, op(ldiv(X, zero), Y)) = L(Y, ldiv(X, zero), X).
+Proof:
+  op(X, op(ldiv(X, zero), Y))
+= { by lemma 117 R->L }
+  op(zero, L(Y, ldiv(X, zero), X)) (peak)
+= { by axiom 2 (sos) }
+  L(Y, ldiv(X, zero), X)
+
+Lemma 119: op(X, ldiv(T(X, Y), zero)) = rdiv(X, T(X, Y)).
+Proof:
+  op(X, ldiv(T(X, Y), zero))
+= { by lemma 84 R->L }
+  op(T(X, Y), op(ldiv(T(X, Y), zero), rdiv(X, T(X, Y)))) (peak)
+= { by lemma 118 }
+  L(rdiv(X, T(X, Y)), ldiv(T(X, Y), zero), T(X, Y))
+= { by lemma 76 }
+  rdiv(X, T(X, Y))
+
+Lemma 120: R(rdiv(X, Y), Y, ldiv(X, Z)) = rdiv(Z, op(Y, ldiv(X, Z))).
+Proof:
+  R(rdiv(X, Y), Y, ldiv(X, Z)) (peak)
+= { by lemma 33 R->L }
+  rdiv(op(X, ldiv(X, Z)), op(Y, ldiv(X, Z))) (peak)
+= { by axiom 8 (sos) }
+  rdiv(Z, op(Y, ldiv(X, Z)))
+
+Lemma 121: ldiv(op(ldiv(X, Y), X), Y) = K(X, ldiv(X, Y)).
+Proof:
+  ldiv(op(ldiv(X, Y), X), Y)
+= { by axiom 8 (sos) R->L }
+  ldiv(op(ldiv(X, Y), X), op(X, ldiv(X, Y))) (peak)
+= { by lemma 64 }
+  K(X, ldiv(X, Y))
+
+Lemma 122: ldiv(X, op(Y, T(X, Y))) = Y.
+Proof:
+  ldiv(X, op(Y, T(X, Y))) (peak)
+= { by lemma 54 }
+  ldiv(X, op(X, Y))
+= { by axiom 4 (sos) }
+  Y
+
+Lemma 123: L(ldiv(X, T(X, Y)), X, Y) = K(X, Y).
+Proof:
+  L(ldiv(X, T(X, Y)), X, Y) (peak)
+= { by lemma 96 R->L }
+  ldiv(op(Y, X), op(Y, T(X, Y))) (peak)
+= { by lemma 54 }
+  ldiv(op(Y, X), op(X, Y))
+= { by lemma 64 }
+  K(X, Y)
+
+Lemma 124: K(X, rdiv(op(Y, T(X, Y)), X)) = rdiv(T(X, Y), X).
+Proof:
+  K(X, rdiv(op(Y, T(X, Y)), X))
+= { by lemma 79 R->L }
+  K(X, ldiv(X, op(Y, T(X, Y))))
+= { by lemma 121 R->L }
+  ldiv(op(ldiv(X, op(Y, T(X, Y))), X), op(Y, T(X, Y))) (peak)
+= { by lemma 122 }
+  ldiv(op(Y, X), op(Y, T(X, Y)))
+= { by lemma 96 }
+  L(ldiv(X, T(X, Y)), X, Y)
+= { by lemma 123 }
+  K(X, Y)
+= { by lemma 60 R->L }
+  rdiv(T(X, Y), X)
+
+Lemma 125: R(rdiv(T(X, Y), X), Z, W) = rdiv(T(X, Y), X).
+Proof:
+  R(rdiv(T(X, Y), X), Z, W)
+= { by lemma 124 R->L }
+  R(K(X, rdiv(op(Y, T(X, Y)), X)), Z, W) (peak)
+= { by lemma 51 }
+  K(X, rdiv(op(Y, T(X, Y)), X))
+= { by lemma 124 }
+  rdiv(T(X, Y), X)
+
+Lemma 126: rdiv(zero, rdiv(X, T(X, Y))) = rdiv(T(X, Y), X).
+Proof:
+  rdiv(zero, rdiv(X, T(X, Y)))
+= { by lemma 119 R->L }
+  rdiv(zero, op(X, ldiv(T(X, Y), zero)))
+= { by lemma 120 R->L }
+  R(rdiv(T(X, Y), X), X, ldiv(T(X, Y), zero)) (peak)
+= { by lemma 125 }
+  rdiv(T(X, Y), X)
+
+Lemma 127: ldiv(rdiv(T(X, Y), X), Z) = rdiv(Z, rdiv(T(X, Y), X)).
+Proof:
+  ldiv(rdiv(T(X, Y), X), Z)
+= { by lemma 124 R->L }
+  ldiv(K(X, rdiv(op(Y, T(X, Y)), X)), Z) (peak)
+= { by lemma 41 }
+  rdiv(Z, K(X, rdiv(op(Y, T(X, Y)), X)))
+= { by lemma 124 }
+  rdiv(Z, rdiv(T(X, Y), X))
+
+Lemma 128: ldiv(T(X, Y), op(X, Z)) = rdiv(Z, rdiv(T(X, Y), X)).
+Proof:
+  ldiv(T(X, Y), op(X, Z))
+= { by lemma 115 R->L }
+  op(rdiv(X, T(X, Y)), Z)
+= { by lemma 36 R->L }
+  ldiv(R(rdiv(zero, rdiv(X, T(X, Y))), rdiv(X, T(X, Y)), Z), Z) (peak)
+= { by lemma 126 }
+  ldiv(R(rdiv(T(X, Y), X), rdiv(X, T(X, Y)), Z), Z)
+= { by lemma 125 }
+  ldiv(rdiv(T(X, Y), X), Z)
+= { by lemma 127 }
+  rdiv(Z, rdiv(T(X, Y), X))
+
+Lemma 129: op(K(X, Y), op(X, T(Y, X))) = op(X, Y).
+Proof:
+  op(K(X, Y), op(X, T(Y, X)))
+= { by lemma 25 }
+  op(op(X, T(Y, X)), K(X, Y)) (peak)
+= { by lemma 54 }
+  op(op(Y, X), K(X, Y))
+= { by axiom 15 (sos) R->L }
+  op(X, Y)
+
+Lemma 130: rdiv(op(X, Y), op(X, T(Y, X))) = rdiv(Y, T(Y, X)).
+Proof:
+  rdiv(op(X, Y), op(X, T(Y, X)))
+= { by lemma 129 R->L }
+  rdiv(op(K(X, Y), op(X, T(Y, X))), op(X, T(Y, X))) (peak)
+= { by axiom 3 (sos) }
+  K(X, Y)
+= { by lemma 78 R->L }
+  rdiv(Y, T(Y, X))
+
+Lemma 131: ldiv(op(rdiv(Z, op(Y, X)), Y), Z) = L(X, Y, rdiv(Z, op(Y, X))).
+Proof:
+  ldiv(op(rdiv(Z, op(Y, X)), Y), Z)
+= { by axiom 9 (sos) R->L }
+  ldiv(op(rdiv(Z, op(Y, X)), Y), op(rdiv(Z, op(Y, X)), op(Y, X))) (peak)
+= { by axiom 17 (sos) R->L }
+  L(X, Y, rdiv(Z, op(Y, X)))
+
+Lemma 132: rdiv(op(X, Y), op(X, T(Y, X))) = K(X, Y).
+Proof:
+  rdiv(op(X, Y), op(X, T(Y, X))) (peak)
+= { by lemma 54 }
+  rdiv(op(X, Y), op(Y, X))
+= { by lemma 46 }
+  K(X, Y)
+
+Lemma 133: ldiv(T(X, Y), op(X, Y)) = T(Y, T(X, Y)).
+Proof:
+  ldiv(T(X, Y), op(X, Y))
+= { by lemma 54 R->L }
+  ldiv(T(X, Y), op(Y, T(X, Y))) (peak)
+= { by axiom 5 (sos) R->L }
+  T(Y, T(X, Y))
+
+Lemma 134: L(T(X, Y), Y, rdiv(X, T(X, Y))) = T(X, Y).
+Proof:
+  L(T(X, Y), Y, rdiv(X, T(X, Y)))
+= { by lemma 130 R->L }
+  L(T(X, Y), Y, rdiv(op(Y, X), op(Y, T(X, Y))))
+= { by lemma 131 R->L }
+  ldiv(op(rdiv(op(Y, X), op(Y, T(X, Y))), Y), op(Y, X)) (peak)
+= { by lemma 132 }
+  ldiv(op(K(Y, X), Y), op(Y, X))
+= { by lemma 55 }
+  ldiv(T(Y, X), op(Y, X))
+= { by lemma 133 }
+  T(X, T(Y, X))
+= { by lemma 91 }
+  T(X, Y)
+
+Lemma 135: ldiv(T(X, T(T(Y, Z), W)), op(X, Y)) = T(Y, X).
+Proof:
+  ldiv(T(X, T(T(Y, Z), W)), op(X, Y)) (peak)
+= { by lemma 91 }
+  ldiv(T(X, T(Y, Z)), op(X, Y))
+= { by lemma 112 R->L }
+  ldiv(rdiv(X, rdiv(T(Y, X), Y)), op(X, Y))
+= { by lemma 128 R->L }
+  ldiv(ldiv(T(Y, X), op(Y, X)), op(X, Y))
+= { by lemma 115 R->L }
+  ldiv(op(rdiv(Y, T(Y, X)), X), op(X, Y))
+= { by lemma 130 R->L }
+  ldiv(op(rdiv(op(X, Y), op(X, T(Y, X))), X), op(X, Y)) (peak)
+= { by lemma 131 }
+  L(T(Y, X), X, rdiv(op(X, Y), op(X, T(Y, X))))
+= { by lemma 132 }
+  L(T(Y, X), X, K(X, Y))
+= { by lemma 78 R->L }
+  L(T(Y, X), X, rdiv(Y, T(Y, X)))
+= { by lemma 134 }
+  T(Y, X)
+
+Lemma 136: ldiv(ldiv(ldiv(X, Y), Y), Y) = T(ldiv(X, Y), X).
+Proof:
+  ldiv(ldiv(ldiv(X, Y), Y), Y)
+= { by axiom 8 (sos) R->L }
+  ldiv(ldiv(ldiv(X, Y), Y), op(X, ldiv(X, Y))) (peak)
+= { by lemma 71 R->L }
+  ldiv(T(X, ldiv(X, Y)), op(X, ldiv(X, Y))) (peak)
+= { by lemma 133 }
+  T(ldiv(X, Y), T(X, ldiv(X, Y)))
+= { by lemma 91 }
+  T(ldiv(X, Y), X)
+
+Lemma 137: rdiv(X, T(ldiv(Y, X), Y)) = ldiv(ldiv(Y, X), X).
+Proof:
+  rdiv(X, T(ldiv(Y, X), Y)) (peak)
+= { by lemma 136 R->L }
+  rdiv(X, ldiv(ldiv(ldiv(Y, X), X), X)) (peak)
+= { by lemma 58 }
+  ldiv(ldiv(Y, X), X)
+
+Lemma 138: rdiv(op(X, Y), T(Y, X)) = T(X, Y).
+Proof:
+  rdiv(op(X, Y), T(Y, X))
+= { by axiom 4 (sos) R->L }
+  rdiv(op(X, Y), T(ldiv(X, op(X, Y)), X)) (peak)
+= { by lemma 137 }
+  ldiv(ldiv(X, op(X, Y)), op(X, Y))
+= { by axiom 4 (sos) }
+  ldiv(Y, op(X, Y))
+= { by axiom 5 (sos) R->L }
+  T(X, Y)
+
+Lemma 139: rdiv(op(X, Y), T(Y, X)) = T(X, T(Y, Z)).
+Proof:
+  rdiv(op(X, Y), T(Y, X)) (peak)
+= { by lemma 138 }
+  T(X, Y)
+= { by lemma 91 R->L }
+  T(X, T(Y, Z)) (peak)
+
+Lemma 140: ldiv(ldiv(X, Y), rdiv(Y, X)) = K(X, rdiv(Y, X)).
+Proof:
+  ldiv(ldiv(X, Y), rdiv(Y, X))
+= { by axiom 8 (sos) R->L }
+  ldiv(ldiv(X, Y), rdiv(op(X, ldiv(X, Y)), X)) (peak)
+= { by lemma 62 }
+  K(X, ldiv(X, Y))
+= { by lemma 79 }
+  K(X, rdiv(Y, X))
+
+Lemma 141: ldiv(T(X, rdiv(Y, X)), Y) = T(ldiv(X, Y), X).
+Proof:
+  ldiv(T(X, rdiv(Y, X)), Y)
+= { by lemma 93 R->L }
+  ldiv(T(X, ldiv(X, Y)), Y)
+= { by lemma 39 R->L }
+  T(rdiv(Y, T(X, ldiv(X, Y))), T(X, ldiv(X, Y))) (peak)
+= { by lemma 72 }
+  T(ldiv(X, Y), T(X, ldiv(X, Y)))
+= { by lemma 91 }
+  T(ldiv(X, Y), X)
+
+Lemma 142: ldiv(T(X, Y), op(Y, X)) = T(T(Y, X), X).
+Proof:
+  ldiv(T(X, Y), op(Y, X))
+= { by axiom 3 (sos) R->L }
+  ldiv(T(X, rdiv(op(Y, X), X)), op(Y, X)) (peak)
+= { by lemma 141 }
+  T(ldiv(X, op(Y, X)), X)
+= { by axiom 5 (sos) R->L }
+  T(T(Y, X), X)
+
+Lemma 143: K(T(X, Y), T(Y, X)) = K(X, Y).
+Proof:
+  K(T(X, Y), T(Y, X))
+= { by lemma 138 R->L }
+  K(T(X, Y), rdiv(op(Y, X), T(X, Y)))
+= { by lemma 140 R->L }
+  ldiv(ldiv(T(X, Y), op(Y, X)), rdiv(op(Y, X), T(X, Y))) (peak)
+= { by lemma 142 }
+  ldiv(T(T(Y, X), X), rdiv(op(Y, X), T(X, Y)))
+= { by lemma 138 }
+  ldiv(T(T(Y, X), X), T(Y, X))
+= { by lemma 70 }
+  K(X, T(Y, X))
+= { by lemma 69 }
+  K(X, Y)
+
+Lemma 144: K(T(T(X, Y), Z), T(Y, W)) = rdiv(T(X, Y), X).
+Proof:
+  K(T(T(X, Y), Z), T(Y, W))
+= { by lemma 69 R->L }
+  K(T(T(X, Y), Z), T(T(Y, W), T(T(X, Y), Z))) (peak)
+= { by lemma 91 }
+  K(T(T(X, Y), Z), T(T(Y, W), T(X, Y)))
+= { by lemma 95 }
+  K(T(X, Y), T(T(Y, W), T(X, Y)))
+= { by lemma 91 R->L }
+  K(T(X, T(Y, W)), T(T(Y, W), T(X, Y))) (peak)
+= { by lemma 91 }
+  K(T(X, T(Y, W)), T(T(Y, W), X))
+= { by lemma 143 }
+  K(X, T(Y, W))
+= { by lemma 92 }
+  rdiv(T(X, Y), X)
+
+Lemma 145: rdiv(T(X, Y), K(X, Y)) = X.
+Proof:
+  rdiv(T(X, Y), K(X, Y))
+= { by lemma 30 R->L }
+  rdiv(op(X, K(X, Y)), K(X, Y)) (peak)
+= { by axiom 3 (sos) }
+  X
+
+Lemma 146: rdiv(T(X, Y), rdiv(T(X, Y), X)) = X.
+Proof:
+  rdiv(T(X, Y), rdiv(T(X, Y), X)) (peak)
+= { by lemma 60 }
+  rdiv(T(X, Y), K(X, Y))
+= { by lemma 145 }
+  X
+
+Lemma 147: rdiv(op(X, Y), T(X, T(T(Y, Z), W))) = Y.
+Proof:
+  rdiv(op(X, Y), T(X, T(T(Y, Z), W))) (peak)
+= { by lemma 91 }
+  rdiv(op(X, Y), T(X, T(Y, Z)))
+= { by lemma 139 R->L }
+  rdiv(op(X, Y), rdiv(op(X, Y), T(Y, X)))
+= { by lemma 107 R->L }
+  op(T(Y, X), K(rdiv(op(X, Y), T(Y, X)), T(Y, X)))
+= { by lemma 53 }
+  rdiv(T(Y, X), K(T(Y, X), rdiv(op(X, Y), T(Y, X))))
+= { by lemma 95 R->L }
+  rdiv(T(Y, X), K(T(T(Y, X), V), rdiv(op(X, Y), T(Y, X)))) (peak)
+= { by lemma 139 }
+  rdiv(T(Y, X), K(T(T(Y, X), V), T(X, T(Y, U)))) (peak)
+= { by lemma 144 }
+  rdiv(T(Y, X), rdiv(T(Y, X), Y))
+= { by lemma 146 }
+  Y
+
+Lemma 148: T(X, T(T(Y, Z), W)) = T(X, Y).
+Proof:
+  T(X, T(T(Y, Z), W)) (peak)
+= { by lemma 91 }
+  T(X, T(Y, Z))
+= { by lemma 135 R->L }
+  T(X, ldiv(T(Z, T(T(Y, V), U)), op(Z, Y))) (peak)
+= { by lemma 109 }
+  T(X, rdiv(op(Z, Y), T(Z, T(T(Y, V), U))))
+= { by lemma 147 }
+  T(X, Y)
+
+Lemma 149: K(X, T(T(Y, Z), W)) = K(X, Y).
+Proof:
+  K(X, T(T(Y, Z), W))
+= { by lemma 57 R->L }
+  ldiv(X, T(X, T(T(Y, Z), W))) (peak)
+= { by lemma 148 }
+  ldiv(X, T(X, Y))
+= { by lemma 57 }
+  K(X, Y)
+
+Lemma 150: rdiv(T(X, Z), T(T(X, Z), Y)) = rdiv(X, T(X, Y)).
+Proof:
+  rdiv(T(X, Z), T(T(X, Z), Y)) (peak)
+= { by lemma 81 R->L }
+  K(Y, T(T(X, Z), Y)) (peak)
+= { by lemma 149 }
+  K(Y, X)
+= { by lemma 78 R->L }
+  rdiv(X, T(X, Y)) (peak)
+
+Lemma 151: op(rdiv(T(X, Y), X), Z) = rdiv(Z, rdiv(X, T(X, Y))).
+Proof:
+  op(rdiv(T(X, Y), X), Z)
+= { by lemma 61 R->L }
+  op(ldiv(X, T(X, Y)), Z) (peak)
+= { by lemma 57 }
+  op(K(X, Y), Z)
+= { by lemma 52 }
+  rdiv(Z, K(Y, X))
+= { by lemma 78 R->L }
+  rdiv(Z, rdiv(X, T(X, Y)))
+
+Lemma 152: op(X, rdiv(T(Y, Z), Y)) = rdiv(X, rdiv(Y, T(Y, Z))).
+Proof:
+  op(X, rdiv(T(Y, Z), Y)) (peak)
+= { by lemma 92 R->L }
+  op(X, K(Y, T(Z, W))) (peak)
+= { by lemma 25 R->L }
+  op(K(Y, T(Z, W)), X) (peak)
+= { by lemma 92 }
+  op(rdiv(T(Y, Z), Y), X) (peak)
+= { by lemma 151 }
+  rdiv(X, rdiv(Y, T(Y, Z)))
+
+Lemma 153: ldiv(X, op(ldiv(Y, X), Y)) = K(ldiv(Y, X), Y).
+Proof:
+  ldiv(X, op(ldiv(Y, X), Y))
+= { by axiom 8 (sos) R->L }
+  ldiv(op(Y, ldiv(Y, X)), op(ldiv(Y, X), Y)) (peak)
+= { by lemma 64 }
+  K(ldiv(Y, X), Y)
+
+Lemma 154: K(rdiv(op(X, T(Y, X)), Y), Y) = rdiv(Y, T(Y, X)).
+Proof:
+  K(rdiv(op(X, T(Y, X)), Y), Y)
+= { by lemma 94 R->L }
+  K(ldiv(Y, op(X, T(Y, X))), Y)
+= { by lemma 153 R->L }
+  ldiv(op(X, T(Y, X)), op(ldiv(Y, op(X, T(Y, X))), Y)) (peak)
+= { by lemma 122 }
+  ldiv(op(X, T(Y, X)), op(X, Y))
+= { by lemma 96 }
+  L(ldiv(T(Y, X), Y), T(Y, X), X)
+= { by lemma 74 }
+  L(rdiv(Y, T(Y, X)), T(Y, X), X)
+= { by lemma 77 }
+  K(X, Y)
+= { by lemma 78 R->L }
+  rdiv(Y, T(Y, X))
+
+Lemma 155: op(X, rdiv(Y, rdiv(Z, T(Z, W)))) = rdiv(op(X, Y), rdiv(Z, T(Z, W))).
+Proof:
+  op(X, rdiv(Y, rdiv(Z, T(Z, W))))
+= { by lemma 152 R->L }
+  op(X, op(Y, rdiv(T(Z, W), Z)))
+= { by lemma 124 R->L }
+  op(X, op(Y, K(Z, rdiv(op(W, T(Z, W)), Z)))) (peak)
+= { by lemma 27 R->L }
+  op(K(Z, rdiv(op(W, T(Z, W)), Z)), op(X, Y)) (peak)
+= { by lemma 52 }
+  rdiv(op(X, Y), K(rdiv(op(W, T(Z, W)), Z), Z))
+= { by lemma 154 }
+  rdiv(op(X, Y), rdiv(Z, T(Z, W)))
+
+Lemma 156: op(X, rdiv(Y, K(Y, X))) = op(T(X, Y), Y).
+Proof:
+  op(X, rdiv(Y, K(Y, X)))
+= { by lemma 69 R->L }
+  op(X, rdiv(Y, K(Y, T(X, Y))))
+= { by lemma 53 R->L }
+  op(X, op(Y, K(T(X, Y), Y)))
+= { by lemma 98 R->L }
+  op(op(X, Y), K(T(X, Y), Y))
+= { by lemma 54 R->L }
+  op(op(Y, T(X, Y)), K(T(X, Y), Y)) (peak)
+= { by axiom 15 (sos) R->L }
+  op(T(X, Y), Y)
+
+Lemma 157: K(X, rdiv(Y, K(Y, X))) = K(X, Y).
+Proof:
+  K(X, rdiv(Y, K(Y, X)))
+= { by lemma 52 R->L }
+  K(X, op(K(X, Y), Y)) (peak)
+= { by lemma 56 }
+  K(X, rdiv(op(X, Y), X)) (peak)
+= { by lemma 65 }
+  L(K(X, Y), Y, X) (peak)
+= { by lemma 67 }
+  K(X, Y)
+
+Lemma 158: op(T(X, Y), T(Y, X)) = op(X, Y).
+Proof:
+  op(T(X, Y), T(Y, X))
+= { by lemma 138 R->L }
+  op(rdiv(op(X, Y), T(Y, X)), T(Y, X)) (peak)
+= { by axiom 9 (sos) }
+  op(X, Y)
+
+Lemma 159: op(rdiv(X, K(X, Y)), Y) = op(Y, X).
+Proof:
+  op(rdiv(X, K(X, Y)), Y)
+= { by axiom 15 (sos) }
+  op(op(Y, rdiv(X, K(X, Y))), K(rdiv(X, K(X, Y)), Y)) (peak)
+= { by lemma 156 }
+  op(op(T(Y, X), X), K(rdiv(X, K(X, Y)), Y))
+= { by lemma 98 }
+  op(T(Y, X), op(X, K(rdiv(X, K(X, Y)), Y)))
+= { by lemma 53 }
+  op(T(Y, X), rdiv(X, K(Y, rdiv(X, K(X, Y)))))
+= { by lemma 157 }
+  op(T(Y, X), rdiv(X, K(Y, X)))
+= { by lemma 75 }
+  op(T(Y, X), T(X, Y))
+= { by lemma 158 }
+  op(Y, X)
+
+Lemma 160: op(X, rdiv(Y, K(Z, W))) = rdiv(op(X, Y), K(Z, W)).
+Proof:
+  op(X, rdiv(Y, K(Z, W)))
+= { by lemma 53 R->L }
+  op(X, op(Y, K(W, Z)))
+= { by lemma 43 R->L }
+  op(op(K(W, Z), X), Y)
+= { by lemma 159 R->L }
+  op(op(rdiv(X, K(X, K(W, Z))), K(W, Z)), Y) (peak)
+= { by lemma 26 }
+  op(K(W, Z), op(rdiv(X, K(X, K(W, Z))), Y))
+= { by lemma 52 }
+  rdiv(op(rdiv(X, K(X, K(W, Z))), Y), K(Z, W))
+= { by axiom 6 (sos) }
+  rdiv(op(rdiv(X, 1), Y), K(Z, W))
+= { by lemma 22 }
+  rdiv(op(rdiv(X, zero), Y), K(Z, W))
+= { by lemma 23 }
+  rdiv(op(X, Y), K(Z, W))
+
+Lemma 161: K(X, rdiv(Y, T(Y, Z))) = zero.
+Proof:
+  K(X, rdiv(Y, T(Y, Z)))
+= { by lemma 74 R->L }
+  K(X, ldiv(T(Y, Z), Y)) (peak)
+= { by lemma 63 R->L }
+  K(X, K(Z, T(Y, Z))) (peak)
+= { by axiom 6 (sos) }
+  1
+= { by lemma 22 }
+  zero
+
+Lemma 162: rdiv(op(X, Y), rdiv(Y, T(Y, Z))) = op(X, T(Y, Z)).
+Proof:
+  rdiv(op(X, Y), rdiv(Y, T(Y, Z)))
+= { by lemma 155 R->L }
+  op(X, rdiv(Y, rdiv(Y, T(Y, Z))))
+= { by lemma 107 R->L }
+  op(X, op(T(Y, Z), K(rdiv(Y, T(Y, Z)), T(Y, Z))))
+= { by lemma 53 }
+  op(X, rdiv(T(Y, Z), K(T(Y, Z), rdiv(Y, T(Y, Z)))))
+= { by lemma 160 }
+  rdiv(op(X, T(Y, Z)), K(T(Y, Z), rdiv(Y, T(Y, Z))))
+= { by lemma 95 R->L }
+  rdiv(op(X, T(Y, Z)), K(T(T(Y, Z), W), rdiv(Y, T(Y, Z)))) (peak)
+= { by lemma 161 }
+  rdiv(op(X, T(Y, Z)), zero)
+= { by lemma 23 }
+  op(X, T(Y, Z))
+
+Lemma 163: op(rdiv(X, Y), T(Y, Z)) = rdiv(X, rdiv(Y, T(Y, Z))).
+Proof:
+  op(rdiv(X, Y), T(Y, Z))
+= { by lemma 162 R->L }
+  rdiv(op(rdiv(X, Y), Y), rdiv(Y, T(Y, Z))) (peak)
+= { by axiom 9 (sos) }
+  rdiv(X, rdiv(Y, T(Y, Z)))
+
+Lemma 164: T(X, T(T(Y, V), U)) = T(X, T(T(Y, Z), W)).
+Proof:
+  T(X, T(T(Y, V), U)) (peak)
+= { by lemma 148 }
+  T(X, Y)
+= { by lemma 147 R->L }
+  T(X, rdiv(op(Z, Y), T(Z, T(T(Y, T), S))))
+= { by lemma 109 R->L }
+  T(X, ldiv(T(Z, T(T(Y, T), S)), op(Z, Y))) (peak)
+= { by lemma 135 }
+  T(X, T(Y, Z))
+= { by lemma 91 R->L }
+  T(X, T(T(Y, Z), W)) (peak)
+
+Lemma 165: K(T(T(X, V), U), W) = K(T(T(X, Y), Z), W).
+Proof:
+  K(T(T(X, V), U), W)
+= { by lemma 78 R->L }
+  rdiv(W, T(W, T(T(X, V), U)))
+= { by lemma 74 R->L }
+  ldiv(T(W, T(T(X, V), U)), W) (peak)
+= { by lemma 164 }
+  ldiv(T(W, T(T(X, Y), Z)), W) (peak)
+= { by lemma 70 }
+  K(T(T(X, Y), Z), W)
+
+Lemma 166: rdiv(T(T(X, Z), Y), T(X, Z)) = rdiv(T(X, Y), X).
+Proof:
+  rdiv(T(T(X, Z), Y), T(X, Z))
+= { by lemma 61 R->L }
+  ldiv(T(X, Z), T(T(X, Z), Y))
+= { by lemma 91 R->L }
+  ldiv(T(X, Z), T(T(X, Z), T(Y, V))) (peak)
+= { by lemma 57 }
+  K(T(X, Z), T(Y, V))
+= { by lemma 95 R->L }
+  K(T(T(X, Z), U), T(Y, V)) (peak)
+= { by lemma 165 R->L }
+  K(T(T(X, Y), W), T(Y, V)) (peak)
+= { by lemma 144 }
+  rdiv(T(X, Y), X) (peak)
+
+Lemma 167: T(T(X, Z), Y) = T(T(X, Y), Z).
+Proof:
+  T(T(X, Z), Y)
+= { by lemma 111 R->L }
+  rdiv(T(X, Z), rdiv(T(X, Z), T(T(X, Z), Y))) (peak)
+= { by lemma 150 }
+  rdiv(T(X, Z), rdiv(X, T(X, Y)))
+= { by lemma 163 R->L }
+  op(rdiv(T(X, Z), X), T(X, Y))
+= { by lemma 166 R->L }
+  op(rdiv(T(T(X, Y), Z), T(X, Y)), T(X, Y)) (peak)
+= { by lemma 151 }
+  rdiv(T(X, Y), rdiv(T(X, Y), T(T(X, Y), Z)))
+= { by lemma 111 }
+  T(T(X, Y), Z)
+
+Goal 1 (goals): T(T(x0, x1), x2) = T(T(x0, x2), x1).
+Proof:
+  T(T(x0, x1), x2)
+= { by lemma 167 }
+  T(T(x0, x2), x1) (peak)
+
+RESULT: Theorem (the conjecture is true).

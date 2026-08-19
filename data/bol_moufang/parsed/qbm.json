@@ -1,0 +1,3579 @@
+[
+ {
+  "number": 1,
+  "statement": "Let Q be a quasigroup satisfying D14. Then it satisfies F14.",
+  "seconds": 0.79,
+  "length": 59,
+  "level": 19,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (z*x))= (x* (y*z))*x",
+    "tptp": "op(X,op(Y,op(Z,X))) = op(op(X,op(Y,Z)),X)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*x=x* (y* (z*x))",
+    "tptp": "op(op(X,op(Y,Z)),X) = op(X,op(Y,op(Z,X)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (B* (C*C))!= (A* (B*C))*C",
+    "tptp": "op(sk_a,op(sk_b,op(sk_c,sk_c))) != op(op(sk_a,op(sk_b,sk_c)),sk_c)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (B*C))*C!=A* (B* (C*C))",
+    "tptp": "op(op(sk_a,op(sk_b,sk_c)),sk_c) != op(sk_a,op(sk_b,op(sk_c,sk_c)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 19,
+    "text": "x* (y* ((z* (u*y))*x))=x* ((y* (z*u))* (y*x))",
+    "tptp": "op(X,op(Y,op(op(Z,op(U,Y)),X))) = op(X,op(op(Y,op(Z,U)),op(Y,X)))",
+    "justification": "para_into,11.1.1.1.2,11.1.1,demod,12",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 20,
+    "text": "(x*y)*x=x* ((y/z)* (z*x))",
+    "tptp": "op(op(X,Y),X) = op(X,op(rdiv(Y,Z),op(Z,X)))",
+    "justification": "para_into,11.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x*y)*x=x* (z* ((z\\y)*x))",
+    "tptp": "op(op(X,Y),X) = op(X,op(Z,op(ldiv(Z,Y),X)))",
+    "justification": "para_into,11.1.1.1.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "x* ((y/z)* (z*x))= (x*y)*x",
+    "tptp": "op(X,op(rdiv(Y,Z),op(Z,X))) = op(op(X,Y),X)",
+    "justification": "copy,20,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 28,
+    "text": "x* (y* ((y\\z)*x))= (x*z)*x",
+    "tptp": "op(X,op(Y,op(ldiv(Y,Z),X))) = op(op(X,Z),X)",
+    "justification": "copy,21,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "(x* (y* (z*x)))/x=x* (y*z)",
+    "tptp": "rdiv(op(X,op(Y,op(Z,X))),X) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 31,
+    "text": "(x* (y*z))\\ (x* (y* (z*x)))=x",
+    "tptp": "ldiv(op(X,op(Y,Z)),op(X,op(Y,op(Z,X)))) = X",
+    "justification": "para_from,11.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 54,
+    "text": "(x* (y*z))* (x*u)=x* ((y* (z*x))*u)",
+    "tptp": "op(op(X,op(Y,Z)),op(X,U)) = op(X,op(op(Y,op(Z,X)),U))",
+    "justification": "para_from,19.1.1,4.1.1.2,demod,5",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 56,
+    "text": "x* ((y* (z*x))*u)= (x* (y*z))* (x*u)",
+    "tptp": "op(X,op(op(Y,op(Z,X)),U)) = op(op(X,op(Y,Z)),op(X,U))",
+    "justification": "copy,54,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 63,
+    "text": "x* (((x\\y)/z)* (z*x))=y*x",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),Z),op(Z,X))) = op(Y,X)",
+    "justification": "para_into,20.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 130,
+    "text": "((x*y)*x)/ ((y/z)* (z*x))=x",
+    "tptp": "rdiv(op(op(X,Y),X),op(rdiv(Y,Z),op(Z,X))) = X",
+    "justification": "para_from,27.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 132,
+    "text": "x\\ ((x*y)*x)= (y/z)* (z*x)",
+    "tptp": "ldiv(X,op(op(X,Y),X)) = op(rdiv(Y,Z),op(Z,X))",
+    "justification": "para_from,27.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 136,
+    "text": "(x/y)* (y*z)=z\\ ((z*x)*z)",
+    "tptp": "op(rdiv(X,Y),op(Y,Z)) = ldiv(Z,op(op(Z,X),Z))",
+    "justification": "copy,132,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 166,
+    "text": "x\\ ((x*y)*x)=z* ((z\\y)*x)",
+    "tptp": "ldiv(X,op(op(X,Y),X)) = op(Z,op(ldiv(Z,Y),X))",
+    "justification": "para_from,28.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 185,
+    "text": "(x* (y*z))/x=x* (y* (z/x))",
+    "tptp": "rdiv(op(X,op(Y,Z)),X) = op(X,op(Y,rdiv(Z,X)))",
+    "justification": "para_into,29.1.1.1.2.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 200,
+    "text": "(x*y)/x=x* ((y/ (z*x))*z)",
+    "tptp": "rdiv(op(X,Y),X) = op(X,op(rdiv(Y,op(Z,X)),Z))",
+    "justification": "para_into,29.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 331,
+    "text": "((x\\y)/z)* (z*x)=x\\ (y*x)",
+    "tptp": "op(rdiv(ldiv(X,Y),Z),op(Z,X)) = ldiv(X,op(Y,X))",
+    "justification": "para_from,63.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 841,
+    "text": "x* ((x\\ (y*z))*u)=y* (z*u)",
+    "tptp": "op(X,op(ldiv(X,op(Y,Z)),U)) = op(Y,op(Z,U))",
+    "justification": "para_into,166.1.1.2,11.1.1,demod,5,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1032,
+    "text": "x* (((x\\y)/ (z*x))*z)=y/x",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),op(Z,X)),Z)) = rdiv(Y,X)",
+    "justification": "para_into,200.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1037,
+    "text": "x* ((x/ (y*x))*y)=x",
+    "tptp": "op(X,op(rdiv(X,op(Y,X)),Y)) = X",
+    "justification": "para_into,200.1.1,6.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1051,
+    "text": "((x/ (y*x))*y)* ((x/ (y*x))*y)= (x/ (y*x))*y",
+    "tptp": "op(op(rdiv(X,op(Y,X)),Y),op(rdiv(X,op(Y,X)),Y)) = op(rdiv(X,op(Y,X)),Y)",
+    "justification": "para_into,1037.1.1.2.1.2,1037.1.1,demod,9",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1077,
+    "text": "x* ((x/y)* (y/x))=x",
+    "tptp": "op(X,op(rdiv(X,Y),rdiv(Y,X))) = X",
+    "justification": "para_into,1037.1.1.2.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1127,
+    "text": "(x/ (y*x))*y=x\\x",
+    "tptp": "op(rdiv(X,op(Y,X)),Y) = ldiv(X,X)",
+    "justification": "para_from,1037.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1141,
+    "text": "(x\\x)* (x\\x)=x\\x",
+    "tptp": "op(ldiv(X,X),ldiv(X,X)) = ldiv(X,X)",
+    "justification": "back_demod,1051,demod,1128,1128,1128",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1147,
+    "text": "x* (y* ((y\\x)/x))=x",
+    "tptp": "op(X,op(Y,rdiv(ldiv(Y,X),X))) = X",
+    "justification": "para_into,1077.1.1.2.1,15.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1193,
+    "text": "(x/y)* (y/x)=x\\x",
+    "tptp": "op(rdiv(X,Y),rdiv(Y,X)) = ldiv(X,X)",
+    "justification": "para_from,1077.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1235,
+    "text": "x* (y/ (x*y))= ((x*y)*x)\\ ((x*y)*x)",
+    "tptp": "op(X,rdiv(Y,op(X,Y))) = ldiv(op(op(X,Y),X),op(op(X,Y),X))",
+    "justification": "para_into,1127.1.1.1,130.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1290,
+    "text": "(x\\x)/y=x/ (y*x)",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(X,op(Y,X))",
+    "justification": "para_from,1127.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1292,
+    "text": "(x/ (y*x))\\ (x\\x)=y",
+    "tptp": "ldiv(rdiv(X,op(Y,X)),ldiv(X,X)) = Y",
+    "justification": "para_from,1127.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1309,
+    "text": "(x\\x)\\ (x\\x)=x\\x",
+    "tptp": "ldiv(ldiv(X,X),ldiv(X,X)) = ldiv(X,X)",
+    "justification": "para_from,1141.1.1,1127.1.1.1.2,demod,1291,1128,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1324,
+    "text": "(x* (y\\y))*x=x* ((y\\y)* ((y\\y)*x))",
+    "tptp": "op(op(X,ldiv(Y,Y)),X) = op(X,op(ldiv(Y,Y),op(ldiv(Y,Y),X)))",
+    "justification": "para_from,1141.1.1,11.1.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1394,
+    "text": "(x*y)/x=x* (y* ((z* ((z\\y)/y))/x))",
+    "tptp": "rdiv(op(X,Y),X) = op(X,op(Y,rdiv(op(Z,rdiv(ldiv(Z,Y),Y)),X)))",
+    "justification": "para_from,1147.1.1,185.1.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1398,
+    "text": "(x\\y)/y= (x\\ (y*x))\\ (x\\y)",
+    "tptp": "rdiv(ldiv(X,Y),Y) = ldiv(ldiv(X,op(Y,X)),ldiv(X,Y))",
+    "justification": "para_from,1147.1.1,31.1.1.2.2,demod,332,9,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1412,
+    "text": "x* ((x\\ (y*x))\\ (x\\y))=y\\y",
+    "tptp": "op(X,ldiv(ldiv(X,op(Y,X)),ldiv(X,Y))) = ldiv(Y,Y)",
+    "justification": "para_from,1147.1.1,4.1.1.2,demod,1399,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1416,
+    "text": "(x*y)/x=x* (y* (y/ (x*y)))",
+    "tptp": "rdiv(op(X,Y),X) = op(X,op(Y,rdiv(Y,op(X,Y))))",
+    "justification": "copy,1394,flip.1,demod,1399,1413,1291,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1433,
+    "text": "x* (y* (y/ (x*y)))=x* ((y/ (z*x))*z)",
+    "tptp": "op(X,op(Y,rdiv(Y,op(X,Y)))) = op(X,op(rdiv(Y,op(Z,X)),Z))",
+    "justification": "back_demod,200,demod,1417",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1490,
+    "text": "((x*y)*x)\\ ((x*y)*x)= (x*y)\\ (x*y)",
+    "tptp": "ldiv(op(op(X,Y),X),op(op(X,Y),X)) = ldiv(op(X,Y),op(X,Y))",
+    "justification": "para_into,1193.1.1.1,6.1.1,demod,1236",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1548,
+    "text": "(x/ (y*x))* (y*z)= (x\\x)* ((x\\x)*z)",
+    "tptp": "op(rdiv(X,op(Y,X)),op(Y,Z)) = op(ldiv(X,X),op(ldiv(X,X),Z))",
+    "justification": "para_from,1290.1.1,136.1.1.1,demod,1325,5",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1580,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_into,1292.1.1.1,1290.1.1,demod,1310,1293",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1582,
+    "text": "x/ (y*x)=y\\ ((y*x)\\ (y*x))",
+    "tptp": "rdiv(X,op(Y,X)) = ldiv(Y,ldiv(op(Y,X),op(Y,X)))",
+    "justification": "para_into,1292.1.1.1,130.1.1,demod,1491,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1635,
+    "text": "(x\\ ((x*y)\\ (x*y)))* (x*z)= (y\\y)* ((y\\y)*z)",
+    "tptp": "op(ldiv(X,ldiv(op(X,Y),op(X,Y))),op(X,Z)) = op(ldiv(Y,Y),op(ldiv(Y,Y),Z))",
+    "justification": "back_demod,1548,demod,1583",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1642,
+    "text": "x* ((y/ (z*x))*z)=x* (y* (x\\ ((x*y)\\ (x*y))))",
+    "tptp": "op(X,op(rdiv(Y,op(Z,X)),Z)) = op(X,op(Y,ldiv(X,ldiv(op(X,Y),op(X,Y)))))",
+    "justification": "back_demod,1433,demod,1583,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1656,
+    "text": "(x\\x)/y=y\\ ((y*x)\\ (y*x))",
+    "tptp": "rdiv(ldiv(X,X),Y) = ldiv(Y,ldiv(op(Y,X),op(Y,X)))",
+    "justification": "back_demod,1290,demod,1583",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1700,
+    "text": "x/y=y* ((y\\x)* (y\\ (x\\x)))",
+    "tptp": "rdiv(X,Y) = op(Y,op(ldiv(Y,X),ldiv(Y,ldiv(X,X))))",
+    "justification": "back_demod,1032,demod,1643,3,3,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1734,
+    "text": "x\\ ((x*y)\\ (x*y))=x* ((x\\ (y\\y))* (x\\ (y\\y)))",
+    "tptp": "ldiv(X,ldiv(op(X,Y),op(X,Y))) = op(X,op(ldiv(X,ldiv(Y,Y)),ldiv(X,ldiv(Y,Y))))",
+    "justification": "back_demod,1656,demod,1701,1310,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2011,
+    "text": "(x* ((x\\ (y\\y))* (x\\ (y\\y))))* (x*z)= (y\\y)* ((y\\y)*z)",
+    "tptp": "op(op(X,op(ldiv(X,ldiv(Y,Y)),ldiv(X,ldiv(Y,Y)))),op(X,Z)) = op(ldiv(Y,Y),op(ldiv(Y,Y),Z))",
+    "justification": "back_demod,1635,demod,1735",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2102,
+    "text": "x* ((x\\ (y\\y))*z)=z",
+    "tptp": "op(X,op(ldiv(X,ldiv(Y,Y)),Z)) = Z",
+    "justification": "para_from,1580.1.1,166.1.1.2.1,demod,5,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2105,
+    "text": "x\\x=y\\y",
+    "tptp": "ldiv(X,X) = ldiv(Y,Y)",
+    "justification": "para_from,1580.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2122,
+    "text": "(x\\ (y\\y))* (x*z)= (y\\y)* ((y\\y)*z)",
+    "tptp": "op(ldiv(X,ldiv(Y,Y)),op(X,Z)) = op(ldiv(Y,Y),op(ldiv(Y,Y),Z))",
+    "justification": "back_demod,2011,demod,2103",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2164,
+    "text": "(x\\x)* ((y\\y)*z)=z",
+    "tptp": "op(ldiv(X,X),op(ldiv(Y,Y),Z)) = Z",
+    "justification": "para_into,2102.1.1.2.1,2105.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2172,
+    "text": "(x\\ (y\\y))\\z=x*z",
+    "tptp": "ldiv(ldiv(X,ldiv(Y,Y)),Z) = op(X,Z)",
+    "justification": "para_into,2102.1.1.2,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2178,
+    "text": "(x\\ (y\\y))* (x*z)=z",
+    "tptp": "op(ldiv(X,ldiv(Y,Y)),op(X,Z)) = Z",
+    "justification": "back_demod,2122,demod,2165",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3447,
+    "text": "(x\\ (y\\y))* ((x* (z*u))* (x*v))= (z* (u*x))*v",
+    "tptp": "op(ldiv(X,ldiv(Y,Y)),op(op(X,op(Z,U)),op(X,V))) = op(op(Z,op(U,X)),V)",
+    "justification": "para_from,56.1.1,2178.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3473,
+    "text": "(x* (y*z))*u= (z\\ (v\\v))* ((z* (x*y))* (z*u))",
+    "tptp": "op(op(X,op(Y,Z)),U) = op(ldiv(Z,ldiv(V,V)),op(op(Z,op(X,Y)),op(Z,U)))",
+    "justification": "copy,3447,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3499,
+    "text": "(x\\ (y\\y))* ((x* (z*u))*v)=z* (u*v)",
+    "tptp": "op(ldiv(X,ldiv(Y,Y)),op(op(X,op(Z,U)),V)) = op(Z,op(U,V))",
+    "justification": "para_into,841.1.1.2.1,2172.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3550,
+    "text": "(x* (y*z))*u=x* (y* (z*u))",
+    "tptp": "op(op(X,op(Y,Z)),U) = op(X,op(Y,op(Z,U)))",
+    "justification": "back_demod,3473,demod,3500",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3552,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,3550.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 2,
+  "statement": "Let Q be a quasigroup satisfying F14. Then it satisfies D14.",
+  "seconds": 5.09,
+  "length": 39,
+  "level": 16,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (z*z))= (x* (y*z))*z",
+    "tptp": "op(X,op(Y,op(Z,Z))) = op(op(X,op(Y,Z)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*z=x* (y* (z*z))",
+    "tptp": "op(op(X,op(Y,Z)),Z) = op(X,op(Y,op(Z,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (B* (C*A))!= (A* (B*C))*A",
+    "tptp": "op(sk_a,op(sk_b,op(sk_c,sk_a))) != op(op(sk_a,op(sk_b,sk_c)),sk_a)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (B*C))*A!=A* (B* (C*A))",
+    "tptp": "op(op(sk_a,op(sk_b,sk_c)),sk_a) != op(sk_a,op(sk_b,op(sk_c,sk_a)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x*y)*z=x* ((y/z)* (z*z))",
+    "tptp": "op(op(X,Y),Z) = op(X,op(rdiv(Y,Z),op(Z,Z)))",
+    "justification": "para_into,11.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 25,
+    "text": "(x/ (y*z))* (y* (z*z))=x*z",
+    "tptp": "op(rdiv(X,op(Y,Z)),op(Y,op(Z,Z))) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "x* ((y/z)* (z*z))= (x*y)*z",
+    "tptp": "op(X,op(rdiv(Y,Z),op(Z,Z))) = op(op(X,Y),Z)",
+    "justification": "copy,21,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "(x* (y* (z*z)))/z=x* (y*z)",
+    "tptp": "rdiv(op(X,op(Y,op(Z,Z))),Z) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 54,
+    "text": "x* (((x\\y)/z)* (z*z))=y*z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),Z),op(Z,Z))) = op(Y,Z)",
+    "justification": "para_into,21.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 88,
+    "text": "(x/ ((y/ (z*z))*z))*y=x*z",
+    "tptp": "op(rdiv(X,op(rdiv(Y,op(Z,Z)),Z)),Y) = op(X,Z)",
+    "justification": "para_into,25.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 122,
+    "text": "x\\ ((x*y)*z)= (y/z)* (z*z)",
+    "tptp": "ldiv(X,op(op(X,Y),Z)) = op(rdiv(Y,Z),op(Z,Z))",
+    "justification": "para_from,27.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 127,
+    "text": "(x/y)* (y*y)=z\\ ((z*x)*y)",
+    "tptp": "op(rdiv(X,Y),op(Y,Y)) = ldiv(Z,op(op(Z,X),Y))",
+    "justification": "copy,122,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 162,
+    "text": "(x*y)/z=x* ((y/ (z*z))*z)",
+    "tptp": "rdiv(op(X,Y),Z) = op(X,op(rdiv(Y,op(Z,Z)),Z))",
+    "justification": "para_into,29.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 173,
+    "text": "x* ((y/ (y*y))*y)=x",
+    "tptp": "op(X,op(rdiv(Y,op(Y,Y)),Y)) = X",
+    "justification": "back_demod,6,demod,163",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 190,
+    "text": "x\\x= (y/ (y*y))*y",
+    "tptp": "ldiv(X,X) = op(rdiv(Y,op(Y,Y)),Y)",
+    "justification": "para_from,173.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 192,
+    "text": "(x/ (x*x))*x=y\\y",
+    "tptp": "op(rdiv(X,op(X,X)),X) = ldiv(Y,Y)",
+    "justification": "copy,190,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 229,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,173.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 234,
+    "text": "(x/ (x*x))\\ (y\\y)=x",
+    "tptp": "ldiv(rdiv(X,op(X,X)),ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 271,
+    "text": "(x\\x)/y=y/ (y*y)",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(Y,op(Y,Y))",
+    "justification": "para_from,234.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 272,
+    "text": "x/ (x*x)= (y\\y)/x",
+    "tptp": "rdiv(X,op(X,X)) = rdiv(ldiv(Y,Y),X)",
+    "justification": "copy,271,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 333,
+    "text": "(x\\x)/y= (z\\z)/y",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(ldiv(Z,Z),Y)",
+    "justification": "para_into,272.1.1,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 357,
+    "text": "(x\\x)/ (y\\ (z\\z))=y",
+    "tptp": "rdiv(ldiv(X,X),ldiv(Y,ldiv(Z,Z))) = Y",
+    "justification": "para_into,333.1.1,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 651,
+    "text": "((x\\y)/z)* (z*z)=x\\ (y*z)",
+    "tptp": "op(rdiv(ldiv(X,Y),Z),op(Z,Z)) = ldiv(X,op(Y,Z))",
+    "justification": "para_from,54.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1032,
+    "text": "x* (y\\ ((y*z)*u))= (x*z)*u",
+    "tptp": "op(X,ldiv(Y,op(op(Y,Z),U))) = op(op(X,Z),U)",
+    "justification": "para_from,127.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1089,
+    "text": "x/y=x* (((z\\z)/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(X,op(rdiv(ldiv(Z,Z),op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,229.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1095,
+    "text": "x/y= (x/z)* ((z/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(rdiv(X,Z),op(rdiv(Z,op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1096,
+    "text": "x* (((x\\y)/ (z*z))*z)=y/z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),op(Z,Z)),Z)) = rdiv(Y,Z)",
+    "justification": "para_into,162.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1101,
+    "text": "x* (((y\\y)/ (z*z))*z)=x/z",
+    "tptp": "op(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)) = rdiv(X,Z)",
+    "justification": "copy,1089,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2431,
+    "text": "x* (y\\ (z*u))= (x* (y\\z))*u",
+    "tptp": "op(X,ldiv(Y,op(Z,U))) = op(op(X,ldiv(Y,Z)),U)",
+    "justification": "para_from,651.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4144,
+    "text": "((x\\x)/y)* ((y/ ((z\\ (u\\u))* (z\\ (u\\u))))* (z\\ (u\\u)))=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(rdiv(Y,op(ldiv(Z,ldiv(U,U)),ldiv(Z,ldiv(U,U)))),ldiv(Z,ldiv(U,U)))) = Z",
+    "justification": "para_into,1095.1.1,357.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4331,
+    "text": "((x\\y)/ (z*z))*z=x\\ (y/z)",
+    "tptp": "op(rdiv(ldiv(X,Y),op(Z,Z)),Z) = ldiv(X,rdiv(Y,Z))",
+    "justification": "para_from,1096.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4483,
+    "text": "x* (y\\ (y/z))=x/z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,Z))) = rdiv(X,Z)",
+    "justification": "back_demod,1101,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4919,
+    "text": "x* (y\\ ((z\\z)/y))=x/ (y*y)",
+    "tptp": "op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y))) = rdiv(X,op(Y,Y))",
+    "justification": "para_into,4483.1.1.2.2,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4925,
+    "text": "x/ (y*y)=x* (y\\ ((z\\z)/y))",
+    "tptp": "rdiv(X,op(Y,Y)) = op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y)))",
+    "justification": "copy,4919,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 5661,
+    "text": "(x* (y\\ (z/u)))*u=x* (y\\z)",
+    "tptp": "op(op(X,ldiv(Y,rdiv(Z,U))),U) = op(X,ldiv(Y,Z))",
+    "justification": "para_into,2431.1.1.2.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6717,
+    "text": "(x/ (y* (z\\ (u\\u))))*y=x*z",
+    "tptp": "op(rdiv(X,op(Y,ldiv(Z,ldiv(U,U)))),Y) = op(X,Z)",
+    "justification": "para_from,4925.1.1,88.1.1.1.2.1,demod,5662",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6722,
+    "text": "((x\\x)/y)* (y*z)=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(Y,Z)) = Z",
+    "justification": "back_demod,4144,demod,6718",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6891,
+    "text": "x* (((y\\y)/z)\\ (u*v))= (x* (z*u))*v",
+    "tptp": "op(X,ldiv(rdiv(ldiv(Y,Y),Z),op(U,V))) = op(op(X,op(Z,U)),V)",
+    "justification": "para_from,6722.1.1,1032.1.1.2.2.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6913,
+    "text": "((x\\x)/y)\\z=y*z",
+    "tptp": "ldiv(rdiv(ldiv(X,X),Y),Z) = op(Y,Z)",
+    "justification": "para_from,6722.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6983,
+    "text": "(x* (y*z))*u=x* (y* (z*u))",
+    "tptp": "op(op(X,op(Y,Z)),U) = op(X,op(Y,op(Z,U)))",
+    "justification": "copy,6891,flip.1,demod,6914",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6985,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,6983.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 3,
+  "statement": "Every LG2 quasigroup is a right loop.",
+  "seconds": 5.0,
+  "length": 42,
+  "level": 13,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "(x*y)* (z*z)= (x* (y*z))*z",
+    "tptp": "op(op(X,Y),op(Z,Z)) = op(op(X,op(Y,Z)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*z= (x*y)* (z*z)",
+    "tptp": "op(op(X,op(Y,Z)),Z) = op(op(X,Y),op(Z,Z))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A\\A!=B\\B",
+    "tptp": "ldiv(sk_a,sk_a) != ldiv(sk_b,sk_b)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "B\\B!=A\\A",
+    "tptp": "ldiv(sk_b,sk_b) != ldiv(sk_a,sk_a)",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 17,
+    "text": "(x/y)\\x=y",
+    "tptp": "ldiv(rdiv(X,Y),X) = Y",
+    "justification": "para_from,8.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x* (y/z))* (z*z)= (x*y)*z",
+    "tptp": "op(op(X,rdiv(Y,Z)),op(Z,Z)) = op(op(X,Y),Z)",
+    "justification": "para_into,11.1.1.1.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 23,
+    "text": "(x*y)* (z\\y)= (x*z)* ((z\\y)* (z\\y))",
+    "tptp": "op(op(X,Y),ldiv(Z,Y)) = op(op(X,Z),op(ldiv(Z,Y),ldiv(Z,Y)))",
+    "justification": "para_into,11.1.1.1.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 26,
+    "text": "((x/ (y*z))*y)* (z*z)=x*z",
+    "tptp": "op(op(rdiv(X,op(Y,Z)),Y),op(Z,Z)) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "((x*y)* (z*z))/z=x* (y*z)",
+    "tptp": "rdiv(op(op(X,Y),op(Z,Z)),Z) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 57,
+    "text": "((x/ (y/z))*y)*z=x* (z*z)",
+    "tptp": "op(op(rdiv(X,rdiv(Y,Z)),Y),Z) = op(X,op(Z,Z))",
+    "justification": "para_into,21.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 66,
+    "text": "((x*y)*z)/ (z*z)=x* (y/z)",
+    "tptp": "rdiv(op(op(X,Y),Z),op(Z,Z)) = op(X,rdiv(Y,Z))",
+    "justification": "para_from,21.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 91,
+    "text": "(x*y)/ (y*y)= (x/ (z*y))*z",
+    "tptp": "rdiv(op(X,Y),op(Y,Y)) = op(rdiv(X,op(Z,Y)),Z)",
+    "justification": "para_from,26.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 92,
+    "text": "((x/ (y*z))*y)\\ (x*z)=z*z",
+    "tptp": "ldiv(op(rdiv(X,op(Y,Z)),Y),op(X,Z)) = op(Z,Z)",
+    "justification": "para_from,26.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 94,
+    "text": "(x/ (y*z))*y= (x*z)/ (z*z)",
+    "tptp": "op(rdiv(X,op(Y,Z)),Y) = rdiv(op(X,Z),op(Z,Z))",
+    "justification": "copy,91,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 102,
+    "text": "(x* (y*y))/y= (x/z)* (z*y)",
+    "tptp": "rdiv(op(X,op(Y,Y)),Y) = op(rdiv(X,Z),op(Z,Y))",
+    "justification": "para_into,29.1.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 103,
+    "text": "(x* (y*y))/y=z* ((z\\x)*y)",
+    "tptp": "rdiv(op(X,op(Y,Y)),Y) = op(Z,op(ldiv(Z,X),Y))",
+    "justification": "para_into,29.1.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 109,
+    "text": "(x/y)* (y*z)= (x* (z*z))/z",
+    "tptp": "op(rdiv(X,Y),op(Y,Z)) = rdiv(op(X,op(Z,Z)),Z)",
+    "justification": "copy,102,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 182,
+    "text": "(x* (y*y))/y= (x/ (z/y))*z",
+    "tptp": "rdiv(op(X,op(Y,Y)),Y) = op(rdiv(X,rdiv(Z,Y)),Z)",
+    "justification": "para_from,57.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 195,
+    "text": "(x*y)/ (y*y)= (x/z)* (z/y)",
+    "tptp": "rdiv(op(X,Y),op(Y,Y)) = op(rdiv(X,Z),rdiv(Z,Y))",
+    "justification": "para_into,66.1.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 293,
+    "text": "(x/ (y*z))*y= (x/ (u*z))*u",
+    "tptp": "op(rdiv(X,op(Y,Z)),Y) = op(rdiv(X,op(U,Z)),U)",
+    "justification": "para_into,91.1.1,91.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 321,
+    "text": "((x/ (y* (x\\z)))*y)\\z= (x\\z)* (x\\z)",
+    "tptp": "ldiv(op(rdiv(X,op(Y,ldiv(X,Z))),Y),Z) = op(ldiv(X,Z),ldiv(X,Z))",
+    "justification": "para_into,92.1.1.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 372,
+    "text": "(x/ ((y*z)* ((z\\u)* (z\\u))))* (y*u)= (x* (z\\u))/ ((z\\u)* (z\\u))",
+    "tptp": "op(rdiv(X,op(op(Y,Z),op(ldiv(Z,U),ldiv(Z,U)))),op(Y,U)) = rdiv(op(X,ldiv(Z,U)),op(ldiv(Z,U),ldiv(Z,U)))",
+    "justification": "para_into,94.1.1.1.2,23.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 376,
+    "text": "(x* (y\\z))/ ((y\\z)* (y\\z))= (x/z)*y",
+    "tptp": "rdiv(op(X,ldiv(Y,Z)),op(ldiv(Y,Z),ldiv(Y,Z))) = op(rdiv(X,Z),Y)",
+    "justification": "para_into,94.1.1.1.2,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 385,
+    "text": "(x/ ((y*z)* ((z\\u)* (z\\u))))* (y*u)= (x/u)*z",
+    "tptp": "op(rdiv(X,op(op(Y,Z),op(ldiv(Z,U),ldiv(Z,U)))),op(Y,U)) = op(rdiv(X,U),Z)",
+    "justification": "copy,372,flip.1,demod,377,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 421,
+    "text": "((x*y)/ (y*y))/z=x/ (z*y)",
+    "tptp": "rdiv(rdiv(op(X,Y),op(Y,Y)),Z) = rdiv(X,op(Z,Y))",
+    "justification": "para_from,94.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 485,
+    "text": "x* ((x\\y)*z)=u* ((u\\y)*z)",
+    "tptp": "op(X,op(ldiv(X,Y),Z)) = op(U,op(ldiv(U,Y),Z))",
+    "justification": "para_into,103.1.1,103.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 641,
+    "text": "((x* (y*y))/y)/ (z*y)=x/z",
+    "tptp": "rdiv(rdiv(op(X,op(Y,Y)),Y),op(Z,Y)) = rdiv(X,Z)",
+    "justification": "para_from,109.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 828,
+    "text": "((x/ ((y*y)*z))/ (u/y))*u=x/ (y*z)",
+    "tptp": "op(rdiv(rdiv(X,op(op(Y,Y),Z)),rdiv(U,Y)),U) = rdiv(X,op(Y,Z))",
+    "justification": "para_into,182.1.1.1,94.1.1,demod,422,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1041,
+    "text": "(((x/ (y/z))*y)/u)* (u/z)=x",
+    "tptp": "op(rdiv(op(rdiv(X,rdiv(Y,Z)),Y),U),rdiv(U,Z)) = X",
+    "justification": "para_into,195.1.1.1,57.1.1,demod,7,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1560,
+    "text": "(x/ (y* (z\\u)))*y= (x/u)*z",
+    "tptp": "op(rdiv(X,op(Y,ldiv(Z,U))),Y) = op(rdiv(X,U),Z)",
+    "justification": "para_into,293.1.1.1.2,23.1.1,demod,386,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1581,
+    "text": "((x/y)*x)\\y= (x\\y)* (x\\y)",
+    "tptp": "ldiv(op(rdiv(X,Y),X),Y) = op(ldiv(X,Y),ldiv(X,Y))",
+    "justification": "back_demod,321,demod,1561",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1590,
+    "text": "((x/ (y*z))*y)/u=x/ (u*z)",
+    "tptp": "rdiv(op(rdiv(X,op(Y,Z)),Y),U) = rdiv(X,op(U,Z))",
+    "justification": "para_from,293.1.1,182.1.1.1,demod,829",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4612,
+    "text": "(x/ ((y*y)*z))/u= (x/ (y*z))/ (u*y)",
+    "tptp": "rdiv(rdiv(X,op(op(Y,Y),Z)),U) = rdiv(rdiv(X,op(Y,Z)),op(U,Y))",
+    "justification": "para_into,641.1.1.1.1,293.1.1,demod,1591,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6474,
+    "text": "(((x/ (y/z))*y)/u)\\x=u/z",
+    "tptp": "ldiv(rdiv(op(rdiv(X,rdiv(Y,Z)),Y),U),X) = rdiv(U,Z)",
+    "justification": "para_from,1041.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9348,
+    "text": "((x/y)*z)/u=x/ (u* (z\\y))",
+    "tptp": "rdiv(op(rdiv(X,Y),Z),U) = rdiv(X,op(U,ldiv(Z,Y)))",
+    "justification": "para_from,1560.1.1,182.1.1.1,demod,4613,9,9",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9365,
+    "text": "x* (y\\ (y/z))=x/z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,Z))) = rdiv(X,Z)",
+    "justification": "back_demod,6474,demod,9349,18",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9583,
+    "text": "x/ (y\\z)=x* (z\\y)",
+    "tptp": "rdiv(X,ldiv(Y,Z)) = op(X,ldiv(Z,Y))",
+    "justification": "para_into,9365.1.1.2.2,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9875,
+    "text": "(x* (y\\z))\\x=z\\y",
+    "tptp": "ldiv(op(X,ldiv(Y,Z)),X) = ldiv(Z,Y)",
+    "justification": "para_from,9583.1.1,17.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9951,
+    "text": "(x\\x)* (x\\x)=x\\x",
+    "tptp": "op(ldiv(X,X),ldiv(X,X)) = ldiv(X,X)",
+    "justification": "para_into,1581.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9965,
+    "text": "x* ((x\\y)* (y\\y))=y",
+    "tptp": "op(X,op(ldiv(X,Y),ldiv(Y,Y))) = Y",
+    "justification": "para_from,9951.1.1,485.1.1.2,demod,3,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 9992,
+    "text": "(x\\y)* (y\\y)=x\\y",
+    "tptp": "op(ldiv(X,Y),ldiv(Y,Y)) = ldiv(X,Y)",
+    "justification": "para_from,9965.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 10002,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_into,9992.1.1.1,17.1.1,demod,18",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 10016,
+    "text": "x\\x=y\\y",
+    "tptp": "ldiv(X,X) = ldiv(Y,Y)",
+    "justification": "para_from,10002.1.1,9875.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 10017,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,10016.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 4,
+  "statement": "Every LC3 quasigroup is a left loop.",
+  "seconds": 0.4,
+  "length": 30,
+  "level": 15,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (x* (y*z))= ((x*x)*y)*z",
+    "tptp": "op(X,op(X,op(Y,Z))) = op(op(op(X,X),Y),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "((x*x)*y)*z=x* (x* (y*z))",
+    "tptp": "op(op(op(X,X),Y),Z) = op(X,op(X,op(Y,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A/A!=B/B",
+    "tptp": "rdiv(sk_a,sk_a) != rdiv(sk_b,sk_b)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "B/B!=A/A",
+    "tptp": "rdiv(sk_b,sk_b) != rdiv(sk_a,sk_a)",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 23,
+    "text": "x* (x* (((x*x)\\y)*z))=y*z",
+    "tptp": "op(X,op(X,op(ldiv(op(X,X),Y),Z))) = op(Y,Z)",
+    "justification": "para_into,11.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "((x*x)*y)\\ (x* (x* (y*z)))=z",
+    "tptp": "ldiv(op(op(X,X),Y),op(X,op(X,op(Y,Z)))) = Z",
+    "justification": "para_from,11.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 45,
+    "text": "x* (((y*y)\\x)\\z)=y* (y*z)",
+    "tptp": "op(X,ldiv(ldiv(op(Y,Y),X),Z)) = op(Y,op(Y,Z))",
+    "justification": "para_into,23.1.1.2.2,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 51,
+    "text": "x\\ (y*z)=x* (((x*x)\\y)*z)",
+    "tptp": "ldiv(X,op(Y,Z)) = op(X,op(ldiv(op(X,X),Y),Z))",
+    "justification": "para_from,23.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 52,
+    "text": "x* (((x*x)\\y)*z)=x\\ (y*z)",
+    "tptp": "op(X,op(ldiv(op(X,X),Y),Z)) = ldiv(X,op(Y,Z))",
+    "justification": "copy,51,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 104,
+    "text": "((x*x)*y)\\ (x* (x*z))=y\\z",
+    "tptp": "ldiv(op(op(X,X),Y),op(X,op(X,Z))) = ldiv(Y,Z)",
+    "justification": "para_into,29.1.1.2.2.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 128,
+    "text": "((x*x)\\y)\\z=y\\ (x* (x*z))",
+    "tptp": "ldiv(ldiv(op(X,X),Y),Z) = ldiv(Y,op(X,op(X,Z)))",
+    "justification": "para_from,45.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 161,
+    "text": "x* (((x*x)\\x)*y)=y",
+    "tptp": "op(X,op(ldiv(op(X,X),X),Y)) = Y",
+    "justification": "para_into,51.1.1,4.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 191,
+    "text": "x/ (((y*y)\\y)*x)=y",
+    "tptp": "rdiv(X,op(ldiv(op(Y,Y),Y),X)) = Y",
+    "justification": "para_from,161.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 193,
+    "text": "x\\y= ((x*x)\\x)*y",
+    "tptp": "ldiv(X,Y) = op(ldiv(op(X,X),X),Y)",
+    "justification": "para_from,161.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 195,
+    "text": "((x*x)\\x)*y=x\\y",
+    "tptp": "op(ldiv(op(X,X),X),Y) = ldiv(X,Y)",
+    "justification": "copy,193,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 215,
+    "text": "((x*x)\\x)* (x*y)=y",
+    "tptp": "op(ldiv(op(X,X),X),op(X,Y)) = Y",
+    "justification": "para_into,193.1.1,4.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 224,
+    "text": "((x\\ ((x*x)\\x))\\ ((x*x)\\x))*y=x*y",
+    "tptp": "op(ldiv(ldiv(X,ldiv(op(X,X),X)),ldiv(op(X,X),X)),Y) = op(X,Y)",
+    "justification": "para_into,195.1.1.1.1,195.1.1,demod,129,5",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 238,
+    "text": "x/ (y*x)= (y*y)\\y",
+    "tptp": "rdiv(X,op(Y,X)) = ldiv(op(Y,Y),Y)",
+    "justification": "para_from,195.1.1,191.1.1.2.1.1,demod,225",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 295,
+    "text": "x/y= ((y/x)* (y/x))\\ (y/x)",
+    "tptp": "rdiv(X,Y) = ldiv(op(rdiv(Y,X),rdiv(Y,X)),rdiv(Y,X))",
+    "justification": "para_into,238.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 296,
+    "text": "((x/y)* (x/y))\\ (x/y)=y/x",
+    "tptp": "ldiv(op(rdiv(X,Y),rdiv(X,Y)),rdiv(X,Y)) = rdiv(Y,X)",
+    "justification": "copy,295,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 457,
+    "text": "((x*x)*y)\\ (z*u)=y\\ (((x*x)\\z)*u)",
+    "tptp": "ldiv(op(op(X,X),Y),op(Z,U)) = ldiv(Y,op(ldiv(op(X,X),Z),U))",
+    "justification": "para_into,104.1.1.2.2,52.1.1,demod,3",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 542,
+    "text": "x/ (y\\ (z* (z*x)))= (z*z)\\y",
+    "tptp": "rdiv(X,ldiv(Y,op(Z,op(Z,X)))) = ldiv(op(Z,Z),Y)",
+    "justification": "para_from,128.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 744,
+    "text": "(x/y)* ((y/x)*z)=z",
+    "tptp": "op(rdiv(X,Y),op(rdiv(Y,X),Z)) = Z",
+    "justification": "para_from,296.1.1,215.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 746,
+    "text": "(x/y)*z= (y/x)\\z",
+    "tptp": "op(rdiv(X,Y),Z) = ldiv(rdiv(Y,X),Z)",
+    "justification": "para_from,296.1.1,195.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1424,
+    "text": "((x/x)* (x/x))\\y=y",
+    "tptp": "ldiv(op(rdiv(X,X),rdiv(X,X)),Y) = Y",
+    "justification": "para_into,542.1.1.2.2,744.1.1,demod,16,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1444,
+    "text": "((x/x)\\ (x/x))\\y=y",
+    "tptp": "ldiv(ldiv(rdiv(X,X),rdiv(X,X)),Y) = Y",
+    "justification": "para_into,1424.1.1.1,746.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1448,
+    "text": "((x/x)* (x/x))*y=y",
+    "tptp": "op(op(rdiv(X,X),rdiv(X,X)),Y) = Y",
+    "justification": "para_into,1424.1.1,193.1.1,demod,458,1425,1425",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1454,
+    "text": "x/x= (y/y)* (y/y)",
+    "tptp": "rdiv(X,X) = op(rdiv(Y,Y),rdiv(Y,Y))",
+    "justification": "para_from,1424.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1568,
+    "text": "(x/x)\\y=y",
+    "tptp": "ldiv(rdiv(X,X),Y) = Y",
+    "justification": "para_from,1454.1.1,1444.1.1.1.1,demod,1425",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1574,
+    "text": "(x/x)*y=y",
+    "tptp": "op(rdiv(X,X),Y) = Y",
+    "justification": "para_from,1454.1.1,1448.1.1.1.1,demod,1449",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1576,
+    "text": "x/x=y/y",
+    "tptp": "rdiv(X,X) = rdiv(Y,Y)",
+    "justification": "para_from,1454.1.1,295.1.1,demod,1575,1575,1569",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1577,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,1576.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 5,
+  "statement": "An LG1 quasigroup is an LG3 quasigroup.",
+  "seconds": 4.95,
+  "length": 39,
+  "level": 16,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (z*z))= (x* (y*z))*z",
+    "tptp": "op(X,op(Y,op(Z,Z))) = op(op(X,op(Y,Z)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*z=x* (y* (z*z))",
+    "tptp": "op(op(X,op(Y,Z)),Z) = op(X,op(Y,op(Z,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (B* (C*B))!= (A* (B*C))*B",
+    "tptp": "op(sk_a,op(sk_b,op(sk_c,sk_b))) != op(op(sk_a,op(sk_b,sk_c)),sk_b)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (B*C))*B!=A* (B* (C*B))",
+    "tptp": "op(op(sk_a,op(sk_b,sk_c)),sk_b) != op(sk_a,op(sk_b,op(sk_c,sk_b)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x*y)*z=x* ((y/z)* (z*z))",
+    "tptp": "op(op(X,Y),Z) = op(X,op(rdiv(Y,Z),op(Z,Z)))",
+    "justification": "para_into,11.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 25,
+    "text": "(x/ (y*z))* (y* (z*z))=x*z",
+    "tptp": "op(rdiv(X,op(Y,Z)),op(Y,op(Z,Z))) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "x* ((y/z)* (z*z))= (x*y)*z",
+    "tptp": "op(X,op(rdiv(Y,Z),op(Z,Z))) = op(op(X,Y),Z)",
+    "justification": "copy,21,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "(x* (y* (z*z)))/z=x* (y*z)",
+    "tptp": "rdiv(op(X,op(Y,op(Z,Z))),Z) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 54,
+    "text": "x* (((x\\y)/z)* (z*z))=y*z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),Z),op(Z,Z))) = op(Y,Z)",
+    "justification": "para_into,21.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 88,
+    "text": "(x/ ((y/ (z*z))*z))*y=x*z",
+    "tptp": "op(rdiv(X,op(rdiv(Y,op(Z,Z)),Z)),Y) = op(X,Z)",
+    "justification": "para_into,25.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 122,
+    "text": "x\\ ((x*y)*z)= (y/z)* (z*z)",
+    "tptp": "ldiv(X,op(op(X,Y),Z)) = op(rdiv(Y,Z),op(Z,Z))",
+    "justification": "para_from,27.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 127,
+    "text": "(x/y)* (y*y)=z\\ ((z*x)*y)",
+    "tptp": "op(rdiv(X,Y),op(Y,Y)) = ldiv(Z,op(op(Z,X),Y))",
+    "justification": "copy,122,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 162,
+    "text": "(x*y)/z=x* ((y/ (z*z))*z)",
+    "tptp": "rdiv(op(X,Y),Z) = op(X,op(rdiv(Y,op(Z,Z)),Z))",
+    "justification": "para_into,29.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 173,
+    "text": "x* ((y/ (y*y))*y)=x",
+    "tptp": "op(X,op(rdiv(Y,op(Y,Y)),Y)) = X",
+    "justification": "back_demod,6,demod,163",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 190,
+    "text": "x\\x= (y/ (y*y))*y",
+    "tptp": "ldiv(X,X) = op(rdiv(Y,op(Y,Y)),Y)",
+    "justification": "para_from,173.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 192,
+    "text": "(x/ (x*x))*x=y\\y",
+    "tptp": "op(rdiv(X,op(X,X)),X) = ldiv(Y,Y)",
+    "justification": "copy,190,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 229,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,173.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 234,
+    "text": "(x/ (x*x))\\ (y\\y)=x",
+    "tptp": "ldiv(rdiv(X,op(X,X)),ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 271,
+    "text": "(x\\x)/y=y/ (y*y)",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(Y,op(Y,Y))",
+    "justification": "para_from,234.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 272,
+    "text": "x/ (x*x)= (y\\y)/x",
+    "tptp": "rdiv(X,op(X,X)) = rdiv(ldiv(Y,Y),X)",
+    "justification": "copy,271,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 333,
+    "text": "(x\\x)/y= (z\\z)/y",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(ldiv(Z,Z),Y)",
+    "justification": "para_into,272.1.1,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 357,
+    "text": "(x\\x)/ (y\\ (z\\z))=y",
+    "tptp": "rdiv(ldiv(X,X),ldiv(Y,ldiv(Z,Z))) = Y",
+    "justification": "para_into,333.1.1,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 651,
+    "text": "((x\\y)/z)* (z*z)=x\\ (y*z)",
+    "tptp": "op(rdiv(ldiv(X,Y),Z),op(Z,Z)) = ldiv(X,op(Y,Z))",
+    "justification": "para_from,54.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1032,
+    "text": "x* (y\\ ((y*z)*u))= (x*z)*u",
+    "tptp": "op(X,ldiv(Y,op(op(Y,Z),U))) = op(op(X,Z),U)",
+    "justification": "para_from,127.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1089,
+    "text": "x/y=x* (((z\\z)/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(X,op(rdiv(ldiv(Z,Z),op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,229.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1095,
+    "text": "x/y= (x/z)* ((z/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(rdiv(X,Z),op(rdiv(Z,op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1096,
+    "text": "x* (((x\\y)/ (z*z))*z)=y/z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),op(Z,Z)),Z)) = rdiv(Y,Z)",
+    "justification": "para_into,162.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1101,
+    "text": "x* (((y\\y)/ (z*z))*z)=x/z",
+    "tptp": "op(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)) = rdiv(X,Z)",
+    "justification": "copy,1089,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2431,
+    "text": "x* (y\\ (z*u))= (x* (y\\z))*u",
+    "tptp": "op(X,ldiv(Y,op(Z,U))) = op(op(X,ldiv(Y,Z)),U)",
+    "justification": "para_from,651.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4144,
+    "text": "((x\\x)/y)* ((y/ ((z\\ (u\\u))* (z\\ (u\\u))))* (z\\ (u\\u)))=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(rdiv(Y,op(ldiv(Z,ldiv(U,U)),ldiv(Z,ldiv(U,U)))),ldiv(Z,ldiv(U,U)))) = Z",
+    "justification": "para_into,1095.1.1,357.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4331,
+    "text": "((x\\y)/ (z*z))*z=x\\ (y/z)",
+    "tptp": "op(rdiv(ldiv(X,Y),op(Z,Z)),Z) = ldiv(X,rdiv(Y,Z))",
+    "justification": "para_from,1096.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4483,
+    "text": "x* (y\\ (y/z))=x/z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,Z))) = rdiv(X,Z)",
+    "justification": "back_demod,1101,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4919,
+    "text": "x* (y\\ ((z\\z)/y))=x/ (y*y)",
+    "tptp": "op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y))) = rdiv(X,op(Y,Y))",
+    "justification": "para_into,4483.1.1.2.2,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4925,
+    "text": "x/ (y*y)=x* (y\\ ((z\\z)/y))",
+    "tptp": "rdiv(X,op(Y,Y)) = op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y)))",
+    "justification": "copy,4919,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 5661,
+    "text": "(x* (y\\ (z/u)))*u=x* (y\\z)",
+    "tptp": "op(op(X,ldiv(Y,rdiv(Z,U))),U) = op(X,ldiv(Y,Z))",
+    "justification": "para_into,2431.1.1.2.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6717,
+    "text": "(x/ (y* (z\\ (u\\u))))*y=x*z",
+    "tptp": "op(rdiv(X,op(Y,ldiv(Z,ldiv(U,U)))),Y) = op(X,Z)",
+    "justification": "para_from,4925.1.1,88.1.1.1.2.1,demod,5662",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6722,
+    "text": "((x\\x)/y)* (y*z)=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(Y,Z)) = Z",
+    "justification": "back_demod,4144,demod,6718",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6891,
+    "text": "x* (((y\\y)/z)\\ (u*v))= (x* (z*u))*v",
+    "tptp": "op(X,ldiv(rdiv(ldiv(Y,Y),Z),op(U,V))) = op(op(X,op(Z,U)),V)",
+    "justification": "para_from,6722.1.1,1032.1.1.2.2.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6913,
+    "text": "((x\\x)/y)\\z=y*z",
+    "tptp": "ldiv(rdiv(ldiv(X,X),Y),Z) = op(Y,Z)",
+    "justification": "para_from,6722.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6983,
+    "text": "(x* (y*z))*u=x* (y* (z*u))",
+    "tptp": "op(op(X,op(Y,Z)),U) = op(X,op(Y,op(Z,U)))",
+    "justification": "copy,6891,flip.1,demod,6914",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6985,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,6983.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 6,
+  "statement": "An LG1 quasigroup is an LC4 quasigroup.",
+  "seconds": 4.97,
+  "length": 66,
+  "level": 20,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (z*z))= (x* (y*z))*z",
+    "tptp": "op(X,op(Y,op(Z,Z))) = op(op(X,op(Y,Z)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*z=x* (y* (z*z))",
+    "tptp": "op(op(X,op(Y,Z)),Z) = op(X,op(Y,op(Z,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (B* (B*C))!= (A* (B*B))*C",
+    "tptp": "op(sk_a,op(sk_b,op(sk_b,sk_c))) != op(op(sk_a,op(sk_b,sk_b)),sk_c)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (B*B))*C!=A* (B* (B*C))",
+    "tptp": "op(op(sk_a,op(sk_b,sk_b)),sk_c) != op(sk_a,op(sk_b,op(sk_b,sk_c)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x*y)*z=x* ((y/z)* (z*z))",
+    "tptp": "op(op(X,Y),Z) = op(X,op(rdiv(Y,Z),op(Z,Z)))",
+    "justification": "para_into,11.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 22,
+    "text": "(x*y)* (z\\y)=x* (z* ((z\\y)* (z\\y)))",
+    "tptp": "op(op(X,Y),ldiv(Z,Y)) = op(X,op(Z,op(ldiv(Z,Y),ldiv(Z,Y))))",
+    "justification": "para_into,11.1.1.1.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 25,
+    "text": "(x/ (y*z))* (y* (z*z))=x*z",
+    "tptp": "op(rdiv(X,op(Y,Z)),op(Y,op(Z,Z))) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "x* ((y/z)* (z*z))= (x*y)*z",
+    "tptp": "op(X,op(rdiv(Y,Z),op(Z,Z))) = op(op(X,Y),Z)",
+    "justification": "copy,21,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "(x* (y* (z*z)))/z=x* (y*z)",
+    "tptp": "rdiv(op(X,op(Y,op(Z,Z))),Z) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 31,
+    "text": "(x* (y*z))\\ (x* (y* (z*z)))=z",
+    "tptp": "ldiv(op(X,op(Y,Z)),op(X,op(Y,op(Z,Z)))) = Z",
+    "justification": "para_from,11.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 54,
+    "text": "x* (((x\\y)/z)* (z*z))=y*z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),Z),op(Z,Z))) = op(Y,Z)",
+    "justification": "para_into,21.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 88,
+    "text": "(x/ ((y/ (z*z))*z))*y=x*z",
+    "tptp": "op(rdiv(X,op(rdiv(Y,op(Z,Z)),Z)),Y) = op(X,Z)",
+    "justification": "para_into,25.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 100,
+    "text": "(x/ (y*z))\\ (x*z)=y* (z*z)",
+    "tptp": "ldiv(rdiv(X,op(Y,Z)),op(X,Z)) = op(Y,op(Z,Z))",
+    "justification": "para_from,25.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 162,
+    "text": "(x*y)/z=x* ((y/ (z*z))*z)",
+    "tptp": "rdiv(op(X,Y),Z) = op(X,op(rdiv(Y,op(Z,Z)),Z))",
+    "justification": "para_into,29.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 164,
+    "text": "(x/ (y* (z*z)))* (y*z)=x/z",
+    "tptp": "op(rdiv(X,op(Y,op(Z,Z))),op(Y,Z)) = rdiv(X,Z)",
+    "justification": "para_into,29.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 173,
+    "text": "x* ((y/ (y*y))*y)=x",
+    "tptp": "op(X,op(rdiv(Y,op(Y,Y)),Y)) = X",
+    "justification": "back_demod,6,demod,163",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 190,
+    "text": "x\\x= (y/ (y*y))*y",
+    "tptp": "ldiv(X,X) = op(rdiv(Y,op(Y,Y)),Y)",
+    "justification": "para_from,173.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 192,
+    "text": "(x/ (x*x))*x=y\\y",
+    "tptp": "op(rdiv(X,op(X,X)),X) = ldiv(Y,Y)",
+    "justification": "copy,190,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 229,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,173.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 234,
+    "text": "(x/ (x*x))\\ (y\\y)=x",
+    "tptp": "ldiv(rdiv(X,op(X,X)),ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 271,
+    "text": "(x\\x)/y=y/ (y*y)",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(Y,op(Y,Y))",
+    "justification": "para_from,234.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 272,
+    "text": "x/ (x*x)= (y\\y)/x",
+    "tptp": "rdiv(X,op(X,X)) = rdiv(ldiv(Y,Y),X)",
+    "justification": "copy,271,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 317,
+    "text": "(x* ((y/ (z*z))*z))\\ (x*y)=z",
+    "tptp": "ldiv(op(X,op(rdiv(Y,op(Z,Z)),Z)),op(X,Y)) = Z",
+    "justification": "para_into,31.1.1.2.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 333,
+    "text": "(x\\x)/y= (z\\z)/y",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(ldiv(Z,Z),Y)",
+    "justification": "para_into,272.1.1,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 357,
+    "text": "(x\\x)/ (y\\ (z\\z))=y",
+    "tptp": "rdiv(ldiv(X,X),ldiv(Y,ldiv(Z,Z))) = Y",
+    "justification": "para_into,333.1.1,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 360,
+    "text": "(x\\x)*y= (z\\z)*y",
+    "tptp": "op(ldiv(X,X),Y) = op(ldiv(Z,Z),Y)",
+    "justification": "para_from,333.1.1,25.1.1.1,demod,26",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 433,
+    "text": "(x\\x)* ((y\\y)\\z)=z",
+    "tptp": "op(ldiv(X,X),ldiv(ldiv(Y,Y),Z)) = Z",
+    "justification": "para_into,360.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 543,
+    "text": "(x\\x)\\y= (z\\z)\\y",
+    "tptp": "ldiv(ldiv(X,X),Y) = ldiv(ldiv(Z,Z),Y)",
+    "justification": "para_from,433.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 588,
+    "text": "(x*y)* ((z\\z)\\y)=x* ((u\\u)* (((u\\u)\\y)* ((u\\u)\\y)))",
+    "tptp": "op(op(X,Y),ldiv(ldiv(Z,Z),Y)) = op(X,op(ldiv(U,U),op(ldiv(ldiv(U,U),Y),ldiv(ldiv(U,U),Y))))",
+    "justification": "para_from,543.1.1,22.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 591,
+    "text": "x* ((y\\y)* (((y\\y)\\z)* ((y\\y)\\z)))= (x*z)* ((u\\u)\\z)",
+    "tptp": "op(X,op(ldiv(Y,Y),op(ldiv(ldiv(Y,Y),Z),ldiv(ldiv(Y,Y),Z)))) = op(op(X,Z),ldiv(ldiv(U,U),Z))",
+    "justification": "copy,588,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 651,
+    "text": "((x\\y)/z)* (z*z)=x\\ (y*z)",
+    "tptp": "op(rdiv(ldiv(X,Y),Z),op(Z,Z)) = ldiv(X,op(Y,Z))",
+    "justification": "para_from,54.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 707,
+    "text": "x/ (((y\\y)/ (z*z))*z)=x*z",
+    "tptp": "rdiv(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)) = op(X,Z)",
+    "justification": "para_into,88.1.1.1.2.1,333.1.1,demod,230",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 801,
+    "text": "((x/y)/ (z*y))\\x=z* (y*y)",
+    "tptp": "ldiv(rdiv(rdiv(X,Y),op(Z,Y)),X) = op(Z,op(Y,Y))",
+    "justification": "para_into,100.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1089,
+    "text": "x/y=x* (((z\\z)/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(X,op(rdiv(ldiv(Z,Z),op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,229.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1095,
+    "text": "x/y= (x/z)* ((z/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(rdiv(X,Z),op(rdiv(Z,op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1096,
+    "text": "x* (((x\\y)/ (z*z))*z)=y/z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),op(Z,Z)),Z)) = rdiv(Y,Z)",
+    "justification": "para_into,162.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1101,
+    "text": "x* (((y\\y)/ (z*z))*z)=x/z",
+    "tptp": "op(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)) = rdiv(X,Z)",
+    "justification": "copy,1089,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1195,
+    "text": "(x/ (y* ((y\\z)* (y\\z))))*z=x/ (y\\z)",
+    "tptp": "op(rdiv(X,op(Y,op(ldiv(Y,Z),ldiv(Y,Z)))),Z) = rdiv(X,ldiv(Y,Z))",
+    "justification": "para_into,164.1.1.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1311,
+    "text": "(x* (((y\\y)/ (z*z))*z))\\x=z",
+    "tptp": "ldiv(op(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)),X) = Z",
+    "justification": "para_into,317.1.1.1.2.1,333.1.1,demod,230",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2431,
+    "text": "x* (y\\ (z*u))= (x* (y\\z))*u",
+    "tptp": "op(X,ldiv(Y,op(Z,U))) = op(op(X,ldiv(Y,Z)),U)",
+    "justification": "para_from,651.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2485,
+    "text": "(x* (y\\z))*u=x* (y\\ (z*u))",
+    "tptp": "op(op(X,ldiv(Y,Z)),U) = op(X,ldiv(Y,op(Z,U)))",
+    "justification": "copy,2431,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2528,
+    "text": "(x*y)* (((z\\z)/ (y*y))*y)=x",
+    "tptp": "op(op(X,Y),op(rdiv(ldiv(Z,Z),op(Y,Y)),Y)) = X",
+    "justification": "para_from,707.1.1,8.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2738,
+    "text": "((x/ (y\\z))/z)\\x=y* ((y\\z)* (y\\z))",
+    "tptp": "ldiv(rdiv(rdiv(X,ldiv(Y,Z)),Z),X) = op(Y,op(ldiv(Y,Z),ldiv(Y,Z)))",
+    "justification": "para_into,801.1.1.1.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3970,
+    "text": "x* (((y\\y)/ ((z\\x)* (z\\x)))* (z\\x))=z",
+    "tptp": "op(X,op(rdiv(ldiv(Y,Y),op(ldiv(Z,X),ldiv(Z,X))),ldiv(Z,X))) = Z",
+    "justification": "para_into,1089.1.1,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4144,
+    "text": "((x\\x)/y)* ((y/ ((z\\ (u\\u))* (z\\ (u\\u))))* (z\\ (u\\u)))=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(rdiv(Y,op(ldiv(Z,ldiv(U,U)),ldiv(Z,ldiv(U,U)))),ldiv(Z,ldiv(U,U)))) = Z",
+    "justification": "para_into,1095.1.1,357.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4331,
+    "text": "((x\\y)/ (z*z))*z=x\\ (y/z)",
+    "tptp": "op(rdiv(ldiv(X,Y),op(Z,Z)),Z) = ldiv(X,rdiv(Y,Z))",
+    "justification": "para_from,1096.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4425,
+    "text": "x* (y\\ (y/ (z\\x)))=z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,ldiv(Z,X)))) = Z",
+    "justification": "back_demod,3970,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4467,
+    "text": "(x*y)* (z\\ (z/y))=x",
+    "tptp": "op(op(X,Y),ldiv(Z,rdiv(Z,Y))) = X",
+    "justification": "back_demod,2528,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4481,
+    "text": "(x* (y\\ (y/z)))\\x=z",
+    "tptp": "ldiv(op(X,ldiv(Y,rdiv(Y,Z))),X) = Z",
+    "justification": "back_demod,1311,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4483,
+    "text": "x* (y\\ (y/z))=x/z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,Z))) = rdiv(X,Z)",
+    "justification": "back_demod,1101,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4489,
+    "text": "x/ (y\\ (y/z))=x*z",
+    "tptp": "rdiv(X,ldiv(Y,rdiv(Y,Z))) = op(X,Z)",
+    "justification": "back_demod,707,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4572,
+    "text": "(x/ (y* ((z\\ (z/ (u\\y)))* (z\\ (z/ (u\\y))))))*u=x* (u\\y)",
+    "tptp": "op(rdiv(X,op(Y,op(ldiv(Z,rdiv(Z,ldiv(U,Y))),ldiv(Z,rdiv(Z,ldiv(U,Y)))))),U) = op(X,ldiv(U,Y))",
+    "justification": "para_from,4425.1.1,164.1.1.2,demod,4490",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4599,
+    "text": "x\\ (x/ (y\\z))=z\\y",
+    "tptp": "ldiv(X,rdiv(X,ldiv(Y,Z))) = ldiv(Z,Y)",
+    "justification": "para_from,4425.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4609,
+    "text": "x/ (y\\z)=x* (z\\y)",
+    "tptp": "rdiv(X,ldiv(Y,Z)) = op(X,ldiv(Z,Y))",
+    "justification": "back_demod,4572,demod,4600,4600,1196",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4695,
+    "text": "(x* (y\\ (z/y)))\\x=z* ((z\\y)* (z\\y))",
+    "tptp": "ldiv(op(X,ldiv(Y,rdiv(Z,Y))),X) = op(Z,op(ldiv(Z,Y),ldiv(Z,Y)))",
+    "justification": "back_demod,2738,demod,4610,163,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4851,
+    "text": "(x*y)* (z\\ ((z/y)*u))=x*u",
+    "tptp": "op(op(X,Y),ldiv(Z,op(rdiv(Z,Y),U))) = op(X,U)",
+    "justification": "para_from,4467.1.1,21.1.1.1,demod,652,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4897,
+    "text": "(x\\x)* (((x\\x)\\y)* ((x\\x)\\y))=y*y",
+    "tptp": "op(ldiv(X,X),op(ldiv(ldiv(X,X),Y),ldiv(ldiv(X,X),Y))) = op(Y,Y)",
+    "justification": "para_into,4481.1.1.1.2.2,272.1.1,demod,4696",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4913,
+    "text": "(x*y)* ((z\\z)\\y)=x* (y*y)",
+    "tptp": "op(op(X,Y),ldiv(ldiv(Z,Z),Y)) = op(X,op(Y,Y))",
+    "justification": "back_demod,591,demod,4898,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4919,
+    "text": "x* (y\\ ((z\\z)/y))=x/ (y*y)",
+    "tptp": "op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y))) = rdiv(X,op(Y,Y))",
+    "justification": "para_into,4483.1.1.2.2,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4925,
+    "text": "x/ (y*y)=x* (y\\ ((z\\z)/y))",
+    "tptp": "rdiv(X,op(Y,Y)) = op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y)))",
+    "justification": "copy,4919,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 5661,
+    "text": "(x* (y\\ (z/u)))*u=x* (y\\z)",
+    "tptp": "op(op(X,ldiv(Y,rdiv(Z,U))),U) = op(X,ldiv(Y,Z))",
+    "justification": "para_into,2431.1.1.2.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6623,
+    "text": "(x* (y*y))*z= (x*y)* ((u\\u)\\ (y*z))",
+    "tptp": "op(op(X,op(Y,Y)),Z) = op(op(X,Y),ldiv(ldiv(U,U),op(Y,Z)))",
+    "justification": "para_from,4913.1.1,2485.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6641,
+    "text": "(x*y)* ((z\\z)\\ (y*u))= (x* (y*y))*u",
+    "tptp": "op(op(X,Y),ldiv(ldiv(Z,Z),op(Y,U))) = op(op(X,op(Y,Y)),U)",
+    "justification": "copy,6623,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6721,
+    "text": "(x/ (y* (z\\ (u\\u))))*y=x*z",
+    "tptp": "op(rdiv(X,op(Y,ldiv(Z,ldiv(U,U)))),Y) = op(X,Z)",
+    "justification": "para_from,4925.1.1,88.1.1.1.2.1,demod,5662",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6726,
+    "text": "((x\\x)/y)* (y*z)=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(Y,Z)) = Z",
+    "justification": "back_demod,4144,demod,6722",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6871,
+    "text": "(x*y)* ((z\\z)\\u)=x* (y*u)",
+    "tptp": "op(op(X,Y),ldiv(ldiv(Z,Z),U)) = op(X,op(Y,U))",
+    "justification": "para_from,6726.1.1,4851.1.1.2.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6919,
+    "text": "(x* (y*y))*z=x* (y* (y*z))",
+    "tptp": "op(op(X,op(Y,Y)),Z) = op(X,op(Y,op(Y,Z)))",
+    "justification": "back_demod,6641,demod,6872,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6921,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,6919.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 7,
+  "statement": "An LC4 quasigroup is an LC2 quasigroup.",
+  "seconds": 1.58,
+  "length": 21,
+  "level": 11,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (y*z))= (x* (y*y))*z",
+    "tptp": "op(X,op(Y,op(Y,Z))) = op(op(X,op(Y,Y)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*y))*z=x* (y* (y*z))",
+    "tptp": "op(op(X,op(Y,Y)),Z) = op(X,op(Y,op(Y,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (A* (B*C))!= (A* (A*B))*C",
+    "tptp": "op(sk_a,op(sk_a,op(sk_b,sk_c))) != op(op(sk_a,op(sk_a,sk_b)),sk_c)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (A*B))*C!=A* (A* (B*C))",
+    "tptp": "op(op(sk_a,op(sk_a,sk_b)),sk_c) != op(sk_a,op(sk_a,op(sk_b,sk_c)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 23,
+    "text": "(x/ (y*y))* (y* (y*z))=x*z",
+    "tptp": "op(rdiv(X,op(Y,Y)),op(Y,op(Y,Z))) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "(x* (y* (y*z)))/z=x* (y*y)",
+    "tptp": "rdiv(op(X,op(Y,op(Y,Z))),Z) = op(X,op(Y,Y))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 49,
+    "text": "(x/ (y*y))* (y*z)=x* (y\\z)",
+    "tptp": "op(rdiv(X,op(Y,Y)),op(Y,Z)) = op(X,ldiv(Y,Z))",
+    "justification": "para_into,23.1.1.2.2,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 50,
+    "text": "x* (y\\z)= (x/ (y*y))* (y*z)",
+    "tptp": "op(X,ldiv(Y,Z)) = op(rdiv(X,op(Y,Y)),op(Y,Z))",
+    "justification": "copy,49,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 76,
+    "text": "(x/ (y* (y*z)))* (y*y)=x/z",
+    "tptp": "op(rdiv(X,op(Y,op(Y,Z))),op(Y,Y)) = rdiv(X,Z)",
+    "justification": "para_into,27.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 117,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_into,49.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 154,
+    "text": "(x/ (x*x))* (x*y)=y",
+    "tptp": "op(rdiv(X,op(X,X)),op(X,Y)) = Y",
+    "justification": "para_into,50.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 207,
+    "text": "((x/ (y*y))/ ((x/ (y*y))* (x/ (y*y))))* (x*z)=y* (y*z)",
+    "tptp": "op(rdiv(rdiv(X,op(Y,Y)),op(rdiv(X,op(Y,Y)),rdiv(X,op(Y,Y)))),op(X,Z)) = op(Y,op(Y,Z))",
+    "justification": "para_into,154.1.1.2,23.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 229,
+    "text": "x/ (y*x)=y/ (y*y)",
+    "tptp": "rdiv(X,op(Y,X)) = rdiv(Y,op(Y,Y))",
+    "justification": "para_from,154.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 230,
+    "text": "(x/ (x*x))\\y=x*y",
+    "tptp": "ldiv(rdiv(X,op(X,X)),Y) = op(X,Y)",
+    "justification": "para_from,154.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 232,
+    "text": "x/ (x*x)=y/ (x*y)",
+    "tptp": "rdiv(X,op(X,X)) = rdiv(Y,op(X,Y))",
+    "justification": "copy,229,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 394,
+    "text": "(x/y)/ ((x/y)* (x/y))=y/x",
+    "tptp": "rdiv(rdiv(X,Y),op(rdiv(X,Y),rdiv(X,Y))) = rdiv(Y,X)",
+    "justification": "para_into,229.1.1.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 403,
+    "text": "((x*x)/y)* (y*z)=x* (x*z)",
+    "tptp": "op(rdiv(op(X,X),Y),op(Y,Z)) = op(X,op(X,Z))",
+    "justification": "back_demod,207,demod,395",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 415,
+    "text": "x* (y* (y/ (y*y)))=x",
+    "tptp": "op(X,op(Y,rdiv(Y,op(Y,Y)))) = X",
+    "justification": "para_from,230.1.1,117.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 420,
+    "text": "x/ (y*x)=z/ (y*z)",
+    "tptp": "rdiv(X,op(Y,X)) = rdiv(Z,op(Y,Z))",
+    "justification": "para_into,232.1.1,232.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 894,
+    "text": "x* (y* (z/ (y*z)))=x",
+    "tptp": "op(X,op(Y,rdiv(Z,op(Y,Z)))) = X",
+    "justification": "para_from,420.1.1,415.1.1.2.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 905,
+    "text": "(x/ (y*x))* (y*z)=z",
+    "tptp": "op(rdiv(X,op(Y,X)),op(Y,Z)) = Z",
+    "justification": "para_from,420.1.1,154.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2631,
+    "text": "x/ (y/ (z*y))= (x/z)* (z*z)",
+    "tptp": "rdiv(X,rdiv(Y,op(Z,Y))) = op(rdiv(X,Z),op(Z,Z))",
+    "justification": "para_from,894.1.1,76.1.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3556,
+    "text": "(x* (x*y))*z=x* (x* (y*z))",
+    "tptp": "op(op(X,op(X,Y)),Z) = op(X,op(X,op(Y,Z)))",
+    "justification": "para_into,403.1.1.2,905.1.1,demod,2632,404",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 3558,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,3556.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 8,
+  "statement": "An LC1 quasigroup is an LBQ quasigroup.",
+  "seconds": 5.13,
+  "length": 39,
+  "level": 16,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (z*z))= (x* (y*z))*z",
+    "tptp": "op(X,op(Y,op(Z,Z))) = op(op(X,op(Y,Z)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*z=x* (y* (z*z))",
+    "tptp": "op(op(X,op(Y,Z)),Z) = op(X,op(Y,op(Z,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (B* (A*C))!= (A* (B*A))*C",
+    "tptp": "op(sk_a,op(sk_b,op(sk_a,sk_c))) != op(op(sk_a,op(sk_b,sk_a)),sk_c)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (B*A))*C!=A* (B* (A*C))",
+    "tptp": "op(op(sk_a,op(sk_b,sk_a)),sk_c) != op(sk_a,op(sk_b,op(sk_a,sk_c)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x*y)*z=x* ((y/z)* (z*z))",
+    "tptp": "op(op(X,Y),Z) = op(X,op(rdiv(Y,Z),op(Z,Z)))",
+    "justification": "para_into,11.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 25,
+    "text": "(x/ (y*z))* (y* (z*z))=x*z",
+    "tptp": "op(rdiv(X,op(Y,Z)),op(Y,op(Z,Z))) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "x* ((y/z)* (z*z))= (x*y)*z",
+    "tptp": "op(X,op(rdiv(Y,Z),op(Z,Z))) = op(op(X,Y),Z)",
+    "justification": "copy,21,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "(x* (y* (z*z)))/z=x* (y*z)",
+    "tptp": "rdiv(op(X,op(Y,op(Z,Z))),Z) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 54,
+    "text": "x* (((x\\y)/z)* (z*z))=y*z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),Z),op(Z,Z))) = op(Y,Z)",
+    "justification": "para_into,21.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 88,
+    "text": "(x/ ((y/ (z*z))*z))*y=x*z",
+    "tptp": "op(rdiv(X,op(rdiv(Y,op(Z,Z)),Z)),Y) = op(X,Z)",
+    "justification": "para_into,25.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 122,
+    "text": "x\\ ((x*y)*z)= (y/z)* (z*z)",
+    "tptp": "ldiv(X,op(op(X,Y),Z)) = op(rdiv(Y,Z),op(Z,Z))",
+    "justification": "para_from,27.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 127,
+    "text": "(x/y)* (y*y)=z\\ ((z*x)*y)",
+    "tptp": "op(rdiv(X,Y),op(Y,Y)) = ldiv(Z,op(op(Z,X),Y))",
+    "justification": "copy,122,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 162,
+    "text": "(x*y)/z=x* ((y/ (z*z))*z)",
+    "tptp": "rdiv(op(X,Y),Z) = op(X,op(rdiv(Y,op(Z,Z)),Z))",
+    "justification": "para_into,29.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 173,
+    "text": "x* ((y/ (y*y))*y)=x",
+    "tptp": "op(X,op(rdiv(Y,op(Y,Y)),Y)) = X",
+    "justification": "back_demod,6,demod,163",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 190,
+    "text": "x\\x= (y/ (y*y))*y",
+    "tptp": "ldiv(X,X) = op(rdiv(Y,op(Y,Y)),Y)",
+    "justification": "para_from,173.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 192,
+    "text": "(x/ (x*x))*x=y\\y",
+    "tptp": "op(rdiv(X,op(X,X)),X) = ldiv(Y,Y)",
+    "justification": "copy,190,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 229,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,173.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 234,
+    "text": "(x/ (x*x))\\ (y\\y)=x",
+    "tptp": "ldiv(rdiv(X,op(X,X)),ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 271,
+    "text": "(x\\x)/y=y/ (y*y)",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(Y,op(Y,Y))",
+    "justification": "para_from,234.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 272,
+    "text": "x/ (x*x)= (y\\y)/x",
+    "tptp": "rdiv(X,op(X,X)) = rdiv(ldiv(Y,Y),X)",
+    "justification": "copy,271,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 333,
+    "text": "(x\\x)/y= (z\\z)/y",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(ldiv(Z,Z),Y)",
+    "justification": "para_into,272.1.1,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 357,
+    "text": "(x\\x)/ (y\\ (z\\z))=y",
+    "tptp": "rdiv(ldiv(X,X),ldiv(Y,ldiv(Z,Z))) = Y",
+    "justification": "para_into,333.1.1,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 651,
+    "text": "((x\\y)/z)* (z*z)=x\\ (y*z)",
+    "tptp": "op(rdiv(ldiv(X,Y),Z),op(Z,Z)) = ldiv(X,op(Y,Z))",
+    "justification": "para_from,54.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1032,
+    "text": "x* (y\\ ((y*z)*u))= (x*z)*u",
+    "tptp": "op(X,ldiv(Y,op(op(Y,Z),U))) = op(op(X,Z),U)",
+    "justification": "para_from,127.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1089,
+    "text": "x/y=x* (((z\\z)/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(X,op(rdiv(ldiv(Z,Z),op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,229.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1095,
+    "text": "x/y= (x/z)* ((z/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(rdiv(X,Z),op(rdiv(Z,op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1096,
+    "text": "x* (((x\\y)/ (z*z))*z)=y/z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),op(Z,Z)),Z)) = rdiv(Y,Z)",
+    "justification": "para_into,162.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1101,
+    "text": "x* (((y\\y)/ (z*z))*z)=x/z",
+    "tptp": "op(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)) = rdiv(X,Z)",
+    "justification": "copy,1089,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2431,
+    "text": "x* (y\\ (z*u))= (x* (y\\z))*u",
+    "tptp": "op(X,ldiv(Y,op(Z,U))) = op(op(X,ldiv(Y,Z)),U)",
+    "justification": "para_from,651.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4144,
+    "text": "((x\\x)/y)* ((y/ ((z\\ (u\\u))* (z\\ (u\\u))))* (z\\ (u\\u)))=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(rdiv(Y,op(ldiv(Z,ldiv(U,U)),ldiv(Z,ldiv(U,U)))),ldiv(Z,ldiv(U,U)))) = Z",
+    "justification": "para_into,1095.1.1,357.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4331,
+    "text": "((x\\y)/ (z*z))*z=x\\ (y/z)",
+    "tptp": "op(rdiv(ldiv(X,Y),op(Z,Z)),Z) = ldiv(X,rdiv(Y,Z))",
+    "justification": "para_from,1096.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4483,
+    "text": "x* (y\\ (y/z))=x/z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,Z))) = rdiv(X,Z)",
+    "justification": "back_demod,1101,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4919,
+    "text": "x* (y\\ ((z\\z)/y))=x/ (y*y)",
+    "tptp": "op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y))) = rdiv(X,op(Y,Y))",
+    "justification": "para_into,4483.1.1.2.2,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4925,
+    "text": "x/ (y*y)=x* (y\\ ((z\\z)/y))",
+    "tptp": "rdiv(X,op(Y,Y)) = op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y)))",
+    "justification": "copy,4919,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 5661,
+    "text": "(x* (y\\ (z/u)))*u=x* (y\\z)",
+    "tptp": "op(op(X,ldiv(Y,rdiv(Z,U))),U) = op(X,ldiv(Y,Z))",
+    "justification": "para_into,2431.1.1.2.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6717,
+    "text": "(x/ (y* (z\\ (u\\u))))*y=x*z",
+    "tptp": "op(rdiv(X,op(Y,ldiv(Z,ldiv(U,U)))),Y) = op(X,Z)",
+    "justification": "para_from,4925.1.1,88.1.1.1.2.1,demod,5662",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6722,
+    "text": "((x\\x)/y)* (y*z)=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(Y,Z)) = Z",
+    "justification": "back_demod,4144,demod,6718",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6891,
+    "text": "x* (((y\\y)/z)\\ (u*v))= (x* (z*u))*v",
+    "tptp": "op(X,ldiv(rdiv(ldiv(Y,Y),Z),op(U,V))) = op(op(X,op(Z,U)),V)",
+    "justification": "para_from,6722.1.1,1032.1.1.2.2.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6913,
+    "text": "((x\\x)/y)\\z=y*z",
+    "tptp": "ldiv(rdiv(ldiv(X,X),Y),Z) = op(Y,Z)",
+    "justification": "para_from,6722.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6983,
+    "text": "(x* (y*z))*u=x* (y* (z*u))",
+    "tptp": "op(op(X,op(Y,Z)),U) = op(X,op(Y,op(Z,U)))",
+    "justification": "copy,6891,flip.1,demod,6914",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6985,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,6983.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ },
+ {
+  "number": 9,
+  "statement": "An LC1 quasigroup is an LC4 quasigroup.",
+  "seconds": 5.13,
+  "length": 39,
+  "level": 16,
+  "steps": [
+   {
+    "id": 2,
+    "text": "x* (x\\y)=y",
+    "tptp": "op(X,ldiv(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 4,
+    "text": "x\\ (x*y)=y",
+    "tptp": "ldiv(X,op(X,Y)) = Y",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 6,
+    "text": "(x*y)/y=x",
+    "tptp": "rdiv(op(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 8,
+    "text": "(x/y)*y=x",
+    "tptp": "op(rdiv(X,Y),Y) = X",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 10,
+    "text": "x* (y* (z*z))= (x* (y*z))*z",
+    "tptp": "op(X,op(Y,op(Z,Z))) = op(op(X,op(Y,Z)),Z)",
+    "justification": "",
+    "is_input": true,
+    "negated": false
+   },
+   {
+    "id": 11,
+    "text": "(x* (y*z))*z=x* (y* (z*z))",
+    "tptp": "op(op(X,op(Y,Z)),Z) = op(X,op(Y,op(Z,Z)))",
+    "justification": "copy,10,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 13,
+    "text": "A* (B* (A*C))!= (A* (B*A))*C",
+    "tptp": "op(sk_a,op(sk_b,op(sk_a,sk_c))) != op(op(sk_a,op(sk_b,sk_a)),sk_c)",
+    "justification": "",
+    "is_input": true,
+    "negated": true
+   },
+   {
+    "id": 14,
+    "text": "(A* (B*A))*C!=A* (B* (A*C))",
+    "tptp": "op(op(sk_a,op(sk_b,sk_a)),sk_c) != op(sk_a,op(sk_b,op(sk_a,sk_c)))",
+    "justification": "copy,13,flip.1",
+    "is_input": false,
+    "negated": true
+   },
+   {
+    "id": 15,
+    "text": "x/ (y\\x)=y",
+    "tptp": "rdiv(X,ldiv(Y,X)) = Y",
+    "justification": "para_into,6.1.1.1,2.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 21,
+    "text": "(x*y)*z=x* ((y/z)* (z*z))",
+    "tptp": "op(op(X,Y),Z) = op(X,op(rdiv(Y,Z),op(Z,Z)))",
+    "justification": "para_into,11.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 25,
+    "text": "(x/ (y*z))* (y* (z*z))=x*z",
+    "tptp": "op(rdiv(X,op(Y,Z)),op(Y,op(Z,Z))) = op(X,Z)",
+    "justification": "para_into,11.1.1.1,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 27,
+    "text": "x* ((y/z)* (z*z))= (x*y)*z",
+    "tptp": "op(X,op(rdiv(Y,Z),op(Z,Z))) = op(op(X,Y),Z)",
+    "justification": "copy,21,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 29,
+    "text": "(x* (y* (z*z)))/z=x* (y*z)",
+    "tptp": "rdiv(op(X,op(Y,op(Z,Z))),Z) = op(X,op(Y,Z))",
+    "justification": "para_from,11.1.1,6.1.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 54,
+    "text": "x* (((x\\y)/z)* (z*z))=y*z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),Z),op(Z,Z))) = op(Y,Z)",
+    "justification": "para_into,21.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 88,
+    "text": "(x/ ((y/ (z*z))*z))*y=x*z",
+    "tptp": "op(rdiv(X,op(rdiv(Y,op(Z,Z)),Z)),Y) = op(X,Z)",
+    "justification": "para_into,25.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 122,
+    "text": "x\\ ((x*y)*z)= (y/z)* (z*z)",
+    "tptp": "ldiv(X,op(op(X,Y),Z)) = op(rdiv(Y,Z),op(Z,Z))",
+    "justification": "para_from,27.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 127,
+    "text": "(x/y)* (y*y)=z\\ ((z*x)*y)",
+    "tptp": "op(rdiv(X,Y),op(Y,Y)) = ldiv(Z,op(op(Z,X),Y))",
+    "justification": "copy,122,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 162,
+    "text": "(x*y)/z=x* ((y/ (z*z))*z)",
+    "tptp": "rdiv(op(X,Y),Z) = op(X,op(rdiv(Y,op(Z,Z)),Z))",
+    "justification": "para_into,29.1.1.1.2,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 173,
+    "text": "x* ((y/ (y*y))*y)=x",
+    "tptp": "op(X,op(rdiv(Y,op(Y,Y)),Y)) = X",
+    "justification": "back_demod,6,demod,163",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 190,
+    "text": "x\\x= (y/ (y*y))*y",
+    "tptp": "ldiv(X,X) = op(rdiv(Y,op(Y,Y)),Y)",
+    "justification": "para_from,173.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 192,
+    "text": "(x/ (x*x))*x=y\\y",
+    "tptp": "op(rdiv(X,op(X,X)),X) = ldiv(Y,Y)",
+    "justification": "copy,190,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 229,
+    "text": "x* (y\\y)=x",
+    "tptp": "op(X,ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,173.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 234,
+    "text": "(x/ (x*x))\\ (y\\y)=x",
+    "tptp": "ldiv(rdiv(X,op(X,X)),ldiv(Y,Y)) = X",
+    "justification": "para_from,192.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 271,
+    "text": "(x\\x)/y=y/ (y*y)",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(Y,op(Y,Y))",
+    "justification": "para_from,234.1.1,15.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 272,
+    "text": "x/ (x*x)= (y\\y)/x",
+    "tptp": "rdiv(X,op(X,X)) = rdiv(ldiv(Y,Y),X)",
+    "justification": "copy,271,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 333,
+    "text": "(x\\x)/y= (z\\z)/y",
+    "tptp": "rdiv(ldiv(X,X),Y) = rdiv(ldiv(Z,Z),Y)",
+    "justification": "para_into,272.1.1,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 357,
+    "text": "(x\\x)/ (y\\ (z\\z))=y",
+    "tptp": "rdiv(ldiv(X,X),ldiv(Y,ldiv(Z,Z))) = Y",
+    "justification": "para_into,333.1.1,15.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 651,
+    "text": "((x\\y)/z)* (z*z)=x\\ (y*z)",
+    "tptp": "op(rdiv(ldiv(X,Y),Z),op(Z,Z)) = ldiv(X,op(Y,Z))",
+    "justification": "para_from,54.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1032,
+    "text": "x* (y\\ ((y*z)*u))= (x*z)*u",
+    "tptp": "op(X,ldiv(Y,op(op(Y,Z),U))) = op(op(X,Z),U)",
+    "justification": "para_from,127.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1089,
+    "text": "x/y=x* (((z\\z)/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(X,op(rdiv(ldiv(Z,Z),op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,229.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1095,
+    "text": "x/y= (x/z)* ((z/ (y*y))*y)",
+    "tptp": "rdiv(X,Y) = op(rdiv(X,Z),op(rdiv(Z,op(Y,Y)),Y))",
+    "justification": "para_into,162.1.1.1,8.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1096,
+    "text": "x* (((x\\y)/ (z*z))*z)=y/z",
+    "tptp": "op(X,op(rdiv(ldiv(X,Y),op(Z,Z)),Z)) = rdiv(Y,Z)",
+    "justification": "para_into,162.1.1.1,2.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 1101,
+    "text": "x* (((y\\y)/ (z*z))*z)=x/z",
+    "tptp": "op(X,op(rdiv(ldiv(Y,Y),op(Z,Z)),Z)) = rdiv(X,Z)",
+    "justification": "copy,1089,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 2431,
+    "text": "x* (y\\ (z*u))= (x* (y\\z))*u",
+    "tptp": "op(X,ldiv(Y,op(Z,U))) = op(op(X,ldiv(Y,Z)),U)",
+    "justification": "para_from,651.1.1,27.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4144,
+    "text": "((x\\x)/y)* ((y/ ((z\\ (u\\u))* (z\\ (u\\u))))* (z\\ (u\\u)))=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(rdiv(Y,op(ldiv(Z,ldiv(U,U)),ldiv(Z,ldiv(U,U)))),ldiv(Z,ldiv(U,U)))) = Z",
+    "justification": "para_into,1095.1.1,357.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4331,
+    "text": "((x\\y)/ (z*z))*z=x\\ (y/z)",
+    "tptp": "op(rdiv(ldiv(X,Y),op(Z,Z)),Z) = ldiv(X,rdiv(Y,Z))",
+    "justification": "para_from,1096.1.1,4.1.1.2,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4483,
+    "text": "x* (y\\ (y/z))=x/z",
+    "tptp": "op(X,ldiv(Y,rdiv(Y,Z))) = rdiv(X,Z)",
+    "justification": "back_demod,1101,demod,4332",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4919,
+    "text": "x* (y\\ ((z\\z)/y))=x/ (y*y)",
+    "tptp": "op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y))) = rdiv(X,op(Y,Y))",
+    "justification": "para_into,4483.1.1.2.2,272.1.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 4925,
+    "text": "x/ (y*y)=x* (y\\ ((z\\z)/y))",
+    "tptp": "rdiv(X,op(Y,Y)) = op(X,ldiv(Y,rdiv(ldiv(Z,Z),Y)))",
+    "justification": "copy,4919,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 5661,
+    "text": "(x* (y\\ (z/u)))*u=x* (y\\z)",
+    "tptp": "op(op(X,ldiv(Y,rdiv(Z,U))),U) = op(X,ldiv(Y,Z))",
+    "justification": "para_into,2431.1.1.2.2,8.1.1,flip.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6717,
+    "text": "(x/ (y* (z\\ (u\\u))))*y=x*z",
+    "tptp": "op(rdiv(X,op(Y,ldiv(Z,ldiv(U,U)))),Y) = op(X,Z)",
+    "justification": "para_from,4925.1.1,88.1.1.1.2.1,demod,5662",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6722,
+    "text": "((x\\x)/y)* (y*z)=z",
+    "tptp": "op(rdiv(ldiv(X,X),Y),op(Y,Z)) = Z",
+    "justification": "back_demod,4144,demod,6718",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6891,
+    "text": "x* (((y\\y)/z)\\ (u*v))= (x* (z*u))*v",
+    "tptp": "op(X,ldiv(rdiv(ldiv(Y,Y),Z),op(U,V))) = op(op(X,op(Z,U)),V)",
+    "justification": "para_from,6722.1.1,1032.1.1.2.2.1",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6913,
+    "text": "((x\\x)/y)\\z=y*z",
+    "tptp": "ldiv(rdiv(ldiv(X,X),Y),Z) = op(Y,Z)",
+    "justification": "para_from,6722.1.1,4.1.1.2",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6983,
+    "text": "(x* (y*z))*u=x* (y* (z*u))",
+    "tptp": "op(op(X,op(Y,Z)),U) = op(X,op(Y,op(Z,U)))",
+    "justification": "copy,6891,flip.1,demod,6914",
+    "is_input": false,
+    "negated": false
+   },
+   {
+    "id": 6985,
+    "text": "$F",
+    "tptp": null,
+    "justification": "binary,6983.1,14.1",
+    "is_input": false,
+    "negated": false
+   }
+  ]
+ }
+]

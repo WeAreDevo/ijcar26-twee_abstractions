@@ -1,0 +1,200 @@
+[
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm1",
+  "prover": "otter",
+  "statement": "Let Q be a quasigroup satisfying D14. Then it satisfies F14.",
+  "proof_length": 59,
+  "level": 19,
+  "seconds": 0.79,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 0.075
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm2",
+  "prover": "otter",
+  "statement": "Let Q be a quasigroup satisfying F14. Then it satisfies D14.",
+  "proof_length": 39,
+  "level": 16,
+  "seconds": 5.09,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 1.686
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm3",
+  "prover": "otter",
+  "statement": "Every LG2 quasigroup is a right loop.",
+  "proof_length": 42,
+  "level": 13,
+  "seconds": 5.0,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 0.016
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm4",
+  "prover": "otter",
+  "statement": "Every LC3 quasigroup is a left loop.",
+  "proof_length": 30,
+  "level": 15,
+  "seconds": 0.4,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 0.025
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm5",
+  "prover": "otter",
+  "statement": "An LG1 quasigroup is an LG3 quasigroup.",
+  "proof_length": 39,
+  "level": 16,
+  "seconds": 4.95,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 1.658
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm6",
+  "prover": "otter",
+  "statement": "An LG1 quasigroup is an LC4 quasigroup.",
+  "proof_length": 66,
+  "level": 20,
+  "seconds": 4.97,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 1.335
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm7",
+  "prover": "otter",
+  "statement": "An LC4 quasigroup is an LC2 quasigroup.",
+  "proof_length": 21,
+  "level": 11,
+  "seconds": 1.58,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 0.046
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm8",
+  "prover": "otter",
+  "statement": "An LC1 quasigroup is an LBQ quasigroup.",
+  "proof_length": 39,
+  "level": 16,
+  "seconds": 5.13,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 2.032
+  }
+ },
+ {
+  "corpus": "bol_moufang",
+  "problem": "thm9",
+  "prover": "otter",
+  "statement": "An LC1 quasigroup is an LC4 quasigroup.",
+  "proof_length": 39,
+  "level": 16,
+  "seconds": 5.13,
+  "uses_hints": false,
+  "demodulation_free": false,
+  "signature": [
+   "*",
+   "\\",
+   "/"
+  ],
+  "derived_symbols_present": false,
+  "twee": {
+   "status": "success",
+   "proved": true,
+   "total_cpu": 1.999
+  }
+ }
+]

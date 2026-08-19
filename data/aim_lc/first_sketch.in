@@ -1,0 +1,110 @@
+% -------------------------------------------------------------------------
+% Prove AIM + {Moufang (M1), LC} => all 7 goals
+% -------------------------------------------------------------------------
+
+assign(order, kbo).
+set(lex_order_vars).
+
+lex([LEX_1,1,a,K,L,R,T,*,\,/]).   %LOOP_1
+
+set(para_units_only).
+
+assign(max_megs, 8000).
+assign(max_weight, 35).
+assign(sos_limit,-1).
+
+list(actions).
+
+   % reduce the maximum weight after a while
+   given =  30 -> assign(max_weight, 25).
+
+end_of_list.
+
+list(given_selection).
+   
+   % hint matchers are the highest priority
+   part(H, high, weight, hint) = 1.
+   
+   part(Wf, low, weight, false) = 3.
+   
+   part(W0w, low, weight, weight <= 20) = 16.
+   part(W0a, low, age,    weight <= 20) =  2.
+   part(W0r, low, random, weight <= 20) =  5.
+   
+   part(W1w, low, weight, weight >  20 & weight <= 30) = 8.
+   part(W1a, low, age,    weight >  20 & weight <= 30) = 2.
+   part(W1r, low, random, weight >  20 & weight <= 30) = 5.
+   
+   part(W2w, low, weight, weight >  30) = 4.
+   part(W2a, low, age,    weight >  30) = 2.
+   part(W2r, low, random, weight >  30) = 5.
+   
+end_of_list.
+
+formulas(assumptions).
+
+   % loop axioms
+   1 * x = x.
+   x * 1 = x.
+   x \ (x * y) = y.
+   x * (x \ y) = y.
+   (x * y) / y = x.
+   (x / y) * y = x.
+   
+   % associator
+   (x * (y * z)) \ ((x * y) * z) = a(x,y,z).
+   
+   % commutator
+   (x * y) \ (y * x) = K(y,x).
+   
+   % inner mappings
+   
+   % L(u,x,y) = u L(x) L(y) L(yx)^{-1}
+   (y * x) \ (y * (x * u)) = L(u,x,y).
+   
+   % R(u,x,y) = u R(x) R(y) R(xy)^{-1}
+   ((u * x) * y) / (x * y) = R(u,x,y).
+   
+   % T(u,x) = u R(x) L(x)^{-1}
+   x \ (u * x) = T(u,x).
+   
+   % obvious compatibility
+   a(x,y,z) = 1 -> L(z,y,x) = z.
+   L(x,y,z) = x -> a(z,y,x) = 1.
+   T(x,y) = x -> T(y,x) = y.
+   T(x,y) = x -> K(x,y) = 1.
+   K(x,y) = 1 -> T(x,y) = x.
+   
+   % abelian inner mapping group
+   T(T(u,x),y) = T(T(u,y),x).
+   T(L(u,x,y),z) = L(T(u,z),x,y).
+   T(R(u,x,y),z) = R(T(u,z),x,y).
+   L(R(u,x,y),z,w) = R(L(u,z,w),x,y).
+   L(L(u,x,y),z,w) = L(L(u,z,w),x,y).
+   R(R(u,x,y),z,w) = R(R(u,z,w),x,y).
+
+end_of_list.
+
+formulas(goals).
+
+   a(K(x,y),z,u) = 1              # label("aK1").
+   a(x,K(y,z),u) = 1              # label("aK2").
+   a(x,y,K(z,u)) = 1              # label("aK3").
+   K(a(x,y,z),u) = 1              # label("Ka").
+
+   a(a(x,y,z),u,w) = 1            # label("aa1").
+   a(x,a(y,z,u),w) = 1            # label("aa2").
+   a(x,y,a(z,u,w)) = 1            # label("aa3").
+
+end_of_list.
+
+% --------------------
+% Current Special Case
+% --------------------
+
+formulas(assumptions).
+
+   ((x * y) * x) * z = x * (y * (x * z)) # label("Moufang (M1)").
+   (x * (x * y)) * z = x * (x * (y * z)) # label("LC").
+
+end_of_list.

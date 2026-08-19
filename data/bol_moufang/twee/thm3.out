@@ -1,0 +1,105 @@
+Here is the input problem:
+  Axiom 1 (flattening): ldiv3 = ldiv(sk_a, sk_a).
+  Axiom 2 (flattening): ldiv2 = ldiv(sk_b, sk_b).
+  Axiom 3 (ax3): rdiv(op(X, Y), Y) = X.
+  Axiom 4 (ax2): ldiv(X, op(X, Y)) = Y.
+  Axiom 5 (ax1): op(X, ldiv(X, Y)) = Y.
+  Axiom 6 (ax4): op(rdiv(X, Y), Y) = X.
+  Axiom 7 (ax5): op(op(X, Y), op(Z, Z)) = op(op(X, op(Y, Z)), Z).
+  Goal 1 (goal): ldiv(sk_a, sk_a) = ldiv(sk_b, sk_b).
+
+(13.0) 1. ldiv(sk_a, sk_a) -> ldiv3
+(13.0) 2. ldiv(sk_b, sk_b) -> ldiv2
+(19.142859) 3. rdiv(op(X, Y), Y) -> X
+(19.142859) 4. ldiv(X, op(X, Y)) -> Y
+(19.142859) 5. op(X, ldiv(X, Y)) -> Y
+(19.142859) 6. op(rdiv(X, Y), Y) -> X
+(32.14286) 7. op(op(X, op(Y, Z)), Z) -> op(op(X, Y), op(Z, Z))
+(15.0) 8. op(sk_a, ldiv3) -> sk_a
+(15.0) 9. op(sk_b, ldiv2) -> sk_b
+(17.0) 10. rdiv(sk_a, ldiv3) -> sk_a
+(17.0) 11. rdiv(sk_b, ldiv2) -> sk_b
+(21.142859) 12. rdiv(X, ldiv(Y, X)) -> Y
+(21.142859) 13. ldiv(rdiv(X, Y), X) -> Y
+(36.285713) 14. op(op(X, sk_a), op(ldiv3, ldiv3)) -> op(op(X, sk_a), ldiv3)
+(19.0) 15. op(ldiv3, ldiv3) -> ldiv3
+(21.0) 16. rdiv(ldiv3, ldiv3) -> ldiv3
+(21.0) 17. ldiv(ldiv3, ldiv3) -> ldiv3
+(36.285713) 18. op(op(X, sk_b), op(ldiv2, ldiv2)) -> op(op(X, sk_b), ldiv2)
+(19.0) 19. op(ldiv2, ldiv2) -> ldiv2
+(21.0) 20. rdiv(ldiv2, ldiv2) -> ldiv2
+(21.0) 21. ldiv(ldiv2, ldiv2) -> ldiv2
+(39.714287) 22. rdiv(op(op(X, Y), op(Z, Z)), Z) -> op(X, op(Y, Z))
+(29.57143) 23. op(X, op(Y, ldiv3)) -> op(X, Y)
+(22.285713) 24. op(X, ldiv3) -> X
+(23.857143) 25. ldiv(X, X) -> ldiv3
+(19.0) 26. ldiv2 -> ldiv3
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (ax3): rdiv(op(X, Y), Y) = X.
+Axiom 2 (ax2): ldiv(X, op(X, Y)) = Y.
+Axiom 3 (ax1): op(X, ldiv(X, Y)) = Y.
+Axiom 4 (ax5): op(op(X, Y), op(Z, Z)) = op(op(X, op(Y, Z)), Z).
+
+Lemma 5: rdiv(op(op(X, Y), op(Z, Z)), Z) = op(X, op(Y, Z)).
+Proof:
+  rdiv(op(op(X, Y), op(Z, Z)), Z)
+= { by axiom 4 (ax5) }
+  rdiv(op(op(X, op(Y, Z)), Z), Z) (peak)
+= { by axiom 1 (ax3) }
+  op(X, op(Y, Z))
+
+Lemma 6: op(op(X, Y), op(ldiv(Y, Z), ldiv(Y, Z))) = op(op(X, Z), ldiv(Y, Z)).
+Proof:
+  op(op(X, Y), op(ldiv(Y, Z), ldiv(Y, Z)))
+= { by axiom 4 (ax5) }
+  op(op(X, op(Y, ldiv(Y, Z))), ldiv(Y, Z)) (peak)
+= { by axiom 3 (ax1) }
+  op(op(X, Z), ldiv(Y, Z))
+
+Lemma 7: op(ldiv(X, X), ldiv(X, X)) = ldiv(X, X).
+Proof:
+  op(ldiv(X, X), ldiv(X, X))
+= { by axiom 2 (ax2) R->L }
+  ldiv(op(Y, X), op(op(Y, X), op(ldiv(X, X), ldiv(X, X)))) (peak)
+= { by lemma 6 }
+  ldiv(op(Y, X), op(op(Y, X), ldiv(X, X)))
+= { by axiom 2 (ax2) }
+  ldiv(X, X)
+
+Lemma 8: op(X, op(Y, ldiv(Z, Z))) = op(X, Y).
+Proof:
+  op(X, op(Y, ldiv(Z, Z)))
+= { by lemma 5 R->L }
+  rdiv(op(op(X, Y), op(ldiv(Z, Z), ldiv(Z, Z))), ldiv(Z, Z)) (peak)
+= { by lemma 7 }
+  rdiv(op(op(X, Y), ldiv(Z, Z)), ldiv(Z, Z))
+= { by axiom 1 (ax3) }
+  op(X, Y)
+
+Lemma 9: op(X, ldiv(Y, Y)) = X.
+Proof:
+  op(X, ldiv(Y, Y))
+= { by axiom 2 (ax2) R->L }
+  ldiv(Z, op(Z, op(X, ldiv(Y, Y)))) (peak)
+= { by lemma 8 }
+  ldiv(Z, op(Z, X))
+= { by axiom 2 (ax2) }
+  X
+
+Lemma 10: ldiv(Y, Y) = ldiv(X, X).
+Proof:
+  ldiv(Y, Y)
+= { by axiom 2 (ax2) R->L }
+  ldiv(X, op(X, ldiv(Y, Y))) (peak)
+= { by lemma 9 }
+  ldiv(X, X)
+
+Goal 1 (goal): ldiv(sk_a, sk_a) = ldiv(sk_b, sk_b).
+Proof:
+  ldiv(sk_a, sk_a)
+= { by lemma 10 }
+  ldiv(sk_b, sk_b) (peak)
+
+RESULT: Unsatisfiable (the axioms are contradictory).

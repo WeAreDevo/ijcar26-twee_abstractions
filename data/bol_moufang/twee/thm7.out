@@ -1,0 +1,357 @@
+Here is the input problem:
+  Axiom 1 (flattening): op2 = op(sk_b, sk_c).
+  Axiom 2 (flattening): op3 = op(sk_a, sk_b).
+  Axiom 3 (ax2): ldiv(X, op(X, Y)) = Y.
+  Axiom 4 (ax3): rdiv(op(X, Y), Y) = X.
+  Axiom 5 (ax1): op(X, ldiv(X, Y)) = Y.
+  Axiom 6 (flattening): op4 = op(sk_a, op(sk_b, sk_c)).
+  Axiom 7 (flattening): op5 = op(sk_a, op(sk_a, sk_b)).
+  Axiom 8 (ax4): op(rdiv(X, Y), Y) = X.
+  Axiom 9 (flattening): op6 = op(sk_a, op(sk_a, op(sk_b, sk_c))).
+  Axiom 10 (ax5): op(X, op(Y, op(Y, Z))) = op(op(X, op(Y, Y)), Z).
+  Axiom 11 (flattening): op7 = op(op(sk_a, op(sk_a, sk_b)), sk_c).
+  Goal 1 (goal): op(sk_a, op(sk_a, op(sk_b, sk_c))) = op(op(sk_a, op(sk_a, sk_b)), sk_c).
+
+(13.0) 1. op(sk_b, sk_c) -> op2
+(13.0) 2. op(sk_a, sk_b) -> op3
+(19.142859) 3. ldiv(X, op(X, Y)) -> Y
+(19.142859) 4. rdiv(op(X, Y), Y) -> X
+(19.142859) 5. op(X, ldiv(X, Y)) -> Y
+(13.0) 6. op(sk_a, op2) -> op4
+(13.0) 7. op(sk_a, op3) -> op5
+(19.142859) 8. op(rdiv(X, Y), Y) -> X
+(13.0) 9. op(sk_a, op4) -> op6
+(32.14286) 10. op(op(X, op(Y, Y)), Z) -> op(X, op(Y, op(Y, Z)))
+(13.0) 11. op(op5, sk_c) -> op7
+(15.0) 12. ldiv(sk_b, op2) -> sk_c
+(15.0) 13. ldiv(sk_a, op3) -> sk_b
+(15.0) 14. rdiv(op2, sk_c) -> sk_b
+(15.0) 15. rdiv(op3, sk_b) -> sk_a
+(15.0) 16. ldiv(sk_a, op4) -> op2
+(15.0) 17. rdiv(op4, op2) -> sk_a
+(15.0) 18. ldiv(sk_a, op5) -> op3
+(15.0) 19. rdiv(op5, op3) -> sk_a
+(15.0) 20. ldiv(sk_a, op6) -> op4
+(15.0) 21. rdiv(op6, op4) -> sk_a
+(15.0) 22. ldiv(op5, op7) -> sk_c
+(15.0) 23. rdiv(op7, sk_c) -> op5
+(21.142859) 24. rdiv(X, ldiv(Y, X)) -> Y
+(21.142859) 25. ldiv(rdiv(X, Y), X) -> Y
+(39.714287) 26. rdiv(op(X, op(Y, op(Y, Z))), Z) -> op(X, op(Y, Y))
+(28.285713) 27. op(X, op(sk_a, sk_a)) -> rdiv(op(X, op5), sk_b)
+(28.285713) 28. rdiv(op(X, op5), sk_b) -> rdiv(op(X, op6), op2)
+(35.857143) 29. ldiv(X, rdiv(op(X, op6), op2)) -> op(sk_a, sk_a)
+(36.285713) 30. rdiv(op(X, op(sk_b, op2)), sk_c) -> op(X, op(sk_b, sk_b))
+(36.285713) 31. rdiv(op(X, op(sk_a, op5)), op3) -> rdiv(op(X, op6), op2)
+(36.285713) 32. rdiv(op(X, op(sk_a, op6)), op4) -> rdiv(op(X, op6), op2)
+(36.285713) 33. rdiv(op(X, op(op5, op7)), sk_c) -> op(X, op(op5, op5))
+(36.285713) 34. op(rdiv(op(X, op6), op2), sk_b) -> op(X, op5)
+(32.285713) 35. op(rdiv(X, op2), sk_b) -> op(rdiv(X, op6), op5)
+(31.0) 36. op(rdiv(op4, op6), op5) -> op3
+(27.0) 37. rdiv(op3, op5) -> rdiv(op4, op6)
+(33.0) 38. ldiv(rdiv(op4, op6), op3) -> op5
+(36.285713) 39. rdiv(op(rdiv(X, op5), op6), op2) -> rdiv(X, sk_b)
+(32.285713) 40. op(rdiv(X, sk_b), op2) -> op(rdiv(X, op5), op6)
+(37.857143) 41. ldiv(rdiv(X, op6), rdiv(X, op2)) -> op(sk_a, sk_a)
+(33.0) 42. ldiv(rdiv(op4, op6), sk_a) -> op(sk_a, sk_a)
+(35.0) 43. rdiv(sk_a, op(sk_a, sk_a)) -> rdiv(op4, op6)
+(37.857143) 44. ldiv(rdiv(X, op5), rdiv(X, sk_b)) -> op(sk_a, sk_a)
+(38.285713) 45. op(rdiv(op(X, op6), op2), op3) -> op(X, op(sk_a, op5))
+(38.285713) 46. op(rdiv(op(X, op6), op2), op4) -> op(X, op(sk_a, op6))
+(39.571426) 47. op(rdiv(op(X, op6), op2), Y) -> op(X, op(sk_a, op(sk_a, Y)))
+(39.857143) 48. ldiv(rdiv(op(X, op2), op6), X) -> op(sk_a, sk_a)
+(36.285713) 49. rdiv(op(X, op2), op6) -> rdiv(X, op(sk_a, sk_a))
+(39.857143) 50. ldiv(rdiv(op(X, sk_b), op5), X) -> op(sk_a, sk_a)
+(36.285713) 51. rdiv(op(X, sk_b), op5) -> rdiv(X, op(sk_a, sk_a))
+(40.285713) 52. op(rdiv(X, op(sk_a, sk_a)), op5) -> op(X, sk_b)
+(40.285713) 53. op(rdiv(X, op(sk_a, sk_a)), op6) -> op(X, op2)
+(40.285713) 54. rdiv(rdiv(X, op2), op(sk_a, sk_a)) -> rdiv(X, op6)
+(40.285713) 55. rdiv(rdiv(X, sk_b), op(sk_a, sk_a)) -> rdiv(X, op5)
+(40.285713) 56. op(rdiv(X, op6), op(sk_a, op5)) -> op(rdiv(X, op2), op3)
+(40.285713) 57. op(rdiv(X, op5), op(sk_a, op5)) -> op(rdiv(X, sk_b), op3)
+(40.285713) 58. op(rdiv(X, op6), op(sk_a, op6)) -> op(rdiv(X, op2), op4)
+(40.285713) 59. op(rdiv(X, op5), op(sk_a, op6)) -> op(rdiv(X, sk_b), op4)
+(41.714287) 60. rdiv(op(X, op(Y, Z)), ldiv(Y, Z)) -> op(X, op(Y, Y))
+(38.285713) 61. rdiv(op(X, op2), ldiv(sk_b, sk_c)) -> op(X, op(sk_b, sk_b))
+(33.0) 62. op(sk_a, op(sk_b, sk_b)) -> rdiv(op4, ldiv(sk_b, sk_c))
+(38.285713) 63. rdiv(op(X, op3), ldiv(sk_a, sk_b)) -> rdiv(op(X, op6), op2)
+(33.0) 64. rdiv(op(sk_a, op6), op2) -> rdiv(op5, ldiv(sk_a, sk_b))
+(38.285713) 65. rdiv(op(X, op4), ldiv(sk_a, op2)) -> rdiv(op(X, op6), op2)
+(33.0) 66. rdiv(op(sk_a, op6), op2) -> rdiv(op6, ldiv(sk_a, op2))
+(35.0) 67. rdiv(op5, ldiv(sk_a, sk_b)) -> rdiv(op6, ldiv(sk_a, op2))
+(38.285713) 68. rdiv(op(X, op7), ldiv(op5, sk_c)) -> op(X, op(op5, op5))
+(40.285713) 69. op(rdiv(X, op2), op(sk_b, sk_b)) -> rdiv(X, ldiv(sk_b, sk_c))
+(40.285713) 70. rdiv(op(rdiv(X, op3), op6), op2) -> rdiv(X, ldiv(sk_a, sk_b))
+(40.285713) 71. rdiv(op(rdiv(X, op4), op6), op2) -> rdiv(X, ldiv(sk_a, op2))
+(40.285713) 72. op(rdiv(X, op7), op(op5, op5)) -> rdiv(X, ldiv(op5, sk_c))
+(41.0) 73. ldiv(sk_a, rdiv(op4, ldiv(sk_b, sk_c))) -> op(sk_b, sk_b)
+(41.0) 74. op(rdiv(op6, ldiv(sk_a, op2)), op2) -> op(sk_a, op6)
+(41.0) 75. ldiv(sk_a, rdiv(op6, ldiv(sk_a, op2))) -> op(sk_a, sk_a)
+(41.0) 76. op(rdiv(op6, ldiv(sk_a, op2)), sk_b) -> op(sk_a, op5)
+(41.857143) 77. ldiv(rdiv(op(X, op6), op2), op(X, op5)) -> sk_b
+(42.285713) 78. op(rdiv(X, ldiv(sk_a, sk_b)), op2) -> op(rdiv(X, op3), op6)
+(33.0) 79. op(rdiv(sk_b, op3), op6) -> op4
+(29.0) 80. rdiv(sk_b, op3) -> rdiv(op4, op6)
+(37.0) 81. op(rdiv(op4, op6), op3) -> sk_b
+(37.0) 82. ldiv(rdiv(op4, op6), sk_b) -> op3
+(42.285713) 83. op(rdiv(X, ldiv(sk_a, sk_b)), sk_b) -> op(rdiv(X, op3), op5)
+(42.285713) 84. op(rdiv(X, ldiv(sk_a, op2)), op2) -> op(rdiv(X, op4), op6)
+(33.0) 85. op(rdiv(op2, op4), op6) -> op4
+(29.0) 86. rdiv(op2, op4) -> rdiv(op4, op6)
+(37.0) 87. op(rdiv(op4, op6), op4) -> op2
+(37.0) 88. ldiv(rdiv(op4, op6), op2) -> op4
+(42.285713) 89. op(rdiv(X, ldiv(sk_a, op2)), sk_b) -> op(rdiv(X, op4), op5)
+(43.0) 90. op(rdiv(op6, ldiv(sk_a, op2)), op3) -> op(sk_a, op(sk_a, op5))
+(43.0) 91. op(rdiv(op6, ldiv(sk_a, op2)), op4) -> op(sk_a, op(sk_a, op6))
+(43.0) 92. ldiv(rdiv(op6, ldiv(sk_a, op2)), op5) -> ldiv(sk_a, sk_b)
+(43.714287) 93. op(X, op(rdiv(Y, Z), rdiv(Y, Z))) -> rdiv(op(X, op(rdiv(Y, Z), Y)), Z)
+(43.714287) 94. rdiv(op(X, Y), ldiv(Z, ldiv(Z, Y))) -> op(X, op(Z, Z))
+(39.571426) 95. rdiv(op2, ldiv(X, ldiv(X, sk_c))) -> op(sk_b, op(X, X))
+(39.571426) 96. rdiv(op3, ldiv(X, ldiv(X, sk_b))) -> op(sk_a, op(X, X))
+(39.571426) 97. rdiv(op4, ldiv(X, ldiv(X, op2))) -> op(sk_a, op(X, X))
+(39.571426) 98. rdiv(op5, ldiv(X, ldiv(X, op3))) -> op(sk_a, op(X, X))
+(39.571426) 99. rdiv(op6, ldiv(X, ldiv(X, op4))) -> op(sk_a, op(X, X))
+(39.571426) 100. rdiv(op7, ldiv(X, ldiv(X, sk_c))) -> op(op5, op(X, X))
+(40.14286) 101. op(rdiv(X, Y), op(Z, Z)) -> rdiv(X, ldiv(Z, ldiv(Z, Y)))
+(29.142859) 102. rdiv(X, ldiv(Y, Y)) -> X
+(26.714287) 103. ldiv(X, X) ~> ldiv(?, ?)
+(32.285713) 104. op(X, ldiv(?, ?)) -> X
+(41.571426) 105. ldiv(op(sk_b, op(X, X)), op2) -> ldiv(X, ldiv(X, sk_c))
+(41.571426) 106. ldiv(op(sk_a, op(X, X)), op3) -> ldiv(X, ldiv(X, sk_b))
+(41.571426) 107. ldiv(op(sk_a, op(X, X)), op4) -> ldiv(X, ldiv(X, op2))
+(41.571426) 108. ldiv(op(sk_a, op(X, X)), op5) -> ldiv(X, ldiv(X, op3))
+(41.571426) 109. ldiv(op(sk_a, op(X, X)), op6) -> ldiv(X, ldiv(X, op4))
+(41.571426) 110. ldiv(op(op5, op(X, X)), op7) -> ldiv(X, ldiv(X, sk_c))
+(43.0) 111. ldiv(ldiv(?, ?), ldiv(ldiv(?, ?), sk_c)) -> sk_c
+(41.0) 112. op(ldiv(?, ?), sk_c) -> ldiv(ldiv(?, ?), sk_c)
+(43.0) 113. ldiv(ldiv(?, ?), ldiv(ldiv(?, ?), sk_b)) -> sk_b
+(41.0) 114. op(ldiv(?, ?), sk_b) -> ldiv(ldiv(?, ?), sk_b)
+(43.0) 115. ldiv(ldiv(?, ?), ldiv(ldiv(?, ?), op2)) -> op2
+(41.0) 116. op(ldiv(?, ?), op2) -> ldiv(ldiv(?, ?), op2)
+(43.0) 117. ldiv(ldiv(?, ?), ldiv(ldiv(?, ?), op3)) -> op3
+(41.0) 118. op(ldiv(?, ?), op3) -> ldiv(ldiv(?, ?), op3)
+(43.0) 119. ldiv(ldiv(?, ?), ldiv(ldiv(?, ?), op4)) -> op4
+(41.0) 120. op(ldiv(?, ?), op4) -> ldiv(ldiv(?, ?), op4)
+(43.571426) 121. rdiv(op(rdiv(X, Y), op6), op2) -> rdiv(X, ldiv(sk_a, ldiv(sk_a, Y)))
+(43.857143) 122. ldiv(rdiv(X, sk_b), op(rdiv(X, op5), op6)) -> op2
+(43.857143) 123. ldiv(rdiv(X, op2), op(rdiv(X, op6), op5)) -> sk_b
+(44.285713) 124. op(rdiv(op4, ldiv(sk_b, sk_c)), X) -> op(sk_a, op(sk_b, op(sk_b, X)))
+(44.285713) 125. op(rdiv(op6, ldiv(sk_a, op2)), X) -> op(sk_a, op(sk_a, op(sk_a, X)))
+(44.285713) 126. op(rdiv(X, ldiv(sk_a, sk_b)), op3) -> op(rdiv(X, op3), op(sk_a, op5))
+(44.285713) 127. op(rdiv(X, ldiv(sk_a, sk_b)), op4) -> op(rdiv(X, op3), op(sk_a, op6))
+(44.285713) 128. op(rdiv(X, ldiv(sk_a, op2)), op3) -> op(rdiv(X, op4), op(sk_a, op5))
+(44.285713) 129. op(rdiv(X, ldiv(sk_a, op2)), op4) -> op(rdiv(X, op4), op(sk_a, op6))
+(45.0) 130. ldiv(rdiv(op(sk_b, op6), op2), op2) -> ldiv(sk_a, ldiv(sk_a, sk_c))
+(45.0) 131. ldiv(rdiv(op6, ldiv(sk_a, op2)), op3) -> ldiv(sk_a, ldiv(sk_a, sk_b))
+(45.0) 132. ldiv(rdiv(op4, ldiv(sk_b, sk_c)), op3) -> ldiv(sk_b, ldiv(?, ?))
+(45.0) 133. ldiv(rdiv(op6, ldiv(sk_a, op2)), op4) -> ldiv(sk_a, ldiv(sk_a, op2))
+(45.0) 134. ldiv(rdiv(op4, ldiv(sk_b, sk_c)), op5) -> ldiv(sk_b, ldiv(sk_b, op3))
+(45.0) 135. ldiv(rdiv(op4, ldiv(sk_b, sk_c)), op6) -> ldiv(sk_b, ldiv(sk_b, op4))
+(45.0) 136. ldiv(rdiv(op(op5, op6), op2), op7) -> ldiv(sk_a, ldiv(sk_a, sk_c))
+(45.285713) 137. op(rdiv(X, op(Y, Y)), op(Y, op(Y, Z))) -> op(X, Z)
+(41.714287) 138. ldiv(rdiv(X, op(Y, Y)), op(X, Z)) -> op(Y, op(Y, Z))
+(37.571426) 139. ldiv(rdiv(sk_b, op(X, X)), op2) -> op(X, op(X, sk_c))
+(37.571426) 140. ldiv(rdiv(sk_a, op(X, X)), op3) -> op(X, op(X, sk_b))
+(37.571426) 141. ldiv(rdiv(sk_a, op(X, X)), op4) -> op(X, op(X, op2))
+(37.571426) 142. ldiv(rdiv(sk_a, op(X, X)), op5) -> op(X, op(X, op3))
+(37.0) 143. ldiv(rdiv(op4, op6), op5) -> op(sk_a, op5)
+(37.571426) 144. ldiv(rdiv(sk_a, op(X, X)), op6) -> op(X, op(X, op4))
+(37.0) 145. ldiv(rdiv(op4, op6), op6) -> op(sk_a, op6)
+(37.571426) 146. ldiv(rdiv(op5, op(X, X)), op7) -> op(X, op(X, sk_c))
+(38.14286) 147. op(X, op(X, ldiv(Y, Z))) -> ldiv(rdiv(Y, op(X, X)), Z)
+(36.428574) 148. ldiv(rdiv(X, op(X, X)), Y) -> op(X, Y)
+(34.0) 149. rdiv(X, op(X, X)) ~> rdiv(?, op(X, ?))
+(34.0) 150. rdiv(X, op(Y, X)) ~> rdiv(?, op(Y, ?))
+(35.0) 151. rdiv(?, op(sk_b, ?)) -> rdiv(sk_c, op2)
+(35.0) 152. rdiv(?, op(sk_a, ?)) -> rdiv(op4, op6)
+(35.0) 153. rdiv(?, op(op5, ?)) -> rdiv(sk_c, op7)
+(36.0) 154. rdiv(ldiv(X, Y), Y) -> rdiv(?, op(X, ?))
+(36.285713) 155. ldiv(rdiv(op4, op6), X) -> op(sk_a, X)
+(37.0) 156. ldiv(rdiv(sk_c, op2), ?) -> op(sk_b, ?)
+(37.0) 157. ldiv(rdiv(sk_c, op7), ?) -> op(op5, ?)
+(38.285713) 158. op(ldiv(?, ?), X) -> ldiv(ldiv(?, ?), X)
+(38.285713) 159. rdiv(ldiv(?, ?), X) -> rdiv(?, op(X, ?))
+(31.0) 160. rdiv(sk_c, op6) -> rdiv(sk_c, op7)
+(23.0) 161. op6 -> op7
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (ax2): ldiv(X, op(X, Y)) = Y.
+Axiom 2 (ax3): rdiv(op(X, Y), Y) = X.
+Axiom 3 (ax1): op(X, ldiv(X, Y)) = Y.
+Axiom 4 (ax4): op(rdiv(X, Y), Y) = X.
+Axiom 5 (ax5): op(X, op(Y, op(Y, Z))) = op(op(X, op(Y, Y)), Z).
+
+Lemma 6: ldiv(rdiv(X, Y), X) = Y.
+Proof:
+  ldiv(rdiv(X, Y), X)
+= { by axiom 4 (ax4) R->L }
+  ldiv(rdiv(X, Y), op(rdiv(X, Y), Y)) (peak)
+= { by axiom 1 (ax2) }
+  Y
+
+Lemma 7: rdiv(op(X, op(Y, op(Y, Z))), Z) = op(X, op(Y, Y)).
+Proof:
+  rdiv(op(X, op(Y, op(Y, Z))), Z)
+= { by axiom 5 (ax5) }
+  rdiv(op(op(X, op(Y, Y)), Z), Z) (peak)
+= { by axiom 2 (ax3) }
+  op(X, op(Y, Y))
+
+Lemma 8: rdiv(op(X, op(Y, Z)), ldiv(Y, Z)) = op(X, op(Y, Y)).
+Proof:
+  rdiv(op(X, op(Y, Z)), ldiv(Y, Z))
+= { by axiom 3 (ax1) R->L }
+  rdiv(op(X, op(Y, op(Y, ldiv(Y, Z)))), ldiv(Y, Z)) (peak)
+= { by lemma 7 }
+  op(X, op(Y, Y))
+
+Lemma 9: rdiv(op(X, Y), ldiv(Z, ldiv(Z, Y))) = op(X, op(Z, Z)).
+Proof:
+  rdiv(op(X, Y), ldiv(Z, ldiv(Z, Y)))
+= { by axiom 3 (ax1) R->L }
+  rdiv(op(X, op(Z, ldiv(Z, Y))), ldiv(Z, ldiv(Z, Y))) (peak)
+= { by lemma 8 }
+  op(X, op(Z, Z))
+
+Lemma 10: op(rdiv(X, Y), op(Z, Z)) = rdiv(X, ldiv(Z, ldiv(Z, Y))).
+Proof:
+  op(rdiv(X, Y), op(Z, Z))
+= { by lemma 9 R->L }
+  rdiv(op(rdiv(X, Y), Y), ldiv(Z, ldiv(Z, Y))) (peak)
+= { by axiom 4 (ax4) }
+  rdiv(X, ldiv(Z, ldiv(Z, Y)))
+
+Lemma 11: rdiv(X, ldiv(Y, Y)) = X.
+Proof:
+  rdiv(X, ldiv(Y, Y))
+= { by axiom 1 (ax2) R->L }
+  rdiv(X, ldiv(Y, ldiv(Y, op(Y, Y))))
+= { by lemma 10 R->L }
+  op(rdiv(X, op(Y, Y)), op(Y, Y)) (peak)
+= { by axiom 4 (ax4) }
+  X
+
+Lemma 12: op(X, ldiv(Y, Y)) = X.
+Proof:
+  op(X, ldiv(Y, Y))
+= { by lemma 11 R->L }
+  rdiv(op(X, ldiv(Y, Y)), ldiv(Y, Y)) (peak)
+= { by axiom 2 (ax3) }
+  X
+
+Lemma 13: rdiv(X, ldiv(Y, X)) = Y.
+Proof:
+  rdiv(X, ldiv(Y, X))
+= { by axiom 3 (ax1) R->L }
+  rdiv(op(Y, ldiv(Y, X)), ldiv(Y, X)) (peak)
+= { by axiom 2 (ax3) }
+  Y
+
+Lemma 14: op(rdiv(X, op(Y, Y)), op(Y, op(Y, Z))) = op(X, Z).
+Proof:
+  op(rdiv(X, op(Y, Y)), op(Y, op(Y, Z)))
+= { by axiom 5 (ax5) }
+  op(op(rdiv(X, op(Y, Y)), op(Y, Y)), Z) (peak)
+= { by axiom 4 (ax4) }
+  op(X, Z)
+
+Lemma 15: ldiv(rdiv(X, op(Y, Y)), op(X, Z)) = op(Y, op(Y, Z)).
+Proof:
+  ldiv(rdiv(X, op(Y, Y)), op(X, Z))
+= { by lemma 14 R->L }
+  ldiv(rdiv(X, op(Y, Y)), op(rdiv(X, op(Y, Y)), op(Y, op(Y, Z)))) (peak)
+= { by axiom 1 (ax2) }
+  op(Y, op(Y, Z))
+
+Lemma 16: op(X, op(X, ldiv(Y, Z))) = ldiv(rdiv(Y, op(X, X)), Z).
+Proof:
+  op(X, op(X, ldiv(Y, Z)))
+= { by lemma 15 R->L }
+  ldiv(rdiv(Y, op(X, X)), op(Y, ldiv(Y, Z))) (peak)
+= { by axiom 3 (ax1) }
+  ldiv(rdiv(Y, op(X, X)), Z)
+
+Lemma 17: ldiv(rdiv(X, op(X, X)), Y) = op(X, Y).
+Proof:
+  ldiv(rdiv(X, op(X, X)), Y)
+= { by lemma 16 R->L }
+  op(X, op(X, ldiv(X, Y))) (peak)
+= { by axiom 3 (ax1) }
+  op(X, Y)
+
+Lemma 18: rdiv(Z, op(Y, Z)) = rdiv(X, op(Y, X)).
+Proof:
+  rdiv(Z, op(Y, Z))
+= { by lemma 17 R->L }
+  rdiv(Z, ldiv(rdiv(Y, op(Y, Y)), Z)) (peak)
+= { by lemma 13 }
+  rdiv(Y, op(Y, Y))
+= { by lemma 13 R->L }
+  rdiv(X, ldiv(rdiv(Y, op(Y, Y)), X)) (peak)
+= { by lemma 17 }
+  rdiv(X, op(Y, X))
+
+Lemma 19: rdiv(ldiv(X, X), Y) = rdiv(Z, op(Y, Z)).
+Proof:
+  rdiv(ldiv(X, X), Y)
+= { by lemma 12 R->L }
+  rdiv(ldiv(X, X), op(Y, ldiv(X, X))) (peak)
+= { by lemma 18 R->L }
+  rdiv(Z, op(Y, Z)) (peak)
+
+Lemma 20: ldiv(X, rdiv(op(X, op(Y, op(Y, Z))), Z)) = op(Y, Y).
+Proof:
+  ldiv(X, rdiv(op(X, op(Y, op(Y, Z))), Z)) (peak)
+= { by lemma 7 }
+  ldiv(X, op(X, op(Y, Y)))
+= { by axiom 1 (ax2) }
+  op(Y, Y)
+
+Lemma 21: ldiv(rdiv(X, op(Y, op(Y, Z))), rdiv(X, Z)) = op(Y, Y).
+Proof:
+  ldiv(rdiv(X, op(Y, op(Y, Z))), rdiv(X, Z))
+= { by axiom 4 (ax4) R->L }
+  ldiv(rdiv(X, op(Y, op(Y, Z))), rdiv(op(rdiv(X, op(Y, op(Y, Z))), op(Y, op(Y, Z))), Z)) (peak)
+= { by lemma 20 }
+  op(Y, Y)
+
+Lemma 22: rdiv(rdiv(X, Y), op(Z, Z)) = rdiv(X, op(Z, op(Z, Y))).
+Proof:
+  rdiv(rdiv(X, Y), op(Z, Z))
+= { by lemma 21 R->L }
+  rdiv(rdiv(X, Y), ldiv(rdiv(X, op(Z, op(Z, Y))), rdiv(X, Y))) (peak)
+= { by lemma 13 }
+  rdiv(X, op(Z, op(Z, Y)))
+
+Lemma 23: rdiv(W, op(op(Y, op(Y, Z)), W)) = rdiv(X, op(Y, op(Y, op(Z, X)))).
+Proof:
+  rdiv(W, op(op(Y, op(Y, Z)), W)) (peak)
+= { by lemma 19 R->L }
+  rdiv(ldiv(U, U), op(Y, op(Y, Z)))
+= { by lemma 22 R->L }
+  rdiv(rdiv(ldiv(U, U), Z), op(Y, Y)) (peak)
+= { by lemma 19 }
+  rdiv(rdiv(V, op(Z, V)), op(Y, Y)) (peak)
+= { by lemma 18 }
+  rdiv(rdiv(X, op(Z, X)), op(Y, Y)) (peak)
+= { by lemma 22 }
+  rdiv(X, op(Y, op(Y, op(Z, X))))
+
+Lemma 24: op(op(X, op(X, Y)), Z) = op(X, op(X, op(Y, Z))).
+Proof:
+  op(op(X, op(X, Y)), Z)
+= { by lemma 6 R->L }
+  ldiv(rdiv(Z, op(op(X, op(X, Y)), Z)), Z) (peak)
+= { by lemma 23 }
+  ldiv(rdiv(Z, op(X, op(X, op(Y, Z)))), Z)
+= { by lemma 6 }
+  op(X, op(X, op(Y, Z)))
+
+Goal 1 (goal): op(sk_a, op(sk_a, op(sk_b, sk_c))) = op(op(sk_a, op(sk_a, sk_b)), sk_c).
+Proof:
+  op(sk_a, op(sk_a, op(sk_b, sk_c)))
+= { by lemma 24 R->L }
+  op(op(sk_a, op(sk_a, sk_b)), sk_c) (peak)
+
+RESULT: Unsatisfiable (the axioms are contradictory).
