@@ -3,6 +3,30 @@
 Tracks work against `proof_compression_concept_recovery_experiment.md`.
 Started 2026-08-19.
 
+## State at a glance (2026-08-20)
+
+**Phases 0–3 complete; phase 4 is next.** Everything is uncommitted on branch
+`aitp26`.
+
+| | |
+|---|---|
+| Code | `src/corpus/`: `extraction.py`, `erasure.py`, `equiv.py`, `run_phase2.py`, `run_phase3.py`, `analyze_phase3.py`, `build_corpora.py` + 3 test suites (11 + 6 + 8, all passing) |
+| Corpora | `data/corpora/` — 66 files, 209,944 term occurrences (gitignored; rebuild with `build_corpora.py`) |
+| Results | `data/concept_recovery/phase2/`, `phase3/` (`summary.md`, `fallback.md`, per-corpus JSON) |
+| Raw proofs | `data/aim_lc/` (Prover9, plain + `prooftrans expand`), `data/bol_moufang/` (Otter), `data/bml_aim/`; bulky twee dumps gzipped in `$LOG_DIR/aim_lc_twee/` |
+
+**Two headline results.** Phase 2: on the AIM definition-erasure control,
+**Stitch recovers all 5 hidden definitions on all 28 corpora**, and on the
+large ones its top five abstractions *are* the five definitions. Phase 3: on
+the primitive Bol–Moufang corpora **nothing is recovered — because the target
+constructions occur 4 times in 2,109 terms.** They are loop concepts; those
+are quasigroup proofs.
+
+**Before starting phase 4**: run it on the **AIM** corpora, not Bol–Moufang
+(only AIM has concepts to recover). Babble coverage will be limited — it is
+OOM-killed above ~2.6k terms at default beams, while Stitch handles 11k terms
+in seconds.
+
 ## Phase 0: Acquire proof corpora — status
 
 ### AIM / Prover9  — done
@@ -154,11 +178,226 @@ goals) run with the same base flags, max_time 1000s, serial:
 - [x] BM: run twee, retain traces (9/9 proved)
 - [x] bml_aim: run twee, retain traces — 6/6 proved
 
-## Next (Phase 1)
+## Phase 1: Uniform proof-term extraction — done (2026-08-19)
 
-Uniform proof-term extraction across the three proof sources (Prover9 .pf,
-Otter archive, twee traces). The parsed JSONs already expose per-step
-equations for the first two; twee traces already work with
-`src/utils.py::extract_terms`. Remaining: subterm extraction option,
-multiplicity, alpha-normalization (exists: `normalize_fof_term`), and export
-to the Stitch/Babble input formats (exists: `fof_to_lambda`, `fof_to_babble`).
+New module `src/corpus/`:
+
+- `extraction.py` — reduces all three proof sources to one record shape
+  `{term, step, side, is_input}`:
+  - **prover9** (parsed .pf JSONs): a real infix parser (binary `* \ /` with
+    explicit parens, prefix applications like `a(x,z,z \ y)`, atoms). Exactly
+    one depth-0 operator is permitted per level — more is a parse error, not
+    a precedence guess. Variables follow Prover9's actual rule (any symbol
+    starting `u`–`z`, which covers the numbered `v5`–`v8` that appear in big
+    clauses); `1`→`unit`; each equation contributes lhs and rhs as separate
+    records; `is_input` = justification is `assumption`.
+  - **otter** (parsed qbm.json): steps already carry a prefix `tptp`
+    rendering from phase 0; sides are split and alpha-normalized; denials
+    and the final `$F` skipped.
+  - **twee** (raw traces): wraps the existing
+    `src/utils.py::extract_terms` (proof-chain lines); strips the TPTP
+    quoting (`'K'`→`K`) so the signature matches the other sources.
+  - Guarantees, per the spec: top-level terms of proof equations only;
+    **multiplicity preserved** (one record per occurrence, proof order);
+    **alpha-normalization** per term, A,B,C... by first occurrence (both
+    sides of an equation normalize independently);
+  - `stitch_input` / `babble_input` produce the encoder inputs via the
+    existing `fof_to_lambda` / `fof_to_babble`.
+- `test_extraction.py` — 11 tests (bare-assert style, like the other suites).
+- `build_corpora.py` — walks every phase-0 proof and writes
+  `data/corpora/<corpus>/<problem>__<variant>.json` (metadata + records +
+  aligned stitch/babble encodings) and `data/corpora/manifest.json`.
+
+Built: **66 corpora, 209,944 term occurrences, 56 MB** (gitignored;
+regenerable by the script):
+
+| corpus | files | terms (range) |
+|---|---:|---|
+| aim_lc plain | 21 | 862–5,652 per proof |
+| aim_lc expanded | 21 | 1,096–11,398 per proof |
+| bol_moufang otter | 9 | 50–140 |
+| bol_moufang twee | 9 | 23–348 |
+| bml_aim twee | 6 | 659–2,265 |
+
+Verified end to end: `Stitch_Abstractions` and `Babble_Abstractions` both run
+directly on a built corpus (thm7 otter: stitch finds
+`fn_0(A, B) = rdiv(A, op(B, A))`, babble ratio 1.199), and the AIM
+first_sketch corpora contain the associator definition among their input
+records (`ldiv(op(A, op(B, C)), op(op(A, B), C))` and `a(A, B, C)`) — the
+prerequisite for phase 2's definition erasure.
+
+## Phase 2: AIM definition-erasure control — stitch done, babble running (2026-08-19)
+
+New: `src/corpus/erasure.py` (+ 6 tests in `test_erasure.py`), driver
+`src/corpus/run_phase2.py`, results in `data/concept_recovery/phase2/`.
+
+**Erasure**: every occurrence of `a/K/L/R/T` in every corpus term is unfolded
+into its definition (bottom-up, so `L(R(u,x,y),z,w)` unfolds fully; terms are
+re-alpha-normalized because unfolding changes first-occurrence order — K swaps
+its arguments' roles). The five defining equations' records are then dropped
+(after unfolding they would be trivial `t = t` pairs injecting the answer
+verbatim). Defining steps are detected structurally (input step with a bare
+`sym(distinct vars)` side), not by hard-coded step ids. Erased corpora contain
+no occurrence of any derived symbol (asserted in tests against real corpora).
+
+**Recovery criterion**: an engine's abstraction body, alpha-normalized, equals
+the hidden definition body ("alpha"), or contains it as a subterm ("subterm").
+Rank = position in the engine's own ranked abstraction list.
+
+### Stitch result: 5/5 on all 28 corpora
+
+Stitch (iterations 10, max_arity 3, 0.6–4s per corpus) recovers **all five
+hidden definitions as whole abstraction bodies on every corpus** — both
+sketches, all 7 goals, plain and expanded. All matches are alpha-equivalent,
+all within the top 8. On the larger corpora (Ka/aa*) the **top five
+abstractions are exactly the five definitions**, e.g. first_sketch aa1:
+
+    rank 1  fn_0(A,B,C) = ldiv(op(C, op(B, A)), op(op(C, B), A))   = a
+    rank 2  fn_1(A,B,C) = ldiv(op(C, B), op(C, op(B, A)))          = L
+    rank 3  fn_2(A,B)   = ldiv(op(A, B), op(B, A))                 = K
+    rank 4  fn_3(A,B)   = ldiv(A, op(B, A))                        = T
+    rank 5  fn_4(A,B,C) = rdiv(op(op(C, B), A), op(B, A))          = R
+
+Rank patterns (full table: `data/concept_recovery/phase2/summary.md`):
+
+- **Corpus size matters more than presentation.** Small corpora (aK1–aK3,
+  660–2610 terms): L@1, a@2–3, K last (@5–8). Large corpora (Ka/aa*): a@1,
+  L@2, K@3, T@4, R@5 — identical across first_sketch, second_sketch, and
+  both expanded variants.
+- **Answer to the phase-2 question**: proof presentation (hints vs none,
+  demodulation-free vs not, expanded vs compact) barely affects stitch
+  recovery — ranks shift by at most 1–2, membership never changes. The
+  control behaves exactly as a control should.
+
+### Babble (no theory): scaling limits + partial result
+
+Babble at default beams (400) is infeasible on these corpora: 852 terms did
+not finish one round in 600s, and 4014 terms was OOM-killed (exit -9,
+macOS SIGKILL). At **beams 25** it becomes feasible: 69s/round on 852 terms,
+and its rank-1 abstraction is exactly L's definition. The babble pass
+(beams 25, 5 rounds — so at most five abstractions learned — timeout 1200s)
+over the six smallest corpora, ~3–7 min each:
+
+| corpus | terms | babble recovered (rank) |
+|---|---:|---|
+| first_sketch aK1 | 1290 | T@1, K@2, a@3, R@4, L@5 — **5/5** |
+| first_sketch aK2 | 1290 | L@1, K@2, a@3, R@4, T@5 — **5/5** |
+| first_sketch aK3 | 2610 | failed (killed ~73s; OOM, as on the 4k corpora) |
+| second_sketch aK1 | 852 | R@2, a@3, L@4, T@5 — 4/5, K missing |
+| second_sketch aK2 | 854 | a@1, L@2, T@3, R@5 — 4/5, K missing |
+| second_sketch aK3 | 982 | T@1, a@2, L@4, R@5 — 4/5, K missing |
+
+Where babble completes, it recovers 4–5 of the 5 hidden definitions within
+its five slots. The consistent miss is instructive: on every second_sketch
+corpus one slot goes to `fn(A,B) = op(A, op(A, B))` — the `x*(x*y)` pattern of
+the **LC axiom** — which babble's e-graph-wide utility ranks above the
+commutator K (K has only 72–91 occurrences there, vs 110+ in first_sketch,
+where K makes the cut at rank 2). So the one visible presentation effect in
+phase 2 belongs to babble, not stitch: the demodulation-free presentation
+shifts frequency mass from K's body to the LC pattern.
+
+Metrics stored per corpus in `data/concept_recovery/phase2/<name>.json`:
+recovery {rank, match}, top-30 abstractions (uninterpreted ones included),
+compression ratio (babble), timing, and `target_occurrences` — how often each
+hidden body occurs as a subterm in the erased corpus (T up to 3,170; R as low
+as 20). The occurrence counts explain the rank patterns: `a` ranks first on
+large corpora despite middling frequency because its body is the largest, so
+each use compresses more.
+
+## Phase 3: primitive Bol–Moufang recovery — done (2026-08-20)
+
+New: `src/corpus/equiv.py` (+ 8 tests), driver `src/corpus/run_phase3.py`,
+recheck `recheck_phase3_equational.py`, analysis `analyze_phase3.py`.
+Results in `data/concept_recovery/phase3/` (`summary.md`, `fallback.md`).
+
+No erasure here — these are primitive quasigroup proofs over `{*, \, /}` in
+which the loop-theoretic concepts were never named. Both engines were run on
+all 18 corpora (9 theorems × Otter + twee), matching in three tiers:
+
+    alpha       body alpha-equivalent to the construction
+    subterm     construction occurs inside a larger body
+    equational  provably equal under the problem's own axioms
+
+The third tier is the spec's "provably equivalent under the background
+equations", automated: each (body, construction) pair becomes a TPTP unit
+equality problem discharged by **twee itself**, tried over every permutation
+of the construction's variables. Matching runs on `expand_abstractions`-ed
+bodies (so a construction assembled from nested `fn_i` still counts) while
+ranks stay tied to each engine's own raw list.
+
+### Result: nothing recovered, and the reason is not the compressors
+
+**No standard construction is recovered on any of the 18 corpora, at any tier,
+by either engine.** The explanation is in `fallback.md`: across all 18 corpora
+and 2,109 term occurrences, the five constructions occur as subterms a total
+of **four times** — `T` three times, `L` once, and `a`, `K`, `R` never.
+
+| construction | occurrences in all 18 primitive corpora |
+|---|---:|
+| a (associator) | 0 |
+| K (commutator) | 0 |
+| L | 1 |
+| R | 0 |
+| T | 3 |
+
+A compressor cannot abstract a pattern the proofs never build. The deeper
+reason is a corpus-choice issue worth recording: **the associator, commutator
+and the L/R/T inner mappings are *loop* concepts, presupposing an identity
+element, whereas these are *quasigroup* theorems** — two of them (thm3, thm4)
+are literally proving that an identity exists. The Bol–Moufang corpus was
+picked for being primitive, but primitiveness cut both ways: it is primitive
+*below* the level at which the target concepts are definable.
+
+**This negative result is warranted, not an artifact.** `test_equiv.py`
+establishes that the tier-3 checker fires when a construction really is
+present: a body equal to `R` the long way round
+(`rdiv(op(op(rdiv(op(A,B),B),B),C), op(B,C))`, using `op(rdiv(op(A,B),B),B) =
+op(A,B)`) is proved equivalent with its witness returned, a false pair is
+rejected, and the whole tier fires end to end through the matcher. A first
+pass had a 60s tier-3 budget that was exhausted on 22 of 36 runs, so its "no
+match" was only partial; the recheck re-ran those with a 240s budget and a
+per-problem memo — **every run now completes the equational tier**, and the
+verdict is unchanged.
+
+### Fallback: what *did* emerge
+
+Per the spec's instruction to inspect the highest-ranking repeated
+constructions instead, the concept that emerges is the **local identity**
+`x\x` / `x/x` — the quasigroup stand-in for the identity element — and it
+emerges exactly where the mathematics says it should:
+
+- **rank 1** for both engines on `thm3__twee` ("Every LG2 quasigroup is a
+  right loop") and rank 1 for stitch on `thm4__twee` ("Every LC3 quasigroup is
+  a left loop") — the two theorems whose entire content is that an identity
+  exists. On thm4 stitch's top abstraction is the nested
+  `ldiv(rdiv(A, A), rdiv(A, A))`, i.e. `(x/x)\(x/x)`.
+- top-4 on 13 of the 18 corpora.
+
+Also recurrent across corpora (7 of 36 runs put it in the top 5) is
+`rdiv(A, op(B, A))` — which is `T`'s body with right division substituted for
+left, the mirror of the `T` inner mapping adapted to a setting with no
+identity. So the engines do find structural analogues of the targets, fitted
+to the quasigroup signature, rather than the loop-theoretic originals.
+
+So the answer to the phase-3 question — *do human loop-theoretic concepts
+emerge from proofs in which those concepts were never named?* — is: **not
+these concepts from these proofs**, because the proofs never construct them;
+but the engines do surface the concept each proof is actually about.
+
+### Known limitation
+
+The equational tier only compares bodies with the **same number of
+variables** (`test_differing_variable_counts_are_skipped` pins this). An
+abstraction equal to a construction but carrying an eliminable extra variable
+would be missed. Given the occurrence counts above this cannot account for the
+negative result, but it is a real gap if the tier is reused elsewhere.
+
+## Next
+
+- **Phase 4** (Stitch vs Babble, incl. babble-modulo-theory) is now the main
+  remaining item. Note the AIM corpora are the ones with concepts to recover,
+  so phase 4's theory experiments belong there rather than on Bol–Moufang.
+- Optional: a corpus whose proofs *are* loop-theoretic but leave the concepts
+  unnamed would be the real test of the phase-3 question; `data/bml_aim`
+  (6 twee proofs, AIM signature) is the closest available candidate and has
+  not yet been compressed.

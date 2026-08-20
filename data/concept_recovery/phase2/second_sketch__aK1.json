@@ -1,0 +1,93 @@
+{
+ "corpus": "second_sketch__aK1",
+ "n_terms": 852,
+ "n_dropped_definition_records": 10,
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 0.6,
+   "n_abstractions": 10,
+   "recovered": {
+    "L": {
+     "rank": 1,
+     "match": "alpha",
+     "abstraction": "fn_0(A, B, C) = ldiv(op(C, B), op(C, op(B, A)))"
+    },
+    "R": {
+     "rank": 2,
+     "match": "alpha",
+     "abstraction": "fn_1(A, B, C) = rdiv(op(op(C, B), A), op(B, A))"
+    },
+    "a": {
+     "rank": 3,
+     "match": "alpha",
+     "abstraction": "fn_2(A, B, C) = ldiv(op(C, op(B, A)), op(op(C, B), A))"
+    },
+    "T": {
+     "rank": 5,
+     "match": "alpha",
+     "abstraction": "fn_4(A, B) = ldiv(A, op(B, A))"
+    },
+    "K": {
+     "rank": 7,
+     "match": "alpha",
+     "abstraction": "fn_6(A, B) = ldiv(op(A, B), op(B, A))"
+    }
+   },
+   "top_abstractions": [
+    "fn_0(A, B, C) = ldiv(op(C, B), op(C, op(B, A)))",
+    "fn_1(A, B, C) = rdiv(op(op(C, B), A), op(B, A))",
+    "fn_2(A, B, C) = ldiv(op(C, op(B, A)), op(op(C, B), A))",
+    "fn_3(A, B, C) = op(C, op(B, A))",
+    "fn_4(A, B) = ldiv(A, op(B, A))",
+    "fn_5(A) = ldiv(A, unit)",
+    "fn_6(A, B) = ldiv(op(A, B), op(B, A))",
+    "fn_7(A, B, C, D, E, F, G) = fn_0(fn_0(fn_0(G, D, C), F, E), rdiv(B, fn_0(fn_0(G, F, E), D, C)), A)",
+    "fn_8(A, B, C) = fn_0(A, C, B)",
+    "fn_9(A, B) = fn_3(B, A, A)"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 287.7,
+   "n_abstractions": 5,
+   "recovered": {
+    "R": {
+     "rank": 2,
+     "match": "alpha",
+     "abstraction": "fn_1(A, B, C) = rdiv(op(op(A, B), C), op(B, C))"
+    },
+    "a": {
+     "rank": 3,
+     "match": "alpha",
+     "abstraction": "fn_2(A, B, C) = ldiv(op(A, op(B, C)), op(op(A, B), C))"
+    },
+    "L": {
+     "rank": 4,
+     "match": "alpha",
+     "abstraction": "fn_3(A, B, C) = ldiv(op(A, B), op(A, op(B, C)))"
+    },
+    "T": {
+     "rank": 5,
+     "match": "alpha",
+     "abstraction": "fn_4(A, B) = ldiv(A, op(B, A))"
+    }
+   },
+   "top_abstractions": [
+    "fn_0(A, B) = op(A, op(A, B))",
+    "fn_1(A, B, C) = rdiv(op(op(A, B), C), op(B, C))",
+    "fn_2(A, B, C) = ldiv(op(A, op(B, C)), op(op(A, B), C))",
+    "fn_3(A, B, C) = ldiv(op(A, B), op(A, op(B, C)))",
+    "fn_4(A, B) = ldiv(A, op(B, A))"
+   ],
+   "compression_ratio": 1.6653990024937655
+  }
+ },
+ "target_occurrences": {
+  "a": 13,
+  "K": 72,
+  "L": 122,
+  "R": 20,
+  "T": 73
+ }
+}

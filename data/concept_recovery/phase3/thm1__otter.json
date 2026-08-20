@@ -1,0 +1,66 @@
+{
+ "problem": "thm1",
+ "prover": "otter",
+ "n_terms": 126,
+ "statement": "Let Q be a quasigroup satisfying D14. Then it satisfies F14.",
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 3
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 61.0,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B, C) = op(C, op(B, A))",
+    "fn_1(A) = ldiv(A, A)",
+    "fn_2(A, B, C) = op(C, fn_0(C, B, A))",
+    "fn_3(A, B) = rdiv(A, op(B, A))",
+    "fn_4(A, B) = op(op(A, B), A)",
+    "fn_5(A, B) = ldiv(B, fn_1(A))",
+    "fn_6(A, B, C) = A(op(B, C), B)",
+    "fn_7(A, B) = fn_0(B, fn_1(A), fn_1(A))",
+    "fn_8(A, B, C, D) = B(C, A(C, D))",
+    "fn_9(A, B, C) = fn_0(C, rdiv(B, op(C, A)), A)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(C, op(B, A))",
+    "fn_1 = ldiv(A, A)",
+    "fn_2 = op(C, op(A, op(B, C)))",
+    "fn_3 = rdiv(A, op(B, A))",
+    "fn_4 = op(op(A, B), A)",
+    "fn_5 = ldiv(B, ldiv(A, A))",
+    "fn_7 = op(ldiv(A, A), op(ldiv(A, A), B))",
+    "fn_9 = op(A, op(rdiv(B, op(C, A)), C))"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 70.7,
+   "n_abstractions": 5,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A) = ldiv(A, A)",
+    "fn_1(A, B, C) = op(A, op(B, C))",
+    "fn_2(A, B, C) = op(C, fn_1(C, A, B))",
+    "fn_3(A, B) = rdiv(A, op(B, A))",
+    "fn_4(A, B) = op(op(B, A), B)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = ldiv(A, A)",
+    "fn_1 = op(A, op(B, C))",
+    "fn_2 = op(C, op(C, op(A, B)))",
+    "fn_3 = rdiv(A, op(B, A))",
+    "fn_4 = op(op(B, A), B)"
+   ],
+   "compression_ratio": 1.2327806122448979
+  }
+ }
+}

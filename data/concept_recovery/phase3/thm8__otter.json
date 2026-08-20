@@ -1,0 +1,64 @@
+{
+ "problem": "thm8",
+ "prover": "otter",
+ "n_terms": 86,
+ "statement": "An LC1 quasigroup is an LBQ quasigroup.",
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 61.2,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B) = op(rdiv(B, op(A, A)), A)",
+    "fn_1(A, B) = op(B, A)",
+    "fn_2(A, B) = op(rdiv(B, A), op(A, A))",
+    "fn_3(A, B) = rdiv(ldiv(A, A), B)",
+    "fn_4(A, B, C) = op(op(C, B), A)",
+    "fn_5(A) = ldiv(A, A)",
+    "fn_6(A) = op(A, A)",
+    "fn_7(A, B, C) = A(B, C)",
+    "fn_8(A, B, C, D, E) = B(E, A(C, D))",
+    "fn_9(A, B, C) = op(rdiv(C, B), A)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(rdiv(B, op(A, A)), A)",
+    "fn_1 = op(B, A)",
+    "fn_2 = op(rdiv(B, A), op(A, A))",
+    "fn_3 = rdiv(ldiv(A, A), B)",
+    "fn_4 = op(op(C, B), A)",
+    "fn_5 = ldiv(A, A)",
+    "fn_6 = op(A, A)",
+    "fn_9 = op(rdiv(C, B), A)"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 30.2,
+   "n_abstractions": 5,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B) = op(rdiv(A, B), op(B, B))",
+    "fn_1(A, B) = op(rdiv(A, op(B, B)), B)",
+    "fn_2(A, B) = rdiv(ldiv(A, A), B)",
+    "fn_3(A, B) = op(A, B(A))",
+    "fn_4(A, B, C, D) = op(op(A, op(B, C)), D(C, B, A))"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(rdiv(A, B), op(B, B))",
+    "fn_1 = op(rdiv(A, op(B, B)), B)",
+    "fn_2 = rdiv(ldiv(A, A), B)"
+   ],
+   "compression_ratio": 1.2209543568464731
+  }
+ }
+}

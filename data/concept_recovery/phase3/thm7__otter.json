@@ -1,0 +1,62 @@
+{
+ "problem": "thm7",
+ "prover": "otter",
+ "n_terms": 50,
+ "statement": "An LC4 quasigroup is an LC2 quasigroup.",
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 55.3,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B) = rdiv(A, op(B, A))",
+    "fn_1(A, B, C) = op(C, op(B, A))",
+    "fn_2(A) = fn_0(A, A)",
+    "fn_3(A, B, C, D) = fn_1(C, A, rdiv(D, B(A, A)))",
+    "fn_4(A, B, C) = A(B, C)",
+    "fn_5(A, B) = fn_1(B, A, A)",
+    "fn_6(A, B, C, D) = op(B, A(C, D))",
+    "fn_7(A, B, C) = op(fn_1(B, B, A), C)",
+    "fn_8(A, B, C) = fn_1(C, A, B(A))",
+    "fn_9(A, B) = fn_3(A, op, B)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = rdiv(A, op(B, A))",
+    "fn_1 = op(C, op(B, A))",
+    "fn_2 = rdiv(A, op(A, A))",
+    "fn_5 = op(A, op(A, B))",
+    "fn_7 = op(op(A, op(B, B)), C)"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 56.6,
+   "n_abstractions": 5,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B) = op(A, B(A))",
+    "fn_1(A, B) = fn_2(A, B, B)",
+    "fn_2(A, B, C) = op(A, op(B, C))",
+    "fn_3(A, B) = rdiv(A, op(B, A))",
+    "fn_4(A) = fn_3(A, A)"
+   ],
+   "expanded_abstractions": [
+    "fn_1 = op(A, op(B, B))",
+    "fn_2 = op(A, op(B, C))",
+    "fn_3 = rdiv(A, op(B, A))",
+    "fn_4 = rdiv(A, op(A, A))"
+   ],
+   "compression_ratio": 1.23121387283237
+  }
+ }
+}

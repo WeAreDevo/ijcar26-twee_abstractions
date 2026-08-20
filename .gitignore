@@ -26,6 +26,9 @@ data/experiments/*/*.json
 # Scratch files written by the pipeline
 data/experiments/*/tmp
 
+# Derived term corpora, regenerable via `python src/corpus/build_corpora.py`
+data/corpora/
+
 # ---------------------------------------------------------------------------
 # OS / editor
 # ---------------------------------------------------------------------------

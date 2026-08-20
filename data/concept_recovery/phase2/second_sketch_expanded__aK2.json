@@ -1,0 +1,58 @@
+{
+ "corpus": "second_sketch_expanded__aK2",
+ "n_terms": 1090,
+ "n_dropped_definition_records": 10,
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 0.6,
+   "n_abstractions": 10,
+   "recovered": {
+    "L": {
+     "rank": 1,
+     "match": "alpha",
+     "abstraction": "fn_0(A, B, C) = ldiv(op(C, B), op(C, op(B, A)))"
+    },
+    "R": {
+     "rank": 2,
+     "match": "alpha",
+     "abstraction": "fn_1(A, B, C) = rdiv(op(op(C, B), A), op(B, A))"
+    },
+    "a": {
+     "rank": 3,
+     "match": "alpha",
+     "abstraction": "fn_2(A, B, C) = ldiv(op(C, op(B, A)), op(op(C, B), A))"
+    },
+    "T": {
+     "rank": 5,
+     "match": "alpha",
+     "abstraction": "fn_4(A, B) = ldiv(A, op(B, A))"
+    },
+    "K": {
+     "rank": 8,
+     "match": "alpha",
+     "abstraction": "fn_7(A, B) = ldiv(op(A, B), op(B, A))"
+    }
+   },
+   "top_abstractions": [
+    "fn_0(A, B, C) = ldiv(op(C, B), op(C, op(B, A)))",
+    "fn_1(A, B, C) = rdiv(op(op(C, B), A), op(B, A))",
+    "fn_2(A, B, C) = ldiv(op(C, op(B, A)), op(op(C, B), A))",
+    "fn_3(A, B, C) = op(C, op(B, A))",
+    "fn_4(A, B) = ldiv(A, op(B, A))",
+    "fn_5(A) = ldiv(A, unit)",
+    "fn_6(A, B, C, D, E, F, G) = fn_0(fn_0(fn_0(G, D, C), F, E), rdiv(B, fn_0(fn_0(G, F, E), D, C)), A)",
+    "fn_7(A, B) = ldiv(op(A, B), op(B, A))",
+    "fn_8(A, B, C) = fn_0(A, C, B)",
+    "fn_9(A, B, C) = C(ldiv(A, B), A)"
+   ]
+  }
+ },
+ "target_occurrences": {
+  "a": 15,
+  "K": 91,
+  "L": 154,
+  "R": 24,
+  "T": 101
+ }
+}

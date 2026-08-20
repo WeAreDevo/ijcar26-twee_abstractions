@@ -1,0 +1,62 @@
+{
+ "problem": "thm4",
+ "prover": "twee",
+ "n_terms": 47,
+ "statement": "Every LC3 quasigroup is a left loop.",
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 57.8,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A) = ldiv(rdiv(A, A), rdiv(A, A))",
+    "fn_1(A, B) = op(op(A, A), B)",
+    "fn_2(A, B) = op(B, op(B, A))",
+    "fn_3(A, B, C) = C(rdiv(A, B), rdiv(B, A))",
+    "fn_4(A, B, C) = A(fn_0(B), rdiv(C, C))",
+    "fn_5(A, B, C) = op(rdiv(B, A), C)",
+    "fn_6(A) = rdiv(A, A)",
+    "fn_7(A, B) = rdiv(op(B, A), A)",
+    "fn_8(A, B, C) = fn_3(B, C, A)",
+    "fn_9(A, B, C) = rdiv(fn_2(B, A), C)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = ldiv(rdiv(A, A), rdiv(A, A))",
+    "fn_1 = op(op(A, A), B)",
+    "fn_2 = op(B, op(B, A))",
+    "fn_5 = op(rdiv(B, A), C)",
+    "fn_6 = rdiv(A, A)",
+    "fn_7 = rdiv(op(B, A), A)",
+    "fn_9 = rdiv(op(A, op(A, B)), C)"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 19.3,
+   "n_abstractions": 5,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B, C) = A(rdiv(B, C), rdiv(C, B))",
+    "fn_1(A, B) = A(rdiv(B, B), rdiv(B, B))",
+    "fn_2(A, B, C) = C(B, A, fn_1(ldiv, A), rdiv(B, B))",
+    "fn_3(A, B) = op(op(A, A), B)",
+    "fn_4(A, B) = op(A, op(A, B))"
+   ],
+   "expanded_abstractions": [
+    "fn_3 = op(op(A, A), B)",
+    "fn_4 = op(A, op(A, B))"
+   ],
+   "compression_ratio": 1.3915094339622642
+  }
+ }
+}

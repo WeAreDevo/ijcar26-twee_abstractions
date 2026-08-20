@@ -1,0 +1,63 @@
+{
+ "problem": "thm9",
+ "prover": "twee",
+ "n_terms": 178,
+ "statement": "An LC1 quasigroup is an LC4 quasigroup.",
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 62.0,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A) = op(A, A)",
+    "fn_1(A, B, C) = rdiv(C, ldiv(B, A))",
+    "fn_2(A, B) = fn_1(ldiv(rdiv(ldiv(B, B), A), A))",
+    "fn_3(A, B, C, D) = ldiv(D, C(op(D, B), A))",
+    "fn_4(A, B, C) = op(rdiv(B, A), C)",
+    "fn_5(A, B, C, D) = ldiv(C, op(C, fn_4(B, D, A)))",
+    "fn_6(A, B, C) = C(op(B, C(B, A)), A)",
+    "fn_7(A, B, C) = op(C, ldiv(B, A))",
+    "fn_8(A, B) = ldiv(rdiv(B, A), A)",
+    "fn_9(A, B, C) = fn_1(B, A, C)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(A, A)",
+    "fn_1 = rdiv(C, ldiv(B, A))",
+    "fn_4 = op(rdiv(B, A), C)",
+    "fn_5 = ldiv(C, op(C, op(rdiv(D, B), A)))",
+    "fn_7 = op(C, ldiv(B, A))",
+    "fn_8 = ldiv(rdiv(B, A), A)",
+    "fn_9 = rdiv(C, ldiv(A, B))"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 108.9,
+   "n_abstractions": 5,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B, C) = op(rdiv(A, B), C)",
+    "fn_1(A) = op(A, A)",
+    "fn_2(A, B) = ldiv(A, B(A))",
+    "fn_3(A, B, C, D) = rdiv(B, ldiv(A, ldiv(rdiv(ldiv(D, D), C), C)))",
+    "fn_4(A, B) = rdiv(A, B(A))"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(rdiv(A, B), C)",
+    "fn_1 = op(A, A)",
+    "fn_3 = rdiv(B, ldiv(A, ldiv(rdiv(ldiv(D, D), C), C)))"
+   ],
+   "compression_ratio": 1.1505134788189988
+  }
+ }
+}

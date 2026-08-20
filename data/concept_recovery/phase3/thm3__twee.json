@@ -1,0 +1,65 @@
+{
+ "problem": "thm3",
+ "prover": "twee",
+ "n_terms": 23,
+ "statement": "Every LG2 quasigroup is a right loop.",
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 62.2,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A) = ldiv(A, A)",
+    "fn_1(A, B, C) = op(op(C, B), op(A, A))",
+    "fn_2(A, B) = ldiv(B, op(B, A))",
+    "fn_3(A, B, C) = rdiv(fn_1(A, C, B), A)",
+    "fn_4(A, B, C) = rdiv(op(op(C, B), A), A)",
+    "fn_5(A, B) = op(B, A)",
+    "fn_6(A, B, C) = B(op(C, A))",
+    "fn_7(A, B, C, D) = op(op(D, C), ldiv(B, A))",
+    "fn_8(A) = fn_0(A)",
+    "fn_9(A, B) = fn_2(A, B)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = ldiv(A, A)",
+    "fn_1 = op(op(C, B), op(A, A))",
+    "fn_2 = ldiv(B, op(B, A))",
+    "fn_3 = rdiv(op(op(B, C), op(A, A)), A)",
+    "fn_4 = rdiv(op(op(C, B), A), A)",
+    "fn_5 = op(B, A)",
+    "fn_7 = op(op(D, C), ldiv(B, A))",
+    "fn_8 = ldiv(A, A)",
+    "fn_9 = ldiv(B, op(B, A))"
+   ]
+  },
+  "babble": {
+   "status": "ok",
+   "seconds": 47.8,
+   "n_abstractions": 4,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A) = ldiv(A, A)",
+    "fn_1(A, B) = ldiv(A, op(A, B))",
+    "fn_2(A, B, C) = op(op(B, A), C)",
+    "fn_3(A) = op(A, A)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = ldiv(A, A)",
+    "fn_1 = ldiv(A, op(A, B))",
+    "fn_2 = op(op(B, A), C)",
+    "fn_3 = op(A, A)"
+   ],
+   "compression_ratio": 1.2206896551724138
+  }
+ }
+}
