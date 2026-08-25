@@ -18,7 +18,9 @@ proving**. Two lines of work share the repo:
    first**, it has a "State at a glance" block.
 
 Compression engines: **Stitch** (pip, default), **babble** (built from source,
-optional), and Herbrand/GAPT decomposition (planned).
+optional), and **GAPT** Herbrand decomposition (`src/gapt/`, see
+`PROGRESS_herbrand.md`) — the last emits a *quantified lemma* rather than a
+term pattern.
 
 ## Setup
 
@@ -34,6 +36,7 @@ python -m venv venv && source venv/bin/activate && pip install -r requirements.t
 TPTP_ROOT=<TPTP root>          LOG_DIR=<bulky logs, outside the repo>
 TWEE_PATH=<twee executable>    LADR_DIR=<LADR-2009-11A>
 BABBLE_ROOT=<third_party/babble>   VAMPIRE_PATH=<vampire>
+GAPT_ROOT=<third_party/gapt-2.19.0>
 ```
 
 ## Landmines (each of these silently produced a wrong result)
@@ -61,6 +64,11 @@ BABBLE_ROOT=<third_party/babble>   VAMPIRE_PATH=<vampire>
   surfaces as `RuntimeError: babble failed (exit -9)`. Use `beams=25`–100.
 - **CPU timing.** `run_twee_on_file` uses `RUSAGE_CHILDREN`, which is
   process-global — only accurate when runs do not share a process.
+- **GAPT needs `prooftrans` on PATH** (`$LADR_DIR/bin`) for any Prover9
+  import; `Prover9Importer.isInstalled` does not check for it and reports
+  `true` regardless. `gapt.cli.CLIMain` swallows exceptions and exits 0, and
+  GAPT's own `withTimeout` does not bound the decomposition — the outer
+  subprocess timeout in `src/gapt/run_gapt.py` is load-bearing.
 
 ## Running things
 
@@ -77,6 +85,9 @@ python src/corpus/run_phase3.py --help      # primitive Bol-Moufang
 python src/corpus/definition_free.py        # build definition-free problems
 python src/corpus/run_phase35.py --help     # run provers + compress
 python src/corpus/analyze_phase35.py        # regenerate summaries
+
+# herbrand/GAPT
+python src/gapt/run_gapt.py <prover9 .out> [--method M] [--timeout S] [--json]
 
 # smoke tests / engine comparison
 python run_stitch.py ; python run_babble.py ; python compare_engines.py
@@ -96,6 +107,7 @@ python src/corpus/test_erasure.py       # definition erasure + recovery matching
 python src/corpus/test_equiv.py         # twee-backed equational matching
 python src/stitch/test_translation.py   # FOF <-> lambda (Stitch)
 python src/babble/test_translation.py   # FOF <-> curried (babble) + theory
+python src/gapt/test_run_gapt.py        # GAPT output parsing (no GAPT needed)
 ```
 
 Several of these exist specifically to **pin conventions** (e.g. that `X2` is a
@@ -114,6 +126,8 @@ depending on generated data skip rather than fail when it is absent.
 | `src/corpus/erasure.py` | Unfold/erase `a,K,L,R,T`; match learned abstractions |
 | `src/corpus/equiv.py` | "Provably equal under the axioms?" discharged by twee |
 | `src/corpus/definition_free.py` | Delete definitions from problem *inputs* |
+| `src/gapt/cutintro.scala` | GAPT harness: Prover9 proof → decomposition → lemma |
+| `src/gapt/run_gapt.py` | Wrapper: PATH fix, outer timeout, output parsing |
 | `src/utils.py` | Twee subprocess, proof parsing, normalization, TPTP helpers |
 
 All corpora share one signature: `op` / `ldiv` / `rdiv` / `unit` / `zero`.
