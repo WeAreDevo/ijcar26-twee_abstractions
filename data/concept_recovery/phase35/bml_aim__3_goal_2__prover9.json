@@ -1,0 +1,58 @@
+{
+ "corpus": "bml_aim",
+ "problem": "3_goal_2",
+ "prover": "prover9",
+ "prover_status": "search_failed",
+ "proved": false,
+ "prover_seconds": 61.9,
+ "n_terms": 204,
+ "n_distinct_terms": 165,
+ "n_input_terms": 0,
+ "n_derived_terms": 204,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 44
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 62.6,
+   "n_abstractions": 10,
+   "recovered": {
+    "T": {
+     "rank": 2,
+     "match": "alpha",
+     "abstraction": "fn_1 = ldiv(A, op(B, A))"
+    }
+   },
+   "equational_budget_exhausted": true,
+   "top_abstractions": [
+    "fn_0(A, B, C) = op(C, op(B, A))",
+    "fn_1(A, B) = ldiv(A, op(B, A))",
+    "fn_2(A, B) = ldiv(ldiv(B, A), A)",
+    "fn_3(A, B, C) = op(fn_0(B, A, C), C)",
+    "fn_4(A, B, C) = op(op(B, A), C)",
+    "fn_5(A, B, C, D) = fn_4(fn_0(C, B, A), D, D)",
+    "fn_6(A, B) = fn_0(B, A, op(B, A))",
+    "fn_7(A) = ldiv(A, one)",
+    "fn_8(A, B, C) = ldiv(op(B, C), fn_0(C, B, A))",
+    "fn_9(A, B, C) = op(fn_0(fn_0(A, ldiv(A, B), C), B, A), fn_2(B, A))"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(C, op(B, A))",
+    "fn_1 = ldiv(A, op(B, A))",
+    "fn_2 = ldiv(ldiv(B, A), A)",
+    "fn_3 = op(op(C, op(A, B)), C)",
+    "fn_4 = op(op(B, A), C)",
+    "fn_5 = op(op(D, op(A, op(B, C))), D)",
+    "fn_6 = op(op(B, A), op(A, B))",
+    "fn_7 = ldiv(A, one)",
+    "fn_8 = ldiv(op(B, C), op(A, op(B, C)))",
+    "fn_9 = op(op(A, op(B, op(C, op(ldiv(A, B), A)))), ldiv(ldiv(A, B), B))"
+   ]
+  }
+ }
+}

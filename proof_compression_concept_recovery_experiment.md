@@ -139,6 +139,14 @@ If associator/commutator recovery is unrealistic for a selected theorem, retain 
 
 ---
 
+### Phase 3.5
+
+Phase 3 was not very succesful because perhaps the concepts we are matching agains are not actually that relevant to the problems.
+So, in this phase let us look at aim_lc and bml_aim problems with the defined concepts ommitted from the input. 
+Of course then we might expect the proofs to be intractable to find, so only let the provers (twee and prover9) run for 60s each and then look at partial proofs if no proof found.
+We can look at easier goals, e.g. hints provided in data/aim_lc/second_sketch.in, such as "Moufang (M1)" or "LC".
+
+
 ## Phase 4: Stitch vs Babble
 
 Run:

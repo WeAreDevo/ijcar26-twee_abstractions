@@ -38,7 +38,9 @@ if project_root.as_posix() not in sys.path:
 from src.utils import extract_terms, normalize_fof_term
 
 INFIX_OPS = {'*': 'op', '\\': 'ldiv', '/': 'rdiv'}
-CONSTANT_MAP = {'1': 'unit', '0': 'zero'}
+# 'e0' is the definition-free encoding of `zero` (see definition_free.py):
+# `zero` itself begins with `z` and would be read as a variable.
+CONSTANT_MAP = {'1': 'unit', '0': 'zero', 'e': 'unit', 'e0': 'zero'}
 ATOM_RE = re.compile(r"[A-Za-z0-9_']+")
 APPLICATION_RE = re.compile(r"([A-Za-z0-9_']+)\((.*)\)", re.DOTALL)
 
@@ -177,6 +179,54 @@ def terms_from_otter_theorem(theorem: dict) -> list:
                 "step": str(step["id"]),
                 "side": side,
                 "is_input": step["is_input"],
+            })
+    return records
+
+
+# Prover9 reserves `op`, so definition-free problems are posed over renamed
+# symbols (see src/corpus/definition_free.py); undo that here so proof terms
+# land in the same signature as every other source.
+PROVER9_TO_TPTP = {"mult": "op", "ld": "ldiv", "rd": "rdiv"}
+KEPT_RE = re.compile(r'^kept:\s+\d+\s+(.*?)\.\s*\[(.*)\]\.?\s*$')
+
+
+def rename_prover9_symbols(term: str) -> str:
+    """Rename the function symbols only.
+
+    The identity constant `e` is deliberately left alone and mapped by
+    CONSTANT_MAP at render time: renaming it to `unit` here would hand the
+    parser a symbol starting with `u`, which Prover9's variable rule treats
+    as a variable.
+    """
+    for source, target in PROVER9_TO_TPTP.items():
+        term = re.sub(rf'\b{source}\b(?=\()', target, term)
+    return term
+
+
+def terms_from_prover9_kept(text: str) -> list:
+    """Term records from a Prover9 run's `kept:` clauses (`set(print_kept)`).
+
+    This is the Prover9 analogue of a twee partial proof: when the search
+    fails, the kept clauses are what it managed to derive. Non-equations and
+    clauses containing a negated literal are skipped, matching the other
+    sources.
+    """
+    records = []
+    for line in text.splitlines():
+        match = KEPT_RE.match(line)
+        if not match:
+            continue
+        body, justification = match.groups()
+        body = body.split("#", 1)[0].strip()
+        if "|" in body or "!=" in body or "=" not in body:
+            continue
+        lhs, rhs = split_equation(rename_prover9_symbols(body))
+        for side, text_side in (("lhs", lhs), ("rhs", rhs)):
+            records.append({
+                "term": prover9_tree_to_fof(parse_prover9_term(text_side)),
+                "step": None,
+                "side": side,
+                "is_input": justification == "assumption",
             })
     return records
 

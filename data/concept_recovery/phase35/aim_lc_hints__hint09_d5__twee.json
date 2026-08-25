@@ -1,0 +1,49 @@
+{
+ "corpus": "aim_lc_hints",
+ "problem": "hint09_d5",
+ "prover": "twee",
+ "prover_status": "proved",
+ "proved": true,
+ "prover_seconds": 0.9,
+ "n_terms": 240,
+ "n_distinct_terms": 203,
+ "n_input_terms": 0,
+ "n_derived_terms": 240,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 4
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 61.7,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": true,
+   "top_abstractions": [
+    "fn_0(A, B) = op(op(A, B), A)",
+    "fn_1(A, B, C) = op(C, op(C, op(A, fn_0(B, A))))",
+    "fn_2(A, B, C) = op(C, op(B, A))",
+    "fn_3(A, B, C) = op(A, fn_2(C, A, op(op(B, A), A)))",
+    "fn_4(A, B) = op(A, B(A))",
+    "fn_5(A, B, C) = ldiv(B, C(B, A))",
+    "fn_6(A, B, C) = op(fn_2(B, A, A), C)",
+    "fn_7(A, B, C) = C(B, ldiv(B, A))",
+    "fn_8(A, B, C) = fn_2(fn_0(A, C), B, A)",
+    "fn_9(A, B, C) = ldiv(C, op(B, A))"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(op(A, B), A)",
+    "fn_1 = op(C, op(C, op(A, op(op(B, A), B))))",
+    "fn_2 = op(C, op(B, A))",
+    "fn_3 = op(A, op(op(op(B, A), A), op(A, C)))",
+    "fn_6 = op(op(A, op(A, B)), C)",
+    "fn_8 = op(A, op(B, op(op(A, C), A)))",
+    "fn_9 = ldiv(C, op(B, A))"
+   ]
+  }
+ }
+}

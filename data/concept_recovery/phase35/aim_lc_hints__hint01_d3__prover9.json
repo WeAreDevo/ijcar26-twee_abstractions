@@ -1,0 +1,42 @@
+{
+ "corpus": "aim_lc_hints",
+ "problem": "hint01_d3",
+ "prover": "prover9",
+ "prover_status": "proved",
+ "proved": true,
+ "prover_seconds": 0.0,
+ "n_terms": 14,
+ "n_distinct_terms": 10,
+ "n_input_terms": 6,
+ "n_derived_terms": 8,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 61.4,
+   "n_abstractions": 7,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B, C) = rdiv(op(B, op(C, op(B, A))), A)",
+    "fn_1(A, B) = op(op(A, B), A)",
+    "fn_2(A, B) = op(A, op(B, A))",
+    "fn_3(A, B, C) = A(B, C)",
+    "fn_4(A) = fn_3(fn_0(A))",
+    "fn_5 = fn_3(fn_1)",
+    "fn_6(A) = A(c1, c2)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = rdiv(op(B, op(C, op(B, A))), A)",
+    "fn_1 = op(op(A, B), A)",
+    "fn_2 = op(A, op(B, A))"
+   ]
+  }
+ }
+}

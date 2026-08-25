@@ -392,10 +392,212 @@ abstraction equal to a construction but carrying an eliminable extra variable
 would be missed. Given the occurrence counts above this cannot account for the
 negative result, but it is a real gap if the tier is reused elsewhere.
 
+## Phase 3.5: concepts removed from the prover's *input* — done (2026-08-20)
+
+New: `src/corpus/definition_free.py`, `hint_goals.py`, `run_phase35.py`,
+`analyze_phase35.py`. Results in `data/concept_recovery/phase35/`
+(`summary.md`, per-run JSON); problems in `data/definition_free/`.
+
+Phase 2 erased the derived operations *after the fact*, from proofs found with
+them available. Here they are removed from the input: the five defining
+equations are deleted and every axiom and goal is unfolded into the primitive
+loop signature, so **the prover never sees `a`, `K`, `L`, `R` or `T`**. Each
+prover gets 60s; a failed search still contributes its partial proof (twee's
+top-scoring derived lemmas, Prover9's kept clauses). 46 runs: 6 bml_aim goals
++ 7 AIM goals + 10 hint-derived goals, × {twee, prover9}.
+
+### Result: the commutator is rediscovered at rank 1
+
+On every AIM goal twee proved without the definitions, **stitch's top
+abstraction is the commutator**:
+
+| goal | twee | terms | K pattern occs | stitch |
+|---|---|---:|---:|---|
+| aK1 | proved | 407 | 116 | **K@1**, T@4 |
+| aK2 | proved | 390 | 107 | **K@1** |
+| aK3 | proved | 198 | 42 | **K@1**, T@2 |
+
+On bml_aim goal_1, twee's proof gives **T@1** exactly plus **K@3 via the
+equational tier** (a body twee itself proved equal to K's definition), and
+prover9's proof of the same goal gives **T@1, a@5, K@9**. On goal_4 prover9
+recovers a@1, R@2, K@3.
+
+### twee vs Prover9: a real gap, but smaller than first reported
+
+Prover9 also **proves** aK1-aK3 definition-free, yet stitch recovers nothing
+from those proofs while twee's yield K@1. The corrected pattern counts:
+
+| goal | prover | terms | a/K/L/R/T pattern occurrences | recovered |
+|---|---|---:|---|---|
+| aK1 | twee | 407 | 2 / **116** / 0 / 3 / 40 | K@1, T@4 |
+| aK1 | prover9 | 262 | 2 / 7 / 4 / 0 / 1 | – |
+| aK2 | twee | 390 | 2 / **107** / 0 / 3 / 43 | K@1 |
+| aK2 | prover9 | 302 | 2 / 14 / 3 / 0 / 8 | – |
+
+An earlier version of this section reported 116 vs **2** and concluded that
+"the calculus decides". Two of that gap's causes turned out to be mine, and
+the corrected figure is 116 vs 7-14. The gap is real but roughly an order of
+magnitude smaller than claimed, and on bml_aim the direction is not even
+consistent (there Prover9's proof has T x361 and recovers K, T and `a`, while
+twee's partial proofs on the same goals recover only T).
+
+**Bug: the goal-refutation chain was being discarded.** The Prover9 extraction
+skipped any clause containing `!=` -- which is the whole refutation chain,
+Prover9's analogue of twee's goal proof chain, and the twee side *was*
+included. That dropped ~20% of an expanded proof and made the comparison
+asymmetric by construction. Fixed in `run_phase35.py`.
+
+**Presentation: Prover9 folds rewrite sequences into one step.** See the
+minimal example below.
+
+### Minimal example: `data/minimal_example/`
+
+`K = ldiv(op(a,b), op(b,a))` wrapped in five identity multiplications that must
+be peeled one at a time. `K` itself is never rewritten -- only its context.
+Same problem, same five inferences:
+
+- **twee** prints an equational chain: 6 lines, each the whole term, so `K` is
+  re-counted at every step.
+- **Prover9** folds all five rewrites into a single justification
+  `[copy(8),rewrite([2(20),2(19),2(18),2(17),2(16)])]`.
+
+| source | terms | K occurrences |
+|---|---:|---:|
+| twee (chain) | 6 | 6 |
+| Prover9 (compact) | 6 | 4 |
+| Prover9 (`prooftrans expand`) | 16 | **14** |
+
+So on a controlled case the ordering **reverses**: expanded Prover9 proofs are
+*richer* in construction occurrences than twee chains. Both the extraction bug
+and the folding of rewrite sequences were inflating the apparent gap.
+
+### Why the residual gap? (hypothesis, partly tested)
+
+All figures below re-verified against the regenerated corpora after every fix.
+
+Paramodulation and critical-pair generation are near-equivalent inference
+systems, so a 10x difference in construction density needs explaining.
+
+Tested and **rejected**: that `--show-peaks` inflates twee's output. Removing
+it gives identical counts (407 terms, K x116).
+
+The evidence points at *what each prover retains and prints*, not what it can
+infer:
+
+- twee's 116 occurrences sit in **89 distinct terms**, at most 3 per term, and
+  contain **variables** (e.g. `op(ldiv(op(A, B), op(B, A)), op(A, B))`) --
+  general lemmas, not one goal chain repeated. **99%** of twee's terms are
+  non-ground.
+- Prover9's expanded proof spreads its K occurrences over just **5 terms**
+  (max 2 each) out of 724, and is **13% ground**. It carries 4x more `ldiv`
+  than twee overall, but that mass sits in `ldiv(x, unit)` shapes rather than
+  commutator shapes.
+
+Hypothesis: twee completes toward general equational lemmas, and since the
+goal *is about* the commutator, many lemmas come out commutator-shaped;
+Prover9 refutes a Skolemized goal and works over ground instances that
+demodulate into a different normal form. The divergence is in the objects each
+calculus accumulates -- general lemmas vs normalised ground consequences --
+not in the inferences available to it.
+
+This is consistent with the measurements but not demonstrated. The clean test
+is to make both produce the same *kind* of object: run twee refutationally on
+the Skolemized goal, or Prover9 in a saturating mode retaining lemmas.
+
+### Four bugs found and fixed (two invalidated published claims)
+
+**1. Prover9 variable convention.** Without `set(prolog_style_variables)`,
+Prover9 treats a symbol beginning with u-z as a *variable* and everything
+else — including upper case — as a **constant**. The generated `.in` files
+carried TPTP's upper-case variables, so every axiom was a ground fact.
+Confirmed decisively: `mult(e,A) = A ⊢ mult(e,c) = c` fails while the
+lower-case form proves. Variables are now emitted as `v0, v1, …`.
+
+**2. `zero` was also a variable.** It begins with `z`. The identity axioms
+became `mult(x,y) = y` and `mult(x,y) = x`, which are jointly
+**inconsistent** — Prover9 was "proving" every bml_aim goal in four steps by
+first deriving `x = y`. Renamed to `e0`; a consistency probe now confirms the
+axioms do not prove `x = y`.
+
+> *These two invalidated the entire first Prover9 pass.* It had reported that
+> Prover9 makes essentially no progress on the definition-free AIM problems,
+> and that its apparent recoveries were artefacts of unfolded axioms. **That
+> claim was a bug in the encoding, not a property of the problems, and is
+> withdrawn.** Prover9 in fact proves aK1–aK3 (3/7 AIM goals), bml_aim goal_1
+> and goal_4, and 6 of the 10 hint goals.
+
+**3. The goal-refutation chain was discarded.** The Prover9 extraction skipped
+any clause containing `!=` — which is the whole refutation chain, Prover9's
+analogue of twee's goal proof chain, and the twee side *was* included. It
+dropped ~20% of an expanded proof and made the comparison asymmetric by
+construction. Fixed in `run_phase35.py`.
+
+> *This invalidated the size of the twee/Prover9 gap.* The section above
+> originally reported 116 vs **2** and concluded "the calculus decides";
+> corrected, it is 116 vs 7–14, and on bml_aim the direction reverses.
+
+**4. twee's multi-character variables.** twee names variables `X, Y, Z, W, V,
+U` and then `X2, Y2, …`; `normalize_fof_term` matched only single letters, so
+`X2` was silently treated as a constant in every term using more than six
+variables — a false-negative source in matching. Fixed in `src/utils.py`
+(regression test in `test_extraction.py`). This was latent for the main
+pipeline too, not only this experiment.
+
+A fifth, in the analysis rather than the data: `analyze_phase35.py` counted
+patterns over *all* Prover9 kept clauses while the driver compressed the
+proof, so its columns described a different corpus than its recovery column —
+visible as identical pattern counts across seven different goals.
+
+### Two measurement corrections
+
+**Partial proofs needed the repo's existing treatment.** A twee run that
+gives up prints every lemma it derived — 77,529 terms for one goal. The
+`partial_abs` stage in `worker.py` already scores lemmas and keeps the top-k;
+adopting that (`PARTIAL_TOPK = 60`) cut that corpus to 516 terms.
+
+**Occurrence counts must be measured as patterns.** `target_occurrences`
+counts subterms alpha-normalising to a definition body, i.e. with *variable*
+arguments, but an abstraction `fn(A,B) = ldiv(A, op(B,A))` applies wherever
+that *shape* occurs. On one partial proof T's pattern occurs 67 times while
+its variable-argument form occurs zero — which is why a recovery once looked
+like it contradicted the occurrence column.
+
+### Expanded Prover9 proofs (`prooftrans expand`)
+
+Works directly on stored Prover9 stdout, not only `.pf` files. On aim_lc
+goal_1 it takes the proof from 337 to 875 steps, turning 90 compound
+`back_rewrite` justifications into explicit paramodulations (231 -> 761
+`para`). On the minimal example above it raises K occurrences from 4 to 14.
+
+On the real aim_lc proofs it helps much less (K: 7 -> 8) and does not change
+recovery. So expansion is worth having as a corpus variant -- it is the right
+way to undo the rewrite-folding shown above -- but it does not by itself close
+the twee/Prover9 gap on these goals.
+
+### Answer to the phase-3 question, this time affirmative
+
+Phase 3 found nothing because the Bol–Moufang proofs never build the
+constructions. Phase 3.5 asks the same question of proofs whose content *is*
+loop-theoretic with the concepts unnamed: **the commutator and the T inner
+mapping are re-identified as top abstractions of proofs that never named
+them.** Scope, stated honestly: unfolding leaves their bodies in the input, so
+this shows compression re-identifies the right units from a primitive proof —
+not that concepts appear from nothing. What makes it non-trivial is that the
+prover chose its own route and a different prover's route yields nothing.
+
 ## Next
 
+- **Expanded Prover9 proofs as a corpus variant.** `prooftrans expand -f` runs
+  on the stored definition-free Prover9 output and roughly doubles the term
+  count with explicit paramodulation steps. Preliminary check (above) shows it
+  does not change recovery on aim_lc goal_1, but it has not been run across
+  the matrix; the natural shape is a `--expanded` flag on `run_phase35.py`
+  producing `<problem>__prover9_expanded` runs alongside the compact ones,
+  exactly as Phase 0 keeps `*_expanded.pf` alongside `*.pf`.
 - **Phase 4** (Stitch vs Babble, incl. babble-modulo-theory) is now the main
-  remaining item. Note the AIM corpora are the ones with concepts to recover,
+  remaining item. The phase-3.5 corpora are the natural target: they are the
+  ones where concepts are demonstrably recoverable. Babble has not yet been
+  run on them (`--engines babble`, low beams per the scaling limits). Note the AIM corpora are the ones with concepts to recover,
   so phase 4's theory experiments belong there rather than on Bol–Moufang.
 - Optional: a corpus whose proofs *are* loop-theoretic but leave the concepts
   unnamed would be the real test of the phase-3 question; `data/bml_aim`

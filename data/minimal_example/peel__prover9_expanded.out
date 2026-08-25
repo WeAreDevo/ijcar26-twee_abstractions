@@ -1,0 +1,30 @@
+============================== prooftrans ============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 15663 was started by guya on CM-JRV4H50YKP,
+Mon Aug 24 17:40:45 2026
+The command was "/Users/guya/LADR-2009-11A//bin/prover9 -f /tmp/m.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 4.
+% Level of proof is 2.
+% Maximum clause weight is 5.000.
+% Given clauses 0.
+
+
+1 mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))) = ld(mult(a,b),mult(b,a)) # label(non_clause) # label(goal).  [goal].
+2 mult(e,x) = x.  [assumption].
+8 ld(mult(a,b),mult(b,a)) != mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))).  [deny(1)].
+9A ld(mult(a,b),mult(b,a)) != mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a)))))).  [para(2(a,1),8(a,2,2,2,2,2))].
+9B ld(mult(a,b),mult(b,a)) != mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))).  [para(2(a,1),9A(a,2,2,2,2))].
+9C ld(mult(a,b),mult(b,a)) != mult(e,mult(e,ld(mult(a,b),mult(b,a)))).  [para(2(a,1),9B(a,2,2,2))].
+9D ld(mult(a,b),mult(b,a)) != mult(e,ld(mult(a,b),mult(b,a))).  [para(2(a,1),9C(a,2,2))].
+9E ld(mult(a,b),mult(b,a)) != ld(mult(a,b),mult(b,a)).  [para(2(a,1),9D(a,2))].
+9 $F.  [copy(9E),xx(a)].
+
+============================== end of proof ==========================

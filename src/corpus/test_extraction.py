@@ -17,6 +17,7 @@ os.chdir(project_root.as_posix())
 
 from src.corpus.extraction import (
     babble_input,
+    terms_from_prover9_kept,
     parse_prover9_term,
     prover9_tree_to_fof,
     split_equation,
@@ -144,6 +145,44 @@ def test_twee_records_strip_quotes_and_keep_chain_multiplicity():
     assert "ldiv(A, op(op(B, A), A))" in terms
     assert terms.count("foo") == 1 and terms.count("bar") == 1
     assert all(not r["is_input"] and r["step"] is None for r in records)
+
+
+SAMPLE_KEPT = """kept:      2 mult(e,x) = x.  [assumption].
+kept:     14 ld(mult(A,B),mult(B,A)) = rd(A,B).  [para(2,3)].
+kept:     20 p(a) | q(b).  [xx].
+kept:     21 mult(x,y) != mult(y,x).  [yy]."""
+
+
+def test_prover9_kept_clauses_rename_symbols_and_skip_non_equations():
+    records = terms_from_prover9_kept(SAMPLE_KEPT)
+    assert [r["term"] for r in records] == [
+        "op(unit, A)", "A", "ldiv(op(A, B), op(B, A))", "rdiv(A, B)"]
+    assert records[0]["is_input"] and not records[2]["is_input"]
+
+
+def test_prover9_identity_constant_is_not_mistaken_for_a_variable():
+    # `e` must survive parsing as a constant and only then become `unit`;
+    # renaming it first would give the parser a symbol starting with `u`,
+    # which Prover9's u-z variable rule would capture.
+    records = terms_from_prover9_kept("kept: 2 mult(e,e) = e.  [assumption].")
+    assert [r["term"] for r in records] == ["op(unit, unit)", "unit"]
+
+
+def test_twee_multicharacter_variables_are_variables_not_constants():
+    # twee names variables X, Y, Z, W, V, U and then X2, Y2, ... A regex
+    # matching only single letters treats X2 as a constant, which silently
+    # corrupts every term using more than six variables.
+    trace = """
+Lemma 1: foo = bar.
+Proof:
+  rdiv(op(ldiv(X, op(Y, X)), X2), op(Y, X2))
+= { by lemma 2 }
+  op(X2, Y)
+"""
+    terms = [r["term"] for r in terms_from_twee_output(trace)]
+    assert terms[0] == "rdiv(op(ldiv(A, op(B, A)), C), op(B, C))"
+    assert terms[1] == "op(A, B)"
+    assert not any("X2" in t for t in terms)
 
 
 # ----------------------------

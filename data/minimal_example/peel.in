@@ -1,0 +1,12 @@
+formulas(assumptions).
+   mult(e,v0) = v0.
+   mult(v0,e) = v0.
+   ld(v0,mult(v0,v1)) = v1.
+   mult(v0,ld(v0,v1)) = v1.
+   rd(mult(v0,v1),v1) = v0.
+   mult(rd(v0,v1),v1) = v0.
+end_of_list.
+
+formulas(goals).
+   mult(e, mult(e, mult(e, mult(e, mult(e, ld(mult(a,b), mult(b,a))))))) = ld(mult(a,b), mult(b,a)).
+end_of_list.

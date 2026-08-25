@@ -196,8 +196,11 @@ def _normalize_tree(tree, mapping, name_iter):
     Recursively normalize a parsed term tree.
     """
     if isinstance(tree, str):
-        # variable or '?' (we uniformly replace ? with a fresh variable...unknown if this is best)
-        if re.fullmatch(r'[A-Z?]', tree):
+        # Variable, or '?' (uniformly replaced with a fresh variable).
+        # The digit suffix matters: twee names variables X, Y, Z, W, V, U and
+        # then X2, Y2, ... once a clause needs more than six, so matching only
+        # single letters would silently treat X2 as a constant.
+        if re.fullmatch(r'[A-Z][0-9]*|\?', tree):
             if tree not in mapping:
                 mapping[tree] = next(name_iter)
             return mapping[tree]

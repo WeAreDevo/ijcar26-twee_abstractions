@@ -1,0 +1,49 @@
+{
+ "corpus": "aim_lc",
+ "problem": "first_sketch_goal_3",
+ "prover": "prover9",
+ "prover_status": "proved",
+ "proved": true,
+ "prover_seconds": 1.6,
+ "n_terms": 374,
+ "n_distinct_terms": 243,
+ "n_input_terms": 18,
+ "n_derived_terms": 356,
+ "target_occurrences": {
+  "a": 0,
+  "K": 2,
+  "L": 0,
+  "R": 0,
+  "T": 5
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 62.3,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": true,
+   "top_abstractions": [
+    "fn_0(A, B, C) = op(C, op(B, A))",
+    "fn_1(A) = ldiv(A, unit)",
+    "fn_2(A) = fn_0(A, op(c1, c2), op(op(fn_0(c4, ldiv(c4, c3), c3), fn_1(c2)), fn_1(c1)))",
+    "fn_3(A, B) = fn_0(B, A, A)",
+    "fn_4(A, B, C) = op(A, fn_0(C, B, A))",
+    "fn_5(A, B, C) = op(ldiv(B, A), C)",
+    "fn_6(A, B) = ldiv(c3, B(fn_0(ldiv(c4, fn_5(c4, c3, c3)), op(c1, c2), A)))",
+    "fn_7(A, B, C) = op(op(B, A), C)",
+    "fn_8(A) = fn_0(fn_1(A))",
+    "fn_9(A, B, C) = C(B, ldiv(B, A))"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(C, op(B, A))",
+    "fn_1 = ldiv(A, unit)",
+    "fn_2 = op(op(op(op(c3, op(ldiv(c4, c3), c4)), ldiv(c2, unit)), ldiv(c1, unit)), op(op(c1, c2), A))",
+    "fn_3 = op(A, op(A, B))",
+    "fn_4 = op(A, op(A, op(B, C)))",
+    "fn_5 = op(ldiv(B, A), C)",
+    "fn_7 = op(op(B, A), C)"
+   ]
+  }
+ }
+}

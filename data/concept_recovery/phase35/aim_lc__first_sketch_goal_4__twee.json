@@ -1,0 +1,51 @@
+{
+ "corpus": "aim_lc",
+ "problem": "first_sketch_goal_4",
+ "prover": "twee",
+ "prover_status": "gave_up",
+ "proved": false,
+ "prover_seconds": 62.5,
+ "n_terms": 550,
+ "n_distinct_terms": 526,
+ "n_input_terms": 0,
+ "n_derived_terms": 550,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 61.5,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": true,
+   "top_abstractions": [
+    "fn_0(A) = rdiv(ldiv3, A)",
+    "fn_1(A) = rdiv(A, ldiv3)",
+    "fn_2(A, B, C) = rdiv(C, ldiv(B, A))",
+    "fn_3(A, B, C) = rdiv(C, op(B, A))",
+    "fn_4(A) = rdiv(A, op3)",
+    "fn_5(A) = op(A, A)",
+    "fn_6(A) = ldiv(ldiv3, A)",
+    "fn_7(A, B, C) = rdiv(C, rdiv(B, A))",
+    "fn_8(A) = rdiv(A, x27)",
+    "fn_9(A) = fn_2(A, ldiv3)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = rdiv(ldiv3, A)",
+    "fn_1 = rdiv(A, ldiv3)",
+    "fn_2 = rdiv(C, ldiv(B, A))",
+    "fn_3 = rdiv(C, op(B, A))",
+    "fn_4 = rdiv(A, op3)",
+    "fn_5 = op(A, A)",
+    "fn_6 = ldiv(ldiv3, A)",
+    "fn_7 = rdiv(C, rdiv(B, A))",
+    "fn_8 = rdiv(A, x27)"
+   ]
+  }
+ }
+}

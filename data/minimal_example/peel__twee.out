@@ -1,0 +1,51 @@
+Here is the input problem:
+  Axiom 1 (ax2): op(X, unit) = X.
+  Axiom 2 (flattening): op3 = op(a, b).
+  Axiom 3 (flattening): op2 = op(b, a).
+  Axiom 4 (ax1): op(unit, X) = X.
+  Axiom 5 (ax5): rdiv(op(X, Y), Y) = X.
+  Axiom 6 (ax3): ldiv(X, op(X, Y)) = Y.
+  Axiom 7 (ax4): op(X, ldiv(X, Y)) = Y.
+  Axiom 8 (ax6): op(rdiv(X, Y), Y) = X.
+  Axiom 9 (flattening): ldiv2 = ldiv(op(a, b), op(b, a)).
+  Axiom 10 (flattening): op4 = op(unit, ldiv(op(a, b), op(b, a))).
+  Axiom 11 (flattening): op5 = op(unit, op(unit, ldiv(op(a, b), op(b, a)))).
+  Axiom 12 (flattening): op6 = op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a))))).
+  Axiom 13 (flattening): op7 = op(unit, op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a)))))).
+  Axiom 14 (flattening): op8 = op(unit, op(unit, op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a))))))).
+  Goal 1 (goal): op(unit, op(unit, op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a))))))) = ldiv(op(a, b), op(b, a)).
+
+(12.285714) 1. op(X, unit) -> X
+(13.0) 2. op(a, b) -> op3
+(13.0) 3. op(b, a) -> op2
+(12.285714) 4. op(unit, X) -> X
+(19.142859) 5. rdiv(op(X, Y), Y) -> X
+(19.142859) 6. ldiv(X, op(X, Y)) -> Y
+(19.142859) 7. op(X, ldiv(X, Y)) -> Y
+(19.142859) 8. op(rdiv(X, Y), Y) -> X
+(13.0) 9. ldiv(op3, op2) -> ldiv2
+(5.0) 10. ldiv2 -> op4
+(5.0) 11. op4 -> op5
+(5.0) 12. op5 -> op6
+(5.0) 13. op6 -> op7
+(5.0) 14. op7 -> op8
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (ax1): op(unit, X) = X.
+
+Goal 1 (goal): op(unit, op(unit, op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a))))))) = ldiv(op(a, b), op(b, a)).
+Proof:
+  op(unit, op(unit, op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a))))))) (peak)
+= { by axiom 1 (ax1) }
+  op(unit, op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a))))))
+= { by axiom 1 (ax1) }
+  op(unit, op(unit, op(unit, ldiv(op(a, b), op(b, a)))))
+= { by axiom 1 (ax1) }
+  op(unit, op(unit, ldiv(op(a, b), op(b, a))))
+= { by axiom 1 (ax1) }
+  op(unit, ldiv(op(a, b), op(b, a)))
+= { by axiom 1 (ax1) }
+  ldiv(op(a, b), op(b, a))
+
+RESULT: Theorem (the conjecture is true).

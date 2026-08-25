@@ -1,0 +1,49 @@
+{
+ "corpus": "bml_aim",
+ "problem": "3_goal_6",
+ "prover": "twee",
+ "prover_status": "gave_up",
+ "proved": false,
+ "prover_seconds": 63.8,
+ "n_terms": 325,
+ "n_distinct_terms": 319,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 60.4,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": true,
+   "top_abstractions": [
+    "fn_0(A, B, C) = rdiv(C, rdiv(B, A))",
+    "fn_1 = op(ldiv3, op3)",
+    "fn_2(A, B, C) = ldiv(rdiv(B, A), C)",
+    "fn_3 = op(x25, op9)",
+    "fn_4 = fn_0(op9, op11)",
+    "fn_5 = ldiv(op7, op5)",
+    "fn_6 = op(op(x24, ldiv2), x25)",
+    "fn_7 = fn_0(op8, op10)",
+    "fn_8 = fn_2(op9, op11)",
+    "fn_9(A, B, C) = rdiv(op(B, A), C)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = rdiv(C, rdiv(B, A))",
+    "fn_1 = op(ldiv3, op3)",
+    "fn_2 = ldiv(rdiv(B, A), C)",
+    "fn_3 = op(x25, op9)",
+    "fn_5 = ldiv(op7, op5)",
+    "fn_6 = op(op(x24, ldiv2), x25)",
+    "fn_9 = rdiv(op(B, A), C)"
+   ]
+  }
+ },
+ "n_input_terms": 0,
+ "n_derived_terms": 325
+}

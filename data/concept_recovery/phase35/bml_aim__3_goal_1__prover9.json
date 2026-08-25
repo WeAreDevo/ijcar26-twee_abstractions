@@ -1,0 +1,68 @@
+{
+ "corpus": "bml_aim",
+ "problem": "3_goal_1",
+ "prover": "prover9",
+ "prover_status": "proved",
+ "proved": true,
+ "prover_seconds": 13.1,
+ "n_terms": 672,
+ "n_distinct_terms": 421,
+ "n_input_terms": 26,
+ "n_derived_terms": 646,
+ "target_occurrences": {
+  "a": 16,
+  "K": 34,
+  "L": 0,
+  "R": 0,
+  "T": 275
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 27.6,
+   "n_abstractions": 10,
+   "recovered": {
+    "T": {
+     "rank": 1,
+     "match": "alpha",
+     "abstraction": "fn_0 = ldiv(A, op(B, A))"
+    },
+    "a": {
+     "rank": 5,
+     "match": "alpha",
+     "abstraction": "fn_4 = ldiv(op(C, op(B, A)), op(op(C, B), A))"
+    },
+    "K": {
+     "rank": 9,
+     "match": "alpha",
+     "abstraction": "fn_8 = ldiv(op(A, B), op(B, A))"
+    }
+   },
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B) = ldiv(A, op(B, A))",
+    "fn_1(A) = op(A, rdiv(one, A))",
+    "fn_2(A, B) = op(ldiv(A, B), A)",
+    "fn_3(A, B) = op(fn_0(B, A), ldiv(A, one))",
+    "fn_4(A, B, C) = ldiv(op(C, op(B, A)), op(op(C, B), A))",
+    "fn_5(A, B) = ldiv(ldiv(B, A), A)",
+    "fn_6(A, B) = ldiv(A, fn_0(B, A))",
+    "fn_7(A, B, C) = op(C, op(B, A))",
+    "fn_8(A, B) = ldiv(op(A, B), op(B, A))",
+    "fn_9(A, B) = ldiv(rdiv(A, B), ldiv(B, A))"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = ldiv(A, op(B, A))",
+    "fn_1 = op(A, rdiv(one, A))",
+    "fn_2 = op(ldiv(A, B), A)",
+    "fn_3 = op(ldiv(B, op(A, B)), ldiv(A, one))",
+    "fn_4 = ldiv(op(C, op(B, A)), op(op(C, B), A))",
+    "fn_5 = ldiv(ldiv(B, A), A)",
+    "fn_6 = ldiv(A, ldiv(B, op(A, B)))",
+    "fn_7 = op(C, op(B, A))",
+    "fn_8 = ldiv(op(A, B), op(B, A))",
+    "fn_9 = ldiv(rdiv(A, B), ldiv(B, A))"
+   ]
+  }
+ }
+}

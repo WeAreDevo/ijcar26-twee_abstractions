@@ -29,6 +29,11 @@ data/experiments/*/tmp
 # Derived term corpora, regenerable via `python src/corpus/build_corpora.py`
 data/corpora/
 
+# Raw prover output from the definition-free runs (~400 MB). The problems
+# themselves are tracked; the outputs are gzipped in $LOG_DIR/definition_free_out
+# and can be regenerated with `python src/corpus/run_phase35.py`.
+data/definition_free/*/out/
+
 # ---------------------------------------------------------------------------
 # OS / editor
 # ---------------------------------------------------------------------------

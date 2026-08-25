@@ -1,0 +1,35 @@
+{
+ "corpus": "aim_lc_hints",
+ "problem": "hint01_d3",
+ "prover": "twee",
+ "prover_status": "proved",
+ "proved": true,
+ "prover_seconds": 0.0,
+ "n_terms": 5,
+ "n_distinct_terms": 5,
+ "n_input_terms": 0,
+ "n_derived_terms": 5,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 0
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 9.3,
+   "n_abstractions": 2,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B, C) = rdiv(B(op(C, B(A))), A)",
+    "fn_1(A, B) = op(op(A, B), A)"
+   ],
+   "expanded_abstractions": [
+    "fn_1 = op(op(A, B), A)"
+   ]
+  }
+ }
+}

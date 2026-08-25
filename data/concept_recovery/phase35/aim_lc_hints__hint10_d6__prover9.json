@@ -1,0 +1,48 @@
+{
+ "corpus": "aim_lc_hints",
+ "problem": "hint10_d6",
+ "prover": "prover9",
+ "prover_status": "proved",
+ "proved": true,
+ "prover_seconds": 0.2,
+ "n_terms": 156,
+ "n_distinct_terms": 105,
+ "n_input_terms": 16,
+ "n_derived_terms": 140,
+ "target_occurrences": {
+  "a": 0,
+  "K": 0,
+  "L": 0,
+  "R": 0,
+  "T": 1
+ },
+ "engines": {
+  "stitch": {
+   "status": "ok",
+   "seconds": 9.4,
+   "n_abstractions": 10,
+   "recovered": {},
+   "equational_budget_exhausted": false,
+   "top_abstractions": [
+    "fn_0(A, B) = op(ldiv(A, unit), B)",
+    "fn_1(A) = A(c1, op(c2, fn_0(c1, c3)))",
+    "fn_2(A) = ldiv(A, unit)",
+    "fn_3(A) = op(A, A)",
+    "fn_4(A, B, C) = C(A, rdiv(B, A))",
+    "fn_5(A, B, C, D) = B(C, A(C, D))",
+    "fn_6(A, B, C) = op(C, op(B, A))",
+    "fn_7(A, B) = op(B, fn_0(A, fn_2(A)))",
+    "fn_8(A, B, C) = fn_0(B, op(B, fn_0(B, op(C, fn_0(B, op(B, ldiv(B, A)))))))",
+    "fn_9(A, B, C) = A(B, C)"
+   ],
+   "expanded_abstractions": [
+    "fn_0 = op(ldiv(A, unit), B)",
+    "fn_2 = ldiv(A, unit)",
+    "fn_3 = op(A, A)",
+    "fn_6 = op(C, op(B, A))",
+    "fn_7 = op(B, op(ldiv(A, unit), ldiv(A, unit)))",
+    "fn_8 = op(ldiv(B, unit), op(B, op(ldiv(B, unit), op(C, op(ldiv(B, unit), op(B, ldiv(B, A)))))))"
+   ]
+  }
+ }
+}

@@ -1,0 +1,132 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 15663 was started by guya on CM-JRV4H50YKP,
+Mon Aug 24 17:40:45 2026
+The command was "/Users/guya/LADR-2009-11A//bin/prover9 -f /tmp/m.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /tmp/m.in
+
+assign(max_seconds,30).
+set(print_kept).
+
+formulas(assumptions).
+mult(e,v0) = v0.
+mult(v0,e) = v0.
+ld(v0,mult(v0,v1)) = v1.
+mult(v0,ld(v0,v1)) = v1.
+rd(mult(v0,v1),v1) = v0.
+mult(rd(v0,v1),v1) = v0.
+end_of_list.
+
+formulas(goals).
+mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))) = ld(mult(a,b),mult(b,a)).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))) = ld(mult(a,b),mult(b,a)) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+mult(e,x) = x.  [assumption].
+mult(x,e) = x.  [assumption].
+ld(x,mult(x,y)) = y.  [assumption].
+mult(x,ld(x,y)) = y.  [assumption].
+rd(mult(x,y),y) = x.  [assumption].
+mult(rd(x,y),y) = x.  [assumption].
+ld(mult(a,b),mult(b,a)) != mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))).  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ e, a, b, mult, ld, rd ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+kept:      2 mult(e,x) = x.  [assumption].
+    new demodulator: 2.
+kept:      3 mult(x,e) = x.  [assumption].
+    new demodulator: 3.
+kept:      4 ld(x,mult(x,y)) = y.  [assumption].
+    new demodulator: 4.
+kept:      5 mult(x,ld(x,y)) = y.  [assumption].
+    new demodulator: 5.
+kept:      6 rd(mult(x,y),y) = x.  [assumption].
+    new demodulator: 6.
+kept:      7 mult(rd(x,y),y) = x.  [assumption].
+    new demodulator: 7.
+           8 ld(mult(a,b),mult(b,a)) != mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))).  [deny(1)].
+-------- Proof 1 -------- 
+
+============================== PROOF =================================
+
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 4.
+% Level of proof is 2.
+% Maximum clause weight is 5.000.
+% Given clauses 0.
+
+1 mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))) = ld(mult(a,b),mult(b,a)) # label(non_clause) # label(goal).  [goal].
+2 mult(e,x) = x.  [assumption].
+8 ld(mult(a,b),mult(b,a)) != mult(e,mult(e,mult(e,mult(e,mult(e,ld(mult(a,b),mult(b,a))))))).  [deny(1)].
+9 $F.  [copy(8),rewrite([2(20),2(19),2(18),2(17),2(16)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=0. Generated=7. Kept=6. proofs=1.
+Usable=0. Sos=0. Demods=6. Limbo=6, Disabled=7. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=6 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=55. Demod_rewrites=5.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.04.
+User_CPU=0.00, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 15663 exit (max_proofs) ------
+
+Process 15663 exit (max_proofs) Mon Aug 24 17:40:45 2026
