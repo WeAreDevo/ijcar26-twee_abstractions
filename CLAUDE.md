@@ -1,103 +1,142 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code (claude.ai/code) working in this repository.
 
 ## Project Overview
 
-Research project implementing the [Twitch paper](https://arxiv.org/abs/2603.06849): learning proof abstractions for equational theorem proving using the Twee prover and the Stitch program synthesis library.
+Research project on **learning proof abstractions for equational theorem
+proving**. Two lines of work share the repo:
+
+1. **Abstraction-as-hints pipeline** (original): compress Twee proof terms into
+   abstractions, feed them back as hints. Implements the
+   [Twitch paper](https://arxiv.org/abs/2603.06849).
+2. **Concept recovery** (`src/corpus/`, since 2026-08): can a compressor
+   rediscover named mathematical concepts (associator, commutator, inner
+   mappings) from proofs where they were never named? See
+   `proof_compression_concept_recovery_experiment.md` for the spec and
+   `PROGRESS_concept_recovery.md` for the running record — **read the latter
+   first**, it has a "State at a glance" block.
+
+Compression engines: **Stitch** (pip, default), **babble** (built from source,
+optional), and Herbrand/GAPT decomposition (planned).
 
 ## Setup
 
-**Prerequisites:** Python 3.11.x, TPTP v9.2.1 (download separately), a `twee` executable with hints support.
+Python 3.11.x, TPTP v9.2.1, a `twee` with hints support, LADR/Prover9.
 
 ```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+python -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 ```
 
-Create `.env` in the repo root:
+`.env` in the repo root:
+
 ```
-TPTP_ROOT=<path_to_tptp_root>
-LOG_DIR=<storage_location_for_logs>
-TWEE_PATH=<path_to_twee_executable>
+TPTP_ROOT=<TPTP root>          LOG_DIR=<bulky logs, outside the repo>
+TWEE_PATH=<twee executable>    LADR_DIR=<LADR-2009-11A>
+BABBLE_ROOT=<third_party/babble>   VAMPIRE_PATH=<vampire>
 ```
 
-## Running Experiments
+## Landmines (each of these silently produced a wrong result)
 
-Main entry point: `src/stitch/pipeline/worker.py`
+- **Prover9 variable convention.** Without `set(prolog_style_variables)`, a
+  symbol is a *variable* iff it begins with `u`–`z`; everything else,
+  **including upper case, is a constant**. TPTP's `A, B, C` carried into a
+  `.in` file turns every axiom into a ground fact. Worse, a *constant*
+  starting u–z becomes a variable: `zero` did, making the loop axioms
+  inconsistent so Prover9 "proved" goals in four steps via `x = y`. Emit
+  variables as `v0, v1, …`; rename `zero`→`e0`. **Probe consistency (can the
+  axioms prove `x = y`?) before trusting any generated problem.**
+- **twee variable naming.** twee uses `X, Y, Z, W, V, U` then `X2, Y2, …`.
+  Code matching only single-letter variables treats `X2` as a constant.
+- **Proof-format asymmetry.** twee prints an equational *chain* (the whole
+  term at every step); Prover9 prints one equation per inference and folds
+  rewrite sequences into a single justification. Any cross-prover comparison of
+  term/subterm counts is dominated by this until it is controlled for.
+  `data/minimal_example/` isolates the effect — start there when a
+  cross-prover comparison looks surprising. `prooftrans expand -f` (LADR)
+  makes Prover9's paramodulation steps explicit and works on stored stdout.
+- **twee result strings.** `RESULT: Theorem` for fof conjectures,
+  `RESULT: Unsatisfiable` for cnf denials. Detectors must accept both.
+- **babble scale.** OOM-killed above ~2.6k terms at default beams; the failure
+  surfaces as `RuntimeError: babble failed (exit -9)`. Use `beams=25`–100.
+- **CPU timing.** `run_twee_on_file` uses `RUSAGE_CHILDREN`, which is
+  process-global — only accurate when runs do not share a process.
+
+## Running things
 
 ```bash
-# See all options
-python src/stitch/pipeline/worker.py --help
-
-# Base stage (required first — produces baseline proofs)
-python src/stitch/pipeline/worker.py --stage base --stage_config src/stitch/configs/base.yaml \
+# original pipeline (base must run first; see --help for all stages)
+python src/stitch/pipeline/worker.py --stage base \
+  --stage_config src/stitch/configs/base.yaml \
   --input_dir data/TPTP/ALG_UEQ_UNSAT --output_dir data/experiments/base
 
-# Local abstractions (requires --base_dir from base stage)
-python src/stitch/pipeline/worker.py --stage local_abs --stage_config src/stitch/configs/local_abs.yaml \
-  --input_dir data/TPTP/ALG_UEQ_UNSAT --base_dir data/experiments/base \
-  --output_dir data/experiments/local_abs
+# concept recovery
+python src/corpus/build_corpora.py          # rebuild data/corpora/ (gitignored)
+python src/corpus/run_phase2.py --help      # AIM definition erasure
+python src/corpus/run_phase3.py --help      # primitive Bol-Moufang
+python src/corpus/definition_free.py        # build definition-free problems
+python src/corpus/run_phase35.py --help     # run provers + compress
+python src/corpus/analyze_phase35.py        # regenerate summaries
 
-# Domain abstractions (requires --base_dir and --local_abs_dir)
-python src/stitch/pipeline/worker.py --stage domain_abs --stage_config src/stitch/configs/domain_abs.yaml \
-  --input_dir data/TPTP/ALG_UEQ_UNSAT --base_dir data/experiments/base \
-  --local_abs_dir data/experiments/local_abs --output_dir data/experiments/domain_abs
-
-# Partial abstractions (self-contained)
-python src/stitch/pipeline/worker.py --stage partial_abs --stage_config src/stitch/configs/partial_abs.yaml \
-  --input_dir data/TPTP/ALG_UEQ_UNSAT --output_dir data/experiments/partial_abs
+# smoke tests / engine comparison
+python run_stitch.py ; python run_babble.py ; python compare_engines.py
 ```
 
-Each run creates a **timestamped subdirectory** inside `--output_dir` with a config copy and results summary. Detailed logs (twee outputs, TPTP files with hints) go to `LOG_DIR`. Note that the existing directories in `data/experiments/` were produced from earlier code, and so the exact directory structure may differ for new runs. In particular, previously the config contained a 'theory' field which was used to choose the input problems, and the subdirectory was named with the theory. But now the input problems are directly specified by the `--input_dir` argument, so the new output directories won't be organized by theory like the old ones.
+**Long runs get killed.** Keep each invocation under ~10 minutes and make
+runners resumable: `--skip-existing` (don't redo finished work) and
+`--reuse-proofs` (re-extract and recompress stored prover output without
+re-proving). Keep the expensive step (running provers) separate from analysis
+so a bug fix costs a re-analysis, not a re-experiment.
 
-## Running Tests
+## Tests
 
 ```bash
-python src/stitch/test_translation.py
+python src/corpus/test_extraction.py    # proof-term extraction, all 3 sources
+python src/corpus/test_erasure.py       # definition erasure + recovery matching
+python src/corpus/test_equiv.py         # twee-backed equational matching
+python src/stitch/test_translation.py   # FOF <-> lambda (Stitch)
+python src/babble/test_translation.py   # FOF <-> curried (babble) + theory
 ```
 
-This tests the FOF term ↔ lambda calculus translation logic in `src/stitch/Abstractions.py`.
+Several of these exist specifically to **pin conventions** (e.g. that `X2` is a
+variable) — that bug class is the main source of wrong answers here. Tests
+depending on generated data skip rather than fail when it is absent.
 
 ## Architecture
 
-### Pipeline Stages
+| Path | Purpose |
+|---|---|
+| `src/stitch/pipeline/worker.py` | 4-stage hint pipeline (base, local_abs, domain_abs, partial_abs) |
+| `src/stitch/Abstractions.py` | FOF→lambda translation, Stitch calls, hint wrapping |
+| `src/babble/Abstractions.py` | Same contract for babble (curried encoding) |
+| `src/babble/theory.py` | TPTP axioms → babble `--dsr` rewrite rules |
+| `src/corpus/extraction.py` | Uniform proof-term extraction: Prover9 `.pf`, Otter, twee |
+| `src/corpus/erasure.py` | Unfold/erase `a,K,L,R,T`; match learned abstractions |
+| `src/corpus/equiv.py` | "Provably equal under the axioms?" discharged by twee |
+| `src/corpus/definition_free.py` | Delete definitions from problem *inputs* |
+| `src/utils.py` | Twee subprocess, proof parsing, normalization, TPTP helpers |
 
-The 4-stage pipeline is designed so intermediate results can be reused across experiments:
+All corpora share one signature: `op` / `ldiv` / `rdiv` / `unit` / `zero`.
+Terms are prefix FOF, alpha-normalized to `A, B, C, …` by first occurrence.
 
-1. **base** — Runs Twee with default flags to produce baseline proofs.
-2. **local_abs** — Extracts Stitch abstractions from a problem's own baseline proof; re-runs Twee with those abstractions as hints.
-3. **domain_abs** — Pools good local abstractions from many problems in the same domain (e.g., ALG, BOO, GRP); applies them as hints to new problems in that domain.
-4. **partial_abs** — Runs Twee for a short timeslice to get a partial proof, extracts abstractions, re-runs with full time.
+## Data layout
 
-### Key Files
+- `data/TPTP/` — problems, `{THEORY}_UEQ_{STATUS}/`
+- `data/aim_lc/`, `data/bol_moufang/`, `data/bml_aim/` — proof corpora + parsers
+- `data/definition_free/` — definition-free problems (raw output gitignored,
+  gzipped in `$LOG_DIR/definition_free_out/`)
+- `data/concept_recovery/phase{2,3,35}/` — results, `summary.md` per phase
+- `data/corpora/` — **gitignored**, rebuild with `build_corpora.py`
+- Bulky artifacts go to `$LOG_DIR`, never into git.
 
-| File | Purpose |
-|------|---------|
-| `src/stitch/pipeline/worker.py` | Orchestrates all 4 stages; parallel problem execution via `ProcessPoolExecutor` |
-| `src/stitch/Abstractions.py` | Core abstraction generation: FOF→lambda translation, Stitch calls, hint wrapping |
-| `src/stitch/domain_abstractions.py` | Domain-level abstraction aggregation across problems |
-| `src/utils.py` | Twee subprocess execution, proof parsing, term extraction, TPTP utilities |
-| `src/stitch/configs/*.yaml` | Per-stage experiment parameters (twee flags, stitch iterations, timeouts) |
-| `data/experiments/util.py` | Loading and aggregating experiment result files |
-| `data/experiments/analysis.py` | Statistical analysis of results |
+## Working style that has paid off here
 
-### Abstraction Flow
-
-1. Twee proof output → parse proof terms (`src/utils.py`)
-2. Terms → Stitch compression → named abstractions (`src/stitch/Abstractions.py`)
-3. Abstractions → TPTP hint format → next Twee run
-4. Results stored as `summary.json` + raw outputs per problem
-
-### Data Layout
-
-- `data/TPTP/` — Problem files organized as `{THEORY}_UEQ_{STATUS}/` (e.g., `ALG_UEQ_UNSAT/`). `ALG_UEQ_UNSAT/` contains union of all therory-specific unsat problems.
-- `data/experiments/` — Experiment output directories (gitignored due to size; large outputs go to `LOG_DIR`)
-
-### Term Representation
-
-- Problems are in FOF (first-order formula) format
-- Internally, terms are parsed to nested Python lists and converted to lisp-like lambda calculus with De Bruijn indices for variable handling
-- The `parse_fof_term()` / lisp conversion functions in `src/utils.py` and `src/stitch/Abstractions.py` handle this translation
-- Twee takes input in TPTP format.
+- **Controls before believing a negative.** A "nothing found" result is worth
+  nothing unless the detector is shown to fire on a true positive and reject a
+  false one (`test_equiv.py` does this).
+- **Minimal example when a comparison surprises**, rather than reasoning about
+  the large case.
+- **Verify numbers against the data before writing them up.** Stale figures and
+  mismatched corpora have both slipped into summaries here.
+- Record **withdrawn claims** next to live ones in the progress doc, so it is
+  clear which conclusions depended on which bug.
