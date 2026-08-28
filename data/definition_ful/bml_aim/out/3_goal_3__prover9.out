@@ -1,0 +1,2380 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 1987 was started by guya on CM-JRV4H50YKP,
+Fri Aug 28 11:59:28 2026
+The command was "/Users/guya/LADR-2009-11A//bin/prover9 -f /tmp/g.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /tmp/g.in
+
+assign(max_seconds,60).
+
+formulas(assumptions).
+0 * x = x.
+x * 0 = x.
+x * (x \ y) = y.
+x \ (x * y) = y.
+(x * y) / y = x.
+(x / y) * y = x.
+(x * y) * z = (x * (y * z)) * a(x,y,z).
+x * y = (y * x) * K(x,y).
+R(u,x,y) = ((u * x) * y) / (x * y).
+L(u,x,y) = (y * x) \ (y * (x * u)).
+T(u,x) = x \ (u * x).
+K(K(x,y),z) = 1.
+K(x,K(y,v)) = 1.
+K(a(x,y,z),u) = 1.
+K(x,a(u,v,y)) = 1.
+a(K(x,y),z,w) = 1.
+a(z,K(x,y),w) = 1.
+a(z,w,K(x,y)) = 1.
+a(a(x,y,z),u,v) = 1.
+a(x,a(y,z,w),v) = 1.
+a(x,y,a(u,v,w)) = 1.
+end_of_list.
+
+formulas(goals).
+T(L(x,y,z),u) = L(T(x,u),y,z).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 T(L(x,y,z),u) = L(T(x,u),y,z) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+0 * x = x.  [assumption].
+x * 0 = x.  [assumption].
+x * (x \ y) = y.  [assumption].
+x \ (x * y) = y.  [assumption].
+(x * y) / y = x.  [assumption].
+(x / y) * y = x.  [assumption].
+(x * y) * z = (x * (y * z)) * a(x,y,z).  [assumption].
+x * y = (y * x) * K(x,y).  [assumption].
+R(x,y,z) = ((x * y) * z) / (y * z).  [assumption].
+L(x,y,z) = (z * y) \ (z * (y * x)).  [assumption].
+T(x,y) = y \ (x * y).  [assumption].
+K(K(x,y),z) = 1.  [assumption].
+K(x,K(y,z)) = 1.  [assumption].
+K(a(x,y,z),u) = 1.  [assumption].
+K(x,a(y,z,u)) = 1.  [assumption].
+a(K(x,y),z,u) = 1.  [assumption].
+a(x,K(y,z),u) = 1.  [assumption].
+a(x,y,K(z,u)) = 1.  [assumption].
+a(a(x,y,z),u,w) = 1.  [assumption].
+a(x,a(y,z,u),w) = 1.  [assumption].
+a(x,y,a(z,u,w)) = 1.  [assumption].
+T(L(c1,c2,c3),c4) != L(T(c1,c4),c2,c3).  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ 1, 0, c1, c2, c3, c4, *, K, \, /, T, a, L, R ]).
+After inverse_order:  (no changes).
+Unfolding symbols: T/2 L/3 R/3.
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+kept:      2 0 * x = x.  [assumption].
+kept:      3 x * 0 = x.  [assumption].
+kept:      4 x * (x \ y) = y.  [assumption].
+kept:      5 x \ (x * y) = y.  [assumption].
+kept:      6 (x * y) / y = x.  [assumption].
+kept:      7 (x / y) * y = x.  [assumption].
+           8 (x * y) * z = (x * (y * z)) * a(x,y,z).  [assumption].
+kept:      9 (x * (y * z)) * a(x,y,z) = (x * y) * z.  [copy(8),flip(a)].
+           10 x * y = (y * x) * K(x,y).  [assumption].
+kept:      11 (x * y) * K(y,x) = y * x.  [copy(10),flip(a)].
+kept:      12 R(x,y,z) = ((x * y) * z) / (y * z).  [assumption].
+kept:      13 L(x,y,z) = (z * y) \ (z * (y * x)).  [assumption].
+kept:      14 T(x,y) = y \ (x * y).  [assumption].
+kept:      15 K(K(x,y),z) = 1.  [assumption].
+kept:      16 K(x,K(y,z)) = 1.  [assumption].
+kept:      17 K(a(x,y,z),u) = 1.  [assumption].
+kept:      18 K(x,a(y,z,u)) = 1.  [assumption].
+kept:      19 a(K(x,y),z,u) = 1.  [assumption].
+kept:      20 a(x,K(y,z),u) = 1.  [assumption].
+kept:      21 a(x,y,K(z,u)) = 1.  [assumption].
+kept:      22 a(a(x,y,z),u,w) = 1.  [assumption].
+kept:      23 a(x,a(y,z,u),w) = 1.  [assumption].
+kept:      24 a(x,y,a(z,u,w)) = 1.  [assumption].
+           25 T(L(c1,c2,c3),c4) != L(T(c1,c4),c2,c3).  [deny(1)].
+kept:      26 (c3 * c2) \ (c3 * (c2 * (c4 \ (c1 * c4)))) != c4 \ (((c3 * c2) \ (c3 * (c2 * c1))) * c4).  [copy(25),rewrite([13(4),14(11),14(16),13(21)]),flip(a)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+2 0 * x = x.  [assumption].
+3 x * 0 = x.  [assumption].
+4 x * (x \ y) = y.  [assumption].
+5 x \ (x * y) = y.  [assumption].
+6 (x * y) / y = x.  [assumption].
+7 (x / y) * y = x.  [assumption].
+9 (x * (y * z)) * a(x,y,z) = (x * y) * z.  [copy(8),flip(a)].
+11 (x * y) * K(y,x) = y * x.  [copy(10),flip(a)].
+12 R(x,y,z) = ((x * y) * z) / (y * z).  [assumption].
+13 L(x,y,z) = (z * y) \ (z * (y * x)).  [assumption].
+14 T(x,y) = y \ (x * y).  [assumption].
+15 K(K(x,y),z) = 1.  [assumption].
+16 K(x,K(y,z)) = 1.  [assumption].
+17 K(a(x,y,z),u) = 1.  [assumption].
+18 K(x,a(y,z,u)) = 1.  [assumption].
+19 a(K(x,y),z,u) = 1.  [assumption].
+20 a(x,K(y,z),u) = 1.  [assumption].
+21 a(x,y,K(z,u)) = 1.  [assumption].
+22 a(a(x,y,z),u,w) = 1.  [assumption].
+23 a(x,a(y,z,u),w) = 1.  [assumption].
+24 a(x,y,a(z,u,w)) = 1.  [assumption].
+26 (c3 * c2) \ (c3 * (c2 * (c4 \ (c1 * c4)))) != c4 \ (((c3 * c2) \ (c3 * (c2 * c1))) * c4).  [copy(25),rewrite([13(4),14(11),14(16),13(21)]),flip(a)].
+end_of_list.
+
+formulas(demodulators).
+2 0 * x = x.  [assumption].
+3 x * 0 = x.  [assumption].
+4 x * (x \ y) = y.  [assumption].
+5 x \ (x * y) = y.  [assumption].
+6 (x * y) / y = x.  [assumption].
+7 (x / y) * y = x.  [assumption].
+9 (x * (y * z)) * a(x,y,z) = (x * y) * z.  [copy(8),flip(a)].
+11 (x * y) * K(y,x) = y * x.  [copy(10),flip(a)].
+12 R(x,y,z) = ((x * y) * z) / (y * z).  [assumption].
+13 L(x,y,z) = (z * y) \ (z * (y * x)).  [assumption].
+14 T(x,y) = y \ (x * y).  [assumption].
+15 K(K(x,y),z) = 1.  [assumption].
+16 K(x,K(y,z)) = 1.  [assumption].
+17 K(a(x,y,z),u) = 1.  [assumption].
+18 K(x,a(y,z,u)) = 1.  [assumption].
+19 a(K(x,y),z,u) = 1.  [assumption].
+20 a(x,K(y,z),u) = 1.  [assumption].
+21 a(x,y,K(z,u)) = 1.  [assumption].
+22 a(a(x,y,z),u,w) = 1.  [assumption].
+23 a(x,a(y,z,u),w) = 1.  [assumption].
+24 a(x,y,a(z,u,w)) = 1.  [assumption].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=5): 2 0 * x = x.  [assumption].
+
+given #2 (I,wt=5): 3 x * 0 = x.  [assumption].
+
+given #3 (I,wt=7): 4 x * (x \ y) = y.  [assumption].
+
+given #4 (I,wt=7): 5 x \ (x * y) = y.  [assumption].
+
+given #5 (I,wt=7): 6 (x * y) / y = x.  [assumption].
+
+given #6 (I,wt=7): 7 (x / y) * y = x.  [assumption].
+
+given #7 (I,wt=16): 9 (x * (y * z)) * a(x,y,z) = (x * y) * z.  [copy(8),flip(a)].
+
+given #8 (I,wt=11): 11 (x * y) * K(y,x) = y * x.  [copy(10),flip(a)].
+
+given #9 (I,wt=14): 12 R(x,y,z) = ((x * y) * z) / (y * z).  [assumption].
+
+given #10 (I,wt=14): 13 L(x,y,z) = (z * y) \ (z * (y * x)).  [assumption].
+
+given #11 (I,wt=9): 14 T(x,y) = y \ (x * y).  [assumption].
+
+given #12 (I,wt=7): 15 K(K(x,y),z) = 1.  [assumption].
+
+given #13 (I,wt=7): 16 K(x,K(y,z)) = 1.  [assumption].
+
+given #14 (I,wt=27): 26 (c3 * c2) \ (c3 * (c2 * (c4 \ (c1 * c4)))) != c4 \ (((c3 * c2) \ (c3 * (c2 * c1))) * c4).  [copy(25),rewrite([13(4),14(11),14(16),13(21)]),flip(a)].
+
+given #15 (A,wt=5): 27 0 \ x = x.  [para(4(a,1),2(a,1)),flip(a)].
+
+given #16 (T,wt=5): 28 x \ x = 0.  [para(3(a,1),5(a,1,2))].
+
+given #17 (T,wt=5): 29 x / x = 0.  [para(2(a,1),6(a,1,1))].
+
+given #18 (T,wt=5): 30 x / 0 = x.  [para(3(a,1),6(a,1,1))].
+
+given #19 (T,wt=5): 55 K(1,x) = 1.  [para(15(a,1),15(a,1,1))].
+
+given #20 (A,wt=7): 31 x / (y \ x) = y.  [para(4(a,1),6(a,1,1))].
+
+given #21 (T,wt=5): 57 K(x,1) = 1.  [para(15(a,1),16(a,1,2))].
+
+given #22 (T,wt=7): 32 (x / y) \ x = y.  [para(7(a,1),5(a,1,2))].
+
+given #23 (T,wt=7): 46 x * K(x,0) = x.  [para(2(a,1),11(a,1,1)),rewrite([3(5)])].
+
+given #24 (T,wt=5): 62 K(x,0) = 0.  [para(46(a,1),5(a,1,2)),rewrite([28(1)]),flip(a)].
+
+given #25 (A,wt=16): 37 a(x,y,z) = (x * (y * z)) \ ((x * y) * z).  [para(9(a,1),5(a,1,2)),flip(a)].
+
+given #26 (T,wt=3): 66 0 = 1.  [para(62(a,1),15(a,1))].
+
+given #27 (T,wt=5): 67 x * 1 = x.  [back_rewrite(47),rewrite([66(1),55(2)])].
+
+given #28 (T,wt=5): 68 x / 1 = x.  [back_rewrite(30),rewrite([66(1)])].
+
+given #29 (T,wt=5): 69 x / x = 1.  [back_rewrite(29),rewrite([66(2)])].
+
+given #30 (A,wt=33): 38 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) \ ((x * y) * ((z * (u * w)) \ ((z * u) * w))) = 1.  [back_rewrite(24),rewrite([37(1),37(6)])].
+
+given #31 (T,wt=5): 70 x \ x = 1.  [back_rewrite(28),rewrite([66(2)])].
+
+given #32 (T,wt=5): 71 1 \ x = x.  [back_rewrite(27),rewrite([66(1)])].
+
+given #33 (T,wt=5): 72 1 * x = x.  [back_rewrite(2),rewrite([66(1)])].
+
+given #34 (T,wt=11): 49 (x * y) \ (y * x) = K(y,x).  [para(11(a,1),5(a,1,2))].
+
+given #35 (A,wt=33): 39 (x * (((y * (z * u)) \ ((y * z) * u)) * w)) \ ((x * ((y * (z * u)) \ ((y * z) * u))) * w) = 1.  [back_rewrite(23),rewrite([37(1),37(6)])].
+
+given #36 (T,wt=5): 92 K(x,x) = 1.  [para(49(a,1),70(a,1))].
+
+given #37 (T,wt=11): 50 (x * y) / K(x,y) = y * x.  [para(11(a,1),6(a,1,1))].
+
+given #38 (T,wt=11): 73 K(x,y) * z = z * K(x,y).  [back_rewrite(56),rewrite([67(4)])].
+
+given #39 (T,wt=11): 108 K(x,y) \ (z * K(x,y)) = z.  [para(73(a,1),5(a,1,2))].
+
+given #40 (A,wt=33): 40 (((x * (y * z)) \ ((x * y) * z)) * (u * w)) \ ((((x * (y * z)) \ ((x * y) * z)) * u) * w) = 1.  [back_rewrite(22),rewrite([37(1),37(6)])].
+
+given #41 (T,wt=11): 109 x \ (K(y,z) * x) = K(y,z).  [para(73(a,2),5(a,1,2))].
+
+given #42 (T,wt=11): 110 (x * K(y,z)) / x = K(y,z).  [para(73(a,1),6(a,1,1))].
+
+given #43 (T,wt=11): 129 x / K(y,z) = K(y,z) \ x.  [para(7(a,1),108(a,1,2)),flip(a)].
+
+given #44 (T,wt=11): 130 K(x,y) \ (x * y) = y * x.  [para(11(a,1),108(a,1,2))].
+
+given #45 (A,wt=17): 41 (x * (y * K(z,u))) \ ((x * y) * K(z,u)) = 1.  [back_rewrite(21),rewrite([37(2)])].
+
+given #46 (T,wt=11): 148 (K(x,y) \ z) \ z = K(x,y).  [para(4(a,1),109(a,1,2))].
+
+given #47 (T,wt=11): 149 (x * y) / (y * x) = K(x,y).  [para(11(a,1),110(a,1,1))].
+
+given #48 (T,wt=11): 165 x * (y * K(y,x)) = y * x.  [back_rewrite(11),rewrite([150(3)])].
+
+given #49 (T,wt=9): 178 T(x,y) = x * K(x,y).  [back_rewrite(14),rewrite([170(3)])].
+
+given #50 (A,wt=17): 42 (x * (K(y,z) * u)) \ ((x * K(y,z)) * u) = 1.  [back_rewrite(20),rewrite([37(2)])].
+
+given #51 (F,wt=35): 177 (c3 * c2) \ (c3 * (c2 * (c1 * K(c1,c4)))) != ((c3 * c2) \ (c3 * (c2 * c1))) * K((c3 * c2) \ (c3 * (c2 * c1)),c4).  [back_rewrite(26),rewrite([170(10),170(26)])].
+
+given #52 (T,wt=11): 170 x \ (y * x) = y * K(y,x).  [para(165(a,1),5(a,1,2))].
+
+given #53 (T,wt=11): 171 (x * y) / (x * K(x,y)) = y.  [para(165(a,1),6(a,1,1))].
+
+given #54 (T,wt=13): 48 x * K(y \ x,y) = (y \ x) * y.  [para(4(a,1),11(a,1,1))].
+
+given #55 (T,wt=11): 200 K(x \ 1,x) = (x \ 1) * x.  [para(48(a,1),72(a,1)),flip(a)].
+
+given #56 (A,wt=17): 43 (K(x,y) * (z * u)) \ ((K(x,y) * z) * u) = 1.  [back_rewrite(19),rewrite([37(2)])].
+
+given #57 (T,wt=9): 202 K((x \ 1) * x,y) = 1.  [para(200(a,1),15(a,1,1))].
+
+given #58 (T,wt=9): 203 K(x,(y \ 1) * y) = 1.  [para(200(a,1),16(a,1,2))].
+
+given #59 (T,wt=9): 221 K(x * (1 / x),y) = 1.  [para(32(a,1),202(a,1,1,1))].
+
+given #60 (T,wt=9): 222 K(x,y * (1 / y)) = 1.  [para(32(a,1),203(a,1,2,1))].
+
+given #61 (A,wt=15): 44 K(x,(y * (z * u)) \ ((y * z) * u)) = 1.  [back_rewrite(18),rewrite([37(1)])].
+
+given #62 (T,wt=11): 204 K(x,1 / x) = x * (1 / x).  [para(32(a,1),200(a,1,1)),rewrite([32(7)])].
+
+given #63 (T,wt=13): 51 x * K(y,x / y) = y * (x / y).  [para(7(a,1),11(a,1,1))].
+
+given #64 (T,wt=13): 88 x \ ((y \ x) * y) = K(y \ x,y).  [para(4(a,1),49(a,1,1))].
+
+given #65 (T,wt=13): 89 ((x \ y) * x) \ y = K(x,x \ y).  [para(4(a,1),49(a,1,2))].
+
+given #66 (A,wt=15): 45 K((x * (y * z)) \ ((x * y) * z),u) = 1.  [back_rewrite(17),rewrite([37(1)])].
+
+given #67 (T,wt=13): 90 x \ (y * (x / y)) = K(y,x / y).  [para(7(a,1),49(a,1,1))].
+
+given #68 (T,wt=13): 91 (x * (y / x)) \ y = K(y / x,x).  [para(7(a,1),49(a,1,2))].
+
+given #69 (T,wt=13): 131 K(x / y,y) \ x = y * (x / y).  [back_rewrite(107),rewrite([129(3)])].
+
+given #70 (T,wt=13): 132 K(x,x \ y) \ y = (x \ y) * x.  [back_rewrite(106),rewrite([129(3)])].
+
+given #71 (A,wt=31): 74 (x * y) * ((z * (u * w)) \ ((z * u) * w)) = x * (y * ((z * (u * w)) \ ((z * u) * w))).  [para(38(a,1),4(a,1,2)),rewrite([67(9)]),flip(a)].
+
+given #72 (T,wt=13): 166 x / ((y \ x) * y) = K(y,y \ x).  [para(4(a,1),149(a,1,1))].
+
+given #73 (T,wt=13): 167 ((x \ y) * x) / y = K(x \ y,x).  [para(4(a,1),149(a,1,2))].
+
+given #74 (T,wt=13): 168 x / (y * (x / y)) = K(x / y,y).  [para(7(a,1),149(a,1,1))].
+
+given #75 (T,wt=13): 169 (x * (y / x)) / y = K(x,y / x).  [para(7(a,1),149(a,1,2))].
+
+given #76 (A,wt=41): 85 (x * (y * (((z * u) * (K(u,z) * w)) \ ((u * z) * w)))) \ ((x * y) * (((z * u) * (K(u,z) * w)) \ ((u * z) * w))) = 1.  [para(11(a,1),38(a,1,1,2,2,2,1)),rewrite([11(17)])].
+
+given #77 (T,wt=13): 195 (x \ y) \ y = x * K(x,x \ y).  [para(4(a,1),170(a,1,2))].
+
+given #78 (T,wt=13): 196 (x / y) * K(x / y,y) = y \ x.  [para(7(a,1),170(a,1,2)),flip(a)].
+
+given #79 (T,wt=13): 198 x / (y * K(y,y \ x)) = y \ x.  [para(4(a,1),171(a,1,1))].
+
+given #80 (T,wt=13): 343 (x / y) \ (y \ x) = K(x / y,y).  [para(196(a,1),5(a,1,2))].
+
+given #81 (A,wt=37): 87 ((x * y) * (K(y,x) * ((z * (u * w)) \ ((z * u) * w)))) \ (y * (x * ((z * (u * w)) \ ((z * u) * w)))) = 1.  [para(11(a,1),38(a,1,2,1)),rewrite([74(16)])].
+
+given #82 (T,wt=13): 344 K(x / y,y) \ (y \ x) = x / y.  [para(196(a,1),6(a,1,1)),rewrite([129(4)])].
+
+given #83 (T,wt=13): 345 (x \ y) / (y / x) = K(y / x,x).  [para(196(a,1),110(a,1,1))].
+
+given #84 (T,wt=15): 150 (x * y) * K(z,u) = x * (y * K(z,u)).  [para(41(a,1),4(a,1,2)),rewrite([67(5)]),flip(a)].
+
+given #85 (T,wt=11): 426 K(x * K(x,y),y) = K(x,y).  [back_rewrite(190),rewrite([392(5)]),flip(a)].
+
+given #86 (A,wt=31): 93 (x * ((y * (z * u)) \ ((y * z) * u))) * w = x * (((y * (z * u)) \ ((y * z) * u)) * w).  [para(39(a,1),4(a,1,2)),rewrite([67(9)]),flip(a)].
+
+given #87 (T,wt=11): 449 K(K(x,y) \ x,y) = K(x,y).  [back_rewrite(354),rewrite([445(2),195(3),15(5),67(3),445(3)]),flip(a)].
+
+given #88 (T,wt=11): 560 (K(x,y) \ x) * y = y * x.  [para(449(a,1),165(a,1,2,2)),rewrite([73(4,R),4(4)]),flip(a)].
+
+given #89 (T,wt=11): 564 (K(x,y) \ x) \ (y * x) = y.  [para(560(a,1),5(a,1,2))].
+
+given #90 (T,wt=13): 455 x / y = K(y \ x,y) \ (y \ x).  [back_rewrite(344),rewrite([438(2)]),flip(a)].
+
+given #91 (A,wt=41): 104 (x * ((((y * z) * (K(z,y) * u)) \ ((z * y) * u)) * w)) \ ((x * (((y * z) * (K(z,y) * u)) \ ((z * y) * u))) * w) = 1.  [para(11(a,1),39(a,1,1,2,1,2,1)),rewrite([11(16)])].
+
+given #92 (T,wt=13): 522 (K(x \ y,x) \ (x \ y)) \ y = x.  [back_rewrite(32),rewrite([455(1)])].
+
+given #93 (T,wt=13): 567 (((x \ 1) * x) \ (x \ 1)) * x = 1.  [para(200(a,1),560(a,1,1,1)),rewrite([4(10)])].
+
+given #94 (T,wt=13): 587 (((x \ 1) * x) \ (x \ 1)) \ 1 = x.  [para(200(a,1),564(a,1,1,1)),rewrite([4(9)])].
+
+given #95 (T,wt=15): 179 (x * K(y,z)) * u = x * (K(y,z) * u).  [para(42(a,1),4(a,1,2)),rewrite([67(5)]),flip(a)].
+
+given #96 (A,wt=27): 118 (K(x,y) * z) \ (K(x,y) * (z * u)) = (z * K(x,y)) \ (K(x,y) * (z * u)).  [para(73(a,1),13(a,2,1)),rewrite([13(2)])].
+
+given #97 (T,wt=13): 659 (K(x,y) \ 1) * (K(x,y) * z) = z.  [para(567(a,1),179(a,1,1)),rewrite([72(2),73(5,R),4(5),71(5)]),flip(a)].
+
+given #98 (T,wt=13): 712 K(x,y) \ z = (K(x,y) \ 1) * z.  [para(4(a,1),659(a,1,2)),flip(a)].
+
+given #99 (T,wt=13): 713 (K(x,y) \ 1) \ z = K(x,y) * z.  [para(659(a,1),5(a,1,2))].
+
+given #100 (T,wt=11): 792 x * K(x,K(y,z) \ 1) = x.  [para(713(a,1),170(a,1)),rewrite([395(6),67(2)]),flip(a)].
+
+given #101 (A,wt=17): 128 (x * (y * K(z,u))) \ (K(z,u) * (x * y)) = 1.  [para(73(a,2),37(a,2,2)),rewrite([37(2),41(7)]),flip(a)].
+
+given #102 (T,wt=9): 795 K(x,K(y,z) \ 1) = 1.  [para(792(a,1),5(a,1,2)),rewrite([70(1)]),flip(a)].
+
+given #103 (T,wt=11): 799 K(K(x,y) * K(z,u),w) = 1.  [para(73(a,1),128(a,1,1)),rewrite([150(4),641(9)])].
+
+given #104 (T,wt=11): 809 K((x \ K(y,z)) * x,u) = 1.  [para(48(a,1),799(a,1,1))].
+
+given #105 (T,wt=13): 715 K(K(x,y) \ 1,K(x,y) * z) = 1.  [para(659(a,1),49(a,1,2)),rewrite([210(6),395(6),67(2),70(1)]),flip(a)].
+
+given #106 (A,wt=31): 133 (((x * (y * z)) \ ((x * y) * z)) * u) * w = ((x * (y * z)) \ ((x * y) * z)) * (u * w).  [para(40(a,1),4(a,1,2)),rewrite([67(9)]),flip(a)].
+
+given #107 (T,wt=9): 819 K(K(x,y) \ 1,z) = 1.  [para(4(a,1),715(a,1,2))].
+
+given #108 (T,wt=13): 716 (K(x,y) \ 1) * (z * K(x,y)) = z.  [para(73(a,1),659(a,1,2))].
+
+given #109 (T,wt=13): 717 (K(x,y) * z) \ z = K(x,y) \ 1.  [para(659(a,1),170(a,1,2)),rewrite([715(12),67(8)])].
+
+given #110 (T,wt=13): 725 K(x,y) * ((K(x,y) \ 1) * z) = z.  [para(712(a,1),4(a,1,2))].
+
+given #111 (A,wt=41): 143 ((((x * y) * (K(y,x) * z)) \ ((y * x) * z)) * (u * w)) \ (((((x * y) * (K(y,x) * z)) \ ((y * x) * z)) * u) * w) = 1.  [para(11(a,1),40(a,1,1,1,2,1)),rewrite([11(16)])].
+
+given #112 (T,wt=13): 735 (K(x,y) \ 1) * (x * y) = y * x.  [para(712(a,1),130(a,1))].
+
+given #113 (T,wt=11): 921 K(x,y) * (z * K(y,x)) = z.  [para(659(a,1),735(a,1,2)),rewrite([913(3),15(4),70(3),72(2),913(5),150(4)]),flip(a)].
+
+given #114 (T,wt=9): 1027 K(x,y) * K(y,x) = 1.  [para(72(a,1),921(a,1,2))].
+
+given #115 (T,wt=11): 922 K(x,y) \ z = z * K(y,x).  [para(712(a,2),735(a,1,2)),rewrite([913(3),15(2),70(3),72(4),913(5)])].
+
+given #116 (A,wt=17): 159 (x * (K(y,z) * u)) \ (x * (u * K(y,z))) = 1.  [para(73(a,2),41(a,1,1,2)),rewrite([150(6)])].
+
+given #117 (T,wt=11): 942 (x * K(y,z)) \ x = K(z,y).  [back_rewrite(852),rewrite([922(6),72(6)])].
+
+given #118 (T,wt=11): 947 (x * K(y,x)) \ (y * x) = y.  [back_rewrite(761),rewrite([922(3),72(3),73(2)])].
+
+given #119 (T,wt=11): 948 K(x * K(y,x),y) = K(x,y).  [back_rewrite(759),rewrite([922(3),72(3),73(2)])].
+
+given #120 (T,wt=11): 949 K(x,y) * (K(y,x) * z) = z.  [back_rewrite(725),rewrite([922(4),72(4)])].
+
+given #121 (A,wt=17): 183 (x * (y * K(z,u))) \ (x * (K(z,u) * y)) = 1.  [para(73(a,1),42(a,1,1,2)),rewrite([179(6)])].
+
+given #122 (T,wt=11): 950 (K(x,y) * z) \ z = K(y,x).  [back_rewrite(717),rewrite([922(6),72(6)])].
+
+given #123 (T,wt=11): 955 K(x,y * K(y,x)) = K(x,y).  [back_rewrite(566),rewrite([922(2),189(5)])].
+
+given #124 (T,wt=11): 956 K(x,y * K(x,y)) = K(x,y).  [back_rewrite(565),rewrite([922(3),392(5),922(3)]),flip(a)].
+
+given #125 (T,wt=11): 1032 K(x,K(y,z) * K(u,w)) = 1.  [para(799(a,1),1027(a,1,2)),rewrite([67(6)])].
+
+given #126 (A,wt=17): 191 (K(x,y) * (z * u)) \ (z * (K(x,y) * u)) = 1.  [back_rewrite(125),rewrite([179(6)])].
+
+given #127 (T,wt=11): 1033 K(x,(y \ K(z,u)) * y) = 1.  [para(809(a,1),1027(a,1,2)),rewrite([67(6)])].
+
+given #128 (T,wt=13): 810 K((x \ 1) * (x * K(y,z)),u) = 1.  [para(200(a,1),799(a,1,1,1)),rewrite([150(5)])].
+
+given #129 (T,wt=13): 811 K(K(x,y) * ((z \ 1) * z),u) = 1.  [para(200(a,1),799(a,1,1,2))].
+
+given #130 (T,wt=13): 815 K((x \ ((y \ 1) * y)) * x,z) = 1.  [para(200(a,1),809(a,1,1,1,2))].
+
+given #131 (A,wt=15): 205 ((x \ 1) * x) * y = y * ((x \ 1) * x).  [para(200(a,1),73(a,1,1)),rewrite([200(7)])].
+
+given #132 (T,wt=13): 946 ((x \ y) * K(x,x \ y)) \ y = x.  [back_rewrite(763),rewrite([922(4),72(4),73(4)])].
+
+given #133 (T,wt=13): 1017 x / y = (y \ x) * K(y,y \ x).  [back_rewrite(455),rewrite([922(5)])].
+
+given #134 (T,wt=13): 1060 K(x,(y \ 1) * (y * K(z,u))) = 1.  [para(200(a,1),1032(a,1,2,1)),rewrite([150(5)])].
+
+given #135 (T,wt=13): 1061 K(x,K(y,z) * ((u \ 1) * u)) = 1.  [para(200(a,1),1032(a,1,2,2))].
+
+given #136 (A,wt=17): 208 x * ((x \ 1) * ((x \ 1) * x)) = (x \ 1) * x.  [para(200(a,1),165(a,1,2,2))].
+
+given #137 (T,wt=13): 1072 K(x,(y \ ((z \ 1) * z)) * y) = 1.  [para(200(a,1),1033(a,1,2,1,2))].
+
+given #138 (T,wt=13): 1074 K((x \ 1) * (K(y,z) * x),u) = 1.  [para(73(a,2),810(a,1,1,2))].
+
+given #139 (T,wt=13): 1076 K((x \ 1) * ((y \ x) * y),z) = 1.  [para(48(a,1),810(a,1,1,2))].
+
+given #140 (T,wt=13): 1125 K(x,(y \ 1) * (K(z,u) * y)) = 1.  [para(73(a,2),1060(a,1,2,2))].
+
+given #141 (A,wt=15): 210 (K(x,y) * z) * u = K(x,y) * (z * u).  [para(43(a,1),4(a,1,2)),rewrite([67(5)]),flip(a)].
+
+given #142 (T,wt=13): 1127 K(x,(y \ 1) * ((z \ y) * z)) = 1.  [para(48(a,1),1060(a,1,2,2))].
+
+given #143 (T,wt=13): 1162 K(((x * K(y,z)) \ 1) * x,u) = 1.  [para(4(a,1),1074(a,1,1,2)),rewrite([922(2)])].
+
+given #144 (T,wt=13): 1167 K(((K(x,y) * z) \ 1) * z,u) = 1.  [para(949(a,1),1074(a,1,1,2))].
+
+given #145 (T,wt=13): 1169 K(((x * y) \ 1) * (y * x),z) = 1.  [para(5(a,1),1076(a,1,1,2,1))].
+
+given #146 (A,wt=17): 220 (x * (K(y,z) * u)) \ (K(y,z) * (x * u)) = 1.  [back_rewrite(127),rewrite([210(6)])].
+
+given #147 (T,wt=13): 1179 K(x,((y * K(z,u)) \ 1) * y) = 1.  [para(4(a,1),1125(a,1,2,2)),rewrite([922(2)])].
+
+given #148 (T,wt=13): 1184 K(x,((K(y,z) * u) \ 1) * u) = 1.  [para(949(a,1),1125(a,1,2,2))].
+
+given #149 (T,wt=13): 1200 K(x,((y * z) \ 1) * (z * y)) = 1.  [para(5(a,1),1127(a,1,2,2,1))].
+
+given #150 (T,wt=13): 1213 K((((x \ y) * x) \ 1) * y,z) = 1.  [para(48(a,1),1162(a,1,1,1,1))].
+
+given #151 (A,wt=15): 228 K(x,(y * z) \ ((y * u) * (u \ z))) = 1.  [para(4(a,1),44(a,1,2,1,2))].
+
+given #152 (T,wt=13): 1248 K(x,(((y \ z) * y) \ 1) * z) = 1.  [para(48(a,1),1179(a,1,2,1,1))].
+
+given #153 (T,wt=13): 1273 K(x,y \ ((y * z) * (z \ 1))) = 1.  [para(67(a,1),228(a,1,2,1))].
+
+given #154 (T,wt=13): 1302 K(x,y \ (z * ((y \ z) \ 1))) = 1.  [para(4(a,1),1273(a,1,2,2,1))].
+
+given #155 (T,wt=13): 1312 K(x \ ((x * y) * (y \ 1)),z) = 1.  [para(1273(a,1),1027(a,1,2)),rewrite([67(8)])].
+
+given #156 (A,wt=15): 229 K(x,(y * ((y \ z) * u)) \ (z * u)) = 1.  [para(4(a,1),44(a,1,2,2,1))].
+
+given #157 (T,wt=13): 1324 K(x \ (y * ((x \ y) \ 1)),z) = 1.  [para(1302(a,1),1027(a,1,2)),rewrite([67(8)])].
+
+given #158 (T,wt=13): 1339 K(x,(y * ((y \ 1) * z)) \ z) = 1.  [para(72(a,1),229(a,1,2,2))].
+
+given #159 (T,wt=13): 1381 K(x,(y * z) \ ((y \ 1) \ z)) = 1.  [para(4(a,1),1339(a,1,2,1,2))].
+
+given #160 (T,wt=13): 1393 K((x * ((x \ 1) * y)) \ y,z) = 1.  [para(1339(a,1),1027(a,1,2)),rewrite([67(8)])].
+
+given #161 (A,wt=15): 230 K(x,(y * (z * ((y * z) \ u))) \ u) = 1.  [para(4(a,1),44(a,1,2,2))].
+
+given #162 (T,wt=13): 1396 K(x,y \ ((z \ 1) \ (z \ y))) = 1.  [para(4(a,1),1381(a,1,2,1))].
+
+given #163 (T,wt=13): 1410 K((x * y) \ ((x \ 1) \ y),z) = 1.  [para(1381(a,1),1027(a,1,2)),rewrite([67(8)])].
+
+given #164 (T,wt=13): 1450 K(x \ ((y \ 1) \ (y \ x)),z) = 1.  [para(1396(a,1),1027(a,1,2)),rewrite([67(8)])].
+
+given #165 (T,wt=15): 247 K((x * y) \ ((x * z) * (z \ y)),u) = 1.  [para(4(a,1),45(a,1,1,1,2))].
+
+given #166 (A,wt=27): 234 ((x * (y * z)) \ ((x * y) * z)) * u = u * ((x * (y * z)) \ ((x * y) * z)).  [para(44(a,1),130(a,1,1)),rewrite([71(8)]),flip(a)].
+
+given #167 (T,wt=15): 248 K((x * ((x \ y) * z)) \ (y * z),u) = 1.  [para(4(a,1),45(a,1,1,2,1))].
+
+given #168 (T,wt=15): 249 K((x * (y * ((x * y) \ z))) \ z,u) = 1.  [para(4(a,1),45(a,1,1,2))].
+
+given #169 (T,wt=15): 391 x * ((x \ y) * K(z,u)) = y * K(z,u).  [para(4(a,1),150(a,1,1)),flip(a)].
+
+given #170 (T,wt=13): 1661 x * (K(y,z) * (x \ K(z,y))) = 1.  [para(1027(a,1),391(a,2)),rewrite([73(4,R)])].
+
+given #171 (A,wt=19): 235 K(x,(y * (z * u)) \ ((y * u) * (z * K(z,u)))) = 1.  [para(165(a,1),44(a,1,2,1,2))].
+
+given #172 (T,wt=13): 1710 K(x,y) * (z \ K(y,x)) = z \ 1.  [para(1661(a,1),5(a,1,2)),flip(a)].
+
+given #173 (T,wt=13): 1722 K(x,(y * z) * (z \ (y \ 1))) = 1.  [para(1661(a,1),228(a,1,2,1)),rewrite([1710(6),71(7)])].
+
+given #174 (T,wt=13): 1723 K((x * y) * (y \ (x \ 1)),z) = 1.  [para(1661(a,1),247(a,1,1,1)),rewrite([1710(6),71(7)])].
+
+given #175 (T,wt=13): 1786 x \ K(y,z) = (x \ 1) * K(y,z).  [para(1710(a,1),5(a,1,2)),rewrite([922(4)]),flip(a)].
+
+given #176 (A,wt=19): 236 K(x,(y * (z * (K(z,y) * u))) \ ((z * y) * u)) = 1.  [para(165(a,1),44(a,1,2,2,1)),rewrite([179(3)])].
+
+given #177 (T,wt=13): 1815 K(x,y * ((z \ y) \ (z \ 1))) = 1.  [para(4(a,1),1722(a,1,2,1))].
+
+given #178 (T,wt=13): 1833 K(x * ((y \ x) \ (y \ 1)),z) = 1.  [para(4(a,1),1723(a,1,1,1))].
+
+given #179 (T,wt=15): 392 (x * y) \ (x * (y * K(z,u))) = K(z,u).  [para(150(a,1),5(a,1,2))].
+
+given #180 (T,wt=15): 398 K(x,y) * (z * u) = z * (u * K(x,y)).  [para(150(a,1),73(a,2))].
+
+given #181 (A,wt=21): 237 K(x,(y * (z * (u * K(u,y * z)))) \ (u * (y * z))) = 1.  [para(165(a,1),44(a,1,2,2))].
+
+given #182 (T,wt=15): 401 x * (K(y,z) * u) = x * (u * K(y,z)).  [para(73(a,2),150(a,2,2)),rewrite([150(3)]),flip(a)].
+
+given #183 (T,wt=15): 427 (x * y) \ (x * (K(z,u) * y)) = K(z,u).  [back_rewrite(122),rewrite([392(10)])].
+
+given #184 (T,wt=15): 585 x * (K(y,z) * ((x * K(y,z)) \ u)) = u.  [back_rewrite(470),rewrite([579(13)])].
+
+given #185 (T,wt=15): 639 (x * K(y,z)) \ (x * (K(y,z) * u)) = u.  [para(179(a,1),5(a,1,2))].
+
+given #186 (A,wt=27): 239 (((x * (y * z)) \ ((x * y) * z)) \ u) * ((x * (y * z)) \ ((x * y) * z)) = u.  [para(44(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #187 (T,wt=15): 643 K(x,y) * (z * u) = z * (K(x,y) * u).  [para(73(a,2),179(a,1,1)),rewrite([210(3)])].
+
+given #188 (T,wt=15): 661 (K(x,y) * z) \ (z * (K(x,y) * u)) = u.  [back_rewrite(121),rewrite([639(12)])].
+
+given #189 (T,wt=11): 2607 x * K(x,K(y,z) * x) = x.  [para(661(a,1),170(a,1)),flip(a)].
+
+given #190 (T,wt=9): 2623 K(x,K(y,z) * x) = 1.  [para(2607(a,1),5(a,1,2)),rewrite([70(1)]),flip(a)].
+
+given #191 (A,wt=19): 253 K((x * (y * z)) \ ((x * z) * (y * K(y,z))),u) = 1.  [para(165(a,1),45(a,1,1,1,2))].
+
+given #192 (T,wt=9): 2626 K(x,x * K(y,z)) = 1.  [para(2607(a,1),942(a,1,1)),rewrite([70(1),1994(4)]),flip(a)].
+
+given #193 (T,wt=9): 2712 K(x,(y \ x) * y) = 1.  [para(48(a,1),2626(a,1,2))].
+
+given #194 (T,wt=9): 2714 K(x * y,y * x) = 1.  [para(5(a,1),2712(a,1,2,1))].
+
+given #195 (T,wt=9): 2719 K((x \ y) * x,y) = 1.  [para(2712(a,1),1027(a,1,2)),rewrite([67(5)])].
+
+given #196 (A,wt=19): 254 K((x * (y * (K(y,x) * z))) \ ((y * x) * z),u) = 1.  [para(165(a,1),45(a,1,1,2,1)),rewrite([179(3)])].
+
+given #197 (T,wt=11): 2634 K(x,((y \ 1) * y) * x) = 1.  [para(200(a,1),2623(a,1,2,1))].
+
+given #198 (T,wt=11): 2713 K(x,x * ((y \ 1) * y)) = 1.  [para(200(a,1),2626(a,1,2,2))].
+
+given #199 (T,wt=11): 2833 K(((x \ 1) * x) * y,y) = 1.  [para(2634(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #200 (T,wt=11): 2849 K(x * ((y \ 1) * y),x) = 1.  [para(2713(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #201 (A,wt=21): 255 K((x * (y * (z * K(z,x * y)))) \ (z * (x * y)),u) = 1.  [para(165(a,1),45(a,1,1,2))].
+
+given #202 (T,wt=13): 2636 K(x * y,x * (y * K(z,u))) = 1.  [para(398(a,1),2623(a,1,2))].
+
+given #203 (T,wt=13): 2640 K(x * y,x * (K(z,u) * y)) = 1.  [para(643(a,1),2623(a,1,2))].
+
+given #204 (T,wt=13): 2961 K(x * y,x * ((z \ y) * z)) = 1.  [para(48(a,1),2636(a,1,2,2))].
+
+given #205 (T,wt=13): 2968 K(x * (y * K(z,u)),x * y) = 1.  [para(2636(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #206 (A,wt=23): 257 ((x * (y * z)) \ ((x * y) * z)) * (x * (y * z)) = (x * y) * z.  [para(45(a,1),48(a,1,2)),rewrite([67(4)]),flip(a)].
+
+given #207 (T,wt=13): 2996 K(x * (K(y,z) * u),x * u) = 1.  [para(2640(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #208 (T,wt=13): 3017 K(x,y * ((z \ (y \ x)) * z)) = 1.  [para(4(a,1),2961(a,1,1))].
+
+given #209 (T,wt=13): 3018 K(x * (y * z),x * (z * y)) = 1.  [para(5(a,1),2961(a,1,2,2,1))].
+
+given #210 (T,wt=13): 3033 K(x * ((y \ z) * y),x * z) = 1.  [para(2961(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #211 (A,wt=23): 264 x * (y * (z * ((x * (y * z)) \ ((x * y) * z)))) = (x * y) * z.  [para(74(a,1),4(a,1)),rewrite([74(7)])].
+
+given #212 (T,wt=13): 3166 K(x * ((y \ (x \ z)) * y),z) = 1.  [para(3017(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #213 (T,wt=15): 675 (K(x,y) * z) \ (K(x,y) * (z * u)) = u.  [para(73(a,1),118(a,2,2)),rewrite([150(11),662(12)])].
+
+given #214 (T,wt=11): 3316 K(x,y * K(z,u)) = K(x,y).  [back_rewrite(2475),rewrite([3309(7),49(3)]),flip(a)].
+
+given #215 (T,wt=11): 3367 K(x,K(y,z) * u) = K(x,u).  [back_rewrite(2215),rewrite([3316(6)])].
+
+given #216 (A,wt=31): 265 x * ((x \ y) * ((z * (u * w)) \ ((z * u) * w))) = y * ((z * (u * w)) \ ((z * u) * w)).  [para(4(a,1),74(a,1,1)),flip(a)].
+
+given #217 (T,wt=11): 3394 K(K(x,y) * z,u) = K(z,u).  [back_rewrite(1994),rewrite([3316(6)])].
+
+given #218 (T,wt=11): 3482 K(x * K(y,z),u) = K(x,u).  [back_rewrite(1993),rewrite([3367(6)])].
+
+given #219 (T,wt=11): 3500 K(x,(y \ z) * y) = K(x,z).  [para(48(a,1),3316(a,1,2))].
+
+given #220 (T,wt=11): 3737 K((x \ y) * x,z) = K(y,z).  [para(48(a,1),3482(a,1,1))].
+
+given #221 (A,wt=31): 266 (x * y) * ((z * u) \ ((z * w) * (w \ u))) = x * (y * ((z * u) \ ((z * w) * (w \ u)))).  [para(4(a,1),74(a,1,2,1,2)),rewrite([4(9)])].
+
+given #222 (T,wt=11): 3748 K(x,y * z) = K(x,z * y).  [para(5(a,1),3500(a,1,2,1))].
+
+given #223 (T,wt=11): 3801 K(x * y,z) = K(y * x,z).  [para(5(a,1),3737(a,1,1,1))].
+
+given #224 (T,wt=13): 3358 K(((x \ 1) * y) * (y \ x),z) = 1.  [back_rewrite(2590),rewrite([3316(10)])].
+
+given #225 (T,wt=13): 3378 K((x * (y * (x \ 1))) \ y,z) = 1.  [back_rewrite(2129),rewrite([3316(10)])].
+
+given #226 (A,wt=31): 267 (x * y) * ((z * ((z \ u) * w)) \ (u * w)) = x * (y * ((z * ((z \ u) * w)) \ (u * w))).  [para(4(a,1),74(a,1,2,2,1)),rewrite([4(12)])].
+
+given #227 (T,wt=13): 3454 K(x,((y \ 1) * z) * (z \ y)) = 1.  [back_rewrite(2592),rewrite([3367(10)])].
+
+given #228 (T,wt=13): 3491 K(x,(y * (z * (y \ 1))) \ z) = 1.  [back_rewrite(1707),rewrite([3367(10)])].
+
+given #229 (T,wt=13): 3502 K(x,y * ((z \ 1) * z)) = K(x,y).  [para(200(a,1),3316(a,1,2,2))].
+
+given #230 (T,wt=13): 3529 K(x,((y \ z) * y) * (z \ 1)) = 1.  [back_rewrite(1819),rewrite([3503(9)])].
+
+given #231 (A,wt=31): 268 (x * y) * ((z * (u * ((z * u) \ w))) \ w) = x * (y * ((z * (u * ((z * u) \ w))) \ w)).  [para(4(a,1),74(a,1,2,2)),rewrite([4(15)])].
+
+given #232 (T,wt=13): 3533 K(x,((y \ 1) * y) * z) = K(x,z).  [para(200(a,1),3367(a,1,2,1))].
+
+given #233 (T,wt=13): 3555 K(x,(y \ x) * ((z \ y) * z)) = 1.  [back_rewrite(3173),rewrite([3535(8)])].
+
+given #234 (T,wt=13): 3556 K(x * y,y * ((z \ x) * z)) = 1.  [back_rewrite(3168),rewrite([3535(7)])].
+
+given #235 (T,wt=13): 3572 K(x,y * (((z \ 1) \ y) \ z)) = 1.  [back_rewrite(1944),rewrite([3535(10)])].
+
+given #236 (A,wt=31): 269 (x * y) \ (x * (y * ((z * (u * w)) \ ((z * u) * w)))) = (z * (u * w)) \ ((z * u) * w).  [para(74(a,1),5(a,1,2))].
+
+given #237 (T,wt=13): 3573 K(x,(y * z) * ((z * y) \ 1)) = 1.  [back_rewrite(1940),rewrite([3535(8)])].
+
+given #238 (T,wt=13): 3575 K(x,y * ((z \ (y \ 1)) * z)) = 1.  [back_rewrite(1203),rewrite([3535(10)])].
+
+given #239 (T,wt=13): 3702 K(((x \ 1) * x) * y,z) = K(y,z).  [para(200(a,1),3394(a,1,1,1))].
+
+given #240 (T,wt=13): 3714 K(((x \ y) * x) * (y \ 1),z) = 1.  [back_rewrite(1835),rewrite([3705(9)])].
+
+given #241 (A,wt=33): 275 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) \ (((z * (u * w)) \ ((z * u) * w)) * (x * y)) = 1.  [para(74(a,1),49(a,1,1)),rewrite([45(22)])].
+
+given #242 (T,wt=13): 3720 K((x \ y) * ((z \ x) * z),y) = 1.  [back_rewrite(3301),rewrite([3706(8)])].
+
+given #243 (T,wt=13): 3721 K(x * ((y \ z) * y),z * x) = 1.  [back_rewrite(3296),rewrite([3706(7)])].
+
+given #244 (T,wt=13): 3732 K(x * (((y \ 1) \ x) \ y),z) = 1.  [back_rewrite(1961),rewrite([3706(10)])].
+
+given #245 (T,wt=13): 3733 K((x * y) * ((y * x) \ 1),z) = 1.  [back_rewrite(1959),rewrite([3706(8)])].
+
+given #246 (A,wt=33): 276 (((x * (y * z)) \ ((x * y) * z)) * (u * w)) \ (u * (w * ((x * (y * z)) \ ((x * y) * z)))) = 1.  [para(74(a,1),49(a,1,2)),rewrite([44(22)])].
+
+given #247 (T,wt=13): 3735 K(x * ((y \ (x \ 1)) * y),z) = 1.  [back_rewrite(1172),rewrite([3706(10)])].
+
+given #248 (T,wt=13): 3738 K(x * ((y \ 1) * y),z) = K(x,z).  [para(200(a,1),3482(a,1,1,2))].
+
+given #249 (T,wt=13): 3754 K(x,y * (((z \ y) * z) \ 1)) = 1.  [para(1248(a,1),3500(a,2)),rewrite([3748(8),4(7),3748(6)])].
+
+given #250 (T,wt=13): 3778 K(x,y * (((z * y) \ 1) * z)) = 1.  [back_rewrite(3530),rewrite([3748(6)])].
+
+given #251 (A,wt=31): 280 ((x * (y * z)) \ ((x * y) * z)) * (u * w) = u * (w * ((x * (y * z)) \ ((x * y) * z))).  [para(74(a,1),130(a,1,2)),rewrite([44(7),71(9)]),flip(a)].
+
+given #252 (T,wt=13): 3779 K(x,y * (z * (y \ (z \ 1)))) = 1.  [back_rewrite(3528),rewrite([3748(6)])].
+
+given #253 (T,wt=13): 3806 K(x * (((y \ x) * y) \ 1),z) = 1.  [para(1213(a,1),3737(a,2)),rewrite([3801(8),4(7),3801(6)])].
+
+given #254 (T,wt=13): 3816 K(x,(y * z) * ((z * y) \ x)) = 1.  [para(3737(a,1),3018(a,1)),rewrite([3748(5)])].
+
+given #255 (T,wt=13): 3817 K(x,y * (((z \ y) * z) \ x)) = 1.  [para(3737(a,1),3033(a,1)),rewrite([3748(5)])].
+
+given #256 (A,wt=35): 283 x * (y * (K(y,x) * ((z * (u * w)) \ ((z * u) * w)))) = y * (x * ((z * (u * w)) \ ((z * u) * w))).  [para(165(a,1),74(a,1,1)),rewrite([74(7),74(15)]),flip(a)].
+
+given #257 (T,wt=13): 3819 K((x * y) * ((y * x) \ z),z) = 1.  [back_rewrite(3764),rewrite([3801(5)])].
+
+given #258 (T,wt=13): 3820 K(x * (((y \ x) * y) \ z),z) = 1.  [back_rewrite(3763),rewrite([3801(5)])].
+
+given #259 (T,wt=13): 3824 K(x * (((y * x) \ 1) * y),z) = 1.  [back_rewrite(3717),rewrite([3801(6)])].
+
+given #260 (T,wt=13): 3825 K(x * (y * (x \ (y \ 1))),z) = 1.  [back_rewrite(3713),rewrite([3801(6)])].
+
+given #261 (A,wt=39): 284 (x * y) * ((z * (u * w)) \ ((z * w) * (u * K(u,w)))) = x * (y * ((z * (u * w)) \ ((z * w) * (u * K(u,w))))).  [para(165(a,1),74(a,1,2,1,2)),rewrite([165(12)])].
+
+given #262 (T,wt=13): 3975 K(x,y * z) * K(z * y,x) = 1.  [para(3748(a,1),1027(a,1,1))].
+
+given #263 (T,wt=13): 3976 K(x * y,z) * K(z,y * x) = 1.  [para(3748(a,1),1027(a,1,2))].
+
+given #264 (T,wt=13): 3996 K(x * y,((z \ y) * z) * x) = 1.  [para(3748(a,1),2961(a,1))].
+
+given #265 (T,wt=13): 3997 K(x * (y * z),(z * y) * x) = 1.  [para(3748(a,1),3018(a,1))].
+
+given #266 (A,wt=39): 285 (x * y) * ((z * (u * (K(u,z) * w))) \ ((u * z) * w)) = x * (y * ((z * (u * (K(u,z) * w))) \ ((u * z) * w))).  [para(165(a,1),74(a,1,2,2,1)),rewrite([179(4),179(12),165(16)])].
+
+given #267 (T,wt=13): 4027 K((x * y) * z,z * (y * x)) = 1.  [para(3801(a,1),3018(a,1))].
+
+given #268 (T,wt=13): 4028 K(((x \ y) * x) * z,z * y) = 1.  [para(3801(a,1),3033(a,1))].
+
+given #269 (T,wt=13): 4034 K(x * (((x * y) \ 1) * y),z) = 1.  [para(170(a,1),3358(a,1,1,2)),rewrite([3801(8),179(7),3706(8)])].
+
+given #270 (T,wt=13): 4035 K(x * ((y \ 1) * (x \ y)),z) = 1.  [para(195(a,1),3358(a,1,1,2)),rewrite([3705(9),3801(6)])].
+
+given #271 (A,wt=43): 286 (x * y) * ((z * (u * (w * K(w,z * u)))) \ (w * (z * u))) = x * (y * ((z * (u * (w * K(w,z * u)))) \ (w * (z * u)))).  [para(165(a,1),74(a,1,2,2)),rewrite([165(20)])].
+
+given #272 (T,wt=13): 4046 K((x \ y) * ((y \ 1) * x),z) = 1.  [para(3358(a,1),3801(a,1)),flip(a)].
+
+given #273 (T,wt=13): 4179 K(x,y * (((y * z) \ 1) * z)) = 1.  [para(170(a,1),3454(a,1,2,2)),rewrite([3748(8),179(7),3535(8)])].
+
+given #274 (T,wt=13): 4181 K(x,y * ((z \ 1) * (y \ z))) = 1.  [para(195(a,1),3454(a,1,2,2)),rewrite([3503(9),3748(6)])].
+
+given #275 (T,wt=13): 4192 K(x,(y \ z) * ((z \ 1) * y)) = 1.  [para(3454(a,1),3748(a,1)),flip(a)].
+
+given #276 (A,wt=31): 287 ((x * (y * z)) \ ((x * y) * z)) \ (u * (w * ((x * (y * z)) \ ((x * y) * z)))) = u * w.  [para(74(a,1),170(a,1,2)),rewrite([44(21),67(16)])].
+
+given #277 (T,wt=13): 4385 K(x,((y \ z) * y) * (z \ x)) = 1.  [para(3555(a,1),3748(a,1)),flip(a)].
+
+given #278 (T,wt=13): 4412 K(x * y,((z \ x) * z) * y) = 1.  [para(3556(a,1),3748(a,1)),flip(a)].
+
+given #279 (T,wt=13): 4607 K(((x \ y) * x) * (y \ z),z) = 1.  [para(3720(a,1),3801(a,1)),flip(a)].
+
+given #280 (T,wt=13): 4635 K(((x \ y) * x) * z,y * z) = 1.  [para(3721(a,1),3801(a,1)),flip(a)].
+
+given #281 (A,wt=55): 297 (x * y) * (((z * (u * w)) \ ((z * u) * w)) * ((v5 * (v6 * v7)) \ ((v5 * v6) * v7))) = x * (y * (((z * (u * w)) \ ((z * u) * w)) * ((v5 * (v6 * v7)) \ ((v5 * v6) * v7)))).  [para(74(a,1),74(a,1,1)),rewrite([74(13),74(12)]),flip(a)].
+
+given #282 (T,wt=13): 5166 K((x * y) * z,(y * x) * z) = 1.  [para(5(a,1),3816(a,1,2,2))].
+
+given #283 (T,wt=15): 719 K(x,x \ 1) * (((x \ 1) * x) * y) = y.  [para(200(a,1),659(a,1,1,1)),rewrite([89(5),200(6)])].
+
+given #284 (T,wt=15): 722 ((x \ 1) * x) * (K(x,x \ 1) * y) = y.  [para(132(a,1),659(a,1,1))].
+
+given #285 (T,wt=15): 739 ((x \ 1) * x) \ y = K(x,x \ 1) * y.  [para(200(a,1),712(a,1,1)),rewrite([200(7),89(9)])].
+
+given #286 (A,wt=39): 299 (x * y) * (((z * u) * (K(u,z) * w)) \ ((u * z) * w)) = x * (y * (((z * u) * (K(u,z) * w)) \ ((u * z) * w))).  [para(85(a,1),4(a,1,2)),rewrite([67(11)]),flip(a)].
+
+given #287 (T,wt=15): 791 K(x,x \ 1) * (y * ((x \ 1) * x)) = y.  [back_rewrite(223),rewrite([739(4),410(8)])].
+
+given #288 (T,wt=15): 857 ((x \ 1) * x) * (y * K(x,x \ 1)) = y.  [para(132(a,1),716(a,1,1))].
+
+given #289 (T,wt=15): 871 (((x \ 1) * x) * y) \ y = K(x,x \ 1).  [para(200(a,1),717(a,1,1,1)),rewrite([200(8),89(10)])].
+
+given #290 (T,wt=15): 936 K(x,y) * (z * (u * K(y,x))) = z * u.  [back_rewrite(862),rewrite([922(3),72(3)])].
+
+given #291 (A,wt=41): 308 (x * (y * (((z * u) * (w * K(u,z))) \ ((u * z) * w)))) \ (x * (y * (((z * u) * (K(u,z) * w)) \ ((u * z) * w)))) = 1.  [para(73(a,1),85(a,1,1,2,2,1,2)),rewrite([299(18)])].
+
+given #292 (T,wt=15): 1039 (x * ((y \ 1) * y)) \ x = K(y,y \ 1).  [para(200(a,1),942(a,1,1,2))].
+
+given #293 (T,wt=15): 1040 (x * (y * K(z,u))) \ (x * y) = K(u,z).  [para(150(a,1),942(a,1,1))].
+
+given #294 (T,wt=15): 1077 K((x \ 1) * (x * ((y \ 1) * y)),z) = 1.  [para(200(a,1),810(a,1,1,2,2))].
+
+given #295 (T,wt=15): 1128 K(x,(y \ 1) * (y * ((z \ 1) * z))) = 1.  [para(200(a,1),1060(a,1,2,2,2))].
+
+given #296 (A,wt=41): 309 (x * (y * (((z * u) * (K(u,z) * w)) \ ((u * z) * w)))) \ ((x * y) * (((z * u) * (w * K(u,z))) \ ((u * z) * w))) = 1.  [para(73(a,1),85(a,1,2,2,1,2))].
+
+given #297 (T,wt=15): 1165 K((x \ 1) * (((y \ 1) * y) * x),z) = 1.  [para(200(a,1),1074(a,1,1,2,1))].
+
+given #298 (T,wt=15): 1182 K(x,(y \ 1) * (((z \ 1) * z) * y)) = 1.  [para(200(a,1),1125(a,1,2,2,1))].
+
+given #299 (T,wt=15): 1186 K(x,y) * (z * ((K(x,y) * z) \ u)) = u.  [para(210(a,1),4(a,1))].
+
+given #300 (T,wt=15): 1187 K(x,y) * (z * (K(y,x) * u)) = z * u.  [para(4(a,1),210(a,1,1)),rewrite([922(4),179(5)]),flip(a)].
+
+given #301 (A,wt=39): 371 ((x \ y) * (x * ((z * (u * w)) \ ((z * u) * w)))) \ (K(x \ y,x) * (y * ((z * (u * w)) \ ((z * u) * w)))) = 1.  [para(48(a,1),87(a,1,1,1)),rewrite([15(5),72(9),74(8)])].
+
+given #302 (T,wt=15): 1271 K(x,y \ ((z * u) * (u \ (z \ y)))) = 1.  [para(4(a,1),228(a,1,2,1))].
+
+given #303 (T,wt=15): 1272 K(x,(y * z) \ (u * ((y \ u) \ z))) = 1.  [para(4(a,1),228(a,1,2,2,1))].
+
+given #304 (T,wt=15): 1338 K(x,(y * ((y \ z) * (z \ u))) \ u) = 1.  [para(4(a,1),229(a,1,2,2))].
+
+given #305 (T,wt=15): 1490 K(x \ ((y * z) * (z \ (y \ x))),u) = 1.  [para(4(a,1),247(a,1,1,1))].
+
+given #306 (A,wt=41): 374 (x * ((y \ 1) * (y * ((z * (u * w)) \ ((z * u) * w))))) \ (((y \ 1) * y) * (x * ((z * (u * w)) \ ((z * u) * w)))) = 1.  [para(202(a,1),87(a,1,1,2,1)),rewrite([72(11),74(10),74(9)])].
+
+given #307 (T,wt=15): 1491 K((x * y) \ (z * ((x \ z) \ y)),u) = 1.  [para(4(a,1),247(a,1,1,2,1))].
+
+given #308 (T,wt=15): 1581 K((x * ((x \ y) * (y \ z))) \ z,u) = 1.  [para(4(a,1),248(a,1,1,2))].
+
+given #309 (T,wt=15): 1638 x \ (y * K(z,u)) = (x \ y) * K(z,u).  [para(391(a,1),5(a,1,2))].
+
+given #310 (T,wt=13): 8390 K(x,(y * z) \ ((z \ 1) \ y)) = 1.  [back_rewrite(1706),rewrite([8080(7),73(7,R),3367(8)])].
+
+given #311 (A,wt=41): 375 (((x \ 1) * x) * (y * ((z * (u * w)) \ ((z * u) * w)))) \ (y * ((x \ 1) * (x * ((z * (u * w)) \ ((z * u) * w))))) = 1.  [para(203(a,1),87(a,1,1,2,1)),rewrite([72(11),74(10),74(19)])].
+
+given #312 (T,wt=13): 8391 K(x,y \ (((z \ y) \ 1) \ z)) = 1.  [back_rewrite(1704),rewrite([8080(8),73(8,R),3367(9)])].
+
+given #313 (T,wt=13): 8392 K((x * y) \ ((y \ 1) \ x),z) = 1.  [back_rewrite(1703),rewrite([8080(7),73(7,R),3394(8)])].
+
+given #314 (T,wt=13): 8393 K(x \ (((y \ x) \ 1) \ y),z) = 1.  [back_rewrite(1702),rewrite([8080(8),73(8,R),3394(9)])].
+
+given #315 (T,wt=13): 8402 K(x \ (y \ ((y \ 1) \ x)),z) = 1.  [back_rewrite(7848),rewrite([8083(9),3801(10),3702(10)])].
+
+given #316 (A,wt=57): 383 (x * (y * (((z * (u * w)) \ ((z * u) * w)) * ((v5 * (v6 * v7)) \ ((v5 * v6) * v7))))) \ (((z * (u * w)) \ ((z * u) * w)) * (x * (y * ((v5 * (v6 * v7)) \ ((v5 * v6) * v7))))) = 1.  [para(74(a,1),87(a,1,1,1)),rewrite([45(14),72(14),74(13),74(12),74(25)])].
+
+given #317 (T,wt=13): 8405 K(x,y \ (z \ ((z \ 1) \ y))) = 1.  [back_rewrite(7706),rewrite([8083(9),3748(10),3533(10)])].
+
+given #318 (T,wt=13): 8449 K(((x \ 1) * y) \ (x \ y),z) = 1.  [back_rewrite(1509),rewrite([8083(9),3801(10),3702(10)])].
+
+given #319 (T,wt=13): 8451 K(x,((y \ 1) * z) \ (y \ z)) = 1.  [back_rewrite(1292),rewrite([8083(9),3748(10),3533(10)])].
+
+given #320 (T,wt=13): 8456 K(((x \ 1) * (x * y)) \ y,z) = 1.  [back_rewrite(1097),rewrite([8083(9),3801(10),3702(10)])].
+
+given #321 (A,wt=17): 405 x * (y * (z * K(y * z,x))) = (y * z) * x.  [para(150(a,1),165(a,1,2))].
+
+given #322 (T,wt=13): 8457 K(x,((y \ 1) * (y * z)) \ z) = 1.  [back_rewrite(1095),rewrite([8083(9),3748(10),3533(10)])].
+
+given #323 (T,wt=13): 8820 K(x,y \ ((y * (z \ 1)) * z)) = 1.  [back_rewrite(788),rewrite([8085(9),73(9,R),3367(10)])].
+
+given #324 (T,wt=13): 8821 K(x \ ((x * (y \ 1)) * y),z) = 1.  [back_rewrite(785),rewrite([8085(9),73(9,R),3394(10)])].
+
+given #325 (T,wt=13): 8898 K(x,(((y \ 1) * z) * y) \ z) = 1.  [para(5(a,1),8390(a,1,2,2))].
+
+given #326 (A,wt=19): 406 x * (y * (K(y,x) * K(z,u))) = y * (x * K(z,u)).  [para(165(a,1),150(a,1,1)),rewrite([150(3),150(7)]),flip(a)].
+
+given #327 (T,wt=13): 8901 K(x,((y * (z \ 1)) * z) \ y) = 1.  [para(170(a,1),8390(a,1,2,2)),rewrite([1638(9),73(9,R),3367(10)])].
+
+given #328 (T,wt=13): 9001 K((((x \ 1) * y) * x) \ y,z) = 1.  [para(5(a,1),8392(a,1,1,2))].
+
+given #329 (T,wt=13): 9003 K(((x * (y \ 1)) * y) \ x,z) = 1.  [para(170(a,1),8392(a,1,1,2)),rewrite([1638(9),73(9,R),3394(10)])].
+
+given #330 (T,wt=13): 9040 K((x * (y \ 1)) \ (y \ x),z) = 1.  [para(170(a,1),8402(a,1,1,2,2)),rewrite([1638(8),1638(9),73(9,R),3394(10)])].
+
+given #331 (A,wt=19): 408 x * (y * K(z \ (x * y),z)) = (z \ (x * y)) * z.  [para(150(a,1),48(a,1))].
+
+given #332 (T,wt=13): 9150 K(x,(y * (z \ 1)) \ (z \ y)) = 1.  [para(170(a,1),8405(a,1,2,2,2)),rewrite([1638(8),1638(9),73(9,R),3367(10)])].
+
+given #333 (T,wt=13): 9158 K(((x \ 1) * (y * x)) \ y,z) = 1.  [para(170(a,1),8449(a,1,1,2)),rewrite([1638(7),73(7,R),3394(8)])].
+
+given #334 (T,wt=13): 9161 K((((x \ y) \ 1) * y) \ x,z) = 1.  [para(195(a,1),8449(a,1,1,2)),rewrite([1638(8),73(8,R),3394(9)])].
+
+given #335 (T,wt=13): 9192 K(x,((y \ 1) * (z * y)) \ z) = 1.  [para(170(a,1),8451(a,1,2,2)),rewrite([1638(7),73(7,R),3367(8)])].
+
+given #336 (A,wt=19): 410 (x * y) * ((z \ 1) * z) = x * (y * ((z \ 1) * z)).  [para(200(a,1),150(a,1,2)),rewrite([200(8)])].
+
+given #337 (T,wt=13): 9195 K(x,(((y \ z) \ 1) * z) \ y) = 1.  [para(195(a,1),8451(a,1,2,2)),rewrite([1638(8),73(8,R),3367(9)])].
+
+given #338 (T,wt=13): 9376 K(((x * y) * (x \ 1)) \ y,z) = 1.  [para(405(a,1),8456(a,1,1,1)),rewrite([1638(10),73(10,R),3394(11)])].
+
+given #339 (T,wt=13): 9400 K(x,((y * z) * (y \ 1)) \ z) = 1.  [para(405(a,1),8457(a,1,2,1)),rewrite([1638(10),73(10,R),3367(11)])].
+
+given #340 (T,wt=13): 9690 K(((x * y) * (y \ 1)) \ x,z) = 1.  [para(170(a,1),9040(a,1,1,2)),rewrite([1638(7),73(7,R),3394(8)])].
+
+given #341 (A,wt=39): 416 (x * y) * (K(z,u) * ((w * (v5 * v6)) \ ((w * v5) * v6))) = x * (y * (K(z,u) * ((w * (v5 * v6)) \ ((w * v5) * v6)))).  [para(150(a,1),74(a,1,1)),rewrite([74(9),74(8)]),flip(a)].
+
+given #342 (T,wt=13): 9693 K((x * ((y \ x) \ 1)) \ y,z) = 1.  [para(195(a,1),9040(a,1,1,2)),rewrite([1638(8),73(8,R),3394(9)])].
+
+given #343 (T,wt=13): 9885 K(x,((y * z) * (z \ 1)) \ y) = 1.  [para(170(a,1),9150(a,1,2,2)),rewrite([1638(7),73(7,R),3367(8)])].
+
+given #344 (T,wt=13): 9888 K(x,(y * ((z \ y) \ 1)) \ z) = 1.  [para(195(a,1),9150(a,1,2,2)),rewrite([1638(8),73(8,R),3367(9)])].
+
+given #345 (T,wt=15): 2377 (x * (K(y,z) * u)) \ (x * u) = K(z,y).  [para(949(a,1),427(a,1,2,2))].
+
+given #346 (A,wt=39): 418 (x * y) * (((z * (u * w)) \ ((z * u) * w)) * K(v5,v6)) = x * (y * (((z * (u * w)) \ ((z * u) * w)) * K(v5,v6))).  [para(74(a,1),150(a,1,1)),rewrite([150(9),150(8)]),flip(a)].
+
+given #347 (T,wt=15): 2394 K(x,y) * ((z * K(x,y)) \ u) = z \ u.  [para(585(a,1),5(a,1,2)),flip(a)].
+
+given #348 (T,wt=13): 10705 K(x,(y * (z \ 1)) * (y \ z)) = 1.  [back_rewrite(4178),rewrite([10639(8),3503(10)])].
+
+given #349 (T,wt=13): 10706 K((x * (y \ 1)) * (x \ y),z) = 1.  [back_rewrite(4033),rewrite([10639(8),3705(10)])].
+
+given #350 (T,wt=13): 10712 K((x * y) * (x \ (y \ 1)),z) = 1.  [back_rewrite(1966),rewrite([10639(5),1638(6),73(6,R),3706(8)])].
+
+given #351 (A,wt=23): 421 (x * y) * (K(z,u) * K(w,v5)) = x * (y * (K(z,u) * K(w,v5))).  [para(150(a,1),150(a,1,1)),rewrite([150(5),150(4)]),flip(a)].
+
+given #352 (T,wt=13): 10714 K(x,(y * z) * (y \ (z \ 1))) = 1.  [back_rewrite(1949),rewrite([10639(5),1638(6),73(6,R),3535(8)])].
+
+given #353 (T,wt=13): 10718 K((x \ y) \ (y * (x \ 1)),z) = 1.  [back_rewrite(1379),rewrite([10639(8),73(8,R),3394(9)])].
+
+given #354 (T,wt=13): 10719 K(x \ ((y * x) * (y \ 1)),z) = 1.  [back_rewrite(1377),rewrite([10639(7),73(7,R),3394(8)])].
+
+given #355 (T,wt=13): 10720 K(x,(y \ z) \ (z * (y \ 1))) = 1.  [back_rewrite(1327),rewrite([10639(8),73(8,R),3367(9)])].
+
+given #356 (A,wt=37): 429 (x * (y * (((z * (u * w)) \ ((z * u) * w)) * K(y,x)))) \ (y * (x * ((z * (u * w)) \ ((z * u) * w)))) = 1.  [back_rewrite(365),rewrite([418(9)])].
+
+given #357 (T,wt=13): 10721 K(x,y \ ((z * y) * (z \ 1))) = 1.  [back_rewrite(1325),rewrite([10639(7),73(7,R),3367(8)])].
+
+given #358 (T,wt=13): 10723 K(x,y * (z * ((z * y) \ 1))) = 1.  [para(5(a,1),10705(a,1,2,2)),rewrite([3748(6)])].
+
+given #359 (T,wt=13): 10725 K(x,y * (z * ((y * z) \ 1))) = 1.  [para(170(a,1),10705(a,1,2,2)),rewrite([3748(8),179(7),3535(8)])].
+
+given #360 (T,wt=13): 10727 K(x,y * ((y \ z) * (z \ 1))) = 1.  [para(195(a,1),10705(a,1,2,2)),rewrite([3503(9),3748(6)])].
+
+given #361 (A,wt=31): 532 x * (((y * (z * u)) \ ((y * z) * u)) * ((x * ((y * (z * u)) \ ((y * z) * u))) \ w)) = w.  [para(93(a,1),4(a,1))].
+
+given #362 (T,wt=13): 10733 K(x,(y \ z) * (y * (z \ 1))) = 1.  [para(10705(a,1),3748(a,1)),flip(a)].
+
+given #363 (T,wt=13): 10736 K((x \ y) * (x * (y \ 1)),z) = 1.  [para(10705(a,1),3975(a,1,1)),rewrite([72(8)])].
+
+given #364 (T,wt=13): 10742 K(x * (y * ((y * x) \ 1)),z) = 1.  [para(5(a,1),10706(a,1,1,2)),rewrite([3801(6)])].
+
+given #365 (T,wt=13): 10743 K(x * (y * ((x * y) \ 1)),z) = 1.  [para(170(a,1),10706(a,1,1,2)),rewrite([3801(8),179(7),3706(8)])].
+
+given #366 (A,wt=31): 533 (x * ((y * z) \ ((y * u) * (u \ z)))) * w = x * (((y * z) \ ((y * u) * (u \ z))) * w).  [para(4(a,1),93(a,1,1,2,1,2)),rewrite([4(9)])].
+
+given #367 (T,wt=13): 10744 K(x * ((x \ y) * (y \ 1)),z) = 1.  [para(195(a,1),10706(a,1,1,2)),rewrite([3705(9),3801(6)])].
+
+given #368 (T,wt=13): 10755 K(x * (y \ ((y \ x) \ 1)),z) = 1.  [para(4(a,1),10712(a,1,1,1))].
+
+given #369 (T,wt=13): 10757 K(x * ((x \ (y \ 1)) * y),z) = 1.  [para(195(a,1),10712(a,1,1,2)),rewrite([3705(11),3801(6)])].
+
+given #370 (T,wt=13): 10915 K(x,y * (z \ ((z \ y) \ 1))) = 1.  [para(4(a,1),10714(a,1,2,1))].
+
+given #371 (A,wt=31): 534 (x * ((y * ((y \ z) * u)) \ (z * u))) * w = x * (((y * ((y \ z) * u)) \ (z * u)) * w).  [para(4(a,1),93(a,1,1,2,2,1)),rewrite([4(12)])].
+
+given #372 (T,wt=13): 10917 K(x,y * ((y \ (z \ 1)) * z)) = 1.  [para(195(a,1),10714(a,1,2,2)),rewrite([3503(11),3748(6)])].
+
+given #373 (T,wt=13): 10944 K(((x \ 1) \ y) \ (y * x),z) = 1.  [para(195(a,1),10718(a,1,1,2,2)),rewrite([8085(9),73(9,R),3394(10)])].
+
+given #374 (T,wt=13): 10959 K(x \ (((y \ 1) * x) * y),z) = 1.  [para(195(a,1),10719(a,1,1,2,2)),rewrite([8085(9),73(9,R),3394(10)])].
+
+given #375 (T,wt=13): 10986 K(x,((y \ 1) \ z) \ (z * y)) = 1.  [para(195(a,1),10720(a,1,2,2,2)),rewrite([8085(9),73(9,R),3367(10)])].
+
+given #376 (A,wt=31): 535 (x * ((y * (z * ((y * z) \ u))) \ u)) * w = x * (((y * (z * ((y * z) \ u))) \ u) * w).  [para(4(a,1),93(a,1,1,2,2)),rewrite([4(15)])].
+
+given #377 (T,wt=13): 11198 K(x,y \ (((z \ 1) * y) * z)) = 1.  [para(195(a,1),10721(a,1,2,2,2)),rewrite([8085(9),73(9,R),3367(10)])].
+
+given #378 (T,wt=13): 12126 K((((x \ y) \ 1) \ x) \ y,z) = 1.  [para(4(a,1),10944(a,1,1,2))].
+
+given #379 (T,wt=13): 12195 K(x,(((y \ z) \ 1) \ y) \ z) = 1.  [para(4(a,1),10986(a,1,2,2))].
+
+given #380 (T,wt=15): 2467 x * (K(y,z) * (x \ u)) = K(y,z) * u.  [para(4(a,1),643(a,1,2)),flip(a)].
+
+given #381 (A,wt=27): 536 (x * (y * z)) * (((x * (y * z)) \ ((x * y) * z)) * u) = ((x * y) * z) * u.  [para(4(a,1),93(a,1,1)),flip(a)].
+
+given #382 (T,wt=15): 2606 (K(x,y) * z) \ (z * u) = u * K(y,x).  [para(4(a,1),661(a,1,2,2)),rewrite([922(6)])].
+
+given #383 (T,wt=13): 13254 K(x,((y \ 1) \ (y \ z)) \ z) = 1.  [back_rewrite(12542),rewrite([13210(8),73(8,R),3367(9)])].
+
+given #384 (T,wt=13): 13255 K(((x \ 1) \ (x \ y)) \ y,z) = 1.  [back_rewrite(12530),rewrite([13210(8),73(8,R),3394(9)])].
+
+given #385 (T,wt=13): 13259 K(x,((y \ 1) \ z) \ (y * z)) = 1.  [back_rewrite(12196),rewrite([13210(7),73(7,R),3367(8)])].
+
+given #386 (A,wt=31): 537 (x * ((y * (z * u)) \ ((y * z) * u))) \ (x * (((y * (z * u)) \ ((y * z) * u)) * w)) = w.  [para(93(a,1),5(a,1,2))].
+
+given #387 (T,wt=13): 13262 K(((x \ 1) \ y) \ (x * y),z) = 1.  [back_rewrite(12128),rewrite([13210(7),73(7,R),3394(8)])].
+
+given #388 (T,wt=13): 13758 K(x,y \ (z * ((z \ 1) * y))) = 1.  [para(5(a,1),13259(a,1,2,1))].
+
+given #389 (T,wt=13): 13760 K(x,y \ (z * (y * (z \ 1)))) = 1.  [para(170(a,1),13259(a,1,2,1)),rewrite([10639(9),73(9,R),3367(10)])].
+
+given #390 (T,wt=13): 13833 K(x \ (y * ((y \ 1) * x)),z) = 1.  [para(5(a,1),13262(a,1,1,1))].
+
+given #391 (A,wt=47): 538 (x * (((y * (z * u)) \ ((y * z) * u)) * w)) \ (w * (x * ((y * (z * u)) \ ((y * z) * u)))) = K(w,x * ((y * (z * u)) \ ((y * z) * u))).  [para(93(a,1),49(a,1,1))].
+
+given #392 (T,wt=13): 13834 K(x \ (y * (x * (y \ 1))),z) = 1.  [para(170(a,1),13262(a,1,1,1)),rewrite([10639(9),73(9,R),3394(10)])].
+
+given #393 (T,wt=15): 2715 ((x \ y) * x) * y = y * ((x \ y) * x).  [para(2712(a,1),165(a,1,2,2)),rewrite([67(4)])].
+
+given #394 (T,wt=15): 2732 (x * y) * (y * x) = (y * x) * (x * y).  [para(2714(a,1),165(a,1,2,2)),rewrite([67(4)])].
+
+given #395 (T,wt=15): 2988 K(x * y,x * (((z \ 1) * z) * y)) = 1.  [para(200(a,1),2640(a,1,2,2,1))].
+
+given #396 (A,wt=47): 542 x * (((y * (z * u)) \ ((y * z) * u)) * (w * K(w,x * ((y * (z * u)) \ ((y * z) * u))))) = w * (x * ((y * (z * u)) \ ((y * z) * u))).  [para(93(a,1),165(a,1))].
+
+given #397 (T,wt=15): 3137 K(x * (((y \ 1) * y) * z),x * z) = 1.  [para(200(a,1),2996(a,1,1,2,1))].
+
+given #398 (T,wt=15): 3351 K((x * (((x * y) \ z) * y)) \ z,u) = 1.  [back_rewrite(2693),rewrite([3316(10)])].
+
+given #399 (T,wt=15): 3380 K((x * ((y \ (x \ 1)) * y)) \ 1,z) = 1.  [back_rewrite(2126),rewrite([3316(13)])].
+
+given #400 (T,wt=15): 3488 K(x,(y * ((z \ (y \ 1)) * z)) \ 1) = 1.  [back_rewrite(1805),rewrite([3367(13)])].
+
+given #401 (A,wt=39): 544 (x * ((y * (z * (K(z,y) * u))) \ ((z * y) * u))) * w = x * (((y * (z * (K(z,y) * u))) \ ((z * y) * u)) * w).  [para(165(a,1),93(a,1,1,2,2,1)),rewrite([179(3),179(12),165(16)])].
+
+given #402 (T,wt=15): 3490 K(x,(y * (((y * z) \ u) * z)) \ u) = 1.  [back_rewrite(1784),rewrite([3367(10)])].
+
+given #403 (T,wt=15): 3503 K(x,y * (z * K(u,w))) = K(x,y * z).  [para(150(a,1),3316(a,1,2))].
+
+given #404 (T,wt=15): 3535 K(x,y * (K(z,u) * w)) = K(x,y * w).  [para(643(a,1),3367(a,1,2))].
+
+given #405 (T,wt=15): 3705 K(x * (y * K(z,u)),w) = K(x * y,w).  [para(398(a,1),3394(a,1,1))].
+
+given #406 (A,wt=43): 545 (x * ((y * (z * (u * K(u,y * z)))) \ (u * (y * z)))) * w = x * (((y * (z * (u * K(u,y * z)))) \ (u * (y * z))) * w).  [para(165(a,1),93(a,1,1,2,2)),rewrite([165(20)])].
+
+given #407 (T,wt=15): 3706 K(x * (K(y,z) * u),w) = K(x * u,w).  [para(643(a,1),3394(a,1,1))].
+
+given #408 (T,wt=15): 3799 K(x,y * ((((z \ 1) * z) * y) \ 1)) = 1.  [back_rewrite(1253),rewrite([3748(8)])].
+
+given #409 (T,wt=15): 3800 K(x,y * ((y * ((z \ 1) * z)) \ 1)) = 1.  [back_rewrite(1249),rewrite([3748(8)])].
+
+given #410 (T,wt=15): 3851 K(x * ((((y \ 1) * y) * x) \ 1),z) = 1.  [back_rewrite(1218),rewrite([3801(8)])].
+
+given #411 (A,wt=31): 546 x * (((y * (z * u)) \ ((y * z) * u)) * w) = x * (w * ((y * (z * u)) \ ((y * z) * u))).  [para(165(a,1),93(a,2,2)),rewrite([44(12),67(8),93(7)])].
+
+given #412 (T,wt=15): 3852 K(x * ((x * ((y \ 1) * y)) \ 1),z) = 1.  [back_rewrite(1214),rewrite([3801(8)])].
+
+given #413 (T,wt=15): 3962 K(x,y * z) * u = u * K(x,z * y).  [para(3748(a,1),73(a,1,1))].
+
+given #414 (T,wt=15): 3973 K(x,y * z) * (u * K(z * y,x)) = u.  [para(3748(a,1),921(a,1,1))].
+
+given #415 (T,wt=15): 3974 K(x * y,z) * (u * K(z,y * x)) = u.  [para(3748(a,1),921(a,1,2,2))].
+
+given #416 (A,wt=35): 556 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) * v5 = (x * y) * (((z * (u * w)) \ ((z * u) * w)) * v5).  [para(74(a,1),93(a,1,1))].
+
+given #417 (T,wt=15): 3977 x * K(y * z,u) = x * K(z * y,u).  [para(3748(a,1),922(a,1,1)),rewrite([922(3)])].
+
+given #418 (T,wt=15): 3978 x * K(y,z * u) = x * K(y,u * z).  [para(3748(a,1),922(a,2,2)),rewrite([922(3)])].
+
+given #419 (T,wt=15): 3981 K(x,y * z) * (K(z * y,x) * u) = u.  [para(3748(a,1),949(a,1,1))].
+
+given #420 (T,wt=15): 3982 K(x * y,z) * (K(z,y * x) * u) = u.  [para(3748(a,1),949(a,1,2,1))].
+
+given #421 (A,wt=31): 583 ((x * (y * z)) \ ((x * y) * z)) * (u * w) = u * (((x * (y * z)) \ ((x * y) * z)) * w).  [para(560(a,1),93(a,1,1)),rewrite([133(7),44(13),71(9)])].
+
+given #422 (T,wt=13): 18116 K((x * y) * z,(z * x) * y) = 1.  [back_rewrite(5420),rewrite([17962(11)])].
+
+given #423 (T,wt=11): 18131 K(x,y * (x * (y \ 1))) = 1.  [para(205(a,1),18116(a,1,1)),rewrite([3748(9),15501(9),67(2)])].
+
+given #424 (T,wt=11): 18132 K((x * y) * (x \ 1),y) = 1.  [para(205(a,1),18116(a,1,2)),rewrite([15395(9),67(6)])].
+
+given #425 (T,wt=11): 18180 K(x,(y \ 1) * (x * y)) = 1.  [para(195(a,1),18131(a,1,2,2,2)),rewrite([15398(9)])].
+
+given #426 (A,wt=39): 591 (x * (((y * z) * (K(z,y) * u)) \ ((z * y) * u))) * w = x * ((((y * z) * (K(z,y) * u)) \ ((z * y) * u)) * w).  [para(104(a,1),4(a,1,2)),rewrite([67(11)]),flip(a)].
+
+given #427 (T,wt=11): 18186 K(x * (y * (x \ 1)),y) = 1.  [para(18131(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #428 (T,wt=11): 18210 K(x * (y \ 1),y \ x) = 1.  [para(4(a,1),18132(a,1,1,1))].
+
+given #429 (T,wt=11): 18212 K((x * y) * (y \ 1),x) = 1.  [para(165(a,1),18132(a,1,1,1)),rewrite([3316(7)])].
+
+given #430 (T,wt=11): 18213 K(x * ((x \ 1) * y),y) = 1.  [para(195(a,1),18132(a,1,1,2)),rewrite([3705(9),3801(5)])].
+
+given #431 (A,wt=17): 647 x * (K(y \ x,y) * z) = ((y \ x) * y) * z.  [para(48(a,1),179(a,1,1)),flip(a)].
+
+given #432 (T,wt=11): 18217 K(x,(y * x) * (y \ 1)) = 1.  [para(18132(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #433 (T,wt=11): 18219 K((x \ 1) * (x * y),y) = 1.  [para(18132(a,1),3801(a,1)),flip(a)].
+
+given #434 (T,wt=11): 18222 K(x,(y \ 1) * (y * x)) = 1.  [para(18132(a,1),3975(a,1,2)),rewrite([67(7)])].
+
+given #435 (T,wt=11): 18232 K(x,y * ((x \ y) \ 1)) = 1.  [para(4(a,1),18180(a,1,2,2)),rewrite([3748(5)])].
+
+given #436 (A,wt=19): 648 (x * ((y \ 1) * y)) * z = x * (((y \ 1) * y) * z).  [para(200(a,1),179(a,1,1,2)),rewrite([200(8)])].
+
+given #437 (T,wt=11): 18238 K((x \ 1) * (y * x),y) = 1.  [para(18180(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #438 (T,wt=11): 18244 K(x,(x * y) * (y \ 1)) = 1.  [para(18180(a,1),3748(a,1)),flip(a)].
+
+given #439 (T,wt=11): 19003 K(x * y,(y \ 1) \ x) = 1.  [para(195(a,1),18210(a,1,1,2)),rewrite([3705(9)])].
+
+given #440 (T,wt=11): 19004 K(x * ((y \ x) \ 1),y) = 1.  [para(195(a,1),18210(a,1,2)),rewrite([3316(8)])].
+
+given #441 (A,wt=19): 655 (x * (y * K(z,u))) * w = (x * y) * (K(z,u) * w).  [para(150(a,1),179(a,1,1))].
+
+given #442 (T,wt=11): 19008 K(x \ y,y * (x \ 1)) = 1.  [para(18210(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #443 (T,wt=11): 19010 K((x \ 1) * y,x \ y) = 1.  [para(18210(a,1),3801(a,1)),flip(a)].
+
+given #444 (T,wt=11): 19013 K(x \ y,(x \ 1) * y) = 1.  [para(18210(a,1),3975(a,1,2)),rewrite([67(7)])].
+
+given #445 (T,wt=11): 19040 K(x * y,(x \ 1) \ y) = 1.  [para(4(a,1),18213(a,1,1,2))].
+
+given #446 (A,wt=19): 772 (((x \ 1) * x) * x) \ 1 = (x \ 1) * K(x,x \ 1).  [back_rewrite(633),rewrite([745(4),739(12),73(12)])].
+
+given #447 (T,wt=11): 19046 K(x,y * ((y \ 1) * x)) = 1.  [para(18213(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #448 (T,wt=11): 19902 K(x,((y \ x) \ 1) \ y) = 1.  [para(4(a,1),19003(a,1,1))].
+
+given #449 (T,wt=11): 19908 K((x \ 1) \ y,y * x) = 1.  [para(19003(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #450 (T,wt=11): 19919 K((x \ 1) \ y,x * y) = 1.  [para(19003(a,1),3975(a,1,2)),rewrite([67(7)])].
+
+given #451 (A,wt=39): 774 (x * (((y \ 1) * (K(y,y \ 1) * (y * z))) \ z)) * u = x * ((((y \ 1) * (K(y,y \ 1) * (y * z))) \ z) * u).  [back_rewrite(630),rewrite([739(6),73(6),179(8),739(17),73(17),179(19)])].
+
+Low Water (keep): wt=95.000, iters=6669
+
+given #452 (T,wt=11): 20145 K(x,y \ ((y \ 1) \ x)) = 1.  [para(4(a,1),19010(a,1,1))].
+
+given #453 (T,wt=11): 20153 K(x \ ((x \ 1) \ y),y) = 1.  [para(4(a,1),19013(a,1,2))].
+
+given #454 (T,wt=11): 20162 K(x,(y \ 1) \ (y \ x)) = 1.  [para(4(a,1),19040(a,1,1))].
+
+given #455 (T,wt=11): 20264 K(((x \ y) \ 1) \ x,y) = 1.  [para(19902(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #456 (A,wt=47): 780 (x * y) * ((((z * u) \ 1) * z) * (u * K(z * u,(z * u) \ 1))) = x * (y * ((((z * u) \ 1) * z) * (u * K(z * u,(z * u) \ 1)))).  [back_rewrite(624),rewrite([739(10),73(10),179(11),73(10),655(12),73(11),739(22),73(22),179(23),73(22),655(24),73(23)])].
+
+Low Water (keep): wt=87.000, iters=6678
+
+given #457 (T,wt=11): 20295 K((x \ 1) \ (x \ y),y) = 1.  [para(4(a,1),19919(a,1,2))].
+
+given #458 (T,wt=13): 18120 K(x * (y * z),(x * y) * z) = 1.  [back_rewrite(5130),rewrite([17962(11)])].
+
+given #459 (T,wt=13): 18121 K((x * y) * z,x * (y * z)) = 1.  [back_rewrite(4373),rewrite([17962(13),3748(7),4(6)])].
+
+given #460 (T,wt=13): 18122 K((x * y) * z,(y * z) * x) = 1.  [back_rewrite(3786),rewrite([17962(11)])].
+
+given #461 (A,wt=21): 801 (x * (y * ((z \ 1) * z))) \ (((z \ 1) * z) * (x * y)) = 1.  [para(200(a,1),128(a,1,1,2,2)),rewrite([200(8)])].
+
+given #462 (T,wt=13): 18123 K(x * y,(y * z) * (z \ x)) = 1.  [para(4(a,1),18116(a,1,1,1))].
+
+given #463 (T,wt=13): 18124 K(x,y * (((z * y) \ x) * z)) = 1.  [para(4(a,1),18116(a,1,1)),rewrite([3748(5)])].
+
+given #464 (T,wt=13): 18125 K(x * ((x \ y) * z),y * z) = 1.  [para(4(a,1),18116(a,1,2,1)),rewrite([3801(5)])].
+
+given #465 (T,wt=13): 18126 K(x * (y * ((x * y) \ z)),z) = 1.  [para(4(a,1),18116(a,1,2)),rewrite([3801(5)])].
+
+given #466 (A,wt=19): 808 K(x,y) * (K(z,u) * w) = w * (K(x,y) * K(z,u)).  [para(799(a,1),130(a,1,1)),rewrite([179(5),71(6)])].
+
+given #467 (T,wt=13): 18128 K((x * y) * z,(z * y) * x) = 1.  [para(165(a,1),18116(a,1,1,1)),rewrite([3503(7)])].
+
+given #468 (T,wt=13): 18129 K((x * y) * z,(x * z) * y) = 1.  [para(165(a,1),18116(a,1,2,1)),rewrite([179(3),2511(4),3394(7)])].
+
+given #469 (T,wt=13): 18130 K((x * y) * z,y * (z * x)) = 1.  [para(165(a,1),18116(a,1,2)),rewrite([655(5),73(4),3705(8)])].
+
+given #470 (T,wt=13): 18144 K(x * (y * z),(z * x) * y) = 1.  [para(18116(a,1),3975(a,1,1)),rewrite([72(7)])].
+
+given #471 (A,wt=31): 821 ((x * (y * z)) \ ((x * y) * z)) * (u * ((((x * (y * z)) \ ((x * y) * z)) * u) \ w)) = w.  [para(133(a,1),4(a,1))].
+
+Low Water (keep): wt=79.000, iters=6915
+
+given #472 (T,wt=13): 21276 K(x * y,(x * z) * (z \ y)) = 1.  [para(4(a,1),18120(a,1,1,2))].
+
+given #473 (T,wt=13): 21277 K(x * (y * z),(x * z) * y) = 1.  [para(165(a,1),18120(a,1,1,2)),rewrite([3503(7)])].
+
+given #474 (T,wt=13): 21278 K(x * (y * z),(y * x) * z) = 1.  [para(165(a,1),18120(a,1,2,1)),rewrite([179(3),15860(7)])].
+
+given #475 (T,wt=13): 21279 K(x * (y * z),z * (x * y)) = 1.  [para(165(a,1),18120(a,1,2)),rewrite([15502(8)])].
+
+given #476 (A,wt=31): 822 (((x * y) \ ((x * z) * (z \ y))) * u) * w = ((x * y) \ ((x * z) * (z \ y))) * (u * w).  [para(4(a,1),133(a,1,1,1,1,2)),rewrite([4(9)])].
+
+Low Water (keep): wt=75.000, iters=6725
+
+given #477 (T,wt=13): 21289 K(x * (y * z),y * (z * x)) = 1.  [para(18120(a,1),3975(a,1,1)),rewrite([72(7)])].
+
+given #478 (T,wt=13): 21309 K(x * y,z * ((z \ x) * y)) = 1.  [para(4(a,1),18121(a,1,1,1))].
+
+given #479 (T,wt=13): 21310 K(x,y * (z * ((y * z) \ x))) = 1.  [para(4(a,1),18121(a,1,1))].
+
+given #480 (T,wt=13): 21311 K((x * y) * (y \ z),x * z) = 1.  [para(4(a,1),18121(a,1,2,2))].
+
+given #481 (A,wt=31): 823 (((x * ((x \ y) * z)) \ (y * z)) * u) * w = ((x * ((x \ y) * z)) \ (y * z)) * (u * w).  [para(4(a,1),133(a,1,1,1,2,1)),rewrite([4(12)])].
+
+Low Water (keep): wt=71.000, iters=6856
+
+given #482 (T,wt=13): 21312 K((x * y) * z,y * (x * z)) = 1.  [para(165(a,1),18121(a,1,1,1)),rewrite([179(5),15435(7)])].
+
+given #483 (T,wt=13): 21313 K((x * y) * z,x * (z * y)) = 1.  [para(165(a,1),18121(a,1,2,2)),rewrite([3705(7)])].
+
+Low Water (keep): wt=63.000, iters=6727
+
+given #484 (T,wt=13): 21336 K((x * y) * (y \ z),z * x) = 1.  [para(4(a,1),18122(a,1,2,1))].
+
+given #485 (T,wt=13): 21337 K(x * (((y * x) \ z) * y),z) = 1.  [para(4(a,1),18122(a,1,2)),rewrite([3801(5)])].
+
+given #486 (A,wt=31): 824 (((x * (y * ((x * y) \ z))) \ z) * u) * w = ((x * (y * ((x * y) \ z))) \ z) * (u * w).  [para(4(a,1),133(a,1,1,1,2)),rewrite([4(15)])].
+
+given #487 (T,wt=13): 21430 K(x,((y \ x) * z) * (z \ y)) = 1.  [para(4(a,1),18123(a,1,1))].
+
+given #488 (T,wt=13): 21431 K(x * y,z * ((y \ z) \ x)) = 1.  [para(4(a,1),18123(a,1,2,1))].
+
+given #489 (T,wt=13): 21433 K(x * y,(z * y) * (z \ x)) = 1.  [para(165(a,1),18123(a,1,2,1)),rewrite([10639(5),3503(7)])].
+
+given #490 (T,wt=13): 21434 K(x * y,z * (y * (z \ x))) = 1.  [para(195(a,1),18123(a,1,2,2)),rewrite([3503(8),3748(5)])].
+
+given #491 (A,wt=31): 825 ((x * (y * z)) \ ((x * y) * z)) * ((((x * (y * z)) \ ((x * y) * z)) \ u) * w) = u * w.  [para(4(a,1),133(a,1,1)),flip(a)].
+
+given #492 (T,wt=13): 21441 K(x * y,(z \ x) * (y * z)) = 1.  [para(18123(a,1),3748(a,1)),flip(a)].
+
+given #493 (T,wt=13): 21446 K((x \ y) * (z * x),y * z) = 1.  [para(18123(a,1),3975(a,1,1)),rewrite([72(7)])].
+
+given #494 (T,wt=13): 21470 K(x,(y \ z) * ((z \ x) * y)) = 1.  [para(4(a,1),18124(a,1,2,2,1,1))].
+
+given #495 (T,wt=13): 21472 K(x,y * (((y * z) \ x) * z)) = 1.  [para(165(a,1),18124(a,1,2,2,1,1)),rewrite([179(6),3535(7)])].
+
+given #496 (A,wt=31): 826 (((x * (y * z)) \ ((x * y) * z)) * u) \ (((x * (y * z)) \ ((x * y) * z)) * (u * w)) = w.  [para(133(a,1),5(a,1,2))].
+
+given #497 (T,wt=13): 21524 K(x * y,z * ((x \ z) \ y)) = 1.  [para(4(a,1),18125(a,1,1,2))].
+
+given #498 (T,wt=13): 21525 K(x * ((x \ y) * (y \ z)),z) = 1.  [para(4(a,1),18125(a,1,2))].
+
+given #499 (T,wt=13): 21527 K(x * (y * (x \ z)),z * y) = 1.  [para(165(a,1),18125(a,1,1,2)),rewrite([3503(8)])].
+
+NOTE: Back_subsumption disabled, ratio of kept to back_subsumed is 21 (0.00 of 2.08 sec).
+
+given #500 (T,wt=13): 21528 K(x * ((x \ y) * z),z * y) = 1.  [para(165(a,1),18125(a,1,2)),rewrite([15502(7)])].
+
+given #501 (A,wt=39): 832 (((x * (y * (K(y,x) * z))) \ ((y * x) * z)) * u) * w = ((x * (y * (K(y,x) * z))) \ ((y * x) * z)) * (u * w).  [para(165(a,1),133(a,1,1,1,2,1)),rewrite([179(3),179(12),165(16)])].
+
+Low Water (keep): wt=59.000, iters=6708
+
+given #502 (T,wt=13): 21529 K((x \ y) * (x * z),y * z) = 1.  [para(195(a,1),18125(a,1,1,2,1)),rewrite([179(5),15860(8)])].
+
+given #503 (T,wt=13): 21542 K(x * y,z * ((z \ y) * x)) = 1.  [para(18125(a,1),3975(a,1,1)),rewrite([72(7)])].
+
+Low Water (keep): wt=55.000, iters=6715
+
+given #504 (T,wt=13): 21565 K(x * (y * ((y * x) \ z)),z) = 1.  [para(165(a,1),18126(a,1,1,2,2,1)),rewrite([179(5),15860(7)])].
+
+given #505 (T,wt=13): 21694 K(x * (((x * y) \ z) * y),z) = 1.  [para(4(a,1),18128(a,1,2)),rewrite([3801(5)])].
+
+given #506 (A,wt=43): 833 (((x * (y * (z * K(z,x * y)))) \ (z * (x * y))) * u) * w = ((x * (y * (z * K(z,x * y)))) \ (z * (x * y))) * (u * w).  [para(165(a,1),133(a,1,1,1,2)),rewrite([165(20)])].
+
+given #507 (T,wt=13): 21724 K(x,y * (z * ((z * y) \ x))) = 1.  [para(4(a,1),18129(a,1,1)),rewrite([3748(5)])].
+
+given #508 (T,wt=13): 21725 K((x * y) * (x \ z),z * y) = 1.  [para(4(a,1),18129(a,1,2,1))].
+
+given #509 (T,wt=13): 21930 K(x,(y * z) * (z \ (y \ x))) = 1.  [para(4(a,1),21276(a,1,1))].
+
+given #510 (T,wt=13): 21932 K(x * y,(z * x) * (z \ y)) = 1.  [para(165(a,1),21276(a,1,2,1)),rewrite([10639(5),3503(7)])].
+
+given #511 (A,wt=35): 916 K(x,y) * (y * (x * ((z * (u * w)) \ ((z * u) * w)))) = x * (y * ((z * (u * w)) \ ((z * u) * w))).  [para(735(a,1),74(a,1,1)),rewrite([74(7),913(10),74(15)]),flip(a)].
+
+given #512 (T,wt=13): 21933 K(x * y,z * (x * (z \ y))) = 1.  [para(195(a,1),21276(a,1,2,2)),rewrite([3503(8),3748(5)])].
+
+given #513 (T,wt=13): 21939 K(x * y,(z \ y) * (x * z)) = 1.  [para(21276(a,1),3748(a,1)),flip(a)].
+
+Low Water (keep): wt=53.000, iters=6698
+
+given #514 (T,wt=13): 21946 K((x \ y) * (z * x),z * y) = 1.  [para(21276(a,1),3975(a,1,1)),rewrite([72(7)])].
+
+given #515 (T,wt=13): 21968 K(x * (y * z),y * (x * z)) = 1.  [para(165(a,1),21277(a,1,2)),rewrite([179(4),73(3),15502(8)])].
+
+given #516 (A,wt=19): 918 K(x,y) * (y * (x * K(z,u))) = x * (y * K(z,u)).  [para(735(a,1),150(a,1,1)),rewrite([150(3),913(6),150(7)]),flip(a)].
+
+Low Water (keep): wt=51.000, iters=6710
+
+given #517 (T,wt=13): 22002 K(x * (y * z),z * (y * x)) = 1.  [para(165(a,1),21278(a,1,2)),rewrite([15502(8)])].
+
+given #518 (T,wt=13): 22392 K(x,y * ((y \ z) * (z \ x))) = 1.  [para(4(a,1),21309(a,1,1))].
+
+given #519 (T,wt=13): 22393 K(x * ((y \ x) \ z),y * z) = 1.  [para(4(a,1),21309(a,1,2,2))].
+
+given #520 (T,wt=13): 22394 K(x * y,(z \ x) * (z * y)) = 1.  [para(195(a,1),21309(a,1,2,2,1)),rewrite([179(6),15435(8)])].
+
+given #521 (A,wt=19): 975 x * (K(y,x) * (y * K(z,u))) = y * (x * K(z,u)).  [back_rewrite(578),rewrite([922(2),179(5)])].
+
+given #522 (T,wt=13): 22470 K((x * y) * (y \ (x \ z)),z) = 1.  [para(4(a,1),21311(a,1,2))].
+
+given #523 (T,wt=13): 22471 K((x * y) * (x \ z),y * z) = 1.  [para(165(a,1),21311(a,1,1,1)),rewrite([10639(4),3705(7)])].
+
+given #524 (T,wt=13): 22473 K(x * (y * (x \ z)),y * z) = 1.  [para(195(a,1),21311(a,1,1,2)),rewrite([3705(8),3801(5)])].
+
+given #525 (T,wt=13): 22843 K(x * ((y \ x) \ z),z * y) = 1.  [para(4(a,1),21336(a,1,1,1))].
+
+Low Water (keep): wt=49.000, iters=6688
+
+given #526 (A,wt=35): 978 x * (K(y,x) * (y * ((z * (u * w)) \ ((z * u) * w)))) = y * (x * ((z * (u * w)) \ ((z * u) * w))).  [back_rewrite(574),rewrite([922(2),179(9)])].
+
+given #527 (T,wt=13): 22844 K(((x \ y) * z) * (z \ x),y) = 1.  [para(4(a,1),21336(a,1,2))].
+
+given #528 (T,wt=13): 22874 K((x \ y) * ((y \ z) * x),z) = 1.  [para(4(a,1),21337(a,1,1,2,1,1))].
+
+given #529 (T,wt=13): 23185 K(x,y * (((z \ x) \ y) \ z)) = 1.  [para(4(a,1),21430(a,1,2,1))].
+
+given #530 (T,wt=13): 23187 K(x,(y * (z \ x)) * (y \ z)) = 1.  [para(165(a,1),21430(a,1,2,1)),rewrite([10639(6),3503(8)])].
+
+given #531 (A,wt=19): 979 K((x * (K(y,x) * (y * z))) \ ((y * x) * z),u) = 1.  [back_rewrite(573),rewrite([922(2),179(4)])].
+
+given #532 (T,wt=13): 23188 K(x,y * ((z \ x) * (y \ z))) = 1.  [para(195(a,1),21430(a,1,2,2)),rewrite([3503(8),3748(5)])].
+
+given #533 (T,wt=13): 23205 K(x * (y \ z),z * (y \ x)) = 1.  [para(195(a,1),21431(a,1,2,2,1)),rewrite([10639(6),3503(8)])].
+
+given #534 (T,wt=13): 23675 K(x,y * ((z \ y) \ (z \ x))) = 1.  [para(4(a,1),21524(a,1,1))].
+
+given #535 (T,wt=13): 23677 K((x \ y) * z,y * (x \ z)) = 1.  [para(195(a,1),21524(a,1,2,2,1)),rewrite([10639(6),3503(8)])].
+
+given #536 (A,wt=19): 981 K(x,(y * (K(z,y) * (z * u))) \ ((z * y) * u)) = 1.  [back_rewrite(570),rewrite([922(2),179(4)])].
+
+given #537 (T,wt=13): 23718 K((x \ y) * (x * (y \ z)),z) = 1.  [para(195(a,1),21525(a,1,1,2,1)),rewrite([179(6),15860(8)])].
+
+given #538 (T,wt=13): 23719 K(x * ((x \ (y \ z)) * y),z) = 1.  [para(195(a,1),21525(a,1,1,2,2)),rewrite([15502(8)])].
+
+given #539 (T,wt=13): 23739 K(x * ((y \ z) * (x \ y)),z) = 1.  [para(4(a,1),21527(a,1,2))].
+
+given #540 (T,wt=13): 23801 K((x \ y) * (x * z),z * y) = 1.  [para(195(a,1),21528(a,1,1,2,1)),rewrite([179(5),15860(8)])].
+
+given #541 (A,wt=28): 987 R(x,y,z) = ((y * z) \ ((x * y) * z)) * K(y * z,(y * z) \ ((x * y) * z)).  [back_rewrite(523),rewrite([922(12)])].
+
+given #542 (T,wt=13): 24177 K(x * y,(z \ y) * (z * x)) = 1.  [para(21529(a,1),3975(a,1,1)),rewrite([72(7)])].
+
+given #543 (T,wt=13): 24216 K(x,y * ((y \ (z \ x)) * z)) = 1.  [para(4(a,1),21542(a,1,1))].
+
+given #544 (T,wt=13): 24595 K(x,(y \ z) * (y * (z \ x))) = 1.  [para(4(a,1),21724(a,1,2,2,2,1))].
+
+given #545 (T,wt=13): 24638 K((x * (y \ z)) * (x \ y),z) = 1.  [para(4(a,1),21725(a,1,2))].
+
+given #546 (A,wt=45): 990 (x * ((((y \ z) * (K(y,y \ z) * (y * u))) \ (z * u)) * w)) \ ((x * (((y \ z) * (K(y,y \ z) * (y * u))) \ (z * u))) * w) = 1.  [back_rewrite(518),rewrite([922(4),179(6),922(14),179(16)])].
+
+given #547 (T,wt=13): 24677 K(x,y * (z * (y \ (z \ x)))) = 1.  [para(195(a,1),21930(a,1,2,2)),rewrite([3503(9),3748(5)])].
+
+Low Water (keep): wt=47.000, iters=6680
+
+given #548 (T,wt=13): 24711 K(x,(y * z) * (y \ (z \ x))) = 1.  [para(4(a,1),21932(a,1,1))].
+
+given #549 (T,wt=13): 25091 K(x * ((y \ x) \ (y \ z)),z) = 1.  [para(4(a,1),22393(a,1,2))].
+
+given #550 (T,wt=13): 25093 K(x * (y \ z),(y \ x) * z) = 1.  [para(195(a,1),22393(a,1,1,2,1)),rewrite([10639(4),3705(8)])].
+
+given #551 (A,wt=45): 993 ((((x \ y) * (K(x,x \ y) * (x * z))) \ (y * z)) * (u * w)) \ (((((x \ y) * (K(x,x \ y) * (x * z))) \ (y * z)) * u) * w) = 1.  [back_rewrite(515),rewrite([922(4),179(6),922(14),179(16)])].
+
+given #552 (T,wt=13): 25242 K(x * (y * (x \ (y \ z))),z) = 1.  [para(195(a,1),22470(a,1,1,2)),rewrite([3705(9),3801(5)])].
+
+given #553 (T,wt=13): 25270 K((x * y) * (x \ (y \ z)),z) = 1.  [para(4(a,1),22471(a,1,2))].
+
+given #554 (T,wt=13): 25354 K(x * (((y \ z) \ x) \ y),z) = 1.  [para(4(a,1),22843(a,1,2))].
+
+given #555 (T,wt=13): 25675 K(x,y * (z \ ((z \ y) \ x))) = 1.  [para(4(a,1),23677(a,1,1))].
+
+given #556 (A,wt=21): 1002 K(x,((y \ z) * (K(y,y \ z) * (y * u))) \ (z * u)) = 1.  [back_rewrite(499),rewrite([922(4),179(6)])].
+
+given #557 (T,wt=13): 25682 K((x \ y) * z,(x \ z) * y) = 1.  [para(23677(a,1),3748(a,1)),flip(a)].
+
+given #558 (T,wt=13): 26104 K(x * (y \ ((y \ x) \ z)),z) = 1.  [para(4(a,1),25093(a,1,2))].
+
+given #559 (T,wt=15): 4001 K(x * y,z) * u = u * K(y * x,z).  [para(3801(a,1),73(a,1,1))].
+
+given #560 (T,wt=15): 4031 K(x * y,z * u) = K(y * x,u * z).  [para(3801(a,1),3748(a,1))].
+
+given #561 (A,wt=21): 1005 K(((x \ y) * (K(x,x \ y) * (x * z))) \ (y * z),u) = 1.  [back_rewrite(492),rewrite([922(4),179(6)])].
+
+given #562 (T,wt=15): 5201 K(x,((y \ 1) * (K(z,u) * y)) \ x) = 1.  [para(73(a,1),3817(a,1,2)),rewrite([1786(2),179(5),73(8,R),3367(9)])].
+
+given #563 (T,wt=15): 5448 K(((x \ 1) * (K(y,z) * x)) \ u,u) = 1.  [para(73(a,1),3820(a,1,1)),rewrite([1786(2),179(5),73(8,R),3394(9)])].
+
+given #564 (T,wt=15): 7690 K(x,y \ (z * ((u \ z) \ (u \ y)))) = 1.  [para(4(a,1),1271(a,1,2,2,1))].
+
+given #565 (T,wt=15): 7833 K(x \ (y * ((z \ y) \ (z \ x))),u) = 1.  [para(4(a,1),1490(a,1,1,2,1))].
+
+given #566 (A,wt=43): 1008 (x * y) * (((z \ u) * (K(z,z \ u) * (z * w))) \ (u * w)) = x * (y * (((z \ u) * (K(z,z \ u) * (z * w))) \ (u * w))).  [back_rewrite(487),rewrite([922(5),179(7),922(14),179(16)])].
+
+given #567 (T,wt=15): 8080 x \ (K(y,z) * u) = (x \ u) * K(y,z).  [para(73(a,2),1638(a,1,2))].
+
+given #568 (T,wt=15): 8122 K(x \ (((y \ x) * z) * (z \ y)),u) = 1.  [back_rewrite(7849),rewrite([8080(8),73(8,R),3394(9)])].
+
+Low Water (keep): wt=39.000, iters=9556
+
+given #569 (T,wt=11): 27073 K(x * (y \ (x \ y)),z) = 1.  [para(170(a,1),8122(a,1,1)),rewrite([3801(8),150(9),3705(10),3801(4)])].
+
+given #570 (T,wt=11): 27083 K(x * ((x * y) \ y),z) = 1.  [para(5(a,1),27073(a,1,1,2,2))].
+
+given #571 (A,wt=21): 1034 (x * (((y \ 1) * y) * z)) \ (x * (z * ((y \ 1) * y))) = 1.  [para(200(a,1),159(a,1,1,2,1)),rewrite([200(8)])].
+
+Low Water (keep): wt=37.000, iters=8304
+
+given #572 (F,wt=35): 27068 ((c3 * c2) \ (c3 * (c2 * c1))) * K((c3 * c2) \ (c3 * (c2 * c1)),c4) != K(c1,c4) * ((c3 * c2) \ (c3 * (c2 * c1))).  [back_rewrite(177),rewrite([27061(13),73(13,R)]),flip(a)].
+
+given #573 (T,wt=11): 27085 K(x * ((y * x) \ y),z) = 1.  [para(170(a,1),27073(a,1,1,2,2)),rewrite([1638(4),73(4,R),3706(6)])].
+
+given #574 (T,wt=11): 27086 K((x \ y) * (y \ x),z) = 1.  [para(195(a,1),27073(a,1,1,2,2)),rewrite([1638(5),3705(7)])].
+
+given #575 (T,wt=11): 27091 K(x,y * (z \ (y \ z))) = 1.  [para(27073(a,1),1027(a,1,2)),rewrite([67(6)])].
+
+given #576 (T,wt=11): 27111 K(x,y * ((y * z) \ z)) = 1.  [para(27083(a,1),1027(a,1,2)),rewrite([67(6)])].
+
+given #577 (A,wt=21): 1035 (x * (K(y,z) * (u * w))) \ (x * (u * (w * K(y,z)))) = 1.  [para(150(a,1),159(a,1,2,2))].
+
+given #578 (T,wt=11): 27188 K(x,y * ((z * y) \ z)) = 1.  [para(27085(a,1),1027(a,1,2)),rewrite([67(6)])].
+
+given #579 (T,wt=11): 27235 K(x,(y \ z) * (z \ y)) = 1.  [para(27086(a,1),1027(a,1,2)),rewrite([67(6)])].
+
+given #580 (T,wt=15): 8124 K((x * y) \ ((y * z) * (z \ x)),u) = 1.  [back_rewrite(7845),rewrite([8080(7),73(7,R),3394(8)])].
+
+given #581 (T,wt=15): 8132 K(x,y \ (((z \ y) * u) * (u \ z))) = 1.  [back_rewrite(7707),rewrite([8080(8),73(8,R),3367(9)])].
+
+given #582 (A,wt=17): 1042 (x * (y * K(z,x * y))) \ (z * (x * y)) = z.  [para(150(a,1),947(a,1,1))].
+
+given #583 (T,wt=15): 8134 K(x,(y * z) \ ((z * u) * (u \ y))) = 1.  [back_rewrite(7703),rewrite([8080(7),73(7,R),3367(8)])].
+
+given #584 (T,wt=15): 8328 K((x * (y * z)) \ ((x * z) * y),u) = 1.  [back_rewrite(2703),rewrite([8080(7),73(7,R),3394(8)])].
+
+given #585 (T,wt=15): 8364 K(x,(y * (z * u)) \ ((y * u) * z)) = 1.  [back_rewrite(2096),rewrite([8080(7),73(7,R),3367(8)])].
+
+given #586 (T,wt=15): 8465 K(((x * y) * z) \ ((y * x) * z),u) = 1.  [back_rewrite(7988),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #587 (A,wt=21): 1047 (x * (y * ((z \ 1) * z))) \ (x * (((z \ 1) * z) * y)) = 1.  [para(200(a,1),183(a,1,1,2,2)),rewrite([200(8)])].
+
+given #588 (T,wt=15): 8477 K(x \ ((y * (z \ (y \ x))) * z),u) = 1.  [back_rewrite(7840),rewrite([8085(9),73(9,R),3394(10)])].
+
+given #589 (T,wt=15): 8479 K(x \ (((y \ z) * y) * (z \ x)),u) = 1.  [back_rewrite(7837),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #590 (T,wt=15): 8486 K(x,((y * z) * u) \ ((z * y) * u)) = 1.  [back_rewrite(7744),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #591 (T,wt=15): 8489 K(x,y \ ((z * (u \ (z \ y))) * u)) = 1.  [back_rewrite(7698),rewrite([8085(9),73(9,R),3367(10)])].
+
+given #592 (A,wt=21): 1065 (((x \ 1) * x) * (y * z)) \ (y * (((x \ 1) * x) * z)) = 1.  [para(200(a,1),191(a,1,1,1)),rewrite([200(8)])].
+
+given #593 (T,wt=15): 8491 K(x,y \ (((z \ u) * z) * (u \ y))) = 1.  [back_rewrite(7695),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #594 (T,wt=15): 8755 K((x * (y * z)) \ ((y * x) * z),u) = 1.  [back_rewrite(2757),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #595 (T,wt=15): 8786 K(x,(y * (z * u)) \ ((z * y) * u)) = 1.  [back_rewrite(1881),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #596 (T,wt=15): 8795 K((x * (y * (x \ z))) \ (z * y),u) = 1.  [back_rewrite(1585),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #597 (A,wt=23): 1075 ((x \ 1) * x) * (K(y,z) * u) = u * ((x \ 1) * (x * K(y,z))).  [para(810(a,1),165(a,1,2,2)),rewrite([67(7),655(12)]),flip(a)].
+
+given #598 (T,wt=15): 8798 K(x,(y * (z * (y \ u))) \ (u * z)) = 1.  [back_rewrite(1344),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #599 (T,wt=15): 8804 K(x \ ((((y * z) \ x) * y) * z),u) = 1.  [back_rewrite(1004),rewrite([8085(10),73(10,R),3394(11)])].
+
+given #600 (T,wt=15): 8805 K((x * y) \ ((x * (z \ y)) * z),u) = 1.  [back_rewrite(1003),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #601 (T,wt=15): 8806 K(x,y \ ((((z * u) \ y) * z) * u)) = 1.  [back_rewrite(1001),rewrite([8085(10),73(10,R),3367(11)])].
+
+given #602 (A,wt=23): 1080 K(x,y) * (((z \ 1) * z) * u) = u * (K(x,y) * ((z \ 1) * z)).  [para(811(a,1),165(a,1,2,2)),rewrite([67(7),648(12)]),flip(a)].
+
+given #603 (T,wt=15): 8807 K(x,(y * z) \ ((y * (u \ z)) * u)) = 1.  [back_rewrite(1000),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #604 (T,wt=15): 8812 K(x,((y * z) * u) \ ((u * y) * z)) = 1.  [back_rewrite(982),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #605 (T,wt=15): 8813 K(((x * y) * z) \ ((z * x) * y),u) = 1.  [back_rewrite(980),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #606 (T,wt=15): 9156 K((((x * y) \ 1) * (y * x)) \ 1,z) = 1.  [para(49(a,1),8449(a,1,1,2)),rewrite([1786(7),73(9,R),3394(10)])].
+
+given #607 (A,wt=31): 1093 (((x \ 1) * x) * y) \ ((y * (x \ 1)) * x) = (y * ((x \ 1) * x)) \ ((y * (x \ 1)) * x).  [para(205(a,2),37(a,2,1)),rewrite([37(3)]),flip(a)].
+
+given #608 (T,wt=15): 9160 K(((((x \ y) * x) \ 1) * y) \ 1,z) = 1.  [para(89(a,1),8449(a,1,1,2)),rewrite([1786(8),73(10,R),3394(11)])].
+
+given #609 (T,wt=15): 9191 K(x,(((y * z) \ 1) * (z * y)) \ 1) = 1.  [para(49(a,1),8451(a,1,2,2)),rewrite([1786(7),73(9,R),3367(10)])].
+
+given #610 (T,wt=15): 9194 K(x,((((y \ z) * y) \ 1) * z) \ 1) = 1.  [para(89(a,1),8451(a,1,2,2)),rewrite([1786(8),73(10,R),3367(11)])].
+
+given #611 (T,wt=15): 9222 K(((x \ 1) * ((y \ x) * y)) \ 1,z) = 1.  [para(48(a,1),8456(a,1,1,1,2)),rewrite([1786(8),73(10,R),3394(11)])].
+
+given #612 (A,wt=39): 1099 ((x \ 1) * x) * (y * ((z * (u * w)) \ ((z * u) * w))) = y * ((x \ 1) * (x * ((z * (u * w)) \ ((z * u) * w)))).  [para(205(a,1),74(a,1,1)),rewrite([74(10),74(9)]),flip(a)].
+
+given #613 (T,wt=15): 9275 K(x,(((y \ z) * u) * y) \ (z * u)) = 1.  [para(405(a,1),229(a,1,2,1)),rewrite([8085(9),73(9,R),3367(10)])].
+
+given #614 (T,wt=15): 9285 K((((x \ y) * z) * x) \ (y * z),u) = 1.  [para(405(a,1),248(a,1,1,1)),rewrite([8085(9),73(9,R),3394(10)])].
+
+given #615 (T,wt=15): 9378 K(x,((y \ 1) * ((z \ y) * z)) \ 1) = 1.  [para(48(a,1),8457(a,1,2,1,2)),rewrite([1786(8),73(10,R),3367(11)])].
+
+given #616 (T,wt=15): 9428 K(x,(((y \ (z \ 1)) * y) * z) \ 1) = 1.  [para(48(a,1),8898(a,1,2,1,1)),rewrite([1786(10),73(12,R),3367(13)])].
+
+given #617 (A,wt=39): 1104 (x * y) * ((((z \ 1) * z) * u) \ ((u * (z \ 1)) * z)) = x * (y * ((u * ((z \ 1) * z)) \ ((u * (z \ 1)) * z))).  [para(205(a,2),74(a,1,2,1))].
+
+given #618 (T,wt=15): 9656 K((((x \ (y \ 1)) * x) * y) \ 1,z) = 1.  [para(48(a,1),9001(a,1,1,1,1)),rewrite([1786(10),73(12,R),3394(13)])].
+
+given #619 (T,wt=15): 9692 K((x * (((y \ x) * y) \ 1)) \ 1,z) = 1.  [para(89(a,1),9040(a,1,1,2)),rewrite([1786(8),73(10,R),3394(11)])].
+
+given #620 (T,wt=15): 9887 K(x,(y * (((z \ y) * z) \ 1)) \ 1) = 1.  [para(89(a,1),9150(a,1,2,2)),rewrite([1786(8),73(10,R),3367(11)])].
+
+given #621 (T,wt=15): 10639 (x * K(y,z)) \ u = (x \ u) * K(z,y).  [para(2394(a,1),5(a,1,2)),rewrite([922(3)]),flip(a)].
+
+given #622 (A,wt=23): 1106 ((x \ 1) * x) * (y * K(z,u)) = y * ((x \ 1) * (x * K(z,u))).  [para(205(a,1),150(a,1,1)),rewrite([150(6),150(5)]),flip(a)].
+
+given #623 (T,wt=13): 29837 K((x \ y) \ ((x \ 1) * y),z) = 1.  [back_rewrite(13836),rewrite([29745(9),73(9,R),3394(10)])].
+
+given #624 (T,wt=13): 29839 K(x,(y \ z) \ ((y \ 1) * z)) = 1.  [back_rewrite(13762),rewrite([29745(9),73(9,R),3367(10)])].
+
+given #625 (T,wt=13): 29840 K((x \ ((x \ 1) \ y)) \ y,z) = 1.  [back_rewrite(13749),rewrite([29745(9),73(9,R),3394(10)])].
+
+given #626 (T,wt=13): 29841 K(x,(y \ ((y \ 1) \ z)) \ z) = 1.  [back_rewrite(13740),rewrite([29745(9),73(9,R),3367(10)])].
+
+given #627 (A,wt=39): 1111 ((x * (y * z)) \ ((x * y) * z)) * (u * ((w \ 1) * w)) = ((w \ 1) * w) * (((x * (y * z)) \ ((x * y) * z)) * u).  [para(205(a,1),93(a,2)),rewrite([74(9),556(10),410(20)]),flip(a)].
+
+given #628 (T,wt=13): 30143 K(x \ ((y \ 1) * (y * x)),z) = 1.  [para(5(a,1),29837(a,1,1,1))].
+
+given #629 (T,wt=13): 30145 K(x \ ((y \ 1) * (x * y)),z) = 1.  [para(170(a,1),29837(a,1,1,1)),rewrite([10639(7),73(7,R),3394(8)])].
+
+given #630 (T,wt=13): 30147 K(x \ (((x \ y) \ 1) * y),z) = 1.  [para(195(a,1),29837(a,1,1,1)),rewrite([10639(8),73(8,R),3394(9)])].
+
+given #631 (T,wt=13): 30159 K(x,y \ ((z \ 1) * (z * y))) = 1.  [para(5(a,1),29839(a,1,2,1))].
+
+given #632 (A,wt=23): 1114 K(x,y) * (z * ((u \ 1) * u)) = ((u \ 1) * u) * (K(x,y) * z).  [para(205(a,1),179(a,2)),rewrite([150(5),655(6),410(12)]),flip(a)].
+
+given #633 (T,wt=13): 30160 K(x,y \ ((z \ 1) * (y * z))) = 1.  [para(170(a,1),29839(a,1,2,1)),rewrite([10639(7),73(7,R),3367(8)])].
+
+given #634 (T,wt=13): 30162 K(x,y \ (((y \ z) \ 1) * z)) = 1.  [para(195(a,1),29839(a,1,2,1)),rewrite([10639(8),73(8,R),3367(9)])].
+
+given #635 (T,wt=15): 10689 K(((x \ y) * z) \ (y * (x \ z)),u) = 1.  [back_rewrite(7996),rewrite([10639(6),8085(8),73(8,R),3394(9)])].
+
+given #636 (T,wt=15): 10691 K(x,((y \ z) * u) \ (z * (y \ u))) = 1.  [back_rewrite(7753),rewrite([10639(6),8085(8),73(8,R),3367(9)])].
+
+given #637 (A,wt=23): 1170 ((x \ 1) * ((y \ x) * y)) * z = z * ((x \ 1) * ((y \ x) * y)).  [para(1076(a,1),165(a,1,2,2)),rewrite([67(7)]),flip(a)].
+
+given #638 (T,wt=15): 10715 K((x * y) \ ((z * x) * (z \ y)),u) = 1.  [back_rewrite(1494),rewrite([10639(5),8085(7),73(7,R),3394(8)])].
+
+given #639 (T,wt=15): 10722 K(x,(y * z) \ ((u * y) * (u \ z))) = 1.  [back_rewrite(1277),rewrite([10639(5),8085(7),73(7,R),3367(8)])].
+
+given #640 (T,wt=15): 12603 K(x,y * z) * u = K(x,z * y) * u.  [para(3748(a,1),2467(a,1,2,1)),rewrite([2467(5)])].
+
+given #641 (T,wt=15): 12604 K(x * y,z) * u = K(y * x,z) * u.  [para(3801(a,1),2467(a,1,2,1)),rewrite([2467(5)])].
+
+given #642 (A,wt=23): 1180 (((x \ 1) * (K(y,z) * x)) \ u) * ((x \ 1) * (K(y,z) * x)) = u.  [para(1125(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #643 (T,wt=15): 13210 (K(x,y) * z) \ u = (z \ u) * K(y,x).  [para(4(a,1),2606(a,1,2))].
+
+given #644 (T,wt=15): 14807 K((x * ((y \ z) * (x \ y))) \ z,u) = 1.  [para(4(a,1),3351(a,1,1,1,2,1,1))].
+
+given #645 (T,wt=15): 15346 K(x,(y * ((z \ u) * (y \ z))) \ u) = 1.  [para(4(a,1),3490(a,1,2,1,2,1,1))].
+
+given #646 (T,wt=15): 15395 K(x,y * ((z \ u) * z)) = K(x,y * u).  [para(48(a,1),3503(a,1,2,2))].
+
+given #647 (A,wt=19): 1188 (((x \ 1) * x) * y) * z = ((x \ 1) * x) * (y * z).  [para(200(a,1),210(a,1,1,1)),rewrite([200(8)])].
+
+given #648 (T,wt=15): 15501 K(x * ((y \ z) * y),u) = K(x * z,u).  [para(48(a,1),3705(a,1,1,2))].
+
+given #649 (T,wt=15): 19048 K(x * ((x \ 1) * (y * z)),z * y) = 1.  [para(18213(a,1),3748(a,1)),flip(a)].
+
+given #650 (T,wt=15): 19052 K(x * y,z * ((z \ 1) * (y * x))) = 1.  [para(18213(a,1),3975(a,1,1)),rewrite([72(9)])].
+
+given #651 (T,wt=15): 19066 (x * y) * (K(y,x) * z) = (y * x) * z.  [para(5(a,1),647(a,1,2,1,1)),rewrite([5(6)])].
+
+given #652 (A,wt=23): 1201 (((x \ 1) * ((y \ x) * y)) \ z) * ((x \ 1) * ((y \ x) * y)) = z.  [para(1127(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #653 (T,wt=15): 19612 K(x * y,z * (((y * x) \ z) \ 1)) = 1.  [para(18232(a,1),3801(a,1)),flip(a)].
+
+given #654 (T,wt=15): 19614 K(x * (((y * z) \ x) \ 1),z * y) = 1.  [para(18232(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #655 (T,wt=15): 20265 K(x * y,((z \ (y * x)) \ 1) \ z) = 1.  [para(19902(a,1),3801(a,1)),flip(a)].
+
+given #656 (T,wt=15): 20267 K(((x \ (y * z)) \ 1) \ x,z * y) = 1.  [para(19902(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #657 (A,wt=23): 1220 (((x * y) \ 1) * (y * x)) * z = z * (((x * y) \ 1) * (y * x)).  [para(1169(a,1),165(a,1,2,2)),rewrite([67(7)]),flip(a)].
+
+given #658 (T,wt=15): 21006 K(x * y,z \ ((z \ 1) \ (y * x))) = 1.  [para(20145(a,1),3801(a,1)),flip(a)].
+
+given #659 (T,wt=15): 21008 K(x \ ((x \ 1) \ (y * z)),z * y) = 1.  [para(20145(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #660 (T,wt=15): 21017 K(x * y,(z \ 1) \ (z \ (y * x))) = 1.  [para(20162(a,1),3801(a,1)),flip(a)].
+
+given #661 (T,wt=15): 21019 K((x \ 1) \ (x \ (y * z)),z * y) = 1.  [para(20162(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #662 (A,wt=23): 1255 ((((x * y) \ 1) * (y * x)) \ z) * (((x * y) \ 1) * (y * x)) = z.  [para(1200(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #663 (T,wt=15): 23800 K(x * ((x \ 1) * ((y \ z) * y)),z) = 1.  [para(48(a,1),21528(a,1,2)),rewrite([1786(3),179(6),73(5),48(5),3748(9),4(8)])].
+
+given #664 (T,wt=15): 25009 K(x,y * (z * u)) = K(x,y * (u * z)).  [para(918(a,1),3535(a,1,2,2)),rewrite([15398(5),15398(8)])].
+
+given #665 (T,wt=15): 25011 K(x * (y * z),u) = K(x * (z * y),u).  [para(918(a,1),3706(a,1,1,2)),rewrite([15502(5),15502(8)])].
+
+given #666 (T,wt=15): 26263 K(x,((y \ z) * (y * u)) \ (z * u)) = 1.  [para(643(a,2),1002(a,1,2,1)),rewrite([13210(8),73(8,R),3367(9)])].
+
+given #667 (A,wt=27): 1275 ((x * y) \ ((x * z) * (z \ y))) * u = u * ((x * y) \ ((x * z) * (z \ y))).  [para(228(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #668 (T,wt=15): 26472 K(((x \ y) * (x * z)) \ (y * z),u) = 1.  [para(643(a,2),1005(a,1,1,1)),rewrite([13210(8),73(8,R),3394(9)])].
+
+given #669 (T,wt=15): 26537 K(x,(((y \ (z \ 1)) * y) * z) \ x) = 1.  [para(647(a,1),5201(a,1,2,1))].
+
+given #670 (T,wt=15): 26551 K((((x \ (y \ 1)) * x) * y) \ z,z) = 1.  [para(647(a,1),5448(a,1,1,1))].
+
+given #671 (T,wt=15): 26952 K(x \ (y * (((z \ x) \ y) \ z)),u) = 1.  [back_rewrite(26584),rewrite([26847(8),73(8,R),3394(9)])].
+
+given #672 (A,wt=27): 1278 (((x * y) \ ((x * z) * (z \ y))) \ u) * ((x * y) \ ((x * z) * (z \ y))) = u.  [para(228(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #673 (T,wt=15): 26959 K(x,y \ (z * (((u \ y) \ z) \ u))) = 1.  [back_rewrite(26558),rewrite([26847(8),73(8,R),3367(9)])].
+
+given #674 (T,wt=15): 27041 K((x * y) \ (z * ((y \ z) \ x)),u) = 1.  [back_rewrite(9614),rewrite([26847(11),8085(9),73(9,R),10643(9),73(7,R),3394(8)])].
+
+given #675 (T,wt=15): 27042 K(x,(y * z) \ (u * ((z \ u) \ y))) = 1.  [back_rewrite(9607),rewrite([26847(11),8085(9),73(9,R),10643(9),73(7,R),3367(8)])].
+
+given #676 (T,wt=15): 27069 K(x \ (((y * z) \ x) * (z * y)),u) = 1.  [para(49(a,1),8122(a,1,1,2,2)),rewrite([73(6,R),8080(7),73(7,R),3394(8)])].
+
+given #677 (A,wt=39): 1281 K(x,(y * (z * ((u * (w * v5)) \ ((u * w) * v5)))) \ (((y * z) * v6) * (v6 \ ((u * (w * v5)) \ ((u * w) * v5))))) = 1.  [para(74(a,1),228(a,1,2,1))].
+
+given #678 (T,wt=15): 27071 K(x \ ((y * (z \ x)) * (y \ z)),u) = 1.  [para(165(a,1),8122(a,1,1,2,1)),rewrite([10639(6),8085(8),73(8,R),3394(9)])].
+
+given #679 (T,wt=15): 27072 K(x \ ((((y * z) \ x) * z) * y),u) = 1.  [para(170(a,1),8122(a,1,1,2,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #680 (T,wt=15): 27075 K(x \ (((y \ x) * (z \ y)) * z),u) = 1.  [para(195(a,1),8122(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #681 (T,wt=15): 27217 K(x * ((((y \ z) * y) * x) \ z),u) = 1.  [para(647(a,1),27085(a,1,1,2,1)),rewrite([210(8),3394(9)])].
+
+given #682 (A,wt=23): 1303 (x \ ((x * y) * (y \ 1))) * z = z * (x \ ((x * y) * (y \ 1))).  [para(1273(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #683 (T,wt=15): 27407 K(x,y * ((((z \ u) * z) * y) \ u)) = 1.  [para(647(a,1),27188(a,1,2,2,1)),rewrite([210(8),3367(9)])].
+
+given #684 (T,wt=15): 27425 K((x * y) \ ((z * y) * (z \ x)),u) = 1.  [para(165(a,1),8124(a,1,1,2,1)),rewrite([10639(5),8085(7),73(7,R),3394(8)])].
+
+given #685 (T,wt=15): 27426 K(((x * y) * z) \ ((z * y) * x),u) = 1.  [para(170(a,1),8124(a,1,1,2,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #686 (T,wt=15): 27428 K((x * y) \ ((y * (z \ x)) * z),u) = 1.  [para(195(a,1),8124(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #687 (A,wt=23): 1305 ((x \ ((x * y) * (y \ 1))) \ z) * (x \ ((x * y) * (y \ 1))) = z.  [para(1273(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #688 (T,wt=15): 27480 K(x,y \ (((z * u) \ y) * (u * z))) = 1.  [para(49(a,1),8132(a,1,2,2,2)),rewrite([73(6,R),8080(7),73(7,R),3367(8)])].
+
+given #689 (T,wt=15): 27481 K(x,y \ ((z * (u \ y)) * (z \ u))) = 1.  [para(165(a,1),8132(a,1,2,2,1)),rewrite([10639(6),8085(8),73(8,R),3367(9)])].
+
+given #690 (T,wt=15): 27482 K(x,y \ ((((z * u) \ y) * u) * z)) = 1.  [para(170(a,1),8132(a,1,2,2,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #691 (T,wt=15): 27484 K(x,y \ (((z \ y) * (u \ z)) * u)) = 1.  [para(195(a,1),8132(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #692 (A,wt=23): 1316 (x \ (y * ((x \ y) \ 1))) * z = z * (x \ (y * ((x \ y) \ 1))).  [para(1302(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #693 (T,wt=15): 27594 K(x,(y * z) \ ((u * z) * (u \ y))) = 1.  [para(165(a,1),8134(a,1,2,2,1)),rewrite([10639(5),8085(7),73(7,R),3367(8)])].
+
+given #694 (T,wt=15): 27595 K(x,((y * z) * u) \ ((u * z) * y)) = 1.  [para(170(a,1),8134(a,1,2,2,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #695 (T,wt=15): 27597 K(x,(y * z) \ ((z * (u \ y)) * u)) = 1.  [para(195(a,1),8134(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #696 (T,wt=15): 27770 K((x * (y * z)) \ (x * (z * y)),u) = 1.  [para(165(a,1),8465(a,1,1,1)),rewrite([3963(7)])].
+
+given #697 (A,wt=23): 1317 ((x \ (y * ((x \ y) \ 1))) \ z) * (x \ (y * ((x \ y) \ 1))) = z.  [para(1302(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #698 (T,wt=15): 27895 K((x * y) \ (((z \ y) * z) * x),u) = 1.  [para(170(a,1),8479(a,1,1,2,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #699 (T,wt=15): 27898 K(x \ (((y \ (z \ x)) * y) * z),u) = 1.  [para(195(a,1),8479(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #700 (T,wt=15): 27915 K(x,(y * (z * u)) \ (y * (u * z))) = 1.  [para(165(a,1),8486(a,1,2,1)),rewrite([3963(7)])].
+
+given #701 (T,wt=15): 28047 K(x,(y * z) \ (((u \ z) * u) * y)) = 1.  [para(170(a,1),8491(a,1,2,2,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #702 (A,wt=37): 1321 K(x,y \ (((z * (u * w)) \ ((z * u) * w)) * (v5 * ((y \ (((z * (u * w)) \ ((z * u) * w)) * v5)) \ 1)))) = 1.  [para(133(a,1),1302(a,1,2,2))].
+
+given #703 (T,wt=15): 28050 K(x,y \ (((z \ (u \ y)) * z) * u)) = 1.  [para(195(a,1),8491(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #704 (T,wt=15): 28065 K((x * (y * ((y * x) \ z))) \ z,u) = 1.  [para(4(a,1),8755(a,1,1,2))].
+
+given #705 (T,wt=15): 28067 K((x * (y * z)) \ ((z * x) * y),u) = 1.  [para(165(a,1),8755(a,1,1,1,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #706 (T,wt=15): 28070 K((x * ((y \ z) * y)) \ (z * x),u) = 1.  [para(48(a,1),8755(a,1,1,1,2)),rewrite([150(7),8085(8),73(8,R),3394(9)])].
+
+given #707 (A,wt=19): 1330 (x \ ((x * y) * (y \ 1))) * x = (x * y) * (y \ 1).  [para(1312(a,1),48(a,1,2)),rewrite([67(6)]),flip(a)].
+
+given #708 (T,wt=15): 28094 K(((x * y) * z) \ ((x * z) * y),u) = 1.  [para(405(a,1),8755(a,1,1,1)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #709 (T,wt=15): 28139 K(x,(y * (z * ((z * y) \ u))) \ u) = 1.  [para(4(a,1),8786(a,1,2,2))].
+
+given #710 (T,wt=15): 28140 K(x,(y * (z * u)) \ ((u * y) * z)) = 1.  [para(165(a,1),8786(a,1,2,1,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #711 (T,wt=15): 28143 K(x,(y * ((z \ u) * z)) \ (u * y)) = 1.  [para(48(a,1),8786(a,1,2,1,2)),rewrite([150(7),8085(8),73(8,R),3367(9)])].
+
+given #712 (A,wt=27): 1343 ((x * ((x \ y) * z)) \ (y * z)) * u = u * ((x * ((x \ y) * z)) \ (y * z)).  [para(229(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #713 (T,wt=15): 28165 K(x,((y * z) * u) \ ((y * u) * z)) = 1.  [para(405(a,1),8786(a,1,2,1)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #714 (T,wt=15): 28262 K((((x \ y) * x) * (y \ z)) \ z,u) = 1.  [para(647(a,1),8795(a,1,1,1)),rewrite([1638(8),73(8,R),3394(9)])].
+
+given #715 (T,wt=15): 28540 K(x,(((y \ z) * y) * (z \ u)) \ u) = 1.  [para(647(a,1),8798(a,1,2,1)),rewrite([1638(8),73(8,R),3367(9)])].
+
+given #716 (T,wt=15): 28865 K(x,((y * ((z * y) \ u)) * z) \ u) = 1.  [para(4(a,1),8812(a,1,2,2))].
+
+given #717 (A,wt=19): 1345 K(x,(y * ((y \ z) * (u * K(u,z)))) \ (u * z)) = 1.  [para(165(a,1),229(a,1,2,2))].
+
+given #718 (T,wt=15): 28921 K(((x * ((y * x) \ z)) * y) \ z,u) = 1.  [para(4(a,1),8813(a,1,1,2))].
+
+given #719 (T,wt=15): 29044 K(x,y * (((y * (z \ 1)) * z) \ 1)) = 1.  [para(1093(a,2),3454(a,1,2,2)),rewrite([12789(21),19232(22),72(19),16574(18),3748(8)])].
+
+given #720 (T,wt=15): 29045 K(x * (((x * (y \ 1)) * y) \ 1),z) = 1.  [para(1093(a,1),4035(a,1,1,2,2)),rewrite([1188(21),19239(22),72(19),16713(18)])].
+
+given #721 (T,wt=15): 29108 K(x,y * (((y * (z \ 1)) * z) \ x)) = 1.  [para(1093(a,2),21430(a,1,2,2)),rewrite([12789(20),19232(21),72(18),16574(17),3748(7)])].
+
+given #722 (A,wt=27): 1346 (((x * ((x \ y) * z)) \ (y * z)) \ u) * ((x * ((x \ y) * z)) \ (y * z)) = u.  [para(229(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #723 (T,wt=15): 29139 K(x * (((x * (y \ 1)) * y) \ z),z) = 1.  [para(1093(a,1),22874(a,1,1,1)),rewrite([16732(21),3801(11),1188(10),19239(11),72(8)])].
+
+given #724 (T,wt=15): 29356 K(x,(((y \ z) * (z \ u)) * y) \ u) = 1.  [para(4(a,1),9275(a,1,2,2))].
+
+given #725 (T,wt=15): 29357 K(x,(y * (z * u)) \ ((u * z) * y)) = 1.  [para(49(a,1),9275(a,1,2,1,1,1)),rewrite([210(4),13210(7),73(7,R),3367(8)])].
+
+given #726 (T,wt=15): 29359 K(x,((y * (z \ u)) * z) \ (u * y)) = 1.  [para(165(a,1),9275(a,1,2,1,1)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #727 (A,wt=19): 1372 (x \ (y * ((x \ y) \ 1))) * x = y * ((x \ y) \ 1).  [para(1324(a,1),48(a,1,2)),rewrite([67(6)]),flip(a)].
+
+given #728 (T,wt=15): 29363 K(x,((y * z) * (y \ u)) \ (u * z)) = 1.  [para(195(a,1),9275(a,1,2,1,1,1)),rewrite([179(4),2511(6),13210(8),73(8,R),3367(9)])].
+
+given #729 (T,wt=15): 29432 K((((x \ y) * (y \ z)) * x) \ z,u) = 1.  [para(4(a,1),9285(a,1,1,2))].
+
+given #730 (T,wt=15): 29433 K((x * (y * z)) \ ((z * y) * x),u) = 1.  [para(49(a,1),9285(a,1,1,1,1,1)),rewrite([210(4),13210(7),73(7,R),3394(8)])].
+
+given #731 (T,wt=15): 29434 K(((x * (y \ z)) * y) \ (z * x),u) = 1.  [para(165(a,1),9285(a,1,1,1,1)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #732 (A,wt=23): 1383 ((x * ((x \ 1) * y)) \ y) * z = z * ((x * ((x \ 1) * y)) \ y).  [para(1339(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #733 (T,wt=15): 29438 K(((x * y) * (x \ z)) \ (z * y),u) = 1.  [para(195(a,1),9285(a,1,1,1,1,1)),rewrite([179(4),2511(6),13210(8),73(8,R),3394(9)])].
+
+given #734 (T,wt=15): 29853 K(((x * y) * z) \ (y * (z * x)),u) = 1.  [back_rewrite(28922),rewrite([29747(8),73(8,R),3394(9)])].
+
+given #735 (T,wt=15): 29855 K(x,((y * z) * u) \ (z * (u * y))) = 1.  [back_rewrite(28867),rewrite([29747(8),73(8,R),3367(9)])].
+
+given #736 (T,wt=15): 29862 K(x,(((y * z) \ u) * (z * y)) \ u) = 1.  [back_rewrite(25008),rewrite([29747(4),179(8),936(7)])].
+
+given #737 (A,wt=23): 1385 (((x * ((x \ 1) * y)) \ y) \ z) * ((x * ((x \ 1) * y)) \ y) = z.  [para(1339(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #738 (T,wt=15): 29863 K((((x * y) \ z) * (y * x)) \ z,u) = 1.  [back_rewrite(25007),rewrite([29747(4),179(8),936(7)])].
+
+given #739 (T,wt=15): 29882 K((x * y) \ ((z \ y) * (x * z)),u) = 1.  [back_rewrite(2930),rewrite([29747(9),73(9,R),3394(10)])].
+
+given #740 (T,wt=15): 29883 K(x,(y * z) \ ((u \ z) * (y * u))) = 1.  [back_rewrite(2194),rewrite([29747(9),73(9,R),3367(10)])].
+
+given #741 (T,wt=15): 29907 K((x \ ((x * (y \ 1)) * y)) \ z,z) = 1.  [back_rewrite(29705),rewrite([29758(9),13210(10),200(9),3801(11),19239(11),72(8)])].
+
+given #742 (A,wt=23): 1398 ((x * y) \ ((x \ 1) \ y)) * z = z * ((x * y) \ ((x \ 1) \ y)).  [para(1381(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #743 (T,wt=15): 29908 K(x,(y \ ((y * (z \ 1)) * z)) \ x) = 1.  [back_rewrite(29704),rewrite([29758(9),13210(10),200(9),3748(11),19232(11),72(8)])].
+
+given #744 (T,wt=15): 29917 K(x,(y \ ((y * (z \ 1)) * z)) * x) = 1.  [back_rewrite(29691),rewrite([29758(9),210(10),3367(11)])].
+
+given #745 (T,wt=15): 29927 K((x \ ((x * (y \ 1)) * y)) * z,z) = 1.  [back_rewrite(29680),rewrite([29758(9),210(10),3394(11)])].
+
+given #746 (T,wt=15): 30037 K((x \ ((x * (y \ 1)) * y)) \ 1,z) = 1.  [back_rewrite(29035),rewrite([29758(9),13210(11),200(10),3801(12),19239(12),72(9)])].
+
+given #747 (A,wt=23): 1400 (((x * y) \ ((x \ 1) \ y)) \ z) * ((x * y) \ ((x \ 1) \ y)) = z.  [para(1381(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #748 (T,wt=15): 30038 K(x,(y \ ((y * (z \ 1)) * z)) \ 1) = 1.  [back_rewrite(29034),rewrite([29758(9),13210(11),200(10),3748(12),19232(12),72(9)])].
+
+given #749 (T,wt=15): 30479 K(x \ (y * (z \ ((z \ y) \ x))),u) = 1.  [para(4(a,1),10689(a,1,1,1))].
+
+given #750 (T,wt=15): 30481 K((x * (y \ z)) \ (z * (y \ x)),u) = 1.  [para(165(a,1),10689(a,1,1,1)),rewrite([1638(6),8085(8),73(8,R),3394(9)])].
+
+given #751 (T,wt=15): 30482 K(((x \ y) * (z * x)) \ (y * z),u) = 1.  [para(170(a,1),10689(a,1,1,2,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #752 (A,wt=19): 1416 ((x * ((x \ 1) * y)) \ y) * (x * ((x \ 1) * y)) = y.  [para(1393(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #753 (T,wt=15): 30485 K((((x \ y) \ z) * y) \ (z * x),u) = 1.  [para(195(a,1),10689(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #754 (T,wt=15): 30528 K(x,y \ (z * (u \ ((u \ z) \ y)))) = 1.  [para(4(a,1),10691(a,1,2,1))].
+
+given #755 (T,wt=15): 30529 K(x,(y * (z \ u)) \ (u * (z \ y))) = 1.  [para(165(a,1),10691(a,1,2,1)),rewrite([1638(6),8085(8),73(8,R),3367(9)])].
+
+given #756 (T,wt=15): 30530 K(x,((y \ z) * (u * y)) \ (z * u)) = 1.  [para(170(a,1),10691(a,1,2,2,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #757 (A,wt=27): 1426 ((x * (y * ((x * y) \ z))) \ z) * u = u * ((x * (y * ((x * y) \ z))) \ z).  [para(230(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #758 (T,wt=15): 30533 K(x,(((y \ z) \ u) * z) \ (u * y)) = 1.  [para(195(a,1),10691(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #759 (T,wt=15): 30718 K(x \ ((y * z) * (y \ (z \ x))),u) = 1.  [para(4(a,1),10715(a,1,1,1))].
+
+given #760 (T,wt=15): 30722 K((x * y) \ (((z \ y) * x) * z),u) = 1.  [para(195(a,1),10715(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #761 (T,wt=15): 30783 K(x,y \ ((z * u) * (z \ (u \ y)))) = 1.  [para(4(a,1),10722(a,1,2,1))].
+
+given #762 (A,wt=27): 1428 (((x * (y * ((x * y) \ z))) \ z) \ u) * ((x * (y * ((x * y) \ z))) \ z) = u.  [para(230(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #763 (T,wt=15): 30786 K(x,(y * z) \ (((u \ z) * y) * u)) = 1.  [para(195(a,1),10722(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #764 (T,wt=15): 31104 K((((x \ y) * z) * x) \ (z * y),u) = 1.  [back_rewrite(29435),rewrite([30976(7),73(7,R),3394(8)])].
+
+given #765 (T,wt=15): 31105 K(x,(((y \ z) * u) * y) \ (u * z)) = 1.  [back_rewrite(29360),rewrite([30976(7),73(7,R),3367(8)])].
+
+given #766 (T,wt=15): 31185 K(((x \ y) * ((z \ x) * z)) \ y,u) = 1.  [back_rewrite(26447),rewrite([30976(8),73(8,R),3394(9)])].
+
+given #767 (A,wt=23): 1442 (x \ ((y \ 1) \ (y \ x))) * z = z * (x \ ((y \ 1) \ (y \ x))).  [para(1396(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #768 (T,wt=15): 31214 K(x,((y \ z) * ((u \ y) * u)) \ z) = 1.  [back_rewrite(26238),rewrite([30976(8),73(8,R),3367(9)])].
+
+given #769 (T,wt=15): 31264 K((x * ((x \ (y \ z)) * y)) \ z,u) = 1.  [back_rewrite(8059),rewrite([30976(8),73(8,R),3394(9)])].
+
+given #770 (T,wt=15): 31265 K(((x \ y) * (x * (y \ z))) \ z,u) = 1.  [back_rewrite(8058),rewrite([30976(8),73(8,R),3394(9)])].
+
+given #771 (T,wt=15): 31266 K(x,(y * ((y \ (z \ u)) * z)) \ u) = 1.  [back_rewrite(7815),rewrite([30976(8),73(8,R),3367(9)])].
+
+given #772 (A,wt=23): 1443 ((x \ ((y \ 1) \ (y \ x))) \ z) * (x \ ((y \ 1) \ (y \ x))) = z.  [para(1396(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #773 (T,wt=15): 31267 K(x,((y \ z) * (y * (z \ u))) \ u) = 1.  [back_rewrite(7814),rewrite([30976(8),73(8,R),3367(9)])].
+
+given #774 (T,wt=15): 32161 K(x,(y * z) * u) = K(x,y * (z * u)).  [para(1111(a,2),15395(a,1,2)),rewrite([410(11),410(10),10030(12),9314(7),32112(10),19232(10),72(7)])].
+
+given #775 (T,wt=15): 32175 K(x,y * (z * u)) = K(x,u * (y * z)).  [back_rewrite(18011),rewrite([32161(3),32098(12)])].
+
+given #776 (T,wt=15): 32383 K(x * y,(z \ 1) * (y * (x * z))) = 1.  [back_rewrite(18245),rewrite([32112(7)])].
+
+given #777 (A,wt=19): 1463 ((x * y) \ ((x \ 1) \ y)) * (x * y) = (x \ 1) \ y.  [para(1410(a,1),48(a,1,2)),rewrite([67(5)]),flip(a)].
+
+given #778 (T,wt=13): 41975 K(x * ((x * y) \ 1),y \ 1) = 1.  [para(205(a,2),32383(a,1,2)),rewrite([3748(13),15395(13),67(8)])].
+
+given #779 (T,wt=13): 42015 K(x * ((y * x) \ 1),y \ 1) = 1.  [para(1220(a,2),32383(a,1,2)),rewrite([3748(13),41760(13)])].
+
+given #780 (T,wt=13): 42082 K(x * (y \ 1),(x \ y) \ 1) = 1.  [para(4(a,1),41975(a,1,1,2,1))].
+
+given #781 (T,wt=13): 42084 K(x * ((x * (y \ 1)) \ 1),y) = 1.  [para(195(a,1),41975(a,1,2)),rewrite([3316(11)])].
+
+given #782 (A,wt=19): 1475 (x \ ((y \ 1) \ (y \ x))) * x = (y \ 1) \ (y \ x).  [para(1450(a,1),48(a,1,2)),rewrite([67(6)]),flip(a)].
+
+given #783 (T,wt=13): 42087 K(x \ 1,y * ((y * x) \ 1)) = 1.  [para(41975(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #784 (T,wt=13): 42101 K((x * y) \ 1,(y * x) \ 1) = 1.  [para(918(a,1),41975(a,1,1,2,1)),rewrite([29747(6),29747(12),3316(13),3705(11),3394(9)])].
+
+given #785 (T,wt=13): 42114 K((x \ y) * (y \ 1),x \ 1) = 1.  [para(4(a,1),42015(a,1,1,2,1))].
+
+given #786 (T,wt=13): 42116 K(x * (((y \ 1) * x) \ 1),y) = 1.  [para(195(a,1),42015(a,1,2)),rewrite([3316(11)])].
+
+given #787 (A,wt=23): 1495 ((x * y) \ ((x * z) * (z \ y))) * (x * y) = (x * z) * (z \ y).  [para(247(a,1),48(a,1,2)),rewrite([67(5)]),flip(a)].
+
+given #788 (T,wt=13): 42119 K(x \ 1,y * ((x * y) \ 1)) = 1.  [para(42015(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #789 (T,wt=13): 42145 K(x * y,(x \ (y \ 1)) \ 1) = 1.  [para(195(a,1),42082(a,1,1,2)),rewrite([3705(11)])].
+
+given #790 (T,wt=13): 42148 K((x \ y) \ 1,x * (y \ 1)) = 1.  [para(42082(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #791 (T,wt=13): 42149 K((x \ 1) * y,(y \ x) \ 1) = 1.  [para(42082(a,1),3801(a,1)),flip(a)].
+
+given #792 (A,wt=39): 1527 ((x * (y * (z * K(z,x * y)))) \ (z * (x * y))) * u = u * ((x * (y * (z * K(z,x * y)))) \ (z * (x * y))).  [para(165(a,1),234(a,1,1,2)),rewrite([165(19)])].
+
+given #793 (T,wt=13): 42151 K((x \ y) \ 1,(y \ 1) * x) = 1.  [para(42082(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #794 (T,wt=13): 42165 K(x,y * ((y * (x \ 1)) \ 1)) = 1.  [para(42084(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #795 (T,wt=13): 42291 K(x * (y \ (x \ 1)),y \ 1) = 1.  [para(195(a,1),42114(a,1,1,2)),rewrite([3801(11),179(8),3706(11)])].
+
+given #796 (T,wt=13): 42292 K(((x \ 1) \ y) * (y \ 1),x) = 1.  [para(195(a,1),42114(a,1,2)),rewrite([3316(11)])].
+
+given #797 (A,wt=19): 1586 K((x * ((x \ y) * (z * K(z,y)))) \ (z * y),u) = 1.  [para(165(a,1),248(a,1,1,2))].
+
+given #798 (T,wt=13): 42295 K(x \ 1,(x \ y) * (y \ 1)) = 1.  [para(42114(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #799 (T,wt=13): 42296 K((x \ 1) * (y \ x),y \ 1) = 1.  [para(42114(a,1),3801(a,1)),flip(a)].
+
+given #800 (T,wt=13): 42297 K(x \ 1,(y \ 1) * (x \ y)) = 1.  [para(42114(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #801 (T,wt=13): 42305 K(x,y * (((x \ 1) * y) \ 1)) = 1.  [para(42116(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #802 (A,wt=23): 1587 ((x * ((x \ y) * z)) \ (y * z)) * (x * ((x \ y) * z)) = y * z.  [para(248(a,1),48(a,1,2)),rewrite([67(3)]),flip(a)].
+
+given #803 (T,wt=13): 42420 K(x,(y \ ((y \ x) \ 1)) \ 1) = 1.  [para(4(a,1),42145(a,1,1))].
+
+given #804 (T,wt=13): 42422 K(x * y,(y \ (x \ 1)) \ 1) = 1.  [para(165(a,1),42145(a,1,1)),rewrite([10639(5),1638(6),73(6,R),13210(8),73(8,R),3367(9)])].
+
+given #805 (T,wt=13): 42425 K((x \ (y \ 1)) \ 1,x * y) = 1.  [para(42145(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #806 (T,wt=13): 42429 K((x \ (y \ 1)) \ 1,y * x) = 1.  [para(42145(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #807 (A,wt=23): 1620 ((x * (y * ((x * y) \ z))) \ z) * (x * (y * ((x * y) \ z))) = z.  [para(249(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #808 (T,wt=13): 42465 K(x,(((y \ 1) \ x) \ y) \ 1) = 1.  [para(4(a,1),42149(a,1,1))].
+
+given #809 (T,wt=13): 42490 K((((x \ 1) \ y) \ x) \ 1,y) = 1.  [para(4(a,1),42151(a,1,2))].
+
+given #810 (T,wt=13): 42507 K(x * ((y \ 1) \ (x \ 1)),y) = 1.  [para(195(a,1),42291(a,1,2)),rewrite([3316(11)])].
+
+given #811 (T,wt=13): 42510 K(x \ 1,y * (x \ (y \ 1))) = 1.  [para(42291(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #812 (A,wt=19): 1643 x * K(y \ (z \ x),y) = z * ((y \ (z \ x)) * y).  [para(48(a,1),391(a,1,2)),flip(a)].
+
+given #813 (T,wt=13): 42521 K(x,((x \ 1) \ y) * (y \ 1)) = 1.  [para(42292(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #814 (T,wt=13): 42525 K((x \ 1) * ((y \ 1) \ x),y) = 1.  [para(42292(a,1),3801(a,1)),flip(a)].
+
+given #815 (T,wt=13): 42527 K(x,(y \ 1) * ((x \ 1) \ y)) = 1.  [para(42292(a,1),3975(a,1,2)),rewrite([67(9)])].
+
+given #816 (T,wt=13): 42616 K(x,((y \ x) \ (y \ 1)) \ 1) = 1.  [para(195(a,1),42420(a,1,2,1,2,1)),rewrite([10639(6),1638(7),73(7,R),13210(9),73(9,R),3367(10)])].
+
+given #817 (A,wt=19): 1644 x * ((x \ y) * ((z \ 1) * z)) = y * ((z \ 1) * z).  [para(200(a,1),391(a,1,2,2)),rewrite([200(9)])].
+
+given #818 (T,wt=13): 42619 K((x \ ((x \ y) \ 1)) \ 1,y) = 1.  [para(42420(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #819 (T,wt=13): 42672 K(((x \ y) \ (x \ 1)) \ 1,y) = 1.  [para(4(a,1),42429(a,1,2))].
+
+given #820 (T,wt=13): 42729 K(x,y * ((x \ 1) \ (y \ 1))) = 1.  [para(42507(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #821 (T,wt=15): 32384 K(x * y,z * (y * (x * (z \ 1)))) = 1.  [back_rewrite(18189),rewrite([32112(7)])].
+
+given #822 (A,wt=23): 1652 x * ((x \ y) * (K(z,u) * K(w,v5))) = y * (K(z,u) * K(w,v5)).  [para(391(a,1),150(a,1,1)),rewrite([150(4),150(9)]),flip(a)].
+
+given #823 (T,wt=15): 32665 K(x,(y \ z) * (y * u)) = K(x,z * u).  [back_rewrite(19232),rewrite([32161(4)])].
+
+given #824 (T,wt=11): 43173 K(((x * y) \ x) \ 1,y) = 1.  [para(32665(a,1),42151(a,1)),rewrite([72(6)])].
+
+given #825 (T,wt=11): 43188 K((x \ y) \ 1,y \ x) = 1.  [para(4(a,1),43173(a,1,1,1,1))].
+
+given #826 (T,wt=11): 43190 K(((x * y) \ y) \ 1,x) = 1.  [para(165(a,1),43173(a,1,1,1,1)),rewrite([3316(7)])].
+
+given #827 (A,wt=27): 1714 (x * y) * (z \ ((z * u) * (u \ 1))) = x * (y * (z \ ((z * u) * (u \ 1)))).  [para(1661(a,1),74(a,1,2,1,2)),rewrite([67(3),1710(6),1710(11),4(10),67(9),1710(12)])].
+
+given #828 (T,wt=11): 43193 K(x,((y * x) \ y) \ 1) = 1.  [para(43173(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #829 (T,wt=11): 43223 K(x \ 1,(y * x) \ y) = 1.  [para(5(a,1),43188(a,1,1,1))].
+
+given #830 (T,wt=11): 43225 K(x \ 1,(x * y) \ y) = 1.  [para(170(a,1),43188(a,1,1,1)),rewrite([10639(4),3482(7)])].
+
+given #831 (T,wt=11): 43226 K(x \ 1,y \ (x \ y)) = 1.  [para(195(a,1),43188(a,1,1,1)),rewrite([10639(5),3482(8)])].
+
+given #832 (A,wt=27): 1715 (x * y) * ((z * ((z \ 1) * u)) \ u) = x * (y * ((z * ((z \ 1) * u)) \ u)).  [para(1661(a,1),74(a,1,2,2,1)),rewrite([1710(5),72(7),1710(11),1710(15),4(14),72(13)])].
+
+given #833 (T,wt=11): 43227 K((x \ (y \ x)) \ 1,y) = 1.  [para(195(a,1),43188(a,1,2)),rewrite([3316(8)])].
+
+given #834 (T,wt=11): 43230 K(x \ y,(y \ x) \ 1) = 1.  [para(43188(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #835 (T,wt=11): 43235 K(x,((x * y) \ y) \ 1) = 1.  [para(43190(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #836 (T,wt=11): 43457 K(x,(y * (x \ 1)) \ y) = 1.  [para(195(a,1),43223(a,1,1)),rewrite([3482(9)])].
+
+given #837 (A,wt=27): 1717 (x * (y \ ((y * z) * (z \ 1)))) * u = x * ((y \ ((y * z) * (z \ 1))) * u).  [para(1661(a,1),93(a,1,1,2,1,2)),rewrite([67(2),1710(5),1710(11),4(10),67(9),1710(12)])].
+
+given #838 (T,wt=11): 43460 K((x * y) \ x,y \ 1) = 1.  [para(43223(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #839 (T,wt=11): 43476 K(x,((x \ 1) * y) \ y) = 1.  [para(195(a,1),43225(a,1,1)),rewrite([3482(9)])].
+
+given #840 (T,wt=11): 43479 K((x * y) \ y,x \ 1) = 1.  [para(43225(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #841 (T,wt=11): 43495 K(x,y \ ((x \ 1) \ y)) = 1.  [para(195(a,1),43226(a,1,1)),rewrite([3482(9)])].
+
+given #842 (A,wt=27): 1718 (x * ((y * ((y \ 1) * z)) \ z)) * u = x * (((y * ((y \ 1) * z)) \ z) * u).  [para(1661(a,1),93(a,1,1,2,2,1)),rewrite([1710(4),72(6),1710(11),1710(15),4(14),72(13)])].
+
+given #843 (T,wt=11): 43498 K(x \ (y \ x),y \ 1) = 1.  [para(43226(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #844 (T,wt=11): 43717 K(x,(y \ (x \ y)) \ 1) = 1.  [para(43227(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #845 (T,wt=11): 43745 K((x * (y \ 1)) \ x,y) = 1.  [para(43457(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #846 (T,wt=11): 44121 K(((x \ 1) * y) \ y,x) = 1.  [para(43476(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #847 (A,wt=27): 1719 ((x \ ((x * y) * (y \ 1))) * z) * u = (x \ ((x * y) * (y \ 1))) * (z * u).  [para(1661(a,1),133(a,1,1,1,1,2)),rewrite([67(2),1710(5),1710(11),4(10),67(9),1710(12)])].
+
+given #848 (T,wt=11): 44146 K(x \ ((y \ 1) \ x),y) = 1.  [para(43495(a,1),1027(a,1,2)),rewrite([67(7)])].
+
+given #849 (T,wt=15): 32815 K(x * y,z * (x * (y * (z \ 1)))) = 1.  [para(18131(a,1),15501(a,2)),rewrite([32112(9),15501(9)])].
+
+given #850 (T,wt=15): 32850 K((x * y) * z,u) = K(x * (y * z),u).  [para(1111(a,2),15501(a,1,1)),rewrite([410(11),410(10),10030(12),9318(7),32813(10),19239(10),72(7)])].
+
+given #851 (T,wt=15): 32876 K(x * (y * z),u) = K(z * (x * y),u).  [back_rewrite(16974),rewrite([32850(3),32802(12)])].
+
+given #852 (A,wt=27): 1720 (((x * ((x \ 1) * y)) \ y) * z) * u = ((x * ((x \ 1) * y)) \ y) * (z * u).  [para(1661(a,1),133(a,1,1,1,2,1)),rewrite([1710(4),72(6),1710(11),1710(15),4(14),72(13)])].
+
+given #853 (T,wt=15): 33074 K((x \ 1) * (y * (z * x)),z * y) = 1.  [back_rewrite(18251),rewrite([32813(7)])].
+
+given #854 (T,wt=15): 33075 K(x * (y * (z * (x \ 1))),z * y) = 1.  [back_rewrite(18192),rewrite([32813(7)])].
+
+given #855 (T,wt=15): 33289 K((x \ y) * (x * z),u) = K(y * z,u).  [back_rewrite(19239),rewrite([32850(4)])].
+
+given #856 (T,wt=15): 33474 (x * y) * (z * K(y,x)) = (y * x) * z.  [para(4(a,1),19066(a,1,2)),rewrite([922(5)]),flip(a)].
+
+given #857 (A,wt=25): 1728 K(x,(y * ((z * u) * w)) \ ((y * w) * (z * (u * K(z * u,w))))) = 1.  [para(150(a,1),235(a,1,2,2,2))].
+
+given #858 (T,wt=15): 33475 (x * y) \ ((y * x) * z) = K(y,x) * z.  [para(19066(a,1),5(a,1,2))].
+
+given #859 (T,wt=15): 33478 K(x,y) * ((y * x) * z) = (x * y) * z.  [para(19066(a,1),165(a,2)),rewrite([3367(7),150(6),210(7),405(6)])].
+
+given #860 (T,wt=15): 33514 K(x,y * (z * u)) = K(x,u * (z * y)).  [para(19066(a,1),3748(a,1,2)),rewrite([32161(3),210(7),3367(8)])].
+
+given #861 (T,wt=15): 33516 K(x * (y * z),u) = K(z * (y * x),u).  [para(19066(a,1),3801(a,1,1)),rewrite([32850(3),210(7),3394(8)])].
+
+given #862 (A,wt=23): 1816 ((x * y) * (y \ (x \ 1))) * z = z * ((x * y) * (y \ (x \ 1))).  [para(1722(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #863 (T,wt=15): 33550 K(x,y) * (z * (y * x)) = z * (x * y).  [para(19066(a,1),405(a,1)),rewrite([3394(5),3963(5),210(6)]),flip(a)].
+
+given #864 (T,wt=15): 33586 (x * y) * ((y * x) \ z) = K(x,y) * z.  [para(19066(a,1),2467(a,1))].
+
+given #865 (T,wt=15): 33601 K(x,y * (z * u)) = K(x,z * (y * u)).  [para(19066(a,1),3535(a,1,2)),rewrite([32161(3),32161(6)])].
+
+given #866 (T,wt=15): 33602 K(x * (y * z),u) = K(y * (x * z),u).  [para(19066(a,1),3706(a,1,1)),rewrite([32850(3),32850(6)])].
+
+Low Water (keep): wt=35.000, iters=6668
+
+given #867 (A,wt=23): 1818 (((x * y) * (y \ (x \ 1))) \ z) * ((x * y) * (y \ (x \ 1))) = z.  [para(1722(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #868 (T,wt=15): 33618 K(x * (y * z),(z \ 1) \ (y * x)) = 1.  [para(19066(a,1),19003(a,1,1)),rewrite([13210(6),10639(8),73(8,R),3367(9),32850(7)])].
+
+given #869 (T,wt=15): 33620 K(x * (y * z),((y * x) \ 1) \ z) = 1.  [para(19066(a,1),19040(a,1,1)),rewrite([8080(8),73(8,R),3367(9),32850(7)])].
+
+given #870 (T,wt=15): 33621 K((x \ 1) \ (y * z),z * (y * x)) = 1.  [para(19066(a,1),19908(a,1,2)),rewrite([13210(4),10639(6),73(6,R),32161(9),3394(9)])].
+
+given #871 (T,wt=15): 33622 K(((x * y) \ 1) \ z,y * (x * z)) = 1.  [para(19066(a,1),19919(a,1,2)),rewrite([8080(6),73(6,R),32161(9),3394(9)])].
+
+given #872 (A,wt=67): 1856 ((x * (y * (((x * y) \ 1) * (((x * y) \ 1) * (x * y))))) \ 1) * ((((x * y) \ 1) * (x * y)) * z) = z * (((x * (y * (((x * y) \ 1) * (((x * y) \ 1) * (x * y))))) \ 1) * (((x * y) \ 1) * (x * y))).  [back_rewrite(1542),rewrite([1849(17),648(20),1849(37)])].
+
+given #873 (T,wt=13): 47609 K((((x \ 1) * y) \ 1) \ x,y) = 1.  [para(205(a,2),33622(a,1,2)),rewrite([32161(11),32665(11),72(8)])].
+
+given #874 (T,wt=13): 47659 K((x \ 1) \ y,(y \ 1) \ x) = 1.  [para(4(a,1),47609(a,1,1,1,1))].
+
+given #875 (T,wt=13): 47661 K(((x * (y \ 1)) \ 1) \ y,x) = 1.  [para(165(a,1),47609(a,1,1,1,1)),rewrite([3316(11)])].
+
+given #876 (T,wt=13): 47662 K(((x * y) \ 1) \ (x \ 1),y) = 1.  [para(195(a,1),47609(a,1,1,1,1,1)),rewrite([179(5),30976(7),200(6),29745(10),73(10,R),3394(11)])].
+
+given #877 (A,wt=27): 1871 (((x \ 1) * (((y \ 1) * y) * x)) \ z) * ((x \ 1) * (((y \ 1) * y) * x)) = z.  [back_rewrite(1158),rewrite([1849(4),648(7),1849(12),648(15)])].
+
+given #878 (T,wt=13): 47665 K(x,(((y \ 1) * x) \ 1) \ y) = 1.  [para(47609(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #879 (T,wt=13): 47681 K(x,((x * (y \ 1)) \ 1) \ y) = 1.  [para(170(a,1),47659(a,1,1)),rewrite([3482(11)])].
+
+given #880 (T,wt=13): 47682 K(x \ y,(y \ 1) \ (x \ 1)) = 1.  [para(195(a,1),47659(a,1,1,1)),rewrite([10639(5),200(4),15501(11),67(3)])].
+
+given #881 (T,wt=13): 47683 K((x \ 1) \ (y \ 1),y \ x) = 1.  [para(195(a,1),47659(a,1,2,1)),rewrite([10639(10),200(9),15395(11),67(8)])].
+
+given #882 (A,wt=71): 1874 (x * y) * (((z * (u * (((z * u) \ 1) * (((z * u) \ 1) * (z * u))))) \ 1) * (((z * u) \ 1) * (z * u))) = x * (y * (((z * (u * (((z * u) \ 1) * (((z * u) \ 1) * (z * u))))) \ 1) * (((z * u) \ 1) * (z * u)))).  [back_rewrite(1143),rewrite([1849(18),1849(38)])].
+
+given #883 (T,wt=13): 47688 K(((x * y) \ 1) \ (y \ 1),x) = 1.  [para(195(a,1),47661(a,1,1,1,1,2)),rewrite([29747(7),200(6),29745(10),73(10,R),3394(11)])].
+
+given #884 (T,wt=13): 47710 K(x,((y * x) \ 1) \ (y \ 1)) = 1.  [para(47662(a,1),1027(a,1,2)),rewrite([67(9)])].
+
+given #885 (T,wt=13): 47799 K(x,((x * y) \ 1) \ (y \ 1)) = 1.  [para(195(a,1),47681(a,1,2,1,1,2)),rewrite([29747(7),200(6),29745(10),73(10,R),3367(11)])].
+
+given #886 (T,wt=13): 47815 K(x,(y \ 1) \ ((x \ y) \ 1)) = 1.  [para(195(a,1),47682(a,1,1)),rewrite([3482(10)])].
+
+given #887 (A,wt=25): 1883 K(x,(y * (z * (K(z,y) * (u * K(u,z * y))))) \ (u * (z * y))) = 1.  [para(165(a,1),236(a,1,2,2))].
+
+given #888 (T,wt=13): 47820 K((x \ 1) \ ((y \ x) \ 1),y) = 1.  [para(195(a,1),47683(a,1,2)),rewrite([3316(10)])].
+
+given #889 (T,wt=15): 33673 K(x * (((y * z) * x) \ (z * y)),u) = 1.  [para(19066(a,1),27085(a,1,1,2,1)),rewrite([210(7),3394(8)])].
+
+given #890 (T,wt=15): 33676 K(x,y * (((z * u) * y) \ (u * z))) = 1.  [para(19066(a,1),27188(a,1,2,2,1)),rewrite([210(7),3367(8)])].
+
+given #891 (T,wt=15): 34452 K(x \ (y * z),(x \ 1) * (z * y)) = 1.  [para(25009(a,1),19013(a,1))].
+
+given #892 (A,wt=27): 1885 K(x,(y * (z * ((u \ 1) * (K(z,y) * u)))) \ (z * (y * ((u \ 1) * u)))) = 1.  [para(48(a,1),236(a,1,2,1,2,2)),rewrite([1786(2),179(5),1786(10),1812(13),410(12)])].
+
+given #893 (T,wt=15): 34453 K(((x * y) \ 1) \ z,z * (y * x)) = 1.  [para(25009(a,1),19908(a,1))].
+
+given #894 (T,wt=15): 34454 K((x \ 1) \ (y * z),x * (z * y)) = 1.  [para(25009(a,1),19919(a,1))].
+
+given #895 (T,wt=15): 34603 K(x * (y * z),((z * y) \ 1) \ x) = 1.  [para(25011(a,1),19003(a,1))].
+
+given #896 (T,wt=15): 34605 K((x \ 1) * (y * z),x \ (z * y)) = 1.  [para(25011(a,1),19010(a,1))].
+
+given #897 (A,wt=23): 1941 (x * ((y \ x) \ (y \ 1))) * z = z * (x * ((y \ x) \ (y \ 1))).  [para(1815(a,1),165(a,1,2,2)),rewrite([67(7)])].
+
+given #898 (T,wt=15): 34606 K(x * (y * z),(x \ 1) \ (z * y)) = 1.  [para(25011(a,1),19040(a,1))].
+
+given #899 (T,wt=15): 35225 K(x \ ((y \ x) * ((z \ y) * z)),u) = 1.  [para(4(a,1),27069(a,1,1,2,1,1))].
+
+given #900 (T,wt=15): 35226 K(((x * y) * z) \ (z * (y * x)),u) = 1.  [para(5(a,1),27069(a,1,1,2,1))].
+
+given #901 (T,wt=15): 35285 K(x \ ((y * ((y * z) \ x)) * z),u) = 1.  [para(5(a,1),27071(a,1,1,2,2))].
+
+given #902 (A,wt=23): 1942 ((x * ((y \ x) \ (y \ 1))) \ z) * (x * ((y \ x) \ (y \ 1))) = z.  [para(1815(a,1),48(a,1,2)),rewrite([67(2)]),flip(a)].
+
+given #903 (T,wt=15): 35287 K(x \ ((y * ((z * y) \ x)) * z),u) = 1.  [para(170(a,1),27071(a,1,1,2,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #904 (T,wt=15): 35290 K(x \ (((y \ z) * (z \ x)) * y),u) = 1.  [para(195(a,1),27071(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #905 (T,wt=15): 35359 K(x * ((x * ((y \ z) * y)) \ z),u) = 1.  [para(165(a,1),27217(a,1,1,2,1)),rewrite([3748(3),4(2),179(7),3706(8)])].
+
+given #906 (T,wt=15): 35468 K(x * (y * ((y \ 1) * z)),z * x) = 1.  [para(1303(a,1),21441(a,1,2)),rewrite([1714(12),4(11),32112(11),4(8),67(7),32850(7),32850(7)])].
+
+given #907 (A,wt=17): 1976 (x * y) \ (x * ((z \ y) * z)) = K(z \ y,z).  [para(48(a,1),392(a,1,2,2))].
+
+given #908 (T,wt=15): 35469 K(x * y,y * (z * ((z \ 1) * x))) = 1.  [para(1303(a,1),21446(a,1,1)),rewrite([1714(7),4(6),32161(11),32161(11),32813(11),4(3),67(2)])].
+
+given #909 (T,wt=15): 35479 K(x,(y \ ((y * z) * (z \ 1))) * x) = 1.  [para(1303(a,2),23677(a,1,2)),rewrite([32813(13),4(4),67(3),3801(9),4(2)])].
+
+given #910 (T,wt=15): 35486 K((x \ ((x * y) * (y \ 1))) * z,z) = 1.  [para(1303(a,2),25093(a,1,1)),rewrite([32112(13),4(10),67(9),3748(9),4(8)])].
+
+given #911 (T,wt=15): 35487 K(x * (y \ ((y * z) * (z \ 1))),x) = 1.  [para(1303(a,1),25682(a,1,1)),rewrite([32112(13),4(10),67(9),3748(9),4(8)])].
+
+given #912 (A,wt=19): 1977 (x * y) \ (x * (y * ((z \ 1) * z))) = (z \ 1) * z.  [para(200(a,1),392(a,1,2,2,2)),rewrite([200(10)])].
+
+given #913 (T,wt=15): 35488 K(x,x * (y \ ((y * z) * (z \ 1)))) = 1.  [para(1303(a,1),25682(a,1,2)),rewrite([32813(13),4(4),67(3),3801(9),4(2)])].
+
+given #914 (T,wt=15): 35587 K(x,y * ((y * ((z \ u) * z)) \ u)) = 1.  [para(165(a,1),27407(a,1,2,2,1)),rewrite([3748(3),4(2),179(7),3535(8)])].
+
+given #915 (T,wt=15): 35623 K(((x * y) * z) \ ((y * z) * x),u) = 1.  [para(170(a,1),27425(a,1,1,2,2)),rewrite([8085(7),73(7,R),3394(8)])].
+
+given #916 (T,wt=15): 35625 K((x * y) \ (((z \ x) * y) * z),u) = 1.  [para(195(a,1),27425(a,1,1,2,2)),rewrite([8085(8),73(8,R),3394(9)])].
+
+given #917 (A,wt=19): 1980 (x * (y * z)) \ (x * (y * (z * K(u,w)))) = K(u,w).  [para(150(a,1),392(a,1,2,2))].
+
+given #918 (T,wt=15): 35684 K(((((x * y) \ z) * y) * x) \ z,u) = 1.  [para(4(a,1),27426(a,1,1,2))].
+
+given #919 (T,wt=15): 35686 K(((x * y) * z) \ (x * (z * y)),u) = 1.  [para(165(a,1),27426(a,1,1,2)),rewrite([179(4),73(3),655(5),73(4),29747(8),73(8,R),3394(9)])].
+
+given #920 (T,wt=15): 35821 K(x,y \ ((z \ y) * ((u \ z) * u))) = 1.  [para(4(a,1),27480(a,1,2,2,1,1))].
+
+given #921 (T,wt=15): 35822 K(x,((y * z) * u) \ (u * (z * y))) = 1.  [para(5(a,1),27480(a,1,2,2,1))].
+
+given #922 (A,wt=19): 1984 (x * y) \ (x * (((z \ 1) * z) * y)) = (z \ 1) * z.  [back_rewrite(1089),rewrite([1977(14)])].
+
+given #923 (T,wt=15): 35869 K(x,y \ ((z * ((z * u) \ y)) * u)) = 1.  [para(5(a,1),27481(a,1,2,2,2))].
+
+given #924 (T,wt=15): 35870 K(x,y \ ((z * ((u * z) \ y)) * u)) = 1.  [para(170(a,1),27481(a,1,2,2,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #925 (T,wt=15): 35873 K(x,y \ (((z \ u) * (u \ y)) * z)) = 1.  [para(195(a,1),27481(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #926 (T,wt=15): 36025 K(x,((y * z) * u) \ ((z * u) * y)) = 1.  [para(170(a,1),27594(a,1,2,2,2)),rewrite([8085(7),73(7,R),3367(8)])].
+
+given #927 (A,wt=19): 1995 K(x,y) * (z * K(u,w)) = K(u,w) * (z * K(x,y)).  [para(73(a,1),398(a,1,2))].
+
+given #928 (T,wt=15): 36027 K(x,(y * z) \ (((u \ y) * z) * u)) = 1.  [para(195(a,1),27594(a,1,2,2,2)),rewrite([8085(8),73(8,R),3367(9)])].
+
+given #929 (T,wt=15): 36052 K(x,((((y * z) \ u) * z) * y) \ u) = 1.  [para(4(a,1),27595(a,1,2,2))].
+
+given #930 (T,wt=15): 36053 K(x,((y * z) * u) \ (y * (u * z))) = 1.  [para(165(a,1),27595(a,1,2,2)),rewrite([179(4),73(3),655(5),73(4),29747(8),73(8,R),3367(9)])].
+
+given #931 (T,wt=15): 36268 K((x * (((y * x) \ z) * y)) \ z,u) = 1.  [para(4(a,1),28067(a,1,1,2))].
+
+given #932 (A,wt=19): 1996 K(x,y) * (K(z,u) * w) = w * (K(z,u) * K(x,y)).  [para(73(a,2),398(a,1,2))].
+
+given #933 (T,wt=15): 39089 K(((x * ((x * y) \ z)) * y) \ z,u) = 1.  [para(4(a,1),28094(a,1,1,2))].
+
+given #934 (T,wt=15): 39091 K(((x * y) * z) \ (y * (x * z)),u) = 1.  [para(165(a,1),28094(a,1,1,2)),rewrite([655(5),73(4),29747(8),73(8,R),3394(9)])].
+
+given #935 (T,wt=15): 39146 K(x,(y * (((z * y) \ u) * z)) \ u) = 1.  [para(4(a,1),28140(a,1,2,2))].
+
+given #936 (T,wt=15): 39428 K(x,((y * ((y * z) \ u)) * z) \ u) = 1.  [para(4(a,1),28165(a,1,2,2))].
+
+given #937 (A,wt=17): 1999 K(x \ y,x) * (z * y) = z * ((x \ y) * x).  [para(48(a,1),398(a,2,2))].
+
+given #938 (T,wt=15): 39429 K(x,((y * z) * u) \ (z * (y * u))) = 1.  [para(165(a,1),28165(a,1,2,2)),rewrite([655(5),73(4),29747(8),73(8,R),3367(9)])].
+
+given #939 (T,wt=15): 39450 K((((x \ y) * x) * z) \ (z * y),u) = 1.  [para(170(a,1),28262(a,1,1,1,2)),rewrite([29747(7),73(7,R),3394(8)])].
+
+given #940 (T,wt=15): 39452 K((((x \ (y \ z)) * x) * y) \ z,u) = 1.  [para(195(a,1),28262(a,1,1,1,2)),rewrite([29747(8),73(8,R),3394(9)])].
+
+given #941 (T,wt=15): 39457 K(x,(((y \ z) * y) * u) \ (u * z)) = 1.  [para(170(a,1),28540(a,1,2,1,2)),rewrite([29747(7),73(7,R),3367(8)])].
+
+given #942 (A,wt=19): 2000 ((x \ 1) * x) * (y * z) = y * (z * ((x \ 1) * x)).  [para(200(a,1),398(a,1,1)),rewrite([200(8)])].
+
+given #943 (T,wt=15): 39459 K(x,(((y \ (z \ u)) * y) * z) \ u) = 1.  [para(195(a,1),28540(a,1,2,1,2)),rewrite([29747(8),73(8,R),3367(9)])].
+
+given #944 (T,wt=15): 39501 K(x,(y * z) \ (((y \ u) \ z) * u)) = 1.  [para(391(a,1),1345(a,1,2,1,2)),rewrite([29747(9),73(9,R),3367(10)])].
+
+given #945 (T,wt=15): 39505 K(x,(y * ((y \ z) * u)) \ (u * z)) = 1.  [para(398(a,2),1345(a,1,2,1,2)),rewrite([30976(7),73(7,R),3367(8)])].
+
+given #946 (T,wt=15): 39563 K(x,y * (((y * z) * (z \ 1)) \ 1)) = 1.  [para(195(a,1),29044(a,1,2,2,1,1,2)),rewrite([655(8),73(7),29747(10),200(9),9314(12)])].
+
+given #947 (A,wt=19): 2019 K(x,y) * (z * (u * w)) = z * (u * (w * K(x,y))).  [para(150(a,1),398(a,2,2))].
+
+given #948 (T,wt=15): 39586 K(x * (((x * y) * (y \ 1)) \ 1),z) = 1.  [para(195(a,1),29045(a,1,1,2,1,1,2)),rewrite([655(8),73(7),29747(10),200(9),9318(12)])].
+
+given #949 (T,wt=15): 39608 K(x,y * (((y * z) * (z \ 1)) \ x)) = 1.  [para(195(a,1),29108(a,1,2,2,1,1,2)),rewrite([655(8),73(7),29747(9),200(8),9314(11)])].
+
+given #950 (T,wt=15): 39677 K(x * (((x * y) * (y \ 1)) \ z),z) = 1.  [para(195(a,1),29139(a,1,1,2,1,1,2)),rewrite([655(8),73(7),29747(9),200(8),9318(11)])].
+
+given #951 (T,wt=15): 39703 K(x,((y * (z \ u)) * (y \ z)) \ u) = 1.  [para(195(a,1),29356(a,1,2,1,1,1)),rewrite([179(5),2511(7),13210(8),73(8,R),3367(9)])].
+
+given #952 (A,wt=19): 2027 x * (K(y,z) * (u * w)) = x * (u * (w * K(y,z))).  [para(398(a,1),179(a,2,2)),rewrite([179(4)])].
+
+given #953 (T,wt=15): 39704 K(x,(((y \ (z \ u)) * z) * y) \ u) = 1.  [para(195(a,1),29356(a,1,2,1,1,2)),rewrite([655(7),30976(8),73(8,R),3367(9)])].
+
+given #954 (T,wt=15): 39756 K(x,(((y \ z) * (u \ y)) * u) \ z) = 1.  [para(4(a,1),29359(a,1,2,2))].
+
+given #955 (T,wt=15): 39758 K(x,((y * (z \ u)) * z) \ (y * u)) = 1.  [para(165(a,1),29359(a,1,2,2)),rewrite([179(4),2511(5),13210(7),73(7,R),3367(8)])].
+
+given #956 (T,wt=15): 39760 K(x,((y * z) * (z \ u)) \ (u * y)) = 1.  [para(195(a,1),29359(a,1,2,1,1,2)),rewrite([655(6),73(5),29747(8),73(8,R),3367(9)])].
+
+given #957 (A,wt=23): 2045 K(x,y) * (z * ((u \ 1) * u)) = ((u \ 1) * u) * (z * K(x,y)).  [para(205(a,1),398(a,1,2))].
+
+given #958 (T,wt=15): 39812 K(x,((y * z) * (y \ u)) \ (z * u)) = 1.  [para(165(a,1),29363(a,1,2,2)),rewrite([655(5),30976(7),73(7,R),3367(8)])].
+
+given #959 (T,wt=15): 39853 K(((x * (y \ z)) * (x \ y)) \ z,u) = 1.  [para(195(a,1),29432(a,1,1,1,1,1)),rewrite([179(5),2511(7),13210(8),73(8,R),3394(9)])].
+
+given #960 (T,wt=15): 39854 K((((x \ (y \ z)) * y) * x) \ z,u) = 1.  [para(195(a,1),29432(a,1,1,1,1,2)),rewrite([655(7),30976(8),73(8,R),3394(9)])].
+
+given #961 (T,wt=15): 39905 K((((x \ y) * (z \ x)) * z) \ y,u) = 1.  [para(4(a,1),29434(a,1,1,2))].
+
+given #962 (A,wt=23): 2046 K(x,y) * (((z \ 1) * z) * u) = u * ((z \ 1) * (z * K(x,y))).  [para(205(a,2),398(a,1,2)),rewrite([150(11)])].
+
+given #963 (T,wt=13): 50567 K(x,(y \ 1) \ z) = K(x,z * y).  [para(2046(a,2),32665(a,1,2)),rewrite([32112(10),41697(10),72(6),3367(6),3503(8)])].
+
+given #964 (T,wt=13): 50570 K((x \ 1) \ y,z) = K(y * x,z).  [para(2046(a,2),33289(a,1,1)),rewrite([32813(10),44901(10),72(6),3394(6),3705(8)])].
+
+given #965 (T,wt=13): 50602 K(x,y \ z) = K(x,z * (y \ 1)).  [para(195(a,1),50567(a,1,2,1)),rewrite([10639(5),200(4),15395(6),67(3)])].
+
+given #966 (T,wt=13): 50658 K(x \ y,z) = K(y * (x \ 1),z).  [para(195(a,1),50570(a,1,1,1)),rewrite([10639(5),200(4),15501(6),67(3)])].
+
+Low Water (keep): wt=31.000, iters=8422
+
+given #967 (A,wt=23): 2105 K(x,y) * (z * (u * K(w,v5))) = K(w,v5) * (z * (u * K(x,y))).  [para(398(a,1),398(a,1,2)),rewrite([150(9)])].
+
+Low Water (keep): wt=29.000, iters=7141
+
+given #968 (F,wt=37): 51987 K(c3 * (c2 * (c1 * ((c3 * c2) \ 1))),c4) * ((c3 * c2) \ (c3 * (c2 * c1))) != K(c1,c4) * ((c3 * c2) \ (c3 * (c2 * c1))).  [para(50658(a,1),27068(a,1,2)),rewrite([32850(22),32813(22),73(23,R)])].
+-------- Proof 1 -------- 
+
+============================== PROOF =================================
+
+% Proof 1 at 7.29 (+ 0.24) seconds.
+% Length of proof is 175.
+% Level of proof is 31.
+% Maximum clause weight is 51.000.
+% Given clauses 968.
+
+1 T(L(x,y,z),u) = L(T(x,u),y,z) # label(non_clause) # label(goal).  [goal].
+2 0 * x = x.  [assumption].
+3 x * 0 = x.  [assumption].
+4 x * (x \ y) = y.  [assumption].
+5 x \ (x * y) = y.  [assumption].
+6 (x * y) / y = x.  [assumption].
+7 (x / y) * y = x.  [assumption].
+8 (x * y) * z = (x * (y * z)) * a(x,y,z).  [assumption].
+9 (x * (y * z)) * a(x,y,z) = (x * y) * z.  [copy(8),flip(a)].
+10 x * y = (y * x) * K(x,y).  [assumption].
+11 (x * y) * K(y,x) = y * x.  [copy(10),flip(a)].
+13 L(x,y,z) = (z * y) \ (z * (y * x)).  [assumption].
+14 T(x,y) = y \ (x * y).  [assumption].
+15 K(K(x,y),z) = 1.  [assumption].
+16 K(x,K(y,z)) = 1.  [assumption].
+17 K(a(x,y,z),u) = 1.  [assumption].
+18 K(x,a(y,z,u)) = 1.  [assumption].
+19 a(K(x,y),z,u) = 1.  [assumption].
+20 a(x,K(y,z),u) = 1.  [assumption].
+21 a(x,y,K(z,u)) = 1.  [assumption].
+22 a(a(x,y,z),u,w) = 1.  [assumption].
+23 a(x,a(y,z,u),w) = 1.  [assumption].
+24 a(x,y,a(z,u,w)) = 1.  [assumption].
+25 T(L(c1,c2,c3),c4) != L(T(c1,c4),c2,c3).  [deny(1)].
+26 (c3 * c2) \ (c3 * (c2 * (c4 \ (c1 * c4)))) != c4 \ (((c3 * c2) \ (c3 * (c2 * c1))) * c4).  [copy(25),rewrite([13(4),14(11),14(16),13(21)]),flip(a)].
+27 0 \ x = x.  [para(4(a,1),2(a,1)),flip(a)].
+28 x \ x = 0.  [para(3(a,1),5(a,1,2))].
+37 a(x,y,z) = (x * (y * z)) \ ((x * y) * z).  [para(9(a,1),5(a,1,2)),flip(a)].
+38 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) \ ((x * y) * ((z * (u * w)) \ ((z * u) * w))) = 1.  [back_rewrite(24),rewrite([37(1),37(6)])].
+39 (x * (((y * (z * u)) \ ((y * z) * u)) * w)) \ ((x * ((y * (z * u)) \ ((y * z) * u))) * w) = 1.  [back_rewrite(23),rewrite([37(1),37(6)])].
+40 (((x * (y * z)) \ ((x * y) * z)) * (u * w)) \ ((((x * (y * z)) \ ((x * y) * z)) * u) * w) = 1.  [back_rewrite(22),rewrite([37(1),37(6)])].
+41 (x * (y * K(z,u))) \ ((x * y) * K(z,u)) = 1.  [back_rewrite(21),rewrite([37(2)])].
+42 (x * (K(y,z) * u)) \ ((x * K(y,z)) * u) = 1.  [back_rewrite(20),rewrite([37(2)])].
+43 (K(x,y) * (z * u)) \ ((K(x,y) * z) * u) = 1.  [back_rewrite(19),rewrite([37(2)])].
+44 K(x,(y * (z * u)) \ ((y * z) * u)) = 1.  [back_rewrite(18),rewrite([37(1)])].
+45 K((x * (y * z)) \ ((x * y) * z),u) = 1.  [back_rewrite(17),rewrite([37(1)])].
+46 x * K(x,0) = x.  [para(2(a,1),11(a,1,1)),rewrite([3(5)])].
+47 x * K(0,x) = x.  [para(2(a,1),11(a,2)),rewrite([3(2)])].
+48 x * K(y \ x,y) = (y \ x) * y.  [para(4(a,1),11(a,1,1))].
+49 (x * y) \ (y * x) = K(y,x).  [para(11(a,1),5(a,1,2))].
+55 K(1,x) = 1.  [para(15(a,1),15(a,1,1))].
+56 (K(x,y) * z) * 1 = z * K(x,y).  [para(16(a,1),11(a,1,2))].
+57 K(x,1) = 1.  [para(15(a,1),16(a,1,2))].
+62 K(x,0) = 0.  [para(46(a,1),5(a,1,2)),rewrite([28(1)]),flip(a)].
+66 0 = 1.  [para(62(a,1),15(a,1))].
+67 x * 1 = x.  [back_rewrite(47),rewrite([66(1),55(2)])].
+70 x \ x = 1.  [back_rewrite(28),rewrite([66(2)])].
+71 1 \ x = x.  [back_rewrite(27),rewrite([66(1)])].
+72 1 * x = x.  [back_rewrite(2),rewrite([66(1)])].
+73 K(x,y) * z = z * K(x,y).  [back_rewrite(56),rewrite([67(4)])].
+74 (x * y) * ((z * (u * w)) \ ((z * u) * w)) = x * (y * ((z * (u * w)) \ ((z * u) * w))).  [para(38(a,1),4(a,1,2)),rewrite([67(9)]),flip(a)].
+88 x \ ((y \ x) * y) = K(y \ x,y).  [para(4(a,1),49(a,1,1))].
+89 ((x \ y) * x) \ y = K(x,x \ y).  [para(4(a,1),49(a,1,2))].
+93 (x * ((y * (z * u)) \ ((y * z) * u))) * w = x * (((y * (z * u)) \ ((y * z) * u)) * w).  [para(39(a,1),4(a,1,2)),rewrite([67(9)]),flip(a)].
+108 K(x,y) \ (z * K(x,y)) = z.  [para(73(a,1),5(a,1,2))].
+118 (K(x,y) * z) \ (K(x,y) * (z * u)) = (z * K(x,y)) \ (K(x,y) * (z * u)).  [para(73(a,1),13(a,2,1)),rewrite([13(2)])].
+119 (x * K(y,z)) \ (x * (K(y,z) * u)) = (x * K(y,z)) \ (x * (u * K(y,z))).  [para(73(a,1),13(a,2,2,2)),rewrite([13(2)])].
+122 (x * y) \ (x * (K(z,u) * y)) = (x * y) \ (x * (y * K(z,u))).  [para(73(a,2),13(a,2,2,2)),rewrite([13(2)]),flip(a)].
+129 x / K(y,z) = K(y,z) \ x.  [para(7(a,1),108(a,1,2)),flip(a)].
+130 K(x,y) \ (x * y) = y * x.  [para(11(a,1),108(a,1,2))].
+133 (((x * (y * z)) \ ((x * y) * z)) * u) * w = ((x * (y * z)) \ ((x * y) * z)) * (u * w).  [para(40(a,1),4(a,1,2)),rewrite([67(9)]),flip(a)].
+150 (x * y) * K(z,u) = x * (y * K(z,u)).  [para(41(a,1),4(a,1,2)),rewrite([67(5)]),flip(a)].
+165 x * (y * K(y,x)) = y * x.  [back_rewrite(11),rewrite([150(3)])].
+170 x \ (y * x) = y * K(y,x).  [para(165(a,1),5(a,1,2))].
+172 (x * y) \ ((x * K(x,y)) * y) = K(x * K(x,y),y).  [para(165(a,1),49(a,1,1))].
+177 (c3 * c2) \ (c3 * (c2 * (c1 * K(c1,c4)))) != ((c3 * c2) \ (c3 * (c2 * c1))) * K((c3 * c2) \ (c3 * (c2 * c1)),c4).  [back_rewrite(26),rewrite([170(10),170(26)])].
+179 (x * K(y,z)) * u = x * (K(y,z) * u).  [para(42(a,1),4(a,1,2)),rewrite([67(5)]),flip(a)].
+190 (x * y) \ (x * (y * K(x,y))) = K(x * K(x,y),y).  [back_rewrite(172),rewrite([179(4),73(3)])].
+195 (x \ y) \ y = x * K(x,x \ y).  [para(4(a,1),170(a,1,2))].
+196 (x / y) * K(x / y,y) = y \ x.  [para(7(a,1),170(a,1,2)),flip(a)].
+200 K(x \ 1,x) = (x \ 1) * x.  [para(48(a,1),72(a,1)),flip(a)].
+205 ((x \ 1) * x) * y = y * ((x \ 1) * x).  [para(200(a,1),73(a,1,1)),rewrite([200(7)])].
+210 (K(x,y) * z) * u = K(x,y) * (z * u).  [para(43(a,1),4(a,1,2)),rewrite([67(5)]),flip(a)].
+257 ((x * (y * z)) \ ((x * y) * z)) * (x * (y * z)) = (x * y) * z.  [para(45(a,1),48(a,1,2)),rewrite([67(4)]),flip(a)].
+269 (x * y) \ (x * (y * ((z * (u * w)) \ ((z * u) * w)))) = (z * (u * w)) \ ((z * u) * w).  [para(74(a,1),5(a,1,2))].
+280 ((x * (y * z)) \ ((x * y) * z)) * (u * w) = u * (w * ((x * (y * z)) \ ((x * y) * z))).  [para(74(a,1),130(a,1,2)),rewrite([44(7),71(9)]),flip(a)].
+283 x * (y * (K(y,x) * ((z * (u * w)) \ ((z * u) * w)))) = y * (x * ((z * (u * w)) \ ((z * u) * w))).  [para(165(a,1),74(a,1,1)),rewrite([74(7),74(15)]),flip(a)].
+343 (x / y) \ (y \ x) = K(x / y,y).  [para(196(a,1),5(a,1,2))].
+344 K(x / y,y) \ (y \ x) = x / y.  [para(196(a,1),6(a,1,1)),rewrite([129(4)])].
+354 ((x * y) / x) \ y = K((x * y) / x,x).  [para(5(a,1),343(a,1,2))].
+387 K((x * y) / x,x) \ y = (x * y) / x.  [para(5(a,1),344(a,1,2))].
+391 x * ((x \ y) * K(z,u)) = y * K(z,u).  [para(4(a,1),150(a,1,1)),flip(a)].
+392 (x * y) \ (x * (y * K(z,u))) = K(z,u).  [para(150(a,1),5(a,1,2))].
+395 K(x,y) * (z * (K(x,y) \ u)) = z * u.  [para(7(a,1),150(a,2,2)),rewrite([129(2),73(5,R)])].
+396 K(x,y) * ((z / (u * K(x,y))) * u) = z.  [para(7(a,1),150(a,2)),rewrite([73(6,R)])].
+398 K(x,y) * (z * u) = z * (u * K(x,y)).  [para(150(a,1),73(a,2))].
+401 x * (K(y,z) * u) = x * (u * K(y,z)).  [para(73(a,2),150(a,2,2)),rewrite([150(3)]),flip(a)].
+405 x * (y * (z * K(y * z,x))) = (y * z) * x.  [para(150(a,1),165(a,1,2))].
+410 (x * y) * ((z \ 1) * z) = x * (y * ((z \ 1) * z)).  [para(200(a,1),150(a,1,2)),rewrite([200(8)])].
+426 K(x * K(x,y),y) = K(x,y).  [back_rewrite(190),rewrite([392(5)]),flip(a)].
+427 (x * y) \ (x * (K(z,u) * y)) = K(z,u).  [back_rewrite(122),rewrite([392(10)])].
+438 K(x / y,y) = K(y \ x,y).  [para(196(a,1),426(a,1,1)),flip(a)].
+445 (x * y) / x = K(y,x) \ y.  [back_rewrite(387),rewrite([438(3),5(2)]),flip(a)].
+449 K(K(x,y) \ x,y) = K(x,y).  [back_rewrite(354),rewrite([445(2),195(3),15(5),67(3),445(3)]),flip(a)].
+455 x / y = K(y \ x,y) \ (y \ x).  [back_rewrite(344),rewrite([438(2)]),flip(a)].
+470 K(x,y) * ((K((z * K(x,y)) \ u,z * K(x,y)) \ ((z * K(x,y)) \ u)) * z) = u.  [back_rewrite(396),rewrite([455(4)])].
+546 x * (((y * (z * u)) \ ((y * z) * u)) * w) = x * (w * ((y * (z * u)) \ ((y * z) * u))).  [para(165(a,1),93(a,2,2)),rewrite([44(12),67(8),93(7)])].
+556 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) * v5 = (x * y) * (((z * (u * w)) \ ((z * u) * w)) * v5).  [para(74(a,1),93(a,1,1))].
+560 (K(x,y) \ x) * y = y * x.  [para(449(a,1),165(a,1,2,2)),rewrite([73(4,R),4(4)]),flip(a)].
+567 (((x \ 1) * x) \ (x \ 1)) * x = 1.  [para(200(a,1),560(a,1,1,1)),rewrite([4(10)])].
+579 K(x,y) * ((K(z,u * K(x,y)) \ z) * u) = u * (K(x,y) * z).  [para(560(a,1),150(a,2)),rewrite([73(7,R),179(10)])].
+583 ((x * (y * z)) \ ((x * y) * z)) * (u * w) = u * (((x * (y * z)) \ ((x * y) * z)) * w).  [para(560(a,1),93(a,1,1)),rewrite([133(7),44(13),71(9)])].
+585 x * (K(y,z) * ((x * K(y,z)) \ u)) = u.  [back_rewrite(470),rewrite([579(13)])].
+639 (x * K(y,z)) \ (x * (K(y,z) * u)) = u.  [para(179(a,1),5(a,1,2))].
+643 K(x,y) * (z * u) = z * (K(x,y) * u).  [para(73(a,2),179(a,1,1)),rewrite([210(3)])].
+647 x * (K(y \ x,y) * z) = ((y \ x) * y) * z.  [para(48(a,1),179(a,1,1)),flip(a)].
+659 (K(x,y) \ 1) * (K(x,y) * z) = z.  [para(567(a,1),179(a,1,1)),rewrite([72(2),73(5,R),4(5),71(5)]),flip(a)].
+662 (x * K(y,z)) \ (x * (u * K(y,z))) = u.  [back_rewrite(119),rewrite([639(6)]),flip(a)].
+675 (K(x,y) * z) \ (K(x,y) * (z * u)) = u.  [para(73(a,1),118(a,2,2)),rewrite([150(11),662(12)])].
+684 K((x * K(y,z)) \ (K(y,z) * (x * u)),K(y,z) * x) = (K(y,z) * (x * u)) \ (u * (K(y,z) * x)).  [para(118(a,1),88(a,2,1)),rewrite([675(9)]),flip(a)].
+688 K(K(x,y) * z,(z * K(x,y)) \ (K(x,y) * (z * u))) = (u * (K(x,y) * z)) \ (K(x,y) * (z * u)).  [para(118(a,1),89(a,2,2)),rewrite([675(6)]),flip(a)].
+689 (x * (y * K(z,u))) \ (K(z,u) * (y * x)) = K(y * K(z,u),(y * K(z,u)) \ (K(z,u) * (y * x))).  [para(118(a,2),89(a,1,1,1)),rewrite([675(6)])].
+700 (x * K(y,z)) \ (K(y,z) * (x * u)) = u.  [para(426(a,1),118(a,1,1,1)),rewrite([426(5),675(6),426(3),426(5)]),flip(a)].
+707 (x * (y * K(z,u))) \ (K(z,u) * (y * x)) = K(y * K(z,u),x).  [back_rewrite(689),rewrite([700(15)])].
+709 (x * (K(y,z) * u)) \ (K(y,z) * (u * x)) = K(K(y,z) * u,x).  [back_rewrite(688),rewrite([700(8)]),flip(a)].
+710 (K(x,y) * (z * u)) \ (u * (K(x,y) * z)) = K(u,K(x,y) * z).  [back_rewrite(684),rewrite([700(6)]),flip(a)].
+712 K(x,y) \ z = (K(x,y) \ 1) * z.  [para(4(a,1),659(a,1,2)),flip(a)].
+715 K(K(x,y) \ 1,K(x,y) * z) = 1.  [para(659(a,1),49(a,1,2)),rewrite([210(6),395(6),67(2),70(1)]),flip(a)].
+735 (K(x,y) \ 1) * (x * y) = y * x.  [para(712(a,1),130(a,1))].
+819 K(K(x,y) \ 1,z) = 1.  [para(4(a,1),715(a,1,2))].
+828 (x * (((y * (z * u)) \ ((y * z) * u)) * w)) \ (((y * (z * u)) \ ((y * z) * u)) * (w * x)) = K(((y * (z * u)) \ ((y * z) * u)) * w,x).  [para(133(a,1),49(a,1,2))].
+913 K(x,y) \ 1 = K(y,x).  [para(735(a,1),170(a,1,2)),rewrite([49(3),819(9),67(6)]),flip(a)].
+922 K(x,y) \ z = z * K(y,x).  [para(712(a,2),735(a,1,2)),rewrite([913(3),15(2),70(3),72(4),913(5)])].
+1111 ((x * (y * z)) \ ((x * y) * z)) * (u * ((w \ 1) * w)) = ((w \ 1) * w) * (((x * (y * z)) \ ((x * y) * z)) * u).  [para(205(a,1),93(a,2)),rewrite([74(9),556(10),410(20)]),flip(a)].
+1638 x \ (y * K(z,u)) = (x \ y) * K(z,u).  [para(391(a,1),5(a,1,2))].
+1989 (x * y) \ (x * (K(z,u) * (y * w))) = (x * y) \ (x * (y * (w * K(z,u)))).  [para(398(a,2),13(a,2,2,2)),rewrite([13(3)]),flip(a)].
+1993 K(x * K(y,z),u) = K(x,K(y,z) * u).  [para(398(a,2),49(a,1,1)),rewrite([179(6),710(7)]),flip(a)].
+1994 K(K(x,y) * z,u) = K(z,u * K(x,y)).  [para(398(a,2),49(a,1,2)),rewrite([179(3),709(7)])].
+2046 K(x,y) * (((z \ 1) * z) * u) = u * ((z \ 1) * (z * K(x,y))).  [para(205(a,2),398(a,1,2)),rewrite([150(11)])].
+2117 (x * (y * K(z,u))) \ (K(z,u) * (y * x)) = K(y,K(z,u) * x).  [back_rewrite(707),rewrite([1993(10)])].
+2215 K(x,K(y,z) * u) = K(x,u * K(y,z)).  [para(401(a,1),49(a,1,1)),rewrite([210(6),2117(7),1994(6)])].
+2394 K(x,y) * ((z * K(x,y)) \ u) = z \ u.  [para(585(a,1),5(a,1,2)),flip(a)].
+2475 (K(x,y) * (z * u)) \ (K(x,y) * (u * z)) = K(u,z * K(x,y)).  [para(643(a,2),49(a,1,1)),rewrite([210(6),1994(10)])].
+3309 (K(x,y) * z) \ (K(x,y) * u) = z \ u.  [para(4(a,1),675(a,1,2,2))].
+3316 K(x,y * K(z,u)) = K(x,y).  [back_rewrite(2475),rewrite([3309(7),49(3)]),flip(a)].
+3367 K(x,K(y,z) * u) = K(x,u).  [back_rewrite(2215),rewrite([3316(6)])].
+3394 K(K(x,y) * z,u) = K(z,u).  [back_rewrite(1994),rewrite([3316(6)])].
+3482 K(x * K(y,z),u) = K(x,u).  [back_rewrite(1993),rewrite([3367(6)])].
+3500 K(x,(y \ z) * y) = K(x,z).  [para(48(a,1),3316(a,1,2))].
+3702 K(((x \ 1) * x) * y,z) = K(y,z).  [para(200(a,1),3394(a,1,1,1))].
+3705 K(x * (y * K(z,u)),w) = K(x * y,w).  [para(398(a,1),3394(a,1,1))].
+3706 K(x * (K(y,z) * u),w) = K(x * u,w).  [para(643(a,1),3394(a,1,1))].
+3737 K((x \ y) * x,z) = K(y,z).  [para(48(a,1),3482(a,1,1))].
+3748 K(x,y * z) = K(x,z * y).  [para(5(a,1),3500(a,1,2,1))].
+3801 K(x * y,z) = K(y * x,z).  [para(5(a,1),3737(a,1,1,1))].
+4004 K(((x * (y * z)) \ ((x * y) * z)) * (u * w),v5) = K(u * (w * ((x * (y * z)) \ ((x * y) * z))),v5).  [para(74(a,1),3801(a,1,1)),flip(a)].
+4824 K(((x * (y * z)) \ ((x * y) * z)) * u,w) = K(u,w * ((x * (y * z)) \ ((x * y) * z))).  [para(280(a,2),49(a,1,2)),rewrite([93(7),828(15)])].
+5105 K(x * (y * ((z * (u * w)) \ ((z * u) * w))),v5) = K(x * y,v5 * ((z * (u * w)) \ ((z * u) * w))).  [back_rewrite(4004),rewrite([4824(8)]),flip(a)].
+5225 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) \ (x * (K(x,y) * (((z * (u * w)) \ ((z * u) * w)) * y))) = K(x,y * ((z * (u * w)) \ ((z * u) * w))).  [para(283(a,1),49(a,1,1)),rewrite([556(16),179(16),5105(26),3482(26)])].
+5340 K(x * (((y * (z * u)) \ ((y * z) * u)) * w),v5) = K(x * w,v5 * ((y * (z * u)) \ ((y * z) * u))).  [para(283(a,1),3801(a,1,1)),rewrite([5105(8),556(17),179(17),3706(18)]),flip(a)].
+8080 x \ (K(y,z) * u) = (x \ u) * K(y,z).  [para(73(a,2),1638(a,1,2))].
+9318 K(x * (y * ((z \ 1) * z)),u) = K(x * y,u).  [para(405(a,1),3702(a,1,1)),rewrite([410(5),3748(11),4(10),57(9),67(8)])].
+10030 ((x * (y * z)) \ ((x * y) * z)) * (x * (y * (z * ((u \ 1) * u)))) = (x * y) * (z * ((u \ 1) * u)).  [para(257(a,1),410(a,1,1)),rewrite([410(6),410(17),410(16)]),flip(a)].
+10639 (x * K(y,z)) \ u = (x \ u) * K(z,y).  [para(2394(a,1),5(a,1,2)),rewrite([922(3)]),flip(a)].
+15501 K(x * ((y \ z) * y),u) = K(x * z,u).  [para(48(a,1),3705(a,1,1,2))].
+16102 (x * (y * ((z * (u * w)) \ ((z * u) * w)))) \ (x * (K(v5,v6) * (((z * (u * w)) \ ((z * u) * w)) * y))) = K(v5,v6).  [para(546(a,1),427(a,1,1))].
+16487 K(x,y * ((z * (u * w)) \ ((z * u) * w))) = K(x,y).  [back_rewrite(5225),rewrite([16102(17)]),flip(a)].
+16697 K(x * (((y * (z * u)) \ ((y * z) * u)) * w),v5) = K(x * w,v5).  [back_rewrite(5340),rewrite([16487(16)])].
+16732 K(((x * (y * z)) \ ((x * y) * z)) * u,w) = K(u,w).  [back_rewrite(4824),rewrite([16487(14)])].
+16974 K((x * y) * z,u) = K(z * (x * (y * ((w * (v5 * v6)) \ ((w * v5) * v6)))),u).  [para(556(a,1),3801(a,1,1)),rewrite([16697(9)])].
+19239 K(((x \ y) * x) * z,u) = K(y * z,u).  [para(647(a,1),3706(a,1,1))].
+26847 x \ (y * (K(z,u) * w)) = (x \ (y * w)) * K(z,u).  [para(643(a,1),8080(a,1,2))].
+27061 (x * y) \ (x * (y * (z * K(u,w)))) = ((x * y) \ (x * (y * z))) * K(u,w).  [back_rewrite(1989),rewrite([26847(6)]),flip(a)].
+27068 ((c3 * c2) \ (c3 * (c2 * c1))) * K((c3 * c2) \ (c3 * (c2 * c1)),c4) != K(c1,c4) * ((c3 * c2) \ (c3 * (c2 * c1))).  [back_rewrite(177),rewrite([27061(13),73(13,R)]),flip(a)].
+32802 K(x * (y * (z * ((u * (w * v5)) \ ((u * w) * v5)))),v6) = K(x * (y * z),v6).  [para(269(a,1),15501(a,1,1,2,1)),rewrite([16697(9)]),flip(a)].
+32813 K(x * ((y * z) * u),w) = K(x * (y * (z * u)),w).  [para(583(a,2),15501(a,1,1)),rewrite([16732(10)]),flip(a)].
+32850 K((x * y) * z,u) = K(x * (y * z),u).  [para(1111(a,2),15501(a,1,1)),rewrite([410(11),410(10),10030(12),9318(7),32813(10),19239(10),72(7)])].
+32876 K(x * (y * z),u) = K(z * (x * y),u).  [back_rewrite(16974),rewrite([32850(3),32802(12)])].
+33289 K((x \ y) * (x * z),u) = K(y * z,u).  [back_rewrite(19239),rewrite([32850(4)])].
+44901 K(x * ((y \ z) * (y * u)),w) = K(x * (z * u),w).  [para(647(a,1),32850(a,2,1,2)),rewrite([3706(6),32850(3),32813(8)]),flip(a)].
+44941 K(x * (y * (x \ z)),u) = K(y * z,u).  [para(15501(a,1),32850(a,2)),rewrite([3801(4)])].
+50570 K((x \ 1) \ y,z) = K(y * x,z).  [para(2046(a,2),33289(a,1,1)),rewrite([32813(10),44901(10),72(6),3394(6),3705(8)])].
+50658 K(x \ y,z) = K(y * (x \ 1),z).  [para(195(a,1),50570(a,1,1,1)),rewrite([10639(5),200(4),15501(6),67(3)])].
+51987 K(c3 * (c2 * (c1 * ((c3 * c2) \ 1))),c4) * ((c3 * c2) \ (c3 * (c2 * c1))) != K(c1,c4) * ((c3 * c2) \ (c3 * (c2 * c1))).  [para(50658(a,1),27068(a,1,2)),rewrite([32850(22),32813(22),73(23,R)])].
+53424 $F.  [para(32876(a,1),51987(a,1,1)),rewrite([3801(13),44941(13),67(3)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=968. Generated=489463. Kept=53419. proofs=1.
+Usable=363. Sos=13760. Demods=10916. Limbo=1, Disabled=39317. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=5691.
+Forward_subsumed=391458. Back_subsumed=1105.
+Sos_limit_deleted=38894. Sos_displaced=0. Sos_removed=0.
+New_demodulators=47646 (3 lex), Back_demodulated=38190. Back_unit_deleted=0.
+Demod_attempts=13938744. Demod_rewrites=1948042.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=119.58.
+User_CPU=7.29, System_CPU=0.24, Wall_clock=7.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 1987 exit (max_proofs) ------
+
+Process 1987 exit (max_proofs) Fri Aug 28 11:59:35 2026

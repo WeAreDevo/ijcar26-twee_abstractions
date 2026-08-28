@@ -1,0 +1,102 @@
+{
+ "assoc_shift__prover9": {
+  "status": "OK",
+  "termset_size": 2,
+  "distinct_roots": 2,
+  "max_depth": 3,
+  "avg_depth": 2.0,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ },
+ "cancel_l__prover9": {
+  "status": "OK",
+  "termset_size": 2,
+  "distinct_roots": 2,
+  "max_depth": 3,
+  "avg_depth": 2.0,
+  "background_theory": "Equality",
+  "seconds": 2.2,
+  "trivial": true
+ },
+ "cancel_r__prover9": {
+  "status": "OK",
+  "termset_size": 2,
+  "distinct_roots": 2,
+  "max_depth": 3,
+  "avg_depth": 2.0,
+  "background_theory": "Equality",
+  "seconds": 2.2,
+  "trivial": true
+ },
+ "comm_body__prover9": {
+  "status": "OK",
+  "termset_size": 2,
+  "distinct_roots": 2,
+  "max_depth": 3,
+  "avg_depth": 2.0,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ },
+ "ldiv_rdiv__prover9": {
+  "status": "OK",
+  "termset_size": 3,
+  "distinct_roots": 3,
+  "max_depth": 3,
+  "avg_depth": 2.0,
+  "background_theory": "Equality",
+  "seconds": 2.2,
+  "trivial": true
+ },
+ "ldiv_self__prover9": {
+  "status": "OK",
+  "termset_size": 3,
+  "distinct_roots": 3,
+  "max_depth": 2,
+  "avg_depth": 1.7,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ },
+ "one_ldiv__prover9": {
+  "status": "OK",
+  "termset_size": 3,
+  "distinct_roots": 3,
+  "max_depth": 2,
+  "avg_depth": 1.7,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ },
+ "rdiv_ldiv__prover9": {
+  "status": "OK",
+  "termset_size": 3,
+  "distinct_roots": 3,
+  "max_depth": 3,
+  "avg_depth": 2.0,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ },
+ "rdiv_one__prover9": {
+  "status": "OK",
+  "termset_size": 3,
+  "distinct_roots": 3,
+  "max_depth": 2,
+  "avg_depth": 1.7,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ },
+ "rdiv_self__prover9": {
+  "status": "OK",
+  "termset_size": 3,
+  "distinct_roots": 3,
+  "max_depth": 2,
+  "avg_depth": 1.7,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": true
+ }
+}

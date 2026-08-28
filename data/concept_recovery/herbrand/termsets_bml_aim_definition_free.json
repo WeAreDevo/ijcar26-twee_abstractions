@@ -1,0 +1,42 @@
+{
+ "3_goal_1__prover9": {
+  "status": "OK",
+  "termset_size": 60071,
+  "distinct_roots": 14,
+  "max_depth": 26,
+  "avg_depth": 12.0,
+  "background_theory": "Equality",
+  "seconds": 11.2,
+  "trivial": false
+ },
+ "3_goal_2__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 27515 was started by g",
+  "seconds": 2.1
+ },
+ "3_goal_3__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 28214 was started by g",
+  "seconds": 2.2
+ },
+ "3_goal_4__prover9": {
+  "status": "OK",
+  "termset_size": 55,
+  "distinct_roots": 11,
+  "max_depth": 7,
+  "avg_depth": 5.0,
+  "background_theory": "Equality",
+  "seconds": 2.4,
+  "trivial": false
+ },
+ "3_goal_5__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 29101 was started by g",
+  "seconds": 2.2
+ },
+ "3_goal_6__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 29794 was started by g",
+  "seconds": 2.1
+ }
+}

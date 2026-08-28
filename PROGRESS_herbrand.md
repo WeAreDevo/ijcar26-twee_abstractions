@@ -12,13 +12,13 @@ deliberately deferred.
 | | |
 |---|---|
 | Tool | GAPT 2.19.0, `third_party/gapt-2.19.0` (gitignored), no build needed |
-| Code | `src/gapt/cutintro.scala` (harness), `run_gapt.py` (wrapper), `test_run_gapt.py` (7 tests, no GAPT needed) |
+| Code | `src/gapt/`: `cutintro.scala` + `run_gapt.py` (full run), `probe_termset.scala` + `survey_termsets.py` (cheap import-only probe), `test_run_gapt.py` (7 tests, no GAPT needed) |
 | Env | `GAPT_ROOT` in `.env`; needs `$LADR_DIR/bin` on PATH |
 
-**Headline finding: term set size gates everything, and our proofs are far
-outside the workable band.** GAPT decomposes a 10-term proof in seconds; our
-definition-free Prover9 proofs give term sets of 55 and 9,645, and neither
-decomposes within 150 s.
+**Headline finding: term set size gates everything.** The usable band on our
+signature is **term set 5-21**; every proof in our existing corpora is above it
+(55 to 60,071). Proofs that *do* work were constructed for the purpose and do
+produce real lemmas — see `data/concept_recovery/herbrand/summary.md`.
 
 ## What GAPT computes (and how it differs from Stitch/babble)
 
@@ -102,6 +102,41 @@ real cost driver — our loop terms are deeply nested `op`/`ldiv` towers.
 7. `loadExpansionProof` dispatches on *file path substring* (`/Prover9`,
    `/leanCoP`), so call `Prover9Importer` directly.
 
+## Where it works (2026-08-28)
+
+Full results: `data/concept_recovery/herbrand/summary.md`; term-set surveys in
+the same directory as JSON, regenerable with `src/gapt/survey_termsets.py`.
+
+**The usable band is term set 5-21** — below 5 there is nothing to compress,
+above ~21 the delta-table OOMs at 4 GB and still times out at 12 GB. This is
+narrower than the 10-50 the paper reports on TSTP.
+
+**Erasing definitions is what puts our proofs out of reach.** Same goal
+(`bml_aim 3_goal_1`), definitions intact vs unfolded into the primitive
+signature: **440 terms at depth 7 versus 60,071 at depth 26** — 136x more terms.
+The definition-free problems are exactly the ones concept recovery cares about,
+so this is a direct obstacle, not an incidental one.
+
+**Repetition alone does not compress.** `data/loop_chain/` iterates cancellation
+over distinct constants `c1..cn`: term sets 3-15 with only 2 distinct roots, so
+maximally repetitive — and *every one* yields NO_LEMMA. The instances share no
+structure to generalise.
+
+**Towers do compress.** `data/loop_tower/` is the loop analogue of GAPT's own
+`LinearExampleProof`: `T_0 = c`, `T_{k+1} = T_k * a`, goal peels the tower back
+with `/a`, so one axiom is instantiated along a tower of increasing depth.
+11 of 15 produce lemmas, seconds each, e.g.
+
+    tower20 (term set 21, grammar 10):  ∀x1  x1 * a*a*a*a / a/a/a/a = x1
+
+which is a genuine loop statement, with GAPT choosing the block size itself.
+Odd towers (03/05/07) give NO_LEMMA — no even repeating block exists.
+
+Also confirmed: **only proofs Prover9 actually found can be imported.** The
+`IMPORT_FAIL` entries in the surveys are exactly the search-failed goals —
+`prooftrans` has no proof to convert. So GAPT cannot use partial proofs, unlike
+the term-level extraction used for Stitch/babble.
+
 ## Open questions (deliberately not decided)
 
 - **Corpus.** None chosen. The proofs used above are illustrative only.
@@ -109,7 +144,11 @@ real cost driver — our loop terms are deeply nested `op`/`ldiv` towers.
   against five hardcoded constructions; GAPT emits *quantified formulas*, so
   the right criterion may instead be decomposition size, compression ratio, or
   whether the lemma shortens a re-proof.
-- **Making our proofs tractable.** Options not yet tried: shorter proofs
-  (smaller goals, or twee/Escargot instead of Prover9), restricting the
-  end-sequent, the `keyLimit`/`singleQuantifier` knobs, or the MaxSAT methods
-  with a longer budget.
+- **Making our real proofs tractable.** `1_dtable_ss` and 8-12 GB heap were
+  tried and do not help at 440 terms. Untried: restricting the end-sequent to
+  the axioms a proof actually uses (fewer root symbols), sub-proof extraction
+  (cut-introduction on a *lemma's* subproof rather than the whole thing), or
+  twee/Escargot proofs, which may instantiate fewer axioms than Prover9.
+- **Whether the tower lemmas are interesting.** They are real but shallow —
+  a probe of the machinery rather than a mathematical result. Whether a
+  naturally-occurring loop goal sits in the 5-21 band is still open.

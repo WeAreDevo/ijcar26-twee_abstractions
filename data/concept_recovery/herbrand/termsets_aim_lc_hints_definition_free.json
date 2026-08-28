@@ -1,0 +1,82 @@
+{
+ "hint01_d3__prover9": {
+  "status": "OK",
+  "termset_size": 6,
+  "distinct_roots": 4,
+  "max_depth": 4,
+  "avg_depth": 2.5,
+  "background_theory": "Equality",
+  "seconds": 2.3,
+  "trivial": false
+ },
+ "hint02_d3__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 35263 was started by g",
+  "seconds": 2.1
+ },
+ "hint03_d3__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 35965 was started by g",
+  "seconds": 2.1
+ },
+ "hint04_d3__prover9": {
+  "status": "OK",
+  "termset_size": 1309,
+  "distinct_roots": 10,
+  "max_depth": 9,
+  "avg_depth": 5.0,
+  "background_theory": "Equality",
+  "seconds": 2.6,
+  "trivial": false
+ },
+ "hint05_d3__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 37033 was started by g",
+  "seconds": 2.1
+ },
+ "hint06_d4__prover9": {
+  "status": "IMPORT_FAIL",
+  "error": "java.io.IOException: prooftrans exited with value 2: ============================== prooftrans ============================ Prover9 (64) version 2009-11A, November 2009. Process 37717 was started by g",
+  "seconds": 2.2
+ },
+ "hint07_d4__prover9": {
+  "status": "OK",
+  "termset_size": 218,
+  "distinct_roots": 10,
+  "max_depth": 9,
+  "avg_depth": 5.0,
+  "background_theory": "Equality",
+  "seconds": 2.4,
+  "trivial": false
+ },
+ "hint08_d4__prover9": {
+  "status": "OK",
+  "termset_size": 12078,
+  "distinct_roots": 11,
+  "max_depth": 15,
+  "avg_depth": 6.8,
+  "background_theory": "Equality",
+  "seconds": 3.5,
+  "trivial": false
+ },
+ "hint09_d5__prover9": {
+  "status": "OK",
+  "termset_size": 7400,
+  "distinct_roots": 11,
+  "max_depth": 16,
+  "avg_depth": 6.6,
+  "background_theory": "Equality",
+  "seconds": 3.1,
+  "trivial": false
+ },
+ "hint10_d6__prover9": {
+  "status": "OK",
+  "termset_size": 1417,
+  "distinct_roots": 10,
+  "max_depth": 12,
+  "avg_depth": 5.9,
+  "background_theory": "Equality",
+  "seconds": 2.6,
+  "trivial": false
+ }
+}

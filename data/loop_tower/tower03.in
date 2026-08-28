@@ -1,0 +1,12 @@
+formulas(assumptions).
+   1 * x = x.
+   x * 1 = x.
+   x \ (x * y) = y.
+   x * (x \ y) = y.
+   (x * y) / y = x.
+   (x / y) * y = x.
+end_of_list.
+
+formulas(goals).
+   ((((((c * a) * a) * a) / a) / a) / a) = c.
+end_of_list.

@@ -1,0 +1,46 @@
+formulas(assumptions).
+
+% identity element
+0 * x = x.
+x * 0 = x.
+
+% quasigroup
+x * (x \ y) = y.
+x \ (x * y) = y.
+(x * y) / y = x.
+(x / y) * y = x.
+% a defined
+(x * y) * z = (x * (y * z)) * a(x,y,z).
+
+% commutator K define
+x * y = (y * x) * K(x,y).
+
+% R(u,x,y) = u R(x) R(y) R(xy)^{-1}
+R(u,x,y) = ((u * x) * y) / (x * y).
+
+% L(u,x,y) = u L(x) L(y) L(yx)^{-1}
+L(u,x,y) = (y * x) \ (y * (x * u)).
+
+% T(u,x) = u R(x) L(x)^{-1}
+T(u,x) = x \ (u * x).
+
+% class two
+K(K(x,y),z) = 1.
+K(x,K(y,v)) = 1.
+
+K(a(x,y,z),u) = 1.
+K(x,a(u,v,y)) = 1.
+
+a(K(x,y),z,w) = 1.
+a(z,K(x,y),w) = 1.
+a(z,w,K(x,y)) = 1.
+
+a(a(x,y,z),u,v) = 1.
+a(x,a(y,z,w),v) = 1.
+a(x,y,a(u,v,w)) = 1.
+
+end_of_list.
+
+formulas(goals).
+   L(L(x,y,z),u,v) = L(L(x,u,v),y,z).
+end_of_list.

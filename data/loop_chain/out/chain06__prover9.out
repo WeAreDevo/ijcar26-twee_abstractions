@@ -1,0 +1,125 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 4390 was started by guya on CM-JRV4H50YKP,
+Fri Aug 28 12:05:51 2026
+The command was "/Users/guya/LADR-2009-11A//bin/prover9 -f /tmp/c.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /tmp/c.in
+
+assign(max_seconds,30).
+
+formulas(assumptions).
+1 * x = x.
+x * 1 = x.
+x \ (x * y) = y.
+x * (x \ y) = y.
+(x * y) / y = x.
+(x / y) * y = x.
+end_of_list.
+
+formulas(goals).
+c1 \ (c1 * (c2 \ (c2 * (c3 \ (c3 * (c4 \ (c4 * (c5 \ (c5 * (c6 \ (c6 * y))))))))))) = y.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 c1 \ (c1 * (c2 \ (c2 * (c3 \ (c3 * (c4 \ (c4 * (c5 \ (c5 * (c6 \ (c6 * y))))))))))) = y # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+1 * x = x.  [assumption].
+x * 1 = x.  [assumption].
+x \ (x * y) = y.  [assumption].
+x * (x \ y) = y.  [assumption].
+(x * y) / y = x.  [assumption].
+(x / y) * y = x.  [assumption].
+c1 \ (c1 * (c2 \ (c2 * (c3 \ (c3 * (c4 \ (c4 * (c5 \ (c5 * (c6 \ (c6 * c7))))))))))) != c7.  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ 1, c1, c2, c3, c4, c5, c6, c7, *, /, \ ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+kept:      2 1 * x = x.  [assumption].
+kept:      3 x * 1 = x.  [assumption].
+kept:      4 x \ (x * y) = y.  [assumption].
+kept:      5 x * (x \ y) = y.  [assumption].
+kept:      6 (x * y) / y = x.  [assumption].
+kept:      7 (x / y) * y = x.  [assumption].
+           8 c1 \ (c1 * (c2 \ (c2 * (c3 \ (c3 * (c4 \ (c4 * (c5 \ (c5 * (c6 \ (c6 * c7))))))))))) != c7.  [deny(1)].
+-------- Proof 1 -------- 
+
+============================== PROOF =================================
+
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 4.
+% Level of proof is 2.
+% Maximum clause weight is 7.000.
+% Given clauses 0.
+
+1 c1 \ (c1 * (c2 \ (c2 * (c3 \ (c3 * (c4 \ (c4 * (c5 \ (c5 * (c6 \ (c6 * y))))))))))) = y # label(non_clause) # label(goal).  [goal].
+4 x \ (x * y) = y.  [assumption].
+8 c1 \ (c1 * (c2 \ (c2 * (c3 \ (c3 * (c4 \ (c4 * (c5 \ (c5 * (c6 \ (c6 * c7))))))))))) != c7.  [deny(1)].
+9 $F.  [copy(8),rewrite([4(15),4(13),4(11),4(9),4(7),4(5)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=0. Generated=7. Kept=6. proofs=1.
+Usable=0. Sos=0. Demods=6. Limbo=6, Disabled=7. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=0. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=6 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=57. Demod_rewrites=6.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.04.
+User_CPU=0.00, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 4390 exit (max_proofs) ------
+
+Process 4390 exit (max_proofs) Fri Aug 28 12:05:51 2026
