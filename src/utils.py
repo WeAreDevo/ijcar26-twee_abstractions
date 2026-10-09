@@ -679,6 +679,22 @@ def extract_strategy_1(proof_text: str) -> List[Tuple[int, Dict[str, Any]]]:
     complex_lemmas = sorted(lemma_blocks.items(), key=lambda x: scorer(x[0]), reverse=True)
     return complex_lemmas
 
+def num_equals(text):
+    """
+    Count number of steps in the proof text by counting lines in '=' occurences in 'Proof' blocks.
+    """
+    # Find all Lemma blocks with their proofs
+    lemma_blocks = re.findall(r'Proof:(.*?)(?=(?:Lemma\s+\d+:|RESULT|Goal|$))', text, re.DOTALL)
+    count = 0
+    for proof_text in lemma_blocks:
+        lines = proof_text.strip().splitlines()
+
+        for line in lines:
+            stripped = line.strip()
+            if stripped and '=' in stripped:
+                count += 1
+
+    return count
 
 if __name__ == "__main__":
     # Example input

@@ -5,6 +5,12 @@
 # Local environment configuration (TPTP_ROOT, LOG_DIR, TWEE_PATH)
 .env
 
+# Local third-party dependencies
+third_party/
+
+# Generated prover output
+data/definition_free/*/out/
+
 # Cluster job output
 slurm*.out
 

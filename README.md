@@ -45,6 +45,57 @@ command line.
 
 ## Running experiments
 
+### Krympa setup and single-problem runs
+
+[Krympa](https://github.com/kondylidou/Krympa) is fetched into the ignored
+`third_party/Krympa` directory. The setup script pins upstream revision
+`7c19dec495a0271c1981c0e84e57ce3777415aeb` and Rust dependencies, and builds
+the main Krympa executable and its OCaml parser from source. Prerequisites
+are Git, Rust/Cargo, OCaml, and Dune >= 3.0, with `cargo`, `ocamlc`, and
+`dune` on `PATH` (activate your opam environment if needed).
+
+```bash
+bash scripts/setup_krympa.sh
+```
+
+Add `VAMPIRE_PATH=/absolute/path/to/vampire` to `.env`. The launcher uses that
+Vampire and `TWEE_PATH` from the existing setup; if `TWEE_PATH` is unset,
+it uses Krympa's bundled Twee. Exported environment variables override `.env`.
+Python requires `python-dotenv`, already included in `requirements.txt`.
+
+For an upstream example, generate the first benchmark set, then run one problem:
+
+```bash
+(cd third_party/Krympa/shell && python3 ../python/generate_input.py ../benchmarks/Proofs1.lean)
+venv/bin/python scripts/run_krympa.py \
+  third_party/Krympa/benchmarks/input1/Equation1024_implies_Equation424.p \
+  --output-dir third_party/krympa-runs/example --timeout 600 --sequential
+```
+
+The launcher runs `run_vampire`, `collect`, `shorten`, and `minimize`. Each
+run requires a new output directory and keeps separate prover links, scratch
+files, stage logs, and a `run.json` manifest. The final proof is under
+`<output-dir>/output/proof_<problem-stem>.out`. The timeout covers the whole
+pipeline and terminates its active process group. Omit `--sequential` for
+Krympa's parallel mode; use `RAYON_NUM_THREADS` to match allocated CPUs.
+The launcher requires a nonempty final proof because upstream sometimes exits
+zero after reporting a minimization failure. Such runs are marked failed in
+`run.json`; their baseline proof and logs remain available for inspection.
+
+On a Linux cluster, run the same setup script to build native executables,
+activate the Python environment, and export cluster-local `VAMPIRE_PATH`,
+`TWEE_PATH`, and `TPTP_ROOT` before invoking the launcher. Give every job a
+unique output directory. Runtime directories contain absolute symlinks and
+should be created on the machine where the job runs. Linux execution has
+not yet been validated here.
+
+This prepares Krympa for experiments; it does not yet implement the comparison
+with Twitch. The supplied paper counts direct Vampire inference steps excluding
+preprocessing, and equalities in Twee proof chains. The comparison will need to
+align those metrics and check input compatibility with our UEQ datasets.
+
+### Twitch stages
+
 The single entry point is `src/stitch/pipeline/worker.py`. It runs one **stage**
 at a time over a directory of TPTP problems, writing a timestamped subdirectory
 (config copy + `summary.json`) inside `--output_dir`. Stages are split so
