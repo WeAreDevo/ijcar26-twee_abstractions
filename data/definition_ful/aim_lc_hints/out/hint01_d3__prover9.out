@@ -1,0 +1,642 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 61156 was started by guya on CM-JRV4H50YKP,
+Mon Aug 31 19:23:21 2026
+The command was "/Users/guya/LADR-2009-11A//bin/prover9 -f /tmp/p9_hint01_d3.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file /tmp/p9_hint01_d3.in
+
+assign(max_seconds,60).
+set(print_kept).
+
+formulas(assumptions).
+mult(e,v0) = v0.
+mult(v0,e) = v0.
+ld(v0,mult(v0,v1)) = v1.
+mult(v0,ld(v0,v1)) = v1.
+rd(mult(v0,v1),v1) = v0.
+mult(rd(v0,v1),v1) = v0.
+ld(mult(v0,mult(v1,v2)),mult(mult(v0,v1),v2)) = a(v0,v1,v2).
+ld(mult(v0,v1),mult(v1,v0)) = k(v1,v0).
+ld(mult(v0,v1),mult(v0,mult(v1,v2))) = l(v2,v1,v0).
+rd(mult(mult(v0,v1),v2),mult(v1,v2)) = r(v0,v1,v2).
+ld(v0,mult(v1,v0)) = t(v1,v0).
+a(v0,v1,v2) = e -> l(v2,v1,v0) = v2.
+l(v0,v1,v2) = v0 -> a(v2,v1,v0) = e.
+t(v0,v1) = v0 -> t(v1,v0) = v1.
+t(v0,v1) = v0 -> k(v0,v1) = e.
+k(v0,v1) = e -> t(v0,v1) = v0.
+t(t(v0,v1),v2) = t(t(v0,v2),v1).
+t(l(v0,v1,v2),v3) = l(t(v0,v3),v1,v2).
+t(r(v0,v1,v2),v3) = r(t(v0,v3),v1,v2).
+l(r(v0,v1,v2),v3,v4) = r(l(v0,v3,v4),v1,v2).
+l(l(v0,v1,v2),v3,v4) = l(l(v0,v3,v4),v1,v2).
+r(r(v0,v1,v2),v3,v4) = r(r(v0,v3,v4),v1,v2).
+mult(mult(mult(v0,v1),v0),v2) = mult(v0,mult(v1,mult(v0,v2))).
+mult(mult(v0,mult(v0,v1)),v2) = mult(v0,mult(v0,mult(v1,v2))).
+end_of_list.
+
+formulas(goals).
+rd(mult(v0,mult(v1,mult(v0,v2))),v2) = mult(mult(v0,v1),v0).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 a(v0,v1,v2) = e -> l(v2,v1,v0) = v2 # label(non_clause).  [assumption].
+2 l(v0,v1,v2) = v0 -> a(v2,v1,v0) = e # label(non_clause).  [assumption].
+3 t(v0,v1) = v0 -> t(v1,v0) = v1 # label(non_clause).  [assumption].
+4 t(v0,v1) = v0 -> k(v0,v1) = e # label(non_clause).  [assumption].
+5 k(v0,v1) = e -> t(v0,v1) = v0 # label(non_clause).  [assumption].
+6 rd(mult(v0,mult(v1,mult(v0,v2))),v2) = mult(mult(v0,v1),v0) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+mult(e,x) = x.  [assumption].
+mult(x,e) = x.  [assumption].
+ld(x,mult(x,y)) = y.  [assumption].
+mult(x,ld(x,y)) = y.  [assumption].
+rd(mult(x,y),y) = x.  [assumption].
+mult(rd(x,y),y) = x.  [assumption].
+ld(mult(x,mult(y,z)),mult(mult(x,y),z)) = a(x,y,z).  [assumption].
+ld(mult(x,y),mult(y,x)) = k(y,x).  [assumption].
+ld(mult(x,y),mult(x,mult(y,z))) = l(z,y,x).  [assumption].
+rd(mult(mult(x,y),z),mult(y,z)) = r(x,y,z).  [assumption].
+ld(x,mult(y,x)) = t(y,x).  [assumption].
+a(x,y,z) != e | l(z,y,x) = z.  [clausify(1)].
+l(x,y,z) != x | a(z,y,x) = e.  [clausify(2)].
+t(x,y) != x | t(y,x) = y.  [clausify(3)].
+t(x,y) != x | k(x,y) = e.  [clausify(4)].
+k(x,y) != e | t(x,y) = x.  [clausify(5)].
+t(t(x,y),z) = t(t(x,z),y).  [assumption].
+t(l(x,y,z),u) = l(t(x,u),y,z).  [assumption].
+t(r(x,y,z),u) = r(t(x,u),y,z).  [assumption].
+l(r(x,y,z),u,w) = r(l(x,u,w),y,z).  [assumption].
+l(l(x,y,z),u,w) = l(l(x,u,w),y,z).  [assumption].
+r(r(x,y,z),u,w) = r(r(x,u,w),y,z).  [assumption].
+mult(mult(mult(x,y),x),z) = mult(x,mult(y,mult(x,z))).  [assumption].
+mult(mult(x,mult(x,y)),z) = mult(x,mult(x,mult(y,z))).  [assumption].
+rd(mult(c1,mult(c2,mult(c1,c3))),c3) != mult(mult(c1,c2),c1).  [deny(6)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ e, c1, c2, c3, mult, t, ld, k, rd, l, r, a ]).
+After inverse_order:  (no changes).
+Unfolding symbols: k/2 t/2 a/3 l/3 r/3.
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+  % set(hyper_resolution).  % (nonunit Horn with equality)
+    % set(hyper_resolution) -> set(pos_hyper_resolution).
+  % set(neg_ur_resolution).  % (nonunit Horn with equality)
+  % assign(para_lit_limit, 2).  % (nonunit Horn with equality)
+
+Auto_process settings:  (no changes).
+
+kept:      7 mult(e,x) = x.  [assumption].
+    new demodulator: 7.
+kept:      8 mult(x,e) = x.  [assumption].
+    new demodulator: 8.
+kept:      9 ld(x,mult(x,y)) = y.  [assumption].
+    new demodulator: 9.
+kept:      10 mult(x,ld(x,y)) = y.  [assumption].
+    new demodulator: 10.
+kept:      11 rd(mult(x,y),y) = x.  [assumption].
+    new demodulator: 11.
+kept:      12 mult(rd(x,y),y) = x.  [assumption].
+    new demodulator: 12.
+           13 ld(mult(x,mult(y,z)),mult(mult(x,y),z)) = a(x,y,z).  [assumption].
+kept:      14 a(x,y,z) = ld(mult(x,mult(y,z)),mult(mult(x,y),z)).  [copy(13),flip(a)].
+    new demodulator: 14.
+           15 ld(mult(x,y),mult(y,x)) = k(y,x).  [assumption].
+kept:      16 k(x,y) = ld(mult(y,x),mult(x,y)).  [copy(15),flip(a)].
+    new demodulator: 16.
+           17 ld(mult(x,y),mult(x,mult(y,z))) = l(z,y,x).  [assumption].
+kept:      18 l(x,y,z) = ld(mult(z,y),mult(z,mult(y,x))).  [copy(17),flip(a)].
+    new demodulator: 18.
+           19 rd(mult(mult(x,y),z),mult(y,z)) = r(x,y,z).  [assumption].
+kept:      20 r(x,y,z) = rd(mult(mult(x,y),z),mult(y,z)).  [copy(19),flip(a)].
+    new demodulator: 20.
+           21 ld(x,mult(y,x)) = t(y,x).  [assumption].
+kept:      22 t(x,y) = ld(y,mult(x,y)).  [copy(21),flip(a)].
+    new demodulator: 22.
+           23 a(x,y,z) != e | l(z,y,x) = z.  [clausify(1)].
+kept:      24 ld(mult(x,mult(y,z)),mult(mult(x,y),z)) != e | ld(mult(x,y),mult(x,mult(y,z))) = z.  [copy(23),rewrite([14(1),18(8)])].
+           25 l(x,y,z) != x | a(z,y,x) = e.  [clausify(2)].
+kept:      26 ld(mult(x,y),mult(x,mult(y,z))) != z | ld(mult(x,mult(y,z)),mult(mult(x,y),z)) = e.  [copy(25),rewrite([18(1),14(6)])].
+           27 t(x,y) != x | t(y,x) = y.  [clausify(3)].
+kept:      28 ld(x,mult(y,x)) != y | ld(y,mult(x,y)) = x.  [copy(27),rewrite([22(1),22(4)])].
+           29 t(x,y) != x | k(x,y) = e.  [clausify(4)].
+kept:      30 ld(x,mult(y,x)) != y | ld(mult(x,y),mult(y,x)) = e.  [copy(29),rewrite([22(1),16(4)])].
+           31 k(x,y) != e | t(x,y) = x.  [clausify(5)].
+kept:      32 ld(mult(x,y),mult(y,x)) != e | ld(x,mult(y,x)) = y.  [copy(31),rewrite([16(1),22(6)])].
+           33 t(t(x,y),z) = t(t(x,z),y).  [assumption].
+kept:      34 ld(x,mult(ld(y,mult(z,y)),x)) = ld(y,mult(ld(x,mult(z,x)),y)).  [copy(33),rewrite([22(1),22(3),22(5),22(7)])].
+           35 t(l(x,y,z),u) = l(t(x,u),y,z).  [assumption].
+kept:      36 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,z))))) = ld(z,mult(ld(mult(x,y),mult(x,mult(y,u))),z)).  [copy(35),rewrite([18(1),22(5),22(7),18(9)]),flip(a)].
+           37 t(r(x,y,z),u) = r(t(x,u),y,z).  [assumption].
+kept:      38 rd(mult(mult(ld(x,mult(y,x)),z),u),mult(z,u)) = ld(x,mult(rd(mult(mult(y,z),u),mult(z,u)),x)).  [copy(37),rewrite([20(1),22(5),22(7),20(9)]),flip(a)].
+    new demodulator: 38.
+           39 l(r(x,y,z),u,w) = r(l(x,u,w),y,z).  [assumption].
+kept:      40 rd(mult(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w),mult(u,w)) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),w),mult(u,w))))).  [copy(39),rewrite([20(1),18(5),18(9),20(13)]),flip(a)].
+    new demodulator: 40.
+           41 l(l(x,y,z),u,w) = l(l(x,u,w),y,z).  [assumption].
+kept:      42 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,w)))))) = ld(mult(z,u),mult(z,mult(u,ld(mult(x,y),mult(x,mult(y,w)))))).  [copy(41),rewrite([18(1),18(5),18(9),18(13)])].
+           43 r(r(x,y,z),u,w) = r(r(x,u,w),y,z).  [assumption].
+kept:      44 rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),u),w),mult(u,w)) = rd(mult(mult(rd(mult(mult(x,u),w),mult(u,w)),y),z),mult(y,z)).  [copy(43),rewrite([20(1),20(5),20(9),20(13)])].
+kept:      45 mult(mult(mult(x,y),x),z) = mult(x,mult(y,mult(x,z))).  [assumption].
+    new demodulator: 45.
+kept:      46 mult(mult(x,mult(x,y)),z) = mult(x,mult(x,mult(y,z))).  [assumption].
+    new demodulator: 46.
+kept:      47 rd(mult(c1,mult(c2,mult(c1,c3))),c3) != mult(mult(c1,c2),c1).  [deny(6)].
+    starting back demodulation with 7.
+    starting back demodulation with 8.
+    starting back demodulation with 9.
+    starting back demodulation with 10.
+    starting back demodulation with 11.
+    starting back demodulation with 12.
+    starting back demodulation with 14.
+    starting back demodulation with 16.
+    starting back demodulation with 18.
+    starting back demodulation with 20.
+    starting back demodulation with 22.
+    starting back demodulation with 38.
+    starting back demodulation with 40.
+    starting back demodulation with 45.
+    starting back demodulation with 46.
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+7 mult(e,x) = x.  [assumption].
+8 mult(x,e) = x.  [assumption].
+9 ld(x,mult(x,y)) = y.  [assumption].
+10 mult(x,ld(x,y)) = y.  [assumption].
+11 rd(mult(x,y),y) = x.  [assumption].
+12 mult(rd(x,y),y) = x.  [assumption].
+14 a(x,y,z) = ld(mult(x,mult(y,z)),mult(mult(x,y),z)).  [copy(13),flip(a)].
+16 k(x,y) = ld(mult(y,x),mult(x,y)).  [copy(15),flip(a)].
+18 l(x,y,z) = ld(mult(z,y),mult(z,mult(y,x))).  [copy(17),flip(a)].
+20 r(x,y,z) = rd(mult(mult(x,y),z),mult(y,z)).  [copy(19),flip(a)].
+22 t(x,y) = ld(y,mult(x,y)).  [copy(21),flip(a)].
+24 ld(mult(x,mult(y,z)),mult(mult(x,y),z)) != e | ld(mult(x,y),mult(x,mult(y,z))) = z.  [copy(23),rewrite([14(1),18(8)])].
+26 ld(mult(x,y),mult(x,mult(y,z))) != z | ld(mult(x,mult(y,z)),mult(mult(x,y),z)) = e.  [copy(25),rewrite([18(1),14(6)])].
+28 ld(x,mult(y,x)) != y | ld(y,mult(x,y)) = x.  [copy(27),rewrite([22(1),22(4)])].
+30 ld(x,mult(y,x)) != y | ld(mult(x,y),mult(y,x)) = e.  [copy(29),rewrite([22(1),16(4)])].
+32 ld(mult(x,y),mult(y,x)) != e | ld(x,mult(y,x)) = y.  [copy(31),rewrite([16(1),22(6)])].
+34 ld(x,mult(ld(y,mult(z,y)),x)) = ld(y,mult(ld(x,mult(z,x)),y)).  [copy(33),rewrite([22(1),22(3),22(5),22(7)])].
+36 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,z))))) = ld(z,mult(ld(mult(x,y),mult(x,mult(y,u))),z)).  [copy(35),rewrite([18(1),22(5),22(7),18(9)]),flip(a)].
+38 rd(mult(mult(ld(x,mult(y,x)),z),u),mult(z,u)) = ld(x,mult(rd(mult(mult(y,z),u),mult(z,u)),x)).  [copy(37),rewrite([20(1),22(5),22(7),20(9)]),flip(a)].
+40 rd(mult(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w),mult(u,w)) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),w),mult(u,w))))).  [copy(39),rewrite([20(1),18(5),18(9),20(13)]),flip(a)].
+42 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,w)))))) = ld(mult(z,u),mult(z,mult(u,ld(mult(x,y),mult(x,mult(y,w)))))).  [copy(41),rewrite([18(1),18(5),18(9),18(13)])].
+44 rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),u),w),mult(u,w)) = rd(mult(mult(rd(mult(mult(x,u),w),mult(u,w)),y),z),mult(y,z)).  [copy(43),rewrite([20(1),20(5),20(9),20(13)])].
+45 mult(mult(mult(x,y),x),z) = mult(x,mult(y,mult(x,z))).  [assumption].
+46 mult(mult(x,mult(x,y)),z) = mult(x,mult(x,mult(y,z))).  [assumption].
+47 rd(mult(c1,mult(c2,mult(c1,c3))),c3) != mult(mult(c1,c2),c1).  [deny(6)].
+end_of_list.
+
+formulas(demodulators).
+7 mult(e,x) = x.  [assumption].
+8 mult(x,e) = x.  [assumption].
+9 ld(x,mult(x,y)) = y.  [assumption].
+10 mult(x,ld(x,y)) = y.  [assumption].
+11 rd(mult(x,y),y) = x.  [assumption].
+12 mult(rd(x,y),y) = x.  [assumption].
+14 a(x,y,z) = ld(mult(x,mult(y,z)),mult(mult(x,y),z)).  [copy(13),flip(a)].
+16 k(x,y) = ld(mult(y,x),mult(x,y)).  [copy(15),flip(a)].
+18 l(x,y,z) = ld(mult(z,y),mult(z,mult(y,x))).  [copy(17),flip(a)].
+20 r(x,y,z) = rd(mult(mult(x,y),z),mult(y,z)).  [copy(19),flip(a)].
+22 t(x,y) = ld(y,mult(x,y)).  [copy(21),flip(a)].
+38 rd(mult(mult(ld(x,mult(y,x)),z),u),mult(z,u)) = ld(x,mult(rd(mult(mult(y,z),u),mult(z,u)),x)).  [copy(37),rewrite([20(1),22(5),22(7),20(9)]),flip(a)].
+40 rd(mult(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w),mult(u,w)) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),w),mult(u,w))))).  [copy(39),rewrite([20(1),18(5),18(9),20(13)]),flip(a)].
+45 mult(mult(mult(x,y),x),z) = mult(x,mult(y,mult(x,z))).  [assumption].
+46 mult(mult(x,mult(x,y)),z) = mult(x,mult(x,mult(y,z))).  [assumption].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=5): 7 mult(e,x) = x.  [assumption].
+
+given #2 (I,wt=5): 8 mult(x,e) = x.  [assumption].
+
+given #3 (I,wt=7): 9 ld(x,mult(x,y)) = y.  [assumption].
+kept:      48 ld(e,x) = x.  [para(7(a,1),9(a,1,2))].
+    new demodulator: 48.
+kept:      49 ld(x,x) = e.  [para(8(a,1),9(a,1,2))].
+    new demodulator: 49.
+    starting back demodulation with 48.
+    starting back demodulation with 49.
+
+given #4 (I,wt=7): 10 mult(x,ld(x,y)) = y.  [assumption].
+
+given #5 (I,wt=7): 11 rd(mult(x,y),y) = x.  [assumption].
+kept:      50 rd(x,x) = e.  [para(7(a,1),11(a,1,1))].
+    new demodulator: 50.
+kept:      51 rd(x,e) = x.  [para(8(a,1),11(a,1,1))].
+    new demodulator: 51.
+kept:      52 rd(x,ld(y,x)) = y.  [para(10(a,1),11(a,1,1))].
+    new demodulator: 52.
+    starting back demodulation with 50.
+    starting back demodulation with 51.
+    starting back demodulation with 52.
+
+given #6 (I,wt=7): 12 mult(rd(x,y),y) = x.  [assumption].
+kept:      53 ld(rd(x,y),x) = y.  [para(12(a,1),9(a,1,2))].
+    new demodulator: 53.
+    starting back demodulation with 53.
+
+given #7 (I,wt=16): 14 a(x,y,z) = ld(mult(x,mult(y,z)),mult(mult(x,y),z)).  [copy(13),flip(a)].
+
+given #8 (I,wt=11): 16 k(x,y) = ld(mult(y,x),mult(x,y)).  [copy(15),flip(a)].
+
+given #9 (I,wt=14): 18 l(x,y,z) = ld(mult(z,y),mult(z,mult(y,x))).  [copy(17),flip(a)].
+
+given #10 (I,wt=14): 20 r(x,y,z) = rd(mult(mult(x,y),z),mult(y,z)).  [copy(19),flip(a)].
+
+given #11 (I,wt=9): 22 t(x,y) = ld(y,mult(x,y)).  [copy(21),flip(a)].
+
+given #12 (I,wt=24): 24 ld(mult(x,mult(y,z)),mult(mult(x,y),z)) != e | ld(mult(x,y),mult(x,mult(y,z))) = z.  [copy(23),rewrite([14(1),18(8)])].
+kept:      54 ld(mult(x,y),mult(mult(x,z),ld(z,y))) != e | ld(mult(x,z),mult(x,y)) = ld(z,y).  [para(10(a,1),24(a,1,1,2)),rewrite([10(10)])].
+kept:      55 ld(mult(x,mult(ld(x,y),z)),mult(y,z)) != e | ld(y,mult(x,mult(ld(x,y),z))) = z.  [para(10(a,1),24(a,1,2,1)),rewrite([10(9)])].
+kept:      56 ld(mult(x,mult(y,ld(mult(x,y),z))),z) != e | ld(mult(x,y),mult(x,mult(y,ld(mult(x,y),z)))) = ld(mult(x,y),z).  [para(10(a,1),24(a,1,2))].
+kept:      57 ld(mult(x,y),mult(mult(x,rd(y,z)),z)) != e | ld(mult(x,rd(y,z)),mult(x,y)) = z.  [para(12(a,1),24(a,1,1,2)),rewrite([12(11)])].
+kept:      58 ld(x,mult(mult(rd(x,mult(y,z)),y),z)) != e | ld(mult(rd(x,mult(y,z)),y),x) = z.  [para(12(a,1),24(a,1,1)),rewrite([12(14)])].
+kept:      59 ld(mult(rd(x,y),mult(y,z)),mult(x,z)) != e | ld(x,mult(rd(x,y),mult(y,z))) = z.  [para(12(a,1),24(a,1,2,1)),rewrite([12(9)])].
+
+given #13 (I,wt=24): 26 ld(mult(x,y),mult(x,mult(y,z))) != z | ld(mult(x,mult(y,z)),mult(mult(x,y),z)) = e.  [copy(25),rewrite([18(1),14(6)])].
+kept:      60 ld(x,mult(y,mult(ld(y,x),z))) != z | ld(mult(y,mult(ld(y,x),z)),mult(x,z)) = e.  [para(10(a,1),26(a,1,1)),rewrite([10(10)])].
+kept:      61 ld(mult(x,y),mult(x,z)) != ld(y,z) | ld(mult(x,z),mult(mult(x,y),ld(y,z))) = e.  [para(10(a,1),26(a,1,2,2)),rewrite([10(7)])].
+kept:      62 ld(x,mult(rd(x,y),mult(y,z))) != z | ld(mult(rd(x,y),mult(y,z)),mult(x,z)) = e.  [para(12(a,1),26(a,1,1)),rewrite([12(10)])].
+kept:      63 ld(mult(x,rd(y,z)),mult(x,y)) != z | ld(mult(x,y),mult(mult(x,rd(y,z)),z)) = e.  [para(12(a,1),26(a,1,2,2)),rewrite([12(7)])].
+kept:      64 ld(mult(rd(x,mult(y,z)),y),x) != z | ld(x,mult(mult(rd(x,mult(y,z)),y),z)) = e.  [para(12(a,1),26(a,1,2)),rewrite([12(9)])].
+
+given #14 (I,wt=14): 28 ld(x,mult(y,x)) != y | ld(y,mult(x,y)) = x.  [copy(27),rewrite([22(1),22(4)])].
+kept:      65 ld(ld(x,y),y) != x | ld(x,mult(ld(x,y),x)) = ld(x,y).  [para(10(a,1),28(a,1,2))].
+kept:      66 rd(x,y) != ld(y,x) | ld(rd(x,y),mult(y,rd(x,y))) = y.  [para(12(a,1),28(a,1,2)),flip(a)].
+
+given #15 (I,wt=16): 30 ld(x,mult(y,x)) != y | ld(mult(x,y),mult(y,x)) = e.  [copy(29),rewrite([22(1),16(4)])].
+kept:      67 ld(ld(x,y),y) != x | ld(mult(ld(x,y),x),y) = e.  [para(10(a,1),30(a,1,2)),rewrite([10(7)])].
+kept:      68 rd(x,y) != ld(y,x) | ld(mult(y,rd(x,y)),x) = e.  [para(12(a,1),30(a,1,2)),rewrite([12(7)]),flip(a)].
+
+given #16 (I,wt=16): 32 ld(mult(x,y),mult(y,x)) != e | ld(x,mult(y,x)) = y.  [copy(31),rewrite([16(1),22(6)])].
+kept:      69 ld(x,mult(ld(y,x),y)) != e | ld(y,mult(ld(y,x),y)) = ld(y,x).  [para(10(a,1),32(a,1,1))].
+kept:      70 ld(mult(ld(x,y),x),y) != e | ld(ld(x,y),y) = x.  [para(10(a,1),32(a,1,2)),rewrite([10(8)])].
+kept:      71 ld(x,mult(y,rd(x,y))) != e | ld(rd(x,y),mult(y,rd(x,y))) = y.  [para(12(a,1),32(a,1,1))].
+kept:      72 ld(mult(x,rd(y,x)),y) != e | rd(y,x) = ld(x,y).  [para(12(a,1),32(a,1,2)),rewrite([12(7)]),flip(b)].
+
+given #17 (I,wt=19): 34 ld(x,mult(ld(y,mult(z,y)),x)) = ld(y,mult(ld(x,mult(z,x)),y)).  [copy(33),rewrite([22(1),22(3),22(5),22(7)])].
+kept:      73 ld(x,mult(ld(ld(x,mult(y,x)),mult(y,ld(x,mult(y,x)))),x)) = ld(x,mult(y,x)).  [para(34(a,1),9(a,1))].
+    new demodulator: 73.
+kept:      74 ld(x,mult(ld(y,mult(x,y)),x)) = ld(y,mult(x,y)).  [para(9(a,1),34(a,1,2,1)),flip(a)].
+    new demodulator: 74.
+kept:      75 mult(x,ld(y,mult(ld(x,mult(z,x)),y))) = mult(ld(y,mult(z,y)),x).  [para(34(a,1),10(a,1,2))].
+    new demodulator: 75.
+kept:      76 ld(ld(x,y),mult(ld(z,mult(x,z)),ld(x,y))) = ld(z,mult(ld(ld(x,y),y),z)).  [para(10(a,1),34(a,1,2,1,2)),flip(a)].
+kept:      77 ld(x,mult(ld(ld(ld(x,mult(y,x)),z),mult(y,ld(ld(x,mult(y,x)),z))),x)) = ld(ld(ld(x,mult(y,x)),z),z).  [para(10(a,1),34(a,1,2)),flip(a)].
+    new demodulator: 77.
+kept:      78 ld(x,mult(ld(y,mult(rd(z,x),y)),x)) = ld(y,mult(ld(x,z),y)).  [para(12(a,1),34(a,1,2,1,2)),flip(a)].
+    new demodulator: 78.
+kept:      79 ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(y,mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x)) != ld(x,mult(y,x)) | ld(mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),ld(x,mult(y,x)))),mult(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),ld(x,mult(y,x)))) = e.  [para(34(a,1),26(a,1))].
+kept:      80 ld(x,mult(ld(y,mult(z,y)),x)) != ld(x,mult(z,x)) | ld(ld(x,mult(z,x)),mult(y,ld(x,mult(z,x)))) = y.  [para(34(a,1),28(a,1))].
+kept:      81 ld(x,mult(ld(y,mult(z,y)),x)) != ld(x,mult(z,x)) | ld(mult(y,ld(x,mult(z,x))),mult(ld(x,mult(z,x)),y)) = e.  [para(34(a,1),30(a,1))].
+kept:      82 ld(x,mult(ld(y,mult(ld(z,mult(u,z)),y)),x)) = ld(z,mult(ld(x,mult(ld(y,mult(u,y)),x)),z)).  [para(34(a,1),34(a,1,2,1))].
+    starting back demodulation with 73.
+    starting back demodulation with 74.
+    starting back demodulation with 75.
+    starting back demodulation with 77.
+    starting back demodulation with 78.
+
+given #18 (I,wt=27): 36 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,z))))) = ld(z,mult(ld(mult(x,y),mult(x,mult(y,u))),z)).  [copy(35),rewrite([18(1),22(5),22(7),18(9)]),flip(a)].
+kept:      83 ld(mult(x,y),mult(x,mult(y,ld(ld(mult(x,y),mult(x,mult(y,z))),mult(z,ld(mult(x,y),mult(x,mult(y,z)))))))) = ld(mult(x,y),mult(x,mult(y,z))).  [para(36(a,2),9(a,1))].
+    new demodulator: 83.
+kept:      84 ld(x,mult(ld(mult(y,z),mult(y,mult(z,x))),x)) = ld(mult(y,z),mult(y,mult(z,x))).  [para(9(a,1),36(a,1,2,2,2)),flip(a)].
+    new demodulator: 84.
+kept:      85 mult(mult(x,y),ld(z,mult(ld(mult(x,y),mult(x,mult(y,u))),z))) = mult(x,mult(y,ld(z,mult(u,z)))).  [para(36(a,1),10(a,1,2))].
+    new demodulator: 85.
+kept:      86 mult(x,ld(mult(y,z),mult(y,mult(z,ld(x,mult(u,x)))))) = mult(ld(mult(y,z),mult(y,mult(z,u))),x).  [para(36(a,2),10(a,1,2))].
+    new demodulator: 86.
+kept:      87 ld(x,mult(ld(y,mult(z,mult(ld(z,y),u))),x)) = ld(y,mult(z,mult(ld(z,y),ld(x,mult(u,x))))).  [para(10(a,1),36(a,1,1)),rewrite([10(8)]),flip(a)].
+kept:      88 ld(ld(x,y),mult(ld(mult(z,u),mult(z,mult(u,x))),ld(x,y))) = ld(mult(z,u),mult(z,mult(u,ld(ld(x,y),y)))).  [para(10(a,1),36(a,1,2,2,2,2)),flip(a)].
+kept:      89 ld(mult(x,y),mult(x,mult(z,y))) = ld(y,mult(ld(mult(x,y),mult(x,mult(y,z))),y)).  [para(10(a,1),36(a,1,2,2))].
+kept:      90 ld(mult(x,y),mult(x,mult(y,ld(z,mult(ld(y,u),z))))) = ld(z,mult(ld(mult(x,y),mult(x,u)),z)).  [para(10(a,1),36(a,2,2,1,2,2))].
+kept:      91 ld(mult(x,y),mult(x,mult(y,ld(ld(ld(mult(x,y),mult(x,mult(y,z))),u),mult(z,ld(ld(mult(x,y),mult(x,mult(y,z))),u)))))) = ld(ld(ld(mult(x,y),mult(x,mult(y,z))),u),u).  [para(10(a,1),36(a,2,2))].
+    new demodulator: 91.
+kept:      92 ld(x,mult(rd(x,y),mult(y,ld(z,mult(u,z))))) = ld(z,mult(ld(x,mult(rd(x,y),mult(y,u))),z)).  [para(12(a,1),36(a,1,1)),rewrite([12(8)])].
+kept:      93 ld(x,mult(ld(mult(y,z),mult(y,mult(z,rd(u,x)))),x)) = ld(mult(y,z),mult(y,mult(z,ld(x,u)))).  [para(12(a,1),36(a,1,2,2,2,2)),flip(a)].
+    new demodulator: 93.
+kept:      94 ld(x,mult(ld(mult(y,rd(z,ld(x,mult(u,x)))),mult(y,mult(rd(z,ld(x,mult(u,x))),u))),x)) = ld(mult(y,rd(z,ld(x,mult(u,x)))),mult(y,z)).  [para(12(a,1),36(a,1,2,2)),flip(a)].
+    new demodulator: 94.
+kept:      95 ld(x,mult(ld(mult(rd(y,mult(z,ld(x,mult(u,x)))),z),mult(rd(y,mult(z,ld(x,mult(u,x)))),mult(z,u))),x)) = ld(mult(rd(y,mult(z,ld(x,mult(u,x)))),z),y).  [para(12(a,1),36(a,1,2)),flip(a)].
+    new demodulator: 95.
+kept:      96 ld(mult(x,rd(y,z)),mult(x,mult(rd(y,z),ld(u,mult(z,u))))) = ld(u,mult(ld(mult(x,rd(y,z)),mult(x,y)),u)).  [para(12(a,1),36(a,2,2,1,2,2))].
+kept:      97 ld(mult(rd(x,mult(y,z)),y),mult(rd(x,mult(y,z)),mult(y,ld(u,mult(z,u))))) = ld(u,mult(ld(mult(rd(x,mult(y,z)),y),x),u)).  [para(12(a,1),36(a,2,2,1,2))].
+kept:      98 ld(mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z)))),mult(ld(mult(x,y),mult(x,mult(y,z))),mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z)))))) = ld(mult(x,y),mult(x,mult(y,ld(mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z)))),mult(z,mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z))))))))).  [para(36(a,2),18(a,2)),rewrite([18(13)])].
+    new demodulator: 98.
+kept:      99 ld(x,mult(ld(mult(y,z),mult(y,mult(z,u))),x)) != ld(x,mult(u,x)) | ld(mult(y,mult(z,ld(x,mult(u,x)))),mult(mult(y,z),ld(x,mult(u,x)))) = e.  [para(36(a,1),26(a,1))].
+kept:      100 ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),y))),x)) != ld(x,mult(y,x)) | ld(ld(x,mult(y,x)),mult(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),ld(x,mult(y,x)))) = mult(ld(x,mult(y,x)),ld(x,mult(y,x))).  [para(36(a,1),28(a,1))].
+kept:      101 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,z))))) != ld(mult(x,y),mult(x,mult(y,u))) | ld(ld(mult(x,y),mult(x,mult(y,u))),mult(z,ld(mult(x,y),mult(x,mult(y,u))))) = z.  [para(36(a,2),28(a,1))].
+kept:      102 ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),y))),x)) != ld(x,mult(y,x)) | ld(mult(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),ld(x,mult(y,x))))) = e.  [para(36(a,1),30(a,1))].
+kept:      103 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,z))))) != ld(mult(x,y),mult(x,mult(y,u))) | ld(mult(z,ld(mult(x,y),mult(x,mult(y,u)))),mult(ld(mult(x,y),mult(x,mult(y,u))),z)) = e.  [para(36(a,2),30(a,1))].
+kept:      104 ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(z,mult(ld(x,mult(y,x)),z)),mult(ld(x,mult(y,x)),ld(x,mult(y,x))))) = ld(z,mult(ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),y))),x)),z)).  [para(36(a,1),34(a,1,2,1)),flip(a)].
+kept:      105 ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),y))),x)) = ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(y,mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x)).  [para(36(a,1),34(a,1))].
+    new demodulator: 105.
+kept:      106 ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(z,mult(ld(x,mult(y,x)),z)),mult(ld(x,mult(y,x)),ld(x,mult(y,x))))) = ld(z,mult(ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(y,mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x)),z)).  [para(36(a,1),34(a,2,2,1)),rewrite([105(30)])].
+kept:      107 ld(x,mult(ld(mult(y,z),mult(y,mult(z,ld(u,mult(w,u))))),x)) = ld(u,mult(ld(x,mult(ld(mult(y,z),mult(y,mult(z,w))),x)),u)).  [para(36(a,2),34(a,1,2,1))].
+kept:      108 ld(mult(x,x),mult(ld(y,mult(x,y)),mult(x,x))) = ld(mult(x,x),mult(x,mult(x,ld(y,mult(x,y))))).  [para(36(a,2),34(a,1)),flip(a)].
+    new demodulator: 108.
+kept:      109 ld(mult(x,y),mult(x,mult(y,ld(z,mult(ld(u,mult(w,u)),z))))) = ld(u,mult(ld(mult(x,y),mult(x,mult(y,ld(z,mult(w,z))))),u)).  [para(34(a,1),36(a,1,2,2,2))].
+kept:      110 ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),ld(z,mult(ld(x,mult(y,x)),z))))) = ld(z,mult(ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(y,mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x)),z)).  [para(34(a,1),36(a,2,2,1))].
+kept:      111 ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(mult(z,u),mult(z,mult(u,ld(x,mult(y,x))))),mult(ld(x,mult(y,x)),ld(x,mult(y,x))))) = ld(mult(z,u),mult(z,mult(u,ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(y,mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x))))).  [para(36(a,1),36(a,1,2,2,2)),rewrite([105(15)]),flip(a)].
+kept:      112 ld(mult(x,y),mult(x,mult(y,ld(z,mult(ld(u,mult(w,u)),z))))) = ld(z,mult(ld(u,mult(ld(mult(x,y),mult(x,mult(y,w))),u)),z)).  [para(36(a,1),36(a,2,2,1))].
+kept:      113 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,ld(w,mult(v5,w)))))))) = ld(w,mult(ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,v5)))))),w)).  [para(36(a,2),36(a,1,2,2,2))].
+    starting back demodulation with 83.
+    starting back demodulation with 84.
+    starting back demodulation with 85.
+    starting back demodulation with 86.
+    starting back demodulation with 91.
+    starting back demodulation with 93.
+    starting back demodulation with 94.
+    starting back demodulation with 95.
+    starting back demodulation with 98.
+    starting back demodulation with 105.
+        105 back demodulating 104.
+        105 back demodulating 102.
+        105 back demodulating 100.
+    starting back demodulation with 108.
+        108 back demodulating 106.
+
+given #19 (I,wt=27): 38 rd(mult(mult(ld(x,mult(y,x)),z),u),mult(z,u)) = ld(x,mult(rd(mult(mult(y,z),u),mult(z,u)),x)).  [copy(37),rewrite([20(1),22(5),22(7),20(9)]),flip(a)].
+kept:      114 ld(x,mult(rd(mult(mult(x,y),z),mult(y,z)),x)) = rd(mult(mult(x,y),z),mult(y,z)).  [para(9(a,1),38(a,1,1,1,1)),flip(a)].
+    new demodulator: 114.
+kept:      115 rd(mult(mult(ld(ld(x,y),y),z),u),mult(z,u)) = ld(ld(x,y),mult(rd(mult(mult(x,z),u),mult(z,u)),ld(x,y))).  [para(10(a,1),38(a,1,1,1,1,2))].
+    new demodulator: 115.
+kept:      116 ld(x,mult(rd(mult(mult(y,ld(ld(x,mult(y,x)),z)),u),mult(ld(ld(x,mult(y,x)),z),u)),x)) = rd(mult(z,u),mult(ld(ld(x,mult(y,x)),z),u)).  [para(10(a,1),38(a,1,1,1)),flip(a)].
+    new demodulator: 116.
+kept:      117 ld(x,mult(rd(mult(mult(y,z),ld(mult(ld(x,mult(y,x)),z),u)),mult(z,ld(mult(ld(x,mult(y,x)),z),u))),x)) = rd(u,mult(z,ld(mult(ld(x,mult(y,x)),z),u))).  [para(10(a,1),38(a,1,1)),flip(a)].
+    new demodulator: 117.
+kept:      118 rd(mult(mult(ld(x,mult(y,x)),z),ld(z,u)),u) = ld(x,mult(rd(mult(mult(y,z),ld(z,u)),u),x)).  [para(10(a,1),38(a,1,2)),rewrite([10(11)])].
+    new demodulator: 118.
+kept:      119 mult(ld(x,mult(rd(mult(mult(y,z),u),mult(z,u)),x)),mult(z,u)) = mult(mult(ld(x,mult(y,x)),z),u).  [para(38(a,1),12(a,1,1))].
+    new demodulator: 119.
+kept:      120 ld(x,mult(rd(mult(mult(rd(y,x),z),u),mult(z,u)),x)) = rd(mult(mult(ld(x,y),z),u),mult(z,u)).  [para(12(a,1),38(a,1,1,1,1,2)),flip(a)].
+    new demodulator: 120.
+kept:      121 rd(mult(mult(ld(x,mult(y,x)),rd(z,u)),u),z) = ld(x,mult(rd(mult(mult(y,rd(z,u)),u),z),x)).  [para(12(a,1),38(a,1,2)),rewrite([12(11)])].
+    new demodulator: 121.
+    starting back demodulation with 114.
+    starting back demodulation with 115.
+    starting back demodulation with 116.
+    starting back demodulation with 117.
+    starting back demodulation with 118.
+    starting back demodulation with 119.
+    starting back demodulation with 120.
+    starting back demodulation with 121.
+
+given #20 (I,wt=35): 40 rd(mult(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w),mult(u,w)) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),w),mult(u,w))))).  [copy(39),rewrite([20(1),18(5),18(9),20(13)]),flip(a)].
+kept:      122 rd(mult(mult(ld(x,mult(y,mult(ld(y,x),z))),u),w),mult(u,w)) = ld(x,mult(y,mult(ld(y,x),rd(mult(mult(z,u),w),mult(u,w))))).  [para(10(a,1),40(a,1,1,1,1,1)),rewrite([10(10)])].
+    new demodulator: 122.
+kept:      123 rd(mult(mult(ld(mult(x,y),mult(x,z)),u),w),mult(u,w)) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(ld(y,z),u),w),mult(u,w))))).  [para(10(a,1),40(a,1,1,1,1,2,2))].
+    new demodulator: 123.
+kept:      124 ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,ld(ld(mult(x,y),mult(x,mult(y,z))),u)),w),mult(ld(ld(mult(x,y),mult(x,mult(y,z))),u),w))))) = rd(mult(u,w),mult(ld(ld(mult(x,y),mult(x,mult(y,z))),u),w)).  [para(10(a,1),40(a,1,1,1)),flip(a)].
+    new demodulator: 124.
+kept:      125 ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),ld(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w)),mult(u,ld(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w)))))) = rd(w,mult(u,ld(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w))).  [para(10(a,1),40(a,1,1)),flip(a)].
+    new demodulator: 125.
+kept:      126 rd(mult(mult(ld(mult(x,y),mult(x,mult(y,z))),u),ld(u,w)),w) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),ld(u,w)),w)))).  [para(10(a,1),40(a,1,2)),rewrite([10(14)])].
+    new demodulator: 126.
+kept:      127 mult(ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,u),w),mult(u,w))))),mult(u,w)) = mult(mult(ld(mult(x,y),mult(x,mult(y,z))),u),w).  [para(40(a,1),12(a,1,1))].
+    new demodulator: 127.
+kept:      128 rd(mult(mult(ld(x,mult(rd(x,y),mult(y,z))),u),w),mult(u,w)) = ld(x,mult(rd(x,y),mult(y,rd(mult(mult(z,u),w),mult(u,w))))).  [para(12(a,1),40(a,1,1,1,1,1)),rewrite([12(10)])].
+    new demodulator: 128.
+kept:      129 rd(mult(mult(ld(mult(rd(x,mult(y,z)),y),x),u),w),mult(u,w)) = ld(mult(rd(x,mult(y,z)),y),mult(rd(x,mult(y,z)),mult(y,rd(mult(mult(z,u),w),mult(u,w))))).  [para(12(a,1),40(a,1,1,1,1,2))].
+    new demodulator: 129.
+kept:      130 rd(mult(mult(ld(mult(x,y),mult(x,mult(y,z))),rd(u,w)),w),u) = ld(mult(x,y),mult(x,mult(y,rd(mult(mult(z,rd(u,w)),w),u)))).  [para(12(a,1),40(a,1,2)),rewrite([12(14)])].
+    new demodulator: 130.
+kept:      131 ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),ld(x,mult(rd(mult(mult(y,z),u),mult(z,u)),x))))) = ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(rd(mult(mult(y,z),u),mult(z,u)),mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x)).  [para(34(a,1),40(a,1,1,1,1)),rewrite([38(18),38(16),38(33)]),flip(a)].
+    new demodulator: 131.
+kept:      132 ld(mult(x,x),mult(rd(mult(mult(x,y),z),mult(y,z)),mult(x,x))) = ld(mult(x,x),mult(x,mult(x,rd(mult(mult(x,y),z),mult(y,z))))).  [para(40(a,1),38(a,1)),flip(a)].
+    new demodulator: 132.
+    starting back demodulation with 122.
+    starting back demodulation with 123.
+        123 back demodulating 40.
+    starting back demodulation with 124.
+    starting back demodulation with 125.
+    starting back demodulation with 126.
+    starting back demodulation with 127.
+    starting back demodulation with 128.
+    starting back demodulation with 129.
+    starting back demodulation with 130.
+    starting back demodulation with 131.
+    starting back demodulation with 132.
+
+given #21 (I,wt=35): 42 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,w)))))) = ld(mult(z,u),mult(z,mult(u,ld(mult(x,y),mult(x,mult(y,w)))))).  [copy(41),rewrite([18(1),18(5),18(9),18(13)])].
+kept:      133 mult(mult(x,y),ld(mult(z,u),mult(z,mult(u,ld(mult(x,y),mult(x,mult(y,w))))))) = mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,w))))).  [para(42(a,1),10(a,1,2))].
+    new demodulator: 133.
+kept:      134 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,mult(ld(u,z),w)))))) = ld(z,mult(u,mult(ld(u,z),ld(mult(x,y),mult(x,mult(y,w)))))).  [para(10(a,1),42(a,1,1)),rewrite([10(11)]),flip(a)].
+kept:      135 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,ld(y,w))))))) = ld(mult(z,u),mult(z,mult(u,ld(mult(x,y),mult(x,w))))).  [para(10(a,1),42(a,1,2,2,2,2,2)),flip(a)].
+kept:      136 ld(mult(x,y),mult(x,mult(y,ld(mult(z,mult(x,y)),mult(z,mult(mult(x,y),u)))))) = ld(mult(z,mult(x,y)),mult(z,mult(x,mult(y,u)))).  [para(10(a,1),42(a,1,2,2)),flip(a)].
+    new demodulator: 136.
+kept:      137 ld(mult(x,y),mult(x,mult(y,ld(z,mult(rd(z,u),mult(u,w)))))) = ld(z,mult(rd(z,u),mult(u,ld(mult(x,y),mult(x,mult(y,w)))))).  [para(12(a,1),42(a,1,1)),rewrite([12(11)]),flip(a)].
+kept:      138 ld(mult(x,rd(y,z)),mult(x,mult(rd(y,z),ld(mult(u,w),mult(u,mult(w,z)))))) = ld(mult(u,w),mult(u,mult(w,ld(mult(x,rd(y,z)),mult(x,y))))).  [para(12(a,1),42(a,1,2,2,2,2,2)),flip(a)].
+kept:      139 ld(mult(rd(x,mult(y,z)),y),mult(rd(x,mult(y,z)),mult(y,ld(mult(u,w),mult(u,mult(w,z)))))) = ld(mult(u,w),mult(u,mult(w,ld(mult(rd(x,mult(y,z)),y),x)))).  [para(12(a,1),42(a,1,2,2,2,2)),flip(a)].
+kept:      140 ld(mult(x,y),mult(x,mult(y,ld(mult(z,rd(u,ld(mult(x,y),mult(x,mult(y,w))))),mult(z,mult(rd(u,ld(mult(x,y),mult(x,mult(y,w)))),w)))))) = ld(mult(z,rd(u,ld(mult(x,y),mult(x,mult(y,w))))),mult(z,u)).  [para(12(a,1),42(a,1,2,2)),flip(a)].
+    new demodulator: 140.
+kept:      141 ld(mult(x,y),mult(x,mult(y,ld(mult(rd(z,mult(u,ld(mult(x,y),mult(x,mult(y,w))))),u),mult(rd(z,mult(u,ld(mult(x,y),mult(x,mult(y,w))))),mult(u,w)))))) = ld(mult(rd(z,mult(u,ld(mult(x,y),mult(x,mult(y,w))))),u),z).  [para(12(a,1),42(a,1,2)),flip(a)].
+    new demodulator: 141.
+kept:      142 ld(mult(x,y),mult(x,mult(y,ld(mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z)))),mult(ld(mult(x,y),mult(x,mult(y,z))),mult(ld(mult(x,y),mult(x,mult(y,z))),z)))))) = ld(mult(x,y),mult(x,mult(y,ld(mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z)))),mult(z,mult(ld(mult(x,y),mult(x,mult(y,z))),ld(mult(x,y),mult(x,mult(y,z))))))))).  [para(42(a,1),22(a,2)),rewrite([22(14),98(24)]),flip(a)].
+    new demodulator: 142.
+kept:      143 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,w)))))) != ld(mult(x,y),mult(x,mult(y,w))) | ld(mult(z,mult(u,ld(mult(x,y),mult(x,mult(y,w))))),mult(mult(z,u),ld(mult(x,y),mult(x,mult(y,w))))) = e.  [para(42(a,1),26(a,1))].
+kept:      144 ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(ld(x,mult(y,x)),mult(ld(x,mult(y,x)),ld(mult(z,u),mult(z,mult(u,ld(x,mult(y,x)))))))) = ld(mult(z,u),mult(z,mult(u,ld(x,mult(ld(mult(ld(x,mult(y,x)),ld(x,mult(y,x))),mult(y,mult(ld(x,mult(y,x)),ld(x,mult(y,x))))),x))))).  [para(34(a,1),42(a,1,2,2,2)),flip(a)].
+kept:      145 ld(mult(x,x),mult(ld(mult(y,z),mult(y,mult(z,x))),mult(x,x))) = ld(mult(x,x),mult(x,mult(x,ld(mult(y,z),mult(y,mult(z,x)))))).  [para(42(a,1),36(a,1)),flip(a)].
+    new demodulator: 145.
+kept:      146 ld(mult(x,y),mult(x,mult(y,ld(z,mult(ld(mult(u,w),mult(u,mult(w,v5))),z))))) = ld(z,mult(ld(mult(u,w),mult(u,mult(w,ld(mult(x,y),mult(x,mult(y,v5)))))),z)).  [para(42(a,1),36(a,2,2,1))].
+kept:      147 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,ld(w,mult(v5,w)))))))) = ld(mult(z,u),mult(z,mult(u,ld(w,mult(ld(mult(x,y),mult(x,mult(y,v5))),w))))).  [para(36(a,1),42(a,1,2,2,2)),flip(a)].
+kept:      148 ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,ld(mult(w,v5),mult(w,mult(v5,v6))))))))) = ld(mult(w,v5),mult(w,mult(v5,ld(mult(x,y),mult(x,mult(y,ld(mult(z,u),mult(z,mult(u,v6))))))))).  [para(42(a,1),42(a,1,2,2,2))].
+    starting back demodulation with 133.
+    starting back demodulation with 136.
+    starting back demodulation with 140.
+    starting back demodulation with 141.
+    starting back demodulation with 142.
+    starting back demodulation with 145.
+        145 back demodulating 111.
+
+given #22 (I,wt=35): 44 rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),u),w),mult(u,w)) = rd(mult(mult(rd(mult(mult(x,u),w),mult(u,w)),y),z),mult(y,z)).  [copy(43),rewrite([20(1),20(5),20(9),20(13)])].
+kept:      149 rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),ld(x,u)),w),mult(ld(x,u),w)) = rd(mult(mult(rd(mult(u,w),mult(ld(x,u),w)),y),z),mult(y,z)).  [para(10(a,1),44(a,1,1,1,1,1,1)),flip(a)].
+kept:      150 rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),u),ld(mult(x,u),w)),mult(u,ld(mult(x,u),w))) = rd(mult(mult(rd(w,mult(u,ld(mult(x,u),w))),y),z),mult(y,z)).  [para(10(a,1),44(a,1,1,1,1,1)),flip(a)].
+kept:      151 rd(mult(mult(rd(mult(mult(x,y),ld(y,z)),z),u),w),mult(u,w)) = rd(mult(mult(rd(mult(mult(x,u),w),mult(u,w)),y),ld(y,z)),z).  [para(10(a,1),44(a,1,1,1,1,2)),rewrite([10(17)])].
+kept:      152 rd(mult(mult(rd(mult(mult(x,ld(rd(mult(mult(x,y),z),mult(y,z)),u)),w),mult(ld(rd(mult(mult(x,y),z),mult(y,z)),u),w)),y),z),mult(y,z)) = rd(mult(u,w),mult(ld(rd(mult(mult(x,y),z),mult(y,z)),u),w)).  [para(10(a,1),44(a,1,1,1)),flip(a)].
+    new demodulator: 152.
+kept:      153 rd(mult(mult(rd(mult(mult(x,y),ld(mult(rd(mult(mult(x,z),u),mult(z,u)),y),w)),mult(y,ld(mult(rd(mult(mult(x,z),u),mult(z,u)),y),w))),z),u),mult(z,u)) = rd(w,mult(y,ld(mult(rd(mult(mult(x,z),u),mult(z,u)),y),w))).  [para(10(a,1),44(a,1,1)),flip(a)].
+    new demodulator: 153.
+kept:      154 mult(rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),u),w),mult(u,w)),mult(y,z)) = mult(mult(rd(mult(mult(x,u),w),mult(u,w)),y),z).  [para(44(a,1),12(a,1,1))].
+    new demodulator: 154.
+kept:      155 rd(mult(mult(rd(mult(mult(rd(x,y),z),u),mult(z,u)),y),w),mult(y,w)) = rd(mult(mult(rd(mult(x,w),mult(y,w)),z),u),mult(z,u)).  [para(12(a,1),44(a,1,1,1,1,1,1)),flip(a)].
+kept:      156 rd(mult(mult(rd(mult(mult(x,rd(y,z)),z),y),u),w),mult(u,w)) = rd(mult(mult(rd(mult(mult(x,u),w),mult(u,w)),rd(y,z)),z),y).  [para(12(a,1),44(a,1,1,1,1,2)),rewrite([12(17)])].
+kept:      157 rd(mult(mult(rd(mult(mult(x,mult(y,z)),u),mult(mult(y,z),u)),y),z),mult(y,z)) = rd(mult(mult(mult(x,y),z),u),mult(mult(y,z),u)).  [para(12(a,1),44(a,1,1,1)),flip(a)].
+    new demodulator: 157.
+kept:      158 ld(x,mult(rd(mult(mult(rd(mult(mult(y,z),u),mult(z,u)),w),v5),mult(w,v5)),x)) = ld(x,mult(rd(mult(mult(rd(mult(mult(y,w),v5),mult(w,v5)),z),u),mult(z,u)),x)).  [para(44(a,1),38(a,2,2,1)),rewrite([38(10)])].
+kept:      159 rd(mult(mult(rd(mult(mult(rd(mult(mult(x,y),z),mult(y,z)),u),w),mult(u,w)),v5),v6),mult(v5,v6)) = rd(mult(mult(rd(mult(mult(rd(mult(mult(x,v5),v6),mult(v5,v6)),y),z),mult(y,z)),u),w),mult(u,w)).  [para(44(a,1),44(a,1,1,1,1)),flip(a)].
+    starting back demodulation with 152.
+    starting back demodulation with 153.
+    starting back demodulation with 154.
+    starting back demodulation with 157.
+
+given #23 (I,wt=15): 45 mult(mult(mult(x,y),x),z) = mult(x,mult(y,mult(x,z))).  [assumption].
+kept:      160 mult(mult(x,x),y) = mult(x,mult(x,y)).  [para(7(a,1),45(a,2,2)),rewrite([8(2)])].
+    new demodulator: 160.
+kept:      161 mult(mult(x,y),x) = mult(x,mult(y,x)).  [para(45(a,1),8(a,1)),rewrite([8(2)]),flip(a)].
+    new demodulator: 161.
+kept:      162 ld(mult(x,mult(y,x)),mult(x,mult(y,mult(x,z)))) = z.  [para(45(a,1),9(a,1,2)),rewrite([161(2)])].
+    new demodulator: 162.
+kept:      163 mult(x,mult(y,mult(x,ld(mult(x,mult(y,x)),z)))) = z.  [para(45(a,1),10(a,1)),rewrite([161(2)])].
+    new demodulator: 163.
+kept:      164 mult(x,mult(ld(x,y),mult(x,z))) = mult(mult(y,x),z).  [para(10(a,1),45(a,1,1,1)),flip(a)].
+    new demodulator: 164.
+kept:      165 mult(mult(x,mult(y,x)),ld(x,z)) = mult(x,mult(y,z)).  [para(10(a,1),45(a,2,2,2)),rewrite([161(2)])].
+    new demodulator: 165.
+kept:      166 rd(mult(x,mult(y,mult(x,z))),z) = mult(x,mult(y,x)).  [para(45(a,1),11(a,1,1)),rewrite([161(6)])].
+    new demodulator: 166.
+kept:      167 mult(mult(x,rd(x,y)),z) = mult(rd(x,y),mult(y,mult(rd(x,y),z))).  [para(12(a,1),45(a,1,1,1))].
+    new demodulator: 167.
+kept:      168 mult(mult(rd(x,y),mult(z,rd(x,y))),y) = mult(rd(x,y),mult(z,x)).  [para(12(a,1),45(a,2,2,2)),rewrite([161(4)])].
+    new demodulator: 168.
+kept:      169 mult(mult(x,mult(rd(y,mult(x,z)),x)),z) = mult(x,y).  [para(12(a,1),45(a,2,2)),rewrite([161(4)])].
+    new demodulator: 169.
+kept:      170 ld(mult(x,mult(mult(y,mult(z,y)),u)),mult(mult(x,mult(y,mult(z,y))),u)) = ld(mult(x,mult(y,mult(z,mult(y,u)))),mult(mult(x,mult(y,mult(z,y))),u)).  [para(45(a,1),14(a,2,1,2)),rewrite([161(2),14(3),161(15)])].
+    new demodulator: 170.
+kept:      171 ld(mult(mult(x,mult(y,x)),mult(z,u)),mult(mult(mult(x,mult(y,x)),z),u)) = ld(mult(x,mult(y,mult(x,mult(z,u)))),mult(mult(mult(x,mult(y,x)),z),u)).  [para(45(a,1),14(a,2,1)),rewrite([161(2),14(3),161(15)])].
+    new demodulator: 171.
+kept:      172 ld(mult(mult(x,mult(y,x)),mult(z,u)),mult(mult(x,mult(y,mult(x,z))),u)) = ld(mult(x,mult(y,mult(x,mult(z,u)))),mult(mult(mult(x,mult(y,x)),z),u)).  [para(45(a,1),14(a,2,2,1)),rewrite([161(2),14(3),171(9),161(11)]),flip(a)].
+    new demodulator: 172.
+kept:      173 ld(mult(mult(x,y),mult(x,z)),mult(mult(x,mult(y,x)),z)) = ld(mult(mult(x,y),mult(x,z)),mult(x,mult(y,mult(x,z)))).  [para(45(a,1),14(a,2,2)),rewrite([14(2),161(5)])].
+    new demodulator: 173.
+kept:      174 ld(mult(mult(x,mult(y,x)),z),mult(z,mult(x,mult(y,x)))) = ld(mult(x,mult(y,mult(x,z))),mult(z,mult(x,mult(y,x)))).  [para(45(a,1),16(a,2,1)),rewrite([161(2),16(3),161(12)])].
+    new demodulator: 174.
+kept:      175 ld(mult(x,mult(y,mult(z,y))),mult(mult(y,mult(z,y)),x)) = ld(mult(x,mult(y,mult(z,y))),mult(y,mult(z,mult(y,x)))).  [para(45(a,1),16(a,2,2)),rewrite([161(2),16(3),161(9)])].
+    new demodulator: 175.
+kept:      176 ld(mult(mult(x,mult(y,x)),z),mult(mult(x,mult(y,x)),mult(z,u))) = ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,u))).  [para(45(a,1),18(a,2,1)),rewrite([161(2),18(3),161(13)])].
+    new demodulator: 176.
+kept:      177 ld(mult(x,mult(y,mult(z,y))),mult(x,mult(mult(y,mult(z,y)),u))) = ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,u))))).  [para(45(a,1),18(a,2,2,2)),rewrite([161(2),18(3),161(10)])].
+    new demodulator: 177.
+kept:      178 ld(mult(mult(x,mult(y,x)),z),mult(x,mult(y,mult(x,mult(z,u))))) = ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,u))).  [para(45(a,1),18(a,2,2)),rewrite([161(2),18(3),176(8),161(10)]),flip(a)].
+    new demodulator: 178.
+kept:      179 rd(mult(mult(mult(x,mult(y,x)),z),u),mult(z,u)) = rd(mult(mult(x,mult(y,mult(x,z))),u),mult(z,u)).  [para(45(a,1),20(a,2,1,1)),rewrite([161(2),20(3)])].
+    new demodulator: 179.
+kept:      180 rd(mult(mult(x,mult(y,x)),z),mult(x,z)) = rd(mult(x,mult(y,mult(x,z))),mult(x,z)).  [para(45(a,1),20(a,2,1)),rewrite([20(2),161(2)])].
+    new demodulator: 180.
+kept:      181 rd(mult(mult(x,mult(y,mult(z,y))),u),mult(mult(y,mult(z,y)),u)) = rd(mult(mult(x,mult(y,mult(z,y))),u),mult(y,mult(z,mult(y,u)))).  [para(45(a,1),20(a,2,2)),rewrite([161(2),20(3),161(10)])].
+    new demodulator: 181.
+kept:      182 ld(x,mult(mult(y,mult(z,y)),x)) = ld(x,mult(y,mult(z,mult(y,x)))).  [para(45(a,1),22(a,2,2)),rewrite([161(2),22(3)])].
+    new demodulator: 182.
+kept:      183 ld(mult(x,mult(y,mult(z,mult(y,u)))),mult(mult(x,mult(y,mult(z,y))),u)) != e | ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,u))))) = u.  [para(45(a,1),24(a,1,1,2)),rewrite([161(6),161(13),161(16),177(19)])].
+kept:      184 ld(mult(x,mult(y,mult(x,mult(z,u)))),mult(mult(mult(x,mult(y,x)),z),u)) != e | ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,u))) = u.  [para(45(a,1),24(a,1,1)),rewrite([161(6),161(13),161(16),176(19)])].
+kept:      185 ld(mult(mult(x,y),mult(x,z)),mult(x,mult(y,mult(x,z)))) != e | ld(mult(x,mult(y,x)),mult(mult(x,y),mult(x,z))) = z.  [para(45(a,1),24(a,1,2)),rewrite([161(11)])].
+kept:      186 ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,u))) != u | ld(mult(x,mult(y,mult(x,mult(z,u)))),mult(mult(mult(x,mult(y,x)),z),u)) = e.  [para(45(a,1),26(a,1,1)),rewrite([161(5),161(11),161(15),171(18)])].
+kept:      187 ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,u))))) != u | ld(mult(x,mult(y,mult(z,mult(y,u)))),mult(mult(x,mult(y,mult(z,y))),u)) = e.  [para(45(a,1),26(a,1,2,2)),rewrite([161(2),161(11),161(15),170(18)])].
+kept:      188 ld(x,mult(y,mult(z,mult(y,x)))) != mult(y,mult(z,y)) | ld(mult(y,mult(z,y)),mult(x,mult(y,mult(z,y)))) = x.  [para(45(a,1),28(a,1,2)),rewrite([161(6),161(9),161(11)])].
+kept:      189 ld(x,mult(y,mult(z,mult(y,x)))) != mult(y,mult(z,y)) | ld(mult(x,mult(y,mult(z,y))),mult(y,mult(z,mult(y,x)))) = e.  [para(45(a,1),30(a,1,2)),rewrite([161(6),161(9),161(12),175(14)])].
+kept:      190 ld(mult(x,mult(y,mult(x,z))),mult(z,mult(x,mult(y,x)))) != e | ld(mult(x,mult(y,x)),mult(z,mult(x,mult(y,x)))) = z.  [para(45(a,1),32(a,1,1)),rewrite([161(5),161(11),161(13)])].
+kept:      191 ld(mult(x,mult(y,mult(z,y))),mult(y,mult(z,mult(y,x)))) != e | ld(x,mult(y,mult(z,mult(y,x)))) = mult(y,mult(z,y)).  [para(45(a,1),32(a,1,2)),rewrite([161(2),161(11),182(13),161(15)])].
+kept:      192 ld(x,mult(ld(y,mult(z,mult(u,mult(z,y)))),x)) = ld(y,mult(ld(x,mult(z,mult(u,mult(z,x)))),y)).  [para(45(a,1),34(a,1,2,1,2)),rewrite([161(8),182(10)])].
+kept:      193 ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,ld(u,mult(w,u))))) = ld(u,mult(ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,w))),u)).  [para(45(a,1),36(a,1,1)),rewrite([161(5),161(12),161(15),176(18)])].
+kept:      194 ld(mult(x,y),mult(x,mult(y,ld(z,mult(u,mult(w,mult(u,z))))))) = ld(z,mult(ld(mult(x,y),mult(x,mult(y,mult(u,mult(w,u))))),z)).  [para(45(a,1),36(a,1,2,2,2,2)),rewrite([161(11)])].
+kept:      195 ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,ld(u,mult(w,u))))))) = ld(u,mult(ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,w))))),u)).  [para(45(a,1),36(a,1,2,2)),rewrite([161(2),161(12),161(15),177(18)])].
+kept:      196 rd(mult(mult(ld(x,mult(y,mult(z,mult(y,x)))),u),w),mult(u,w)) = ld(x,mult(rd(mult(mult(y,mult(z,mult(y,u))),w),mult(u,w)),x)).  [para(45(a,1),38(a,1,1,1,1,2)),rewrite([161(10),179(14)])].
+    new demodulator: 196.
+kept:      197 rd(mult(mult(ld(x,mult(y,x)),mult(z,mult(u,z))),w),mult(z,mult(u,mult(z,w)))) = ld(x,mult(rd(mult(mult(y,mult(z,mult(u,z))),w),mult(z,mult(u,mult(z,w)))),x)).  [para(45(a,1),38(a,1,2)),rewrite([161(4),161(12),161(16),181(18)])].
+    new demodulator: 197.
+kept:      198 ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,ld(mult(u,w),mult(u,mult(w,v5)))))) = ld(mult(u,w),mult(u,mult(w,ld(mult(x,mult(y,mult(x,z))),mult(mult(x,mult(y,x)),mult(z,v5)))))).  [para(45(a,1),42(a,1,1)),rewrite([161(5),161(15),161(18),176(21)])].
+kept:      199 ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,ld(mult(u,w),mult(u,mult(w,v5)))))))) = ld(mult(u,w),mult(u,mult(w,ld(mult(x,mult(y,mult(z,y))),mult(x,mult(y,mult(z,mult(y,v5)))))))).  [para(45(a,1),42(a,1,2,2,2,2,2)),rewrite([161(3),161(14),161(17),177(24)]),flip(a)].
+kept:      200 rd(mult(mult(rd(mult(mult(x,mult(y,mult(x,z))),u),mult(z,u)),w),v5),mult(w,v5)) = rd(mult(mult(rd(mult(mult(x,mult(y,mult(x,w))),v5),mult(w,v5)),z),u),mult(z,u)).  [para(45(a,1),44(a,1,1,1,1,1,1)),rewrite([161(12),179(16)])].
+kept:      201 rd(mult(mult(rd(mult(mult(mult(x,y),z),u),mult(z,u)),x),w),mult(x,w)) = rd(mult(mult(rd(mult(x,mult(y,mult(x,w))),mult(x,w)),z),u),mult(z,u)).  [para(45(a,1),44(a,1,1,1,1,1)),flip(a)].
+kept:      202 rd(mult(mult(rd(mult(mult(x,mult(y,mult(z,y))),u),mult(y,mult(z,mult(y,u)))),w),v5),mult(w,v5)) = rd(mult(mult(rd(mult(mult(x,w),v5),mult(w,v5)),mult(y,mult(z,y))),u),mult(y,mult(z,mult(y,u)))).  [para(45(a,1),44(a,1,1,1,1,2)),rewrite([161(2),161(18),161(22),181(24)])].
+kept:      203 mult(mult(mult(x,mult(y,mult(x,z))),mult(x,mult(y,x))),u) = mult(mult(x,mult(y,x)),mult(z,mult(mult(x,mult(y,x)),u))).  [para(45(a,1),45(a,1,1,1)),rewrite([161(5),161(9),161(11)])].
+    new demodulator: 203.
+kept:      204 mult(mult(x,mult(y,mult(x,mult(x,y)))),z) = mult(mult(x,y),mult(x,mult(mult(x,y),z))).  [para(45(a,1),45(a,1,1))].
+    new demodulator: 204.
+kept:      205 mult(mult(mult(x,mult(y,x)),mult(z,mult(x,mult(y,x)))),u) = mult(mult(x,mult(y,x)),mult(z,mult(x,mult(y,mult(x,u))))).  [para(45(a,1),45(a,2,2,2)),rewrite([161(2),161(5),161(6),161(9)])].
+    new demodulator: 205.
+kept:      206 mult(mult(x,mult(mult(y,mult(z,y)),x)),u) = mult(x,mult(y,mult(z,mult(y,mult(x,u))))).  [para(45(a,1),45(a,2,2)),rewrite([161(2),161(4)])].
+    new demodulator: 206.
+kept:      207 mult(mult(x,mult(y,x)),mult(z,mult(x,mult(y,mult(x,u))))) = mult(x,mult(y,mult(x,mult(z,mult(mult(x,mult(y,x)),u))))).  [para(45(a,1),45(a,2)),rewrite([161(2),161(5),161(6),205(7),161(9)])].
+    starting back demodulation with 160.
+        160 back demodulating 79.
+    starting back demodulation with 161.
+        161 back demodulating 47.
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.01) seconds.
+% Length of proof is 8.
+% Level of proof is 3.
+% Maximum clause weight is 15.000.
+% Given clauses 23.
+
+6 rd(mult(v0,mult(v1,mult(v0,v2))),v2) = mult(mult(v0,v1),v0) # label(non_clause) # label(goal).  [goal].
+8 mult(x,e) = x.  [assumption].
+11 rd(mult(x,y),y) = x.  [assumption].
+45 mult(mult(mult(x,y),x),z) = mult(x,mult(y,mult(x,z))).  [assumption].
+47 rd(mult(c1,mult(c2,mult(c1,c3))),c3) != mult(mult(c1,c2),c1).  [deny(6)].
+161 mult(mult(x,y),x) = mult(x,mult(y,x)).  [para(45(a,1),8(a,1)),rewrite([8(2)]),flip(a)].
+166 rd(mult(x,mult(y,mult(x,z))),z) = mult(x,mult(y,x)).  [para(45(a,1),11(a,1,1)),rewrite([161(6)])].
+208 $F.  [back_rewrite(47),rewrite([166(9),161(10)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=23. Generated=520. Kept=185. proofs=1.
+Usable=22. Sos=108. Demods=94. Limbo=47, Disabled=33. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=12.
+Forward_subsumed=322. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=95 (0 lex), Back_demodulated=8. Back_unit_deleted=0.
+Demod_attempts=11130. Demod_rewrites=1170.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=150. Nonunit_bsub_feature_tests=132.
+Megabytes=1.03.
+User_CPU=0.01, System_CPU=0.01, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+Process 61156 exit (max_proofs) Mon Aug 31 19:23:21 2026

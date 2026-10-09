@@ -1,0 +1,30 @@
+formulas(assumptions).
+   mult(e,v0) = v0.
+   mult(v0,e) = v0.
+   ld(v0,mult(v0,v1)) = v1.
+   mult(v0,ld(v0,v1)) = v1.
+   rd(mult(v0,v1),v1) = v0.
+   mult(rd(v0,v1),v1) = v0.
+   ld(mult(v0,mult(v1,v2)),mult(mult(v0,v1),v2)) = a(v0,v1,v2).
+   ld(mult(v0,v1),mult(v1,v0)) =k(v1,v0).
+   ld(mult(v0,v1),mult(v0,mult(v1,v2))) =l(v2,v1,v0).
+   rd(mult(mult(v0,v1),v2),mult(v1,v2)) =r(v0,v1,v2).
+   ld(v0,mult(v1,v0)) =t(v1,v0).
+   (a(v0,v1,v2) =e ->l(v2,v1,v0) = v2).
+   (l(v0,v1,v2) = v0 -> a(v2,v1,v0) =e).
+   (t(v0,v1) = v0 ->t(v1,v0) = v1).
+   (t(v0,v1) = v0 ->k(v0,v1) =e).
+   (k(v0,v1) =e ->t(v0,v1) = v0).
+   t(t(v0,v1),v2) =t(t(v0,v2),v1).
+   t(l(v0,v1,v2),v3) =l(t(v0,v3),v1,v2).
+   t(r(v0,v1,v2),v3) =r(t(v0,v3),v1,v2).
+   l(r(v0,v1,v2),v3,v4) =r(l(v0,v3,v4),v1,v2).
+   l(l(v0,v1,v2),v3,v4) =l(l(v0,v3,v4),v1,v2).
+   r(r(v0,v1,v2),v3,v4) =r(r(v0,v3,v4),v1,v2).
+   mult(mult(mult(v0,v1),v0),v2) = mult(v0,mult(v1,mult(v0,v2))).
+   mult(mult(v0,mult(v0,v1)),v2) = mult(v0,mult(v0,mult(v1,v2))).
+end_of_list.
+
+formulas(goals).
+   mult(mult(v0, mult(v1, mult(v0, v1))), v2) = mult(mult(v0, v1), mult(mult(v0, v1), v2)).
+end_of_list.

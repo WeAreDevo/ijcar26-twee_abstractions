@@ -582,8 +582,47 @@ loop-theoretic with the concepts unnamed: **the commutator and the T inner
 mapping are re-identified as top abstractions of proofs that never named
 them.** Scope, stated honestly: unfolding leaves their bodies in the input, so
 this shows compression re-identifies the right units from a primitive proof —
-not that concepts appear from nothing. What makes it non-trivial is that the
-prover chose its own route and a different prover's route yields nothing.
+not that concepts appear from nothing.
+
+An earlier version of this paragraph ended "what makes it non-trivial is that
+the prover chose its own route and a different prover's route yields nothing."
+**That clause is withdrawn** — see below.
+
+### The twee-beats-Prover9 reading does not survive the whole matrix (2026-08-31)
+
+Counting recovery over all 46 runs rather than the three aim_lc `aK` goals:
+
+| corpus | twee runs with recovery | prover9 runs with recovery |
+|---|---|---|
+| aim_lc (7 goals) | 3/7 (K on aK1–aK3) | **0/7** |
+| aim_lc_hints (10) | 0/10 | 2/10 |
+| bml_aim (6) | 3/6 | **6/6** (and more concepts: a, K, R, T) |
+| **total** | **6/23** | **8/23** |
+
+So Prover9 recovers on *more* goals than twee overall, and the "Prover9 yields
+nothing" observation is specific to the aim_lc corpus. Two confounds sit on top
+of even that narrower claim:
+
+1. **The Prover9 runs used compact proofs.** `run_phase35.py` parses the
+   `==== PROOF ====` block of stored stdout directly; `prooftrans` appears
+   nowhere in `src/` outside `src/gapt/`, there is no `--expanded` flag, and no
+   `*__prover9_expanded*` result file exists. So every Prover9 run in the matrix
+   has its rewrite sequences folded into single justifications — exactly the
+   presentation asymmetry `data/minimal_example/` shows *reverses* the ordering
+   when undone (twee 6 K-occurrences, Prover9 compact 4, Prover9 expanded 14).
+   The one manual expand check on aim_lc goal_1 (K: 7 → 8, recovery unchanged)
+   covers 1 of the 3 goals the claim rests on and left no artifact.
+2. **The equational matching tier ran out of budget on 39 of 46 runs**, including
+   **all 7 aim_lc Prover9 runs** (`equational_budget_exhausted: true` in the
+   per-run JSON). This is the same flaw phase 3 had and fixed with
+   `recheck_phase3_equational.py`; **phase 3.5 was never rechecked.** So its
+   tier-3 "no match" is a partial verdict on precisely the runs that carry the
+   claim.
+
+Near-miss worth noting: on aim_lc goal_1 Prover9, stitch's rank-5 abstraction is
+`fn_5(A,B,C) = ldiv(op(A,B), C(B,A))` — K's body with the outer operator left as
+a higher-order variable. Instantiating `C := op` gives K exactly. The matcher
+compares first-order bodies, so it cannot see this.
 
 ## Next
 
@@ -594,6 +633,13 @@ prover chose its own route and a different prover's route yields nothing.
   the matrix; the natural shape is a `--expanded` flag on `run_phase35.py`
   producing `<problem>__prover9_expanded` runs alongside the compact ones,
   exactly as Phase 0 keeps `*_expanded.pf` alongside `*.pf`.
+- **Recheck phase 3.5 before quoting any twee/Prover9 comparison.** Two things
+  are needed and both are cheap, since `data/definition_free/*/out/*.out` holds
+  the raw prover output and `--reuse-proofs` re-extracts without re-proving:
+  (a) a `--expanded` flag running `prooftrans expand` over the stored Prover9
+  output, per the corpus-variant plan above; (b) a phase-3.5 analogue of
+  `recheck_phase3_equational.py` with a larger tier-3 budget. Until both run,
+  the Prover9 column is not evidence.
 - **Phase 4** (Stitch vs Babble, incl. babble-modulo-theory) is now the main
   remaining item. The phase-3.5 corpora are the natural target: they are the
   ones where concepts are demonstrably recoverable. Babble has not yet been

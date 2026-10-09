@@ -111,6 +111,13 @@ the same directory as JSON, regenerable with `src/gapt/survey_termsets.py`.
 above ~21 the delta-table OOMs at 4 GB and still times out at 12 GB. This is
 narrower than the 10-50 the paper reports on TSTP.
 
+> **Qualified 2026-09-17** (`AIM_GAPT.md`): the upper limit is not 21 in
+> general. On sub-proofs carved out of Veroff's `aa2 => aa3`, term sets 31, 40
+> and 56 all produced lemmas at **2 GB** in 9-109 s. Those fragments all have
+> max term depth <= 7; the corpora measured above are deeper. So the ceiling
+> tracks *depth*, as suspected, rather than term count — 5-21 is a property of
+> those corpora, not of the method.
+
 **Erasing definitions is what puts our proofs out of reach.** Same goal
 (`bml_aim 3_goal_1`), definitions intact vs unfolded into the primitive
 signature: **440 terms at depth 7 versus 60,071 at depth 26** — 136x more terms.
@@ -136,6 +143,80 @@ Also confirmed: **only proofs Prover9 actually found can be imported.** The
 `IMPORT_FAIL` entries in the surveys are exactly the search-failed goals —
 `prooftrans` has no proof to convert. So GAPT cannot use partial proofs, unlike
 the term-level extraction used for Stitch/babble.
+
+## Runs with definitions intact (2026-08-31)
+
+Asked directly: what do GAPT's lemmas look like on proofs where `a/K/L/R/T` were
+**not** erased?
+
+**The definition-ful proofs we already had are all out of reach.** Of the six
+`data/definition_ful/bml_aim/` goals only three have a Prover9 proof at all
+(4/5/6 are `IMPORT_FAIL` = search failed), at term sets 440 / 12,246 / 38,941.
+On the smallest, `3_goal_1` (440), both `many_dtable` and `reforest` **TIMEOUT**
+— 12 min and 7 min wall respectively at 8 GB. Consistent with the 5–21 band.
+
+**New corpus to get inside the band:** `src/corpus/hint_goals_defful.py` writes
+`data/definition_ful/aim_lc_hints/` — the *same ten* hint conjectures as
+`hint_goals.py`, but over the AIM axioms with the five definitions still
+present. Prover9 proves 6/10 in 60 s (the same six as definition-free).
+Consistency probe run: the axioms do not prove `x = y`. Note the encoding
+landmine: `'K'` must map to a **lowercase** Prover9 symbol, because
+`rename_variables_for_prover9` rewrites every `[A-Z]` token into a variable —
+mapping `'K'`→`K` silently turns the commutator into a variable.
+
+**Definitions being available barely moves the term set:**
+
+| goal | def-free | def-ful |
+|---|---:|---:|
+| hint01_d3 | 6 | 6 |
+| hint07_d4 | 218 | 222 |
+| hint04_d3 | 1,309 | 1,335 |
+| hint10_d6 | 1,417 | 1,443 |
+| hint09_d5 | 7,400 | 7,575 |
+| hint08_d4 | 12,078 | 12,336 |
+
+**This qualifies the headline above.** "Erasing definitions is what puts our
+proofs out of reach" was measured on `bml_aim 3_goal_1`, whose *goal is stated
+in terms of the inner mappings* (`T(T(u,x),y) = T(T(u,y),x)`) — unfolding that
+goal is what explodes it, 440 → 60,071. Where the **conjecture is primitive**,
+as every hint goal is, having the definitions available makes no difference at
+all (def-ful is marginally *larger*). So the blow-up is a property of
+goals phrased in the derived signature, not of definition availability as such.
+
+**The one lemma we can inspect.** Only `hint01_d3` (term set 6) is in band, and
+**method matters**: `many_dtable`, `1_dtable_ss` and `1_maxsat` all return
+NO_LEMMA on it; **`reforest` returns OK** (grammar size 13, 1 cut):
+
+    ∀x ∀y  ((c1 * c2) * c1) * x  =  c1 * (c2 * (c1 * (x * 1)))
+
+with `c1, c2` the Skolem constants of the conjecture
+`(x * (y * (x * z))) / z = (x * y) * x`. So the lemma is that conjecture
+generalised over its third variable — a real universally quantified lemma, but
+shallow: it restates the goal rather than naming a reusable concept. `y` is
+vacuous, a cosmetic artifact of the grammar. The **definition-free proof of the
+same goal yields the identical lemma** (same term set 6, same grammar 13), which
+is the cleanest statement of the point above.
+
+## Applied to Veroff's AIM proof (2026-09-17)
+
+See **`AIM_GAPT.md`** for the full record. In brief:
+
+- `data/AIM/aa2_to_aa3.pf` (10,221 inferences) **cannot be imported at all** —
+  10 GB heap, 25 min, no output. A new failure mode: previous corpora imported
+  cleanly and died in the decomposition; this one dies upstream of it.
+- `src/gapt/aim_subproofs.py` makes the proof usable anyway, by re-emitting any
+  clause's ancestor subgraph as a standalone Prover9 refutation. `prooftrans
+  ivy` re-checks every step, so imports are trustworthy, and
+  `src/gapt/test_aim_subproofs.py` pins that a falsified step and a dropped
+  premise are both rejected.
+- 11 lemmas over 80 runs, all 1 cut. Every one is a **partial generalisation of
+  a formula already in the fragment** — clause 88 (`x * T(y,x) = y * x`) and
+  clause 91 (`L(x,a(y,z,u),w) = x`), or an instance of a defining axiom. Same
+  shape of negative as the `hint01_d3` result above, now on a real proof.
+- New landmine: the `BackgroundTheory` **guess can come out `PureFOL`** on a
+  fragment whose only equality step is a `flip`, and then every method reports
+  `UnprovableException` on a sequent that is just symmetry of equality. An
+  `ERROR` there means "wrong background theory", not "no lemma".
 
 ## Open questions (deliberately not decided)
 
