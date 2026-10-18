@@ -1,0 +1,194 @@
+{
+  "definitions": {
+    "speedup": "mean_base_user_time / hints_time_user; excludes extraction and total pipeline time",
+    "speedup_ratio_new_over_old": "new_speedup / old_speedup; above 1 is an improvement",
+    "hint_runtime_ratio_old_over_new": "old_hints_time_user / new_hints_time_user; above 1 is faster now",
+    "base_runtime_ratio_new_over_old": "new_mean_base_user_time / old_mean_base_user_time",
+    "over_2x": "hints_time_user < 0.5 * mean_base_user_time (strict historical criterion)",
+    "repeats": "latest completed record per problem by timestamped run directory name; no best-of selection",
+    "paired": "same problems, both successful, with strictly positive finite baseline and hint CPU times",
+    "missing_or_zero_times": "undefined ratios are null, never infinity or an epsilon substitute",
+    "incomplete": "runs without a valid summary are listed separately; missing results are not failures"
+  },
+  "comparison_config": {
+    "extraction": {
+      "onlyPeakTerms": false,
+      "onlyProofTerms": true,
+      "onlyUsedLemmas": true
+    },
+    "stitch": {
+      "iterations": 10,
+      "max_arity": 10
+    },
+    "twee": {
+      "flags": [
+        "--no-all-lemmas",
+        "--show-peaks",
+        "--hint-skel-factor 0",
+        "--hint-skel-cost 1",
+        "--no-flatten-goal"
+      ],
+      "timeout": 1000
+    }
+  },
+  "historical_config": {
+    "extraction": {
+      "onlyPeakTerms": false,
+      "onlyProofTerms": true
+    },
+    "stitch": {
+      "iterations": 10,
+      "max_arity": 10
+    },
+    "twee": {
+      "flags": [
+        "--all-lemmas",
+        "--show-peaks",
+        "--hint-skel-factor 0",
+        "--hint-skel-cost 1",
+        "--no-flatten-goal"
+      ],
+      "timeout": 1000
+    }
+  },
+  "theories": [
+    "GRP",
+    "LAT"
+  ],
+  "old_input": {
+    "root": "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/local_abs_10iter",
+    "matching_runs": [
+      "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/local_abs_10iter/20251117_215750_GRP_7679561_46",
+      "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/local_abs_10iter/20251123_165957_LAT_7700105_60",
+      "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/local_abs_10iter/20251209_163430_GRP_7726941_46",
+      "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/local_abs_10iter/20251209_163624_LAT_7726955_60"
+    ],
+    "pending_runs": [],
+    "unreadable_runs": [],
+    "ignored_config_runs": 235,
+    "repeated_problems": {
+      "GRP718-1": 2,
+      "GRP719-1": 2
+    }
+  },
+  "new_input": {
+    "root": "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/goal_proof_only/local_abs",
+    "matching_runs": [],
+    "pending_runs": [
+      "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/goal_proof_only/local_abs/GRP/20261017_220403_goal_proof_only_local_abs_GRP_local_abs_10502346_0_local_abs",
+      "/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/data/experiments/goal_proof_only/local_abs/LAT/20261017_220624_goal_proof_only_local_abs_LAT_local_abs_10502346_1_local_abs"
+    ],
+    "unreadable_runs": [],
+    "ignored_config_runs": 0,
+    "repeated_problems": {}
+  },
+  "overall": {
+    "old_problems": 607,
+    "new_problems": 0,
+    "common_problems": 0,
+    "paired_positive_timings": 0,
+    "old_only": 607,
+    "new_only": 0,
+    "outcome_transitions_on_common": {},
+    "new_success_old_not_success": 0,
+    "old_success_new_not_success": 0,
+    "old_outcomes": {
+      "base timeout": 42,
+      "no valid abstractions produced by Stitch": 5,
+      "success": 558,
+      "timeout": 2
+    },
+    "old_over_2x_on_common": 0,
+    "old_faster_than_base_on_common": 0,
+    "old_zero_hint_time": 1,
+    "old_geomean_speedup_paired": null,
+    "old_median_speedup_paired": null,
+    "new_outcomes": {
+      "missing": 607
+    },
+    "new_over_2x_on_common": 0,
+    "new_faster_than_base_on_common": 0,
+    "new_zero_hint_time": 0,
+    "new_geomean_speedup_paired": null,
+    "new_median_speedup_paired": null,
+    "geomean_speedup_ratio_new_over_old_paired": null,
+    "geomean_hint_runtime_ratio_old_over_new_paired": null,
+    "geomean_base_runtime_ratio_new_over_old_paired": null,
+    "speedup_wins_paired": 0,
+    "speedup_losses_paired": 0,
+    "speedup_ties_paired": 0
+  },
+  "by_theory": {
+    "GRP": {
+      "old_problems": 481,
+      "new_problems": 0,
+      "common_problems": 0,
+      "paired_positive_timings": 0,
+      "old_only": 481,
+      "new_only": 0,
+      "outcome_transitions_on_common": {},
+      "new_success_old_not_success": 0,
+      "old_success_new_not_success": 0,
+      "old_outcomes": {
+        "base timeout": 32,
+        "no valid abstractions produced by Stitch": 4,
+        "success": 445
+      },
+      "old_over_2x_on_common": 0,
+      "old_faster_than_base_on_common": 0,
+      "old_zero_hint_time": 1,
+      "old_geomean_speedup_paired": null,
+      "old_median_speedup_paired": null,
+      "new_outcomes": {
+        "missing": 481
+      },
+      "new_over_2x_on_common": 0,
+      "new_faster_than_base_on_common": 0,
+      "new_zero_hint_time": 0,
+      "new_geomean_speedup_paired": null,
+      "new_median_speedup_paired": null,
+      "geomean_speedup_ratio_new_over_old_paired": null,
+      "geomean_hint_runtime_ratio_old_over_new_paired": null,
+      "geomean_base_runtime_ratio_new_over_old_paired": null,
+      "speedup_wins_paired": 0,
+      "speedup_losses_paired": 0,
+      "speedup_ties_paired": 0
+    },
+    "LAT": {
+      "old_problems": 126,
+      "new_problems": 0,
+      "common_problems": 0,
+      "paired_positive_timings": 0,
+      "old_only": 126,
+      "new_only": 0,
+      "outcome_transitions_on_common": {},
+      "new_success_old_not_success": 0,
+      "old_success_new_not_success": 0,
+      "old_outcomes": {
+        "base timeout": 10,
+        "no valid abstractions produced by Stitch": 1,
+        "success": 113,
+        "timeout": 2
+      },
+      "old_over_2x_on_common": 0,
+      "old_faster_than_base_on_common": 0,
+      "old_zero_hint_time": 0,
+      "old_geomean_speedup_paired": null,
+      "old_median_speedup_paired": null,
+      "new_outcomes": {
+        "missing": 126
+      },
+      "new_over_2x_on_common": 0,
+      "new_faster_than_base_on_common": 0,
+      "new_zero_hint_time": 0,
+      "new_geomean_speedup_paired": null,
+      "new_median_speedup_paired": null,
+      "geomean_speedup_ratio_new_over_old_paired": null,
+      "geomean_hint_runtime_ratio_old_over_new_paired": null,
+      "geomean_base_runtime_ratio_new_over_old_paired": null,
+      "speedup_wins_paired": 0,
+      "speedup_losses_paired": 0,
+      "speedup_ties_paired": 0
+    }
+  }
+}

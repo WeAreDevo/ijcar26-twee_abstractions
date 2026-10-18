@@ -1,0 +1,35 @@
+Here is the input problem:
+  Axiom 1 (flattening): op2 = op(x2, x2).
+  Axiom 2 (flattening): op3 = op(x1, op(x2, x2)).
+  Axiom 3 (flattening): op4 = op(x0, op(x1, op(x2, x2))).
+  Axiom 4 (a1): X = op(X, op(op(X, op(X, Y)), Z)).
+  Axiom 5 (flattening): op5 = op(x0, op(x0, op(x1, op(x2, x2)))).
+  Goal 1 (conjecture0): x0 = op(x0, op(x0, op(x1, op(x2, x2)))).
+
+(13.0) 1. op(x2, x2) -> op2
+(13.0) 2. op(x1, op2) -> op3
+(13.0) 3. op(x0, op3) -> op4
+(34.0) 4. op(X, op(op(X, op(X, Y)), Z)) -> X
+(13.0) 5. op(x0, op4) -> op5
+(28.57143) 6. op(X, op(X, op(X, Y))) -> X
+(15.714287) 7. op(X, X) -> X
+(11.0) 8. x2 -> op2
+(17.0) 9. op(x0, op5) -> x0
+(23.142859) 10. op(X, op(X, Y)) -> X
+(11.0) 11. x0 -> op5
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (a1): X = op(X, op(op(X, op(X, Y)), Z)).
+
+Goal 1 (conjecture0): x0 = op(x0, op(x0, op(x1, op(x2, x2)))).
+Proof:
+  x0
+= { by axiom 1 (a1) }
+  op(x0, op(op(x0, op(x0, op(x0, X))), op(x1, op(x2, x2))))
+= { by axiom 1 (a1) }
+  op(x0, op(op(x0, op(op(x0, op(x0, X)), op(op(op(x0, op(x0, X)), op(op(x0, op(x0, X)), Y)), Z))), op(x1, op(x2, x2)))) (peak)
+= { by axiom 1 (a1) R->L }
+  op(x0, op(x0, op(x1, op(x2, x2))))
+
+RESULT: Theorem (the conjecture is true).

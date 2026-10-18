@@ -6,11 +6,16 @@ import yaml
 from datetime import datetime
 import os
 import concurrent.futures
+from concurrent.futures.process import BrokenProcessPool
+import signal
+import time
 project_root = Path(__file__).resolve().parents[3]
 sys.path.append(project_root.as_posix())
 os.chdir(project_root.as_posix())
 
 from src.stitch.Abstractions import Stitch_Abstractions
+from src.proof_metrics import measure_completed_twee_proof
+from src.stitch.pipeline.checkpoints import atomic_json, read_problems, save_problem, write_snapshot
 from src.utils import as_cnf_axiom, as_cnf_hint, extract_strategy_1, extract_terms, filter_out_higer_order_abstractions, filter_out_uninteresting, normalize_fof_term, run_twee_on_file, expand_abstractions, validate_abstraction
 from stitch.domain_abstractions import domain_hints_across_experiments, domain_hints_for_problem, domain_hints_from_hints_stage
 from data.experiments.util import compile_base_output_locations, compile_base_times, get_base_timeouts, get_base_times_with_flag
@@ -36,7 +41,7 @@ def init_worker(base_data, hints_data, base_directory):
 
 def base_stage(args):
     tptp_file, configs, log_dir = args
-    result_dict = {}
+    result_dict = {"base_proof_size": None}
     result_dict["problem"] = tptp_file.stem
     try:
         print(f"Processing file: {tptp_file}")
@@ -45,14 +50,13 @@ def base_stage(args):
         twee_result = run_twee_on_file(tptp_file, timeout=configs["twee"].get("timeout", 30), flags=configs["twee"].get("flags", ""))
         result_dict["base_status"] = twee_result["status"]
         result_dict["error"] = twee_result["error"]
+        (log_dir / f"{tptp_file.stem}_base_output.txt").write_text(twee_result["output"])
+        (log_dir / f"{tptp_file.stem}_base_stderr.txt").write_text(twee_result["error"])
         
         if twee_result["status"] != "success":
             print(f"Twee failed for {tptp_file}: {twee_result['error']}")
             return result_dict
         output = twee_result["output"]
-        twee_output_path = log_dir / f"{tptp_file.stem}_base_output.txt"
-        with open(twee_output_path, "w") as f:
-            f.write(output)
         # get the last line of output that is not empty
         last_line = ""
         for line in reversed(output.splitlines()):
@@ -67,6 +71,7 @@ def base_stage(args):
         result_dict["base_time_user"] = twee_result["user_cpu"]
         result_dict["base_time_sys"] = twee_result["system_cpu"]
         result_dict["base_time"] = twee_result["total_cpu"]
+        result_dict["base_proof_size"] = measure_completed_twee_proof(output)
         return result_dict
     except Exception as e:
         print(f"Error processing {tptp_file}: {e}")
@@ -77,7 +82,7 @@ def base_stage(args):
 
 def local_abs_stage(args):
     tptp_file, configs, log_dir = args
-    result_dict = {}
+    result_dict = {"base_proof_size": None, "hints_proof_size": None}
     problem = tptp_file.stem
     try:
         result_dict["problem"] = problem
@@ -101,7 +106,13 @@ def local_abs_stage(args):
         with open(base_output_path, "r") as f:
             base_output = f.read()
 
+        result_dict["base_proof_size"] = measure_completed_twee_proof(base_output)
+
         extracted_terms = extract_terms(base_output, configs.get("extraction", None))
+        result_dict["extracted_term_count"] = len(extracted_terms)
+        result_dict["base_output_file"] = str(base_output_path)
+        with open(log_dir / f"{problem}_extracted_terms.json", "w") as f:
+            json.dump(extracted_terms, f, indent=2)
         abstractions = Stitch_Abstractions(extracted_terms, configs["stitch"].get("iterations", 10), configs["stitch"].get("max_arity", 10)).fo_abstractions
         del extracted_terms
         del base_output
@@ -126,6 +137,8 @@ def local_abs_stage(args):
         
         twee_result = run_twee_on_file(tptp_with_hints, timeout=configs["twee"].get("timeout", 30), flags=configs["twee"].get("flags", ""))
         result_dict["hints_status"] = twee_result["status"]
+        (log_dir / f"{tptp_file.stem}_with_hints_output.txt").write_text(twee_result["output"])
+        (log_dir / f"{tptp_file.stem}_with_hints_stderr.txt").write_text(twee_result["error"])
         
         if twee_result["status"] != "success":
             print(f"Twee failed for {tptp_with_hints}: {twee_result['error']}")
@@ -135,9 +148,7 @@ def local_abs_stage(args):
         result_dict["hints_time_user"] = twee_result["user_cpu"]
         result_dict["hints_time_sys"] = twee_result["system_cpu"]
         result_dict["hints_time"] = twee_result["total_cpu"]
-        twee_with_hints_output_path = log_dir / f"{tptp_file.stem}_with_hints_output.txt"
-        with open(twee_with_hints_output_path, "w") as f:
-            f.write(twee_result["output"])
+        result_dict["hints_proof_size"] = measure_completed_twee_proof(twee_result["output"])
         return result_dict
     
     except Exception as e:
@@ -334,6 +345,64 @@ def partial_abs_stage(args):
         result_dict["error"] = str(e)
         return result_dict
     
+def worker_count(debug=False):
+    if debug:
+        return 1
+    available = len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else (os.cpu_count() or 1)
+    allocation = int(os.environ.get("SLURM_CPUS_PER_TASK", available))
+    limit = int(os.environ.get("TWITCH_MAX_WORKERS", allocation))
+    if allocation < 1 or limit < 1:
+        raise ValueError("SLURM_CPUS_PER_TASK and TWITCH_MAX_WORKERS must be positive")
+    return min(available, allocation, limit)
+
+
+def _pool_initializer(initializer, initargs):
+    # Only the parent handles termination by flushing the aggregate summary.
+    signal.signal(signal.SIGTERM, signal.SIG_DFL)
+    # Give each worker and its prover children a group we can stop together.
+    os.setsid()
+    if initializer is not None:
+        initializer(*initargs)
+
+
+def _checkpoint_problem(process, args, directories):
+    problem = args[0].stem
+    try:
+        result = process(args)
+        if not isinstance(result, dict) or result.get("problem") != problem:
+            raise ValueError(f"Stage returned an invalid result for {problem}")
+    except Exception as exc:
+        result = {"problem": problem, "status": "error",
+                  "error": f"{type(exc).__name__}: {exc}"}
+    # This survives even if the parent dies or the pool breaks before delivery.
+    save_problem(result, directories)
+    return result
+
+
+def _terminate_run(signum, frame):
+    raise SystemExit(128 + signum)
+
+
+def _stop_pool(executor):
+    # Python 3.11 has no public terminate_workers(). Keep this compatibility
+    # access isolated; shutdown(wait=False) alone still waits at interpreter
+    # exit and leaves native Stitch calls/prover subprocesses running.
+    processes = list((getattr(executor, "_processes", None) or {}).values())
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        for child in processes:
+            try:
+                # The group can outlive its worker if a prover ignored SIGTERM.
+                os.killpg(child.pid, sig)
+            except ProcessLookupError:
+                if child.is_alive():
+                    # Initializer has not called setsid yet.
+                    child.terminate() if sig == signal.SIGTERM else child.kill()
+        deadline = time.monotonic() + 1
+        for child in processes:
+            child.join(timeout=max(0, deadline - time.monotonic()))
+    executor.shutdown(wait=True, cancel_futures=True)
+
+
 def spawn_processes(process, config, output_dir, input_file_paths, job_id, debug=False, experimental=False, initializer=None, initargs=()):
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -349,20 +418,59 @@ def spawn_processes(process, config, output_dir, input_file_paths, job_id, debug
         with open(config_output_path, "w") as f:
             yaml.dump(config, f)
     
-    summary_data = []
-    summary_output_paths = [experiment_dir / "summary.json", log_dir / "summary.json"]
+    directories = [experiment_dir, log_dir]
+    expected = [path.stem for path in input_file_paths]
+    if len(set(expected)) != len(expected):
+        raise ValueError("Input problems must have distinct stems")
+    records = {}
+    write_snapshot(directories, records, expected, "running")
     tptp_files = input_file_paths
     print(f"Experiment output at: {experiment_dir}\n" + "#" * 50)
     args_list = [(tptp_file, config, log_dir) for tptp_file in tptp_files]
-    max_workeers = 1 if debug else os.cpu_count() - 2
-    print(max_workeers)
-    with concurrent.futures.ProcessPoolExecutor(max_workers=max_workeers, initializer=initializer, initargs=initargs) as executor:
-        for result_dict in executor.map(process, args_list):
-            summary_data.append(result_dict)
-
-    for summary_output_path in summary_output_paths:
-        with open(summary_output_path, "w") as f:
-            json.dump(summary_data, f, indent=4)
+    max_workers = worker_count(debug)
+    print(f"Using {max_workers} workers", flush=True)
+    executor = None
+    previous_sigterm = signal.signal(signal.SIGTERM, _terminate_run)
+    try:
+        executor = concurrent.futures.ProcessPoolExecutor(
+            max_workers=max_workers, initializer=_pool_initializer,
+            initargs=(initializer, initargs))
+        futures = {executor.submit(_checkpoint_problem, process, args, directories): args[0].stem
+                   for args in args_list}
+        for future in concurrent.futures.as_completed(futures):
+            problem = futures[future]
+            try:
+                result = future.result()
+            except BrokenProcessPool:
+                # Workers lost with the pool have unknown outcomes. Do not
+                # replace them with invented timeouts or overwrite checkpoints.
+                raise
+            except Exception as exc:
+                # Includes task serialization errors before child execution.
+                result = {"problem": problem, "status": "error",
+                          "error": f"{type(exc).__name__}: {exc}"}
+                existing = read_problems(directories)
+                result = existing.get(problem, result)
+                save_problem(result, directories)
+            records[problem] = result
+            write_snapshot(directories, records, expected, "running")
+            print(f"Checkpointed {problem}: {len(records)}/{len(expected)} finished", flush=True)
+        executor.shutdown(wait=True)
+        write_snapshot(directories, records, expected, "complete")
+    except BaseException as exc:
+        # Persist before shutdown: a surviving worker may still be inside an
+        # unbounded native Stitch call. SIGKILL cannot be handled, so child
+        # checkpoints and previous snapshots are the recovery mechanism then.
+        records.update(read_problems(directories))
+        state = "interrupted" if isinstance(exc, (SystemExit, KeyboardInterrupt)) else "failed"
+        write_snapshot(directories, records, expected, state, f"{type(exc).__name__}: {exc}")
+        if executor is not None:
+            _stop_pool(executor)
+            records.update(read_problems(directories))
+            write_snapshot(directories, records, expected, state, f"{type(exc).__name__}: {exc}")
+        raise
+    finally:
+        signal.signal(signal.SIGTERM, previous_sigterm)
 
 def _run_base_stage(input_dir, output_dir, experiment_config, job_id, debug, experimental):
     input_path = Path(input_dir)
@@ -374,13 +482,11 @@ def _run_base_stage(input_dir, output_dir, experiment_config, job_id, debug, exp
 
     # After running base stage, compile base times to output_dir/base_times.json for use in hints stage
     base_times_new = compile_base_times(output_path, id="base")
-    with open(output_path / "base_times.json", "w") as f:
-        json.dump(base_times_new, f, indent=2)
+    atomic_json(output_path / "base_times.json", base_times_new)
     # Compile base output locations
     base_output_locations = compile_base_output_locations(output_path)
     json_path = os.path.join(output_path, "base_output_locations.json")
-    with open(json_path, "w") as f:
-        json.dump(base_output_locations, f, indent=2)
+    atomic_json(json_path, base_output_locations)
 
 
 def _run_partial_abs_stage(input_dir, output_dir, experiment_config, job_id, debug, experimental):
@@ -536,7 +642,7 @@ def run_stage_with_config(stage, config_path, input_dir, output_dir, job_id, deb
             raise SystemExit(f"--local_abs_dir is required for {stage} stage")
         _run_domain_abs_stage(input_dir, output_dir, base_dir, local_abs_dir, experiment_config, job_id_full, debug, experimental)
     elif stage == "partial_abs":
-        _run_partial_abs_stage(input_dir, output_dir, base_dir, local_abs_dir, experiment_config, job_id_full, debug, experimental)
+        _run_partial_abs_stage(input_dir, output_dir, experiment_config, job_id_full, debug, experimental)
     else:
         raise SystemExit(f"Stage '{stage}' not yet implemented in worker")
 

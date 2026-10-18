@@ -10,7 +10,7 @@ project_root = Path(__file__).resolve().parents[2]
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 sys.path.append(project_root.as_posix())
-from src.utils import extract_terms_from_proof
+from src.proof_metrics import measure_completed_twee_proof
 
 load_dotenv()
 log_dir = os.getenv("LOG_DIR")
@@ -185,9 +185,10 @@ def compile_base_proof_lengths(experiments_dir):
                             continue
                         with open(proof_path, "r") as pf:
                             proof_text = pf.read()
-                        terms = extract_terms_from_proof(proof_text)
-                        proof_length = len(terms)
-                        base_lengths[problem_name].append({"proof_length": proof_length, "config": config, "experiment": experiment})
+                        size = measure_completed_twee_proof(proof_text)
+                        if size is None:
+                            continue
+                        base_lengths[problem_name].append({"proof_length": size["steps"], "proof_size_metric": size["metric"], "config": config, "experiment": experiment})
         
     # write to file
     output_path = experiments_dir / "base_proof_lengths.json"
@@ -219,9 +220,10 @@ def compile_hint_proof_lengths(experiments_dir):
                         continue
                     with open(proof_path, "r") as pf:
                         proof_text = pf.read()
-                    terms = extract_terms_from_proof(proof_text)
-                    proof_length = len(terms)
-                    hint_lengths[problem_name].append({"proof_length": proof_length, "config": config, "experiment": experiment})
+                    size = measure_completed_twee_proof(proof_text)
+                    if size is None:
+                        continue
+                    hint_lengths[problem_name].append({"proof_length": size["steps"], "proof_size_metric": size["metric"], "config": config, "experiment": experiment})
                    
     # write to file
     output_path = experiments_dir / "hint_proof_lengths.json"
@@ -253,9 +255,10 @@ def compile_axiom_proof_lengths(experiments_dir):
                         continue
                     with open(proof_path, "r") as pf:
                         proof_text = pf.read()
-                    terms = extract_terms_from_proof(proof_text)
-                    proof_length = len(terms)
-                    axiom_lengths[problem_name].append({"proof_length": proof_length, "config": config, "experiment": experiment})
+                    size = measure_completed_twee_proof(proof_text)
+                    if size is None:
+                        continue
+                    axiom_lengths[problem_name].append({"proof_length": size["steps"], "proof_size_metric": size["metric"], "config": config, "experiment": experiment})
                    
     # write to file
     output_path = experiments_dir / "axiom_proof_lengths.json"

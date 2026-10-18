@@ -1,0 +1,539 @@
+{
+  "source": "data/experiments/local_abs_10iter",
+  "ranking_function": "data.experiments.analysis.successes_per_config",
+  "criterion": "hints_status == success and hints_time_user < 0.5 * mean_base_user_time",
+  "success_records": 285,
+  "distinct_successful_problems": 285,
+  "successes_by_theory": {
+    "ALG": 1,
+    "BOO": 11,
+    "COL": 43,
+    "GRP": 112,
+    "LAT": 67,
+    "LCL": 16,
+    "REL": 23,
+    "RNG": 4,
+    "ROB": 8
+  },
+  "selected_historical_config": {
+    "extraction": {
+      "onlyPeakTerms": false,
+      "onlyProofTerms": true
+    },
+    "stitch": {
+      "iterations": 10,
+      "max_arity": 10
+    },
+    "twee": {
+      "flags": [
+        "--all-lemmas",
+        "--show-peaks",
+        "--hint-skel-factor 0",
+        "--hint-skel-cost 1",
+        "--no-flatten-goal"
+      ],
+      "timeout": 1000
+    }
+  },
+  "historical_runs": [
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_215750_ALG_7679519_4",
+      "problems": 18,
+      "hints_successes": 8
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_215750_COL_7679547_32",
+      "problems": 117,
+      "hints_successes": 97
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_215750_GRP_7679561_46",
+      "problems": 428,
+      "hints_successes": 399
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_215751_BOO_7679533_18",
+      "problems": 53,
+      "hints_successes": 53
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_221330_LCL_7679596_74",
+      "problems": 58,
+      "hints_successes": 41
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_221455_REL_7679611_88",
+      "problems": 79,
+      "hints_successes": 69
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_221900_RNG_7679625_102",
+      "problems": 46,
+      "hints_successes": 21
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251117_222800_ROB_7679639_116",
+      "problems": 23,
+      "hints_successes": 15
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251123_165957_LAT_7700105_60",
+      "problems": 110,
+      "hints_successes": 101
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_163356_ALG_7726899_4",
+      "problems": 2,
+      "hints_successes": 0
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_163356_BOO_7726913_18",
+      "problems": 3,
+      "hints_successes": 2
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_163412_COL_7726927_32",
+      "problems": 3,
+      "hints_successes": 0
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_163430_GRP_7726941_46",
+      "problems": 55,
+      "hints_successes": 46
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_163624_LAT_7726955_60",
+      "problems": 16,
+      "hints_successes": 12
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_164858_LCL_7726976_74",
+      "problems": 26,
+      "hints_successes": 13
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_165053_REL_7726992_88",
+      "problems": 2,
+      "hints_successes": 0
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_165116_RNG_7727006_102",
+      "problems": 2,
+      "hints_successes": 0
+    },
+    {
+      "directory": "data/experiments/local_abs_10iter/20251209_165122_ROB_7727020_116",
+      "problems": 4,
+      "hints_successes": 1
+    }
+  ],
+  "successful_problems": [
+    "ALG236-1",
+    "BOO002-1",
+    "BOO002-2",
+    "BOO003-2",
+    "BOO004-4",
+    "BOO009-2",
+    "BOO014-10",
+    "BOO014-4",
+    "BOO015-10",
+    "BOO015-4",
+    "BOO017-10",
+    "BOO067-1",
+    "COL003-12",
+    "COL003-13",
+    "COL003-14",
+    "COL003-16",
+    "COL003-17",
+    "COL003-19",
+    "COL006-1",
+    "COL006-5",
+    "COL006-7",
+    "COL009-1",
+    "COL015-1",
+    "COL016-1",
+    "COL020-1",
+    "COL022-1",
+    "COL023-1",
+    "COL024-1",
+    "COL026-1",
+    "COL027-1",
+    "COL029-1",
+    "COL030-1",
+    "COL035-1",
+    "COL036-1",
+    "COL037-1",
+    "COL041-1",
+    "COL042-8",
+    "COL042-9",
+    "COL045-1",
+    "COL049-1",
+    "COL051-1",
+    "COL053-1",
+    "COL059-1",
+    "COL060-1",
+    "COL060-3",
+    "COL061-1",
+    "COL062-1",
+    "COL063-1",
+    "COL064-1",
+    "COL064-3",
+    "COL064-4",
+    "COL064-7",
+    "COL065-1",
+    "COL070-1",
+    "COL075-2",
+    "GRP001-4",
+    "GRP002-10",
+    "GRP012-4",
+    "GRP022-2",
+    "GRP023-2",
+    "GRP048-10",
+    "GRP138-1",
+    "GRP140-1",
+    "GRP147-1",
+    "GRP148-1",
+    "GRP153-1",
+    "GRP166-1",
+    "GRP167-4",
+    "GRP167-5",
+    "GRP168-1",
+    "GRP169-1",
+    "GRP169-2",
+    "GRP170-1",
+    "GRP170-2",
+    "GRP170-3",
+    "GRP170-4",
+    "GRP171-1",
+    "GRP171-2",
+    "GRP172-2",
+    "GRP175-1",
+    "GRP175-2",
+    "GRP175-3",
+    "GRP175-4",
+    "GRP177-2",
+    "GRP178-1",
+    "GRP178-2",
+    "GRP180-2",
+    "GRP181-1",
+    "GRP181-2",
+    "GRP181-3",
+    "GRP181-4",
+    "GRP183-2",
+    "GRP183-4",
+    "GRP184-2",
+    "GRP184-4",
+    "GRP185-1",
+    "GRP185-2",
+    "GRP186-2",
+    "GRP186-4",
+    "GRP187-1",
+    "GRP190-1",
+    "GRP190-2",
+    "GRP191-1",
+    "GRP191-2",
+    "GRP193-1",
+    "GRP202-1",
+    "GRP205-1",
+    "GRP403-1",
+    "GRP405-1",
+    "GRP406-1",
+    "GRP407-1",
+    "GRP416-1",
+    "GRP417-1",
+    "GRP439-1",
+    "GRP440-1",
+    "GRP441-1",
+    "GRP470-1",
+    "GRP472-1",
+    "GRP473-1",
+    "GRP474-1",
+    "GRP478-1",
+    "GRP479-1",
+    "GRP480-1",
+    "GRP489-1",
+    "GRP502-1",
+    "GRP503-1",
+    "GRP504-1",
+    "GRP529-1",
+    "GRP530-1",
+    "GRP536-1",
+    "GRP537-1",
+    "GRP548-1",
+    "GRP558-1",
+    "GRP585-1",
+    "GRP593-1",
+    "GRP602-1",
+    "GRP603-1",
+    "GRP609-1",
+    "GRP610-1",
+    "GRP611-1",
+    "GRP655-13",
+    "GRP655-14",
+    "GRP665-11",
+    "GRP665-12",
+    "GRP667-10",
+    "GRP667-2",
+    "GRP668-1",
+    "GRP669-1",
+    "GRP670-1",
+    "GRP678-1",
+    "GRP681-1",
+    "GRP682-11",
+    "GRP685-10",
+    "GRP696-1",
+    "GRP698-1",
+    "GRP699-1",
+    "GRP715-10",
+    "GRP715-11",
+    "GRP729-1",
+    "GRP730-1",
+    "GRP751-1",
+    "GRP752-1",
+    "GRP754-1",
+    "GRP766-1",
+    "GRP768-1",
+    "GRP772-1",
+    "GRP777-10",
+    "LAT009-1",
+    "LAT012-1",
+    "LAT013-1",
+    "LAT014-1",
+    "LAT022-1",
+    "LAT034-1",
+    "LAT038-1",
+    "LAT039-1",
+    "LAT039-2",
+    "LAT040-1",
+    "LAT043-1",
+    "LAT065-10",
+    "LAT077-1",
+    "LAT080-1",
+    "LAT081-1",
+    "LAT082-1",
+    "LAT083-1",
+    "LAT086-1",
+    "LAT087-1",
+    "LAT091-1",
+    "LAT092-1",
+    "LAT093-1",
+    "LAT094-1",
+    "LAT095-1",
+    "LAT096-1",
+    "LAT097-1",
+    "LAT139-1",
+    "LAT140-1",
+    "LAT142-1",
+    "LAT143-1",
+    "LAT144-1",
+    "LAT145-1",
+    "LAT146-1",
+    "LAT148-1",
+    "LAT149-1",
+    "LAT150-1",
+    "LAT151-1",
+    "LAT152-1",
+    "LAT153-1",
+    "LAT154-1",
+    "LAT155-1",
+    "LAT156-1",
+    "LAT157-1",
+    "LAT159-1",
+    "LAT161-1",
+    "LAT162-1",
+    "LAT164-1",
+    "LAT165-1",
+    "LAT166-1",
+    "LAT167-1",
+    "LAT168-1",
+    "LAT169-1",
+    "LAT170-1",
+    "LAT171-1",
+    "LAT172-1",
+    "LAT175-1",
+    "LAT176-1",
+    "LAT177-1",
+    "LAT183-10",
+    "LAT190-10",
+    "LAT206-10",
+    "LAT222-10",
+    "LAT223-10",
+    "LAT229-10",
+    "LAT230-10",
+    "LAT399-1",
+    "LAT401-2",
+    "LCL026-10",
+    "LCL042-10",
+    "LCL109-10",
+    "LCL111-2",
+    "LCL132-1",
+    "LCL138-1",
+    "LCL159-1",
+    "LCL163-1",
+    "LCL186-10",
+    "LCL203-10",
+    "LCL211-10",
+    "LCL218-10",
+    "LCL250-10",
+    "LCL265-10",
+    "LCL390-10",
+    "LCL416-10",
+    "REL002-1",
+    "REL004-2",
+    "REL004-3",
+    "REL005-1",
+    "REL008-3",
+    "REL010-1",
+    "REL010-2",
+    "REL011-1",
+    "REL012-2",
+    "REL019-1",
+    "REL030-3",
+    "REL031-1",
+    "REL031-2",
+    "REL034-2",
+    "REL037-1",
+    "REL038-1",
+    "REL041-2",
+    "REL042-1",
+    "REL043-1",
+    "REL044-1",
+    "REL044-2",
+    "REL047-1",
+    "REL050-1",
+    "RNG009-5",
+    "RNG009-7",
+    "RNG025-6",
+    "RNG025-7",
+    "ROB003-1",
+    "ROB006-1",
+    "ROB006-2",
+    "ROB008-1",
+    "ROB010-1",
+    "ROB015-10",
+    "ROB026-1",
+    "ROB033-1"
+  ],
+  "top_five": [
+    {
+      "config": {
+        "extraction": {
+          "onlyPeakTerms": false,
+          "onlyProofTerms": true
+        },
+        "stitch": {
+          "iterations": 10,
+          "max_arity": 10
+        },
+        "twee": {
+          "flags": [
+            "--all-lemmas",
+            "--show-peaks",
+            "--hint-skel-factor 0",
+            "--hint-skel-cost 1",
+            "--no-flatten-goal"
+          ],
+          "timeout": 1000
+        }
+      },
+      "success_records": 285,
+      "distinct_problems": 285
+    },
+    {
+      "config": {
+        "extraction": {
+          "onlyPeakTerms": false,
+          "onlyProofTerms": true
+        },
+        "stitch": {
+          "iterations": 10,
+          "max_arity": 10
+        },
+        "twee": {
+          "flags": [
+            "--all-lemmas",
+            "--show-peaks",
+            "--hint-skel-factor 0.2",
+            "--hint-skel-cost 0",
+            "--no-flatten-goal"
+          ],
+          "timeout": 1000
+        }
+      },
+      "success_records": 270,
+      "distinct_problems": 270
+    },
+    {
+      "config": {
+        "extraction": {
+          "onlyPeakTerms": false,
+          "onlyProofTerms": true
+        },
+        "stitch": {
+          "iterations": 10,
+          "max_arity": 10
+        },
+        "twee": {
+          "flags": [
+            "--all-lemmas",
+            "--show-peaks",
+            "--hint-skel-factor 0.5",
+            "--hint-skel-cost 0",
+            "--no-flatten-goal"
+          ],
+          "timeout": 1000
+        }
+      },
+      "success_records": 248,
+      "distinct_problems": 248
+    },
+    {
+      "config": {
+        "extraction": {
+          "onlyPeakTerms": false,
+          "onlyProofTerms": true
+        },
+        "stitch": {
+          "iterations": 10,
+          "max_arity": 10
+        },
+        "twee": {
+          "flags": [
+            "--all-lemmas",
+            "--show-peaks",
+            "--hint-skel-factor 0",
+            "--hint-skel-cost 0",
+            "--no-flatten-goal"
+          ],
+          "timeout": 1000
+        }
+      },
+      "success_records": 234,
+      "distinct_problems": 234
+    },
+    {
+      "config": {
+        "extraction": {
+          "onlyPeakTerms": false,
+          "onlyProofTerms": true
+        },
+        "stitch": {
+          "iterations": 10,
+          "max_arity": 10
+        },
+        "twee": {
+          "flags": [
+            "--all-lemmas",
+            "--show-peaks",
+            "--hint-skel-factor 0.7",
+            "--hint-skel-cost 0",
+            "--no-flatten-goal"
+          ],
+          "timeout": 1000
+        }
+      },
+      "success_records": 209,
+      "distinct_problems": 209
+    }
+  ]
+}

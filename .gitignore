@@ -215,3 +215,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Container build products
+containers/.cache/
+containers/images/
+containers/inputs/
+containers/*.log

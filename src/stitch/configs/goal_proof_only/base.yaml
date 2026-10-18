@@ -1,0 +1,8 @@
+twee:
+  flags:
+  - --no-flatten-goal
+  - --no-all-lemmas
+  - --show-peaks
+  - --proof-on-saturation
+  - --max-time 1000
+  timeout: 1500

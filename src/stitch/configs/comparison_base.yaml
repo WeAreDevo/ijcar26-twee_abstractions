@@ -1,0 +1,9 @@
+# Match Krympa's default Twee lemma presentation for proof-size comparisons.
+twee:
+  flags:
+  - --flatten-goal
+  - --no-all-lemmas
+  - --show-peaks
+  - --proof-on-saturation
+  - --max-time 1000
+  timeout: 1500

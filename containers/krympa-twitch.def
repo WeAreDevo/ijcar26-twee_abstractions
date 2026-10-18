@@ -1,0 +1,71 @@
+Bootstrap: docker
+From: python:3.11-slim-trixie
+
+%labels
+    Description "Krympa and Twitch environment, Python 3.11, Rust 1.91.1, OCaml and Dune"
+    KrympaRevision "7c19dec495a0271c1981c0e84e57ce3777415aeb"
+
+%files
+    requirements.txt /opt/twitch/requirements.txt
+    scripts /opt/twitch/scripts
+    src /opt/twitch/src
+    data/experiments/util.py /opt/twitch/data/experiments/util.py
+    data/experiments/analysis.py /opt/twitch/data/experiments/analysis.py
+    containers/entrypoint.sh /usr/local/bin/run-tools
+    containers/inputs/twee_hints_v3 /usr/local/bin/twee_hints_v3
+    containers/inputs/vampire /usr/local/bin/vampire
+
+%post
+    set -eu
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+    apt-get install -y --no-install-recommends build-essential ca-certificates curl git \
+        pkg-config libssl-dev libgmp-dev zlib1g-dev ocaml ocaml-dune time
+    # Install a complete, independent toolchain, not host module libraries.
+    cd /tmp
+    curl -fL --retry 3 -O https://static.rust-lang.org/dist/rust-1.91.1-x86_64-unknown-linux-gnu.tar.xz
+    curl -fL --retry 3 -O https://static.rust-lang.org/dist/rust-1.91.1-x86_64-unknown-linux-gnu.tar.xz.sha256
+    sha256sum -c rust-1.91.1-x86_64-unknown-linux-gnu.tar.xz.sha256
+    tar -xf rust-1.91.1-x86_64-unknown-linux-gnu.tar.xz
+    ./rust-1.91.1-x86_64-unknown-linux-gnu/install.sh --prefix=/opt/rust --without=rust-docs
+    export PATH=/opt/rust/bin:$PATH
+    export CARGO_HOME=/tmp/cargo-build CARGO_BUILD_JOBS=2
+    python -m pip install --no-cache-dir -r /opt/twitch/requirements.txt
+    bash /opt/twitch/scripts/setup_krympa.sh
+    ln -s /opt/twitch/third_party/Krympa/rust/target/release/krympa /usr/local/bin/krympa
+    ln -s /opt/twitch/third_party/Krympa/bin/twee /usr/local/bin/twee-krympa
+    chmod 755 /usr/local/bin/run-tools /usr/local/bin/twee_hints_v3 /usr/local/bin/vampire
+    sha256sum /usr/local/bin/twee_hints_v3 /usr/local/bin/vampire > /opt/twitch/provers.sha256
+    python -m pip freeze > /opt/twitch/python-packages.txt
+    dpkg-query -W > /opt/twitch/system-packages.txt
+    # Keep the executables and source; remove intermediate build artifacts.
+    rm -rf /opt/twitch/third_party/Krympa/rust/target/release/build \
+        /opt/twitch/third_party/Krympa/rust/target/release/deps \
+        /opt/twitch/third_party/Krympa/rust/target/release/incremental \
+        /opt/twitch/third_party/Krympa/ocaml/_build \
+        /tmp/cargo-build /tmp/rust-1.91.1* /var/lib/apt/lists/*
+
+%environment
+    export PATH=/opt/rust/bin:/usr/local/bin:$PATH
+    export PYTHONNOUSERSITE=1
+    export PYTHONDONTWRITEBYTECODE=1
+    export MPLBACKEND=Agg
+    export PYTHONPATH=/opt/twitch/src:/opt/twitch
+    export VAMPIRE_PATH=${VAMPIRE_PATH:-/usr/local/bin/vampire}
+    export TWEE_PATH=${TWEE_PATH:-/usr/local/bin/twee_hints_v3}
+
+%runscript
+    exec /usr/local/bin/run-tools "$@"
+
+%test
+    export PATH=/opt/rust/bin:$PATH
+    export PYTHONPATH=/opt/twitch/src:/opt/twitch
+    python -m pip check
+    python -c 'import numpy, pandas, matplotlib, yaml, dotenv, stitch_core, pulp, wandb; print("Python imports OK")'
+    rustc --version
+    cargo --version
+    ocamlc -version
+    dune --version
+    /usr/local/bin/vampire --version
+    python /opt/twitch/scripts/run_krympa.py --help
+    python /opt/twitch/src/stitch/pipeline/worker.py --help

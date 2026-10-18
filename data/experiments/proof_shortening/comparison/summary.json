@@ -1,0 +1,64 @@
+{
+  "metric": "krympa_steps_v1",
+  "problems": 1041,
+  "outcomes": {
+    "krympa": {
+      "pending": 1041
+    },
+    "twitch_no_flatten": {
+      "pending": 1041
+    },
+    "twitch_flatten": {
+      "pending": 1041
+    }
+  },
+  "comparisons": {
+    "twitch_no_flatten": {
+      "paired_proofs": 0,
+      "twitch_shorter": 0,
+      "equal": 0,
+      "krympa_shorter": 0,
+      "positive_ratio_pairs": 0,
+      "median_krympa_over_twitch": null,
+      "geometric_mean_krympa_over_twitch": null
+    },
+    "twitch_flatten": {
+      "paired_proofs": 0,
+      "twitch_shorter": 0,
+      "equal": 0,
+      "krympa_shorter": 0,
+      "positive_ratio_pairs": 0,
+      "median_krympa_over_twitch": null,
+      "geometric_mean_krympa_over_twitch": null
+    }
+  },
+  "reductions_from_own_baseline": {
+    "krympa": {
+      "measured_proofs": 0,
+      "shortened": 0,
+      "equal": 0,
+      "lengthened": 0,
+      "median_reduction_fraction": null
+    },
+    "twitch_no_flatten": {
+      "measured_proofs": 0,
+      "shortened": 0,
+      "equal": 0,
+      "lengthened": 0,
+      "median_reduction_fraction": null
+    },
+    "twitch_flatten": {
+      "measured_proofs": 0,
+      "shortened": 0,
+      "equal": 0,
+      "lengthened": 0,
+      "median_reduction_fraction": null
+    }
+  },
+  "notes": [
+    "Final artifact steps; Krympa accounting/revision mismatches excluded from paired statistics.",
+    "Reduction fractions use each method's own baseline: Vampire for Krympa, Twee for Twitch.",
+    "Missing and failed runs are not assigned proof lengths; zero-step proofs are valid, ratios require positive steps.",
+    "Krympa uses equivalent FOF inputs; Twitch retains original CNF inputs."
+  ]
+}

@@ -88,7 +88,59 @@ def extract_terms_from_rules(file_path):
         return []
     
 
-def extract_terms_from_proof(text):
+def _goal_proof_blocks(text):
+    """Keep goal chains and the transitive closure of their lemma references.
+
+    Preserve printed order and term multiplicity for Stitch. In particular,
+    do not inline shared lemmas once per use. Reject partial/malformed proofs
+    instead of silently learning from unrelated completion output.
+    """
+    if not re.search(r'^RESULT: (?:Theorem|Unsatisfiable)\b', text, re.MULTILINE):
+        raise ValueError("Goal-only extraction requires a completed proof")
+    headers = list(re.finditer(
+        r'^(?:(Lemma|Goal)\s+(\d+)\b[^\n]*|Axiom\s+[^\n]*|RESULT[^\n]*)$',
+        text, re.MULTILINE,
+    ))
+    blocks = []
+    lemmas = {}
+    goals = []
+    for i, header in enumerate(headers):
+        kind, number = header.group(1, 2)
+        if kind is None:
+            continue
+        end = headers[i + 1].start() if i + 1 < len(headers) else len(text)
+        body = text[header.end():end]
+        if not re.search(r'^Proof:\s*$', body, re.MULTILINE):
+            continue  # Input problem's goal declaration has no proof.
+        body = body[body.index('Proof:'):]
+        refs = set(re.findall(r'^\s*=\s*\{[^\n]*\bby lemma\s+(\d+)\b', body, re.MULTILINE))
+        blocks.append((kind, number, body))
+        if kind == 'Lemma':
+            if number in lemmas:
+                raise ValueError(f"Duplicate lemma {number} in proof")
+            lemmas[number] = (body, refs)
+        else:
+            goals.append(refs)
+    if not goals:
+        raise ValueError("No goal proof found for goal-only extraction")
+    used = set()
+    pending = [ref for refs in goals for ref in refs]
+    while pending:
+        number = pending.pop()
+        if number in used:
+            continue
+        if number not in lemmas:
+            raise ValueError(f"Goal proof references missing lemma {number}")
+        used.add(number)
+        pending.extend(lemmas[number][1] - used)
+    return '\nRESULT\n'.join(
+        body for kind, number, body in blocks if kind == 'Goal' or number in used
+    )
+
+
+def extract_terms_from_proof(text, only_used_lemmas=False):
+    if only_used_lemmas:
+        text = _goal_proof_blocks(text)
     # Find all Lemma blocks with their proofs
     lemma_blocks = re.findall(r'Proof:(.*?)(?=(?:Lemma\s+\d+:|RESULT|Goal|$))', text, re.DOTALL)
     extracted_terms = []
@@ -116,6 +168,11 @@ def extract_terms(text, extraction_config=None):
     """
     if extraction_config is None:
         return extract_terms_from_proof(text)
+
+    only_used_lemmas = extraction_config.get("onlyUsedLemmas", False)
+    if only_used_lemmas and (extraction_config.get("onlyTopLemmas", False)
+                            or not extraction_config.get("onlyProofTerms", True)):
+        raise ValueError("onlyUsedLemmas requires onlyProofTerms and excludes onlyTopLemmas")
     
     extracted_terms = []
     if extraction_config.get("onlyTopLemmas", False):
@@ -123,7 +180,7 @@ def extract_terms(text, extraction_config=None):
         interesting_lemmas = extract_strategy_1(text)[:topk]
         extracted_terms = reduce(lambda acc, lemma: acc + lemma[1]['proof_terms'], interesting_lemmas, [])
     elif extraction_config.get("onlyProofTerms", True):
-        extracted_terms = extract_terms_from_proof(text)
+        extracted_terms = extract_terms_from_proof(text, only_used_lemmas=only_used_lemmas)
     if extraction_config.get("onlyPeakTerms", False):
         extracted_terms = [term.replace("(peak)", "").strip() for term in extracted_terms if "(peak)" in term]
     else:

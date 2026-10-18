@@ -1,0 +1,22 @@
+theories:
+- GRP
+- LAT
+slurm:
+  account: c3se2026-1-12
+  partition: vera
+  cpus_per_task: 64
+  time: 0-05:00:00
+environment:
+  TWEE_PATH: /usr/local/bin/twee_hints_v3
+  RAYON_NUM_THREADS: 1
+  LOG_DIR: /cephyr/NOBACKUP/groups/c3se2026-1-96/guy/proof_outputs
+stages:
+  base:
+    config: src/stitch/configs/goal_proof_only/base.yaml
+    input_dir: data/TPTP/{theory}_UEQ_UNSAT
+    output_dir: data/experiments/goal_proof_only/base/{theory}
+  local_abs:
+    config: src/stitch/configs/goal_proof_only/local_abs.yaml
+    input_dir: data/TPTP/{theory}_UEQ_UNSAT
+    output_dir: data/experiments/goal_proof_only/local_abs/{theory}
+    base_dir: data/experiments/goal_proof_only/base/{theory}
