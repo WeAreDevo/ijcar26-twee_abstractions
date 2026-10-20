@@ -16,11 +16,13 @@ import math
 import os
 from pathlib import Path
 import shlex
+import shutil
 import signal
 import statistics
 import subprocess
 import sys
 import threading
+import tempfile
 import time
 import uuid
 
@@ -29,6 +31,8 @@ sys.path.insert(0, str(ROOT))
 from dotenv import load_dotenv
 import yaml
 from scripts.ueq_inputs import krympa_input
+from scripts.experiment_storage import (ResultStore, compact_suite, publish_archive, read_artifact,
+                                       read_input, read_results, suite_access, write_inputs)
 from src.proof_metrics import METRIC, measure_completed_twee_proof
 from src.stitch.pipeline.checkpoints import atomic_json
 
@@ -117,19 +121,17 @@ def prepare(args):
     # Validate every input and include before emitting submission scripts.
     converted = {p['problem']: krympa_input(p['source'], tptp_root) for p in problems}
     suite.mkdir(parents=True)
+    write_inputs(suite, converted)
     for problem in problems:
         name = problem['problem']
-        target = suite / 'krympa_inputs' / f'{name}.p'
-        target.parent.mkdir(exist_ok=True)
-        target.write_text(converted[name])
-        problem['krympa_input'] = str(target)
-        problem['krympa_sha256'] = digest(target)
+        problem['krympa_input'] = str(suite / 'krympa_inputs.json.gz') + '#' + name
+        problem['krympa_sha256'] = hashlib.sha256(converted[name].encode()).hexdigest()
         if name in bases:
             problem['no_flatten_base'] = bases[name]
     label = args.label
     if not label or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in label):
         raise ValueError('Use letters, digits, underscores or hyphens in --label')
-    manifest = dict(schema_version=1, label=label, metric=METRIC,
+    manifest = dict(schema_version=2, label=label, metric=METRIC,
                     created=datetime.now(timezone.utc).isoformat(),
                     log_root=str(log_root), tptp_root=str(tptp_root),
                     environment={'TWEE_PATH': '/usr/local/bin/twee_hints_v3',
@@ -154,6 +156,7 @@ def prepare(args):
                   '#SBATCH --partition=vera', f'#SBATCH --job-name={label}_{method}',
                   '#SBATCH --ntasks=1', f'#SBATCH --cpus-per-task={args.workers}',
                   '#SBATCH --mem=64G', '#SBATCH --time=0-03:00:00',
+                  '#SBATCH --signal=B:TERM@180',
                   f'#SBATCH --array=0-{count-1}%{args.parallel_shards}',
                   f'#SBATCH --output={jobs}/slurm_%x_%A_%a.out',
                   'set -euo pipefail', f'cd {shlex.quote(str(ROOT))}']
@@ -195,16 +198,22 @@ def check(suite, manifest):
     root.stat()  # Preserve PermissionError rather than disguising it as absent.
     if not os.access(root, os.W_OK | os.X_OK):
         raise ValueError(f'LOG_DIR is not writable: {root}')
+    # Permissions alone do not detect an exhausted file or byte quota.
+    with tempfile.TemporaryFile(dir=root) as probe:
+        probe.write(b'proof-shortening submission check\n')
+        probe.flush()
+        os.fsync(probe.fileno())
     checked = 0
     for p in manifest['problems']:
-        if digest(p['source']) != p['sha256'] or digest(p['krympa_input']) != p['krympa_sha256']:
+        converted = read_input(suite, p)
+        if digest(p['source']) != p['sha256'] or hashlib.sha256(converted.encode()).hexdigest() != p['krympa_sha256']:
             raise ValueError(f"Input changed after preparation: {p['problem']}")
-        if krympa_input(p['source'], manifest['tptp_root']) != Path(p['krympa_input']).read_text():
+        if krympa_input(p['source'], manifest['tptp_root']) != converted:
             raise ValueError(f"Included axioms changed after preparation: {p['problem']}")
         reused = p.get('no_flatten_base')
         if reused and reused['result']['base_status'] == 'success':
             path = root / reused['experiment'] / f"{p['problem']}_base_output.txt"
-            size = measure_completed_twee_proof(path.read_text())
+            size = measure_completed_twee_proof(read_artifact(path))
             if size != reused['result']['base_proof_size']:
                 raise ValueError(f'Reused proof missing, incomplete or changed: {path}')
             checked += 1
@@ -276,40 +285,109 @@ def run_phase(source, config, stage, raw, limit, base_entry=None):
     return result
 
 
-def execute_problem(suite, manifest, method, problem):
+def scratch_directory(suite, log_root):
+    scratch = Path(os.environ.get('PROOF_SCRATCH_DIR', '/tmp')).resolve()
+    if any(scratch.is_relative_to(Path(p).resolve()) for p in (suite, log_root, ROOT)):
+        raise ValueError('PROOF_SCRATCH_DIR must be outside the project and LOG_DIR')
+    scratch.mkdir(parents=True, exist_ok=True)
+    return Path(tempfile.mkdtemp(prefix='proof-shortening-', dir=scratch))
+
+
+def remaining_reason(row, retry_storage_errors=False):
+    if not row:
+        return 'missing'
+    if row.get('status') in ('running', 'interrupted') or row.get('artifact_status') == 'publishing':
+        return 'unfinished'
+    if retry_storage_errors and row.get('status') in ('error', 'base_error'):
+        errors = json.dumps({key: row.get(key) for key in
+                             ('error', 'storage_error', 'checkpoint_error', 'base', 'local_abs', 'krympa')}).lower()
+        if any(marker in errors for marker in ('disk quota exceeded', 'no space left on device',
+                                               'errno 122', 'errno 28')):
+            return 'storage_error'
+    return None
+
+
+def execute_problem(suite, manifest, method, problem, store=None, retry_storage_errors=False):
     name = problem['problem']
-    result_path = suite / 'results' / method / f'{name}.json'
-    previous = {}
-    if result_path.exists():
-        previous = json.loads(result_path.read_text())
-        if previous['status'] not in ('running', 'interrupted'):
-            return previous  # Explicitly keep failed/timeout attempts on resume too.
+    if store is None:
+        index = next((i for i, p in enumerate(manifest.get('problems', [])) if p['problem'] == name), 0)
+        store = ResultStore(suite, method, index // manifest.get('batch_size', 8))
+    result_path = str(store.path) + '#' + name
+    previous = store.get(name) or {}
+    if remaining_reason(previous, retry_storage_errors) is None:
+        return previous  # Keep completed results and genuine terminal failures.
+    if STOP.is_set():
+        return previous or dict(problem=name, method=method, status='interrupted')
     attempt = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S') + '_' + uuid.uuid4().hex[:8]
     log_root = Path(manifest['log_root'])
-    raw = log_root / manifest['label'] / method / name / attempt
+    logical = log_root / manifest['label'] / method / f'{name}_{attempt}'
+    archive_path = logical.with_name(logical.name + '.tar.gz')
+    scratch = scratch_directory(suite, log_root)
+    raw = scratch / logical.name
     raw.mkdir(parents=True, exist_ok=False)
-    row = dict(problem=name, method=method, status='running', raw_dir=str(raw),
+    row = dict(problem=name, method=method, status='running', raw_dir=str(logical),
+               artifact_archive=str(archive_path), artifact_prefix=raw.name,
+               artifact_status='pending', scratch_dir=str(raw),
                source=problem['source'], attempt=attempt, metric=METRIC)
+    if previous:
+        row['previous_attempt'] = previous
 
     def save():
+        # Preserve the compact result even if the separate raw-output quota is full.
+        store.save(row)
         atomic_json(raw / 'checkpoint.json', row)
-        atomic_json(result_path, row)
+
+    def snapshot_archive(state):
+        row['artifact_status'] = state
+        if method == 'krympa':
+            outputs = [Path('pipeline/output') / f'proof_{name}.out']
+        else:
+            outputs = [Path('base') / f'{name}_base_output.txt',
+                       Path('local_abs') / f'{name}_with_hints_output.txt']
+        outputs = [path for path in outputs if (raw / path).is_file()]
+        row['retained_files'] = [str(path) for path in outputs]
+        if method != 'krympa':
+            row['retained_files'].append('checkpoint.json')
+        if not row['retained_files']:
+            # Failed Krympa attempts without a final output need no LOG_DIR file;
+            # status, error, timings and counts remain in the batch checkpoint.
+            row.update(artifact_status='no_output', artifact_archive=None)
+            store.save(row)
+            return
+        # A hard kill during publication must not make a terminal result skip
+        # resumption when only the earlier base snapshot reached LOG_DIR.
+        store.save(dict(row, artifact_status='publishing'))
+        retained = scratch / 'retained' / raw.name
+        retained.mkdir(parents=True, exist_ok=True)
+        for path in outputs:
+            target = retained / path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(raw / path, target)
+        if method != 'krympa':
+            atomic_json(retained / 'checkpoint.json', row)
+        publish_archive(retained, archive_path)
+        store.save(row)
 
     save()
     try:
         if digest(problem['source']) != problem['sha256']:
             raise ValueError('Source input changed after preparation')
         if method == 'krympa':
-            if digest(problem['krympa_input']) != problem['krympa_sha256']:
+            converted = read_input(suite, problem)
+            if hashlib.sha256(converted.encode()).hexdigest() != problem['krympa_sha256']:
                 raise ValueError('Converted input changed after preparation')
             input_path = raw / f'{name}.p'
-            input_path.write_text(Path(problem['krympa_input']).read_text())
+            input_path.write_text(converted)
             command = [sys.executable, '-u', str(ROOT / 'scripts/run_krympa.py'), str(input_path),
                        '--output-dir', str(raw / 'pipeline'), '--sequential',
                        '--timeout', str(manifest['limits']['krympa'])]
             outcome = run_command(command, raw / 'launcher.log', manifest['limits']['krympa'] + 30)
             path = raw / 'pipeline/run.json'
             details = json.loads(path.read_text()) if path.exists() else {}
+            if details.get('proof'):
+                details['proof'] = str(logical / Path(details['proof']).relative_to(raw))
+            if details.get('input'):
+                details['input'] = str(logical / f'{name}.p')
             row.update(krympa=details, execution=outcome,
                        status='success' if details.get('status') == 'completed' else
                        ('timeout' if details.get('status') == 'timeout' or outcome['status'] == 'timeout' else 'error'))
@@ -319,33 +397,57 @@ def execute_problem(suite, manifest, method, problem):
             config = manifest['configs'][method]
             reused = problem.get('no_flatten_base') if method == 'twitch_no_flatten' else None
             saved_base = previous.get('base', {})
+            base_text = None
             if (previous.get('base_experiment') and
                     (saved_base.get('base_status') in ('success', 'timeout') or saved_base.get('status') == 'timeout')):
-                base = previous['base']
-                experiment = previous['base_experiment']
-                row['base_reused_from'] = str(result_path) + ':' + previous['attempt']
-            elif reused:
+                try:
+                    if saved_base.get('base_proof_size') is not None:
+                        base_text = read_artifact(log_root / previous['base_experiment'] / f'{name}_base_output.txt')
+                    base = saved_base
+                    experiment = previous['base_experiment']
+                    row['base_reused_from'] = str(result_path) + ':' + previous['attempt']
+                except FileNotFoundError:
+                    # A hard kill can happen before the first archive is published.
+                    # Preserve the earlier checkpoint but recompute an unavailable base.
+                    saved_base = {}
+                    row['unavailable_previous_base'] = previous['base_experiment']
+            else:
+                saved_base = {}
+            if not saved_base and reused:
                 base = reused['result']
                 row['base_reused_from'] = reused['summary']
                 experiment = reused['experiment']
-            else:
+                if base.get('base_proof_size') is not None:
+                    base_text = read_artifact(log_root / experiment / f'{name}_base_output.txt')
+            elif not saved_base:
                 base = run_phase(problem['source'], config['base'], 'base', raw / 'base',
                                  manifest['limits']['base'])
-                experiment = str((raw / 'base').relative_to(log_root))
+                experiment = str((logical / 'base').relative_to(log_root))
+                if base.get('base_proof_size') is not None:
+                    base_text = (raw / 'base' / f'{name}_base_output.txt').read_text()
             row['base'] = base
             row['base_experiment'] = experiment
-            save()  # Keep newly computed base results even if compression is killed.
+            if base.get('base_proof_size') is not None:
+                proof = raw / 'base' / f'{name}_base_output.txt'
+                if base_text is None or measure_completed_twee_proof(base_text) != base['base_proof_size']:
+                    raise ValueError(f'Base proof changed or is incomplete: {proof}')
+                # Materialize just the reused proof, never an entire archived tree.
+                proof.parent.mkdir(exist_ok=True)
+                proof.write_text(base_text)
+                row['base_experiment'] = str((logical / 'base').relative_to(log_root))
+            # Publish a self-contained base snapshot before the long Stitch call.
+            snapshot_archive('base_saved')
             if base.get('base_proof_size') is None:
                 base_status = base.get('base_status', base.get('status', 'no_proof'))
                 row['status'] = 'base_' + ('no_proof' if base_status == 'success' else base_status)
             else:
-                proof = log_root / experiment / f'{name}_base_output.txt'
-                if measure_completed_twee_proof(proof.read_text()) != base['base_proof_size']:
-                    raise ValueError(f'Base proof changed or is incomplete: {proof}')
-                entry = dict(experiment=experiment, user_time=base['base_time_user'], config=config['base'])
+                entry = dict(experiment=experiment, output_file=str(proof),
+                             user_time=base['base_time_user'], config=config['base'])
                 local = run_phase(problem['source'], config['local_abs'], 'local_abs', raw / 'local_abs',
                                   manifest['limits']['local_abs'], entry)
                 row['local_abs'] = local
+                if local.get('base_output_file'):
+                    local['base_output_file'] = str(logical / 'base' / f'{name}_base_output.txt')
                 row['status'] = ('success' if local.get('hints_proof_size') is not None else
                                  local.get('status', local.get('hints_status', 'no_proof')))
                 if row['status'] == 'success' and local.get('hints_proof_size') is None:
@@ -354,7 +456,19 @@ def execute_problem(suite, manifest, method, problem):
             row['status'] = 'interrupted'
     except Exception as exc:
         row.update(status='error', error=f'{type(exc).__name__}: {exc}')
-    save()
+    try:
+        snapshot_archive('archived')
+    except Exception as exc:
+        # Keep scratch for recovery, preserve metrics, stop this batch rather
+        # than generating more files against a full quota. The next submission
+        # can resume this interrupted attempt using its last durable base.
+        row.update(completed_result_status=row['status'], status='interrupted',
+                   artifact_status='error', storage_error=f'{type(exc).__name__}: {exc}')
+        STOP.set()
+        print(f'Archive failed; scratch preserved at {raw}: {exc}', flush=True)
+        store.save(row)
+    else:
+        shutil.rmtree(scratch)
     return row
 
 
@@ -370,12 +484,11 @@ def run_shard(args, manifest):
                   int(os.environ.get('TWITCH_MAX_WORKERS', manifest['workers'])))
     if workers < 1:
         raise ValueError('Worker limits must be positive')
-    directory = args.suite / 'shards' / args.method / str(args.shard)
+    store = ResultStore(args.suite, args.method, args.shard)
     rows = {}
 
     def snapshot():
-        atomic_json(directory / 'summary.json', [rows[k] for k in sorted(rows)])
-        atomic_json(directory / 'run_state.json', dict(
+        store.progress(dict(
             expected=[p['problem'] for p in problems], finished=len(rows),
             state='interrupted' if STOP.is_set() else ('complete' if len(rows) == len(problems) else 'running')))
 
@@ -387,7 +500,8 @@ def run_shard(args, manifest):
     print(f'{args.method}: shard {args.shard}, {len(problems)} problems, {workers} concurrent problems', flush=True)
     snapshot()
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(execute_problem, args.suite, manifest, args.method, p): p for p in problems}
+        futures = {pool.submit(execute_problem, args.suite, manifest, args.method, p, store,
+                               getattr(args, 'retry_storage_errors', False)): p for p in problems}
         # Poll so SIGTERM also terminates active process groups promptly.
         from concurrent.futures import wait, FIRST_COMPLETED
         pending = set(futures)
@@ -403,8 +517,11 @@ def run_shard(args, manifest):
                 try:
                     row = future.result()
                 except Exception as exc:
-                    row = dict(problem=p['problem'], method=args.method, status='error', error=str(exc))
-                    atomic_json(args.suite / 'results' / args.method / f"{p['problem']}.json", row)
+                    row = store.get(p['problem']) or dict(problem=p['problem'], method=args.method, status='error')
+                    row['checkpoint_error'] = str(exc)
+                    if row['status'] == 'running':
+                        row['status'] = 'error'
+                    store.save(row)
                 rows[row['problem']] = row
                 snapshot()
                 print(f"{row['problem']}: {row['status']} ({len(rows)}/{len(problems)})", flush=True)
@@ -417,9 +534,11 @@ def measurements(row):
         return None, None, False
     if row['method'] == 'krympa':
         size = row.get('krympa', {}).get('proof_size', {})
-        valid = (row.get('status') == 'success' and size.get('metric') == METRIC and size.get('counts_match') is True
+        reported = size.get('reported_steps')
+        valid = (row.get('status') == 'success' and size.get('metric') == METRIC
+                 and type(reported) is int and reported >= 0
                  and size.get('reference_revision_matches') is True)
-        return size.get('baseline_steps'), size.get('steps'), valid
+        return size.get('baseline_steps'), reported, valid
     base = row.get('base', {}).get('base_proof_size') or {}
     final = row.get('local_abs', {}).get('hints_proof_size') or {}
     return (base.get('steps'), final.get('steps'), row.get('status') == 'success'
@@ -428,27 +547,51 @@ def measurements(row):
 
 def report(suite, manifest):
     rows, outcomes = [], {m: Counter() for m in METHODS}
-    paired = {m: [] for m in METHODS[1:]}
+    paired = {m: [] for m in (*METHODS[1:], 'twitch_best')}
+    best_coverage = Counter()
+    best_by_domain = {}
+    excluded_successes = Counter()
+    saved = {method: read_results(suite, method) for method in METHODS}
     for problem in manifest['problems']:
         name = problem['problem']
         record = dict(problem=name, domain=problem['domain'])
         sizes = {}
         for method in METHODS:
-            path = suite / 'results' / method / f'{name}.json'
-            row = json.loads(path.read_text()) if path.exists() else {}
+            row = saved[method].get(name, {})
             status = row.get('status', 'pending')
             outcomes[method][status] += 1
             base, final, valid = measurements(row)
+            if status == 'success' and not valid:
+                excluded_successes[method] += 1
             sizes[method] = final if valid else None
             fields = dict(status=status, baseline_steps=base, final_steps=final, comparable=valid,
                           reduction_fraction=(base-final)/base if valid and base and final is not None else None,
-                          raw_dir=row.get('raw_dir'), error=row.get('error'))
+                          raw_dir=row.get('raw_dir'), artifact_archive=row.get('artifact_archive'),
+                          artifact_status=row.get('artifact_status'),
+                          error=row.get('error'), storage_error=row.get('storage_error'))
             if method == 'krympa':
                 size = row.get('krympa', {}).get('proof_size', {})
                 fields.update(reported_steps=size.get('reported_steps'), benchmark_steps=size.get('benchmark_steps'),
-                              counts_match=size.get('counts_match'))
+                              recounted_steps=size.get('steps'),
+                              counts_match=size.get('counts_match'),
+                              reference_revision_matches=size.get('reference_revision_matches'))
             record.update({f'{method}_{key}': value for key, value in fields.items()})
-        for method in METHODS[1:]:
+        candidates = {method: sizes[method] for method in METHODS[1:] if sizes[method] is not None}
+        best = min(candidates.values()) if candidates else None
+        sizes['twitch_best'] = best
+        record.update(twitch_best_final_steps=best, twitch_best_comparable=best is not None,
+                      twitch_best_configs='|'.join(method for method, steps in candidates.items() if steps == best),
+                      twitch_available_configs=len(candidates))
+        k = sizes['krympa']
+        if k is not None and best is not None:
+            outcome = 'krympa_shorter' if k < best else 'twitch_shorter' if best < k else 'equal'
+        else:
+            outcome = ('krympa_only_comparable' if k is not None else
+                       'twitch_only_comparable' if best is not None else 'neither_comparable')
+        record['twitch_best_comparison'] = outcome
+        best_coverage[outcome] += 1
+        best_by_domain.setdefault(problem['domain'], Counter())[outcome] += 1
+        for method in paired:
             k, t = sizes['krympa'], sizes[method]
             if k is not None and t is not None:
                 paired[method].append((k, t))
@@ -481,8 +624,19 @@ def report(suite, manifest):
             lengthened=sum(r[f'{method}_final_steps'] > r[f'{method}_baseline_steps'] for r in valid),
             median_reduction_fraction=statistics.median(fractions) if fractions else None)
     summary = dict(metric=METRIC, problems=len(rows), outcomes=outcomes, comparisons=comparison,
+                   final_length_source={'krympa': 'reported_steps', 'twitch': 'recounted_twee_steps'},
+                   krympa_count_mismatches_included=sum(
+                       r['krympa_comparable'] and r['krympa_counts_match'] is False for r in rows),
+                   best_of_two_coverage=best_coverage, best_of_two_by_domain=best_by_domain,
+                   successful_runs_excluded_from_comparison=excluded_successes,
+                   best_of_two_paired_with_both_twitch_configs=sum(
+                       r['krympa_comparable'] and r['twitch_available_configs'] == 2 for r in rows),
                    reductions_from_own_baseline=reductions,
-                   notes=['Final artifact steps; Krympa accounting/revision mismatches excluded from paired statistics.',
+                   notes=['Krympa final lengths use its reported Total steps; output recounts and count mismatches are diagnostic and do not exclude successful runs. Revision mismatches or missing reported lengths remain excluded.',
+                          'Twitch final lengths use recounted printed Twee steps, including lemma proofs. Krympa baseline lengths still use the baseline recount.',
+                          'twitch_best selects the shortest comparable successful local proof across the two configurations; it does not fall back to base proofs.',
+                          'If only one Twitch configuration has a comparable proof, twitch_best uses that available proof; missing alternatives may improve the eventual result.',
+                          'Only paired comparable proofs count as length wins/ties. One-sided availability is reported separately.',
                           'Reduction fractions use each method\'s own baseline: Vampire for Krympa, Twee for Twitch.',
                           'Missing and failed runs are not assigned proof lengths; zero-step proofs are valid, ratios require positive steps.',
                           'Krympa uses equivalent FOF inputs; Twitch retains original CNF inputs.'])
@@ -505,12 +659,14 @@ def main():
     prep.add_argument('--workers', type=int, default=4)
     prep.add_argument('--batch-size', type=int, default=8)
     prep.add_argument('--parallel-shards', type=int, default=2)
-    for command in ('check', 'report', 'run-shard'):
+    for command in ('check', 'report', 'run-shard', 'compact'):
         sub = commands.add_parser(command)
         sub.add_argument('--suite', type=Path, default=DEFAULT_SUITE)
         if command == 'run-shard':
             sub.add_argument('--method', choices=METHODS, required=True)
             sub.add_argument('--shard', type=int, required=True)
+            sub.add_argument('--retry-storage-errors', action='store_true',
+                             help='Retry explicit disk quota/space errors, preserving the previous record')
     phase = commands.add_parser('_twitch-phase', help=argparse.SUPPRESS)
     phase.add_argument('--request', type=Path, required=True)
     args = parser.parse_args()
@@ -524,11 +680,17 @@ def main():
         args.suite = args.suite.resolve()
         manifest = load_suite(args.suite)
         if args.command == 'check':
-            check(args.suite, manifest)
+            with suite_access(args.suite):
+                check(args.suite, manifest)
+        elif args.command == 'compact':
+            with suite_access(args.suite, maintenance=True):
+                print(json.dumps(compact_suite(args.suite, manifest, METHODS), indent=2))
         elif args.command == 'report':
-            report(args.suite, manifest)
+            with suite_access(args.suite):
+                report(args.suite, manifest)
         else:
-            run_shard(args, manifest)
+            with suite_access(args.suite):
+                run_shard(args, manifest)
 
 
 if __name__ == '__main__':

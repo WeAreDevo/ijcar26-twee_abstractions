@@ -9,9 +9,14 @@ if [[ ! -f "$image" ]]; then
 fi
 options=(--cleanenv --bind "$root:$root" --pwd "$root"
     --env "PYTHONPATH=$root/src:$root")
+# Keep prover working trees off the shared filesystem, including inside Apptainer.
+export PROOF_SCRATCH_DIR=${PROOF_SCRATCH_DIR:-${SLURM_TMPDIR:-${TMPDIR:-/tmp}}}
+mkdir -p "$PROOF_SCRATCH_DIR"
+PROOF_SCRATCH_DIR=$(cd "$PROOF_SCRATCH_DIR" && pwd -P)
+options+=(--bind "$PROOF_SCRATCH_DIR:$PROOF_SCRATCH_DIR")
 overrides=()
 # Pass only the settings needed by the tools, not the host module environment.
-for name in TWEE_PATH VAMPIRE_PATH TPTP_ROOT LOG_DIR RAYON_NUM_THREADS KRYMPA_ROOT SLURM_CPUS_PER_TASK TWITCH_MAX_WORKERS; do
+for name in TWEE_PATH VAMPIRE_PATH TPTP_ROOT LOG_DIR RAYON_NUM_THREADS KRYMPA_ROOT SLURM_CPUS_PER_TASK TWITCH_MAX_WORKERS PROOF_SCRATCH_DIR; do
     if [[ -v $name ]]; then
         options+=(--env "$name=${!name}")
         overrides+=(--preserve "$name")

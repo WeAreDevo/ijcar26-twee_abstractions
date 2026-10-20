@@ -234,9 +234,9 @@ New Krympa `run.json` manifests contain `proof_size` with:
 - `reference_revision_matches`: whether this run uses the audited revision.
 
 Keep the uncapped sizes. The upstream benchmark can report the baseline's size
-even when the saved candidate is longer. Treat a count mismatch as requiring
-inspection before comparison: some upstream fallback paths retain a count from
-before converting or trimming a segment. Counts do not validate proof correctness.
+even when the saved candidate is longer. The comparison uses Krympa's reported
+final length as definitive, including runs with recount mismatches. Recounts and
+the mismatch flag remain available for inspection. Counts do not validate proof correctness.
 
 Measure existing proof files directly:
 
@@ -344,16 +344,130 @@ LOG_DIR; the Codex backend previously lacked its storage group membership.
 Each array is independent: a problem needing a base computes it before its
 local stage, so there is no separate whole-array dependency.
 
-Full outputs, converted Krympa inputs, intermediate files, stdout/stderr, and
-phase checkpoints live under `$LOG_DIR/proof_shortening/`. Compact result files
-are written atomically under `data/experiments/proof_shortening/results/`, and
-each task updates its own `shards/METHOD/INDEX/summary.json` after every problem.
+The remaining runs have been prepared in `vera_jobs/proof_shortening/remaining/`.
+After LOG_DIR compaction finishes, submit these from the project root:
+
+```bash
+bash vera_jobs/proof_shortening/remaining/submit.sh
+```
+
+The plan selects 735 Krympa runs (95 array tasks), 692 Twitch no-flatten runs
+(90 tasks), and 690 Twitch flatten runs (90 tasks). It includes missing runs,
+23 interrupted records, and 16 explicit disk quota failures. Existing successful
+results, normal timeouts, no-abstraction results, and the 70 Krympa failures
+without an explicit storage error are kept. Original task indices are preserved
+so results update the same checkpoints and comparison cohort. Already finished
+problems sharing a selected task are skipped. Retried records retain the previous
+attempt's metadata; `remaining/plan.json` also records the selection and prior
+records. Preparation does not modify existing results or submit jobs.
+
+The remaining submission script defaults to two concurrent tasks per method
+(six tasks total). Set `PROOF_PARALLEL_TASKS=4` before the command to allow four
+per method, twelve total. Each task still requests four CPUs, 64 GB, and three
+hours. The submission check refuses to proceed during compaction, checks that a
+file can actually be written in LOG_DIR, and validates inputs and reused bases
+before the first `sbatch`. Run it from a shell with LOG_DIR access. Use this
+remaining submission script instead of submitting the original whole arrays.
+
+To prepare another snapshot later, choose a fresh output directory:
+
+```bash
+bash containers/run.sh python scripts/prepare_remaining_proof_shortening.py \
+    --output vera_jobs/proof_shortening/remaining_next
+```
+
+Future proof-shortening runs save **one `.tar.gz` per problem attempt**, under
+`$LOG_DIR/proof_shortening/METHOD/PROBLEM_TIMESTAMP_ID.tar.gz`, containing only:
+
+- Krympa: the final `pipeline/output/proof_PROBLEM.out`; no metadata or intermediate
+  files. If no final output was produced, no archive is created.
+- Twitch: `base/PROBLEM_base_output.txt` and
+  `local_abs/PROBLEM_with_hints_output.txt`, when available, plus a single
+  `checkpoint.json` containing results and metadata. The base output is retained
+  for resuming the local stage.
+
+Counts, timings and errors remain in the project-side batch checkpoints for both
+methods. Detailed intermediate logs, extracted terms, converted inputs and
+hinted input copies are discarded after the retained files are safely saved.
+Working trees are created in node-local scratch and removed only after the selected
+outputs have been verified against their SHA-256 hashes and published atomically
+(or a Krympa failure with no final output has been checkpointed). The container
+wrapper uses `PROOF_SCRATCH_DIR`, then `SLURM_TMPDIR`, then `TMPDIR`, then `/tmp`;
+set `PROOF_SCRATCH_DIR` explicitly if your environment's temporary directory is
+on shared storage. It must be outside the project and LOG_DIR. Krympa's many
+temporary prover files therefore do not consume shared-storage file quota.
+
+Twitch publishes a base snapshot before starting local abstraction and replaces
+that same archive with the retained outputs and metadata afterward. Archived bases can be
+reused without extracting whole trees. On an archive failure, the compact result
+retains metrics and the storage error, scratch is left for recovery, and the
+batch stops. Node-local scratch is ephemeral: recover it before the allocation
+ends if possible. Generated and existing proof-shortening job scripts request a
+SIGTERM 180 seconds before the time limit to allow archiving; a hard kill or node
+failure can still lose work since the last successful archive.
+
+The project-side
+results and progress are stored in **one atomic JSON per batch**, at
+`data/experiments/proof_shortening/checkpoints/METHOD/INDEX.json`. Each file has
+`results` keyed by problem and `run_state`. Completed problems are saved
+immediately; updates are serialized with a filesystem lock so concurrent workers
+cannot lose each other's results. The 1,041 converted inputs are stored together
+in `krympa_inputs.json.gz` and read directly from the bundle. Preparation and
+resumption use this layout, avoiding thousands of small project-side files.
 One failed or timed-out problem does not discard other results. A hard-killed
 task may leave a running record, which remains excluded from finished statistics.
 Rerunning the same task skips all terminal results (including failures/timeouts),
 resumes unfinished problems, and reuses any base already saved in their compact
 checkpoint. Do not submit the same task concurrently. To retry terminal failures
 with different limits, prepare a separate suite rather than overwrite evidence.
+
+For an older suite, stop its jobs before running:
+
+```bash
+bash containers/run.sh python scripts/proof_shortening.py compact
+```
+
+Compaction preserves every result field, validates input hashes, and saves the
+old `results/`, `shards/`, and `krympa_inputs/` trees in `legacy_layout.tar.gz`.
+It verifies archive contents against the originals before removing the loose
+files. Existing report and resume commands understand both layouts. A shared
+activity lock prevents this runner from executing while compaction is active.
+The current suite has already been compacted; its comparison is unchanged.
+Old container smoke-test trees are likewise preserved in
+`containers/images/smoke-tests-20261019.tar.gz`; the runnable SIF remains in place.
+
+To compact the existing **stopped** proof-shortening runs in LOG_DIR, run these
+commands from LOG_DIR (the first previews the selected attempts):
+
+```bash
+python3 /cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/scripts/compact_proof_logs.py
+python3 /cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/scripts/compact_proof_logs.py --apply
+```
+
+This uses only Python's standard library. Each old
+`proof_shortening/METHOD/PROBLEM/ATTEMPT/` becomes the sibling `ATTEMPT.tar.gz`.
+Every file's bytes and each symlink target are verified before the loose tree is
+removed. It is safe to rerun after an interruption; conflicting existing archives
+cause an error and preserve originals. Reused standalone base runs and unrelated
+directories are untouched. Stop all suite jobs first: the activity lock covers
+the updated runner, but cannot protect against older processes or other writers.
+You need space and at least one free inode to create the next archive before its
+loose files can be removed; if the quota is completely full, first free a known
+disposable file or ask for temporary quota headroom.
+
+Result records retain `raw_dir` as the logical path inside the archive; new runs
+also record `artifact_archive` and `artifact_prefix`. Reports and base resumption
+understand the archived layout. Inspect full outputs without recreating thousands
+of files:
+
+```bash
+tar -tzf /path/to/ATTEMPT.tar.gz
+tar -xOzf /path/to/ATTEMPT.tar.gz ATTEMPT/base/PROBLEM_base_output.txt
+```
+
+Internal raw logs may mention historical scratch paths. To read an old logical
+artifact path in Python, use `scripts.experiment_storage.read_artifact(path)`;
+it checks loose files and archived ancestors without extracting to disk.
 
 Build or refresh the comparison at any time, including while arrays run:
 
@@ -362,15 +476,26 @@ bash containers/run.sh python scripts/proof_shortening.py report
 ```
 
 This writes `comparison/per_problem.csv` and `comparison/summary.json` in the
-suite directory. The CSV shows each baseline, final artifact step count,
+suite directory. See the [comparison interpretation guide](data/experiments/proof_shortening/comparison/README.md)
+for the metric, lemma accounting, eligibility rules, best-of-two selection,
+and limitations of the results.
+The CSV shows each baseline, final step count,
 reduction fraction, status, and raw-output location. The summary compares final
 proof sizes on paired successes, counts wins/ties/losses, and reports reductions
 from each method's own baseline (Vampire for Krympa, Twee for Twitch). The ratio
 `krympa_steps / twitch_steps > 1` means Twitch's proof is shorter. Zero-step
 proofs count in wins/ties but are excluded from ratio statistics. Krympa's
-reported and benchmark-capped counts are separate columns; accounting or pinned
-revision mismatches are excluded from paired statistics. Failed/pending runs
+reported final count is definitive; recounts and benchmark-capped counts remain
+separate columns. Count mismatches are included; pinned-revision mismatches or
+missing reported lengths remain excluded from paired statistics. Failed/pending runs
 never receive invented proof lengths.
+
+The `comparisons.twitch_best` summary selects the shorter successful local proof
+from the two Twitch configurations separately for each problem. The CSV records
+the selected configuration(s), number of available configurations, and comparison
+outcome. If only one configuration succeeded, its proof is used. This selection
+does not substitute the unhinted baseline. One-sided availability, excluded
+Krympa results, and per-domain counts are reported separately from length wins.
 
 To prepare a separate run, use a distinct suite, log label, and script directory:
 

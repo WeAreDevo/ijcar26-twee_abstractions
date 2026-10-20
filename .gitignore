@@ -20,11 +20,17 @@ slurm*.out
 data/experiments/*/*/*
 !data/experiments/*/*/summary.json
 !data/experiments/*/*/config.yaml
+!data/experiments/proof_shortening/comparison/README.md
+!data/experiments/proof_shortening/comparison/ANALYSIS.MD
 
 # Multi-MB aggregate result files at the stage level
 # (base_times.json, axiom_proof_lengths.json, hint_proof_lengths.json, ...)
 data/experiments/*/*.json
 !data/experiments/hard_successes/*.json
+# Compact generated inputs, migration backups, and coordination locks.
+data/experiments/*/*.json.gz
+data/experiments/*/*.tar.gz
+data/experiments/*/*.lock
 
 # Scratch files written by the pipeline
 data/experiments/*/tmp

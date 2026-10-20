@@ -3,60 +3,166 @@
   "problems": 1041,
   "outcomes": {
     "krympa": {
-      "pending": 1041
+      "timeout": 168,
+      "success": 528,
+      "error": 345
     },
     "twitch_no_flatten": {
-      "pending": 1041
+      "success": 814,
+      "base_timeout": 153,
+      "timeout": 40,
+      "no valid abstractions produced by Stitch": 12,
+      "error": 22
     },
     "twitch_flatten": {
-      "pending": 1041
+      "success": 826,
+      "base_timeout": 149,
+      "timeout": 38,
+      "no valid abstractions produced by Stitch": 12,
+      "error": 16
     }
   },
   "comparisons": {
     "twitch_no_flatten": {
-      "paired_proofs": 0,
-      "twitch_shorter": 0,
-      "equal": 0,
-      "krympa_shorter": 0,
-      "positive_ratio_pairs": 0,
-      "median_krympa_over_twitch": null,
-      "geometric_mean_krympa_over_twitch": null
+      "paired_proofs": 492,
+      "twitch_shorter": 83,
+      "equal": 34,
+      "krympa_shorter": 375,
+      "positive_ratio_pairs": 492,
+      "median_krympa_over_twitch": 0.5872210953346856,
+      "geometric_mean_krympa_over_twitch": 0.5266697819889246
     },
     "twitch_flatten": {
-      "paired_proofs": 0,
-      "twitch_shorter": 0,
-      "equal": 0,
-      "krympa_shorter": 0,
-      "positive_ratio_pairs": 0,
-      "median_krympa_over_twitch": null,
-      "geometric_mean_krympa_over_twitch": null
+      "paired_proofs": 495,
+      "twitch_shorter": 86,
+      "equal": 35,
+      "krympa_shorter": 374,
+      "positive_ratio_pairs": 495,
+      "median_krympa_over_twitch": 0.6111111111111112,
+      "geometric_mean_krympa_over_twitch": 0.533305577537373
+    },
+    "twitch_best": {
+      "paired_proofs": 503,
+      "twitch_shorter": 99,
+      "equal": 44,
+      "krympa_shorter": 360,
+      "positive_ratio_pairs": 503,
+      "median_krympa_over_twitch": 0.6666666666666666,
+      "geometric_mean_krympa_over_twitch": 0.5916212853536297
     }
   },
+  "final_length_source": {
+    "krympa": "reported_steps",
+    "twitch": "recounted_twee_steps"
+  },
+  "krympa_count_mismatches_included": 100,
+  "best_of_two_coverage": {
+    "twitch_only_comparable": 368,
+    "krympa_shorter": 360,
+    "equal": 44,
+    "neither_comparable": 145,
+    "twitch_shorter": 99,
+    "krympa_only_comparable": 25
+  },
+  "best_of_two_by_domain": {
+    "ALG": {
+      "twitch_only_comparable": 5,
+      "krympa_shorter": 5,
+      "equal": 1,
+      "neither_comparable": 9
+    },
+    "BOO": {
+      "twitch_shorter": 5,
+      "krympa_shorter": 30,
+      "krympa_only_comparable": 2,
+      "equal": 6,
+      "twitch_only_comparable": 11,
+      "neither_comparable": 2
+    },
+    "COL": {
+      "krympa_shorter": 27,
+      "equal": 6,
+      "neither_comparable": 11,
+      "krympa_only_comparable": 12,
+      "twitch_only_comparable": 31,
+      "twitch_shorter": 33
+    },
+    "GRP": {
+      "krympa_shorter": 212,
+      "twitch_only_comparable": 162,
+      "twitch_shorter": 46,
+      "equal": 20,
+      "krympa_only_comparable": 4,
+      "neither_comparable": 37
+    },
+    "LAT": {
+      "twitch_only_comparable": 69,
+      "krympa_shorter": 17,
+      "twitch_shorter": 8,
+      "equal": 3,
+      "neither_comparable": 26,
+      "krympa_only_comparable": 3
+    },
+    "LCL": {
+      "neither_comparable": 33,
+      "twitch_only_comparable": 15,
+      "krympa_only_comparable": 3,
+      "krympa_shorter": 29,
+      "equal": 3,
+      "twitch_shorter": 1
+    },
+    "REL": {
+      "krympa_shorter": 18,
+      "twitch_only_comparable": 62,
+      "equal": 1
+    },
+    "RNG": {
+      "krympa_only_comparable": 1,
+      "neither_comparable": 17,
+      "equal": 3,
+      "krympa_shorter": 15,
+      "twitch_only_comparable": 7,
+      "twitch_shorter": 5
+    },
+    "ROB": {
+      "neither_comparable": 10,
+      "twitch_shorter": 1,
+      "krympa_shorter": 7,
+      "twitch_only_comparable": 6,
+      "equal": 1
+    }
+  },
+  "successful_runs_excluded_from_comparison": {},
+  "best_of_two_paired_with_both_twitch_configs": 484,
   "reductions_from_own_baseline": {
     "krympa": {
-      "measured_proofs": 0,
-      "shortened": 0,
-      "equal": 0,
-      "lengthened": 0,
-      "median_reduction_fraction": null
+      "measured_proofs": 528,
+      "shortened": 352,
+      "equal": 78,
+      "lengthened": 98,
+      "median_reduction_fraction": 0.25
     },
     "twitch_no_flatten": {
-      "measured_proofs": 0,
-      "shortened": 0,
-      "equal": 0,
-      "lengthened": 0,
-      "median_reduction_fraction": null
+      "measured_proofs": 814,
+      "shortened": 257,
+      "equal": 291,
+      "lengthened": 266,
+      "median_reduction_fraction": 0.0
     },
     "twitch_flatten": {
-      "measured_proofs": 0,
-      "shortened": 0,
-      "equal": 0,
-      "lengthened": 0,
-      "median_reduction_fraction": null
+      "measured_proofs": 826,
+      "shortened": 320,
+      "equal": 261,
+      "lengthened": 245,
+      "median_reduction_fraction": 0.0
     }
   },
   "notes": [
-    "Final artifact steps; Krympa accounting/revision mismatches excluded from paired statistics.",
+    "Krympa final lengths use its reported Total steps; output recounts and count mismatches are diagnostic and do not exclude successful runs. Revision mismatches or missing reported lengths remain excluded.",
+    "Twitch final lengths use recounted printed Twee steps, including lemma proofs. Krympa baseline lengths still use the baseline recount.",
+    "twitch_best selects the shortest comparable successful local proof across the two configurations; it does not fall back to base proofs.",
+    "If only one Twitch configuration has a comparable proof, twitch_best uses that available proof; missing alternatives may improve the eventual result.",
+    "Only paired comparable proofs count as length wins/ties. One-sided availability is reported separately.",
     "Reduction fractions use each method's own baseline: Vampire for Krympa, Twee for Twitch.",
     "Missing and failed runs are not assigned proof lengths; zero-step proofs are valid, ratios require positive steps.",
     "Krympa uses equivalent FOF inputs; Twitch retains original CNF inputs."

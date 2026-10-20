@@ -6,6 +6,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=64G
 #SBATCH --time=0-03:00:00
+#SBATCH --signal=B:TERM@180
 #SBATCH --array=0-130%2
 #SBATCH --output=/cephyr/users/guya/Vera/Projects/ijcar26-twee_abstractions/vera_jobs/proof_shortening/slurm_%x_%A_%a.out
 set -euo pipefail

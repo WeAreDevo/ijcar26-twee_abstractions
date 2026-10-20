@@ -102,7 +102,7 @@ def local_abs_stage(args):
         result_dict["min_base_user_time"] = min_base_time_entry["user_time"]
         result_dict["min_base_dir"] = min_base_time_entry["experiment"]
         base_dir = Path(os.getenv("LOG_DIR")) / min_base_time_entry["experiment"]
-        base_output_path = base_dir / f"{problem}_base_output.txt"
+        base_output_path = Path(min_base_time_entry.get('output_file', base_dir / f"{problem}_base_output.txt"))
         with open(base_output_path, "r") as f:
             base_output = f.read()
 
